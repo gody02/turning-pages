@@ -12,18 +12,30 @@ Connect people, economics, ownership, institutions, philosophy and historical ch
 
 - Original life creation, stats, relationships, education, jobs, finances, yearly events, death and local save remain. New lives can begin at birth or age 18.
 - UK adults enter politics through Career, choosing one of five parties and five intellectual influences. Existing money, age, job and history remain.
-- Career views: Your work, Constituency, Elections, Parliament, Ideas and Record. Legacy #town links now open Career in the same life; no standalone town screen.
+- Career views: Your work, Constituency, United Kingdom, Elections, Parliament, Ideas and Record. Legacy #town links now open Career in the same life; no standalone town screen.
 - Monthly political choices and three shared activities: canvassing, casework, organising, studying, fundraising, family time and faction negotiation compete with ordinary life activities.
 - Organiser, councillor, MP, minister and Prime Minister roles. Candidate selection, campaign expenses, seeded elections with possible defeat, national party seats, government/opposition and office eligibility.
 - A branch mentor and rival join People. Personal/family choices affect bonds, health, reputation and party confidence. Promises are recorded; an impossible promise can damage trust when hardship contradicts it.
-- Bills pass through compressed Commons/Lords/assent stages, at most one stage per month. Warm Homes grants, worker profit sharing and a property-income levy change subsequent constituency cash flows.
+- Three legacy constituency bills retain their compressed stages. Eighteen new national proposals and an editable tax/supply package use a richer Commons/Lords/assent process, at most one stage per month. Warm Homes grants, worker profit sharing and a property-income levy change subsequent constituency cash flows.
 - Councillors and MPs can sponsor programme motions subject to a board vote and affordability; they cannot directly spend the public fund. Non-player board decisions continue without a sponsored motion.
 - Constituency economy: 800 households in four cohorts, two aggregate employers, programme fund and external clearing account. Wages, rents, energy, demand, unemployment, relief and delayed insulation have recorded counterparties. Household conditions affect support; energy affects personal living costs.
-- Monthly economy continues beyond the former 24-month limit, retaining savings and investment. Fictional shocks cycle every 24 months.
+- Monthly economy continues beyond the former 24-month limit, retaining savings and investment. In integrated careers, national economic conditions now replace the old repeating shock schedule; standalone archive behaviour remains compatible.
 - Personal money, campaign funds and public accounts remain distinct. Outside work continues for organisers/councillors; entering Parliament ends the outside job. Role pay starts the next month.
 - Twelve months produce one birthday, one year of education/job progression and yearly life events. Monthly income, expenses, tuition and debt charges are not charged again on birthdays.
 - Original political dilemmas discuss Socratic consistency, competition, ownership/surplus, NEP compromises and international dependency. Selecting a thinker does not confer a success bonus.
 - Autosave, validated export/import, explicit restore confirmation, pre-entry recovery snapshot and export of the earlier standalone town archive. Phone dock points to decisions and monthly advancement.
+
+## National economics milestone
+
+- United Kingdom view contains Briefing, Budget desk, Households & sectors, Public accounts and Sources & assumptions.
+- Verified dated inputs: September 2026 Bank Rate, August CPI, May–July unemployment and headline 2026/27 HMRC tax rules. Other macro/fiscal opening totals and behavioural coefficients are explicitly fictional scenario assumptions, not a fully calibrated UK dataset.
+- Seventeen editable tax/spending settings, representative marginal tax/NI calculations, static costing and distribution comparisons. Drafting is open to all; government submission requires the Prime Minister and Commons scrutiny. Only a submitted proposal is saved.
+- Four sectors, demand, inflation, unemployment, confidence, sterling, independent monetary response, gilt yield and gradually repricing debt interest. Monthly public receipt/outlay ledger and debt/creditor identity. Investment has a six-month delivery queue.
+- Eighteen national legislation proposals with annual costs, uncertain delivery delays, government money-resolution support, negotiation, half-scale compromises, division counts, defeat and withdrawal. Original three constituency laws remain compatible.
+- State-weighted uncertain incidents and fiscal reactions by non-player government replace repeating shocks. Recorded seeds preserve history on reload without scripting the outcome.
+- Local money flows, living costs, support and dilemma weights now respond to national conditions. Housing programmes affect local rent pressure; effects are traceable through monthly reports.
+- Optional national state attaches on the next month/action without replaying the old career. A one-time `turning-pages:before-national-economy` raw recovery copy is available in Finances; a failed snapshot write keeps the old primary save.
+- Source tag `before-national-economy` preserves checkpoint `a65c95f`. Tests cover fiscal identities, different ten-year timelines, rates, votes, delays, old saves and recovery failures. See VALIDATION.md.
 
 ## Boundaries and next depth
 
@@ -31,7 +43,7 @@ This is a playable integrated career, not a complete UK economic or constitution
 
 Still deferred: calibrated UK national accounts, banks/credit/monetary policy, production inventories, detailed factions and autonomous NPC lives, full philosophical dialogue trees, ownership transitions, NEP/revolution systems, live news, devolved institutions and law career. See POLITICS-VISION.md. Do not describe these as implemented.
 
-Next refinement should deepen political decisions and competing interests inside this career. Gather feedback after 6–12 months and an election. Improve faction/party distinctions, constituent cases and remembered consequences before adding a disconnected national dashboard.
+The national-economy expansion is now implemented inside Career. Read NATIONAL-MODEL.md for its sources, equations, units, assumptions and limits. Next realism work should deepen national accounts, fiscal institutions and party/faction behaviour within this life; do not add a separate game.
 
 ## Compatibility and accounting
 
@@ -57,3 +69,4 @@ node node_modules/vite/bin/vite.js build --configLoader runner
 ```
 
 Pre-politics source ZIP: `../../work/before-politics-20260921.zip`. Local Git checkpoint `2cb1879` and tag `before-career-integration` preserve the earlier life/town implementation. Add tested commits for future milestones. Update this file, CHANGELOG.md and VALIDATION.md when behavior changes.
+

@@ -4,6 +4,7 @@ import { choosePoliticalEvent, electionIn, joinPolitics, joinPoliticsReason, pol
 import { bills, billStages, doctrines, parties, politicalEvents, politicalTasks, roleNames, rolePay, type DoctrineId, type PartyId } from '../data/politics';
 import { townPolicies } from '../data/town';
 import { townTotal, townVoice } from '../engine/town';
+import { NationalEconomy } from './NationalEconomy';
 
 const gbp=(value:number)=>new Intl.NumberFormat('en-GB',{style:'currency',currency:'GBP',maximumFractionDigits:0}).format(value);
 type Props={game:Game;update:(fn:(g:Game)=>Game)=>void;onAdvance:()=>void};
@@ -38,7 +39,7 @@ export function PoliticalCareer({game:g,update,onAdvance}:Props){
     <div className="career-route">{['activist','councillor','mp','minister','premier'].map((role,i)=><span key={role} className={roleRank(p.role)>=i?'reached':''}>{['Organiser','Councillor','MP','Minister','PM'][i]}</span>)}</div>
     <div className="political-indicators">{([['Public support',p.support],['Reputation',p.reputation],['Integrity',p.integrity],['Organisation',p.organisation],['Policy knowledge',p.knowledge],['Party backing',p.caucus]] as [string,number][]).map(([name,value])=><div key={name}><span>{name}</span><b>{Math.round(value)}</b><meter min={0} max={100} value={value} aria-label={name}/></div>)}</div>
     {event&&g.alive&&<section className="political-dilemma" aria-live="polite"><div className="eyebrow">THE CHOICE IN FRONT OF YOU</div><h3>{event.title}</h3><p>{event.text}</p><div className="choices">{event.choices.map((c,i)=><button key={i} disabled={!!g.pending} onClick={()=>update(x=>choosePoliticalEvent(x,i))}><span>{c.label}<small>{Object.entries(c.effects).map(([k,v])=>`${v>0?'+':''}${v} ${k}`).join(' · ')}</small></span><b>→</b></button>)}</div>{g.pending&&<p className="fine">Resolve your birthday life event above before this political choice.</p>}</section>}
-    <nav className="political-tabs" aria-label="Political career areas">{['Your work','Constituency','Elections','Parliament','Ideas','Record'].map(tab=><button key={tab} aria-current={view===tab?'page':undefined} onClick={()=>setView(tab)}>{tab}</button>)}</nav>
+    <nav className="political-tabs" aria-label="Political career areas">{['Your work','Constituency','United Kingdom','Elections','Parliament','Ideas','Record'].map(tab=><button key={tab} aria-current={view===tab?'page':undefined} onClick={()=>setView(tab)}>{tab}</button>)}</nav>
     <div className="political-content">
     {view==='Your work'&&<>
       <div className="political-budget"><div><small>YOUR PERSONAL MONEY</small><strong>{gbp(g.money)}</strong><span>Last month: +{gbp(p.lastIncome)} / −{gbp(p.lastExpenses)}</span></div><div><small>CAMPAIGN FUND</small><strong>{gbp(p.campaignFunds)}</strong><span>Donations belong to the campaign</span></div></div>
@@ -56,8 +57,9 @@ export function PoliticalCareer({game:g,update,onAdvance}:Props){
       <div className="political-task-grid">{townPolicies.filter(x=>x.id!=='hold').map(policy=><div key={policy.id}>{doTask(`motion:${policy.id}`,policy.name,`${gbp(policy.cost)} public cost · ${policy.description}`)}</div>)}</div>
       {p.motion&&<p className="political-notice">Your {p.motion} motion is scheduled for month end.</p>}
       {latest&&<details className="political-details" open><summary>What changed last month?</summary><ul>{latest.notes.map((n,i)=><li key={i}>{n}</li>)}</ul></details>}
-      <details className="political-details"><summary>Employers, accounts and model assumptions</summary>{economy.employers.map(f=><p key={f.id}><b>{f.name}</b>: {f.jobs}/{f.capacity} jobs · {gbp(f.cash)} reserves · {gbp(f.profit)} operating cash change last month.</p>)}<p>{Math.abs(townTotal(economy)-economy.initialTotal)<.05?'All constituency accounts reconcile.':'Account reconciliation failed.'} Every payment has a counterparty, including the wider economy. Your own and campaign accounts are separate abstractions outside these 800 households.</p><p>The first economy models cash, employment and costs; it does not yet model the full UK banking, production or monetary system. Fictional external shocks cycle every two years while savings, employment and investments persist.</p><div className="transaction-list">{economy.ledger.filter(x=>x.month===economy.month).map((x,i)=><div key={i}><span><b>{x.reason}</b><small>{x.from} → {x.to}</small></span><strong>{gbp(x.amount)}</strong></div>)}</div></details>
+      <details className="political-details"><summary>Employers, accounts and model assumptions</summary>{economy.employers.map(f=><p key={f.id}><b>{f.name}</b>: {f.jobs}/{f.capacity} jobs · {gbp(f.cash)} reserves · {gbp(f.profit)} operating cash change last month.</p>)}<p>{Math.abs(townTotal(economy)-economy.initialTotal)<.05?'All constituency accounts reconcile.':'Account reconciliation failed.'} Every payment has a counterparty, including the wider economy. Your own and campaign accounts are separate abstractions outside these 800 households.</p><p>The first economy models cash, employment and costs; it does not yet model the full UK banking, production or monetary system. National conditions drive energy, orders, grants and tax changes. Savings, employment and investments persist; the integrated career no longer repeats a two-year shock script.</p><div className="transaction-list">{economy.ledger.filter(x=>x.month===economy.month).map((x,i)=><div key={i}><span><b>{x.reason}</b><small>{x.from} → {x.to}</small></span><strong>{gbp(x.amount)}</strong></div>)}</div></details>
     </>}
+    {view==='United Kingdom'&&<NationalEconomy game={g} update={update}/>}
     {view==='Elections'&&<>
       <h3>A nomination is not a seat.</h3><div className="political-budget"><div><small>NEXT COUNCIL ELECTION</small><strong>{electionIn(p,'council')} months</strong></div><div><small>NEXT GENERAL ELECTION</small><strong>{electionIn(p,'parliament')} months</strong></div></div>
       <p className="muted">Your first local contest falls six months after joining; the first general election is at month 24. Subsequent cycles are four and five years. These are game dates, not the real UK electoral calendar.</p>
@@ -71,11 +73,13 @@ export function PoliticalCareer({game:g,update,onAdvance}:Props){
       <h3>{p.inGovernment?'Your party has a governing majority.':'Power requires support.'}</h3><p className="muted">{p.seats?`${p.seats} of 650 seats. `:''}Your seat and your party’s national result are separate. Cabinet appointments need a governing majority and a strong record.</p>
       {doTask('seekOffice','Seek a ministerial appointment','Ask the leadership to consider you for housing and communities.')}
       {doTask('leadership','Seek the party leadership','A governing parliamentary majority and party support are needed to become Prime Minister.')}
+      <NationalEconomy game={g} update={update} legislation/>
+      <details className="political-details"><summary>Earlier constituency legislation</summary>
       <h3 className="political-subheading">Legislation with lasting effects</h3>
       <p className="muted">Bills need scrutiny and political support. Their effects begin only after passage—not when you announce them. This is a compressed representation of the UK legislative process.</p>
       {p.bill?<div className="bill-card"><h3>{bills.find(b=>b.id===p.bill!.id)!.name}</h3><ol>{billStages.map((stage,i)=><li key={stage} className={i<=p.bill!.stage?'reached':''}>{stage}</li>)}</ol>{doTask('advanceBill','Work on the next legislative stage','Policy knowledge, integrity and party support affect passage. At most one stage per month.')}</div>:bills.map(b=><div key={b.id}>{doTask(`bill:${b.id}`,b.name,b.description)}</div>)}
       {p.laws.length>0&&<div className="passed-laws"><h3>Laws in your timeline</h3>{p.laws.map(id=><p key={id}>✓ {bills.find(b=>b.id===id)!.name}</p>)}</div>}
-      <a className="political-source" href="https://www.parliament.uk/about/how/laws/" target="_blank" rel="noreferrer">How UK legislation works ↗</a>
+      <a className="political-source" href="https://www.parliament.uk/about/how/laws/" target="_blank" rel="noreferrer">How UK legislation works ↗</a></details>
     </>}
     {view==='Ideas'&&<>
       <h3>Ideas are commitments you have to live with.</h3><label className="town-label">Your intellectual influence<select value={p.doctrine} onChange={e=>update(x=>({...x,politics:{...x.politics!,doctrine:e.target.value as DoctrineId}}))}>{doctrines.map(d=><option key={d.id} value={d.id}>{d.name}</option>)}</select></label>
@@ -92,3 +96,4 @@ export function PoliticalCareer({game:g,update,onAdvance}:Props){
     <div className="political-month"><div><small>ONE LIFE. ONE CLOCK.</small><p>{g.pending?'Your birthday brought a life event. Resolve it first.':p.pending?'Make the political choice above before moving on.':`${g.actions} activities remain. Next month brings new pressures and choices.`}</p></div><button className="primary" disabled={!g.alive||!!g.pending||!!p.pending} onClick={onAdvance}>Live the next month <span>→</span></button></div>
   </section>;
 }
+

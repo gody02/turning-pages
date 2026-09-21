@@ -1,6 +1,6 @@
 # Turning Pages: UK political simulation vision
 
-Status: long-term design, with an integrated UK political career now playable inside the existing life. Political formation, local elections, parliamentary progression and three laws are implemented in simplified form. The constituency economy shares the character's monthly clock, family and financial consequences. Detailed national economics, NEP/ownership transitions and revolutionary systems remain proposed. See PROJECT-STATE.md for the exact boundary. All future depth belongs inside this career, not a separate mode.
+Status: long-term design, with an integrated UK political career now playable inside the existing life. Political formation, local elections, parliamentary progression and three laws are implemented in simplified form. The constituency economy shares the character's monthly clock, family and financial consequences. A first national macro/fiscal model, editable Budget and eighteen additional bills are now playable; see NATIONAL-MODEL.md. Complete empirical calibration, detailed national accounts, NEP/ownership transitions and revolutionary systems remain proposed. See PROJECT-STATE.md for the exact boundary. All future depth belongs inside this career, not a separate mode.
 
 ## Experience
 
@@ -93,3 +93,4 @@ The implementation compresses these processes. Its board votes, election schedul
 - OBR outlooks and forecast uncertainty: https://obr.uk/economic-and-fiscal-outlooks/
 
 Historical political writings are primary evidence of their authors' arguments, not neutral confirmation of every empirical claim. This document is an initial design synthesis, not an exhaustive literature review or calibrated economic model.
+

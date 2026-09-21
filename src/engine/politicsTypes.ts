@@ -1,4 +1,5 @@
 import type { Town } from './town';
+import type { NationalState } from './national';
 import type { PartyId,DoctrineId,PoliticalRole,BillId } from '../data/politics';
 import type { PolicyId } from '../data/town';
 export type PoliticalCareer={
@@ -8,7 +9,7 @@ export type PoliticalCareer={
   candidacy:'council'|'parliament'|null;seats:number;inGovernment:boolean;
   pending:string|null;seen:string[];memories:string[];
   motion:PolicyId|null;bill:{id:BillId;stage:number;lastAdvanced:number}|null;laws:BillId[];
-  economy:Town;log:{month:number;text:string}[];
+  economy:Town;national?:NationalState;log:{month:number;text:string}[];
   elections:{month:number;kind:'council'|'parliament';won:boolean;votes:number[];seats:number}[];
   lastIncome:number;lastExpenses:number;yearIncome:number;yearExpenses:number;
 };

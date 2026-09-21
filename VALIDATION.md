@@ -1,5 +1,22 @@
 # MVP validation
 
+## National economics and parliamentary proposals
+
+Completed 21 September 2026.
+
+- Strict TypeScript check and production build passed. **65 tests passed**: 49 existing life/town/career tests plus 16 national-economy tests.
+- Verified marginal Income Tax bands and allowance taper, NI thresholds, differing household incidence, static revenue costings, invalid Budget rejection and draft/live policy separation.
+- Ran 12 distinct ten-year national histories with fiscal/debt/creditor consistency and complete state validation every month. Differing seeds and policies produce different histories; restoring the same state produces the same next month.
+- Tested automatic welfare response, gradual debt-interest repricing, independent rate bounds, infrastructure delays, six-month capital delivery, and 20 years with all 18 national programmes.
+- Verified role restrictions, immutable submitted budgets, shared activities, one stage per month, counted parliamentary divisions, Budget passage, bill defeat, withdrawal, funding-consent requirements and half-scale compromise.
+- Tested prospective attachment to an old career, exact raw recovery copy, malformed national-state rejection and preservation of the primary save when recovery storage fails. Original fixed legacy fixture remains unchanged.
+- Browser: opened the existing test-origin career at age 18 plus one month; viewed the national briefing; edited Basic Income Tax from 20 to 22 in a working draft; confirmed lower take-home figures in the household comparison while current policy remained 20. Submission was correctly unavailable to an organiser.
+- Advanced the old career one month and reloaded. Age 18 plus two months, £4,333 balance, the next political dilemma and national state persisted. Viewed the recovery confirmation and cancelled without replacing the active life.
+- Inspected the Budget at a 390 × 844 viewport, including numeric inputs, static costings and the fixed month/decision dock. Inspected the parliamentary proposal catalogue and role restrictions. National table overflow is contained within its scroll area.
+- Final production reload retained the expanded life. The public ledger displayed matching opening debt, borrowing, closing debt and creditor claims. No captured browser warnings/errors; the LAN endpoint returned HTTP 200 from the host.
+
+The checks establish implementation consistency, not empirical UK calibration. Current headline rules/indicators have official source links; national starting totals and all behavioural coefficients are stated assumptions. No physical phone or complete browser playthrough to Prime Minister was tested in this milestone. Full banking, devolution, actual MPs/parties, benefit entitlements and detailed national accounts remain incomplete. See NATIONAL-MODEL.md.
+
 ## Integrated UK political career
 
 Completed 21 September 2026, after the historical milestones below.

@@ -1,5 +1,13 @@
 # Change log
 
+## 2026-09-21 — National economics, taxation and parliamentary proposals
+
+Added the United Kingdom view within the existing political career: a monthly briefing, 17-setting Budget desk, marginal tax/NI distribution comparisons, sector indicators, public accounts and dated research sources. The national engine models output, prices, unemployment, confidence, sterling, independent rate decisions, yields, gradual debt repricing and a six-month investment pipeline. Fiscal flows reconcile to net borrowing and creditor claims.
+
+Replaced the integrated career's repeating town shocks with national conditions and uncertain, state-weighted incidents. Connected national prices/taxes, benefits, pensions, grants, housing and external demand to life/constituency consequences. Added 18 original national bill proposals, money-resolution support, counted Commons divisions, negotiation, compromise, withdrawal and uncertain delivery delays. Budget enactment needs government authority and parliamentary stages. The three earlier constituency laws remain compatible.
+
+Older career saves gain national state prospectively, with a raw pre-expansion recovery copy and strict validation. Source tag `before-national-economy` preserves the earlier implementation. See NATIONAL-MODEL.md for verified starting rules, assumptions and incomplete UK institutions. This is a first national model, not comprehensive empirical calibration.
+
 ## 2026-09-21 — UK politics inside the character's life
 
 Removed the separate town screen and mode switcher. Career now contains UK politics: parties, intellectual influences, monthly dilemmas, organising, family trade-offs, remembered commitments, campaign funds, local and parliamentary elections, government roles, staged legislation and constituency economics. Added three enacted-law effects with balanced monetary transfers. Constituency time now continues beyond 24 months.

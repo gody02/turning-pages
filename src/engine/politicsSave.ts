@@ -2,6 +2,7 @@ import type { PoliticalCareer } from './politicsTypes';
 import { parties, doctrines, politicalEvents, bills, roleNames } from '../data/politics';
 import { townPolicies } from '../data/town';
 import { validTown } from './townSave';
+import { validNational } from './nationalSave';
 const rec=(v:unknown):v is Record<string,unknown>=>!!v&&typeof v==='object'&&!Array.isArray(v);
 const n=(v:unknown,min=0,max=1e12):v is number=>typeof v==='number'&&Number.isFinite(v)&&v>=min&&v<=max;
 const int=(v:unknown,min=0,max=1200)=>n(v,min,max)&&Number.isInteger(v);
@@ -19,6 +20,7 @@ export function validPolitics(v:unknown,age:number,country:string):v is Politica
   if(bill!==null&&(!rec(bill)||!bills.some(b=>b.id===bill.id)||!int(bill.stage,0,3)||!int(bill.lastAdvanced,0,v.months as number)))return false;
   if(!Array.isArray(v.laws)||new Set(v.laws).size!==v.laws.length||!v.laws.every(id=>bills.some(b=>b.id===id)))return false;
   if(!validTown(v.economy,1200)||v.economy.month!==v.months)return false;
+  if(v.national!==undefined&&!validNational(v.national,v.months as number))return false;
   if(!Array.isArray(v.log)||v.log.length>20000||!v.log.every(l=>rec(l)&&int(l.month,0,v.months as number)&&typeof l.text==='string'&&l.text.length<3000))return false;
   if(!Array.isArray(v.elections)||v.elections.length>100||!v.elections.every(e=>rec(e)&&int(e.month,1,v.months as number)&&['council','parliament'].includes(e.kind as string)&&typeof e.won==='boolean'&&int(e.seats,0,650)&&Array.isArray(e.votes)&&e.votes.length===4&&e.votes.every(x=>int(x,0,20000))&&e.votes.reduce((a:number,b:number)=>a+b,0)===20000))return false;
   return true;

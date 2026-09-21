@@ -36,7 +36,7 @@ UK politics lives in **Career → UK politics**, inside your existing character'
 
 Political life advances monthly. Resolve dilemmas, spend up to three shared political/personal activities, and live the next month. Twelve months bring one birthday and ordinary life events. Family, outside employment, education, personal living costs and health continue. Organising starts unpaid, so keeping a day job matters. Campaign donations and public budgets are separate from your money.
 
-Explore six areas within Career: **Your work**, **Constituency**, **Elections**, **Parliament**, **Ideas** and **Record**. Build a branch, seek selection, contest elections, serve in office and sponsor legislation. Election defeat continues your story. Constituents' wages, rents, jobs and energy costs affect hardship and support. Programme motions need collective approval; laws take effect after passage. Read the causal reports and accounts to see where money went.
+Explore seven areas within Career: **Your work**, **Constituency**, **United Kingdom**, **Elections**, **Parliament**, **Ideas** and **Record**. Build a branch, seek selection, contest elections, serve in office and sponsor legislation. Election defeat continues your story. Constituents' wages, rents, jobs and energy costs affect hardship and support. Programme motions need collective approval; laws take effect after passage. Read the causal reports and accounts to see where money went.
 
 **Finances** exports/restores the complete life, including politics, and can recover the one-time pre-career snapshot. An earlier independent town save stays separate and exportable; it is never silently assigned to your character. `/#career` and legacy `/#town` both open the unified Career tab. Saves are local to each browser and origin. Source checkpoints do not back up browser storage.
 
@@ -58,7 +58,11 @@ src/
   data/events.ts         # original yearly events
   data/world.ts          # country presets and outside careers
   data/politics.ts       # parties, influences, dilemmas, activities, bills
-  data/town.ts           # household, employer, policy and shock data
+  data/town.ts           # household, employer, policy and legacy shock data
+  data/national.ts       # dated sources, Budget settings, national proposals
+  engine/national.ts     # fiscal flows, macroeconomy and legislative actions
+  engine/nationalSave.ts # national clock, fiscal and state validation
+  ui/NationalEconomy.tsx # Budget, briefing, sectors, accounts and legislation
   engine/types.ts        # life contracts; optional nested political career
   engine/game.ts         # pure life transitions and annual milestones
   engine/politics.ts     # monthly career, elections, bills, shared finances
@@ -75,6 +79,14 @@ src/
   ui/*.css              # responsive original journal-inspired design
   main.tsx              # React entry point
 ```
+
+## National economics and legislation
+
+Inside **Career → United Kingdom**, inspect the monthly briefing, change a working Budget comparison, inspect representative household effects and trace public accounts. The **Budget desk** exposes 17 tax and spending settings. Working comparisons do not spend money and are not saved; submitted packages are saved. As Prime Minister, submit a package and advance it in **Parliament**. Existing rates continue until passage.
+
+Parliament also contains 18 national proposal cards across housing, energy, labour, services, industry, transport, trade and justice. Bills need votes and spending consent. Negotiate, offer a half-scale compromise, withdraw or risk defeat. Approved programmes spend money before their delayed benefits arrive. Your age, family, personal finances and constituency continue on the same clock.
+
+The model starts from selected verified September 2026-era indicators and headline HMRC rules. Output/debt totals, spending envelopes, macro behaviour and legislation are explicitly scenario assumptions. Independent monetary decisions and uncertain, condition-weighted events replace a repeating shock schedule. This is an expanded simulation, not a complete calibrated UK economy. Read **NATIONAL-MODEL.md** for precise mechanisms, sources and limitations.
 
 ## Adding events
 
@@ -100,4 +112,5 @@ For richer content, extend `LifeEvent` with typed predicates, weights and prereq
 
 ## MVP boundaries
 
-One active local life; three countries, four outside careers and an integrated UK political career. Its national seat result is an aggregate model; appointments and bill stages are compressed. The 800-household economy covers cash, employment and costs, with repeated fictional shocks. It does not yet model banking, full national production, devolved institutions, ownership transitions, NEP or revolutions. Philosophical dilemmas are a starting layer, not exhaustive dialogues. Family members keep fixed roles and do not independently age or die. No backend, cloud saves, property purchases, crime, romance, businesses or generations yet. The journal shows the latest 50 entries and saves full history. This is a local coding project, not a publicly hosted service.
+One active local life; three countries, four outside careers and an integrated UK political career. Its national seat result is an aggregate model; appointments and bill stages are compressed. The 800-household economy covers cash, employment and costs, with condition-driven national pressures and uncertain incidents. It does not yet model banking, full national production, devolved institutions, ownership transitions, NEP or revolutions. Philosophical dilemmas are a starting layer, not exhaustive dialogues. Family members keep fixed roles and do not independently age or die. No backend, cloud saves, property purchases, crime, romance, businesses or generations yet. The journal shows the latest 50 entries and saves full history. This is a local coding project, not a publicly hosted service.
+

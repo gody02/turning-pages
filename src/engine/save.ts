@@ -4,6 +4,7 @@ import { events } from '../data/events';
 import { validPolitics } from './politicsSave';
 export const SAVE_KEY='turning-pages:v1';
 export const PRE_POLITICS_SAVE_KEY='turning-pages:before-career-integration';
+export const PRE_NATIONAL_SAVE_KEY='turning-pages:before-national-economy';
 export interface StorageLike { getItem(key:string):string|null; setItem(key:string,value:string):void }
 const record=(x:unknown):x is Record<string,unknown>=>typeof x==='object' && x!==null;
 const num=(x:unknown)=>typeof x==='number' && Number.isFinite(x);
@@ -31,6 +32,9 @@ export function saveGame(storage: StorageLike, game: Game): string|null {
     if(game.politics&&!storage.getItem(PRE_POLITICS_SAVE_KEY)){
       const raw=storage.getItem(SAVE_KEY);
       if(raw){let previous:unknown;try{previous=JSON.parse(raw);}catch{previous=null;}if(isGame(previous)&&!previous.politics)storage.setItem(PRE_POLITICS_SAVE_KEY,raw);}
+    }
+    if(game.politics?.national&&!storage.getItem(PRE_NATIONAL_SAVE_KEY)){
+      const raw=storage.getItem(SAVE_KEY);if(raw){let previous:unknown;try{previous=JSON.parse(raw);}catch{previous=null;}if(isGame(previous)&&previous.politics&&!previous.politics.national)storage.setItem(PRE_NATIONAL_SAVE_KEY,raw);}
     }
     storage.setItem(SAVE_KEY,JSON.stringify(game));return null;
   }catch{return 'Saving is unavailable. Export a life backup before closing this tab.';}

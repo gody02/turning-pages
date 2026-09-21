@@ -41,14 +41,16 @@ export function policyReason(t:Town,id:PolicyId,continuous=false):string|null{
   if(id==='retrofit' && t.insulation+t.projects.length*.06>=.299)return 'All five insulation projects are complete or contracted.';
   return null;
 }
-export type EconomyRules={continuous?:boolean;warmHomes?:boolean;profitShare?:boolean;propertyLevy?:boolean};
+export type EconomyRules={continuous?:boolean;warmHomes?:boolean;profitShare?:boolean;propertyLevy?:boolean;national?:{energy:number;orders:number;prices:number;rentIndex:number;wageIndex:number;grant:number;pensions:number;welfare:number;wageTaxes:number[]}};
 export function advanceTown(state:Town,id:PolicyId,rules:EconomyRules={}):Town{
   if(policyReason(state,id,!!rules.continuous))return state;const t=structuredClone(state);t.month++;
   t.households.forEach(h=>{h.income=0;h.outgoings=0;h.unmet=0;});
   const notes:string[]=[];
   const cycleMonth=rules.continuous?(t.month-1)%24+1:t.month;
-  const shock=[...townShocks].reverse().find(s=>s.month<=cycleMonth)!;t.energy=round(shock.energy*(.98+random(t)*.04));t.orders=round(shock.orders*(.98+random(t)*.04));
-  if(shock.month===cycleMonth)notes.push(`${shock.title}: ${cycleMonth===1&&rules.continuous?'A new economic cycle begins. The constituency carries its existing savings, jobs and investments forward.':shock.body}`);
+  const shock=[...townShocks].reverse().find(s=>s.month<=cycleMonth)!;
+  t.energy=round(clamp((rules.national?.energy??shock.energy)*(.98+random(t)*.04),.5,3));t.orders=round(clamp((rules.national?.orders??shock.orders)*(.98+random(t)*.04),.1,2));
+  if(rules.national)notes.push('National energy, sterling, orders and fiscal policy now feed into the constituency. There is no repeating local shock timetable.');
+  else if(shock.month===cycleMonth)notes.push(`${shock.title}: ${cycleMonth===1&&rules.continuous?'A new economic cycle begins. The constituency carries its existing savings, jobs and investments forward.':shock.body}`);
   if(rules.propertyLevy){const levy=transfer(t,'owners','fund',t.households.reduce((sum,h)=>sum+h.rent*h.count,0)*.05,'Property income levy');notes.push(`The property levy transferred £${Math.round(levy).toLocaleString('en-GB')} from owners to the local programme.`);}
   const completed=t.projects.filter(p=>p.due<=t.month).length;
   t.insulation=round(Math.min(.3,t.insulation+completed*.06));t.projects=t.projects.filter(p=>p.due>t.month);
@@ -63,38 +65,41 @@ export function advanceTown(state:Town,id:PolicyId,rules:EconomyRules={}):Town{
   if(id==='business'){t.employers.forEach(f=>transfer(t,'fund',f.id,20000,'Employer bridge grant'));notes.push('Each employer received £20,000 before setting payroll. The ledger shows whether cash supported wages or remained in reserves.');}
   if(id==='retrofit'){transfer(t,'fund','outside',60000,'Insulation contract');t.projects.push({due:t.month+3});notes.push(`Insulation was commissioned. Energy savings start in month ${t.month+3}${t.month+3>24?', beyond this experiment’s horizon':''}.`);}
   if(id==='hold')notes.push('No new discretionary spending was committed. The fund retained its policy reserve.');
-  transfer(t,'outside','fund',110000,'Programme grant');const services=transfer(t,'fund','outside',80000,'Baseline service provision');
+  transfer(t,'outside','fund',110000*(rules.national?.grant??1),'Programme grant');const services=transfer(t,'fund','outside',80000,'Baseline service provision');
   if(rules.warmHomes)transfer(t,'outside','fund',20000,'Warm Homes statutory grant');
   if(services<80000)notes.push('The programme could not fully fund baseline services.');
   for(const f of t.employers){
+    const wage=f.wage*(rules.national?.wageIndex??1);
     const before=f.cash;const lastMonth=t.ledger.filter(x=>x.month===t.month-1&&x.to===f.id&&(x.reason==='Local shopping'||x.reason==='External orders')).reduce((s,x)=>s+x.amount,0);
     const external=transfer(t,'outside',f.id,f.orders*t.orders,'External orders');
     const energy=f.energy*t.energy;const inputs=f.inputs;
     // Hiring uses prior demand and current external contracts; payroll cannot exceed available cash.
     const expectedLocal=f.id==='retail'?(t.month===1?480000:Math.max(0,lastMonth-state.employers.find(e=>e.id===f.id)!.revenue)):0;
-    const sustainable=Math.floor(Math.max(0,external+expectedLocal-inputs-energy)/f.wage);
-    const reserveBuffer=Math.max(0,f.cash-2*(f.capacity*f.wage+inputs+energy));
-    const target=clamp(sustainable+Math.floor(reserveBuffer/(6*f.wage)),0,f.capacity);
+    const sustainable=Math.floor(Math.max(0,external+expectedLocal-inputs-energy)/wage);
+    const reserveBuffer=Math.max(0,f.cash-2*(f.capacity*wage+inputs+energy));
+    const target=clamp(sustainable+Math.floor(reserveBuffer/(6*wage)),0,f.capacity);
     const boundedJobs=clamp(target,f.jobs-12,f.jobs+8);
-    f.jobs=Math.min(Math.floor(boundedJobs),Math.floor(Math.max(0,f.cash-inputs-energy)/f.wage));
-    f.jobs=Math.max(0,f.jobs);transfer(t,f.id,f.group,f.jobs*f.wage,'Wages');
+    f.jobs=Math.min(Math.floor(boundedJobs),Math.floor(Math.max(0,f.cash-inputs-energy)/wage));
+    f.jobs=Math.max(0,f.jobs);transfer(t,f.id,f.group,f.jobs*wage,'Wages');
+    const tax=(rules.national?.wageTaxes[t.employers.indexOf(f)]??0)*f.jobs;
+    if(tax>0)transfer(t,f.group,'outside',tax,'National tax change');else if(tax<0)transfer(t,'outside',f.group,-tax,'National tax reduction');
     transfer(t,f.id,'outside',inputs,'Imported business inputs');transfer(t,f.id,'outside',energy,'Business energy');
     f.revenue=external;f.profit=round(f.cash-before);
     if(rules.profitShare){const dividend=transfer(t,f.id,f.group,Math.max(0,state.employers.find(e=>e.id===f.id)!.profit)*.2,'Worker profit share');f.profit=round(f.profit-dividend);}
   }
   for(const h of t.households){
-    if(h.outsideIncome)transfer(t,'outside',h.id,h.outsideIncome*h.count,'Pensions and outside income');
-    const f=t.employers.find(f=>f.group===h.id);if(f)transfer(t,'outside',h.id,(f.capacity-f.jobs)*900,'Unemployment support');
+    if(h.outsideIncome)transfer(t,'outside',h.id,h.outsideIncome*h.count*(h.id==='fixed'?(rules.national?.pensions??1):1),'Pensions and outside income');
+    const f=t.employers.find(f=>f.group===h.id);if(f)transfer(t,'outside',h.id,(f.capacity-f.jobs)*900*(rules.national?.welfare??1),'Unemployment support');
   }
   // Owners receive all rents before consumption; this avoids household iteration-order effects.
   for(const h of t.households.filter(h=>h.rent>0)){
-    const due=h.rent*h.count;const paid=transfer(t,h.id,'owners',due,'Rent');h.unmet+=due-paid;
+    const due=h.rent*h.count*(rules.national?.rentIndex??1);const paid=transfer(t,h.id,'owners',due,'Rent');h.unmet+=due-paid;
   }
   for(const h of t.households){
     const energy=h.energy*t.energy*(h.id==='owners'?1:1-t.insulation)*h.count;
     h.unmet+=energy-transfer(t,h.id,'outside',energy,'Household energy');
-    const food=360*h.count;h.unmet+=food-transfer(t,h.id,'retail',food,'Local shopping');
-    const other=210*h.count;h.unmet+=other-transfer(t,h.id,'outside',other,'Other essentials');
+    const food=360*h.count*(rules.national?.prices??1);h.unmet+=food-transfer(t,h.id,'retail',food,'Local shopping');
+    const other=210*h.count*(rules.national?.prices??1);h.unmet+=other-transfer(t,h.id,'outside',other,'Other essentials');
     const desired=(h.id==='owners'?800:260)*h.count;
     transfer(t,h.id,'retail',Math.min(desired,Math.max(0,h.cash-h.count*600)*.2),'Local shopping');
     h.unmet=round(Math.max(0,h.unmet));const pressure=h.unmet/h.count;const buffer=h.cash/h.count;
@@ -119,3 +124,4 @@ export function townVoice(t:Town,h:Household){
   if(t.energy>1.3)return '“We paid the bills. That doesn’t mean we aren’t worried about next month.”';
   return '“This month is manageable. I want to know whether we can count on that lasting.”';
 }
+
