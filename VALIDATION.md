@@ -1,5 +1,23 @@
 # MVP validation
 
+## Banking, devolution, caucuses and conditional forecasts
+
+Completed 21 September 2026.
+
+- Strict TypeScript check and production build passed. **86 tests passed** across five files, including 21 new institutional/forecast tests. The pre-existing 65 tests still pass with the expanded catalogue.
+- Five additional ten-year bank histories include high-rate, unemployment and confidence stress, with monthly balance-sheet and full national-state validation. The broader suite also retains twelve ten-year macro histories and a twenty-year programme-delivery run, now including all 72 templates.
+- Verified credit creation/repayment logs, capital constraints, collateralised liquidity liabilities, creditor conversion, public resolution costs and mortgage-payment arithmetic. Tested scaled banking-policy effects on credit/losses.
+- Verified opening block grants do not double-count spending, draft consequentials match the public ledger helper, autonomous devolved allocation changes, territorial justice differences, consent gating, override relationship costs and duplicate-consent refusal.
+- Tested unique catalogue IDs, old undesigned law costs, immutable designed proposals, scale amendments, accelerated delays and sunset funding. Confirmed 650-seat reallocation, counted divisions, whip grievances, kept/broken commitments, policy-specific faction concerns and feedback to political support/backing.
+- Forecast tests establish source immutability, separate/reproducible random sequences, ordered sample bands, differing energy/credit outcomes and invalid-budget rejection. The UI distinguishes conditional sample percentiles from real-world probabilities.
+- Exact raw pre-institution recovery bytes are preserved; a failed recovery write prevents replacing the primary save. Corrupt bank books and malformed factions/consents are rejected. Original fixed legacy fixture remains untouched.
+- Browser checks used the separate 127.0.0.1 preview origin, leaving the user's LAN-origin life untouched. Opened Banking, Devolution, Factions and Forecasts, checked role/choice locks, searched the bill catalogue and changed scale/delivery/territory. Clinical Workforce Training at 150%, accelerated, with devolved agreement correctly displayed £15.0bn/year and 16+ months.
+- Ran baseline, credit-stress and energy scenarios through the browser; inspected the forecast chart/measure selector and tables. Phone viewport 390 × 844 and desktop 1440 × 1000 showed no document-width overflow; tables scroll within their own containers. Temporary viewport override was reset.
+- Advanced the older test career from age 18 + two months to + three months, reloaded and confirmed £4,997 and the institutional state persisted. Opened the pre-institutions recovery confirmation and cancelled, preserving the current life. Resolved the next ordinary political dilemma successfully.
+- No captured browser warnings/errors. Production preview serves the updated build at the existing port 4173.
+
+Limitations: no physical handset or full browser playthrough to government was tested. Parliamentary/consent transitions were exercised at engine level; browser testing covered the organiser's analysis, restricted controls, monthly save and recovery UI. Real UK financial/constitutional accuracy is bounded by the explicit aggregate assumptions in INSTITUTIONS-MODEL.md. These tests establish implementation consistency, not empirical calibration or future prediction.
+
 ## National economics and parliamentary proposals
 
 Completed 21 September 2026.

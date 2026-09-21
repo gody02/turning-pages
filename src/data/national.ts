@@ -1,3 +1,4 @@
+import { extraLaws } from './institutions';
 // Dated rules are factual; spending envelopes and behavioural coefficients are game assumptions.
 export const nationalSources=[
  {name:'ONS · August 2026 CPI: 3.1%',url:'https://www.ons.gov.uk/economy/inflationandpriceindices/bulletins/consumerpriceinflation/august2026'},
@@ -43,6 +44,7 @@ export type LawEffect={productivity?:number;energy?:number;housing?:number;right
 export type NationalLaw={id:string;name:string;area:string;summary:string;tradeoff:string;cost:number;delay:number;controversy:number;effect:LawEffect};
 // Costs are additional annual £bn while active. These are original policy proposals, not existing Acts.
 export const nationalLaws:NationalLaw[]=[
+ ...extraLaws,
  {id:'grid',name:'Grid Connections and Storage Bill',area:'Energy',summary:'Expand grid connections and storage capacity.',tradeoff:'Capital spending now; construction and imported equipment delay cheaper energy.',cost:12,delay:12,controversy:25,effect:{energy:-.10,productivity:.3}},
  {id:'insulation',name:'National Home Retrofit Bill',area:'Housing',summary:'Fund a multi-year insulation programme.',tradeoff:'Installer bottlenecks and an ongoing public funding commitment.',cost:15,delay:9,controversy:20,effect:{energy:-.07,housing:4}},
  {id:'homes',name:'Social Housebuilding Bill',area:'Housing',summary:'Commission new social housing and infrastructure.',tradeoff:'Land, skills and construction demand compete with private building.',cost:20,delay:18,controversy:35,effect:{housing:10,productivity:.2}},

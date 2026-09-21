@@ -1,3 +1,4 @@
+import { ensureInstitutions,rebalanceFactions } from './institutions';
 import type { Game } from './types';
 import type { PoliticalCareer } from './politicsTypes';
 import { bills, billStages, doctrines, parties, politicalEvents, politicalTasks, roleNames, rolePay, type BillId, type DoctrineId, type PartyId, type PoliticalEffects, type PoliticalRole } from '../data/politics';
@@ -161,6 +162,7 @@ export function advancePoliticalMonth(state:Game):Game{
     const proposed:PolicyId=hardship>5000?'relief':p.months%6===0?'retrofit':'hold';
     policy=policyReason(p.economy,proposed,true)?'hold':proposed;
   }
+  rebalanceFactions(ensureInstitutions(national,p.seats,p.party),p.seats,p.party);
   p.national=advanceNational(national,p.inGovernment&&p.role==='premier');
   const nation=p.national;
   const wageTaxes=p.economy.employers.map(f=>{const gross=f.wage*12/.8;return (incomeTax(gross,nation.budget)+employeeNI(gross,nation.budget)-incomeTax(gross,baselineBudget)-employeeNI(gross,baselineBudget))/12;});
@@ -168,6 +170,9 @@ export function advancePoliticalMonth(state:Game):Game{
   // National performance affects incumbents more strongly; opposition does not get blamed for every budget.
   const economyMood=Math.max(-1,Math.min(1,(nation.growth-1.2)*.15-(nation.unemployment-4.9)*.1-(nation.inflation-2)*.04));
   affect(g,{support:p.inGovernment?economyMood:-economyMood*.25});
+  const institutions=nation.institutions!,unionPressure=institutions.regions.reduce((sum,r)=>sum+Math.max(0,r.pressure-50),0)/3;
+  const partyGrievance=institutions.factions.filter(f=>f.side==='own').reduce((sum,f)=>sum+f.grievance*f.seats,0)/Math.max(1,p.seats);
+  affect(g,{support:p.inGovernment?-unionPressure*.006:unionPressure*.0015,caucus:-partyGrievance*.005});
   const report=p.economy.history.at(-1)!;
   const previous=state.politics.economy.history.at(-1)?.wellbeing??68.75;
   affect(g,{support:(report.wellbeing-previous)*.3-(report.unmet>0?.5:0),reputation:p.integrity<35?-1:0,happiness:g.money<0?-1:0});
@@ -175,6 +180,7 @@ export function advancePoliticalMonth(state:Game):Game{
   const family=g.relationships.filter(r=>!r.id.startsWith('political-'));family.forEach(r=>r.bond=clamp(r.bond-.25));
   if(p.months===6||(p.months>6&&(p.months-6)%48===0))election(g,'council');
   if(p.months===24||(p.months>24&&(p.months-24)%60===0))election(g,'parliament');
+  if(p.national?.institutions)rebalanceFactions(p.national.institutions,p.seats,p.party);
   if(p.months%12===0){g.lastIncome=p.yearIncome;g.lastExpenses=p.yearExpenses;g=politicalBirthday(g);p=g.politics!;p.yearIncome=0;p.yearExpenses=0;record(g,`You turn ${g.age}. Twelve political months have passed; your income and living costs have already been settled.`);}
   g.actions=3;
   if(g.alive){let pool=politicalEvents.filter(e=>e.id!=='purpose'&&e.minimum<=roleRank(p.role)&&!p.seen.slice(-6).includes(e.id));if(!pool.length)pool=politicalEvents.filter(e=>e.id!=='purpose'&&e.minimum<=roleRank(p.role));const weights=pool.map(e=>e.id==='wages'?1+Math.max(0,nation.unemployment-4.9):e.id==='rent'?1+Math.max(0,nation.inflation-2):e.id==='budget'?1+Math.max(0,nation.fiscal.balance)/20:e.id==='fatigue'?1+(100-g.stats.health)/30:1);let draw=random(g)*weights.reduce((a,b)=>a+b,0),i=0;while(i<pool.length-1&&draw>weights[i])draw-=weights[i++];const event=pool[i];p.pending=event.id;p.seen.push(event.id);}
@@ -187,6 +193,3 @@ export function adultStart(g:Game):Game{
   const next=structuredClone(g);next.age=18;next.education='secondary';next.money=3000;
   next.journal=[{age:18,text:`Your adult story begins after secondary school, with 3,000 ${countryOf(g).currency} to find your feet. Your family and future are still part of this life.`,kind:'milestone'}];return next;
 }
-
-
-

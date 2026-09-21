@@ -1,7 +1,7 @@
 # Working on Turning Pages
 
 - Read `PROJECT-STATE.md` for current scope, compatibility requirements and next milestone. Read `POLITICS-VISION.md` for the long-term design; do not confuse planned systems with implemented ones.
-- Read `NATIONAL-MODEL.md` before changing national economics. Preserve dated source provenance, separate verified UK rules from scenario assumptions, and keep national £bn separate from local/personal pounds. Do not sum the constituency satellite ledger into national totals.
+- Read `NATIONAL-MODEL.md` and `INSTITUTIONS-MODEL.md` before changing national economics or institutions. Preserve bank balance identities and prospective institution attachment; forecasts must never consume the live timeline seed. Preserve dated source provenance, separate verified UK rules from scenario assumptions, and keep national £bn separate from local/personal pounds. Do not sum the constituency satellite ledger into national totals.
 
 - Keep all simulation rules in `src/engine` and content in `src/data`. React components render state and dispatch transitions.
 - Preserve deterministic seeded randomness. Never use `Math.random()` in engine transitions.

@@ -61,6 +61,13 @@ src/
   data/town.ts           # household, employer, policy and legacy shock data
   data/national.ts       # dated sources, Budget settings, national proposals
   engine/national.ts     # fiscal flows, macroeconomy and legislative actions
+  data/institutions.ts   # additional Acts, institutional sources and stress scenarios
+  engine/institutions.ts # bank books, devolved budgets and faction divisions
+  engine/institutionActions.ts # negotiations, commitments and scrutiny
+  engine/institutionsSave.ts # bank, region and caucus validation
+  engine/forecast.ts     # isolated conditional simulations
+  ui/InstitutionsPanel.tsx # Banking, Devolution, Factions and Forecasts
+  ui/LegislationCatalogue.tsx # searchable configurable bill templates
   engine/nationalSave.ts # national clock, fiscal and state validation
   ui/NationalEconomy.tsx # Budget, briefing, sectors, accounts and legislation
   engine/types.ts        # life contracts; optional nested political career
@@ -84,9 +91,11 @@ src/
 
 Inside **Career → United Kingdom**, inspect the monthly briefing, change a working Budget comparison, inspect representative household effects and trace public accounts. The **Budget desk** exposes 17 tax and spending settings. Working comparisons do not spend money and are not saved; submitted packages are saved. As Prime Minister, submit a package and advance it in **Parliament**. Existing rates continue until passage.
 
-Parliament also contains 18 national proposal cards across housing, energy, labour, services, industry, transport, trade and justice. Bills need votes and spending consent. Negotiate, offer a half-scale compromise, withdraw or risk defeat. Approved programmes spend money before their delayed benefits arrive. Your age, family, personal finances and constituency continue on the same clock.
+Parliament contains 72 searchable national policy templates across 16 areas. Configure scale, territorial approach, delivery speed and a five-year sunset before introducing a bill. Bills need votes and spending consent. Negotiate, offer a half-scale compromise, withdraw or risk defeat. Approved programmes spend money before their delayed benefits arrive. Your age, family, personal finances and constituency continue on the same clock.
 
-The model starts from selected verified September 2026-era indicators and headline HMRC rules. Output/debt totals, spending envelopes, macro behaviour and legislation are explicitly scenario assumptions. Independent monetary decisions and uncertain, condition-weighted events replace a repeating shock schedule. This is an expanded simulation, not a complete calibrated UK economy. Read **NATIONAL-MODEL.md** for precise mechanisms, sources and limitations.
+The model starts from selected verified September 2026-era indicators and headline HMRC rules. Output/debt totals, spending envelopes, macro behaviour and legislation are explicitly scenario assumptions. Independent monetary decisions and uncertain, condition-weighted events replace a repeating shock schedule. This is an expanded simulation, not a complete calibrated UK economy. Read **NATIONAL-MODEL.md** and **INSTITUTIONS-MODEL.md** for mechanisms, sources and limitations.
+
+New desks in **Career → United Kingdom**: **Banking** shows lenders’ balance sheets, credit, mortgage repricing and resolution; **Devolution** shows separate allocations and consent negotiations; **Factions** shows ideological caucuses, whip pressure and remembered commitments; **Forecasts** compares 24 hypothetical paths against energy or credit shocks. Its ranges are model outputs, not official forecasts. Only MPs or higher offices can take institutional actions; drafting and analysis remain available earlier. **Finances → Recover before institutions** restores the one-time pre-expansion snapshot after confirmation.
 
 ## Adding events
 
@@ -112,5 +121,4 @@ For richer content, extend `LifeEvent` with typed predicates, weights and prereq
 
 ## MVP boundaries
 
-One active local life; three countries, four outside careers and an integrated UK political career. Its national seat result is an aggregate model; appointments and bill stages are compressed. The 800-household economy covers cash, employment and costs, with condition-driven national pressures and uncertain incidents. It does not yet model banking, full national production, devolved institutions, ownership transitions, NEP or revolutions. Philosophical dilemmas are a starting layer, not exhaustive dialogues. Family members keep fixed roles and do not independently age or die. No backend, cloud saves, property purchases, crime, romance, businesses or generations yet. The journal shows the latest 50 entries and saves full history. This is a local coding project, not a publicly hosted service.
-
+One active local life; three countries, four outside careers and an integrated UK political career. Its national seat result is an aggregate model; appointments and bill stages are compressed. The 800-household economy covers cash, employment and costs, with condition-driven national pressures and uncertain incidents. Banking, national production, devolved administrations and factions now have aggregate models. Individual MPs, full banking regulation, regional fiscal frameworks, ownership transitions, NEP and revolutions remain incomplete or planned. Philosophical dilemmas are a starting layer, not exhaustive dialogues. Family members keep fixed roles and do not independently age or die. No backend, cloud saves, property purchases, crime, romance, businesses or generations yet. The journal shows the latest 50 entries and saves full history. This is a local coding project, not a publicly hosted service.

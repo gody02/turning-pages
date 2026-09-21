@@ -25,7 +25,7 @@ Direct sources are in `src/data/national.ts` and the in-game Sources & assumptio
 - Fiscal identity each month: borrowing = spending − receipts; closing net debt = opening net debt + borrowing. Matching net bondholder claims move by the same amount. If repeated surpluses drive net debt below zero, this represents a net public asset position; it does not create negative interest expense.
 - Receipts: marginal Income Tax and NI on four representative earnings groups, employer NI, taxable-consumption VAT proxy, corporate-profit tax proxy, and explicit other receipts.
 - Spending: nine Budget envelopes, other primary spending, enacted national programme costs and debt interest. Unemployment increases welfare outlays automatically.
-- The model tracks public cash flows and financing claims, **not** all private financial stocks, bank money creation, foreign balance sheets, gross debt maturities, asset valuation or ONS stock-flow adjustments.
+- The model tracks public cash flows and financing claims, **not** all private financial stocks, foreign balance sheets, gross debt maturities, asset valuation or ONS stock-flow adjustments. The institutional expansion separately models three bank balance sheets and loan/deposit creation; it is not a fully consolidated national account. See INSTITUTIONS-MODEL.md.
 - Constituency accounts are a representative satellite economy. Their transfers reconcile internally but are not added to national totals. Never sum the two ledgers as if they were a consolidated UK national account.
 
 ## Transmission and uncertainty
@@ -46,7 +46,7 @@ Randomness is saved and reproducible so reloads preserve continuity. A determini
 
 - Budget desk: 17 settings; anyone can compare a working draft. Only the Prime Minister in a governing majority can commission and submit the package in this career. The existing housing minister role is not a Chancellor role. A working comparison is temporary; a submitted proposal is saved.
 - A Budget package freezes its submitted values and passes through debate/Ways and Means, Finance Bill scrutiny, Supply/appropriation, Lords financial scrutiny and assent. In reality taxation and spending authorisation are separate procedures; this UI bundles them explicitly. Do not claim every Finance Bill is a certified Money Bill.
-- 18 original national proposals supplement the 3 earlier constituency laws. They are proposed fictional Acts, not a catalogue of existing UK legislation. Each has annual cost, delivery delay, controversy and institutional effects.
+- 72 configurable original national proposals supplement the 3 earlier constituency laws. They are proposed fictional Acts, not a catalogue of existing UK legislation. Each has annual cost, delivery delay, controversy and institutional effects.
 - MPs need government support for a money resolution on these spending proposals. Negotiation can secure it. Introduction alone spends nothing. Ministerial appointment does not remove parliamentary scrutiny.
 - Commons divisions count 650 model seats, allowing abstention and uncertain rebellion. These are aggregate MPs, not the real current membership/constituency map. Negotiation and half-scale amendments improve support without guaranteeing success.
 - Ordinary bills can be delayed by Lords scrutiny. Financial scrutiny does not invent an unrestricted Lords veto over taxation. Royal Assent is not a random royal veto.
@@ -61,9 +61,12 @@ Before the first national overwrite of an older political save, `turning-pages:b
 
 Validation checks numeric bounds, known proposals, unique enacted laws, frozen budgets, the investment pipeline, exact chronological debt/borrowing identities, sector totals, vote totals and agreement with the career clock. Future required fields need a migration.
 
+## Institutional expansion
+
+Banking, devolved funding/consent, parliamentary caucuses and isolated conditional outlooks are now implemented at an aggregate level. Read INSTITUTIONS-MODEL.md for their accounting, causal channels, research and limitations. A raw pre-institutions recovery snapshot complements the existing pre-national snapshot.
+
 ## Next realism work
 
-Replace approximate national aggregates with versioned ONS/OBR data and sensitivities; add full household types and benefit eligibility, Scottish schedules, devolved budgets/Barnett mechanics, profit and investment accounting, imports/exports/current account, banks and mortgages, actual constituency/party/faction representation, Chancellor and Treasury team roles, amendment clauses, parliamentary calendar, confidence/supply and dissolution. Add repeal/expiry and maintenance of Acts. Full NEP, ownership transitions and revolutionary institutions remain separate future systems inside this career.
+Replace approximate national aggregates with versioned ONS/OBR data and sensitivities; add full household types and benefit eligibility, Scottish schedules and detailed devolved fiscal frameworks, profit and investment accounting, imports/exports/current account, individual bank funding/mortgage cohorts, actual constituency/MP/party representation, Chancellor and Treasury team roles, amendment clauses, parliamentary calendar, confidence/supply and dissolution. Add repeal, renewal, clause amendment and maintenance of Acts beyond the implemented optional five-year funding sunset. Full NEP, ownership transitions and revolutionary institutions remain separate future systems inside this career.
 
 The current tests establish playable consequences, accounting identities and save reliability. They do not establish empirical UK calibration or political realism.
-

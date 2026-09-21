@@ -16,7 +16,7 @@ Connect people, economics, ownership, institutions, philosophy and historical ch
 - Monthly political choices and three shared activities: canvassing, casework, organising, studying, fundraising, family time and faction negotiation compete with ordinary life activities.
 - Organiser, councillor, MP, minister and Prime Minister roles. Candidate selection, campaign expenses, seeded elections with possible defeat, national party seats, government/opposition and office eligibility.
 - A branch mentor and rival join People. Personal/family choices affect bonds, health, reputation and party confidence. Promises are recorded; an impossible promise can damage trust when hardship contradicts it.
-- Three legacy constituency bills retain their compressed stages. Eighteen new national proposals and an editable tax/supply package use a richer Commons/Lords/assent process, at most one stage per month. Warm Homes grants, worker profit sharing and a property-income levy change subsequent constituency cash flows.
+- Three legacy constituency bills retain their compressed stages. Seventy-two configurable national proposals and an editable tax/supply package use a richer Commons/Lords/assent process, at most one stage per month. Warm Homes grants, worker profit sharing and a property-income levy change subsequent constituency cash flows.
 - Councillors and MPs can sponsor programme motions subject to a board vote and affordability; they cannot directly spend the public fund. Non-player board decisions continue without a sponsored motion.
 - Constituency economy: 800 households in four cohorts, two aggregate employers, programme fund and external clearing account. Wages, rents, energy, demand, unemployment, relief and delayed insulation have recorded counterparties. Household conditions affect support; energy affects personal living costs.
 - Monthly economy continues beyond the former 24-month limit, retaining savings and investment. In integrated careers, national economic conditions now replace the old repeating shock schedule; standalone archive behaviour remains compatible.
@@ -31,17 +31,28 @@ Connect people, economics, ownership, institutions, philosophy and historical ch
 - Verified dated inputs: September 2026 Bank Rate, August CPI, May–July unemployment and headline 2026/27 HMRC tax rules. Other macro/fiscal opening totals and behavioural coefficients are explicitly fictional scenario assumptions, not a fully calibrated UK dataset.
 - Seventeen editable tax/spending settings, representative marginal tax/NI calculations, static costing and distribution comparisons. Drafting is open to all; government submission requires the Prime Minister and Commons scrutiny. Only a submitted proposal is saved.
 - Four sectors, demand, inflation, unemployment, confidence, sterling, independent monetary response, gilt yield and gradually repricing debt interest. Monthly public receipt/outlay ledger and debt/creditor identity. Investment has a six-month delivery queue.
-- Eighteen national legislation proposals with annual costs, uncertain delivery delays, government money-resolution support, negotiation, half-scale compromises, division counts, defeat and withdrawal. Original three constituency laws remain compatible.
+- Seventy-two national legislation proposals with annual costs, uncertain delivery delays, government money-resolution support, negotiation, half-scale compromises, division counts, defeat and withdrawal. Original three constituency laws remain compatible.
 - State-weighted uncertain incidents and fiscal reactions by non-player government replace repeating shocks. Recorded seeds preserve history on reload without scripting the outcome.
 - Local money flows, living costs, support and dilemma weights now respond to national conditions. Housing programmes affect local rent pressure; effects are traceable through monthly reports.
 - Optional national state attaches on the next month/action without replaying the old career. A one-time `turning-pages:before-national-economy` raw recovery copy is available in Finances; a failed snapshot write keeps the old primary save.
 - Source tag `before-national-economy` preserves checkpoint `a65c95f`. Tests cover fiscal identities, different ten-year timelines, rates, votes, delays, old saves and recovery failures. See VALIDATION.md.
 
+## Banking, devolution and parliamentary factions milestone
+
+- Read INSTITUTIONS-MODEL.md before changing the new engine. Optional institutional state attaches prospectively; existing Acts without designs retain their original costs/effects.
+- United Kingdom has Banking, Devolution, Factions and Forecasts desks. Banking tracks three fictional aggregate lenders, loans/deposits, capital, repayment, losses, liquidity borrowing, creditor conversion and public resolution outlays. Credit availability feeds the national growth target.
+- Scotland, Wales and NI have separate simplified grants, own-revenue proxies, autonomous allocations, capacity and political pressure. Draft Budget consequentials use the same calculation as public accounts. Agreement bills require relevant consent; an override damages relations. Justice distinguishes England/Wales from Scotland/NI.
+- Ten fictional ideological caucuses partition 650 seats. Party composition, priorities, trust, grievance, whip levels and twelve-month commitments affect divisions; broken promises and forced dissent leave remembered consequences. Committee and legal scrutiny affect support/delivery risk. Devolved pressure and caucus grievance feed political support/backing.
+- 72 national templates (54 additional), original provisions/tradeoffs, search and 12-card pagination. Funding scale, territory, accelerated delivery and five-year sunsets change costs/effects. Reserved-law scope normalises to UK-wide. Original IDs and three constituency bills preserved. Expired Acts cannot yet be renewed/repealed.
+- Forecasts run 24 isolated seeded paths over 12/24/36 months using the same engine, with energy/easing/credit stress choices and current/draft Budget assumptions. Chart/table report medians and sample percentiles, not calibrated real-world probabilities. They do not mutate the saved clock, seed or policies.
+- Finances can recover the raw pre-institutions snapshot. Snapshot quota failure preserves the old primary save. Source tag before-institutions preserves 37832ea; source control is separate from browser storage.
+- New regression coverage includes stressed bank accounting, statutory resolution costs, grant costings, consent, configurable laws, caucus memory, political feedback, pure forecasts and save recovery. See VALIDATION.md for final results and UI checks.
+
 ## Boundaries and next depth
 
-This is a playable integrated career, not a complete UK economic or constitutional simulation. Mereford is a fictional English constituency. Election dates, pay, votes and economic parameters are game values. National seats use an aggregate formula; minister/PM progression is compressed. Party and philosophical selections currently supply identity/framing, not distinct full institutional simulations.
+This is a playable integrated career, not a complete UK economic or constitutional simulation. Mereford is a fictional English constituency. Election dates, pay, votes and economic parameters are game values. National seats use an aggregate formula; minister/PM progression is compressed. Party selection now changes internal caucus sizes; philosophical influences still supply framing rather than a complete alternative institutional system.
 
-Still deferred: calibrated UK national accounts, banks/credit/monetary policy, production inventories, detailed factions and autonomous NPC lives, full philosophical dialogue trees, ownership transitions, NEP/revolution systems, live news, devolved institutions and law career. See POLITICS-VISION.md. Do not describe these as implemented.
+Still deferred: calibrated UK national accounts, full bank funding/regulation and household mortgages, production inventories, individual MPs and autonomous NPC lives, full philosophical dialogue trees, ownership transitions, NEP/revolution systems, live news, detailed devolved fiscal frameworks and law career. Aggregate banks, credit, monetary responses, factions and devolved administrations are implemented as described above. See POLITICS-VISION.md; keep the deferred systems distinct from completed features.
 
 The national-economy expansion is now implemented inside Career. Read NATIONAL-MODEL.md for its sources, equations, units, assumptions and limits. Next realism work should deepen national accounts, fiscal institutions and party/faction behaviour within this life; do not add a separate game.
 
@@ -69,4 +80,3 @@ node node_modules/vite/bin/vite.js build --configLoader runner
 ```
 
 Pre-politics source ZIP: `../../work/before-politics-20260921.zip`. Local Git checkpoint `2cb1879` and tag `before-career-integration` preserve the earlier life/town implementation. Add tested commits for future milestones. Update this file, CHANGELOG.md and VALIDATION.md when behavior changes.
-

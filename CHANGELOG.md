@@ -1,5 +1,13 @@
 # Change log
 
+## 2026-09-21 — Banks, devolved administrations, factions and stress tests
+
+Added bank balance sheets with lending/deposit creation, repayment, losses, capital-constrained credit, collateralised liquidity and resolution. Added Scotland/Wales/NI funding, autonomous allocations, political pressure and consent negotiations. Added ten parliamentary caucuses with policy-specific concerns, whip pressure, trust, grievances and twelve-month commitments, plus committee evidence and legal review. Institutional consequences feed the wider economy and political career.
+
+Expanded Parliament from 18 to 72 original policy templates with distinct provisions, search/pagination, funding scale, territorial scope, accelerated delivery and optional five-year sunset. Added an isolated 24-path forecast desk with dated research context, explicit shock assumptions, charts and percentile tables. Outcomes are simulations, not official predictions.
+
+Preserved old bill costs and save compatibility, added strict bank/institution validation and a one-time raw recovery snapshot. Updated the mobile interface and persistent model documentation. Source tag before-institutions preserves the previous national milestone. See INSTITUTIONS-MODEL.md and VALIDATION.md for exact boundaries and verification.
+
 ## 2026-09-21 — National economics, taxation and parliamentary proposals
 
 Added the United Kingdom view within the existing political career: a monthly briefing, 17-setting Budget desk, marginal tax/NI distribution comparisons, sector indicators, public accounts and dated research sources. The national engine models output, prices, unemployment, confidence, sterling, independent rate decisions, yields, gradual debt repricing and a six-month investment pipeline. Fiscal flows reconcile to net borrowing and creditor claims.
