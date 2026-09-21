@@ -1,5 +1,13 @@
 # Change log
 
+## 2026-09-21 — UK politics inside the character's life
+
+Removed the separate town screen and mode switcher. Career now contains UK politics: parties, intellectual influences, monthly dilemmas, organising, family trade-offs, remembered commitments, campaign funds, local and parliamentary elections, government roles, staged legislation and constituency economics. Added three enacted-law effects with balanced monetary transfers. Constituency time now continues beyond 24 months.
+
+Connected political months to personal income, living costs, relationships, education, birthdays and death. Added optional adult creation and a phone decision dock. Kept old life saves compatible, added a pre-entry recovery snapshot, unified life backup/restore and retained the old town archive for export. Replaced the duplicate original UI with one life interface. Updated engine, compatibility and ordinary-play progression tests.
+
+Tag `before-career-integration` preserves the previous source milestone. This implements a simplified playable UK career; full national economic calibration, ownership transitions, revolutionary systems and live news remain future work.
+
 ## 2026-09-21 — Mereford, political economy milestone 1
 
 Added an independent 24-month town experiment with household groups, employers, balanced transaction accounts, fictional energy/demand shocks, policy spending, delayed insulation, explanatory reports and philosophical lenses. Added save validation, town backup export/restore and mobile navigation. Retained the original life mode and its save format.

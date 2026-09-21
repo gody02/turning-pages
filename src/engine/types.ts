@@ -1,3 +1,4 @@
+import type { PoliticalCareer } from './politicsTypes';
 export type Stats = { health: number; happiness: number; smarts: number; looks: number };
 export type Effects = Partial<Stats> & { money?: number; bond?: number };
 export type Choice = { text: string; result: string; effects: Effects };
@@ -11,5 +12,6 @@ export type Game = {
   relationships: Relationship[]; education: 'preschool' | 'school' | 'secondary' | 'university' | 'degree';
   studyYears: number; job: string | null; jobYears: number; level: number; retired: boolean;
   earned: number; lastIncome: number; lastExpenses: number; journal: JournalEntry[];
+  politics?: PoliticalCareer;
 };
 export type Action = 'read' | 'exercise' | 'rest' | 'groom' | 'study' | 'university' | 'retire' | `connect:${string}` | `job:${string}`;

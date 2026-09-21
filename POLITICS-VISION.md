@@ -1,6 +1,6 @@
 # Turning Pages: UK political simulation vision
 
-Status: long-term proposed design, recorded from the player's requested direction. The first fictional town-economy milestone is now implemented; the national political and revolutionary systems remain proposed. See PROJECT-STATE.md for the exact implementation boundary. Build incrementally and review each playable milestone with the player.
+Status: long-term design, with an integrated UK political career now playable inside the existing life. Political formation, local elections, parliamentary progression and three laws are implemented in simplified form. The constituency economy shares the character's monthly clock, family and financial consequences. Detailed national economics, NEP/ownership transitions and revolutionary systems remain proposed. See PROJECT-STATE.md for the exact boundary. All future depth belongs inside this career, not a separate mode.
 
 ## Experience
 
@@ -52,7 +52,7 @@ Offer two separate future modes:
 
 Do not silently overwrite a player's alternate history with real-world headlines. Distinguish historical facts, model forecasts and fictional in-game news. Automated updates are a future feature, not an active service.
 
-Political play needs monthly turns, with shorter decision sequences for crises or campaigns. Quiet life periods may still advance in larger intervals. This requires explicit integration with the current annual engine so money, education and ageing are not counted twice.
+Political play now uses monthly turns. Twelve turns produce one birthday and one year of education/work progression; financial settlement happens monthly only. Regression tests cover these boundaries. Shorter crisis sequences and larger quiet-period time steps remain possible future additions that must preserve this single timeline.
 
 ## Explainable consequences
 
@@ -73,6 +73,14 @@ An NEP-inspired scenario could explore whether partial market reopening improves
 For each milestone: research a bounded topic, document sources and assumptions, specify player decisions, implement a small playable scenario, test consequences, ask the player what feels shallow or missing, and revise before expanding.
 
 ## Research starting points
+
+Institutional sources used for the integrated career (reviewed 21 September 2026):
+
+- Council decisions and collective authority: https://www.gov.uk/understand-how-your-council-works/decision-making
+- Parliament and law-making: https://www.parliament.uk/about/how/laws/
+- Bill stages: https://www.parliament.uk/about/how/laws/bills/
+
+The implementation compresses these processes. Its board votes, election schedule, role pay, constituency numbers and progression thresholds are original game assumptions, not claims about real statutory powers or current rates.
 
 - Socrates and the limits of historical attribution: https://plato.stanford.edu/entries/socrates/
 - Socratic questioning: https://plato.stanford.edu/entries/plato-ethics-shorter/

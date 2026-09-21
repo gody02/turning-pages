@@ -32,20 +32,22 @@ Phone saves are stored in that phone's browser and do not automatically sync wit
 
 ## Playing
 
-Use **Your life** for the original annual simulation, or **Town politics** for the new independent Mereford experiment. Town politics has its own save and does not age your character. Open `/#town` to go directly to it.
+UK politics lives in **Career → UK politics**, inside your existing character's story. Entry requires a living UK adult, an available activity and no outstanding yearly choice. Choose a party and an intellectual influence, then enter political life. For a new story that starts immediately, choose **United Kingdom → Adult life · age 18**. Starting a new story replaces the active save; export it first if you want to keep it.
 
-In Mereford, select a monthly policy, advance one month, then inspect People, Employers, Consequences and Accounts. Try 24 months of different priorities: keep reserves, relieve households, support employers, or commission insulation with a three-month delay. The Ideas tab offers philosophical questions and sources. Policy costs, limits and model assumptions are visible in the game.
+Political life advances monthly. Resolve dilemmas, spend up to three shared political/personal activities, and live the next month. Twelve months bring one birthday and ordinary life events. Family, outside employment, education, personal living costs and health continue. Organising starts unpaid, so keeping a day job matters. Campaign donations and public budgets are separate from your money.
 
-Town backups can be exported as JSON and restored on another browser or device. Restoring and restarting ask for confirmation. Damaged saves are left untouched until you explicitly replace them. Browser saves and exported game backups are separate from source-code checkpoints.
+Explore six areas within Career: **Your work**, **Constituency**, **Elections**, **Parliament**, **Ideas** and **Record**. Build a branch, seek selection, contest elections, serve in office and sponsor legislation. Election defeat continues your story. Constituents' wages, rents, jobs and energy costs affect hardship and support. Programme motions need collective approval; laws take effect after passage. Read the causal reports and accounts to see where money went.
 
-See `PROJECT-STATE.md` for current implementation and compatibility requirements, `POLITICS-VISION.md` for the long-term ambition, and `CHANGELOG.md` for completed milestones. Mereford uses fictional values; it is not yet a calibrated UK economy, election simulator or revolutionary game.
+**Finances** exports/restores the complete life, including politics, and can recover the one-time pre-career snapshot. An earlier independent town save stays separate and exportable; it is never silently assigned to your character. `/#career` and legacy `/#town` both open the unified Career tab. Saves are local to each browser and origin. Source checkpoints do not back up browser storage.
+
+See `PROJECT-STATE.md` for implemented scope and compatibility, `POLITICS-VISION.md` for future depth, and `CHANGELOG.md` for milestones. Mereford and its people are fictional; economic parameters, pay and electoral schedules are game assumptions. This is a simplified UK career, not a calibrated national economy or live-news service.
 
 - Choose a name, gender option and one of three countries. Gender does not change opportunities or outcomes. Starting smarts and looks vary by seed.
 - Age up to receive an event. Resolve it before taking activities or advancing again. Consequences are shown before you choose. Paid choices require cash; every event has a free option.
-- Each year has three optional activities. Read, exercise, rest, practise self-care, study or spend time with people. Changing career or enrolling also uses an activity.
+- Outside politics, each year has three optional activities. Inside politics, three activities are shared each month; everyday stat gains are reduced accordingly. Changing career or enrolling also uses an activity.
 - School runs from 6 to 18. At 18, living expenses begin and a graduation gift supplies 3,000 currency units. Work full time or study for a three-year degree. University replaces your job and charges tuition on each of the next three age-ups.
-- Careers pay annually and promote every three years with at least 40 smarts, up to six levels. Salary figures are simplified take-home amounts.
-- Negative balances are allowed. Debt incurs 5% yearly interest and lowers happiness. Countries use fictional economy presets, not real financial forecasts.
+- Ordinary careers pay annually outside politics, monthly inside it, and promote every three years with at least 40 smarts, up to six levels. Salary figures are simplified take-home amounts. MPs leave outside employment; office pay begins the next month.
+- Negative balances are allowed. Debt incurs 5% yearly interest outside politics or 5%/12 on the monthly opening debt inside it, and lowers happiness. Political living costs respond to energy pressures. Countries use fictional economy presets, not real financial forecasts.
 - At 65, retire for a modest pension. Health and late-life mortality eventually end the story, no later than age 100. The summary includes lifetime earnings, balance, education, relationships and choices.
 - State autosaves after changes in localStorage. Manual save/load is on Finances. Saves belong to the browser and exact origin (host and port); starting a new life replaces the single save. Clearing browser data deletes it. Storage errors are shown, and play continues in memory.
 
@@ -53,15 +55,25 @@ See `PROJECT-STATE.md` for current implementation and compatibility requirements
 
 ```text
 src/
-  data/events.ts      # 24 original typed events with age ranges and effects
-  data/world.ts       # country economy presets and career catalogue
-  engine/types.ts     # state, action and event contracts
-  engine/game.ts      # pure state transitions; no UI or browser imports
-  engine/save.ts      # versioned, validated storage boundary
-  engine/game.test.ts # deterministic simulation and persistence tests
-  ui/App.tsx         # creation, dashboard, choices and five life-area views
-  ui/style.css       # responsive original journal-inspired design
-  main.tsx           # React entry point
+  data/events.ts         # original yearly events
+  data/world.ts          # country presets and outside careers
+  data/politics.ts       # parties, influences, dilemmas, activities, bills
+  data/town.ts           # household, employer, policy and shock data
+  engine/types.ts        # life contracts; optional nested political career
+  engine/game.ts         # pure life transitions and annual milestones
+  engine/politics.ts     # monthly career, elections, bills, shared finances
+  engine/politicsTypes.ts # political contracts
+  engine/town.ts         # constituency transactions and behavioural rules
+  engine/save.ts         # validated life storage and recovery snapshot
+  engine/politicsSave.ts # nested career and clock validation
+  engine/townSave.ts     # constituency validation and legacy town archive
+  engine/*.test.ts       # simulation, progression and compatibility tests
+  engine/fixtures/       # fixed pre-politics save fixture
+  ui/GameRoot.tsx        # unified life entry point
+  ui/LifeApp.tsx         # character, five life areas, saves and mobile dock
+  ui/PoliticalCareer.tsx # UK career within the existing life
+  ui/*.css              # responsive original journal-inspired design
+  main.tsx              # React entry point
 ```
 
 ## Adding events
@@ -69,6 +81,8 @@ src/
 Add a unique ID to `src/data/events.ts` with a title, prompt, inclusive age range and at least two choices. Each choice has visible text, an original result and numeric `effects`: health, happiness, smarts, looks, money, or bond. Keep at least one choice free. Stats and bonds clamp to 0–100. Event money is in the selected country's currency. Selection avoids repeated events until the eligible pool is exhausted, then resets the seen list. The seeded generator is stored in the save, so loading cannot reroll the next event.
 
 ## Extension points
+
+Political dilemmas belong in `src/data/politics.ts`, with unique IDs, role requirements, original choices, typed effects and optional remembered commitments. Existing intellectual influences frame questions; they do not automatically change outcomes. New political mechanics belong in pure engine transitions with explicit causal links and tests. Check `PROJECT-STATE.md` before modifying the monthly/annual boundary.
 
 Keep simulation changes in engine transitions and data, then expose them through UI actions. The engine returns a new state and never mutates its input; refused actions return the existing state.
 
@@ -86,4 +100,4 @@ For richer content, extend `LifeEvent` with typed predicates, weights and prereq
 
 ## MVP boundaries
 
-One active local save; fictional simplified economies; three countries and four careers. Family members currently keep fixed roles and do not independently age or die. No backend, accounts, cloud saves, property, crime, romance, businesses or generations yet. Gender's self-described option is a label in this MVP. The journal view shows the most recent 50 entries; the full history is saved. The app is a local coding project, not a publicly deployed service.
+One active local life; three countries, four outside careers and an integrated UK political career. Its national seat result is an aggregate model; appointments and bill stages are compressed. The 800-household economy covers cash, employment and costs, with repeated fictional shocks. It does not yet model banking, full national production, devolved institutions, ownership transitions, NEP or revolutions. Philosophical dilemmas are a starting layer, not exhaustive dialogues. Family members keep fixed roles and do not independently age or die. No backend, cloud saves, property purchases, crime, romance, businesses or generations yet. The journal shows the latest 50 entries and saves full history. This is a local coding project, not a publicly hosted service.

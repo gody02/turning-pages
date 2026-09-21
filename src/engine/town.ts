@@ -34,19 +34,22 @@ function transfer(t:Town,from:string,to:string,requested:number,reason:string){
   const recipient=t.households.find(h=>h.id===to),payer=t.households.find(h=>h.id===from);if(recipient)recipient.income=round(recipient.income+amount);if(payer)payer.outgoings=round(payer.outgoings+amount);
   return amount;
 }
-export function policyReason(t:Town,id:PolicyId):string|null{
-  if(t.month>=24)return 'The 24-month experiment is complete.';
+export function policyReason(t:Town,id:PolicyId,continuous=false):string|null{
+  if(t.month>=24&&!continuous)return 'The 24-month experiment is complete.';
   const p=townPolicies.find(p=>p.id===id);if(!p)return 'Unknown policy.';
   if(t.fund<p.cost)return 'The fund cannot afford this commitment.';
   if(id==='retrofit' && t.insulation+t.projects.length*.06>=.299)return 'All five insulation projects are complete or contracted.';
   return null;
 }
-export function advanceTown(state:Town,id:PolicyId):Town{
-  if(policyReason(state,id))return state;const t=structuredClone(state);t.month++;
+export type EconomyRules={continuous?:boolean;warmHomes?:boolean;profitShare?:boolean;propertyLevy?:boolean};
+export function advanceTown(state:Town,id:PolicyId,rules:EconomyRules={}):Town{
+  if(policyReason(state,id,!!rules.continuous))return state;const t=structuredClone(state);t.month++;
   t.households.forEach(h=>{h.income=0;h.outgoings=0;h.unmet=0;});
   const notes:string[]=[];
-  const shock=[...townShocks].reverse().find(s=>s.month<=t.month)!;t.energy=round(shock.energy*(.98+random(t)*.04));t.orders=round(shock.orders*(.98+random(t)*.04));
-  if(shock.month===t.month)notes.push(`${shock.title}: ${shock.body}`);
+  const cycleMonth=rules.continuous?(t.month-1)%24+1:t.month;
+  const shock=[...townShocks].reverse().find(s=>s.month<=cycleMonth)!;t.energy=round(shock.energy*(.98+random(t)*.04));t.orders=round(shock.orders*(.98+random(t)*.04));
+  if(shock.month===cycleMonth)notes.push(`${shock.title}: ${cycleMonth===1&&rules.continuous?'A new economic cycle begins. The constituency carries its existing savings, jobs and investments forward.':shock.body}`);
+  if(rules.propertyLevy){const levy=transfer(t,'owners','fund',t.households.reduce((sum,h)=>sum+h.rent*h.count,0)*.05,'Property income levy');notes.push(`The property levy transferred £${Math.round(levy).toLocaleString('en-GB')} from owners to the local programme.`);}
   const completed=t.projects.filter(p=>p.due<=t.month).length;
   t.insulation=round(Math.min(.3,t.insulation+completed*.06));t.projects=t.projects.filter(p=>p.due>t.month);
   if(completed)notes.push(`${completed} insulation project completed. Renters now use ${Math.round(t.insulation*100)}% less energy than the baseline.`);
@@ -61,6 +64,7 @@ export function advanceTown(state:Town,id:PolicyId):Town{
   if(id==='retrofit'){transfer(t,'fund','outside',60000,'Insulation contract');t.projects.push({due:t.month+3});notes.push(`Insulation was commissioned. Energy savings start in month ${t.month+3}${t.month+3>24?', beyond this experiment’s horizon':''}.`);}
   if(id==='hold')notes.push('No new discretionary spending was committed. The fund retained its policy reserve.');
   transfer(t,'outside','fund',110000,'Programme grant');const services=transfer(t,'fund','outside',80000,'Baseline service provision');
+  if(rules.warmHomes)transfer(t,'outside','fund',20000,'Warm Homes statutory grant');
   if(services<80000)notes.push('The programme could not fully fund baseline services.');
   for(const f of t.employers){
     const before=f.cash;const lastMonth=t.ledger.filter(x=>x.month===t.month-1&&x.to===f.id&&(x.reason==='Local shopping'||x.reason==='External orders')).reduce((s,x)=>s+x.amount,0);
@@ -76,6 +80,7 @@ export function advanceTown(state:Town,id:PolicyId):Town{
     f.jobs=Math.max(0,f.jobs);transfer(t,f.id,f.group,f.jobs*f.wage,'Wages');
     transfer(t,f.id,'outside',inputs,'Imported business inputs');transfer(t,f.id,'outside',energy,'Business energy');
     f.revenue=external;f.profit=round(f.cash-before);
+    if(rules.profitShare){const dividend=transfer(t,f.id,f.group,Math.max(0,state.employers.find(e=>e.id===f.id)!.profit)*.2,'Worker profit share');f.profit=round(f.profit-dividend);}
   }
   for(const h of t.households){
     if(h.outsideIncome)transfer(t,'outside',h.id,h.outsideIncome*h.count,'Pensions and outside income');

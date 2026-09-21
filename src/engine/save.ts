@@ -1,7 +1,9 @@
 import type { Game } from './types';
 import { countries, jobs } from '../data/world';
 import { events } from '../data/events';
+import { validPolitics } from './politicsSave';
 export const SAVE_KEY='turning-pages:v1';
+export const PRE_POLITICS_SAVE_KEY='turning-pages:before-career-integration';
 export interface StorageLike { getItem(key:string):string|null; setItem(key:string,value:string):void }
 const record=(x:unknown):x is Record<string,unknown>=>typeof x==='object' && x!==null;
 const num=(x:unknown)=>typeof x==='number' && Number.isFinite(x);
@@ -16,10 +18,20 @@ export function isGame(x: unknown): x is Game {
   if(x.cause!==undefined && typeof x.cause!=='string')return false;
   if(!Array.isArray(x.seen)||!x.seen.every(id=>typeof id==='string'&&events.some(e=>e.id===id)))return false;
   if(!Array.isArray(x.relationships)||!x.relationships.every(r=>record(r)&&typeof r.id==='string'&&typeof r.name==='string'&&typeof r.role==='string'&&bounded(r.bond,0,100)))return false;
+  if(x.politics!==undefined&&!validPolitics(x.politics,x.age as number,x.country as string))return false;
   return Array.isArray(x.journal)&&x.journal.every(e=>record(e)&&bounded(e.age,0,100)&&typeof e.text==='string'&&['milestone','event','action','finance'].includes(e.kind as string));
 }
 export function loadGame(storage: StorageLike): {game:Game|null; error:string|null} {
   try { const raw=storage.getItem(SAVE_KEY);if(!raw)return {game:null,error:null};const value:unknown=JSON.parse(raw);if(!isGame(value))throw Error();return {game:value,error:null}; }
   catch{return {game:null,error:'This save could not be loaded. It may be damaged or from another version.'};}
 }
-export function saveGame(storage: StorageLike, game: Game): string|null {try{storage.setItem(SAVE_KEY,JSON.stringify(game));return null;}catch{return 'Saving is unavailable. Keep this tab open to continue your life.';} }
+export function saveGame(storage: StorageLike, game: Game): string|null {
+  try{
+    if(!isGame(game))return 'The save failed its consistency check. Your previous save was kept.';
+    if(game.politics&&!storage.getItem(PRE_POLITICS_SAVE_KEY)){
+      const raw=storage.getItem(SAVE_KEY);
+      if(raw){let previous:unknown;try{previous=JSON.parse(raw);}catch{previous=null;}if(isGame(previous)&&!previous.politics)storage.setItem(PRE_POLITICS_SAVE_KEY,raw);}
+    }
+    storage.setItem(SAVE_KEY,JSON.stringify(game));return null;
+  }catch{return 'Saving is unavailable. Export a life backup before closing this tab.';}
+}

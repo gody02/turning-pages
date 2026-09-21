@@ -1,61 +1,59 @@
 # Persistent project state
 
-Read this file and AGENTS.md before continuing development. Conversation context is helpful, but these files are the durable project record.
+Read this file and AGENTS.md before continuing development. These files, source checkpoints and tests are the durable project record.
 
 ## Player direction
 
-- Original text life simulation, playable on a phone.
-- Develop one deep area at a time: UK politics first, law later.
-- Political depth should connect people, economics, ownership, institutions, philosophy and historical change.
-- Requested intellectual influences: Socrates, Adam Smith, Marx and Marxist economics, Lenin, Trotsky, dialectics and the NEP.
-- Wants a shifting world, believable consequences and eventually transformative/revolutionary alternate-history paths.
-- Work incrementally: make one small slice playable, let the player try it, refine it, then expand.
-- Preserve earlier work; do not rely on conversational recollection as a compatibility strategy.
+Original phone-friendly text life simulation. Develop one deep career at a time: UK politics first, law later. Politics must be inside the existing character's life and Career tab. Do not recreate a separate politics game or mode switcher.
 
-## Implemented
+Connect people, economics, ownership, institutions, philosophy and historical change. Requested influences: Socrates, Adam Smith, Marx, Lenin, Trotsky, dialectics and the NEP. Long-term ambition includes changing contemporary scenarios and transformative alternate histories. Expand through playable, reviewed milestones while preserving existing lives.
 
-### Original life mode
+## Implemented: one character, one political career
 
-Character creation; annual events; stats; relationships; education; careers; finances; death; one local save. The original engine, UI component and storage key were retained when adding town politics.
+- Original life creation, stats, relationships, education, jobs, finances, yearly events, death and local save remain. New lives can begin at birth or age 18.
+- UK adults enter politics through Career, choosing one of five parties and five intellectual influences. Existing money, age, job and history remain.
+- Career views: Your work, Constituency, Elections, Parliament, Ideas and Record. Legacy #town links now open Career in the same life; no standalone town screen.
+- Monthly political choices and three shared activities: canvassing, casework, organising, studying, fundraising, family time and faction negotiation compete with ordinary life activities.
+- Organiser, councillor, MP, minister and Prime Minister roles. Candidate selection, campaign expenses, seeded elections with possible defeat, national party seats, government/opposition and office eligibility.
+- A branch mentor and rival join People. Personal/family choices affect bonds, health, reputation and party confidence. Promises are recorded; an impossible promise can damage trust when hardship contradicts it.
+- Bills pass through compressed Commons/Lords/assent stages, at most one stage per month. Warm Homes grants, worker profit sharing and a property-income levy change subsequent constituency cash flows.
+- Councillors and MPs can sponsor programme motions subject to a board vote and affordability; they cannot directly spend the public fund. Non-player board decisions continue without a sponsored motion.
+- Constituency economy: 800 households in four cohorts, two aggregate employers, programme fund and external clearing account. Wages, rents, energy, demand, unemployment, relief and delayed insulation have recorded counterparties. Household conditions affect support; energy affects personal living costs.
+- Monthly economy continues beyond the former 24-month limit, retaining savings and investment. Fictional shocks cycle every 24 months.
+- Personal money, campaign funds and public accounts remain distinct. Outside work continues for organisers/councillors; entering Parliament ends the outside job. Role pay starts the next month.
+- Twelve months produce one birthday, one year of education/job progression and yearly life events. Monthly income, expenses, tuition and debt charges are not charged again on birthdays.
+- Original political dilemmas discuss Socratic consistency, competition, ownership/surplus, NEP compromises and international dependency. Selecting a thinker does not confer a success bonus.
+- Autosave, validated export/import, explicit restore confirmation, pre-entry recovery snapshot and export of the earlier standalone town archive. Phone dock points to decisions and monthly advancement.
 
-### Milestone 1: Mereford town economy
+## Boundaries and next depth
 
-- Independent route `#town`, linked by the game-mode switcher.
-- 24 monthly turns, 800 households in four cohorts, two aggregated employers, a programme fund and a wider-economy clearing account.
-- Balanced cash transfers for wages, pensions/outside income, unemployment support, rents, energy, essential spending, shopping, business inputs, orders, grants and programme spending.
-- Four choices: reserves, targeted relief, employer grants and delayed insulation investment.
-- Scripted fictional energy and demand shocks, plus reproducible seeded variation.
-- Household voices driven by current conditions; history of policy decisions, causal explanations and household outcomes.
-- Philosophical reading lenses and a guiding commitment. These currently frame reflection; they do not grant stat bonuses or constitute a complete dialogue system.
-- Separate versioned save with balance reconciliation, export/restore, explicit reset and restore confirmation.
-- Mobile layout with a shortcut to policy choices; a 24-month summary.
+This is a playable integrated career, not a complete UK economic or constitutional simulation. Mereford is a fictional English constituency. Election dates, pay, votes and economic parameters are game values. National seats use an aggregate formula; minister/PM progression is compressed. Party and philosophical selections currently supply identity/framing, not distinct full institutional simulations.
 
-## Explicitly not implemented
+Still deferred: calibrated UK national accounts, banks/credit/monetary policy, production inventories, detailed factions and autonomous NPC lives, full philosophical dialogue trees, ownership transitions, NEP/revolution systems, live news, devolved institutions and law career. See POLITICS-VISION.md. Do not describe these as implemented.
 
-Calibrated live UK economy, automatic news updates, elections, party organisation, Socratic dialogue trees, independent NPC memories, national taxation/monetary systems, banking and credit, production inventories, ownership transformation, NEP mechanics, revolutions, law career, or integration of town time with character ageing.
+Next refinement should deepen political decisions and competing interests inside this career. Gather feedback after 6–12 months and an election. Improve faction/party distinctions, constituent cases and remembered consequences before adding a disconnected national dashboard.
 
-The town is labelled a fictional laboratory. The player is making scenario interventions, not wielding powers attributed to a real UK councillor. Avoid implying that its simple monetary clearing account is a national debt or money-supply model.
+## Compatibility and accounting
 
-## Compatibility rules
-
-- Original life key: `turning-pages:v1`. Town key: `turning-pages:town:v1`.
-- `src/engine/fixtures/life-v1.json` is a fixed compatibility fixture; do not update it merely to make a breaking change pass.
-- Preserve old saves through explicit migrations before changing required state fields or scenario constants. `validTown` currently checks constants against Mereford v1; a new model requires a new scenario version and a migration policy.
-- Keep the annual and monthly clocks separate until integration has explicit double-counting tests.
-- Every monetary flow must have a counterparty. Reconcile opening accounts plus transactions against all current balances.
-- New changes need appropriate tests and a build. Browser-check changed user flows, including a phone viewport.
-- Record design changes here and in CHANGELOG.md. Keep deferred ideas in POLITICS-VISION.md.
-
-## Next discussion
-
-Ask the player to try 6–12 months with at least two different strategies and say which consequences feel confusing, shallow or implausible. The likely next milestone is political formation: background, values, philosophical conversations and a local organisation, built on tested economic conditions. Do not jump directly to national revolution mechanics before that foundation is reviewed.
+- Life key remains `turning-pages:v1`, version 1. Optional validated `politics` extends the original shape; ordinary legacy lives load unchanged.
+- Fixed fixture `src/engine/fixtures/life-v1.json` must not be changed merely to pass a breaking migration.
+- Before first political overwrite, a valid existing nonpolitical life is copied verbatim to `turning-pages:before-career-integration`. If this write fails, the old primary save is kept. It is a one-time recovery copy, not a per-character backup history.
+- Legacy `turning-pages:town:v1` remains untouched and exportable. Never silently attach this unrelated scenario to a character. Its engine/validation default still ends at 24 months for compatibility.
+- Integrated career owns its economy and clock. Age equals entry age plus completed 12-month periods. No annual age-up shortcut while political life exists, even after resigning office.
+- Every constituency cash transfer must have a counterparty. Account consistency does not prove behavioural realism. Personal and campaign accounts are separate abstractions outside the 800 households.
+- Schema or scenario changes need explicit migrations and compatibility tests. No fixture edits to hide breakage.
+- Source checkpoints do not back up browser saves; phone/desktop origins save independently. Export before resetting or moving devices.
 
 ## Local running and recovery
 
-- Project lives in this folder under `outputs/turning-pages`.
-- Phone server: port 4173 on the computer's LAN address. It must remain running; computer and phone must be on the same Wi-Fi. The observed address during setup was `192.168.0.106`; verify rather than assuming it stays fixed.
-- `pnpm build`, then `pnpm phone` is the normal workflow. Refresh the phone after rebuilding.
-- In this restricted Windows environment, `node node_modules/vite/bin/vite.js build --configLoader runner` and `node node_modules/vitest/vitest.mjs run --pool=threads --maxWorkers=1 --configLoader runner` avoid the config-bundling path limitation. Run `node node_modules/typescript/bin/tsc --noEmit` separately.
-- Pre-politics source checkpoint: `../../work/before-politics-20260921.zip`, created before implementation. It contains source, dependency manifests/lockfile, configuration and existing documentation, not node_modules or browser saves.
-- The tested Mereford milestone is also checkpointed in this folder's local Git repository. Future milestones should add separate commits after validation so individual changes can be reviewed and recovered.
-- Town save exports are made from the game. Source checkpoints do not back up browser storage. Phone and desktop saves remain separate unless exported/imported.
+Project is this folder under `outputs/turning-pages`. The phone preview is port 4173. Observed LAN address: `192.168.0.106`; verify if networking changes. Phone and computer must share Wi-Fi, with the computer awake and server running.
+
+Normal workflow: `pnpm install`, `pnpm test`, `pnpm build`, `pnpm phone`. In this restricted Windows environment:
+
+```
+node node_modules/typescript/bin/tsc --noEmit
+node node_modules/vitest/vitest.mjs run --pool=threads --maxWorkers=1 --configLoader runner
+node node_modules/vite/bin/vite.js build --configLoader runner
+```
+
+Pre-politics source ZIP: `../../work/before-politics-20260921.zip`. Local Git checkpoint `2cb1879` and tag `before-career-integration` preserve the earlier life/town implementation. Add tested commits for future milestones. Update this file, CHANGELOG.md and VALIDATION.md when behavior changes.
