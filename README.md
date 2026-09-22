@@ -40,7 +40,7 @@ Explore seven areas within Career: **Your work**, **Constituency**, **United Kin
 
 **Finances** exports/restores the complete life, including politics, and can recover the one-time pre-career snapshot. An earlier independent town save stays separate and exportable; it is never silently assigned to your character. `/#career` and legacy `/#town` both open the unified Career tab. Saves are local to each browser and origin. Source checkpoints do not back up browser storage.
 
-See `PROJECT-STATE.md` for implemented scope and compatibility, `POLITICS-VISION.md` for future depth, and `CHANGELOG.md` for milestones. Mereford and its people are fictional; economic parameters, pay and electoral schedules are game assumptions. This is a simplified UK career, not a calibrated national economy or live-news service.
+See `ARCHITECTURE.md` for system ownership, `PROJECT-STATE.md` for implemented scope and compatibility, `POLITICS-VISION.md` for future depth, and `CHANGELOG.md` for milestones. Mereford and its people are fictional; economic parameters, pay and electoral schedules are game assumptions. This is a simplified UK career, not a calibrated national economy or live-news service.
 
 - Choose a name, gender option and one of three countries. Gender does not change opportunities or outcomes. Starting smarts and looks vary by seed.
 - Age up to receive an event. Resolve it before taking activities or advancing again. Consequences are shown before you choose. Paid choices require cash; every event has a free option.
@@ -60,26 +60,30 @@ src/
   data/politics.ts       # parties, influences, dilemmas, activities, bills
   data/town.ts           # household, employer, policy and legacy shock data
   data/national.ts       # dated sources, Budget settings, national proposals
-  engine/national.ts     # fiscal flows, macroeconomy and legislative actions
+  engine/core/           # character life cycle, clock, state and module contract
+  engine/systems/        # careers, finance, relationships, events and character development
+  engine/simulation.ts   # composes a life with installed optional modules
+  engine/politics/uk/    # UK politics, constituency, nation and institutions
+  engine/national.ts     # compatibility facade for the UK national module
   data/institutions.ts   # additional Acts, institutional sources and stress scenarios
-  engine/institutions.ts # bank books, devolved budgets and faction divisions
-  engine/institutionActions.ts # negotiations, commitments and scrutiny
-  engine/institutionsSave.ts # bank, region and caucus validation
-  engine/forecast.ts     # isolated conditional simulations
+  engine/institutions.ts # compatibility facade for UK institutions
+  engine/institutionActions.ts # compatibility facade for UK actions
+  engine/institutionsSave.ts # compatibility facade for UK validation
+  engine/forecast.ts     # compatibility facade for UK forecasts
   ui/InstitutionsPanel.tsx # Banking, Devolution, Factions and Forecasts
   ui/LegislationCatalogue.tsx # searchable configurable bill templates
-  engine/nationalSave.ts # national clock, fiscal and state validation
+  engine/nationalSave.ts # compatibility facade for UK national validation
   ui/NationalEconomy.tsx # Budget, briefing, sectors, accounts and legislation
-  engine/types.ts        # life contracts; optional nested political career
-  engine/game.ts         # pure life transitions and annual milestones
-  engine/politics.ts     # monthly career, elections, bills, shared finances
-  engine/politicsTypes.ts # political contracts
-  engine/town.ts         # constituency transactions and behavioural rules
+  engine/types.ts        # application composition of life plus optional modules
+  engine/game.ts         # compatibility facade for the simulation coordinator
+  engine/politics.ts     # compatibility facade for the UK political module
+  engine/politicsTypes.ts # compatibility facade for UK political contracts
+  engine/town.ts         # compatibility facade for the UK constituency
   engine/save.ts         # validated life storage and recovery snapshot
   engine/politicsSave.ts # nested career and clock validation
-  engine/townSave.ts     # constituency validation and legacy town archive
+  engine/townSave.ts     # compatibility facade for constituency validation
   engine/*.test.ts       # simulation, progression and compatibility tests
-  engine/fixtures/       # fixed pre-politics save fixture
+  engine/fixtures/       # legacy save and frozen pre-refactor scenarios
   ui/GameRoot.tsx        # unified life entry point
   ui/LifeApp.tsx         # character, five life areas, saves and mobile dock
   ui/PoliticalCareer.tsx # UK career within the existing life

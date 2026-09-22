@@ -1,5 +1,11 @@
 # Change log
 
+## 2026-09-22 — Life engine separated from UK politics
+
+Moved age, monthly and yearly progression, ordinary careers, education, personal finance, relationships, events, character development, geography and persistent decision facts into independent simulation modules. Added a country-neutral module contract and made UK politics an installed adapter that consumes those systems. Moved the Mereford constituency and UK national implementation behind the UK module; retained old import paths as compatibility facades.
+
+Preserved old saves and existing political behaviour, added a one-time pre-architecture recovery snapshot, and froze representative pre-refactor outcomes as a golden regression. Added tests for non-political monthly lives, mid-year political entry, decades-old decisions, generic banking/projections, corrupt state rejection and dependency direction. Documented the audit and extension boundary in `ARCHITECTURE.md`.
+
 ## 2026-09-21 — Banks, devolved administrations, factions and stress tests
 
 Added bank balance sheets with lending/deposit creation, repayment, losses, capital-constrained credit, collateralised liquidity and resolution. Added Scotland/Wales/NI funding, autonomous allocations, political pressure and consent negotiations. Added ten parliamentary caucuses with policy-specific concerns, whip pressure, trust, grievances and twelve-month commitments, plus committee evidence and legal review. Institutional consequences feed the wider economy and political career.

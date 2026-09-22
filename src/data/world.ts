@@ -1,4 +1,4 @@
-import type { Country } from '../engine/types';
+import type { Country } from '../engine/core/model';
 export const countries: Country[] = [
   { id: 'uk', name: 'United Kingdom', currency: 'GBP', living: 15000, tuition: 6000, wage: 1 },
   { id: 'ca', name: 'Canada', currency: 'CAD', living: 22000, tuition: 8000, wage: 1.45 },

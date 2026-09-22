@@ -1,6 +1,8 @@
-# Turning Pages: UK political simulation vision
+# Turning Pages: UK political module vision
 
-Status: long-term design, with an integrated UK political career now playable inside the existing life. Political formation, local elections, parliamentary progression and three laws are implemented in simplified form. The constituency economy shares the character's monthly clock, family and financial consequences. A first national macro/fiscal model, editable Budget and eighteen additional bills are now playable; see NATIONAL-MODEL.md. Complete empirical calibration, detailed national accounts, NEP/ownership transitions and revolutionary systems remain proposed. See PROJECT-STATE.md for the exact boundary. All future depth belongs inside this career, not a separate mode.
+UK politics is a deep optional life path built on the shared simulation systems described in `ARCHITECTURE.md`. Political work may affect a character's money, relationships, skills, reputation and later life, but this module does not own those systems. Future countries must supply their own political configuration without adding country branches to the life engine.
+
+Status: long-term design, with an integrated UK political career now playable inside the existing life. Political formation, local elections, parliamentary progression and configurable legislation are implemented in simplified form. The constituency economy shares the character's clock, family and financial consequences through generic systems. A national macro/fiscal model, editable Budget and expanded policy catalogue are playable; see NATIONAL-MODEL.md. Complete empirical calibration, detailed national accounts, NEP/ownership transitions and revolutionary systems remain proposed. See PROJECT-STATE.md for the exact boundary. Future political depth belongs inside this module while broader life mechanics remain independent.
 
 ## Experience
 

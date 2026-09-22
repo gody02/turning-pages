@@ -1,4 +1,4 @@
-import type { LifeEvent, Effects } from '../engine/types';
+import type { LifeEvent, Effects } from '../engine/core/model';
 const event = (id: string, title: string, text: string, min: number, max: number, options: [string, string, Effects][]): LifeEvent => ({ id, title, text, min, max, choices: options.map(([text, result, effects]) => ({text, result, effects})) });
 export const events: LifeEvent[] = [
   event('puddle','A very small ocean','Rain has left an enormous puddle outside. Your boots are waiting.',1,5,[['Jump right in','You discover the joy of making a spectacular splash.',{happiness:8,health:-1}],['Study your reflection','You spend a quiet afternoon noticing the world.',{smarts:5}]]),

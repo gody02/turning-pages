@@ -4,9 +4,18 @@ Read this file and AGENTS.md before continuing development. These files, source 
 
 ## Player direction
 
-Original phone-friendly text life simulation. Develop one deep career at a time: UK politics first, law later. Politics must be inside the existing character's life and Career tab. Do not recreate a separate politics game or mode switcher.
+Original phone-friendly, persistent text life simulation. Develop one deep career at a time: UK politics first, law later. Politics is one optional module inside the existing character's life and Career tab; it is not the foundation for careers, finance, relationships, events or time.
 
 Connect people, economics, ownership, institutions, philosophy and historical change. Requested influences: Socrates, Adam Smith, Marx, Lenin, Trotsky, dialectics and the NEP. Long-term ambition includes changing contemporary scenarios and transformative alternate histories. Expand through playable, reviewed milestones while preserving existing lives.
+
+## Architecture refactor
+
+- The life engine now owns age, birthdays, death, monthly/annual cadence and event resolution. Independent systems own careers and qualifications, personal finance, relationships, character development, geography, persistent facts, banking arithmetic and projections.
+- `UKPoliticalSystem` is an installed country module. It contributes political restrictions, role income, monthly UK state, dilemmas and consequences through hooks. It no longer increments age, settles ordinary salary, advances jobs or charges personal living costs itself.
+- The Mereford constituency, Parliament, national economy, banks, devolution and factions live behind the UK module. Compatibility facades preserve existing imports and saves.
+- Important choices can create dated facts that remain eligible for consequences decades later. Generic reputation, fame, traits and skills persist between careers.
+- Old saves load unchanged and acquire new generic records only when play continues. A one-time pre-architecture recovery copy protects the first overwrite.
+- A frozen pre-refactor scenario and dependency tests protect gameplay parity and prevent country-specific imports from entering shared systems. See `ARCHITECTURE.md`.
 
 ## Implemented: one character, one political career
 

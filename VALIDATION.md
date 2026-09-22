@@ -1,5 +1,17 @@
 # MVP validation
 
+## Life architecture refactor
+
+Completed 22 September 2026.
+
+- Strict TypeScript and production builds passed. **101 tests passed** across six files: 86 existing behavioural tests and 15 architecture tests.
+- Frozen comparison covers an ordinary 35-year life, four years of political progression, elections, banking state and a Budget action against the untouched pre-refactor source.
+- Shared-system tests cover monthly jobs, promotions, a three-year qualification, personal cash settlement, one birthday per twelve months, death, persistent facts, character traits/skills/fame/reputation and generic account/bank arithmetic without a political career.
+- Module tests cover an independent apprenticeship path, conflicting income providers, mid-year UK entry, country registry boundaries and strict import direction from UK politics into shared systems.
+- Compatibility checks cover the fixed legacy save, prospective generic state, a raw pre-architecture recovery copy and primary-save protection when recovery storage fails.
+- Detailed UK political, national, institutional and constituency suites remain the behavioural coverage for the country module.
+- Isolated production browser check created an adult UK life, entered politics, resolved the opening promise and advanced one month. Age/month, personal expenses, support and the next dilemma updated together. At a 390 × 844 viewport the document had no horizontal overflow, and the browser recorded no warnings or errors. The active LAN-origin save was not opened or changed.
+
 ## Banking, devolution, caucuses and conditional forecasts
 
 Completed 21 September 2026.

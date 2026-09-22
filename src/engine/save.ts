@@ -1,27 +1,17 @@
 import type { Game } from './types';
-import { countries, jobs } from '../data/world';
-import { events } from '../data/events';
+import { validLife } from './core/validation';
 import { validPolitics } from './politicsSave';
+export const PRE_ARCHITECTURE_SAVE_KEY='turning-pages:before-life-architecture';
 export const SAVE_KEY='turning-pages:v1';
 export const PRE_POLITICS_SAVE_KEY='turning-pages:before-career-integration';
 export const PRE_INSTITUTIONS_SAVE_KEY='turning-pages:before-institutions';
 export const PRE_NATIONAL_SAVE_KEY='turning-pages:before-national-economy';
 export interface StorageLike { getItem(key:string):string|null; setItem(key:string,value:string):void }
-const record=(x:unknown):x is Record<string,unknown>=>typeof x==='object' && x!==null;
-const num=(x:unknown)=>typeof x==='number' && Number.isFinite(x);
-const bounded=(x:unknown,min:number,max:number)=>num(x) && (x as number)>=min && (x as number)<=max;
-export function isGame(x: unknown): x is Game {
-  if(!record(x)||x.version!==1||typeof x.name!=='string'||!x.name.trim()||x.name.length>40||typeof x.gender!=='string'||x.gender.length>40||!countries.some(c=>c.id===x.country))return false;
-  if(!bounded(x.age,0,100)||!Number.isInteger(x.age)||typeof x.alive!=='boolean'||typeof x.retired!=='boolean'||!bounded(x.seed,0,4294967295)||!Number.isInteger(x.seed)||!bounded(x.actions,0,3)||!Number.isInteger(x.actions))return false;
-  if(!record(x.stats)||!['health','happiness','smarts','looks'].every(k=>bounded((x.stats as Record<string,unknown>)[k],0,100)))return false;
-  if(!['money','earned','lastIncome','lastExpenses'].every(k=>num(x[k]))||!bounded(x.level,0,5)||!bounded(x.studyYears,0,3)||!bounded(x.jobYears,0,100))return false;
-  if(!['preschool','school','secondary','university','degree'].includes(x.education as string)||!(x.job===null||jobs.some(j=>j.id===x.job)))return false;
-  if(!(x.pending===null||events.some(e=>e.id===x.pending && (x.age as number)>=e.min && (x.age as number)<=e.max))||(!x.alive && x.pending!==null))return false;
-  if(x.cause!==undefined && typeof x.cause!=='string')return false;
-  if(!Array.isArray(x.seen)||!x.seen.every(id=>typeof id==='string'&&events.some(e=>e.id===id)))return false;
-  if(!Array.isArray(x.relationships)||!x.relationships.every(r=>record(r)&&typeof r.id==='string'&&typeof r.name==='string'&&typeof r.role==='string'&&bounded(r.bond,0,100)))return false;
-  if(x.politics!==undefined&&!validPolitics(x.politics,x.age as number,x.country as string))return false;
-  return Array.isArray(x.journal)&&x.journal.every(e=>record(e)&&bounded(e.age,0,100)&&typeof e.text==='string'&&['milestone','event','action','finance'].includes(e.kind as string));
+export function isGame(x:unknown):x is Game{
+ if(!validLife(x))return false;
+ const g=x as Game;
+ if(g.politics!==undefined){if(!validPolitics(g.politics,g.age,g.country))return false;if(g.clock&&(g.clock.cadence!=='month'||g.clock.monthOfYear!==((g.politics.startMonth??0)+g.politics.months)%12))return false;}
+ return true;
 }
 export function loadGame(storage: StorageLike): {game:Game|null; error:string|null} {
   try { const raw=storage.getItem(SAVE_KEY);if(!raw)return {game:null,error:null};const value:unknown=JSON.parse(raw);if(!isGame(value))throw Error();return {game:value,error:null}; }
@@ -40,6 +30,7 @@ export function saveGame(storage: StorageLike, game: Game): string|null {
     if(game.politics?.national?.institutions&&!storage.getItem(PRE_INSTITUTIONS_SAVE_KEY)){
       const raw=storage.getItem(SAVE_KEY);if(raw){let previous:unknown;try{previous=JSON.parse(raw);}catch{previous=null;}if(isGame(previous)&&previous.politics?.national&&!previous.politics.national.institutions)storage.setItem(PRE_INSTITUTIONS_SAVE_KEY,raw);}
     }
+    if(game.clock&&!storage.getItem(PRE_ARCHITECTURE_SAVE_KEY)){const raw=storage.getItem(SAVE_KEY);if(raw){let old:unknown;try{old=JSON.parse(raw);}catch{old=null;}if(isGame(old)&&!old.clock)storage.setItem(PRE_ARCHITECTURE_SAVE_KEY,raw);}}
     storage.setItem(SAVE_KEY,JSON.stringify(game));return null;
   }catch{return 'Saving is unavailable. Export a life backup before closing this tab.';}
 }
