@@ -1,0 +1,38 @@
+{
+  "version": 1,
+  "id": "human-content.uk.family-authored-v1",
+  "classification": "authored-gameplay-abstraction",
+  "reviewId": "human-content-review.uk.family-authored-v1",
+  "names": [
+    "Abdi", "Adams", "Adeyemi", "Ahmed", "Akhtar", "Ali", "Allen", "Anderson",
+    "Amini", "Arora", "Aslam", "Aziz", "Baker", "Banerjee", "Begum", "Bell",
+    "Bennett", "Bianchi", "Boateng", "Boyle", "Brown", "Burns", "Byrne", "Campbell",
+    "Carter", "Chan", "Chen", "Chowdhury", "Clarke", "Collins", "Cook", "Cooper",
+    "Costa", "D'Souza", "Das", "Davies", "Davis", "De Luca", "Desai", "Dhillon",
+    "Doherty", "Donnelly", "Edwards", "Evans", "Fernandes", "Ferreira", "Flynn", "Foster",
+    "Fraser", "Gallagher", "Garcia", "Ghosh", "Gill", "Gomes", "Graham", "Grant",
+    "Green", "Griffiths", "Gupta", "Hall", "Haque", "Harris", "Harrison", "Hassan",
+    "Healy", "Henderson", "Hill", "Ho", "Hughes", "Hussain", "Iqbal", "Islam",
+    "Jackson", "James", "Javed", "Jenkins", "Johnson", "Jones", "Kaur", "Kelly",
+    "Kennedy", "Khan", "Kim", "King", "Kowalski", "Kumar", "Lam", "Lee",
+    "Lewis", "Li", "Lloyd", "Macdonald", "Mackenzie", "MacLeod", "Maguire", "Mahmood",
+    "Malik", "Martin", "Mason", "McAllister", "McBride", "McCarthy", "McConnell", "McDonald",
+    "McGregor", "McKenzie", "McLaughlin", "McLean", "McMahon", "Mensah", "Miah", "Miller",
+    "Mitchell", "Mohammed", "Moore", "Morgan", "Morris", "Mukherjee", "Murphy", "Murray",
+    "Nelson", "Ng", "Nguyen", "Nolan", "O'Brien", "O'Connor", "O'Donnell", "Okafor",
+    "Owen", "Papadopoulos", "Parker", "Patel", "Pereira", "Phillips", "Price", "Quinn",
+    "Rahman", "Rao", "Reddy", "Rees", "Reid", "Reynolds", "Roberts", "Robinson",
+    "Rodrigues", "Rooney", "Ross", "Roy", "Russell", "Saini", "Santos", "Scott",
+    "Sekhon", "Shah", "Sharma", "Silva", "Singh", "Smith", "Sood", "Stewart",
+    "Subramanian", "Sullivan", "Szabó", "Tan", "Taylor", "Thomas", "Thompson", "Tran",
+    "Turner", "Vaughan", "Verma", "Walker", "Walsh", "Ward", "Watson", "White",
+    "Williams", "Wilson", "Wong", "Wood", "Wright", "Young", "Yusuf", "Zaman",
+    "Zhang"
+  ],
+  "limitations": [
+    "This equal-weight list is reviewed identity-facing game content, not evidence about UK surname frequencies.",
+    "The list carries no ancestry, ethnicity, religion, citizenship, geography, or demographic meaning.",
+    "Breadth review reduces obvious repetition but does not establish statistical representation of the UK population.",
+    "A future empirical replacement requires a new immutable content-package and profile version."
+  ]
+}

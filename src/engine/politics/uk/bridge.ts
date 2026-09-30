@@ -4,7 +4,7 @@ import {setReputation,setSkill} from '../../systems/character';
 /** Legacy v1 mirrors are read only at this module boundary, never by generic systems. */
 export function prepareUK(g:Game){
  const p=g.politics;if(!p)return;
- initialiseClock(g,((p.startMonth??0)+p.months)%12,'month');g.clock!.cadence='month';
+ initialiseClock(g);g.clock!.cadence='month';
  g.finances??={lastIncome:p.lastIncome,lastExpenses:p.lastExpenses,yearIncome:p.yearIncome,yearExpenses:p.yearExpenses};
  for(const r of g.relationships)if(r.id==='political-mentor'||r.id==='political-rival')r.kind='professional';
  if(!g.facts){g.facts=p.memories.map((detail,index)=>({id:`legacy:politics:${index}`,source:'politics.uk',kind:'memory',detail,tags:['legacy'],atMonth:null}));}

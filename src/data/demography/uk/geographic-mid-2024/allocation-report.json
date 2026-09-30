@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "candidatePackageId": "uk.population.mid-2024.v3",
+  "candidateFingerprint": "fnv1a64-v1:2894f4c1b1fdd274",
+  "status": "candidate-persistence-gate-failed",
+  "sourcePopulationPackageId": "uk.population.mid-2024.v2",
+  "sourcePopulationFingerprint": "fnv1a64-v1:a43f874fe1fab27f",
+  "sourceArtifactSha256": "321f27261c9cf110ea44ca10d198580ec3969bc1171c780cba5596184df9b04d",
+  "geographyPartitionId": "geography.uk.primary-local-admin-2024-06-30-v1",
+  "geographyPartitionFingerprint": "fnv1a64-v1:3d1a3446a16c58cb",
+  "areaCount": 361,
+  "birthYearCount": 119,
+  "birthYearRange": [
+    1906,
+    2024
+  ],
+  "latentSupportCount": 75449,
+  "nonzeroLatentCount": 71221,
+  "nonzeroFinalCohortCount": 38731,
+  "checks": {
+    "localCompletedAgeMargins": 32490,
+    "localCompletedAgeExact": true,
+    "local90PlusMargins": 361,
+    "local90PlusExact": true,
+    "nationalBirthYearMargins": 119,
+    "nationalBirthYearsExact": true,
+    "localAreaMargins": 361,
+    "localAreasExact": true,
+    "nationalTotal": 69281437,
+    "nationalTotalExact": true,
+    "unsupportedEdges": 0,
+    "negativeCells": 0
+  },
+  "constituentCountryTotals": {
+    "england": 58620101,
+    "wales": 3186581,
+    "scotland": 5546900,
+    "northernIreland": 1927855
+  },
+  "gregorianMethod": "Exact valid-birthday-day overlap: July 1 through December 31 (184 days) versus January 1 through June 30 (181 or 182 days).",
+  "oldAgeMethod": "Exact local 90+ row margins allocated across frozen v2 old-age birth-year margins as the disclosed within-total prior.",
+  "objective": "Minimum exact L1 deviation from rational quotas; floor residual min-cost flow; canonical area/category/year ordering resolves equal costs deterministically.",
+  "residualAssignments": 35724,
+  "oldAgeResidualAssignments": 3350,
+  "candidatePopulationSerializedBytesUtf8": 9586896,
+  "buildDurationMs": 20935.47,
+  "evidencePrecision": "Canonical exact integers are calibrated/derived simulation values. Local source estimates and frozen national calibration do not have matching empirical precision.",
+  "quotaDeviation": {
+    "totalExact": "12766381583666/696043977",
+    "maximumExact": "156299/156309"
+  },
+  "persistenceGate": {
+    "result": "failed",
+    "representativeGameSerializedBytesUtf8": 9595304,
+    "observedSaveMs": 555.697,
+    "observedLoadMs": 254.268,
+    "browserLocalStorageBudgetBytes": 5242880,
+    "browserStorageSupported": false,
+    "saveLoadContinuationPersonId": "person:2",
+    "note": "Timing is an informational observation and is excluded from candidate semantics/fingerprint."
+  }
+}

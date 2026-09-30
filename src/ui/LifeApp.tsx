@@ -1,15 +1,19 @@
 import { useEffect,useRef,useState } from 'react';
-import {act,actionReason,choose,createGame,adultStart,advanceTime,isMonthly,monthOfLife,currentFinance,advanceReason} from '../engine/simulation';
+import {act,actionReason,choose,advanceTime,isMonthly,monthOfLife,currentFinance,advanceReason} from '../engine/simulation';
 import {averageStats,statKeys} from '../engine/systems/character';
 import {countryOf} from '../engine/systems/geography';
 import {jobOf,salary} from '../engine/systems/careers';
-import { isGame,loadGame,saveGame,PRE_POLITICS_SAVE_KEY,PRE_NATIONAL_SAVE_KEY,PRE_INSTITUTIONS_SAVE_KEY,PRE_ARCHITECTURE_SAVE_KEY } from '../engine/save';
 import { TOWN_SAVE_KEY } from '../engine/townSave';
 import type { Action,Effects,Game } from '../engine/types';
-import { countries,jobs } from '../data/world';
+import { jobs } from '../data/world';
 import { events } from '../data/events';
 import { roleNames } from '../data/politics';
 import { PoliticalCareer } from './PoliticalCareer';
+import {MAX_PERSON_NAME_CODE_POINTS,personDisplayNameCodePointCount,validPersonDisplayName} from '../engine/shared/personDisplayName';
+import {createProductionUkNewGame,NewGameInputError,newGameGenderError} from './newGame';
+import {GamePersistence,MAX_IMPORT_BYTES,exportCanonicalGame,importCanonicalGame,type RecoveryChoice,type StaleLegacyChoice} from '../persistence/service';
+import {SaveCoordinator,type SaveCoordinatorSnapshot} from '../persistence/saveCoordinator';
+import {requestPersistentStorage,storagePersistenceState,type StoragePersistenceState} from '../persistence/capabilities';
 
 const icons={health:'♡',happiness:'☀',smarts:'✧',looks:'◇'};
 const labels={health:'Health',happiness:'Happiness',smarts:'Smarts',looks:'Looks'};
@@ -17,24 +21,39 @@ const educationLabels={preschool:'Early childhood',school:'School student',secon
 type Tab='Journal'|'People'|'Education'|'Career'|'Finances';
 function money(g:Game,n:number){return new Intl.NumberFormat('en-GB',{style:'currency',currency:countryOf(g).currency,maximumFractionDigits:0}).format(n);}
 function changes(e:Effects){return Object.entries(e).map(([k,v])=>`${v>0?'+':''}${v} ${k==='bond'?'family bonds':k}`).join(' · ');}
-function readSave(){try{return loadGame(localStorage);}catch{return {game:null,error:'Browser storage is unavailable. You can still play and export backups.'};}}
 function download(name:string,text:string){const url=URL.createObjectURL(new Blob([text],{type:'application/json'}));const a=document.createElement('a');a.href=url;a.download=name;a.click();URL.revokeObjectURL(url);}
 
 export function LifeApp(){
-  const [initial]=useState(readSave);
-  const [game,setGame]=useState<Game|null>(initial.game);
-  const [creating,setCreating]=useState(!initial.game);
+  const [startup,setStartup]=useState<'loading'|'ready'|'unavailable'>('loading');
+  const [game,setGame]=useState<Game|null>(null);
+  const [creating,setCreating]=useState(false);
   const [tab,setTab]=useState<Tab>(()=>location.hash==='#town'||location.hash==='#career'?'Career':'Journal');
-  const [notice,setNotice]=useState(initial.error??'');
+  const [notice,setNotice]=useState('');
   const [saved,setSaved]=useState(false);
-  const [name,setName]=useState('Alex Morgan');
-  const [gender,setGender]=useState('Non-binary');
-  const [country,setCountry]=useState('uk');
-  const [start,setStart]=useState('childhood');
+  const [recoveries,setRecoveries]=useState<readonly RecoveryChoice[]>([]);
+  const [staleLegacy,setStaleLegacy]=useState<StaleLegacyChoice|null>(null);
+  const [storagePersistence,setStoragePersistence]=useState<StoragePersistenceState>('unavailable');
+  const [name,setName]=useState('');
+  const [gender,setGender]=useState('');
+  const [start,setStart]=useState<'childhood'|'adult'>('childhood');
   const [pendingRestore,setPendingRestore]=useState<Game|null>(null);
   const restoreInput=useRef<HTMLInputElement>(null);
   const storyRef=useRef<HTMLElement>(null);
-  useEffect(()=>{if(!game)return;try{const error=saveGame(localStorage,game);setSaved(!error);if(error)setNotice(error);}catch{setSaved(false);setNotice('Saving is unavailable. Export a backup before closing.');}},[game]);
+  const persistenceRef=useRef<GamePersistence|null>(null);
+  const coordinatorRef=useRef<SaveCoordinator|null>(null);
+  const skipAutosave=useRef<Game|null>(null);
+  useEffect(()=>{let cancelled=false,opened:GamePersistence|null=null;
+    void (async()=>{try{
+      opened=await GamePersistence.open(localStorage);const initial=await opened.initialize();if(cancelled){opened.close();return;}persistenceRef.current=opened;
+      const updateSaveState=(state:SaveCoordinatorSnapshot)=>{setSaved(state.state==='saved'&&!state.dirty);if(state.state==='failed')setNotice('Saving failed. Your current progress is still open; retry or export a backup before closing.');};
+      coordinatorRef.current=new SaveCoordinator((value,revision)=>opened!.save(value,revision),initial.revision,updateSaveState);
+      setRecoveries(initial.recoveries);setStaleLegacy(initial.staleLegacy);setGame(initial.game);skipAutosave.current=initial.game;setCreating(!initial.game);setSaved(!!initial.game);setStartup(initial.status==='backend-unavailable'?'unavailable':'ready');
+      if(initial.error)setNotice(initial.error);else if(initial.markerWarning)setNotice(initial.markerWarning);setStoragePersistence(await storagePersistenceState());
+    }catch(error){if(cancelled)return;setStartup('unavailable');setCreating(true);setNotice(error instanceof Error?error.message:'Browser persistence is unavailable.');}})();
+    return()=>{cancelled=true;opened?.close();};
+  },[]);
+  useEffect(()=>{if(startup!=='ready'||!game)return;if(skipAutosave.current===game){skipAutosave.current=null;return;}coordinatorRef.current?.request(game);},[game,startup]);
+  useEffect(()=>{const warn=(event:BeforeUnloadEvent)=>{if(coordinatorRef.current?.hasUnsavedChanges){event.preventDefault();event.returnValue='';}};addEventListener('beforeunload',warn);return()=>removeEventListener('beforeunload',warn);},[]);
   const update=(fn:(g:Game)=>Game)=>setGame(g=>g?fn(g):g);
   const scrollStory=()=>requestAnimationFrame(()=>storyRef.current?.scrollIntoView({behavior:'smooth',block:'start'}));
   const advance=()=>{update(advanceTime);setTab(game?.politics?'Career':'Journal');scrollStory();};
@@ -44,34 +63,42 @@ export function LifeApp(){
   };
   async function restore(file:File|undefined){
     if(!file)return;
-    try{if(file.size>10_000_000)throw Error();const value:unknown=JSON.parse(await file.text());if(!isGame(value))throw Error();setPendingRestore(value);}
+    try{if(file.size>MAX_IMPORT_BYTES)throw Error();setPendingRestore(importCanonicalGame(await file.text()));}
     catch{setNotice('This is not a valid Turning Pages life backup. Your saved life has not changed. Town-only archives cannot be imported as a character.');}
     finally{if(restoreInput.current)restoreInput.current.value='';}
   }
+  function exportBackup(value:Game){try{download('turning-pages-life-backup.json',exportCanonicalGame(value));}catch{setNotice('This life could not be exported because it failed the save consistency check.');}}
   function exportLegacy(){try{const raw=localStorage.getItem(TOWN_SAVE_KEY);if(raw){download('turning-pages-legacy-town-archive.json',raw);setNotice('The earlier town experiment was exported. It remains stored separately and has not been assigned to your character.');}else setNotice('No earlier town experiment is saved in this browser.');}catch{setNotice('The archive could not be read.');}}
-  function recoverBeforePolitics(key=PRE_POLITICS_SAVE_KEY){try{const raw=localStorage.getItem(key);if(!raw){setNotice('No recovery snapshot of this kind exists on this device.');return;}const data:unknown=JSON.parse(raw);if(!isGame(data))throw Error();setPendingRestore(data);}catch{setNotice('The recovery snapshot could not be read. Your current life is unchanged.');}}
+  function recoverSnapshot(snapshot:RecoveryChoice){setPendingRestore(snapshot.game);}
+  const recoveryControls=(recoveries.length>0||staleLegacy?.game)&&<div className="life-backup-controls">{recoveries.map(snapshot=><button className="quiet outlined" key={snapshot.slotId} onClick={()=>recoverSnapshot(snapshot)}>{snapshot.label}</button>)}{staleLegacy?.game&&<button className="quiet outlined" onClick={()=>setPendingRestore(staleLegacy.game)}>Review earlier browser save · may be stale</button>}</div>;
   const current=game?events.find(e=>e.id===game.pending):undefined;
   const political=game?.politics;
   const monthly=!!game&&isMonthly(game);
   const timeBlocked=!game||!!advanceReason(game);
+  const normalizedName=name.trim(),nameCodePoints=personDisplayNameCodePointCount(normalizedName),nameError=normalizedName&&!validPersonDisplayName(normalizedName)?nameCodePoints>MAX_PERSON_NAME_CODE_POINTS?`Name must be ${MAX_PERSON_NAME_CODE_POINTS} Unicode code points or fewer.`:'Enter a valid name, or leave it blank to generate one.':null,genderError=newGameGenderError(gender);
+  async function persistReplacement(next:Game,message:string){const coordinator=coordinatorRef.current,persistence=persistenceRef.current;if(!coordinator||!persistence)throw Error('Browser persistence is unavailable.');await coordinator.persist(next);skipAutosave.current=next;setGame(next);setRecoveries(await persistence.recoveries());setPendingRestore(null);setCreating(false);setNotice(message);setStoragePersistence(await requestPersistentStorage());}
+  async function beginNewGame(){try{const next=createProductionUkNewGame({mode:start,name,genderLabel:gender});await persistReplacement(next,'');setTab(start==='adult'?'Career':'Journal');}catch(error){if(!(error instanceof NewGameInputError))console.error('UK country-start failed.',error);setNotice(error instanceof NewGameInputError?error.message:'Your new UK life could not be saved. Your current life is unchanged.');}}
+
+  if(startup==='loading')return <div className="app-shell"><header className="topbar"><a className="brand" href="#life"><span className="brand-mark">t<span>p</span></span><span>turning pages<small>A LIFE IN THE MAKING</small></span></a></header><main className="creation"><section className="creation-card" aria-live="polite"><div className="eyebrow">OPENING YOUR STORY</div><h2>Loading your saved life…</h2></section></main></div>;
 
   return <div className="app-shell">
-    <header className="topbar"><a className="brand" href="#life"><span className="brand-mark">t<span>p</span></span><span>turning pages<small>A LIFE IN THE MAKING</small></span></a><div className="header-actions"><span className="save-state">{saved?'● Saved on this device':'○ Local play'}</span>{game&&<button className="quiet" onClick={()=>setCreating(true)}>New life ↗</button>}</div></header>
+    <header className="topbar"><a className="brand" href="#life"><span className="brand-mark">t<span>p</span></span><span>turning pages<small>A LIFE IN THE MAKING</small></span></a><div className="header-actions"><span className="save-state">{saved?`● Saved on this device${storagePersistence==='persistent'?' · protected':''}`:startup==='unavailable'?'○ Persistence unavailable':'○ Saving…'}</span>{game&&<button className="quiet" onClick={()=>setCreating(true)}>New life ↗</button>}</div></header>
     {notice&&<div className="notice" role="status">{notice}<button className="quiet" onClick={()=>setNotice('')}>Dismiss</button></div>}
     <input ref={restoreInput} type="file" accept="application/json,.json" hidden onChange={e=>void restore(e.target.files?.[0])}/>
-    {pendingRestore&&<section className="town-confirm" role="alert"><p>Restore {pendingRestore.name}, age {pendingRestore.age}? This replaces your current life. Export a backup first if you want to keep it.</p>{game&&<button onClick={()=>download('turning-pages-life-backup.json',JSON.stringify(game,null,2))}>Export current life</button>}<button onClick={()=>{setGame(pendingRestore);setPendingRestore(null);setCreating(false);setTab('Career');setNotice('Life restored, including any political career.');}}>Restore this life</button><button onClick={()=>setPendingRestore(null)}>Cancel</button></section>}
+    {pendingRestore&&<section className="town-confirm" role="alert"><p>Restore {pendingRestore.name}, age {pendingRestore.age}? This replaces your current life. Export a backup first if you want to keep it.</p>{game&&<button onClick={()=>exportBackup(game)}>Export current life</button>}<button onClick={()=>void persistReplacement(pendingRestore,'Life restored, including any political career.').then(()=>setTab('Career')).catch(()=>setNotice('The restored life could not be saved. Your current life and recovery records were kept.'))}>Restore this life</button><button onClick={()=>setPendingRestore(null)}>Cancel</button></section>}
     {creating?<main className="creation">
       <section className="intro"><div className="eyebrow">YOUR NEXT CHAPTER STARTS HERE</div><h1>A little chance.<br/>A lot of choices.<br/><em>A life of your own.</em></h1><p>From the people at your kitchen table to the decisions that shape a country. Your ambitions belong to the same life.</p><div className="book-art" aria-hidden="true"><div className="book-line"/><span>Every life<br/>has a story.</span><i>✧</i></div><p className="intro-note">One life. Every choice leaves a trace.</p></section>
-      <form className="creation-card" onSubmit={e=>{e.preventDefault();let g=createGame(name,gender,country);if(start==='adult')g=adultStart(g);setGame(g);setCreating(false);setTab(start==='adult'?'Career':'Journal');setNotice('');}}>
+      <form className="creation-card" onSubmit={e=>{e.preventDefault();void beginNewGame();}}>
         <div className="eyebrow">THE FIRST PAGE</div><h2>Meet your new self.</h2><p>Choose a beginning. Discover the rest.</p>
-        <label>Your name<input value={name} maxLength={40} required onChange={e=>setName(e.target.value)}/></label>
-        <label>Gender<select value={gender} onChange={e=>setGender(e.target.value)}><option>Non-binary</option><option>Woman</option><option>Man</option><option>Self-described</option><option>Prefer not to say</option></select></label>
-        <label>Country<select value={country} onChange={e=>setCountry(e.target.value)}>{countries.map(c=><option value={c.id} key={c.id}>{c.name}</option>)}</select></label>
-        <label>Where your story begins<select value={start} onChange={e=>setStart(e.target.value)}><option value="childhood">Childhood · age 0</option><option value="adult">Adult life · age 18</option></select></label>
+        <label>Your name · optional<input value={name} aria-invalid={!!nameError} aria-describedby="person-name-help" placeholder="Leave blank to generate a name" onChange={e=>setName(e.target.value)}/><small id="person-name-help">{nameError||(name.trim()?`${nameCodePoints} of ${MAX_PERSON_NAME_CODE_POINTS} Unicode code points`:'A UK name will be generated for this life.')}</small></label>
+        <label>Gender label · optional<input value={gender} aria-invalid={!!genderError} aria-describedby="person-gender-help" placeholder="Generated default: Unspecified" onChange={e=>setGender(e.target.value)}/><small id="person-gender-help">{genderError||'Identity-facing description only; it does not affect demographics or gameplay.'}</small></label>
+        <label>Country<select value="uk" disabled><option value="uk">United Kingdom</option><option value="ca">Canada · not yet available</option><option value="nz">New Zealand · not yet available</option></select><small>Production new-game starts are currently available for the United Kingdom.</small></label>
+        <label>Where your story begins<select value={start} onChange={e=>setStart(e.target.value as 'childhood'|'adult')}><option value="childhood">Childhood</option><option value="adult">Adult</option></select></label>
         <div className="starting"><span>YOUR STARTING POINT</span><p>{start==='adult'?'Age 18 · Secondary education · 3,000 starting money':'Age 0 · Health 90 · Happiness 80'}<br/>Smarts & looks vary · A family by your side</p></div>
         <button className="primary" type="submit">Begin my story <span>→</span></button>
-        {game&&<><p className="fine">Beginning a new story replaces this device’s current life, including its career.</p><button type="button" className="quiet" onClick={()=>download('turning-pages-life-backup.json',JSON.stringify(game,null,2))}>Export current life first</button><button type="button" className="quiet" onClick={()=>setCreating(false)}>Return to current life</button></>}
+        {game&&<><p className="fine">Beginning a new story replaces this device’s current life, including its career.</p><button type="button" className="quiet" onClick={()=>exportBackup(game)}>Export current life first</button><button type="button" className="quiet" onClick={()=>setCreating(false)}>Return to current life</button></>}
         <button type="button" className="quiet" onClick={()=>restoreInput.current?.click()}>Restore a life backup</button>
+        {recoveryControls}
         <p className="fine">To begin politics immediately, choose United Kingdom and adult life, then enter the career. Fictional economic and salary values.</p>
       </form>
     </main>:game&&<>
@@ -94,7 +121,7 @@ export function LifeApp(){
             {tab==='People'&&<><h3>The people in your story</h3><p className="muted">The work you choose and the time you protect affect these relationships.</p>{game.relationships.map(r=><div className="person" key={r.id}><span className="mini-avatar">{r.name[0]}</span><div><strong>{r.name}</strong><small>{r.role} · Bond {Math.round(r.bond)}/100</small></div>{actionButton(`connect:${r.id}`,'Spend time','+12 bond · +4 happiness')}</div>)}</>}
             {tab==='Education'&&<><h3>{educationLabels[game.education]}</h3><p className="muted">School begins at 6 and finishes at 18. University takes three years. Political months count towards the same education timeline.</p>{game.education==='university'&&<p>Years completed: {game.studyYears}/3</p>}{actionButton('study','Study with focus',monthly?'+3 smarts · −1 happiness':'+8 smarts · −2 happiness')}{actionButton('university','Go to university',`${money(game,countryOf(game).tuition)} per year · 3 years`)}<p className="fine">Enrolment leaves your outside job. Tuition and living costs can create personal debt.</p></>}
             {tab==='Career'&&<><PoliticalCareer game={game} update={update} onAdvance={advance}/><details className="outside-careers" open={!political}><summary>{political?'Outside employment & retirement':'Other career paths'}</summary><p className="muted">{game.job?`${jobOf(game)?.name} · level ${game.level+1} · ${money(game,salary(game))}/year`:'An outside job can support your early political life.'}</p>{jobs.map(j=><div key={j.id}>{actionButton(`job:${j.id}`,j.name,`${money(game,Math.round(j.salary*countryOf(game).wage))}/year · ${j.smarts} smarts${j.degree?' · degree':''}`)}</div>)}{actionButton('retire','Retire from employment','From 65 · resign elected office first')}</details></>}
-            {tab==='Finances'&&<><h3>A little breathing room</h3><div className="ledger"><div><span>Personal balance</span><strong>{money(game,game.money)}</strong></div><div><span>{monthly?'Last monthly income':'Last yearly income'}</span><strong>{money(game,currentFinance(game).lastIncome)}</strong></div><div><span>{political?'Last monthly expenses':'Last yearly expenses'}</span><strong>{money(game,currentFinance(game).lastExpenses)}</strong></div><div><span>Lifetime income</span><strong>{money(game,game.earned)}</strong></div></div><p className="muted">{monthly?'Monthly life uses pay, living costs, tuition and debt interest. The birthday does not charge those costs again. Energy pressure can raise your living costs.':'Living costs begin at 18. Debt accrues 5% yearly interest.'} Figures are fictional take-home amounts.</p><div className="life-backup-controls"><button className="quiet outlined" onClick={()=>download('turning-pages-life-backup.json',JSON.stringify(game,null,2))}>Export complete life</button><button className="quiet outlined" onClick={()=>restoreInput.current?.click()}>Restore life backup</button><button className="quiet outlined" onClick={()=>recoverBeforePolitics()}>Recover pre-politics snapshot</button><button className="quiet outlined" onClick={()=>recoverBeforePolitics(PRE_NATIONAL_SAVE_KEY)}>Recover before national economy</button><button className="quiet outlined" onClick={()=>recoverBeforePolitics(PRE_INSTITUTIONS_SAVE_KEY)}>Recover before institutions</button><button className="quiet outlined" onClick={()=>recoverBeforePolitics(PRE_ARCHITECTURE_SAVE_KEY)}>Recover before architecture refactor</button><button className="quiet outlined" onClick={exportLegacy}>Export earlier town archive</button></div><p className="fine">Your complete life export includes its political career. Restore on another device to move the same story. The earlier separate town experiment stays archived; it is not silently attached to this character.</p></>}
+            {tab==='Finances'&&<><h3>A little breathing room</h3><div className="ledger"><div><span>Personal balance</span><strong>{money(game,game.money)}</strong></div><div><span>{monthly?'Last monthly income':'Last yearly income'}</span><strong>{money(game,currentFinance(game).lastIncome)}</strong></div><div><span>{political?'Last monthly expenses':'Last yearly expenses'}</span><strong>{money(game,currentFinance(game).lastExpenses)}</strong></div><div><span>Lifetime income</span><strong>{money(game,game.earned)}</strong></div></div><p className="muted">{monthly?'Monthly life uses pay, living costs, tuition and debt interest. The birthday does not charge those costs again. Energy pressure can raise your living costs.':'Living costs begin at 18. Debt accrues 5% yearly interest.'} Figures are fictional take-home amounts.</p><div className="life-backup-controls"><button className="quiet outlined" onClick={()=>exportBackup(game)}>Export complete life</button><button className="quiet outlined" onClick={()=>restoreInput.current?.click()}>Restore life backup</button><button className="quiet outlined" onClick={exportLegacy}>Export earlier town archive</button></div>{recoveryControls}<p className="fine">Your complete life export includes its political career. Restore on another device to move the same story. The earlier separate town experiment stays archived; it is not silently attached to this character.</p></>}
           </div>
         </section>
         <aside className="activities"><div className="eyebrow">THE EVERYDAY MATTERS</div><h3>Make time for you.</h3><p className="muted">{political?'Career and personal life share your time.':'Small habits. Lasting changes.'}</p><div className="time-budget"><span>{[0,1,2].map(i=><i key={i} className={i<game.actions?'available':''}/>)}</span><small>{game.actions} of 3 activities left</small></div>{actionButton('read','Follow your curiosity',political?'+2 smarts':'+5 smarts')}{actionButton('exercise','Get moving',political?'+2 health · +1 happiness':'+6 health · +2 happiness')}{actionButton('rest','Take a slow day',political?'+2 happiness · +1 health':'+7 happiness · +2 health')}{actionButton('groom','A little self-care',political?'+2 looks · +1 happiness':'+5 looks · +1 happiness')}<div className="next-page"><span className="eyebrow">THERE’S MORE TO YOUR STORY</span><p>Some things you choose.<br/>Some things find you.</p><button className="primary age-button" disabled={timeBlocked} onClick={advance}>{monthly?'Next month':'Age up'} <span>{political?'+1 month →':'+1 year →'}</span></button><small>{timeBlocked?'Resolve your outstanding choices to continue.':monthly?'Twelve months. One birthday.':'A new year. A new possibility.'}</small></div></aside>

@@ -1,6 +1,8 @@
 # Banking, devolution, parliamentary factions and conditional outlooks
 
-Implemented 21 September 2026, within Turning Pages' existing UK career. Read with NATIONAL-MODEL.md. This is a playable institutional expansion with explicit simplifications, not a full replica of British government or a validated economic forecasting service.
+Implemented 21 September 2026 as part of the independent UK world. Banks, devolved administrations, public-service capacity and institutional conditions progress for UK characters whether or not they enter politics. A political career can influence them through legislation and institutional actions. Read with NATIONAL-MODEL.md. This is a playable institutional expansion with explicit simplifications, not a full replica of British government or a validated economic forecasting service.
+
+The canonical state is nested under `Game.ukWorld.national.institutions`. Banking and devolution are UK-world institutions; parliamentary factions, whips and votes are political institutions within that same world. Mereford remains local. Institution months advance with the UK world from the country-neutral exact-date clock, without using political tenure as time. Exact dates do not make institutions run daily; their monthly update frequency remains unchanged. The current institution calculation file stays under the UK politics path as transitional debt; the UK world does not require an active political career to advance it.
 
 ## Research and the boundary between evidence and invention
 
@@ -19,7 +21,7 @@ Three fictional aggregate lenders start with total mortgages £1,400bn, business
 Monthly booking rules:
 
 1. New lending adds loans and deposits by equal amounts. Desired lending depends on confidence and enacted policies; available capital constrains actual lending. The banks differ in the mortgage/business mix of new credit.
-2. Repayment reduces loans and deposits. Defaults reduce loan assets and equity. Loan interest moves deposits to equity; deposit interest and operating costs move equity to deposits.
+2. Repayment reduces loans and deposits. The applied repayment is capped to the actual combined outstanding loan book and divided using its real mortgage/business shares; a zero book applies no repayment. Defaults reduce loan assets and equity. Loan interest moves deposits to equity; deposit interest and operating costs move equity to deposits.
 3. Cash withdrawals reduce reserves and deposits; withdrawn cash accumulates in `cashOutside`. Low liquidity can trigger collateralised central-bank borrowing, adding reserves and a matching liability.
 4. If capital drops below the model's 5% threshold, wholesale creditors convert claims into equity first. Any remaining gap to the 10% resolution target is a public recapitalisation: bank reserves/equity rise and the Treasury records that month's public outlay. An asset-accounting treatment of public equity holdings is not implemented, so this conservatively increases the simplified net-debt measure.
 5. Actual/desired credit supply feeds the macro financing drag. Arrears respond to unemployment and mortgage repricing. Low confidence increases credit losses and withdrawal pressure. Bank Rate remains independently determined by the national monetary rule; the player cannot order it from the banking screen.
@@ -64,7 +66,7 @@ The desk displays monthly medians and 10th–90th sample percentiles, including 
 
 ## Compatibility and extension points
 
-`national.institutions` and bill designs are optional additions to version 1. Old lives load unchanged; institutions attach prospectively. Existing Acts without a design preserve their original full-territory costs and effects. A raw `turning-pages:before-institutions` snapshot is written once before an older national save is replaced. If that write fails, the previous primary save stays intact. Finances provides confirmed recovery. Source tag `before-institutions` preserves commit `37832ea`; browser saves and source commits are different kinds of protection.
+Institutions are persisted in `Game.ukWorld.national.institutions` within the version 1 save. A legacy `politics.national` record carries its existing institutions across migration unchanged; older saves without institutional state attach it prospectively. Existing Acts without a design preserve their original full-territory costs and effects. Raw pre-institutions, pre-national and pre-world snapshots remain available, and failed snapshot writes keep the previous primary save intact. Finances provides confirmed recovery.
 
 UK simulation code lives in `engine/politics/uk/institutions.ts`, `institutionActions.ts` and `forecast.ts`; the former root paths are compatibility facades. Reusable bank accounting and projection mathematics live in `engine/systems/`. Content/source/scenario data remains in `data/institutions.ts`. Save validation checks bank accounting, IDs, bounds, factions/seats, clocks and the existing fiscal invariants. New required fields need a migration. The fixed original life fixture must remain untouched.
 

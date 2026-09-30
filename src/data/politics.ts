@@ -18,8 +18,14 @@ export type PoliticalRole='activist'|'councillor'|'mp'|'minister'|'premier';
 export const roleNames:Record<PoliticalRole,string>={activist:'Community organiser',councillor:'Mereford councillor',mp:'MP for Mereford',minister:'Housing & communities minister',premier:'Prime Minister'};
 export const rolePay:Record<PoliticalRole,number>={activist:0,councillor:12000,mp:54000,minister:66000,premier:78000};
 export type PoliticalEffects={reputation?:number;integrity?:number;organisation?:number;knowledge?:number;caucus?:number;unions?:number;enterprise?:number;support?:number;family?:number;health?:number;happiness?:number;money?:number;campaign?:number};
-export type PoliticalEvent={id:string;title:string;text:string;minimum:number;choices:{label:string;result:string;effects:PoliticalEffects;memory?:string}[]};
-export const politicalEvents:PoliticalEvent[]=[
+export type PoliticalChoice={id:string;label:string;result:string;effects:PoliticalEffects;memory?:string};
+export type PoliticalEvent={id:string;title:string;text:string;minimum:number;choices:PoliticalChoice[]};
+type RawPoliticalChoice=Omit<PoliticalChoice,'id'>;
+type RawPoliticalEvent=Omit<PoliticalEvent,'choices'>&{choices:RawPoliticalChoice[]};
+/** Choice IDs are stable test contracts; keep them independent of presentation order. */
+const choiceId=(eventId:string,label:string)=>`${eventId}.${label.toLowerCase().normalize('NFKD').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')}`;
+const withChoiceIds=(events:readonly RawPoliticalEvent[]):PoliticalEvent[]=>events.map(event=>({...event,choices:event.choices.map(choice=>({...choice,id:choiceId(event.id,choice.label)}))}));
+export const politicalEvents:PoliticalEvent[]=withChoiceIds([
   {id:'purpose',title:'What brings you into the room?',text:'At your first branch meeting, Ruth asks why you want to enter politics. The room waits. This is a promise people may remember.',minimum:0,choices:[
     {label:'“People need secure homes and livelihoods.”',result:'You put material security at the centre of your politics.',effects:{support:5,unions:5},memory:'Promised to put household security first.'},
     {label:'“Power should be open to challenge.”',result:'You promise to explain decisions and accept scrutiny.',effects:{integrity:7,knowledge:3},memory:'Promised open, accountable decisions.'},
@@ -65,7 +71,7 @@ export const politicalEvents:PoliticalEvent[]=[
   {id:'fatigue',title:'The speech you cannot finish',text:'You have read the same paragraph three times. Your colleague suggests cancelling one appearance. The diary is full; your energy is not.',minimum:0,choices:[
     {label:'Take a proper break',result:'You return with a clearer head. A missed appearance is survivable.',effects:{health:5,happiness:4,reputation:-2}},
     {label:'Push through',result:'You fulfil the commitment and pay for it with your health.',effects:{reputation:4,health:-5,happiness:-2}}]},
-];
+]);
 export const politicalTasks=[
   {id:'canvass',name:'Knock on doors',description:'+5 public support, +3 reputation · £30 travel · −1 health'},
   {id:'casework',name:'Hold a residents’ surgery',description:'+4 support, +3 integrity · costs one activity'},

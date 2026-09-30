@@ -18,6 +18,9 @@ import { prepareUK,syncUKCharacter,mirrorFinance } from './bridge';
 import type { PoliticalSystem } from '../engine';
 import { createNational,advanceNational,incomeTax,employeeNI } from './national';
 import { baselineBudget } from '../../../data/national';
+import { createUKWorld,advanceUKWorldMonth } from '../../ukWorld';
+import { lifeMonth } from '../../core/clock';
+import {COMPATIBILITY_MEREFORD_STREAM,COMPATIBILITY_NATIONAL_STREAM,hydrateCompatibilitySeed,recordCompatibilitySeed} from '../../core/rng';
 
 export const roleRank=(role:PoliticalRole)=>['activist','councillor','mp','minister','premier'].indexOf(role);
 const clamp=(n:number)=>Math.max(0,Math.min(100,n));
@@ -34,7 +37,7 @@ function affect(g:Game,e:PoliticalEffects){
 }
 export function joinPoliticsReason(g:Game){
   if(!g.alive)return 'This life has ended.';
-  if(g.politics)return 'You already belong to political life.';
+  if(g.politics)return 'This political record already exists in your life.';
   if(g.country!=='uk')return 'This career is available to characters living in the United Kingdom.';
   if(g.age<18)return 'Political career entry opens at age 18.';
   if(g.retired)return 'Begin this career before retiring.';
@@ -45,12 +48,19 @@ export function joinPoliticsReason(g:Game){
 export function joinPolitics(state:Game,party:PartyId,doctrine:DoctrineId):Game{
   if(joinPoliticsReason(state)||!parties.some(p=>p.id===party)||!doctrines.some(d=>d.id===doctrine))return state;
   const g=structuredClone(state);g.actions--;
+  if(!g.ukWorld)g.ukWorld=createUKWorld(createNational(g.seed,lifeMonth(g)));
+  g.ukWorld.national.seed=recordCompatibilitySeed(g,COMPATIBILITY_NATIONAL_STREAM,g.ukWorld.national.seed);
   g.politics={version:1,active:true,party,doctrine,role:'activist',months:0,startAge:g.age,startMonth:monthOfYear(g),reputation:25,integrity:60,organisation:20,knowledge:Math.round(g.stats.smarts*.6),caucus:35,unions:40,enterprise:40,support:40,campaignFunds:0,candidacy:null,seats:0,inGovernment:false,pending:'purpose',seen:['purpose'],memories:[],motion:null,bill:null,laws:[],economy:createTown(g.seed),log:[],elections:[],lastIncome:0,lastExpenses:0,yearIncome:0,yearExpenses:0};
-  prepareUK(g);
+  g.politics.economy.seed=recordCompatibilitySeed(g,COMPATIBILITY_MEREFORD_STREAM,g.politics.economy.seed);prepareUK(g);
   record(g,`You join ${parties.find(p=>p.id===party)!.name} in Mereford. Politics now shares your life, your time and your monthly finances.`);
   addConnection(g,{id:'political-mentor',name:'Ruth Ellis',role:'Branch mentor',bond:45,kind:'professional'});
   addConnection(g,{id:'political-rival',name:'Alex Shaw',role:'Party rival',bond:30,kind:'professional'});
   return syncUKCharacter(g);
+}
+/** Stops political hooks while retaining the complete career record and shared UK world. */
+export function leavePolitics(state:Game):Game{
+ if(!state.politics?.active)return state;
+ const g=structuredClone(state);g.politics!.active=false;g.politics!.pending=null;return g;
 }
 export function choosePoliticalEvent(state:Game,index:number):Game{
   const p=state.politics;if(!p||!state.alive||state.pending)return state;
@@ -67,6 +77,7 @@ export function electionIn(p:PoliticalCareer,kind:'council'|'parliament'){
 }
 export function politicalTaskReason(g:Game,id:string):string|null{
   const p=g.politics;if(!p)return 'Join the UK political career first.';
+  if(!p.active)return 'This political career is inactive.';
   if(!g.alive)return 'This life has ended.';
   if(g.pending||p.pending)return 'Resolve the outstanding life or political dilemma first.';
   if(g.actions<1)return 'Your monthly activities are spent.';
@@ -93,7 +104,7 @@ export function politicalTaskReason(g:Game,id:string):string|null{
     const reason=policyReason(p.economy,policy,true);if(reason)return reason;
   }
   if(id.startsWith('bill:')){
-    if(p.national?.proposal)return 'Finish or withdraw your national proposal first.';
+    if(g.ukWorld?.national.proposal)return 'Finish or withdraw your national proposal first.';
     const bill=id.split(':')[1] as BillId;if(!bills.some(b=>b.id===bill))return 'Unknown bill.';
     if(rank<2)return 'Only MPs can sponsor bills in this career.';
     if(p.bill)return 'Finish or withdraw the current bill first.';
@@ -115,7 +126,7 @@ export function politicalTask(state:Game,id:string):Game{
   if(id==='nominateParliament'){p.candidacy='parliament';p.campaignFunds-=500;record(g,'Your parliamentary selection campaign succeeds. £500 was spent from campaign funds, not your personal account.');}
   if(id==='seekOffice'){p.role='minister';record(g,'The Prime Minister appoints you to the housing and communities brief. Officials, colleagues and Parliament still constrain what you can deliver.');}
   if(id==='leadership'){p.role='premier';record(g,'Your party backs you as leader. With its Commons majority behind you, you form a government as Prime Minister.');}
-  if(id==='resign'){p.role='activist';p.candidacy=null;p.bill=null;p.motion=null;if(p.national)p.national.proposal=null;record(g,'You resign elected office and return to community organising. Your monthly life continues and your record remains.');}
+  if(id==='resign'){p.role='activist';p.candidacy=null;p.bill=null;p.motion=null;if(g.ukWorld)g.ukWorld.national.proposal=null;record(g,'You resign elected office and return to community organising. Your monthly life continues and your record remains.');}
   if(id.startsWith('motion:')){p.motion=id.split(':')[1] as PolicyId;record(g,`You sponsor ${townPolicies.find(x=>x.id===p.motion)!.name.toLowerCase()}. The programme board will vote at month end; you cannot simply order payment.`);}
   if(id.startsWith('bill:')){p.bill={id:id.split(':')[1] as BillId,stage:0,lastAdvanced:p.months};record(g,`${bills.find(b=>b.id===p.bill!.id)!.name} receives its first reading. It is not yet law.`);}
   if(id==='advanceBill'&&p.bill){
@@ -142,17 +153,17 @@ function election(g:Game,kind:'council'|'parliament'){
   const votes=[yours,main,second,rest-main-second];const won=yours>Math.max(...votes.slice(1));
   p.elections.unshift({month:p.months,kind,won,votes,seats:p.seats});if(p.candidacy===kind)p.candidacy=null;
   if(won){p.role=kind==='council'?'councillor':roleRank(p.role)>=2?p.role:'mp';if(kind==='parliament'){leaveJob(g);}affect(g,{reputation:5,happiness:5});record(g,`You win the ${kind==='council'?'council seat':'Mereford parliamentary seat'} with ${yours.toLocaleString()} of 20,000 votes. ${kind==='parliament'?`Your party has ${p.seats} of 650 seats.`:'Authority now brings responsibility.'}`);}
-  else{if(defending){p.role='activist';p.bill=null;p.motion=null;if(p.national)p.national.proposal=null;}affect(g,{reputation:-3,happiness:-4});record(g,`You lose the ${kind} election with ${yours.toLocaleString()} votes. The strongest rival received ${Math.max(...votes.slice(1)).toLocaleString()}. ${defending?'You leave office.':'Your current role continues.'} There is still a political life after defeat.`);}
+  else{if(defending){p.role='activist';p.bill=null;p.motion=null;if(g.ukWorld)g.ukWorld.national.proposal=null;}affect(g,{reputation:-3,happiness:-4});record(g,`You lose the ${kind} election with ${yours.toLocaleString()} votes. The strongest rival received ${Math.max(...votes.slice(1)).toLocaleString()}. ${defending?'You leave office.':'Your current role continues.'} There is still a political life after defeat.`);}
 }
-function beforeMonth(g:Game){const p=g.politics!;p.national??=createNational(g.seed,p.months);}
+function beforeMonth(g:Game){if(!g.ukWorld)g.ukWorld=createUKWorld(createNational(g.seed,lifeMonth(g)));g.ukWorld.national.seed=hydrateCompatibilitySeed(g,COMPATIBILITY_NATIONAL_STREAM,g.ukWorld.national.seed);if(g.politics)g.politics.economy.seed=hydrateCompatibilitySeed(g,COMPATIBILITY_MEREFORD_STREAM,g.politics.economy.seed);}
 function financeTerms(g:Game){
- const p=g.politics!,national=p.national!;
+ const p=g.politics!,national=g.ukWorld!.national;
  const annualIncome=rolePay[p.role]+(roleRank(p.role)<2?regularIncome(g):0),grossProxy=annualIncome/.8;
  const incomeAdjustment=-(incomeTax(grossProxy,national.budget)-incomeTax(grossProxy,baselineBudget)+(g.retired?0:employeeNI(grossProxy,national.budget)-employeeNI(grossProxy,baselineBudget)))/12;
  return {annualIncome,incomeAdjustment,livingMultiplier:(1+Math.max(0,p.economy.energy-1)*.12)*national.prices*(1+(national.budget.vat-20)*.004)};
 }
 function onMonth(g:Game,state:Readonly<Game>){
- const p=g.politics!,national=p.national!;mirrorFinance(g);p.months++;
+ const p=g.politics!,national=g.ukWorld!.national;mirrorFinance(g);p.months++;
   let policy:PolicyId='hold';
   if(p.motion){
     const stakeholder=p.motion==='business'?p.enterprise:p.motion==='relief'?p.unions:(p.unions+p.enterprise)/2;
@@ -166,10 +177,12 @@ function onMonth(g:Game,state:Readonly<Game>){
     policy=policyReason(p.economy,proposed,true)?'hold':proposed;
   }
   rebalanceFactions(ensureInstitutions(national,p.seats,p.party),p.seats,p.party);
-  p.national=advanceNational(national,p.inGovernment&&p.role==='premier');
-  const nation=p.national;
+  g.ukWorld=advanceUKWorldMonth(g.ukWorld!,advanceNational,p.inGovernment&&p.role==='premier');
+  g.ukWorld.national.seed=recordCompatibilitySeed(g,COMPATIBILITY_NATIONAL_STREAM,g.ukWorld.national.seed);
+  const nation=g.ukWorld.national;
   const wageTaxes=p.economy.employers.map(f=>{const gross=f.wage*12/.8;return (incomeTax(gross,nation.budget)+employeeNI(gross,nation.budget)-incomeTax(gross,baselineBudget)-employeeNI(gross,baselineBudget))/12;});
   p.economy=advanceTown(p.economy,policy,{continuous:true,warmHomes:p.laws.includes('warmHomes'),profitShare:p.laws.includes('profitShare'),propertyLevy:p.laws.includes('propertyLevy'),national:{energy:nation.energy/nation.sterling,orders:nation.foreignDemand*(1+(nation.growth-1.2)/30),prices:nation.prices*(1+(nation.budget.vat-20)*.004),rentIndex:Math.exp((45-nation.housing)*.002),wageIndex:1+(nation.rights-50)*.001,grant:nation.budget.local/65,pensions:nation.budget.pensions/145,welfare:nation.budget.welfare/165,wageTaxes}});
+  p.economy.seed=recordCompatibilitySeed(g,COMPATIBILITY_MEREFORD_STREAM,p.economy.seed);
   // National performance affects incumbents more strongly; opposition does not get blamed for every budget.
   const economyMood=Math.max(-1,Math.min(1,(nation.growth-1.2)*.15-(nation.unemployment-4.9)*.1-(nation.inflation-2)*.04));
   affect(g,{support:p.inGovernment?economyMood:-economyMood*.25});
@@ -183,16 +196,16 @@ function onMonth(g:Game,state:Readonly<Game>){
   changeBonds(g,-.25,isPersonal);
   if(p.months===6||(p.months>6&&(p.months-6)%48===0))election(g,'council');
   if(p.months===24||(p.months>24&&(p.months-24)%60===0))election(g,'parliament');
-  if(p.national?.institutions)rebalanceFactions(p.national.institutions,p.seats,p.party);
+  if(g.ukWorld.national.institutions)rebalanceFactions(g.ukWorld.national.institutions,p.seats,p.party);
   syncUKCharacter(g);
 }
 function afterMonth(g:Game){
- const p=g.politics!,nation=p.national!;mirrorFinance(g);
+ const p=g.politics!,nation=g.ukWorld!.national;mirrorFinance(g);
  if(g.alive){const {pool}=eventPool(politicalEvents,e=>e.id!=='purpose'&&e.minimum<=roleRank(p.role),p.seen.slice(-6));const event=pickEvent(g,pool,e=>e.id==='wages'?1+Math.max(0,nation.unemployment-4.9):e.id==='rent'?1+Math.max(0,nation.inflation-2):e.id==='budget'?1+Math.max(0,nation.fiscal.balance)/20:e.id==='fatigue'?1+(100-g.stats.health)/30:1);if(event){p.pending=event.id;p.seen.push(event.id);}}
  else p.pending=null;
  syncUKCharacter(g);
 }
-export const UKPoliticalSystem:PoliticalSystem<Game>={id:'politics.uk',country:'uk',active:g=>!!g.politics,hooks:{
+export const UKPoliticalSystem:PoliticalSystem<Game>={id:'politics.uk',country:'uk',active:g=>!!g.politics&&g.politics.active!==false,hooks:{
  id:'politics.uk',prepare:prepareUK,pending:g=>g.politics?.pending?'Resolve your political dilemma first.':null,
  restrictAction:(g,action)=>{const p=g.politics!;
   if(action==='university'&&['mp','minister','premier'].includes(p.role))return 'Resign parliamentary office before full-time university study.';

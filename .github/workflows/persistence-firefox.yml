@@ -1,0 +1,57 @@
+name: Firefox persistence gate
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - ".github/workflows/persistence-firefox.yml"
+      - "package.json"
+      - "pnpm-lock.yaml"
+      - "playwright.persistence.config.ts"
+      - "tests/browser/persistence.spec.ts"
+      - "src/persistence/**"
+      - "src/engine/save.ts"
+      - "src/engine/human/**"
+      - "src/data/demography/uk/**"
+
+permissions:
+  contents: read
+
+jobs:
+  firefox-persistence:
+    name: Firefox real IndexedDB persistence
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 11.19.0
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+
+      - name: Install locked dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Install Playwright Firefox and Linux dependencies
+        run: pnpm exec playwright install --with-deps firefox
+
+      - name: Run the real Firefox persistence profile
+        run: pnpm exec playwright test --config playwright.persistence.config.ts --project=firefox
+
+      - name: Retain Firefox failure traces
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: firefox-persistence-failure
+          path: test-results/
+          if-no-files-found: warn
+          retention-days: 14

@@ -3,7 +3,7 @@ import type { NationalState } from './national';
 import type { PartyId,DoctrineId,PoliticalRole,BillId } from '../../../data/politics';
 import type { PolicyId } from '../../../data/town';
 export type PoliticalCareer={
-  version:1;active:true;party:PartyId;doctrine:DoctrineId;role:PoliticalRole;months:number;startAge:number;startMonth?:number;
+  version:1;active:boolean;party:PartyId;doctrine:DoctrineId;role:PoliticalRole;months:number;startAge:number;startMonth?:number;
   reputation:number;integrity:number;organisation:number;knowledge:number;
   caucus:number;unions:number;enterprise:number;support:number;campaignFunds:number;
   candidacy:'council'|'parliament'|null;seats:number;inGovernment:boolean;

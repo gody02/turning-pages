@@ -1,18 +1,31 @@
-# Working on Turning Pages
+# Repository Guidelines
 
-- Read `ARCHITECTURE.md` and `PROJECT-STATE.md` before changing simulation code. Read `POLITICS-VISION.md` for the political design; do not confuse planned systems with implemented ones.
-- Read `NATIONAL-MODEL.md` and `INSTITUTIONS-MODEL.md` before changing national economics or institutions. Preserve bank balance identities and prospective institution attachment; forecasts must never consume the live timeline seed. Preserve dated source provenance, separate verified UK rules from scenario assumptions, and keep national £bn separate from local/personal pounds. Do not sum the constituency satellite ledger into national totals.
+## Project Structure
 
-- Keep all simulation rules in `src/engine` and content in `src/data`. React components render state and dispatch transitions.
-- Preserve the dependency direction in `ARCHITECTURE.md`: `core/` and `systems/` are country- and career-neutral. Life-path modules consume them through `SimulationModule`; they do not own age, birthdays, ordinary careers, personal finance or relationships.
-- Preserve deterministic seeded randomness. Never use `Math.random()` in engine transitions.
-- Keep transitions immutable and add regression tests for progression changes.
-- Every event needs a globally unique ID and at least one choice with no cash requirement.
-- Keep country presets explicitly fictional. Maintain original names, writing, mechanics and visual design.
-- Validate saved data at the boundary; add migrations when the save schema changes.
-- Run `pnpm test` and `pnpm build` after engine changes. Check affected UI at mobile and desktop widths.
-- The future expansions listed in README are design extension points, not implemented features.
-- Politics belongs inside the existing life and Career tab. Preserve one character and one clock: twelve political months advance one year of age, education and work without charging cash twice. New countries implement political adapters rather than branching the life engine. Keep regression coverage for these boundaries.
-- Keep the legacy standalone town archive separate and recoverable; never silently assign it to a character. Preserve `src/engine/fixtures/life-v1.json` as a fixed legacy compatibility fixture and retain pre-career recovery snapshots.
-- Town money transfers must reconcile to counterparties; never alter balances as untracked bonuses. Document behavioural assumptions separately from accounting invariants.
-- Checkpoint source before substantial changes and record completed work in CHANGELOG.md and PROJECT-STATE.md.
+Turning Pages is a mobile-first React, TypeScript and Vite life simulation. `src/ui/` contains screens; `src/data/` holds content; `src/engine/` contains simulation logic and tests. Shared life systems currently live in `core/` and `systems/`. UK politics and world code remain grouped under current paths, including `politics/uk/`; this is current placement, not target ownership. Root forwarding modules are temporary facades.
+
+## Build, Test, and Development
+
+- `pnpm install` installs dependencies.
+- `pnpm dev` starts the local Vite server.
+- `pnpm test` runs Vitest.
+- `pnpm build` type-checks and creates the production bundle.
+- `pnpm preview` serves the build locally; `pnpm phone` serves it on the LAN for same-Wi-Fi phone testing.
+
+Run tests and build after engine changes; check affected screens at phone and desktop widths.
+
+## Coding and Testing Conventions
+
+Use TypeScript, 2-space indentation, and nearby formatting; no formatter or linter is configured. Name React components in PascalCase, modules in lowercase, and tests `*.test.ts`. Keep simulation rules outside React and transitions immutable. Vitest tests live beside engine modules; cover behavior, migrations, deterministic outcomes and module boundaries. Preserve fixtures such as `src/engine/fixtures/life-v1.json` unless an intentional behavior change is approved. Events need unique IDs and a free choice; transfers must reconcile.
+
+## Architecture and Persistence Rules
+
+Country/world simulation exists independently of specialist careers. Characters of any career or employment status inhabit the same economy, households, industries, banking, housing, services, institutions, fiscal environment and national conditions. UK politics may consume and influence UK world state, but that state must not require politics to be active. Generic core systems remain country-neutral. Specialist modules may depend on core/world systems; core/world systems must not depend on a specialist political career. Preserve saves and UK behavior during ownership refactors. Compatibility facades are temporary.
+
+One country-neutral simulation clock owns an exact Gregorian `{ year, month, day }` date; date of birth determines age. `clock.cadence` means player turn cadence, not date precision or subsystem frequency. The country-neutral scheduler stores serialisable future work and recurrence but never executes it, advances time or consumes RNG; owning domains interpret due items. Domain Events are transient, data-only notifications during a candidate-state transition: their queues and IDs are never persisted, and stable handler IDs define deterministic order. Domain counters such as political tenure, UK world month and constituency month must not become clocks or advance independently of successful time transitions. Use deterministic seeded RNG; never use `Math.random()` in transitions. Persisted schema changes require migrations and validation. Distinguish verified UK rules from assumptions and national £bn from local/personal pounds.
+
+Follow `MODELLING-STANDARD.md` when adding evidence or calibrated inputs. Classify observations, estimates, transformations, assumptions and authored abstractions accurately; absence is not zero, forecasts are not history, and canonical precision must not be presented as source precision.
+
+## Scope and Changes
+
+For scoped architecture tasks, add no unrelated features; prefer small, reviewable changes. Update `PROJECT-STATE.md` after meaningful phases. Read `ARCHITECTURE.md` and `PROJECT-STATE.md` before engine work, plus `NATIONAL-MODEL.md` and `INSTITUTIONS-MODEL.md` for UK economy/institution changes. Use short imperative commit subjects. Pull requests should describe changes, report checks, link issues when available, and include phone screenshots for UI work.

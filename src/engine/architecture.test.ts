@@ -13,7 +13,7 @@ import {transferCash} from './systems/finance';
 import {bankAssets,bankLiabilities,stepBanks,type BankingBook} from './systems/banking';
 import {joinPolitics,choosePoliticalEvent,advancePoliticalMonth} from './politics';
 import {politicalSystems} from './simulation';
-import {isGame,loadGame,saveGame,SAVE_KEY,PRE_ARCHITECTURE_SAVE_KEY} from './save';
+import {isGame,migrateGame,loadGame,saveGame,SAVE_KEY,PRE_ARCHITECTURE_SAVE_KEY} from './save';
 import {architectureScenarios} from './fixtures/architectureScenario';
 import golden from './fixtures/architecture-baseline.json';
 import legacy from './fixtures/life-v1.json';
@@ -24,7 +24,7 @@ describe('independent life systems',()=>{
  it('runs monthly jobs, promotions, qualifications and finances with no politics installed',()=>{
   let g=act(adultStart(createLife('Core','Woman','ca',4)),'job:barista');const initialMoney=g.money;
   for(let m=0;m<36;m++){g=resolve(advanceMonth(g));expect(validLife(g)).toBe(true);expect('politics' in g).toBe(false);}
-  expect(g.age).toBe(21);expect(g.jobYears).toBe(3);expect(g.level).toBe(1);expect(g.clock?.totalMonths).toBe(252);expect(g.money).toBeGreaterThan(initialMoney);expect(g.earned).toBeCloseTo(100050.12,2);expect(g.finances!.yearIncome).toBe(0);expect(salary(g)).toBe(40020);
+  expect(g.age).toBe(21);expect(g.jobYears).toBe(3);expect(g.level).toBe(1);expect(lifeMonth(g)).toBe(252);expect(g.money).toBeGreaterThan(initialMoney);expect(g.earned).toBeCloseTo(100050.12,2);expect(g.finances!.yearIncome).toBe(0);expect(salary(g)).toBe(40020);
   let student=act(adultStart(createLife('Student','Man','nz',5)),'university');for(let m=0;m<36;m++)student=resolve(advanceMonth(student));expect(student.education).toBe('degree');expect(student.studyYears).toBe(3);expect(hasFact(student,'qualification:degree')).toBe(true);
  });
  it('keeps monthly cash settlement separate from one annual milestone',()=>{let g=adultStart(createLife('Core','Man','uk',9));g.job='barista';g.money=200000;for(let m=0;m<11;m++)g=resolve(advanceMonth(g));const before=structuredClone(g);g=advanceMonth(g);expect(g.age-before.age).toBe(1);expect(g.money-before.money).toBeCloseTo(1916.67-1250,2);expect(g.jobYears).toBe(1);expect(advanceYear(resolve(g))).toEqual(resolve(g));expect(g.finances!.yearIncome).toBe(0);});
@@ -50,10 +50,10 @@ describe('independent life systems',()=>{
   stepBanks(book,{bankRate:3.75,confidence:55,unemployment:4.9},{capitalBuffer:11,creditMultiplier:1,bankCreditMultipliers:{},mortgageShares:{test:.7},affordabilityMultiplier:1,lossMultiplier:1,operatingMultiplier:1,withdrawalMultiplier:1},()=>.5,()=>{});expect(bankAssets(book.banks[0])).toBeCloseTo(bankLiabilities(book.banks[0]),8);expect(book.bankLog).toHaveLength(1);
  });
  it('preserves legacy load bytes and refuses the first architecture overwrite if recovery fails',()=>{
-  const raw=JSON.stringify(legacy),data=new Map([[SAVE_KEY,raw]]),storage={getItem:(k:string)=>data.get(k)??null,setItem:(k:string,v:string)=>{data.set(k,v);}};expect(loadGame(storage).game).toEqual(legacy);const next=advanceMonth(loadGame(storage).game!);expect(saveGame(storage,next)).toBeNull();expect(data.get(PRE_ARCHITECTURE_SAVE_KEY)).toBe(raw);expect(isGame(loadGame(storage).game)).toBe(true);
+  const raw=JSON.stringify(legacy),data=new Map([[SAVE_KEY,raw]]),storage={getItem:(k:string)=>data.get(k)??null,setItem:(k:string,v:string)=>{data.set(k,v);}};expect(loadGame(storage).game).toEqual(migrateGame(legacy));const next=advanceMonth(loadGame(storage).game!);expect(saveGame(storage,next)).toBeNull();expect(data.get(PRE_ARCHITECTURE_SAVE_KEY)).toBe(raw);expect(isGame(loadGame(storage).game)).toBe(true);
   const blocked={getItem:(k:string)=>k===SAVE_KEY?raw:null,setItem:()=>{throw Error('Quota');}};expect(saveGame(blocked,next)).toBeTruthy();expect(blocked.getItem(SAVE_KEY)).toBe(raw);
  });
- it('rejects corrupt generic clocks, future facts, relationship types and character scores',()=>{const g=advanceMonth(adultStart(createLife('Core','Man','uk',2)));expect(validLife({...g,clock:{...g.clock,monthOfYear:12}})).toBe(false);expect(validLife({...g,clock:{...g.clock,totalMonths:0}})).toBe(false);expect(validLife({...g,facts:[{id:'x',atMonth:999,source:'life',kind:'decision',detail:'x',tags:[]}]})).toBe(false);expect(validLife({...g,development:{traits:[],skills:{x:NaN},reputation:{},fame:0}})).toBe(false);expect(validLife({...g,relationships:[{...g.relationships[0],kind:'minister'}]})).toBe(false);});
+ it('rejects corrupt generic clocks, future facts, relationship types and character scores',()=>{const g=advanceMonth(adultStart(createLife('Core','Man','uk',2)));expect(validLife({...g,clock:{...g.clock!,date:{...g.clock!.date,month:13}}})).toBe(false);expect(validLife({...g,dateOfBirth:g.clock!.date})).toBe(false);expect(validLife({...g,facts:[{id:'x',atMonth:999,source:'life',kind:'decision',detail:'x',tags:[]}]})).toBe(false);expect(validLife({...g,development:{traits:[],skills:{x:NaN},reputation:{},fame:0}})).toBe(false);expect(validLife({...g,relationships:[{...g.relationships[0],kind:'minister'}]})).toBe(false);});
  it('registers only the implemented UK political system',()=>{expect(politicalSystems.map(s=>[s.id,s.country])).toEqual([['politics.uk','uk']]);});
 });
 describe('dependency direction',()=>{
@@ -62,7 +62,9 @@ describe('dependency direction',()=>{
   for(const [path,source] of Object.entries(sources)){
    const imports=[...source.matchAll(/(?:from\s+|import\s*)['"]([^'"]+)['"]/g)].map(m=>m[1]);
    for(const dependency of imports){expect(dependency,`${path} imports ${dependency}`).not.toMatch(/politics|national|institutions|\/types$|\/game$|simulation|\/ui\//);}
-  }
+ }
  });
+ it('keeps authoritative shared transitions free of host randomness',()=>{for(const [path,source] of Object.entries(sources))expect(source,path).not.toMatch(/Math\.random/);});
  it('keeps the UK adapter from implementing birthdays and personal salary settlement',()=>{const uk=import.meta.glob<string>('./politics/uk/politics.ts',{eager:true,query:'?raw',import:'default'});const source=Object.values(uk)[0];expect(source).not.toMatch(/politicalBirthday|g\.age\+\+|g\.earned\s*=|g\.money\s*=|g\.jobYears\+\+/);});
+ it('keeps the UK world owner free of runtime political-career dependencies',()=>{const files=import.meta.glob<string>('./ukWorld.ts',{eager:true,query:'?raw',import:'default'}),source=Object.values(files)[0];const runtimeImports=[...source.matchAll(/^import\s+(?!type\b).*?from\s+['"]([^'"]+)['"]/gm)].map(m=>m[1]);expect(runtimeImports).toEqual([]);expect(source).not.toMatch(/PoliticalCareer|\.politics\b/);});
 });

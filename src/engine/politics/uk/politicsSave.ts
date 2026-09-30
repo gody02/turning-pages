@@ -7,7 +7,9 @@ const rec=(v:unknown):v is Record<string,unknown>=>!!v&&typeof v==='object'&&!Ar
 const n=(v:unknown,min=0,max=1e12):v is number=>typeof v==='number'&&Number.isFinite(v)&&v>=min&&v<=max;
 const int=(v:unknown,min=0,max=1200)=>n(v,min,max)&&Number.isInteger(v);
 export function validPolitics(v:unknown,age:number,country:string):v is PoliticalCareer{
-  if(!rec(v)||v.version!==1||v.active!==true||country!=='uk'||!int(v.startAge,18,99)||!int(v.months)||(v.startMonth!==undefined&&!int(v.startMonth,0,11))||age!==(v.startAge as number)+Math.floor(((v.startMonth as number??0)+(v.months as number))/12))return false;
+  if(!rec(v)||v.version!==1||typeof v.active!=='boolean'||country!=='uk'||!int(v.startAge,18,99)||!int(v.months)||(v.startMonth!==undefined&&!int(v.startMonth,0,11)))return false;
+  const recordedAge=(v.startAge as number)+Math.floor(((v.startMonth as number??0)+(v.months as number))/12);
+  if(v.active?age!==recordedAge:age<recordedAge)return false;
   if(!parties.some(p=>p.id===v.party)||!doctrines.some(d=>d.id===v.doctrine)||!Object.hasOwn(roleNames,v.role as string))return false;
   if(!['reputation','integrity','organisation','knowledge','caucus','unions','enterprise','support'].every(k=>n(v[k],0,100)))return false;
   if(!['campaignFunds','lastIncome','lastExpenses','yearIncome','yearExpenses'].every(k=>n(v[k])))return false;

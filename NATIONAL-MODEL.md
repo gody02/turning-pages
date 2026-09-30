@@ -1,6 +1,8 @@
 # National economy: model contract and research record
 
-Implemented 21 September 2026 inside Turning Pages' UK career. This is a transparent, playable macroeconomic model, not a claim to reproduce the UK to the smallest detail. Preserve the distinction between verified starting rules, scenario assumptions and simulated developments.
+Implemented 21 September 2026 as the national economy of the independent Turning Pages UK world. It progresses for UK characters regardless of career; UK politics can change its Budget and legislation through political actions. This is a transparent, playable macroeconomic model, not a claim to reproduce the UK to the smallest detail. Preserve the distinction between verified starting rules, scenario assumptions and simulated developments.
+
+`Game.ukWorld.national` is the canonical persisted national state. `NationalState.month` is a UK-world elapsed counter, independent of the exact Gregorian `LifeState.clock.date` and political-career tenure. Each successful monthly turn advances the UK world once; an annual life turn supplies twelve monthly advances. Exact date precision does not cause daily macroeconomic execution. Mereford's households and employers remain a local constituency satellite and are not the United Kingdom's population or economy. Existing national calculations remain in `src/engine/politics/uk/national.ts` temporarily; their file location does not give the political career ownership of the national state.
 
 ## Starting evidence
 
@@ -55,11 +57,11 @@ Randomness is saved and reproducible so reloads preserve continuity. A determini
 
 ## Save compatibility
 
-The optional `politics.national` object is schema version 1, scenario `uk-2026-09`. Its `introduced` field records the existing career month at attachment. It starts on the next monthly or national legislative action, without retroactively simulating earlier years. Ordinary lives and older career saves load unchanged.
+The national state remains model schema version 1, scenario `uk-2026-09`, and is canonically stored at `Game.ukWorld.national`. A legacy `politics.national` record migrates verbatim once, including its world month, seed, Budget, institutions, banking state, incidents and history. Older UK saves without national state start prospectively at the saved life month with no fabricated history or replay.
 
-Before the first national overwrite of an older political save, `turning-pages:before-national-economy` preserves the raw previous life once. Finances can recover it after confirmation. A failed backup write prevents primary replacement. This is a one-time device recovery snapshot, not unlimited history. Source tag `before-national-economy` preserves the previous implementation.
+Before the first overwrite of a legacy UK save, `turning-pages:before-uk-world-ownership` preserves its raw bytes once. The separate `turning-pages:before-simulation-clock` snapshot protects elapsed-clock migration. Finances can recover both after confirmation. A failed backup write prevents primary replacement. Earlier national, institutions, politics and architecture recovery snapshots remain supported.
 
-Validation checks numeric bounds, known proposals, unique enacted laws, frozen budgets, the investment pipeline, exact chronological debt/borrowing identities, sector totals, vote totals and agreement with the career clock. Future required fields need a migration.
+Validation checks numeric bounds, known proposals, unique enacted laws, frozen budgets, the investment pipeline, exact chronological debt/borrowing identities, sector totals and vote totals. World month is independent of both the calendar date and political-career tenure; single-advance tests bind its progression to successful clock transitions. Future required fields need a migration.
 
 ## Institutional expansion
 

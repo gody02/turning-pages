@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "id": "human-content-review.uk.family-authored-v1",
+  "status": "approved",
+  "classification": "authored-gameplay-abstraction",
+  "scope": "Plausible identity-facing family-name content for UK Human generation v1; not empirical surname-frequency evidence.",
+  "checks": {
+    "normalizedDuplicates": "pass",
+    "placeholders": "pass",
+    "offensiveOrTestContent": "pass",
+    "unicode": "pass",
+    "personDisplayName": "pass",
+    "breadth": "pass",
+    "similarEntries": "pass",
+    "codePointLengths": "pass",
+    "licensingContamination": "pass"
+  },
+  "approvalNote": "Approved as an equal-weight authored gameplay abstraction. No entry or weight is asserted to represent UK prevalence or any demographic group.",
+  "reviewedOn": "2026-09-24"
+}

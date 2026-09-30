@@ -1,0 +1,2890 @@
+{
+  "schemaVersion": 1,
+  "methodologyId": "population-calibration.method-v1",
+  "id": "uk.population.mid-2024.v2",
+  "countryId": "uk",
+  "effectiveDate": {
+    "year": 2024,
+    "month": 6,
+    "day": 30
+  },
+  "coverageIntent": "complete",
+  "partition": {
+    "areaPartitionId": null,
+    "birthYearFrom": 1906,
+    "birthYearThrough": 2024
+  },
+  "universes": [
+    {
+      "id": "population.universe.uk-usual-residents-mid-2024-v1",
+      "description": "The mid-year population estimates are consistent with the standard UN definition for population estimates, which is based upon the concept of usual residence and includes people who reside, or intend to reside, in the country for at least 12 months, whatever their nationality. Visitors and short-term migrants (who enter or leave the UK for less than 12 months) are not included.",
+      "exhaustive": true
+    }
+  ],
+  "sources": [
+    {
+      "version": 1,
+      "id": "source.ons.uk-mye-mid-2024-v1",
+      "organisation": "Office for National Statistics",
+      "datasetId": "population-estimates-uk-constituent-countries",
+      "releaseId": "MYE24UK",
+      "title": "Population estimates for the UK, England, Wales, Scotland and Northern Ireland: mid-2024",
+      "referencePeriod": {
+        "from": {
+          "year": 2024,
+          "month": 6,
+          "day": 30
+        },
+        "through": {
+          "year": 2024,
+          "month": 6,
+          "day": 30
+        }
+      },
+      "jurisdiction": "uk",
+      "publicationStatus": "final",
+      "bundledArtifact": "artifact.ons.mye24uk-workbook-v1",
+      "externalLocator": "https://www.ons.gov.uk/file?uri=%2Fpeoplepopulationandcommunity%2Fpopulationandmigration%2Fpopulationestimates%2Fdatasets%2Fpopulationestimatesforukenglandandwalesscotlandandnorthernireland%2Fmid2024%2Fmye24tablesuk.xlsx",
+      "retrievedAt": {
+        "year": 2026,
+        "month": 9,
+        "day": 24
+      },
+      "methodologyNote": "Accredited official mid-year estimates using the usual-resident universe. Tables are unrounded for analysis but must not be treated as accurate to that precision."
+    },
+    {
+      "version": 1,
+      "id": "source.ons.uk-very-old-mid-2024-v1",
+      "organisation": "Office for National Statistics",
+      "datasetId": "mid-year-population-estimates-very-old-uk",
+      "releaseId": "UK-EVO-2002-2024",
+      "title": "Mid-year population estimates of the very old, including centenarians: UK",
+      "referencePeriod": {
+        "from": {
+          "year": 2024,
+          "month": 6,
+          "day": 30
+        },
+        "through": {
+          "year": 2024,
+          "month": 6,
+          "day": 30
+        }
+      },
+      "jurisdiction": "uk",
+      "publicationStatus": "provisional",
+      "bundledArtifact": "artifact.ons.ukevo2024-csv-v1",
+      "externalLocator": "https://www.ons.gov.uk/file?uri=%2Fpeoplepopulationandcommunity%2Fbirthsdeathsandmarriages%2Fageing%2Fdatasets%2Fmidyearpopulationestimatesoftheveryoldincludingcentenariansunitedkingdom%2Fcurrent%2Fukevo2024.csv",
+      "retrievedAt": {
+        "year": 2026,
+        "month": 9,
+        "day": 24
+      },
+      "methodologyNote": "Provisional official estimates for ages 90 to 104 and the open 105+ group, rounded to the nearest 10 and revised when a later edition is produced."
+    },
+    {
+      "version": 1,
+      "id": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "organisation": "Turning Pages",
+      "datasetId": "uk-old-age-tail-calibration",
+      "releaseId": "uk-old-age-tail.geometric-adjacent-v1",
+      "title": "UK mid-2024 closed old-age-tail calibration",
+      "referencePeriod": {
+        "from": {
+          "year": 2024,
+          "month": 6,
+          "day": 30
+        },
+        "through": {
+          "year": 2024,
+          "month": 6,
+          "day": 30
+        }
+      },
+      "jurisdiction": "uk",
+      "publicationStatus": "experimental",
+      "methodologyNote": "Assumed within-total shape. Exact ratio r=(N101+N102+N103+N104)/(N100+N101+N102+N103)=933/1516; exact powers support ages 105-119; age 120 is the official-method terminal assumption; normalized tail weight is 610; all ages 90-119 reconcile by code-point age:090..age:119 largest remainder to 625236; birth years use uniform Gregorian birth-day weights. Exact output is calibrated and is not an ONS single-age estimate."
+    }
+  ],
+  "measures": [
+    {
+      "version": 1,
+      "id": "measure.ons.uk-total-mid-2024-v1",
+      "sourceId": "source.ons.uk-mye-mid-2024-v1",
+      "series": "MYE1!B9",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "estimated",
+      "dimensions": {
+        "kind": "total"
+      },
+      "value": "69281437",
+      "uncertainty": "Official mid-year population estimate. Canonical integer precision must not be read as equivalent empirical precision."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-1906-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:1906",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 1906
+      },
+      "value": "1",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-1907-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:1907",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 1907
+      },
+      "value": "1",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-1908-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:1908",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 1908
+      },
+      "value": "1",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-1909-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:1909",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 1909
+      },
+      "value": "3",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-1910-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:1910",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 1910
+      },
+      "value": "4",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-1911-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:1911",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 1911
+      },
+      "value": "6",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-1912-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:1912",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 1912
+      },
+      "value": "11",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-1913-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:1913",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 1913
+      },
+      "value": "17",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-1914-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:1914",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 1914
+      },
+      "value": "27",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-1915-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:1915",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 1915
+      },
+      "value": "45",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-1916-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:1916",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 1916
+      },
+      "value": "72",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-1917-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:1917",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 1917
+      },
+      "value": "117",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-1918-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:1918",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 1918
+      },
+      "value": "189",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-1919-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:1919",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 1919
+      },
+      "value": "564",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-1920-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:1920",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 1920
+      },
+      "value": "1229",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-1921-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:1921",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 1921
+      },
+      "value": "2095",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-1922-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:1922",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 1922
+      },
+      "value": "3447",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-1923-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:1923",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 1923
+      },
+      "value": "5490",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-1924-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:1924",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 1924
+      },
+      "value": "8580",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-1925-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:1925",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 1925
+      },
+      "value": "13041",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-1926-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:1926",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 1926
+      },
+      "value": "19188",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-1927-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:1927",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 1927
+      },
+      "value": "27207",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-1928-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:1928",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 1928
+      },
+      "value": "37983",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-1929-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:1929",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 1929
+      },
+      "value": "51848",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-1930-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:1930",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 1930
+      },
+      "value": "68275",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-1931-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:1931",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 1931
+      },
+      "value": "86299",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-1932-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:1932",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 1932
+      },
+      "value": "105573",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-1933-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:1933",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 1933
+      },
+      "value": "126007",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-1934-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:1934",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 1934
+      },
+      "value": "152219",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-1935-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:1935",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 1935
+      },
+      "value": "181144",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-1936-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:1936",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 1936
+      },
+      "value": "210444",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-1937-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:1937",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 1937
+      },
+      "value": "240551",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-1938-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:1938",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 1938
+      },
+      "value": "268824",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-1939-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:1939",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 1939
+      },
+      "value": "290742",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-1940-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:1940",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 1940
+      },
+      "value": "303477",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-1941-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:1941",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 1941
+      },
+      "value": "331556",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-1942-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:1942",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 1942
+      },
+      "value": "386398",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-1943-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:1943",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 1943
+      },
+      "value": "438003",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-1944-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:1944",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 1944
+      },
+      "value": "470055",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-1945-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:1945",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 1945
+      },
+      "value": "491099",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-1946-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:1946",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 1946
+      },
+      "value": "590221",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-1947-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:1947",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 1947
+      },
+      "value": "653162",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-1948-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:1948",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 1948
+      },
+      "value": "623807",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-1949-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:1949",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 1949
+      },
+      "value": "608225",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-1950-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:1950",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 1950
+      },
+      "value": "604700",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-1951-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:1951",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 1951
+      },
+      "value": "604777",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-1952-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:1952",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 1952
+      },
+      "value": "620506",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-1953-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:1953",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 1953
+      },
+      "value": "640333",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-1954-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:1954",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 1954
+      },
+      "value": "650824",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-1955-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:1955",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 1955
+      },
+      "value": "667844",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-1956-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:1956",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 1956
+      },
+      "value": "699954",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-1957-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:1957",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 1957
+      },
+      "value": "731435",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-1958-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:1958",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 1958
+      },
+      "value": "760845",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-1959-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:1959",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 1959
+      },
+      "value": "783106",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-1960-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:1960",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 1960
+      },
+      "value": "814247",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-1961-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:1961",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 1961
+      },
+      "value": "847368",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-1962-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:1962",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 1962
+      },
+      "value": "876095",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-1963-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:1963",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 1963
+      },
+      "value": "898063",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-1964-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:1964",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 1964
+      },
+      "value": "918544",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-1965-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:1965",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 1965
+      },
+      "value": "922358",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-1966-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:1966",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 1966
+      },
+      "value": "923282",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-1967-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:1967",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 1967
+      },
+      "value": "922497",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-1968-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:1968",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 1968
+      },
+      "value": "924334",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-1969-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:1969",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 1969
+      },
+      "value": "914196",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-1970-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:1970",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 1970
+      },
+      "value": "915906",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-1971-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:1971",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 1971
+      },
+      "value": "909657",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-1972-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:1972",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 1972
+      },
+      "value": "879801",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-1973-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:1973",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 1973
+      },
+      "value": "846818",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-1974-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:1974",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 1974
+      },
+      "value": "826200",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-1975-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:1975",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 1975
+      },
+      "value": "813012",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-1976-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:1976",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 1976
+      },
+      "value": "799644",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-1977-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:1977",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 1977
+      },
+      "value": "798196",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-1978-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:1978",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 1978
+      },
+      "value": "837647",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-1979-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:1979",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 1979
+      },
+      "value": "886794",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-1980-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:1980",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 1980
+      },
+      "value": "908098",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-1981-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:1981",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 1981
+      },
+      "value": "903197",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-1982-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:1982",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 1982
+      },
+      "value": "903567",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-1983-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:1983",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 1983
+      },
+      "value": "906580",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-1984-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:1984",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 1984
+      },
+      "value": "924866",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-1985-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:1985",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 1985
+      },
+      "value": "941815",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-1986-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:1986",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 1986
+      },
+      "value": "948571",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-1987-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:1987",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 1987
+      },
+      "value": "962156",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-1988-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:1988",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 1988
+      },
+      "value": "971331",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-1989-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:1989",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 1989
+      },
+      "value": "969275",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-1990-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:1990",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 1990
+      },
+      "value": "974806",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-1991-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:1991",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 1991
+      },
+      "value": "969371",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-1992-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:1992",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 1992
+      },
+      "value": "954552",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-1993-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:1993",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 1993
+      },
+      "value": "941009",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-1994-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:1994",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 1994
+      },
+      "value": "929526",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-1995-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:1995",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 1995
+      },
+      "value": "912622",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-1996-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:1996",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 1996
+      },
+      "value": "917523",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-1997-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:1997",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 1997
+      },
+      "value": "914386",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-1998-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:1998",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 1998
+      },
+      "value": "898806",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-1999-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:1999",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 1999
+      },
+      "value": "876777",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-2000-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:2000",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 2000
+      },
+      "value": "852718",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-2001-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:2001",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 2001
+      },
+      "value": "831105",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-2002-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:2002",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 2002
+      },
+      "value": "820895",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-2003-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:2003",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 2003
+      },
+      "value": "818864",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-2004-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:2004",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 2004
+      },
+      "value": "820879",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-2005-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:2005",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 2005
+      },
+      "value": "812586",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-2006-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:2006",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 2006
+      },
+      "value": "812049",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-2007-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:2007",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 2007
+      },
+      "value": "830484",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-2008-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:2008",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 2008
+      },
+      "value": "843243",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-2009-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:2009",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 2009
+      },
+      "value": "841137",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-2010-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:2010",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 2010
+      },
+      "value": "849293",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-2011-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:2011",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 2011
+      },
+      "value": "853506",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-2012-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:2012",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 2012
+      },
+      "value": "846044",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-2013-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:2013",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 2013
+      },
+      "value": "825684",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-2014-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:2014",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 2014
+      },
+      "value": "814869",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-2015-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:2015",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 2015
+      },
+      "value": "815098",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-2016-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:2016",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 2016
+      },
+      "value": "809183",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-2017-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:2017",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 2017
+      },
+      "value": "788156",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-2018-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:2018",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 2018
+      },
+      "value": "774592",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-2019-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:2019",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 2019
+      },
+      "value": "761454",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-2020-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:2020",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 2020
+      },
+      "value": "742688",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-2021-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:2021",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 2021
+      },
+      "value": "730483",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-2022-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:2022",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 2022
+      },
+      "value": "711149",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-2023-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:2023",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 2023
+      },
+      "value": "678042",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    },
+    {
+      "version": 1,
+      "id": "measure.turning-pages.uk-birth-year-2024-mid-2024-v2",
+      "sourceId": "source.turning-pages.uk-old-age-tail-geometric-adjacent-v1",
+      "series": "uk-old-age-tail.geometric-adjacent-v1:birth-year:2024",
+      "semantic": "population-count",
+      "unit": "persons",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "universeId": "population.universe.uk-usual-residents-mid-2024-v1",
+      "classification": "assumed",
+      "dimensions": {
+        "kind": "birth-year",
+        "birthYear": 2024
+      },
+      "value": "332172",
+      "uncertainty": "Canonical exact integer allocated from official estimated population evidence. It is calibrated simulation precision, not direct single-birth-year observation.",
+      "roundingNote": "Ages 90 to 104 and the open 105+ input are rounded; the 105 to 119 shape is assumed and the full 90+ vector is calibrated to the authoritative unrounded subtotal."
+    }
+  ],
+  "derivedTotals": [],
+  "authority": {
+    "kind": "measure",
+    "id": "measure.ons.uk-total-mid-2024-v1"
+  },
+  "distributionMeasureIds": [
+    "measure.turning-pages.uk-birth-year-1906-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-1907-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-1908-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-1909-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-1910-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-1911-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-1912-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-1913-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-1914-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-1915-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-1916-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-1917-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-1918-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-1919-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-1920-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-1921-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-1922-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-1923-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-1924-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-1925-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-1926-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-1927-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-1928-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-1929-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-1930-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-1931-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-1932-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-1933-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-1934-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-1935-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-1936-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-1937-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-1938-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-1939-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-1940-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-1941-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-1942-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-1943-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-1944-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-1945-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-1946-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-1947-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-1948-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-1949-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-1950-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-1951-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-1952-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-1953-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-1954-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-1955-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-1956-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-1957-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-1958-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-1959-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-1960-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-1961-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-1962-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-1963-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-1964-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-1965-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-1966-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-1967-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-1968-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-1969-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-1970-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-1971-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-1972-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-1973-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-1974-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-1975-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-1976-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-1977-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-1978-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-1979-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-1980-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-1981-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-1982-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-1983-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-1984-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-1985-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-1986-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-1987-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-1988-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-1989-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-1990-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-1991-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-1992-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-1993-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-1994-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-1995-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-1996-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-1997-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-1998-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-1999-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-2000-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-2001-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-2002-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-2003-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-2004-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-2005-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-2006-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-2007-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-2008-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-2009-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-2010-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-2011-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-2012-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-2013-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-2014-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-2015-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-2016-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-2017-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-2018-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-2019-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-2020-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-2021-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-2022-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-2023-mid-2024-v2",
+    "measure.turning-pages.uk-birth-year-2024-mid-2024-v2"
+  ],
+  "reconciliation": {
+    "kind": "exact"
+  },
+  "ageConversion": {
+    "kind": "direct-birth-year"
+  },
+  "generationProfileBindings": [
+    {
+      "fromBirthYear": 1906,
+      "throughBirthYear": 2024,
+      "generationProfileId": "human.uk.pending-mid-2024-v1"
+    }
+  ],
+  "gaps": [],
+  "fingerprint": "fnv1a64-v1:a43f874fe1fab27f"
+}

@@ -1,7 +1,10 @@
 import {prepareUK,syncUKCharacter} from './bridge';
 import { baselineBudget, budgetFields, nationalIncidents, nationalLaws, sectors, type Budget, type BudgetKey, type LawEffect } from '../../../data/national';
 import type { Game } from '../../types';
+import {lifeMonth} from '../../core/clock';
+import {createUKWorld} from '../../ukWorld';
 import { ensureInstitutions,stepInstitutions,factionDivision,lawCost,lawDelay,lawExtent,lawActive,designFor,validDesign,devolvedLaw,consentRegions,regionGrant,type Institutions,type BillDesign } from './institutions';
+import {COMPATIBILITY_NATIONAL_STREAM,hydrateCompatibilitySeed,recordCompatibilitySeed} from '../../core/rng';
 export type FiscalFlow={name:string;from:string;to:string;amount:number};
 export type Fiscal={revenue:number;spending:number;interest:number;balance:number;flows:FiscalFlow[]};
 export type NationalReport={month:number;gdp:number;growth:number;inflation:number;unemployment:number;debt:number;openingDebt:number;borrowing:number;revenue:number;spending:number;bankRate:number;notes:string[]};
@@ -51,11 +54,11 @@ export function validBudget(v:unknown):v is Budget{
  return Object.entries(budgetFields).every(([k,f])=>typeof b[k as BudgetKey]==='number'&&Number.isFinite(b[k as BudgetKey])&&b[k as BudgetKey]>=f.min&&b[k as BudgetKey]<=f.max)&&b.basic<=b.higher&&b.higher<=b.additional;
 }
 export function nationalReason(g:Game,action:string,id?:string){
- const p=g.politics;if(!p)return 'Enter the UK political career first.';
+ const p=g.politics;if(!p)return 'Enter the UK political career first.';if(!p.active)return 'This political career is inactive.';
  if(!g.alive)return 'This life has ended.';
  if(g.pending||p.pending)return 'Resolve your outstanding life and political choices first.';
  if(g.actions<1)return 'Your monthly activities are spent.';
- const n=p.national;
+ const n=g.ukWorld?.national;
  if(!['mp','minister','premier'].includes(p.role))return 'Win a parliamentary seat first. You can examine and draft policy now.';
  if(action==='budget'&&(p.role!=='premier'||!p.inGovernment))return 'As Prime Minister, commission the Treasury and secure Commons approval. This ministerial brief cannot set national taxes.';
  if(action==='law'&&!nationalLaws.some(l=>l.id===id))return 'Unknown proposal.';
@@ -73,11 +76,11 @@ export function nationalReason(g:Game,action:string,id?:string){
 }
 export function nationalAction(state:Game,action:string,id?:string,budget?:Budget,design?:BillDesign):Game{
  if(nationalReason(state,action,id)||(action==='budget'&&!validBudget(budget))||(design!==undefined&&!validDesign(design)))return state;
- const g=structuredClone(state),p=g.politics!;p.national??=createNational(g.seed,p.months);const n=p.national;prepareUK(g);const institutions=ensureInstitutions(n,p.seats,p.party);g.actions--;
+ const g=structuredClone(state),p=g.politics!;g.ukWorld??=createUKWorld(createNational(g.seed,lifeMonth(g)));const n=g.ukWorld.national;n.seed=hydrateCompatibilitySeed(g,COMPATIBILITY_NATIONAL_STREAM,n.seed);prepareUK(g);const institutions=ensureInstitutions(n,p.seats,p.party);g.actions--;
  const log=(text:string)=>{p.log.unshift({month:p.months,text});g.journal.unshift({age:g.age,kind:'action',text:`Westminster · ${text}`});};
  if(action==='law'||action==='budget'){n.proposal={kind:action,id:action==='budget'?'budget':id!,stage:0,lastMonth:p.months,support:0,intensity:1,consent:p.inGovernment&&['minister','premier'].includes(p.role),budget:action==='budget'?structuredClone(budget!):null};log(action==='budget'?'The Treasury publishes your proposed tax and spending package. Existing rates remain until approval.':`${nationalLaws.find(l=>l.id===id)!.name} is introduced. Funding, scrutiny and votes are still required.`);}
  const proposal=n.proposal;
- if(!proposal)return syncUKCharacter(g);
+ if(!proposal){n.seed=recordCompatibilitySeed(g,COMPATIBILITY_NATIONAL_STREAM,n.seed);return syncUKCharacter(g);}
  if(action==='law'){const law=nationalLaws.find(l=>l.id===id)!;proposal.design=designFor(law,design);if(proposal.design.delivery==='accelerated')institutions.judicialRisk=clamp(institutions.judicialRisk+8,0,100);proposal.intensity=proposal.design.scale;for(const r of institutions.regions)r.consent=null;if(proposal.design.scope==='override'){for(const r of institutions.regions.filter(r=>consentRegions(law).includes(r.id)))r.trust=clamp(r.trust-15,0,100);institutions.judicialRisk=clamp(institutions.judicialRisk+12,0,100);log('You propose to legislate without devolved consent. Westminster retains legal power, but relations deteriorate.');}}
  if(action==='withdraw'){log('You withdraw the proposal. No tax, spending or law changes take effect.');n.proposal=null;}
  if(action==='lobby'){proposal.support=clamp(proposal.support+6+p.knowledge*.04,0,35);if(!proposal.consent&&random(n)<clamp((p.caucus+p.knowledge)/250,.1,.85)){proposal.consent=true;log('Negotiations secure government support for the spending resolution. This does not guarantee passage.');}else log('You negotiate amendments and backing across the House. Support grows, but divisions remain.');}
@@ -94,8 +97,8 @@ export function nationalAction(state:Game,action:string,id?:string,budget?:Budge
    const {ayes,noes,abstain}=factionDivision(n,proposal,{seats:p.seats,party:p.party,caucus:p.caucus,integrity:p.integrity},controversy,()=>random(n));
    passed=ayes>noes;n.divisions.unshift({month:p.months,title:proposal.kind==='budget'?'Treasury package':law!.name,ayes,noes,abstain,passed});
    log(`Commons division: ${ayes} Ayes, ${noes} Noes, ${abstain} not voting. ${passed?'The measure advances.':'The measure is defeated; it must be redrafted.'}`);
-   if(!passed){p.reputation=clamp(p.reputation-3,0,100);n.proposal=null;return syncUKCharacter(g);}
-  }else if(proposal.kind==='law'&&proposal.stage===4&&random(n)<.35){proposal.support=clamp(proposal.support+3,0,35);log('The Lords request revisions and evidence. Scrutiny continues next month; the bill has not passed.');return syncUKCharacter(g);}
+   if(!passed){p.reputation=clamp(p.reputation-3,0,100);n.proposal=null;n.seed=recordCompatibilitySeed(g,COMPATIBILITY_NATIONAL_STREAM,n.seed);return syncUKCharacter(g);}
+  }else if(proposal.kind==='law'&&proposal.stage===4&&random(n)<.35){proposal.support=clamp(proposal.support+3,0,35);log('The Lords request revisions and evidence. Scrutiny continues next month; the bill has not passed.');n.seed=recordCompatibilitySeed(g,COMPATIBILITY_NATIONAL_STREAM,n.seed);return syncUKCharacter(g);}
   proposal.stage++;
   if(proposal.stage>=last){
    if(proposal.kind==='budget'){n.budget=structuredClone(proposal.budget!);log('The tax and supply measures receive Royal Assent. The approved package applies from next month.');}
@@ -103,7 +106,7 @@ export function nationalAction(state:Game,action:string,id?:string,budget?:Budge
    n.proposal=null;p.reputation=clamp(p.reputation+3,0,100);
   }
  }
- return syncUKCharacter(g);
+ n.seed=recordCompatibilitySeed(g,COMPATIBILITY_NATIONAL_STREAM,n.seed);return syncUKCharacter(g);
 }
 export function advanceNational(state:NationalState,playerGoverns:boolean):NationalState{
  const n=structuredClone(state);n.month++;const notes:string[]=[];

@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "bundleId": "evidence.ons.uk-population-mid-2024-v1",
+  "publisher": "Office for National Statistics",
+  "publication": "Population estimates for the UK, England, Wales, Scotland and Northern Ireland: mid-2024",
+  "releaseId": "MYE24UK",
+  "publicationDate": "2025-09-26",
+  "referenceDate": "2024-06-30",
+  "retrievalDate": "2026-09-24",
+  "licence": "Open Government Licence v3.0",
+  "licenceLocator": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+  "correctionNotices": [],
+  "artifacts": [
+    {
+      "id": "artifact.ons.mye24uk-workbook-v1",
+      "filename": "mye24tablesuk.xlsx",
+      "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "size": 1062342,
+      "sha256": "f78d50e8d77fe5ed9d04667d6875aefcf62b56380af7aceb2e90dce067981526",
+      "sourceLocator": "https://www.ons.gov.uk/file?uri=%2Fpeoplepopulationandcommunity%2Fpopulationandmigration%2Fpopulationestimates%2Fdatasets%2Fpopulationestimatesforukenglandandwalesscotlandandnorthernireland%2Fmid2024%2Fmye24tablesuk.xlsx",
+      "purpose": "Authoritative unified UK total, same-edition constituent totals, and completed ages 0 to 89 plus open age 90 and over."
+    },
+    {
+      "id": "artifact.ons.ukevo2024-csv-v1",
+      "filename": "ukevo2024.csv",
+      "mediaType": "text/csv",
+      "size": 12504,
+      "sha256": "811512ee967b7d83edafe8cc7912a481949e1969eb9eedf74d043bde6168b509",
+      "sourceLocator": "https://www.ons.gov.uk/file?uri=%2Fpeoplepopulationandcommunity%2Fbirthsdeathsandmarriages%2Fageing%2Fdatasets%2Fmidyearpopulationestimatesoftheveryoldincludingcentenariansunitedkingdom%2Fcurrent%2Fukevo2024.csv",
+      "purpose": "Matching provisional UK estimates for completed ages 90 to 104 plus the open age 105 and over category."
+    },
+    {
+      "id": "artifact.ons.mye24uk-bulletin-v1",
+      "filename": "ons-mid-2024-uk-bulletin.pdf",
+      "mediaType": "application/pdf",
+      "size": 46319,
+      "sha256": "aad97daaabbc3530b9f43cb318c13bd2857a7376485e3c08d66a9db28e9096e2",
+      "sourceLocator": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/bulletins/annualmidyearpopulationestimates/mid2024/pdf",
+      "purpose": "Official statistical bulletin and release context."
+    },
+    {
+      "id": "artifact.ons.mid-year-population-qmi-2025-09-26-v1",
+      "filename": "ons-mid-year-population-estimates-qmi-2025-09-26.pdf",
+      "mediaType": "application/pdf",
+      "size": 89801,
+      "sha256": "27bc5a244d4f4bf0876f0dcaf2a95cf51a6342423497d539bcbbdf67f8835bba",
+      "sourceLocator": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/methodologies/midyearpopulationestimatesqmi/pdf",
+      "purpose": "Quality, universe, revision, precision, and methodology documentation revised with the unified release."
+    }
+  ]
+}

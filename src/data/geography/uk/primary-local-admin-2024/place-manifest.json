@@ -1,0 +1,1470 @@
+{
+  "version": 1,
+  "fingerprint": "fnv1a64-v1:80bb4cbc94a271ee",
+  "entries": [
+    {
+      "placeId": "place.uk.constituent.england",
+      "fingerprint": "fnv1a64-v1:4f0eeba9c97da527"
+    },
+    {
+      "placeId": "place.uk.constituent.northern-ireland",
+      "fingerprint": "fnv1a64-v1:83b94cc15df45642"
+    },
+    {
+      "placeId": "place.uk.constituent.scotland",
+      "fingerprint": "fnv1a64-v1:def9466de296f482"
+    },
+    {
+      "placeId": "place.uk.constituent.wales",
+      "fingerprint": "fnv1a64-v1:5f380f78a165307a"
+    },
+    {
+      "placeId": "place.uk.country.united-kingdom",
+      "fingerprint": "fnv1a64-v1:97d10c6db7890db5"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000001",
+      "fingerprint": "fnv1a64-v1:1e3ae62b84b1bf73"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000002",
+      "fingerprint": "fnv1a64-v1:8f19f6826fad5782"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000003",
+      "fingerprint": "fnv1a64-v1:83b4657d0d447261"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000004",
+      "fingerprint": "fnv1a64-v1:e9d4d678045b2580"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000005",
+      "fingerprint": "fnv1a64-v1:c3ea1438280c1b77"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000006",
+      "fingerprint": "fnv1a64-v1:8bac37e1a8c8beb6"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000007",
+      "fingerprint": "fnv1a64-v1:908d6aa176216635"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000008",
+      "fingerprint": "fnv1a64-v1:c19028abb076ffb4"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000009",
+      "fingerprint": "fnv1a64-v1:b9d88cec126cfebb"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000010",
+      "fingerprint": "fnv1a64-v1:f63e003973c01c9d"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000011",
+      "fingerprint": "fnv1a64-v1:440b762285905a9e"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000012",
+      "fingerprint": "fnv1a64-v1:5382ddac53b6035f"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000013",
+      "fingerprint": "fnv1a64-v1:652a2dae766b5bc8"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000014",
+      "fingerprint": "fnv1a64-v1:c1e337808f4dcf29"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000015",
+      "fingerprint": "fnv1a64-v1:8eece78e8811f58a"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000016",
+      "fingerprint": "fnv1a64-v1:ed12f6ae6ea001fb"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000017",
+      "fingerprint": "fnv1a64-v1:91c67120326358f4"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000018",
+      "fingerprint": "fnv1a64-v1:5a2c0751c41aa275"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000019",
+      "fingerprint": "fnv1a64-v1:6063a5ff8a976df6"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000020",
+      "fingerprint": "fnv1a64-v1:7ef7c1264165a756"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000021",
+      "fingerprint": "fnv1a64-v1:74f7997bbff5ab55"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000022",
+      "fingerprint": "fnv1a64-v1:291f01cefe0ed4a0"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000023",
+      "fingerprint": "fnv1a64-v1:3e7e2b75b85f7f97"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000024",
+      "fingerprint": "fnv1a64-v1:de76fce2d3664622"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000025",
+      "fingerprint": "fnv1a64-v1:818d90367b743a01"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000026",
+      "fingerprint": "fnv1a64-v1:f4d3e9fc2f3cbacc"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000027",
+      "fingerprint": "fnv1a64-v1:9f69079fcc2a9813"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000030",
+      "fingerprint": "fnv1a64-v1:4b2b88466a2091c7"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000031",
+      "fingerprint": "fnv1a64-v1:13d344908df6cdd0"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000032",
+      "fingerprint": "fnv1a64-v1:6a061f128db60f45"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000033",
+      "fingerprint": "fnv1a64-v1:fab4d5bbb81a2806"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000034",
+      "fingerprint": "fnv1a64-v1:f6f8f0965c276043"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000035",
+      "fingerprint": "fnv1a64-v1:c7afa87af4a29d3c"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000036",
+      "fingerprint": "fnv1a64-v1:621a7aa0080fcaf1"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000037",
+      "fingerprint": "fnv1a64-v1:d8afaf8fc3e5ab12"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000038",
+      "fingerprint": "fnv1a64-v1:d1b9bb149b6137ef"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000039",
+      "fingerprint": "fnv1a64-v1:a16d0625facef118"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000040",
+      "fingerprint": "fnv1a64-v1:c0aeeba61d16c350"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000041",
+      "fingerprint": "fnv1a64-v1:f8072f5bf9408747"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000042",
+      "fingerprint": "fnv1a64-v1:a7907cd1473a1d86"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000043",
+      "fingerprint": "fnv1a64-v1:16e1c6281cd604c5"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000044",
+      "fingerprint": "fnv1a64-v1:748b4f9083c292bc"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000045",
+      "fingerprint": "fnv1a64-v1:a3d497abeb4755c3"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000046",
+      "fingerprint": "fnv1a64-v1:858b56a55305a092"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000047",
+      "fingerprint": "fnv1a64-v1:0ef621b5972fc071"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000049",
+      "fingerprint": "fnv1a64-v1:7e95622a2a812d6f"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000050",
+      "fingerprint": "fnv1a64-v1:30900c929c6467e1"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000051",
+      "fingerprint": "fnv1a64-v1:3bf59d97fecd4d02"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000052",
+      "fingerprint": "fnv1a64-v1:cb168d4113d1b4f3"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000053",
+      "fingerprint": "fnv1a64-v1:0b7af8c1f69cab2c"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000054",
+      "fingerprint": "fnv1a64-v1:3d6911b705415bb5"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000055",
+      "fingerprint": "fnv1a64-v1:3887def737e8b436"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000056",
+      "fingerprint": "fnv1a64-v1:70c5bb4db72c10f7"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000057",
+      "fingerprint": "fnv1a64-v1:96b07d8d937b1b00"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000058",
+      "fingerprint": "fnv1a64-v1:e531be834fc28769"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000059",
+      "fingerprint": "fnv1a64-v1:b82cf608e5f725ca"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000060",
+      "fingerprint": "fnv1a64-v1:4f822a683b78bfba"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000061",
+      "fingerprint": "fnv1a64-v1:03c0445e5212ba59"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000062",
+      "fingerprint": "fnv1a64-v1:4139e25cd94568e4"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000063",
+      "fingerprint": "fnv1a64-v1:97ffab0448c0a66b"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000064",
+      "fingerprint": "fnv1a64-v1:361146cc6f7d584e"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000065",
+      "fingerprint": "fnv1a64-v1:1db3b0b926dd4bcd"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000066",
+      "fingerprint": "fnv1a64-v1:2471f876ce05edb8"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000008",
+      "fingerprint": "fnv1a64-v1:bec3fc4abb603733"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000009",
+      "fingerprint": "fnv1a64-v1:bb6aae0f28b6156c"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000010",
+      "fingerprint": "fnv1a64-v1:45bfb5fffb28875a"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000011",
+      "fingerprint": "fnv1a64-v1:67836099fb15e879"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000012",
+      "fingerprint": "fnv1a64-v1:f6308f68b6e3ad84"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000032",
+      "fingerprint": "fnv1a64-v1:0f30da67bff934a6"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000033",
+      "fingerprint": "fnv1a64-v1:33ffe41d59d6b7e5"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000034",
+      "fingerprint": "fnv1a64-v1:3f7aaa22c00e755c"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000035",
+      "fingerprint": "fnv1a64-v1:67e4fbd4e34ffce3"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000036",
+      "fingerprint": "fnv1a64-v1:45c1cdfd15fba132"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000037",
+      "fingerprint": "fnv1a64-v1:77b3bcf158c84d91"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000038",
+      "fingerprint": "fnv1a64-v1:9d0e85a3c2568f38"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000039",
+      "fingerprint": "fnv1a64-v1:41e4f473108fc48f"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000040",
+      "fingerprint": "fnv1a64-v1:a7f8f9c2fd001167"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000041",
+      "fingerprint": "fnv1a64-v1:7154ed8e24b8d370"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000042",
+      "fingerprint": "fnv1a64-v1:87243d07cab6c265"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000043",
+      "fingerprint": "fnv1a64-v1:6255335230d93f26"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000044",
+      "fingerprint": "fnv1a64-v1:bb0954bf54300763"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000045",
+      "fingerprint": "fnv1a64-v1:929f030d30ee7fdc"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000046",
+      "fingerprint": "fnv1a64-v1:cad815dbc9a85811"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000047",
+      "fingerprint": "fnv1a64-v1:98e626e786dbabb2"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000061",
+      "fingerprint": "fnv1a64-v1:131cca8d5d3f98be"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000062",
+      "fingerprint": "fnv1a64-v1:13997e6fb5e7fcff"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000063",
+      "fingerprint": "fnv1a64-v1:7217299a2d4fd4e8"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000064",
+      "fingerprint": "fnv1a64-v1:6b8a3635a0535ac9"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000065",
+      "fingerprint": "fnv1a64-v1:709324f30974592a"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000066",
+      "fingerprint": "fnv1a64-v1:c000f79554ea9c1b"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000067",
+      "fingerprint": "fnv1a64-v1:a86cc93ec380af14"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000068",
+      "fingerprint": "fnv1a64-v1:1211bfd5b21d4015"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000069",
+      "fingerprint": "fnv1a64-v1:69479b233d3e4e16"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000070",
+      "fingerprint": "fnv1a64-v1:6d707729238d5c4c"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000071",
+      "fingerprint": "fnv1a64-v1:180594ccc07b3993"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000072",
+      "fingerprint": "fnv1a64-v1:57138a0fc7b6e7a2"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000073",
+      "fingerprint": "fnv1a64-v1:fa2a1d636fc4db81"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000074",
+      "fingerprint": "fnv1a64-v1:a1bb8efbf25f7620"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000075",
+      "fingerprint": "fnv1a64-v1:b71ab8a2acb02117"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000076",
+      "fingerprint": "fnv1a64-v1:f7944e5335b648d6"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000077",
+      "fingerprint": "fnv1a64-v1:ed9426a8b4464cd5"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000078",
+      "fingerprint": "fnv1a64-v1:2c7c124be1962cd4"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000079",
+      "fingerprint": "fnv1a64-v1:2b4ee59214e511db"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000080",
+      "fingerprint": "fnv1a64-v1:6b29edb7315b4413"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000081",
+      "fingerprint": "fnv1a64-v1:c094d013946d66cc"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000082",
+      "fingerprint": "fnv1a64-v1:4d4e764de0a4e601"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000083",
+      "fingerprint": "fnv1a64-v1:aa37e2fa3896f222"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000084",
+      "fingerprint": "fnv1a64-v1:0a3f118d1d902b97"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000085",
+      "fingerprint": "fnv1a64-v1:f4dfe7e6633f80a0"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000086",
+      "fingerprint": "fnv1a64-v1:40b87f9325265755"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000087",
+      "fingerprint": "fnv1a64-v1:4ab8a73da6965356"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000088",
+      "fingerprint": "fnv1a64-v1:7e733e7c85c51c5b"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000089",
+      "fingerprint": "fnv1a64-v1:7fa06b3652763754"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000090",
+      "fingerprint": "fnv1a64-v1:ec0a7fd1f7bbb632"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000091",
+      "fingerprint": "fnv1a64-v1:1dfc6ec63a886291"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000092",
+      "fingerprint": "fnv1a64-v1:e5c35bf7a1ce8a5c"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000093",
+      "fingerprint": "fnv1a64-v1:0e2dada9c51011e3"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000094",
+      "fingerprint": "fnv1a64-v1:b5798c3ca1b949a6"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000095",
+      "fingerprint": "fnv1a64-v1:da4895f23b96cce5"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000096",
+      "fingerprint": "fnv1a64-v1:c47946789598ddf0"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000098",
+      "fingerprint": "fnv1a64-v1:6e67696a1189763a"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000099",
+      "fingerprint": "fnv1a64-v1:22a58360282370d9"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000102",
+      "fingerprint": "fnv1a64-v1:139dbe07747a7f72"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000103",
+      "fingerprint": "fnv1a64-v1:f9b8ae27d0d357d1"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000105",
+      "fingerprint": "fnv1a64-v1:c087627b08bff727"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000106",
+      "fingerprint": "fnv1a64-v1:651a03bd96bf91e6"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000107",
+      "fingerprint": "fnv1a64-v1:012243a52b994a25"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000108",
+      "fingerprint": "fnv1a64-v1:d43b626e627598a4"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000109",
+      "fingerprint": "fnv1a64-v1:8ca0c2365e3c8a2b"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000110",
+      "fingerprint": "fnv1a64-v1:98c54c81f91d0ccd"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000111",
+      "fingerprint": "fnv1a64-v1:b122e29541bd194e"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000112",
+      "fingerprint": "fnv1a64-v1:445a030eee7ee40f"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000113",
+      "fingerprint": "fnv1a64-v1:9f83943fa045aeb8"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000114",
+      "fingerprint": "fnv1a64-v1:7ed1e02724527b59"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000115",
+      "fingerprint": "fnv1a64-v1:ca93c6310db880ba"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000116",
+      "fingerprint": "fnv1a64-v1:131146cd1b00676b"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000117",
+      "fingerprint": "fnv1a64-v1:bc4b7e25ab8529e4"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000118",
+      "fingerprint": "fnv1a64-v1:3674f2b937c5d765"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000119",
+      "fingerprint": "fnv1a64-v1:11a5e9039de85426"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000120",
+      "fingerprint": "fnv1a64-v1:75c671848a59e906"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000121",
+      "fingerprint": "fnv1a64-v1:e517badb5ff5d045"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000122",
+      "fingerprint": "fnv1a64-v1:8ee4e05960368ed0"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000123",
+      "fingerprint": "fnv1a64-v1:c63d240f3c6052c7"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000124",
+      "fingerprint": "fnv1a64-v1:53c14b5896256c12"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000125",
+      "fingerprint": "fnv1a64-v1:dd2c1668da4f8bf1"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000126",
+      "fingerprint": "fnv1a64-v1:42c14443c6e25e3c"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000127",
+      "fingerprint": "fnv1a64-v1:720a8c5f2e672143"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000128",
+      "fingerprint": "fnv1a64-v1:319ba4cb7949c62e"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000129",
+      "fingerprint": "fnv1a64-v1:f43b9fc7fbfab32d"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000130",
+      "fingerprint": "fnv1a64-v1:3efbb000fa4bdc77"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000131",
+      "fingerprint": "fnv1a64-v1:64e67240d69ae680"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000132",
+      "fingerprint": "fnv1a64-v1:0b9f066a48612735"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000133",
+      "fingerprint": "fnv1a64-v1:06bdd3aa7b087fb6"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000134",
+      "fingerprint": "fnv1a64-v1:994c81f456f18073"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000135",
+      "fingerprint": "fnv1a64-v1:d9b0ed7539bc76ac"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000136",
+      "fingerprint": "fnv1a64-v1:fec60145df843361"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000137",
+      "fingerprint": "fnv1a64-v1:0a2b924b41ed1882"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000138",
+      "fingerprint": "fnv1a64-v1:9fe655df07283e1f"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000139",
+      "fingerprint": "fnv1a64-v1:5ca130dc17720a88"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000140",
+      "fingerprint": "fnv1a64-v1:11c2195665badc00"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000141",
+      "fingerprint": "fnv1a64-v1:ebd75716896bd1f7"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000142",
+      "fingerprint": "fnv1a64-v1:b3997ac00a287536"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000143",
+      "fingerprint": "fnv1a64-v1:b87aad7fd7811cb5"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000144",
+      "fingerprint": "fnv1a64-v1:868c948ac8dc6c2c"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000145",
+      "fingerprint": "fnv1a64-v1:46282909e61175f3"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000146",
+      "fingerprint": "fnv1a64-v1:b7073960d10d0e02"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000147",
+      "fingerprint": "fnv1a64-v1:aba1a85b6ea428e1"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000148",
+      "fingerprint": "fnv1a64-v1:097cd7f1a6920008"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000149",
+      "fingerprint": "fnv1a64-v1:4cc1fcf49648339f"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000170",
+      "fingerprint": "fnv1a64-v1:3470784111a059cb"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000171",
+      "fingerprint": "fnv1a64-v1:718c4ad53b01c044"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000172",
+      "fingerprint": "fnv1a64-v1:9aa1fbd785c55039"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000173",
+      "fingerprint": "fnv1a64-v1:be671229c77db61a"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000174",
+      "fingerprint": "fnv1a64-v1:f9a6fdf2fcc0ee6f"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000175",
+      "fingerprint": "fnv1a64-v1:c95a49045c2ea798"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000176",
+      "fingerprint": "fnv1a64-v1:a11746dd8b1aa8ad"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000177",
+      "fingerprint": "fnv1a64-v1:de774be10869bbae"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000178",
+      "fingerprint": "fnv1a64-v1:1ee63374bd8716c3"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000179",
+      "fingerprint": "fnv1a64-v1:ef9ceb59560253bc"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000180",
+      "fingerprint": "fnv1a64-v1:821579d2306556d4"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000181",
+      "fingerprint": "fnv1a64-v1:80e84d1863b43bdb"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000192",
+      "fingerprint": "fnv1a64-v1:19617cf9ad405d47"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000193",
+      "fingerprint": "fnv1a64-v1:e2093943d1169950"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000194",
+      "fingerprint": "fnv1a64-v1:30506f534b2f9671"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000195",
+      "fingerprint": "fnv1a64-v1:a6e5a44307057692"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000196",
+      "fingerprint": "fnv1a64-v1:c52ee5499f472bc3"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000197",
+      "fingerprint": "fnv1a64-v1:95e59d2e37c268bc"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000198",
+      "fingerprint": "fnv1a64-v1:475ff8b26cdabdad"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000199",
+      "fingerprint": "fnv1a64-v1:84bffdb5ea29d0ae"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000200",
+      "fingerprint": "fnv1a64-v1:d25c3fb8fabace19"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000202",
+      "fingerprint": "fnv1a64-v1:0e20b4dbc6b7ca2b"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000203",
+      "fingerprint": "fnv1a64-v1:55bb5513caf0d8a4"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000207",
+      "fingerprint": "fnv1a64-v1:5ca9c0e384e7c878"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000208",
+      "fingerprint": "fnv1a64-v1:7b38a0cd394e97d1"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000209",
+      "fingerprint": "fnv1a64-v1:951db0acdcf5bf72"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000210",
+      "fingerprint": "fnv1a64-v1:de2123817fed4a88"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000211",
+      "fingerprint": "fnv1a64-v1:216648846fa37e1f"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000212",
+      "fingerprint": "fnv1a64-v1:6f0f11a8a9cff65e"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000213",
+      "fingerprint": "fnv1a64-v1:c4206b118fabe45d"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000214",
+      "fingerprint": "fnv1a64-v1:be21b719eb3200b4"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000215",
+      "fingerprint": "fnv1a64-v1:b66a1b5a4d27ffbb"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000216",
+      "fingerprint": "fnv1a64-v1:07e2dd619192314a"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000217",
+      "fingerprint": "fnv1a64-v1:34e7a5dbfb5d92e9"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000218",
+      "fingerprint": "fnv1a64-v1:e66664e63f162680"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000219",
+      "fingerprint": "fnv1a64-v1:c07ba2a662c71c77"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000220",
+      "fingerprint": "fnv1a64-v1:3374e9650317c833"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000221",
+      "fingerprint": "fnv1a64-v1:301b9b29706da66c"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000222",
+      "fingerprint": "fnv1a64-v1:dd7d359f40207e21"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000223",
+      "fingerprint": "fnv1a64-v1:a8d3602e720cf342"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000224",
+      "fingerprint": "fnv1a64-v1:3103879833792437"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000225",
+      "fingerprint": "fnv1a64-v1:4777e8c024afd240"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000226",
+      "fingerprint": "fnv1a64-v1:477981990022d4f5"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000227",
+      "fingerprint": "fnv1a64-v1:4db12046c69fa076"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000228",
+      "fingerprint": "fnv1a64-v1:da6070f5aaa8347b"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000229",
+      "fingerprint": "fnv1a64-v1:7f13eb676e6b8b74"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000234",
+      "fingerprint": "fnv1a64-v1:fd77eb87288f6ac6"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000235",
+      "fingerprint": "fnv1a64-v1:d345504cabaa7705"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000236",
+      "fingerprint": "fnv1a64-v1:a3e97d23d1ddf590"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000237",
+      "fingerprint": "fnv1a64-v1:70ed634513135987"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000238",
+      "fingerprint": "fnv1a64-v1:ba70a31a42e0185a"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000239",
+      "fingerprint": "fnv1a64-v1:dc344db442cd7979"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000240",
+      "fingerprint": "fnv1a64-v1:86c2aceff9d4d115"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000241",
+      "fingerprint": "fnv1a64-v1:ddf8883d84f5df16"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000242",
+      "fingerprint": "fnv1a64-v1:169220b6f5438d57"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000243",
+      "fingerprint": "fnv1a64-v1:a69e27a6f6214b60"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000244",
+      "fingerprint": "fnv1a64-v1:96c7936ff9da42c1"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000245",
+      "fingerprint": "fnv1a64-v1:5f16d45e2c3511e2"
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000001",
+      "fingerprint": "fnv1a64-v1:210ee68c449056cd"
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000002",
+      "fingerprint": "fnv1a64-v1:27cd2e49ebb8f8b8"
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000003",
+      "fingerprint": "fnv1a64-v1:cca39d1939f22e0f"
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000004",
+      "fingerprint": "fnv1a64-v1:52dd603b592bcaba"
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000005",
+      "fingerprint": "fnv1a64-v1:071b7a316fc5c559"
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000006",
+      "fingerprint": "fnv1a64-v1:4495182ff6f873e4"
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000007",
+      "fingerprint": "fnv1a64-v1:9b5ae0d76673b16b"
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000008",
+      "fingerprint": "fnv1a64-v1:99ef830de95b9e26"
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000009",
+      "fingerprint": "fnv1a64-v1:bebe8cc383392165"
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000010",
+      "fingerprint": "fnv1a64-v1:234745392c0c85bf"
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000011",
+      "fingerprint": "fnv1a64-v1:dca2ece0535061a8"
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000012",
+      "fingerprint": "fnv1a64-v1:1644108a7809aa7d"
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000013",
+      "fingerprint": "fnv1a64-v1:5aaac8a04ac4537e"
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000014",
+      "fingerprint": "fnv1a64-v1:62e9354dcd6770db"
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000015",
+      "fingerprint": "fnv1a64-v1:641662079a188bd4"
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000016",
+      "fingerprint": "fnv1a64-v1:ce6d17d377070a89"
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000017",
+      "fingerprint": "fnv1a64-v1:0a9dad57cacda1ea"
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000018",
+      "fingerprint": "fnv1a64-v1:eeb5085e65328017"
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000019",
+      "fingerprint": "fnv1a64-v1:d955deb7aae1d520"
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000021",
+      "fingerprint": "fnv1a64-v1:bcba124b5d13a3cb"
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000022",
+      "fingerprint": "fnv1a64-v1:46b0ac3412f1001a"
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000023",
+      "fingerprint": "fnv1a64-v1:22eb95e1d1389a39"
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000024",
+      "fingerprint": "fnv1a64-v1:51a3e30ea7a1f198"
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000025",
+      "fingerprint": "fnv1a64-v1:81f097fd4834386f"
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000026",
+      "fingerprint": "fnv1a64-v1:66c0e5eb53dd05ae"
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000027",
+      "fingerprint": "fnv1a64-v1:2960e0e7d68df2ad"
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000028",
+      "fingerprint": "fnv1a64-v1:77e68563a1759dbc"
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000029",
+      "fingerprint": "fnv1a64-v1:a72fcd7f08fa60c3"
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000030",
+      "fingerprint": "fnv1a64-v1:40c4478a22f466b5"
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000031",
+      "fingerprint": "fnv1a64-v1:3be314ca559bbf36"
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000032",
+      "fingerprint": "fnv1a64-v1:7420f120d4df1bf7"
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000033",
+      "fingerprint": "fnv1a64-v1:9a0bb360b12e2600"
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000034",
+      "fingerprint": "fnv1a64-v1:33eb4265ba1772e1"
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000035",
+      "fingerprint": "fnv1a64-v1:3f50d36b1c805802"
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000036",
+      "fingerprint": "fnv1a64-v1:ce71c3143184bff3"
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000037",
+      "fingerprint": "fnv1a64-v1:0ed62e95144fb62c"
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000001",
+      "fingerprint": "fnv1a64-v1:e863ed9602898816"
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000002",
+      "fingerprint": "fnv1a64-v1:20fd860f72d73657"
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000003",
+      "fingerprint": "fnv1a64-v1:b1098cff73b4f460"
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000004",
+      "fingerprint": "fnv1a64-v1:a132f8c8776debc1"
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000005",
+      "fingerprint": "fnv1a64-v1:698239b6a9c8bae2"
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000006",
+      "fingerprint": "fnv1a64-v1:8a4bd46462ad2ad3"
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000007",
+      "fingerprint": "fnv1a64-v1:8a1d90f2e0035f8c"
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000008",
+      "fingerprint": "fnv1a64-v1:d9b7ca3466bebabd"
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000009",
+      "fingerprint": "fnv1a64-v1:92391d00228ad2be"
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000010",
+      "fingerprint": "fnv1a64-v1:b34b1356b9648c24"
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000011",
+      "fingerprint": "fnv1a64-v1:6bb0731eb52b7dab"
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000012",
+      "fingerprint": "fnv1a64-v1:5eb828f3e9cc18fa"
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000013",
+      "fingerprint": "fnv1a64-v1:2febfdfbe92e8199"
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000014",
+      "fingerprint": "fnv1a64-v1:ba397f26735b7bf8"
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000015",
+      "fingerprint": "fnv1a64-v1:096ae86e226e8c4f"
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000016",
+      "fingerprint": "fnv1a64-v1:c53441fe2773df8e"
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000017",
+      "fingerprint": "fnv1a64-v1:0620b09a4882480d"
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000018",
+      "fingerprint": "fnv1a64-v1:8a3e1cad939f0c1c"
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000019",
+      "fingerprint": "fnv1a64-v1:653bec234b4704a3"
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000020",
+      "fingerprint": "fnv1a64-v1:7ef606c75e17319f"
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000021",
+      "fingerprint": "fnv1a64-v1:3bb0e1c46e60fe08"
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000022",
+      "fingerprint": "fnv1a64-v1:21b029547e1f97dd"
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000023",
+      "fingerprint": "fnv1a64-v1:cc9ecfeb9843a9de"
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000024",
+      "fingerprint": "fnv1a64-v1:13f9d99d3b9bb33b"
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000025",
+      "fingerprint": "fnv1a64-v1:1bb1755cd9a5b434"
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000026",
+      "fingerprint": "fnv1a64-v1:9277641ee9d14669"
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000027",
+      "fingerprint": "fnv1a64-v1:65729ba48005e4ca"
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000028",
+      "fingerprint": "fnv1a64-v1:1e0b60e9513acff7"
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000029",
+      "fingerprint": "fnv1a64-v1:43f623292d89da00"
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000030",
+      "fingerprint": "fnv1a64-v1:10ab55b3d038b9ae"
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000031",
+      "fingerprint": "fnv1a64-v1:d34b50b052e9a6ad"
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000032",
+      "fingerprint": "fnv1a64-v1:fb8e52d723fda598"
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000033",
+      "fingerprint": "fnv1a64-v1:2bdb07c5c48fec6f"
+    },
+    {
+      "placeId": "place.uk.local-admin.n09000001",
+      "fingerprint": "fnv1a64-v1:73ff6f074ce27f6f"
+    },
+    {
+      "placeId": "place.uk.local-admin.n09000002",
+      "fingerprint": "fnv1a64-v1:58cfbcf5588b4cae"
+    },
+    {
+      "placeId": "place.uk.local-admin.n09000003",
+      "fingerprint": "fnv1a64-v1:1b6fb7f1db3c39ad"
+    },
+    {
+      "placeId": "place.uk.local-admin.n09000004",
+      "fingerprint": "fnv1a64-v1:ebe4bbe98b235144"
+    },
+    {
+      "placeId": "place.uk.local-admin.n09000005",
+      "fingerprint": "fnv1a64-v1:aec8e95561c1eacb"
+    },
+    {
+      "placeId": "place.uk.local-admin.n09000006",
+      "fingerprint": "fnv1a64-v1:38bf833e179f471a"
+    },
+    {
+      "placeId": "place.uk.local-admin.n09000007",
+      "fingerprint": "fnv1a64-v1:14fa6cebd5e6e139"
+    },
+    {
+      "placeId": "place.uk.local-admin.n09000008",
+      "fingerprint": "fnv1a64-v1:b618f8833f781550"
+    },
+    {
+      "placeId": "place.uk.local-admin.n09000009",
+      "fingerprint": "fnv1a64-v1:ed713c391ba1d947"
+    },
+    {
+      "placeId": "place.uk.local-admin.n09000010",
+      "fingerprint": "fnv1a64-v1:da9bcb607223d969"
+    },
+    {
+      "placeId": "place.uk.local-admin.n09000011",
+      "fingerprint": "fnv1a64-v1:ad9702e6085877ca"
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000005",
+      "fingerprint": "fnv1a64-v1:0e892c38ac40ed1c"
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000006",
+      "fingerprint": "fnv1a64-v1:5d136e9b40642c51"
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000008",
+      "fingerprint": "fnv1a64-v1:8db5f7f93b106d4f"
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000010",
+      "fingerprint": "fnv1a64-v1:6a18941dea995436"
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000011",
+      "fingerprint": "fnv1a64-v1:6ef9c6ddb7f1fbb5"
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000013",
+      "fingerprint": "fnv1a64-v1:a256707469dcb0f7"
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000014",
+      "fingerprint": "fnv1a64-v1:6d8652beb17ded02"
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000017",
+      "fingerprint": "fnv1a64-v1:fca74267c68254f3"
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000018",
+      "fingerprint": "fnv1a64-v1:50e9df76b0e58ade"
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000019",
+      "fingerprint": "fnv1a64-v1:a5fb38df96c178dd"
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000020",
+      "fingerprint": "fnv1a64-v1:f15536f39c2734fd"
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000021",
+      "fingerprint": "fnv1a64-v1:35bbef096ee1ddfe"
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000023",
+      "fingerprint": "fnv1a64-v1:b7b41349776dec28"
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000026",
+      "fingerprint": "fnv1a64-v1:3dfa5bb6f184fb5b"
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000027",
+      "fingerprint": "fnv1a64-v1:3f278870be361654"
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000028",
+      "fingerprint": "fnv1a64-v1:003f9ccd90e63655"
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000029",
+      "fingerprint": "fnv1a64-v1:0a3fc47812563256"
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000030",
+      "fingerprint": "fnv1a64-v1:0e68a07df8a5408c"
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000033",
+      "fingerprint": "fnv1a64-v1:257e0853900fccc1"
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000034",
+      "fingerprint": "fnv1a64-v1:35549c8a8c56d560"
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000035",
+      "fingerprint": "fnv1a64-v1:a548959a8b791757"
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000036",
+      "fingerprint": "fnv1a64-v1:6caefd211b2b6916"
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000038",
+      "fingerprint": "fnv1a64-v1:abd42b3ca16dca14"
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000039",
+      "fingerprint": "fnv1a64-v1:c368599332d7b71b"
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000040",
+      "fingerprint": "fnv1a64-v1:4520903de35d89bb"
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000041",
+      "fingerprint": "fnv1a64-v1:4cd82bfd81678ab4"
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000042",
+      "fingerprint": "fnv1a64-v1:c39e1abf91931ce9"
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000045",
+      "fingerprint": "fnv1a64-v1:6cd798651622d488"
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000047",
+      "fingerprint": "fnv1a64-v1:fdc5868c4005805e"
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000048",
+      "fingerprint": "fnv1a64-v1:a982e97d55a24a73"
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000049",
+      "fingerprint": "fnv1a64-v1:e9e754fe386d40ac"
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000050",
+      "fingerprint": "fnv1a64-v1:21c1d29d370e8a9a"
+    },
+    {
+      "placeId": "place.uk.local-admin.w06000001",
+      "fingerprint": "fnv1a64-v1:8eddca60eb432a71"
+    },
+    {
+      "placeId": "place.uk.local-admin.w06000002",
+      "fingerprint": "fnv1a64-v1:f472f83bd7d5fcbc"
+    },
+    {
+      "placeId": "place.uk.local-admin.w06000003",
+      "fingerprint": "fnv1a64-v1:23bc40573f5abfc3"
+    },
+    {
+      "placeId": "place.uk.local-admin.w06000004",
+      "fingerprint": "fnv1a64-v1:2778257c9b4d8786"
+    },
+    {
+      "placeId": "place.uk.local-admin.w06000005",
+      "fingerprint": "fnv1a64-v1:96c96ed370e96ec5"
+    },
+    {
+      "placeId": "place.uk.local-admin.w06000006",
+      "fingerprint": "fnv1a64-v1:40969451712a2d50"
+    },
+    {
+      "placeId": "place.uk.local-admin.w06000008",
+      "fingerprint": "fnv1a64-v1:c33d1f0c49515f1a"
+    },
+    {
+      "placeId": "place.uk.local-admin.w06000009",
+      "fingerprint": "fnv1a64-v1:9f7808ba0798f939"
+    },
+    {
+      "placeId": "place.uk.local-admin.w06000010",
+      "fingerprint": "fnv1a64-v1:4afe35ec67e51ef3"
+    },
+    {
+      "placeId": "place.uk.local-admin.w06000011",
+      "fingerprint": "fnv1a64-v1:8b62a16d4ab0152c"
+    },
+    {
+      "placeId": "place.uk.local-admin.w06000012",
+      "fingerprint": "fnv1a64-v1:b077b53df077d1e1"
+    },
+    {
+      "placeId": "place.uk.local-admin.w06000013",
+      "fingerprint": "fnv1a64-v1:bbdd464352e0b702"
+    },
+    {
+      "placeId": "place.uk.local-admin.w06000014",
+      "fingerprint": "fnv1a64-v1:f0ad63f90b3f7af7"
+    },
+    {
+      "placeId": "place.uk.local-admin.w06000015",
+      "fingerprint": "fnv1a64-v1:16982638e78e8500"
+    },
+    {
+      "placeId": "place.uk.local-admin.w06000016",
+      "fingerprint": "fnv1a64-v1:bd50ba625954c5b5"
+    },
+    {
+      "placeId": "place.uk.local-admin.w06000018",
+      "fingerprint": "fnv1a64-v1:e69bdcacf5a05e3b"
+    },
+    {
+      "placeId": "place.uk.local-admin.w06000019",
+      "fingerprint": "fnv1a64-v1:ee53786c93aa5f34"
+    },
+    {
+      "placeId": "place.uk.local-admin.w06000020",
+      "fingerprint": "fnv1a64-v1:91ed7d6f599ebb48"
+    },
+    {
+      "placeId": "place.uk.local-admin.w06000021",
+      "fingerprint": "fnv1a64-v1:80462d6d36e962df"
+    },
+    {
+      "placeId": "place.uk.local-admin.w06000022",
+      "fingerprint": "fnv1a64-v1:70cec5e368c3ba1e"
+    },
+    {
+      "placeId": "place.uk.local-admin.w06000023",
+      "fingerprint": "fnv1a64-v1:23014ffa56f37c1d"
+    },
+    {
+      "placeId": "place.uk.local-admin.w06000024",
+      "fingerprint": "fnv1a64-v1:be89c0e11596b874"
+    }
+  ]
+}

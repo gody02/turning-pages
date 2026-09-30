@@ -9,6 +9,14 @@ export const bankAssets=(b:Bank)=>b.mortgages+b.business+b.reserves+b.gilts;
 export const bankLiabilities=(b:Bank)=>b.deposits+b.wholesale+b.central+b.equity;
 export const capitalRatio=(b:Bank)=>b.equity/Math.max(1,b.mortgages*.35+b.business*.8+b.gilts*.05)*100;
 export function mortgagePayment(principal:number,annualRate:number,years=25){const r=annualRate/1200,m=years*12;return r===0?principal/m:principal*r/(1-Math.pow(1+r,-m));}
+export function allocateLoanRepayment(mortgages:number,business:number,calculatedRepayment:number){
+ const totalLoans=mortgages+business;
+ if(totalLoans<=0||calculatedRepayment<=0)return {repaid:0,mortgageRepaid:0,businessRepaid:0};
+ const repaid=Math.min(calculatedRepayment,totalLoans);
+ if(repaid===totalLoans)return {repaid,mortgageRepaid:mortgages,businessRepaid:business};
+ const mortgageShare=mortgages/totalLoans;
+ return {repaid,mortgageRepaid:repaid*mortgageShare,businessRepaid:repaid*(1-mortgageShare)};
+}
 
 /** Apply double-entry changes to a transaction draft. Country policy and messages are injected. */
 export function stepBanks(i:BankingBook,conditions:{confidence:number;unemployment:number;bankRate:number},policy:BankingPolicy,random:()=>number,notice:(e:BankingNotice)=>void){
@@ -21,8 +29,8 @@ export function stepBanks(i:BankingBook,conditions:{confidence:number;unemployme
   const capacity=Math.max(0,(b.equity/(buffer/100)-(b.mortgages*.35+b.business*.8+b.gilts*.05))/(mortgageShare*.35+(1-mortgageShare)*.8));
   const created=Math.min(desired,capacity)*policy.affordabilityMultiplier;
   b.mortgages+=created*mortgageShare;b.business+=created*(1-mortgageShare);b.deposits+=created;b.newCredit=created;
-  const repaid=Math.min(b.deposits*.02,b.mortgages/300+b.business/120);
-  const mShare=b.mortgages/Math.max(1,b.mortgages+b.business);b.mortgages-=repaid*mShare;b.business-=repaid*(1-mShare);b.deposits-=repaid;
+  const repayment=allocateLoanRepayment(b.mortgages,b.business,Math.min(b.deposits*.02,b.mortgages/300+b.business/120));
+  const {repaid,mortgageRepaid,businessRepaid}=repayment;b.mortgages-=mortgageRepaid;b.business-=businessRepaid;b.deposits-=repaid;
   b.mortgageRate+=(conditions.bankRate+1.2-b.mortgageRate)/24;b.loanRate=conditions.bankRate+2.2+Math.max(0,buffer-capital)*.12;
   b.arrears=clamp(b.arrears*.92+(1+Math.max(0,conditions.unemployment-4.9)*.7+Math.max(0,b.mortgageRate-5)*.45)*.08+(random()-.5)*.08,.1,20);
   const lossRate=(.00015+b.arrears*.0001+Math.max(0,40-conditions.confidence)*.00012)*policy.lossMultiplier;

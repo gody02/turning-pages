@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { baselineBudget,budgetFields,budgetStages,legislativeStages,nationalLaws,nationalSources,sectors,type Budget,type BudgetKey } from '../data/national';
-import { createNational,costBudget,distribution,nationalAction,nationalReason,validBudget,type NationalState } from '../engine/national';
+import { costBudget,distribution,nationalAction,nationalReason,validBudget,type NationalState } from '../engine/national';
 import type { Game } from '../engine/types';
 import './national.css';
 import {InstitutionsPanel,InstitutionTask} from './InstitutionsPanel';
@@ -11,7 +11,7 @@ type Props={game:Game;update:(fn:(g:Game)=>Game)=>void;legislation?:boolean};
 const bn=(v:number)=>`£${v.toLocaleString('en-GB',{minimumFractionDigits:1,maximumFractionDigits:1})}bn`;
 const pct=(v:number)=>`${v.toFixed(1)}%`;
 export function NationalEconomy({game:g,update,legislation=false}:Props){
- const p=g.politics!;const n=p.national??createNational(g.seed,p.months);
+ const p=g.politics!;const n=g.ukWorld!.national;
  const [view,setView]=useState('Briefing');const [draft,setDraft]=useState<Budget>(()=>({...n.budget}));
  const proposal=n.proposal;const estimate=costBudget(n,draft),current=costBudget(n,n.budget);const latest=n.history.at(-1);
  const submit=(action:string,id?:string,b?:Budget)=>update(x=>nationalAction(x,action,id,b));
@@ -28,7 +28,6 @@ export function NationalEconomy({game:g,update,legislation=false}:Props){
  </>;
  return <section className="national-economy">
   <div className="national-banner"><div className="eyebrow">UNITED KINGDOM · YOUR ALTERNATE TIMELINE</div><h3>{legislation?'From an idea to an Act.':'A country beyond your constituency.'}</h3><p>Starting rules researched on 21 September 2026. Events after entry are simulated. Your character, family and constituency live through the same months.</p></div>
-  {!p.national&&<p className="political-notice">This national layer begins on your next month or parliamentary action. Your existing life and earlier constituency history stay intact.</p>}
   {legislation?passage:<>
   <nav className="national-tabs" aria-label="National economy areas">{['Briefing','Budget desk','Households & sectors','Public accounts','Banking','Devolution','Factions','Forecasts','Sources & assumptions'].map(x=><button aria-current={view===x?'page':undefined} key={x} onClick={()=>setView(x)}>{x}</button>)}</nav>
   {['Banking','Devolution','Factions','Forecasts'].includes(view)&&<InstitutionsPanel game={g} nation={n} view={view} draft={draft} update={update}/>}

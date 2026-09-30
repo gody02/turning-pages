@@ -1,0 +1,1469 @@
+{
+  "version": 1,
+  "places": [
+    {
+      "placeId": "place.uk.constituent.england",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.constituent.northern-ireland",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.constituent.scotland",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.constituent.wales",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.country.united-kingdom",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000001",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000002",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000003",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000004",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000005",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000006",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000007",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000008",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000009",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000010",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000011",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000012",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000013",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000014",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000015",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000016",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000017",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000018",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000019",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000020",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000021",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000022",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000023",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000024",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000025",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000026",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000027",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000030",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000031",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000032",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000033",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000034",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000035",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000036",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000037",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000038",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000039",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000040",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000041",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000042",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000043",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000044",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000045",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000046",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000047",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000049",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000050",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000051",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000052",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000053",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000054",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000055",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000056",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000057",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000058",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000059",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000060",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000061",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000062",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000063",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000064",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000065",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000066",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000008",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000009",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000010",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000011",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000012",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000032",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000033",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000034",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000035",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000036",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000037",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000038",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000039",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000040",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000041",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000042",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000043",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000044",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000045",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000046",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000047",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000061",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000062",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000063",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000064",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000065",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000066",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000067",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000068",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000069",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000070",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000071",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000072",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000073",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000074",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000075",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000076",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000077",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000078",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000079",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000080",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000081",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000082",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000083",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000084",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000085",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000086",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000087",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000088",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000089",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000090",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000091",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000092",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000093",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000094",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000095",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000096",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000098",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000099",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000102",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000103",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000105",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000106",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000107",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000108",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000109",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000110",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000111",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000112",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000113",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000114",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000115",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000116",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000117",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000118",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000119",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000120",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000121",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000122",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000123",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000124",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000125",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000126",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000127",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000128",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000129",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000130",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000131",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000132",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000133",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000134",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000135",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000136",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000137",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000138",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000139",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000140",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000141",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000142",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000143",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000144",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000145",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000146",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000147",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000148",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000149",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000170",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000171",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000172",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000173",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000174",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000175",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000176",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000177",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000178",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000179",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000180",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000181",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000192",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000193",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000194",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000195",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000196",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000197",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000198",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000199",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000200",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000202",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000203",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000207",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000208",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000209",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000210",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000211",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000212",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000213",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000214",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000215",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000216",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000217",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000218",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000219",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000220",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000221",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000222",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000223",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000224",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000225",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000226",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000227",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000228",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000229",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000234",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000235",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000236",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000237",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000238",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000239",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000240",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000241",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000242",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000243",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000244",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000245",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000001",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000002",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000003",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000004",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000005",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000006",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000007",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000008",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000009",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000010",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000011",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000012",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000013",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000014",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000015",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000016",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000017",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000018",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000019",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000021",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000022",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000023",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000024",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000025",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000026",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000027",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000028",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000029",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000030",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000031",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000032",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000033",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000034",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000035",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000036",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000037",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000001",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000002",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000003",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000004",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000005",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000006",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000007",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000008",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000009",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000010",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000011",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000012",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000013",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000014",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000015",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000016",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000017",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000018",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000019",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000020",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000021",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000022",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000023",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000024",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000025",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000026",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000027",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000028",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000029",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000030",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000031",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000032",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000033",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.n09000001",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.n09000002",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.n09000003",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.n09000004",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.n09000005",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.n09000006",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.n09000007",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.n09000008",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.n09000009",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.n09000010",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.n09000011",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000005",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000006",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000008",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000010",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000011",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000013",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000014",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000017",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000018",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000019",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000020",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000021",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000023",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000026",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000027",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000028",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000029",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000030",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000033",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000034",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000035",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000036",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000038",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000039",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000040",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000041",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000042",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000045",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000047",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000048",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000049",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000050",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.w06000001",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.w06000002",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.w06000003",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.w06000004",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.w06000005",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.w06000006",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.w06000008",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.w06000009",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.w06000010",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.w06000011",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.w06000012",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.w06000013",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.w06000014",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.w06000015",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.w06000016",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.w06000018",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.w06000019",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.w06000020",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.w06000021",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.w06000022",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.w06000023",
+      "countryId": "uk"
+    },
+    {
+      "placeId": "place.uk.local-admin.w06000024",
+      "countryId": "uk"
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 import { describe,it,expect } from 'vitest';
 import { advanceTown,createTown,policyReason,townTotal,type Town } from './town';
 import { readTown,writeTown,validTown,TOWN_SAVE_KEY } from './townSave';
-import { SAVE_KEY, loadGame } from './save';
+import { SAVE_KEY, loadGame, migrateGame } from './save';
 import legacyLife from './fixtures/life-v1.json';
 import { ageUp } from './game';
 import { townPolicies,type PolicyId } from '../data/town';
@@ -18,7 +18,7 @@ describe('Mereford monthly economy',()=>{
   it('survives 40 mixed policy experiments, checking every monthly save',()=>{for(let seed=0;seed<40;seed++){let t=createTown(seed);for(let month=0;month<24;month++){const p=townPolicies[(seed+month)%4].id;t=advanceTown(t,policyReason(t,p)?'hold':p);expect(validTown(t),`seed ${seed} month ${month}`).toBe(true);}}});
 });
 describe('town save isolation and recovery',()=>{
-  it('continues a fixed pre-politics life save after a complete town experiment',()=>{const original=JSON.stringify(legacyLife);const data=new Map([[SAVE_KEY,original]]);const storage={getItem:(k:string)=>data.get(k)??null,setItem:(k:string,v:string)=>{data.set(k,v);}};writeTown(storage,run('retrofit'));const life=loadGame(storage).game;expect(life).toEqual(legacyLife);expect(ageUp(life!).age).toBe(26);expect(data.get(SAVE_KEY)).toBe(original);});
+  it('continues a fixed pre-politics life save after a complete town experiment',()=>{const original=JSON.stringify(legacyLife);const data=new Map([[SAVE_KEY,original]]);const storage={getItem:(k:string)=>data.get(k)??null,setItem:(k:string,v:string)=>{data.set(k,v);}};writeTown(storage,run('retrofit'));const life=loadGame(storage).game;expect(life).toEqual(migrateGame(legacyLife));expect(ageUp(life!).age).toBe(26);expect(data.get(SAVE_KEY)).toBe(original);});
   it('never reads or writes the original life save',()=>{const data=new Map([[SAVE_KEY,'original-life-save']]);const storage={getItem:(k:string)=>data.get(k)??null,setItem:(k:string,v:string)=>{data.set(k,v);}};const t=run('hold');expect(writeTown(storage,t)).toBeNull();expect(readTown(storage).town).toEqual(t);expect(data.get(SAVE_KEY)).toBe('original-life-save');expect(data.has(TOWN_SAVE_KEY)).toBe(true);});
   it('rejects corruption, wrong versions, tampered cash and invalid history',()=>{const valid=advanceTown(createTown(),'hold');for(const candidate of [null,{}, {...valid,version:2},{...valid,fund:valid.fund+1},{...valid,history:[]},{...valid,ledger:[{month:1,from:'unknown',to:'fund',amount:3,reason:'x'}]},{...valid,projects:[{due:0}]}])expect(validTown(candidate)).toBe(false);});
   it('preserves invalid saves and reports storage failures',()=>{let raw='broken';const storage={getItem:()=>raw,setItem:(_k:string,v:string)=>{raw=v;}};expect(readTown(storage).error).toBeTruthy();expect(raw).toBe('broken');const denied={getItem:()=>{throw Error();},setItem:()=>{throw Error();}};expect(writeTown(denied,createTown())).toBeTruthy();expect(readTown(denied).error).toBeTruthy();});

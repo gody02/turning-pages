@@ -1,0 +1,3256 @@
+{
+  "version": 1,
+  "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+  "normalization": "Unicode NFC and source-format surrounding-whitespace removal only; punctuation, capitalization and diacritics preserved; no transliteration or fuzzy correction.",
+  "records": [
+    {
+      "officialCode": "E06000001",
+      "displayName": "Hartlepool",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.unitary-authority",
+      "placeId": "place.uk.local-admin.e06000001",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E06000002",
+      "displayName": "Middlesbrough",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.unitary-authority",
+      "placeId": "place.uk.local-admin.e06000002",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E06000003",
+      "displayName": "Redcar and Cleveland",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.unitary-authority",
+      "placeId": "place.uk.local-admin.e06000003",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E06000004",
+      "displayName": "Stockton-on-Tees",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.unitary-authority",
+      "placeId": "place.uk.local-admin.e06000004",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E06000005",
+      "displayName": "Darlington",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.unitary-authority",
+      "placeId": "place.uk.local-admin.e06000005",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E06000006",
+      "displayName": "Halton",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.unitary-authority",
+      "placeId": "place.uk.local-admin.e06000006",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E06000007",
+      "displayName": "Warrington",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.unitary-authority",
+      "placeId": "place.uk.local-admin.e06000007",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E06000008",
+      "displayName": "Blackburn with Darwen",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.unitary-authority",
+      "placeId": "place.uk.local-admin.e06000008",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E06000009",
+      "displayName": "Blackpool",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.unitary-authority",
+      "placeId": "place.uk.local-admin.e06000009",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E06000010",
+      "displayName": "Kingston upon Hull, City of",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.unitary-authority",
+      "placeId": "place.uk.local-admin.e06000010",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E06000011",
+      "displayName": "East Riding of Yorkshire",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.unitary-authority",
+      "placeId": "place.uk.local-admin.e06000011",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E06000012",
+      "displayName": "North East Lincolnshire",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.unitary-authority",
+      "placeId": "place.uk.local-admin.e06000012",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E06000013",
+      "displayName": "North Lincolnshire",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.unitary-authority",
+      "placeId": "place.uk.local-admin.e06000013",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E06000014",
+      "displayName": "York",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.unitary-authority",
+      "placeId": "place.uk.local-admin.e06000014",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E06000015",
+      "displayName": "Derby",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.unitary-authority",
+      "placeId": "place.uk.local-admin.e06000015",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E06000016",
+      "displayName": "Leicester",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.unitary-authority",
+      "placeId": "place.uk.local-admin.e06000016",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E06000017",
+      "displayName": "Rutland",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.unitary-authority",
+      "placeId": "place.uk.local-admin.e06000017",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E06000018",
+      "displayName": "Nottingham",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.unitary-authority",
+      "placeId": "place.uk.local-admin.e06000018",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E06000019",
+      "displayName": "Herefordshire, County of",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.unitary-authority",
+      "placeId": "place.uk.local-admin.e06000019",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E06000020",
+      "displayName": "Telford and Wrekin",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.unitary-authority",
+      "placeId": "place.uk.local-admin.e06000020",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E06000021",
+      "displayName": "Stoke-on-Trent",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.unitary-authority",
+      "placeId": "place.uk.local-admin.e06000021",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E06000022",
+      "displayName": "Bath and North East Somerset",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.unitary-authority",
+      "placeId": "place.uk.local-admin.e06000022",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E06000023",
+      "displayName": "Bristol, City of",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.unitary-authority",
+      "placeId": "place.uk.local-admin.e06000023",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E06000024",
+      "displayName": "North Somerset",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.unitary-authority",
+      "placeId": "place.uk.local-admin.e06000024",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E06000025",
+      "displayName": "South Gloucestershire",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.unitary-authority",
+      "placeId": "place.uk.local-admin.e06000025",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E06000026",
+      "displayName": "Plymouth",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.unitary-authority",
+      "placeId": "place.uk.local-admin.e06000026",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E06000027",
+      "displayName": "Torbay",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.unitary-authority",
+      "placeId": "place.uk.local-admin.e06000027",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E06000030",
+      "displayName": "Swindon",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.unitary-authority",
+      "placeId": "place.uk.local-admin.e06000030",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E06000031",
+      "displayName": "Peterborough",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.unitary-authority",
+      "placeId": "place.uk.local-admin.e06000031",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E06000032",
+      "displayName": "Luton",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.unitary-authority",
+      "placeId": "place.uk.local-admin.e06000032",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E06000033",
+      "displayName": "Southend-on-Sea",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.unitary-authority",
+      "placeId": "place.uk.local-admin.e06000033",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E06000034",
+      "displayName": "Thurrock",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.unitary-authority",
+      "placeId": "place.uk.local-admin.e06000034",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E06000035",
+      "displayName": "Medway",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.unitary-authority",
+      "placeId": "place.uk.local-admin.e06000035",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E06000036",
+      "displayName": "Bracknell Forest",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.unitary-authority",
+      "placeId": "place.uk.local-admin.e06000036",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E06000037",
+      "displayName": "West Berkshire",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.unitary-authority",
+      "placeId": "place.uk.local-admin.e06000037",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E06000038",
+      "displayName": "Reading",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.unitary-authority",
+      "placeId": "place.uk.local-admin.e06000038",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E06000039",
+      "displayName": "Slough",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.unitary-authority",
+      "placeId": "place.uk.local-admin.e06000039",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E06000040",
+      "displayName": "Windsor and Maidenhead",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.unitary-authority",
+      "placeId": "place.uk.local-admin.e06000040",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E06000041",
+      "displayName": "Wokingham",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.unitary-authority",
+      "placeId": "place.uk.local-admin.e06000041",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E06000042",
+      "displayName": "Milton Keynes",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.unitary-authority",
+      "placeId": "place.uk.local-admin.e06000042",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E06000043",
+      "displayName": "Brighton and Hove",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.unitary-authority",
+      "placeId": "place.uk.local-admin.e06000043",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E06000044",
+      "displayName": "Portsmouth",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.unitary-authority",
+      "placeId": "place.uk.local-admin.e06000044",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E06000045",
+      "displayName": "Southampton",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.unitary-authority",
+      "placeId": "place.uk.local-admin.e06000045",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E06000046",
+      "displayName": "Isle of Wight",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.unitary-authority",
+      "placeId": "place.uk.local-admin.e06000046",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E06000047",
+      "displayName": "County Durham",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.unitary-authority",
+      "placeId": "place.uk.local-admin.e06000047",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E06000049",
+      "displayName": "Cheshire East",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.unitary-authority",
+      "placeId": "place.uk.local-admin.e06000049",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E06000050",
+      "displayName": "Cheshire West and Chester",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.unitary-authority",
+      "placeId": "place.uk.local-admin.e06000050",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E06000051",
+      "displayName": "Shropshire",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.unitary-authority",
+      "placeId": "place.uk.local-admin.e06000051",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E06000052",
+      "displayName": "Cornwall",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.unitary-authority",
+      "placeId": "place.uk.local-admin.e06000052",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E06000053",
+      "displayName": "Isles of Scilly",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.isles-of-scilly",
+      "placeId": "place.uk.local-admin.e06000053",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E06000054",
+      "displayName": "Wiltshire",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.unitary-authority",
+      "placeId": "place.uk.local-admin.e06000054",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E06000055",
+      "displayName": "Bedford",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.unitary-authority",
+      "placeId": "place.uk.local-admin.e06000055",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E06000056",
+      "displayName": "Central Bedfordshire",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.unitary-authority",
+      "placeId": "place.uk.local-admin.e06000056",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E06000057",
+      "displayName": "Northumberland",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.unitary-authority",
+      "placeId": "place.uk.local-admin.e06000057",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E06000058",
+      "displayName": "Bournemouth, Christchurch and Poole",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.unitary-authority",
+      "placeId": "place.uk.local-admin.e06000058",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E06000059",
+      "displayName": "Dorset",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.unitary-authority",
+      "placeId": "place.uk.local-admin.e06000059",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E06000060",
+      "displayName": "Buckinghamshire",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.unitary-authority",
+      "placeId": "place.uk.local-admin.e06000060",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E06000061",
+      "displayName": "North Northamptonshire",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.unitary-authority",
+      "placeId": "place.uk.local-admin.e06000061",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E06000062",
+      "displayName": "West Northamptonshire",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.unitary-authority",
+      "placeId": "place.uk.local-admin.e06000062",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E06000063",
+      "displayName": "Cumberland",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.unitary-authority",
+      "placeId": "place.uk.local-admin.e06000063",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E06000064",
+      "displayName": "Westmorland and Furness",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.unitary-authority",
+      "placeId": "place.uk.local-admin.e06000064",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E06000065",
+      "displayName": "North Yorkshire",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.unitary-authority",
+      "placeId": "place.uk.local-admin.e06000065",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E06000066",
+      "displayName": "Somerset",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.unitary-authority",
+      "placeId": "place.uk.local-admin.e06000066",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000008",
+      "displayName": "Cambridge",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000008",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000009",
+      "displayName": "East Cambridgeshire",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000009",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000010",
+      "displayName": "Fenland",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000010",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000011",
+      "displayName": "Huntingdonshire",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000011",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000012",
+      "displayName": "South Cambridgeshire",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000012",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000032",
+      "displayName": "Amber Valley",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000032",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000033",
+      "displayName": "Bolsover",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000033",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000034",
+      "displayName": "Chesterfield",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000034",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000035",
+      "displayName": "Derbyshire Dales",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000035",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000036",
+      "displayName": "Erewash",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000036",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000037",
+      "displayName": "High Peak",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000037",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000038",
+      "displayName": "North East Derbyshire",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000038",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000039",
+      "displayName": "South Derbyshire",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000039",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000040",
+      "displayName": "East Devon",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000040",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000041",
+      "displayName": "Exeter",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000041",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000042",
+      "displayName": "Mid Devon",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000042",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000043",
+      "displayName": "North Devon",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000043",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000044",
+      "displayName": "South Hams",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000044",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000045",
+      "displayName": "Teignbridge",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000045",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000046",
+      "displayName": "Torridge",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000046",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000047",
+      "displayName": "West Devon",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000047",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000061",
+      "displayName": "Eastbourne",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000061",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000062",
+      "displayName": "Hastings",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000062",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000063",
+      "displayName": "Lewes",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000063",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000064",
+      "displayName": "Rother",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000064",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000065",
+      "displayName": "Wealden",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000065",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000066",
+      "displayName": "Basildon",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000066",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000067",
+      "displayName": "Braintree",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000067",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000068",
+      "displayName": "Brentwood",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000068",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000069",
+      "displayName": "Castle Point",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000069",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000070",
+      "displayName": "Chelmsford",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000070",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000071",
+      "displayName": "Colchester",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000071",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000072",
+      "displayName": "Epping Forest",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000072",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000073",
+      "displayName": "Harlow",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000073",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000074",
+      "displayName": "Maldon",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000074",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000075",
+      "displayName": "Rochford",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000075",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000076",
+      "displayName": "Tendring",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000076",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000077",
+      "displayName": "Uttlesford",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000077",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000078",
+      "displayName": "Cheltenham",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000078",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000079",
+      "displayName": "Cotswold",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000079",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000080",
+      "displayName": "Forest of Dean",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000080",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000081",
+      "displayName": "Gloucester",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000081",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000082",
+      "displayName": "Stroud",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000082",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000083",
+      "displayName": "Tewkesbury",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000083",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000084",
+      "displayName": "Basingstoke and Deane",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000084",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000085",
+      "displayName": "East Hampshire",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000085",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000086",
+      "displayName": "Eastleigh",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000086",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000087",
+      "displayName": "Fareham",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000087",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000088",
+      "displayName": "Gosport",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000088",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000089",
+      "displayName": "Hart",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000089",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000090",
+      "displayName": "Havant",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000090",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000091",
+      "displayName": "New Forest",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000091",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000092",
+      "displayName": "Rushmoor",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000092",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000093",
+      "displayName": "Test Valley",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000093",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000094",
+      "displayName": "Winchester",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000094",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000095",
+      "displayName": "Broxbourne",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000095",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000096",
+      "displayName": "Dacorum",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000096",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000098",
+      "displayName": "Hertsmere",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000098",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000099",
+      "displayName": "North Hertfordshire",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000099",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000102",
+      "displayName": "Three Rivers",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000102",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000103",
+      "displayName": "Watford",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000103",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000105",
+      "displayName": "Ashford",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000105",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000106",
+      "displayName": "Canterbury",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000106",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000107",
+      "displayName": "Dartford",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000107",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000108",
+      "displayName": "Dover",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000108",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000109",
+      "displayName": "Gravesham",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000109",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000110",
+      "displayName": "Maidstone",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000110",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000111",
+      "displayName": "Sevenoaks",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000111",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000112",
+      "displayName": "Folkestone and Hythe",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000112",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000113",
+      "displayName": "Swale",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000113",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000114",
+      "displayName": "Thanet",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000114",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000115",
+      "displayName": "Tonbridge and Malling",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000115",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000116",
+      "displayName": "Tunbridge Wells",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000116",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000117",
+      "displayName": "Burnley",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000117",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000118",
+      "displayName": "Chorley",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000118",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000119",
+      "displayName": "Fylde",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000119",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000120",
+      "displayName": "Hyndburn",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000120",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000121",
+      "displayName": "Lancaster",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000121",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000122",
+      "displayName": "Pendle",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000122",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000123",
+      "displayName": "Preston",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000123",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000124",
+      "displayName": "Ribble Valley",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000124",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000125",
+      "displayName": "Rossendale",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000125",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000126",
+      "displayName": "South Ribble",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000126",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000127",
+      "displayName": "West Lancashire",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000127",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000128",
+      "displayName": "Wyre",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000128",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000129",
+      "displayName": "Blaby",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000129",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000130",
+      "displayName": "Charnwood",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000130",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000131",
+      "displayName": "Harborough",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000131",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000132",
+      "displayName": "Hinckley and Bosworth",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000132",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000133",
+      "displayName": "Melton",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000133",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000134",
+      "displayName": "North West Leicestershire",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000134",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000135",
+      "displayName": "Oadby and Wigston",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000135",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000136",
+      "displayName": "Boston",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000136",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000137",
+      "displayName": "East Lindsey",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000137",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000138",
+      "displayName": "Lincoln",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000138",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000139",
+      "displayName": "North Kesteven",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000139",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000140",
+      "displayName": "South Holland",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000140",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000141",
+      "displayName": "South Kesteven",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000141",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000142",
+      "displayName": "West Lindsey",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000142",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000143",
+      "displayName": "Breckland",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000143",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000144",
+      "displayName": "Broadland",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000144",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000145",
+      "displayName": "Great Yarmouth",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000145",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000146",
+      "displayName": "King's Lynn and West Norfolk",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000146",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000147",
+      "displayName": "North Norfolk",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000147",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000148",
+      "displayName": "Norwich",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000148",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000149",
+      "displayName": "South Norfolk",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000149",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000170",
+      "displayName": "Ashfield",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000170",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000171",
+      "displayName": "Bassetlaw",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000171",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000172",
+      "displayName": "Broxtowe",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000172",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000173",
+      "displayName": "Gedling",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000173",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000174",
+      "displayName": "Mansfield",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000174",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000175",
+      "displayName": "Newark and Sherwood",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000175",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000176",
+      "displayName": "Rushcliffe",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000176",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000177",
+      "displayName": "Cherwell",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000177",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000178",
+      "displayName": "Oxford",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000178",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000179",
+      "displayName": "South Oxfordshire",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000179",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000180",
+      "displayName": "Vale of White Horse",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000180",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000181",
+      "displayName": "West Oxfordshire",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000181",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000192",
+      "displayName": "Cannock Chase",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000192",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000193",
+      "displayName": "East Staffordshire",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000193",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000194",
+      "displayName": "Lichfield",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000194",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000195",
+      "displayName": "Newcastle-under-Lyme",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000195",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000196",
+      "displayName": "South Staffordshire",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000196",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000197",
+      "displayName": "Stafford",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000197",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000198",
+      "displayName": "Staffordshire Moorlands",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000198",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000199",
+      "displayName": "Tamworth",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000199",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000200",
+      "displayName": "Babergh",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000200",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000202",
+      "displayName": "Ipswich",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000202",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000203",
+      "displayName": "Mid Suffolk",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000203",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000207",
+      "displayName": "Elmbridge",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000207",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000208",
+      "displayName": "Epsom and Ewell",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000208",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000209",
+      "displayName": "Guildford",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000209",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000210",
+      "displayName": "Mole Valley",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000210",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000211",
+      "displayName": "Reigate and Banstead",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000211",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000212",
+      "displayName": "Runnymede",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000212",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000213",
+      "displayName": "Spelthorne",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000213",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000214",
+      "displayName": "Surrey Heath",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000214",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000215",
+      "displayName": "Tandridge",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000215",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000216",
+      "displayName": "Waverley",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000216",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000217",
+      "displayName": "Woking",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000217",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000218",
+      "displayName": "North Warwickshire",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000218",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000219",
+      "displayName": "Nuneaton and Bedworth",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000219",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000220",
+      "displayName": "Rugby",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000220",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000221",
+      "displayName": "Stratford-on-Avon",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000221",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000222",
+      "displayName": "Warwick",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000222",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000223",
+      "displayName": "Adur",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000223",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000224",
+      "displayName": "Arun",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000224",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000225",
+      "displayName": "Chichester",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000225",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000226",
+      "displayName": "Crawley",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000226",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000227",
+      "displayName": "Horsham",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000227",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000228",
+      "displayName": "Mid Sussex",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000228",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000229",
+      "displayName": "Worthing",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000229",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000234",
+      "displayName": "Bromsgrove",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000234",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000235",
+      "displayName": "Malvern Hills",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000235",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000236",
+      "displayName": "Redditch",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000236",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000237",
+      "displayName": "Worcester",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000237",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000238",
+      "displayName": "Wychavon",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000238",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000239",
+      "displayName": "Wyre Forest",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000239",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000240",
+      "displayName": "St Albans",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000240",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000241",
+      "displayName": "Welwyn Hatfield",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000241",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000242",
+      "displayName": "East Hertfordshire",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000242",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000243",
+      "displayName": "Stevenage",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000243",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000244",
+      "displayName": "East Suffolk",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000244",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E07000245",
+      "displayName": "West Suffolk",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "placeId": "place.uk.local-admin.e07000245",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E08000001",
+      "displayName": "Bolton",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.metropolitan-district",
+      "placeId": "place.uk.local-admin.e08000001",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E08000002",
+      "displayName": "Bury",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.metropolitan-district",
+      "placeId": "place.uk.local-admin.e08000002",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E08000003",
+      "displayName": "Manchester",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.metropolitan-district",
+      "placeId": "place.uk.local-admin.e08000003",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E08000004",
+      "displayName": "Oldham",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.metropolitan-district",
+      "placeId": "place.uk.local-admin.e08000004",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E08000005",
+      "displayName": "Rochdale",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.metropolitan-district",
+      "placeId": "place.uk.local-admin.e08000005",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E08000006",
+      "displayName": "Salford",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.metropolitan-district",
+      "placeId": "place.uk.local-admin.e08000006",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E08000007",
+      "displayName": "Stockport",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.metropolitan-district",
+      "placeId": "place.uk.local-admin.e08000007",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E08000008",
+      "displayName": "Tameside",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.metropolitan-district",
+      "placeId": "place.uk.local-admin.e08000008",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E08000009",
+      "displayName": "Trafford",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.metropolitan-district",
+      "placeId": "place.uk.local-admin.e08000009",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E08000010",
+      "displayName": "Wigan",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.metropolitan-district",
+      "placeId": "place.uk.local-admin.e08000010",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E08000011",
+      "displayName": "Knowsley",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.metropolitan-district",
+      "placeId": "place.uk.local-admin.e08000011",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E08000012",
+      "displayName": "Liverpool",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.metropolitan-district",
+      "placeId": "place.uk.local-admin.e08000012",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E08000013",
+      "displayName": "St. Helens",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.metropolitan-district",
+      "placeId": "place.uk.local-admin.e08000013",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E08000014",
+      "displayName": "Sefton",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.metropolitan-district",
+      "placeId": "place.uk.local-admin.e08000014",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E08000015",
+      "displayName": "Wirral",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.metropolitan-district",
+      "placeId": "place.uk.local-admin.e08000015",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E08000016",
+      "displayName": "Barnsley",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.metropolitan-district",
+      "placeId": "place.uk.local-admin.e08000016",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E08000017",
+      "displayName": "Doncaster",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.metropolitan-district",
+      "placeId": "place.uk.local-admin.e08000017",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E08000018",
+      "displayName": "Rotherham",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.metropolitan-district",
+      "placeId": "place.uk.local-admin.e08000018",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E08000019",
+      "displayName": "Sheffield",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.metropolitan-district",
+      "placeId": "place.uk.local-admin.e08000019",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E08000021",
+      "displayName": "Newcastle upon Tyne",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.metropolitan-district",
+      "placeId": "place.uk.local-admin.e08000021",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E08000022",
+      "displayName": "North Tyneside",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.metropolitan-district",
+      "placeId": "place.uk.local-admin.e08000022",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E08000023",
+      "displayName": "South Tyneside",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.metropolitan-district",
+      "placeId": "place.uk.local-admin.e08000023",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E08000024",
+      "displayName": "Sunderland",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.metropolitan-district",
+      "placeId": "place.uk.local-admin.e08000024",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E08000025",
+      "displayName": "Birmingham",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.metropolitan-district",
+      "placeId": "place.uk.local-admin.e08000025",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E08000026",
+      "displayName": "Coventry",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.metropolitan-district",
+      "placeId": "place.uk.local-admin.e08000026",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E08000027",
+      "displayName": "Dudley",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.metropolitan-district",
+      "placeId": "place.uk.local-admin.e08000027",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E08000028",
+      "displayName": "Sandwell",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.metropolitan-district",
+      "placeId": "place.uk.local-admin.e08000028",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E08000029",
+      "displayName": "Solihull",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.metropolitan-district",
+      "placeId": "place.uk.local-admin.e08000029",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E08000030",
+      "displayName": "Walsall",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.metropolitan-district",
+      "placeId": "place.uk.local-admin.e08000030",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E08000031",
+      "displayName": "Wolverhampton",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.metropolitan-district",
+      "placeId": "place.uk.local-admin.e08000031",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E08000032",
+      "displayName": "Bradford",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.metropolitan-district",
+      "placeId": "place.uk.local-admin.e08000032",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E08000033",
+      "displayName": "Calderdale",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.metropolitan-district",
+      "placeId": "place.uk.local-admin.e08000033",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E08000034",
+      "displayName": "Kirklees",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.metropolitan-district",
+      "placeId": "place.uk.local-admin.e08000034",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E08000035",
+      "displayName": "Leeds",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.metropolitan-district",
+      "placeId": "place.uk.local-admin.e08000035",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E08000036",
+      "displayName": "Wakefield",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.metropolitan-district",
+      "placeId": "place.uk.local-admin.e08000036",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E08000037",
+      "displayName": "Gateshead",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.metropolitan-district",
+      "placeId": "place.uk.local-admin.e08000037",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E09000001",
+      "displayName": "City of London",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.city-of-london",
+      "placeId": "place.uk.local-admin.e09000001",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E09000002",
+      "displayName": "Barking and Dagenham",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.london-borough",
+      "placeId": "place.uk.local-admin.e09000002",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E09000003",
+      "displayName": "Barnet",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.london-borough",
+      "placeId": "place.uk.local-admin.e09000003",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E09000004",
+      "displayName": "Bexley",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.london-borough",
+      "placeId": "place.uk.local-admin.e09000004",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E09000005",
+      "displayName": "Brent",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.london-borough",
+      "placeId": "place.uk.local-admin.e09000005",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E09000006",
+      "displayName": "Bromley",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.london-borough",
+      "placeId": "place.uk.local-admin.e09000006",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E09000007",
+      "displayName": "Camden",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.london-borough",
+      "placeId": "place.uk.local-admin.e09000007",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E09000008",
+      "displayName": "Croydon",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.london-borough",
+      "placeId": "place.uk.local-admin.e09000008",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E09000009",
+      "displayName": "Ealing",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.london-borough",
+      "placeId": "place.uk.local-admin.e09000009",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E09000010",
+      "displayName": "Enfield",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.london-borough",
+      "placeId": "place.uk.local-admin.e09000010",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E09000011",
+      "displayName": "Greenwich",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.london-borough",
+      "placeId": "place.uk.local-admin.e09000011",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E09000012",
+      "displayName": "Hackney",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.london-borough",
+      "placeId": "place.uk.local-admin.e09000012",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E09000013",
+      "displayName": "Hammersmith and Fulham",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.london-borough",
+      "placeId": "place.uk.local-admin.e09000013",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E09000014",
+      "displayName": "Haringey",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.london-borough",
+      "placeId": "place.uk.local-admin.e09000014",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E09000015",
+      "displayName": "Harrow",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.london-borough",
+      "placeId": "place.uk.local-admin.e09000015",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E09000016",
+      "displayName": "Havering",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.london-borough",
+      "placeId": "place.uk.local-admin.e09000016",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E09000017",
+      "displayName": "Hillingdon",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.london-borough",
+      "placeId": "place.uk.local-admin.e09000017",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E09000018",
+      "displayName": "Hounslow",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.london-borough",
+      "placeId": "place.uk.local-admin.e09000018",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E09000019",
+      "displayName": "Islington",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.london-borough",
+      "placeId": "place.uk.local-admin.e09000019",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E09000020",
+      "displayName": "Kensington and Chelsea",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.london-borough",
+      "placeId": "place.uk.local-admin.e09000020",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E09000021",
+      "displayName": "Kingston upon Thames",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.london-borough",
+      "placeId": "place.uk.local-admin.e09000021",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E09000022",
+      "displayName": "Lambeth",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.london-borough",
+      "placeId": "place.uk.local-admin.e09000022",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E09000023",
+      "displayName": "Lewisham",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.london-borough",
+      "placeId": "place.uk.local-admin.e09000023",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E09000024",
+      "displayName": "Merton",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.london-borough",
+      "placeId": "place.uk.local-admin.e09000024",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E09000025",
+      "displayName": "Newham",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.london-borough",
+      "placeId": "place.uk.local-admin.e09000025",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E09000026",
+      "displayName": "Redbridge",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.london-borough",
+      "placeId": "place.uk.local-admin.e09000026",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E09000027",
+      "displayName": "Richmond upon Thames",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.london-borough",
+      "placeId": "place.uk.local-admin.e09000027",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E09000028",
+      "displayName": "Southwark",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.london-borough",
+      "placeId": "place.uk.local-admin.e09000028",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E09000029",
+      "displayName": "Sutton",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.london-borough",
+      "placeId": "place.uk.local-admin.e09000029",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E09000030",
+      "displayName": "Tower Hamlets",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.london-borough",
+      "placeId": "place.uk.local-admin.e09000030",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E09000031",
+      "displayName": "Waltham Forest",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.london-borough",
+      "placeId": "place.uk.local-admin.e09000031",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E09000032",
+      "displayName": "Wandsworth",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.london-borough",
+      "placeId": "place.uk.local-admin.e09000032",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "E09000033",
+      "displayName": "Westminster",
+      "welshDisplayName": null,
+      "countryBranch": "england",
+      "kindId": "geography.uk.england.london-borough",
+      "placeId": "place.uk.local-admin.e09000033",
+      "parentPlaceId": "place.uk.constituent.england"
+    },
+    {
+      "officialCode": "N09000001",
+      "displayName": "Antrim and Newtownabbey",
+      "welshDisplayName": null,
+      "countryBranch": "northern-ireland",
+      "kindId": "geography.uk.northern-ireland.local-government-district",
+      "placeId": "place.uk.local-admin.n09000001",
+      "parentPlaceId": "place.uk.constituent.northern-ireland"
+    },
+    {
+      "officialCode": "N09000002",
+      "displayName": "Armagh City, Banbridge and Craigavon",
+      "welshDisplayName": null,
+      "countryBranch": "northern-ireland",
+      "kindId": "geography.uk.northern-ireland.local-government-district",
+      "placeId": "place.uk.local-admin.n09000002",
+      "parentPlaceId": "place.uk.constituent.northern-ireland"
+    },
+    {
+      "officialCode": "N09000003",
+      "displayName": "Belfast",
+      "welshDisplayName": null,
+      "countryBranch": "northern-ireland",
+      "kindId": "geography.uk.northern-ireland.local-government-district",
+      "placeId": "place.uk.local-admin.n09000003",
+      "parentPlaceId": "place.uk.constituent.northern-ireland"
+    },
+    {
+      "officialCode": "N09000004",
+      "displayName": "Causeway Coast and Glens",
+      "welshDisplayName": null,
+      "countryBranch": "northern-ireland",
+      "kindId": "geography.uk.northern-ireland.local-government-district",
+      "placeId": "place.uk.local-admin.n09000004",
+      "parentPlaceId": "place.uk.constituent.northern-ireland"
+    },
+    {
+      "officialCode": "N09000005",
+      "displayName": "Derry City and Strabane",
+      "welshDisplayName": null,
+      "countryBranch": "northern-ireland",
+      "kindId": "geography.uk.northern-ireland.local-government-district",
+      "placeId": "place.uk.local-admin.n09000005",
+      "parentPlaceId": "place.uk.constituent.northern-ireland"
+    },
+    {
+      "officialCode": "N09000006",
+      "displayName": "Fermanagh and Omagh",
+      "welshDisplayName": null,
+      "countryBranch": "northern-ireland",
+      "kindId": "geography.uk.northern-ireland.local-government-district",
+      "placeId": "place.uk.local-admin.n09000006",
+      "parentPlaceId": "place.uk.constituent.northern-ireland"
+    },
+    {
+      "officialCode": "N09000007",
+      "displayName": "Lisburn and Castlereagh",
+      "welshDisplayName": null,
+      "countryBranch": "northern-ireland",
+      "kindId": "geography.uk.northern-ireland.local-government-district",
+      "placeId": "place.uk.local-admin.n09000007",
+      "parentPlaceId": "place.uk.constituent.northern-ireland"
+    },
+    {
+      "officialCode": "N09000008",
+      "displayName": "Mid and East Antrim",
+      "welshDisplayName": null,
+      "countryBranch": "northern-ireland",
+      "kindId": "geography.uk.northern-ireland.local-government-district",
+      "placeId": "place.uk.local-admin.n09000008",
+      "parentPlaceId": "place.uk.constituent.northern-ireland"
+    },
+    {
+      "officialCode": "N09000009",
+      "displayName": "Mid Ulster",
+      "welshDisplayName": null,
+      "countryBranch": "northern-ireland",
+      "kindId": "geography.uk.northern-ireland.local-government-district",
+      "placeId": "place.uk.local-admin.n09000009",
+      "parentPlaceId": "place.uk.constituent.northern-ireland"
+    },
+    {
+      "officialCode": "N09000010",
+      "displayName": "Newry, Mourne and Down",
+      "welshDisplayName": null,
+      "countryBranch": "northern-ireland",
+      "kindId": "geography.uk.northern-ireland.local-government-district",
+      "placeId": "place.uk.local-admin.n09000010",
+      "parentPlaceId": "place.uk.constituent.northern-ireland"
+    },
+    {
+      "officialCode": "N09000011",
+      "displayName": "Ards and North Down",
+      "welshDisplayName": null,
+      "countryBranch": "northern-ireland",
+      "kindId": "geography.uk.northern-ireland.local-government-district",
+      "placeId": "place.uk.local-admin.n09000011",
+      "parentPlaceId": "place.uk.constituent.northern-ireland"
+    },
+    {
+      "officialCode": "S12000005",
+      "displayName": "Clackmannanshire",
+      "welshDisplayName": null,
+      "countryBranch": "scotland",
+      "kindId": "geography.uk.scotland.council-area",
+      "placeId": "place.uk.local-admin.s12000005",
+      "parentPlaceId": "place.uk.constituent.scotland"
+    },
+    {
+      "officialCode": "S12000006",
+      "displayName": "Dumfries and Galloway",
+      "welshDisplayName": null,
+      "countryBranch": "scotland",
+      "kindId": "geography.uk.scotland.council-area",
+      "placeId": "place.uk.local-admin.s12000006",
+      "parentPlaceId": "place.uk.constituent.scotland"
+    },
+    {
+      "officialCode": "S12000008",
+      "displayName": "East Ayrshire",
+      "welshDisplayName": null,
+      "countryBranch": "scotland",
+      "kindId": "geography.uk.scotland.council-area",
+      "placeId": "place.uk.local-admin.s12000008",
+      "parentPlaceId": "place.uk.constituent.scotland"
+    },
+    {
+      "officialCode": "S12000010",
+      "displayName": "East Lothian",
+      "welshDisplayName": null,
+      "countryBranch": "scotland",
+      "kindId": "geography.uk.scotland.council-area",
+      "placeId": "place.uk.local-admin.s12000010",
+      "parentPlaceId": "place.uk.constituent.scotland"
+    },
+    {
+      "officialCode": "S12000011",
+      "displayName": "East Renfrewshire",
+      "welshDisplayName": null,
+      "countryBranch": "scotland",
+      "kindId": "geography.uk.scotland.council-area",
+      "placeId": "place.uk.local-admin.s12000011",
+      "parentPlaceId": "place.uk.constituent.scotland"
+    },
+    {
+      "officialCode": "S12000013",
+      "displayName": "Na h-Eileanan Siar",
+      "welshDisplayName": null,
+      "countryBranch": "scotland",
+      "kindId": "geography.uk.scotland.council-area",
+      "placeId": "place.uk.local-admin.s12000013",
+      "parentPlaceId": "place.uk.constituent.scotland"
+    },
+    {
+      "officialCode": "S12000014",
+      "displayName": "Falkirk",
+      "welshDisplayName": null,
+      "countryBranch": "scotland",
+      "kindId": "geography.uk.scotland.council-area",
+      "placeId": "place.uk.local-admin.s12000014",
+      "parentPlaceId": "place.uk.constituent.scotland"
+    },
+    {
+      "officialCode": "S12000017",
+      "displayName": "Highland",
+      "welshDisplayName": null,
+      "countryBranch": "scotland",
+      "kindId": "geography.uk.scotland.council-area",
+      "placeId": "place.uk.local-admin.s12000017",
+      "parentPlaceId": "place.uk.constituent.scotland"
+    },
+    {
+      "officialCode": "S12000018",
+      "displayName": "Inverclyde",
+      "welshDisplayName": null,
+      "countryBranch": "scotland",
+      "kindId": "geography.uk.scotland.council-area",
+      "placeId": "place.uk.local-admin.s12000018",
+      "parentPlaceId": "place.uk.constituent.scotland"
+    },
+    {
+      "officialCode": "S12000019",
+      "displayName": "Midlothian",
+      "welshDisplayName": null,
+      "countryBranch": "scotland",
+      "kindId": "geography.uk.scotland.council-area",
+      "placeId": "place.uk.local-admin.s12000019",
+      "parentPlaceId": "place.uk.constituent.scotland"
+    },
+    {
+      "officialCode": "S12000020",
+      "displayName": "Moray",
+      "welshDisplayName": null,
+      "countryBranch": "scotland",
+      "kindId": "geography.uk.scotland.council-area",
+      "placeId": "place.uk.local-admin.s12000020",
+      "parentPlaceId": "place.uk.constituent.scotland"
+    },
+    {
+      "officialCode": "S12000021",
+      "displayName": "North Ayrshire",
+      "welshDisplayName": null,
+      "countryBranch": "scotland",
+      "kindId": "geography.uk.scotland.council-area",
+      "placeId": "place.uk.local-admin.s12000021",
+      "parentPlaceId": "place.uk.constituent.scotland"
+    },
+    {
+      "officialCode": "S12000023",
+      "displayName": "Orkney Islands",
+      "welshDisplayName": null,
+      "countryBranch": "scotland",
+      "kindId": "geography.uk.scotland.council-area",
+      "placeId": "place.uk.local-admin.s12000023",
+      "parentPlaceId": "place.uk.constituent.scotland"
+    },
+    {
+      "officialCode": "S12000026",
+      "displayName": "Scottish Borders",
+      "welshDisplayName": null,
+      "countryBranch": "scotland",
+      "kindId": "geography.uk.scotland.council-area",
+      "placeId": "place.uk.local-admin.s12000026",
+      "parentPlaceId": "place.uk.constituent.scotland"
+    },
+    {
+      "officialCode": "S12000027",
+      "displayName": "Shetland Islands",
+      "welshDisplayName": null,
+      "countryBranch": "scotland",
+      "kindId": "geography.uk.scotland.council-area",
+      "placeId": "place.uk.local-admin.s12000027",
+      "parentPlaceId": "place.uk.constituent.scotland"
+    },
+    {
+      "officialCode": "S12000028",
+      "displayName": "South Ayrshire",
+      "welshDisplayName": null,
+      "countryBranch": "scotland",
+      "kindId": "geography.uk.scotland.council-area",
+      "placeId": "place.uk.local-admin.s12000028",
+      "parentPlaceId": "place.uk.constituent.scotland"
+    },
+    {
+      "officialCode": "S12000029",
+      "displayName": "South Lanarkshire",
+      "welshDisplayName": null,
+      "countryBranch": "scotland",
+      "kindId": "geography.uk.scotland.council-area",
+      "placeId": "place.uk.local-admin.s12000029",
+      "parentPlaceId": "place.uk.constituent.scotland"
+    },
+    {
+      "officialCode": "S12000030",
+      "displayName": "Stirling",
+      "welshDisplayName": null,
+      "countryBranch": "scotland",
+      "kindId": "geography.uk.scotland.council-area",
+      "placeId": "place.uk.local-admin.s12000030",
+      "parentPlaceId": "place.uk.constituent.scotland"
+    },
+    {
+      "officialCode": "S12000033",
+      "displayName": "Aberdeen City",
+      "welshDisplayName": null,
+      "countryBranch": "scotland",
+      "kindId": "geography.uk.scotland.council-area",
+      "placeId": "place.uk.local-admin.s12000033",
+      "parentPlaceId": "place.uk.constituent.scotland"
+    },
+    {
+      "officialCode": "S12000034",
+      "displayName": "Aberdeenshire",
+      "welshDisplayName": null,
+      "countryBranch": "scotland",
+      "kindId": "geography.uk.scotland.council-area",
+      "placeId": "place.uk.local-admin.s12000034",
+      "parentPlaceId": "place.uk.constituent.scotland"
+    },
+    {
+      "officialCode": "S12000035",
+      "displayName": "Argyll and Bute",
+      "welshDisplayName": null,
+      "countryBranch": "scotland",
+      "kindId": "geography.uk.scotland.council-area",
+      "placeId": "place.uk.local-admin.s12000035",
+      "parentPlaceId": "place.uk.constituent.scotland"
+    },
+    {
+      "officialCode": "S12000036",
+      "displayName": "City of Edinburgh",
+      "welshDisplayName": null,
+      "countryBranch": "scotland",
+      "kindId": "geography.uk.scotland.council-area",
+      "placeId": "place.uk.local-admin.s12000036",
+      "parentPlaceId": "place.uk.constituent.scotland"
+    },
+    {
+      "officialCode": "S12000038",
+      "displayName": "Renfrewshire",
+      "welshDisplayName": null,
+      "countryBranch": "scotland",
+      "kindId": "geography.uk.scotland.council-area",
+      "placeId": "place.uk.local-admin.s12000038",
+      "parentPlaceId": "place.uk.constituent.scotland"
+    },
+    {
+      "officialCode": "S12000039",
+      "displayName": "West Dunbartonshire",
+      "welshDisplayName": null,
+      "countryBranch": "scotland",
+      "kindId": "geography.uk.scotland.council-area",
+      "placeId": "place.uk.local-admin.s12000039",
+      "parentPlaceId": "place.uk.constituent.scotland"
+    },
+    {
+      "officialCode": "S12000040",
+      "displayName": "West Lothian",
+      "welshDisplayName": null,
+      "countryBranch": "scotland",
+      "kindId": "geography.uk.scotland.council-area",
+      "placeId": "place.uk.local-admin.s12000040",
+      "parentPlaceId": "place.uk.constituent.scotland"
+    },
+    {
+      "officialCode": "S12000041",
+      "displayName": "Angus",
+      "welshDisplayName": null,
+      "countryBranch": "scotland",
+      "kindId": "geography.uk.scotland.council-area",
+      "placeId": "place.uk.local-admin.s12000041",
+      "parentPlaceId": "place.uk.constituent.scotland"
+    },
+    {
+      "officialCode": "S12000042",
+      "displayName": "Dundee City",
+      "welshDisplayName": null,
+      "countryBranch": "scotland",
+      "kindId": "geography.uk.scotland.council-area",
+      "placeId": "place.uk.local-admin.s12000042",
+      "parentPlaceId": "place.uk.constituent.scotland"
+    },
+    {
+      "officialCode": "S12000045",
+      "displayName": "East Dunbartonshire",
+      "welshDisplayName": null,
+      "countryBranch": "scotland",
+      "kindId": "geography.uk.scotland.council-area",
+      "placeId": "place.uk.local-admin.s12000045",
+      "parentPlaceId": "place.uk.constituent.scotland"
+    },
+    {
+      "officialCode": "S12000047",
+      "displayName": "Fife",
+      "welshDisplayName": null,
+      "countryBranch": "scotland",
+      "kindId": "geography.uk.scotland.council-area",
+      "placeId": "place.uk.local-admin.s12000047",
+      "parentPlaceId": "place.uk.constituent.scotland"
+    },
+    {
+      "officialCode": "S12000048",
+      "displayName": "Perth and Kinross",
+      "welshDisplayName": null,
+      "countryBranch": "scotland",
+      "kindId": "geography.uk.scotland.council-area",
+      "placeId": "place.uk.local-admin.s12000048",
+      "parentPlaceId": "place.uk.constituent.scotland"
+    },
+    {
+      "officialCode": "S12000049",
+      "displayName": "Glasgow City",
+      "welshDisplayName": null,
+      "countryBranch": "scotland",
+      "kindId": "geography.uk.scotland.council-area",
+      "placeId": "place.uk.local-admin.s12000049",
+      "parentPlaceId": "place.uk.constituent.scotland"
+    },
+    {
+      "officialCode": "S12000050",
+      "displayName": "North Lanarkshire",
+      "welshDisplayName": null,
+      "countryBranch": "scotland",
+      "kindId": "geography.uk.scotland.council-area",
+      "placeId": "place.uk.local-admin.s12000050",
+      "parentPlaceId": "place.uk.constituent.scotland"
+    },
+    {
+      "officialCode": "W06000001",
+      "displayName": "Isle of Anglesey",
+      "welshDisplayName": "Ynys Môn",
+      "countryBranch": "wales",
+      "kindId": "geography.uk.wales.principal-area",
+      "placeId": "place.uk.local-admin.w06000001",
+      "parentPlaceId": "place.uk.constituent.wales"
+    },
+    {
+      "officialCode": "W06000002",
+      "displayName": "Gwynedd",
+      "welshDisplayName": "Gwynedd",
+      "countryBranch": "wales",
+      "kindId": "geography.uk.wales.principal-area",
+      "placeId": "place.uk.local-admin.w06000002",
+      "parentPlaceId": "place.uk.constituent.wales"
+    },
+    {
+      "officialCode": "W06000003",
+      "displayName": "Conwy",
+      "welshDisplayName": "Conwy",
+      "countryBranch": "wales",
+      "kindId": "geography.uk.wales.principal-area",
+      "placeId": "place.uk.local-admin.w06000003",
+      "parentPlaceId": "place.uk.constituent.wales"
+    },
+    {
+      "officialCode": "W06000004",
+      "displayName": "Denbighshire",
+      "welshDisplayName": "Sir Ddinbych",
+      "countryBranch": "wales",
+      "kindId": "geography.uk.wales.principal-area",
+      "placeId": "place.uk.local-admin.w06000004",
+      "parentPlaceId": "place.uk.constituent.wales"
+    },
+    {
+      "officialCode": "W06000005",
+      "displayName": "Flintshire",
+      "welshDisplayName": "Sir y Fflint",
+      "countryBranch": "wales",
+      "kindId": "geography.uk.wales.principal-area",
+      "placeId": "place.uk.local-admin.w06000005",
+      "parentPlaceId": "place.uk.constituent.wales"
+    },
+    {
+      "officialCode": "W06000006",
+      "displayName": "Wrexham",
+      "welshDisplayName": "Wrecsam",
+      "countryBranch": "wales",
+      "kindId": "geography.uk.wales.principal-area",
+      "placeId": "place.uk.local-admin.w06000006",
+      "parentPlaceId": "place.uk.constituent.wales"
+    },
+    {
+      "officialCode": "W06000008",
+      "displayName": "Ceredigion",
+      "welshDisplayName": "Ceredigion",
+      "countryBranch": "wales",
+      "kindId": "geography.uk.wales.principal-area",
+      "placeId": "place.uk.local-admin.w06000008",
+      "parentPlaceId": "place.uk.constituent.wales"
+    },
+    {
+      "officialCode": "W06000009",
+      "displayName": "Pembrokeshire",
+      "welshDisplayName": "Sir Benfro",
+      "countryBranch": "wales",
+      "kindId": "geography.uk.wales.principal-area",
+      "placeId": "place.uk.local-admin.w06000009",
+      "parentPlaceId": "place.uk.constituent.wales"
+    },
+    {
+      "officialCode": "W06000010",
+      "displayName": "Carmarthenshire",
+      "welshDisplayName": "Sir Gaerfyrddin",
+      "countryBranch": "wales",
+      "kindId": "geography.uk.wales.principal-area",
+      "placeId": "place.uk.local-admin.w06000010",
+      "parentPlaceId": "place.uk.constituent.wales"
+    },
+    {
+      "officialCode": "W06000011",
+      "displayName": "Swansea",
+      "welshDisplayName": "Abertawe",
+      "countryBranch": "wales",
+      "kindId": "geography.uk.wales.principal-area",
+      "placeId": "place.uk.local-admin.w06000011",
+      "parentPlaceId": "place.uk.constituent.wales"
+    },
+    {
+      "officialCode": "W06000012",
+      "displayName": "Neath Port Talbot",
+      "welshDisplayName": "Castell-nedd Port Talbot",
+      "countryBranch": "wales",
+      "kindId": "geography.uk.wales.principal-area",
+      "placeId": "place.uk.local-admin.w06000012",
+      "parentPlaceId": "place.uk.constituent.wales"
+    },
+    {
+      "officialCode": "W06000013",
+      "displayName": "Bridgend",
+      "welshDisplayName": "Pen-y-bont ar Ogwr",
+      "countryBranch": "wales",
+      "kindId": "geography.uk.wales.principal-area",
+      "placeId": "place.uk.local-admin.w06000013",
+      "parentPlaceId": "place.uk.constituent.wales"
+    },
+    {
+      "officialCode": "W06000014",
+      "displayName": "Vale of Glamorgan",
+      "welshDisplayName": "Bro Morgannwg",
+      "countryBranch": "wales",
+      "kindId": "geography.uk.wales.principal-area",
+      "placeId": "place.uk.local-admin.w06000014",
+      "parentPlaceId": "place.uk.constituent.wales"
+    },
+    {
+      "officialCode": "W06000015",
+      "displayName": "Cardiff",
+      "welshDisplayName": "Caerdydd",
+      "countryBranch": "wales",
+      "kindId": "geography.uk.wales.principal-area",
+      "placeId": "place.uk.local-admin.w06000015",
+      "parentPlaceId": "place.uk.constituent.wales"
+    },
+    {
+      "officialCode": "W06000016",
+      "displayName": "Rhondda Cynon Taf",
+      "welshDisplayName": "Rhondda Cynon Taf",
+      "countryBranch": "wales",
+      "kindId": "geography.uk.wales.principal-area",
+      "placeId": "place.uk.local-admin.w06000016",
+      "parentPlaceId": "place.uk.constituent.wales"
+    },
+    {
+      "officialCode": "W06000018",
+      "displayName": "Caerphilly",
+      "welshDisplayName": "Caerffili",
+      "countryBranch": "wales",
+      "kindId": "geography.uk.wales.principal-area",
+      "placeId": "place.uk.local-admin.w06000018",
+      "parentPlaceId": "place.uk.constituent.wales"
+    },
+    {
+      "officialCode": "W06000019",
+      "displayName": "Blaenau Gwent",
+      "welshDisplayName": "Blaenau Gwent",
+      "countryBranch": "wales",
+      "kindId": "geography.uk.wales.principal-area",
+      "placeId": "place.uk.local-admin.w06000019",
+      "parentPlaceId": "place.uk.constituent.wales"
+    },
+    {
+      "officialCode": "W06000020",
+      "displayName": "Torfaen",
+      "welshDisplayName": "Torfaen",
+      "countryBranch": "wales",
+      "kindId": "geography.uk.wales.principal-area",
+      "placeId": "place.uk.local-admin.w06000020",
+      "parentPlaceId": "place.uk.constituent.wales"
+    },
+    {
+      "officialCode": "W06000021",
+      "displayName": "Monmouthshire",
+      "welshDisplayName": "Sir Fynwy",
+      "countryBranch": "wales",
+      "kindId": "geography.uk.wales.principal-area",
+      "placeId": "place.uk.local-admin.w06000021",
+      "parentPlaceId": "place.uk.constituent.wales"
+    },
+    {
+      "officialCode": "W06000022",
+      "displayName": "Newport",
+      "welshDisplayName": "Casnewydd",
+      "countryBranch": "wales",
+      "kindId": "geography.uk.wales.principal-area",
+      "placeId": "place.uk.local-admin.w06000022",
+      "parentPlaceId": "place.uk.constituent.wales"
+    },
+    {
+      "officialCode": "W06000023",
+      "displayName": "Powys",
+      "welshDisplayName": "Powys",
+      "countryBranch": "wales",
+      "kindId": "geography.uk.wales.principal-area",
+      "placeId": "place.uk.local-admin.w06000023",
+      "parentPlaceId": "place.uk.constituent.wales"
+    },
+    {
+      "officialCode": "W06000024",
+      "displayName": "Merthyr Tydfil",
+      "welshDisplayName": "Merthyr Tudful",
+      "countryBranch": "wales",
+      "kindId": "geography.uk.wales.principal-area",
+      "placeId": "place.uk.local-admin.w06000024",
+      "parentPlaceId": "place.uk.constituent.wales"
+    }
+  ]
+}

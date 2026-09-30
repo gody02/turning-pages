@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "packageId": "geography.uk.primary-local-admin-2024-06-30-v1",
+  "effectiveDate": "2024-06-30",
+  "sourceArtifacts": [
+    {
+      "filename": "ons-lad-may-2024-attributes.json",
+      "size": 29265,
+      "sha256": "a0dc2a30f66a87e9c12156ca37cbba6e726d8fa3ff166066381717d50954414c"
+    },
+    {
+      "filename": "ons-lad-may-2024-item.json",
+      "size": 4862,
+      "sha256": "8bc3a4e2ec1bc43f86e9afd3dfc8aae500b16db4e39130847e8a127310e52908"
+    },
+    {
+      "filename": "ons-lad-may-2024-layer.json",
+      "size": 13451,
+      "sha256": "e2ff820533c7bd4b168cf015a5c244b4c44ace5ee889d60c78a11161487238c9"
+    },
+    {
+      "filename": "ons-myeb-local-authorities-mid-2024.xlsx",
+      "size": 47036552,
+      "sha256": "321f27261c9cf110ea44ca10d198580ec3969bc1171c780cba5596184df9b04d"
+    }
+  ],
+  "placeCount": 366,
+  "nodeCount": 366,
+  "allocationCellCount": 361,
+  "countByCountry": {
+    "england": 296,
+    "northern-ireland": 11,
+    "scotland": 32,
+    "wales": 22
+  },
+  "countByKindId": {
+    "geography.uk.england.city-of-london": 1,
+    "geography.uk.england.isles-of-scilly": 1,
+    "geography.uk.england.london-borough": 32,
+    "geography.uk.england.metropolitan-district": 36,
+    "geography.uk.england.non-metropolitan-district": 164,
+    "geography.uk.england.unitary-authority": 62,
+    "geography.uk.northern-ireland.local-government-district": 11,
+    "geography.uk.scotland.council-area": 32,
+    "geography.uk.wales.principal-area": 22
+  },
+  "missingCodes": [],
+  "unexpectedCodes": [],
+  "duplicateCodes": [],
+  "populationWorkbookComparison": {
+    "codeSetEqual": true,
+    "nameMismatchCount": 0,
+    "countryMismatchCount": 0,
+    "areaCount": 361
+  },
+  "continuityLedgerFingerprint": "fnv1a64-v1:c60b905114c649e2",
+  "placeManifestFingerprint": "fnv1a64-v1:80bb4cbc94a271ee",
+  "partitionFingerprint": "fnv1a64-v1:3d1a3446a16c58cb",
+  "packageSerializedSize": 119896
+}

@@ -1,0 +1,1813 @@
+{
+  "version": 1,
+  "sourceArtifactId": "artifact.ons.myeb-local-authorities-mid-2024-v1",
+  "workbookSha256": "321f27261c9cf110ea44ca10d198580ec3969bc1171c780cba5596184df9b04d",
+  "sheet": "MYEB1",
+  "records": [
+    {
+      "officialCode": "E06000001",
+      "displayName": "Hartlepool",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E06000002",
+      "displayName": "Middlesbrough",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E06000003",
+      "displayName": "Redcar and Cleveland",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E06000004",
+      "displayName": "Stockton-on-Tees",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E06000005",
+      "displayName": "Darlington",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E06000006",
+      "displayName": "Halton",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E06000007",
+      "displayName": "Warrington",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E06000008",
+      "displayName": "Blackburn with Darwen",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E06000009",
+      "displayName": "Blackpool",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E06000010",
+      "displayName": "Kingston upon Hull, City of",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E06000011",
+      "displayName": "East Riding of Yorkshire",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E06000012",
+      "displayName": "North East Lincolnshire",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E06000013",
+      "displayName": "North Lincolnshire",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E06000014",
+      "displayName": "York",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E06000015",
+      "displayName": "Derby",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E06000016",
+      "displayName": "Leicester",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E06000017",
+      "displayName": "Rutland",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E06000018",
+      "displayName": "Nottingham",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E06000019",
+      "displayName": "Herefordshire, County of",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E06000020",
+      "displayName": "Telford and Wrekin",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E06000021",
+      "displayName": "Stoke-on-Trent",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E06000022",
+      "displayName": "Bath and North East Somerset",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E06000023",
+      "displayName": "Bristol, City of",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E06000024",
+      "displayName": "North Somerset",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E06000025",
+      "displayName": "South Gloucestershire",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E06000026",
+      "displayName": "Plymouth",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E06000027",
+      "displayName": "Torbay",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E06000030",
+      "displayName": "Swindon",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E06000031",
+      "displayName": "Peterborough",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E06000032",
+      "displayName": "Luton",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E06000033",
+      "displayName": "Southend-on-Sea",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E06000034",
+      "displayName": "Thurrock",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E06000035",
+      "displayName": "Medway",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E06000036",
+      "displayName": "Bracknell Forest",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E06000037",
+      "displayName": "West Berkshire",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E06000038",
+      "displayName": "Reading",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E06000039",
+      "displayName": "Slough",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E06000040",
+      "displayName": "Windsor and Maidenhead",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E06000041",
+      "displayName": "Wokingham",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E06000042",
+      "displayName": "Milton Keynes",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E06000043",
+      "displayName": "Brighton and Hove",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E06000044",
+      "displayName": "Portsmouth",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E06000045",
+      "displayName": "Southampton",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E06000046",
+      "displayName": "Isle of Wight",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E06000047",
+      "displayName": "County Durham",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E06000049",
+      "displayName": "Cheshire East",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E06000050",
+      "displayName": "Cheshire West and Chester",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E06000051",
+      "displayName": "Shropshire",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E06000052",
+      "displayName": "Cornwall",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E06000053",
+      "displayName": "Isles of Scilly",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E06000054",
+      "displayName": "Wiltshire",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E06000055",
+      "displayName": "Bedford",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E06000056",
+      "displayName": "Central Bedfordshire",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E06000057",
+      "displayName": "Northumberland",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E06000058",
+      "displayName": "Bournemouth, Christchurch and Poole",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E06000059",
+      "displayName": "Dorset",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E06000060",
+      "displayName": "Buckinghamshire",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E06000061",
+      "displayName": "North Northamptonshire",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E06000062",
+      "displayName": "West Northamptonshire",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E06000063",
+      "displayName": "Cumberland",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E06000064",
+      "displayName": "Westmorland and Furness",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E06000065",
+      "displayName": "North Yorkshire",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E06000066",
+      "displayName": "Somerset",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000008",
+      "displayName": "Cambridge",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000009",
+      "displayName": "East Cambridgeshire",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000010",
+      "displayName": "Fenland",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000011",
+      "displayName": "Huntingdonshire",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000012",
+      "displayName": "South Cambridgeshire",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000032",
+      "displayName": "Amber Valley",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000033",
+      "displayName": "Bolsover",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000034",
+      "displayName": "Chesterfield",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000035",
+      "displayName": "Derbyshire Dales",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000036",
+      "displayName": "Erewash",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000037",
+      "displayName": "High Peak",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000038",
+      "displayName": "North East Derbyshire",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000039",
+      "displayName": "South Derbyshire",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000040",
+      "displayName": "East Devon",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000041",
+      "displayName": "Exeter",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000042",
+      "displayName": "Mid Devon",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000043",
+      "displayName": "North Devon",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000044",
+      "displayName": "South Hams",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000045",
+      "displayName": "Teignbridge",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000046",
+      "displayName": "Torridge",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000047",
+      "displayName": "West Devon",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000061",
+      "displayName": "Eastbourne",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000062",
+      "displayName": "Hastings",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000063",
+      "displayName": "Lewes",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000064",
+      "displayName": "Rother",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000065",
+      "displayName": "Wealden",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000066",
+      "displayName": "Basildon",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000067",
+      "displayName": "Braintree",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000068",
+      "displayName": "Brentwood",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000069",
+      "displayName": "Castle Point",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000070",
+      "displayName": "Chelmsford",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000071",
+      "displayName": "Colchester",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000072",
+      "displayName": "Epping Forest",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000073",
+      "displayName": "Harlow",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000074",
+      "displayName": "Maldon",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000075",
+      "displayName": "Rochford",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000076",
+      "displayName": "Tendring",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000077",
+      "displayName": "Uttlesford",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000078",
+      "displayName": "Cheltenham",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000079",
+      "displayName": "Cotswold",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000080",
+      "displayName": "Forest of Dean",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000081",
+      "displayName": "Gloucester",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000082",
+      "displayName": "Stroud",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000083",
+      "displayName": "Tewkesbury",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000084",
+      "displayName": "Basingstoke and Deane",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000085",
+      "displayName": "East Hampshire",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000086",
+      "displayName": "Eastleigh",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000087",
+      "displayName": "Fareham",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000088",
+      "displayName": "Gosport",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000089",
+      "displayName": "Hart",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000090",
+      "displayName": "Havant",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000091",
+      "displayName": "New Forest",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000092",
+      "displayName": "Rushmoor",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000093",
+      "displayName": "Test Valley",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000094",
+      "displayName": "Winchester",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000095",
+      "displayName": "Broxbourne",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000096",
+      "displayName": "Dacorum",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000098",
+      "displayName": "Hertsmere",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000099",
+      "displayName": "North Hertfordshire",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000102",
+      "displayName": "Three Rivers",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000103",
+      "displayName": "Watford",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000105",
+      "displayName": "Ashford",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000106",
+      "displayName": "Canterbury",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000107",
+      "displayName": "Dartford",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000108",
+      "displayName": "Dover",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000109",
+      "displayName": "Gravesham",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000110",
+      "displayName": "Maidstone",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000111",
+      "displayName": "Sevenoaks",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000112",
+      "displayName": "Folkestone and Hythe",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000113",
+      "displayName": "Swale",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000114",
+      "displayName": "Thanet",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000115",
+      "displayName": "Tonbridge and Malling",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000116",
+      "displayName": "Tunbridge Wells",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000117",
+      "displayName": "Burnley",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000118",
+      "displayName": "Chorley",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000119",
+      "displayName": "Fylde",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000120",
+      "displayName": "Hyndburn",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000121",
+      "displayName": "Lancaster",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000122",
+      "displayName": "Pendle",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000123",
+      "displayName": "Preston",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000124",
+      "displayName": "Ribble Valley",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000125",
+      "displayName": "Rossendale",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000126",
+      "displayName": "South Ribble",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000127",
+      "displayName": "West Lancashire",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000128",
+      "displayName": "Wyre",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000129",
+      "displayName": "Blaby",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000130",
+      "displayName": "Charnwood",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000131",
+      "displayName": "Harborough",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000132",
+      "displayName": "Hinckley and Bosworth",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000133",
+      "displayName": "Melton",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000134",
+      "displayName": "North West Leicestershire",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000135",
+      "displayName": "Oadby and Wigston",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000136",
+      "displayName": "Boston",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000137",
+      "displayName": "East Lindsey",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000138",
+      "displayName": "Lincoln",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000139",
+      "displayName": "North Kesteven",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000140",
+      "displayName": "South Holland",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000141",
+      "displayName": "South Kesteven",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000142",
+      "displayName": "West Lindsey",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000143",
+      "displayName": "Breckland",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000144",
+      "displayName": "Broadland",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000145",
+      "displayName": "Great Yarmouth",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000146",
+      "displayName": "King's Lynn and West Norfolk",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000147",
+      "displayName": "North Norfolk",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000148",
+      "displayName": "Norwich",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000149",
+      "displayName": "South Norfolk",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000170",
+      "displayName": "Ashfield",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000171",
+      "displayName": "Bassetlaw",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000172",
+      "displayName": "Broxtowe",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000173",
+      "displayName": "Gedling",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000174",
+      "displayName": "Mansfield",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000175",
+      "displayName": "Newark and Sherwood",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000176",
+      "displayName": "Rushcliffe",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000177",
+      "displayName": "Cherwell",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000178",
+      "displayName": "Oxford",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000179",
+      "displayName": "South Oxfordshire",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000180",
+      "displayName": "Vale of White Horse",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000181",
+      "displayName": "West Oxfordshire",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000192",
+      "displayName": "Cannock Chase",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000193",
+      "displayName": "East Staffordshire",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000194",
+      "displayName": "Lichfield",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000195",
+      "displayName": "Newcastle-under-Lyme",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000196",
+      "displayName": "South Staffordshire",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000197",
+      "displayName": "Stafford",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000198",
+      "displayName": "Staffordshire Moorlands",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000199",
+      "displayName": "Tamworth",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000200",
+      "displayName": "Babergh",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000202",
+      "displayName": "Ipswich",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000203",
+      "displayName": "Mid Suffolk",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000207",
+      "displayName": "Elmbridge",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000208",
+      "displayName": "Epsom and Ewell",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000209",
+      "displayName": "Guildford",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000210",
+      "displayName": "Mole Valley",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000211",
+      "displayName": "Reigate and Banstead",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000212",
+      "displayName": "Runnymede",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000213",
+      "displayName": "Spelthorne",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000214",
+      "displayName": "Surrey Heath",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000215",
+      "displayName": "Tandridge",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000216",
+      "displayName": "Waverley",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000217",
+      "displayName": "Woking",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000218",
+      "displayName": "North Warwickshire",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000219",
+      "displayName": "Nuneaton and Bedworth",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000220",
+      "displayName": "Rugby",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000221",
+      "displayName": "Stratford-on-Avon",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000222",
+      "displayName": "Warwick",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000223",
+      "displayName": "Adur",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000224",
+      "displayName": "Arun",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000225",
+      "displayName": "Chichester",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000226",
+      "displayName": "Crawley",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000227",
+      "displayName": "Horsham",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000228",
+      "displayName": "Mid Sussex",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000229",
+      "displayName": "Worthing",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000234",
+      "displayName": "Bromsgrove",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000235",
+      "displayName": "Malvern Hills",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000236",
+      "displayName": "Redditch",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000237",
+      "displayName": "Worcester",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000238",
+      "displayName": "Wychavon",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000239",
+      "displayName": "Wyre Forest",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000240",
+      "displayName": "St Albans",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000241",
+      "displayName": "Welwyn Hatfield",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000242",
+      "displayName": "East Hertfordshire",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000243",
+      "displayName": "Stevenage",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000244",
+      "displayName": "East Suffolk",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E07000245",
+      "displayName": "West Suffolk",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E08000001",
+      "displayName": "Bolton",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E08000002",
+      "displayName": "Bury",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E08000003",
+      "displayName": "Manchester",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E08000004",
+      "displayName": "Oldham",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E08000005",
+      "displayName": "Rochdale",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E08000006",
+      "displayName": "Salford",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E08000007",
+      "displayName": "Stockport",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E08000008",
+      "displayName": "Tameside",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E08000009",
+      "displayName": "Trafford",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E08000010",
+      "displayName": "Wigan",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E08000011",
+      "displayName": "Knowsley",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E08000012",
+      "displayName": "Liverpool",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E08000013",
+      "displayName": "St. Helens",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E08000014",
+      "displayName": "Sefton",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E08000015",
+      "displayName": "Wirral",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E08000016",
+      "displayName": "Barnsley",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E08000017",
+      "displayName": "Doncaster",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E08000018",
+      "displayName": "Rotherham",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E08000019",
+      "displayName": "Sheffield",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E08000021",
+      "displayName": "Newcastle upon Tyne",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E08000022",
+      "displayName": "North Tyneside",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E08000023",
+      "displayName": "South Tyneside",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E08000024",
+      "displayName": "Sunderland",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E08000025",
+      "displayName": "Birmingham",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E08000026",
+      "displayName": "Coventry",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E08000027",
+      "displayName": "Dudley",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E08000028",
+      "displayName": "Sandwell",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E08000029",
+      "displayName": "Solihull",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E08000030",
+      "displayName": "Walsall",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E08000031",
+      "displayName": "Wolverhampton",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E08000032",
+      "displayName": "Bradford",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E08000033",
+      "displayName": "Calderdale",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E08000034",
+      "displayName": "Kirklees",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E08000035",
+      "displayName": "Leeds",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E08000036",
+      "displayName": "Wakefield",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E08000037",
+      "displayName": "Gateshead",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E09000001",
+      "displayName": "City of London",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E09000002",
+      "displayName": "Barking and Dagenham",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E09000003",
+      "displayName": "Barnet",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E09000004",
+      "displayName": "Bexley",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E09000005",
+      "displayName": "Brent",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E09000006",
+      "displayName": "Bromley",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E09000007",
+      "displayName": "Camden",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E09000008",
+      "displayName": "Croydon",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E09000009",
+      "displayName": "Ealing",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E09000010",
+      "displayName": "Enfield",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E09000011",
+      "displayName": "Greenwich",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E09000012",
+      "displayName": "Hackney",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E09000013",
+      "displayName": "Hammersmith and Fulham",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E09000014",
+      "displayName": "Haringey",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E09000015",
+      "displayName": "Harrow",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E09000016",
+      "displayName": "Havering",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E09000017",
+      "displayName": "Hillingdon",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E09000018",
+      "displayName": "Hounslow",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E09000019",
+      "displayName": "Islington",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E09000020",
+      "displayName": "Kensington and Chelsea",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E09000021",
+      "displayName": "Kingston upon Thames",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E09000022",
+      "displayName": "Lambeth",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E09000023",
+      "displayName": "Lewisham",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E09000024",
+      "displayName": "Merton",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E09000025",
+      "displayName": "Newham",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E09000026",
+      "displayName": "Redbridge",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E09000027",
+      "displayName": "Richmond upon Thames",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E09000028",
+      "displayName": "Southwark",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E09000029",
+      "displayName": "Sutton",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E09000030",
+      "displayName": "Tower Hamlets",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E09000031",
+      "displayName": "Waltham Forest",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E09000032",
+      "displayName": "Wandsworth",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "E09000033",
+      "displayName": "Westminster",
+      "countryCode": "E"
+    },
+    {
+      "officialCode": "N09000001",
+      "displayName": "Antrim and Newtownabbey",
+      "countryCode": "N"
+    },
+    {
+      "officialCode": "N09000002",
+      "displayName": "Armagh City, Banbridge and Craigavon",
+      "countryCode": "N"
+    },
+    {
+      "officialCode": "N09000003",
+      "displayName": "Belfast",
+      "countryCode": "N"
+    },
+    {
+      "officialCode": "N09000004",
+      "displayName": "Causeway Coast and Glens",
+      "countryCode": "N"
+    },
+    {
+      "officialCode": "N09000005",
+      "displayName": "Derry City and Strabane",
+      "countryCode": "N"
+    },
+    {
+      "officialCode": "N09000006",
+      "displayName": "Fermanagh and Omagh",
+      "countryCode": "N"
+    },
+    {
+      "officialCode": "N09000007",
+      "displayName": "Lisburn and Castlereagh",
+      "countryCode": "N"
+    },
+    {
+      "officialCode": "N09000008",
+      "displayName": "Mid and East Antrim",
+      "countryCode": "N"
+    },
+    {
+      "officialCode": "N09000009",
+      "displayName": "Mid Ulster",
+      "countryCode": "N"
+    },
+    {
+      "officialCode": "N09000010",
+      "displayName": "Newry, Mourne and Down",
+      "countryCode": "N"
+    },
+    {
+      "officialCode": "N09000011",
+      "displayName": "Ards and North Down",
+      "countryCode": "N"
+    },
+    {
+      "officialCode": "S12000005",
+      "displayName": "Clackmannanshire",
+      "countryCode": "S"
+    },
+    {
+      "officialCode": "S12000006",
+      "displayName": "Dumfries and Galloway",
+      "countryCode": "S"
+    },
+    {
+      "officialCode": "S12000008",
+      "displayName": "East Ayrshire",
+      "countryCode": "S"
+    },
+    {
+      "officialCode": "S12000010",
+      "displayName": "East Lothian",
+      "countryCode": "S"
+    },
+    {
+      "officialCode": "S12000011",
+      "displayName": "East Renfrewshire",
+      "countryCode": "S"
+    },
+    {
+      "officialCode": "S12000013",
+      "displayName": "Na h-Eileanan Siar",
+      "countryCode": "S"
+    },
+    {
+      "officialCode": "S12000014",
+      "displayName": "Falkirk",
+      "countryCode": "S"
+    },
+    {
+      "officialCode": "S12000017",
+      "displayName": "Highland",
+      "countryCode": "S"
+    },
+    {
+      "officialCode": "S12000018",
+      "displayName": "Inverclyde",
+      "countryCode": "S"
+    },
+    {
+      "officialCode": "S12000019",
+      "displayName": "Midlothian",
+      "countryCode": "S"
+    },
+    {
+      "officialCode": "S12000020",
+      "displayName": "Moray",
+      "countryCode": "S"
+    },
+    {
+      "officialCode": "S12000021",
+      "displayName": "North Ayrshire",
+      "countryCode": "S"
+    },
+    {
+      "officialCode": "S12000023",
+      "displayName": "Orkney Islands",
+      "countryCode": "S"
+    },
+    {
+      "officialCode": "S12000026",
+      "displayName": "Scottish Borders",
+      "countryCode": "S"
+    },
+    {
+      "officialCode": "S12000027",
+      "displayName": "Shetland Islands",
+      "countryCode": "S"
+    },
+    {
+      "officialCode": "S12000028",
+      "displayName": "South Ayrshire",
+      "countryCode": "S"
+    },
+    {
+      "officialCode": "S12000029",
+      "displayName": "South Lanarkshire",
+      "countryCode": "S"
+    },
+    {
+      "officialCode": "S12000030",
+      "displayName": "Stirling",
+      "countryCode": "S"
+    },
+    {
+      "officialCode": "S12000033",
+      "displayName": "Aberdeen City",
+      "countryCode": "S"
+    },
+    {
+      "officialCode": "S12000034",
+      "displayName": "Aberdeenshire",
+      "countryCode": "S"
+    },
+    {
+      "officialCode": "S12000035",
+      "displayName": "Argyll and Bute",
+      "countryCode": "S"
+    },
+    {
+      "officialCode": "S12000036",
+      "displayName": "City of Edinburgh",
+      "countryCode": "S"
+    },
+    {
+      "officialCode": "S12000038",
+      "displayName": "Renfrewshire",
+      "countryCode": "S"
+    },
+    {
+      "officialCode": "S12000039",
+      "displayName": "West Dunbartonshire",
+      "countryCode": "S"
+    },
+    {
+      "officialCode": "S12000040",
+      "displayName": "West Lothian",
+      "countryCode": "S"
+    },
+    {
+      "officialCode": "S12000041",
+      "displayName": "Angus",
+      "countryCode": "S"
+    },
+    {
+      "officialCode": "S12000042",
+      "displayName": "Dundee City",
+      "countryCode": "S"
+    },
+    {
+      "officialCode": "S12000045",
+      "displayName": "East Dunbartonshire",
+      "countryCode": "S"
+    },
+    {
+      "officialCode": "S12000047",
+      "displayName": "Fife",
+      "countryCode": "S"
+    },
+    {
+      "officialCode": "S12000048",
+      "displayName": "Perth and Kinross",
+      "countryCode": "S"
+    },
+    {
+      "officialCode": "S12000049",
+      "displayName": "Glasgow City",
+      "countryCode": "S"
+    },
+    {
+      "officialCode": "S12000050",
+      "displayName": "North Lanarkshire",
+      "countryCode": "S"
+    },
+    {
+      "officialCode": "W06000001",
+      "displayName": "Isle of Anglesey",
+      "countryCode": "W"
+    },
+    {
+      "officialCode": "W06000002",
+      "displayName": "Gwynedd",
+      "countryCode": "W"
+    },
+    {
+      "officialCode": "W06000003",
+      "displayName": "Conwy",
+      "countryCode": "W"
+    },
+    {
+      "officialCode": "W06000004",
+      "displayName": "Denbighshire",
+      "countryCode": "W"
+    },
+    {
+      "officialCode": "W06000005",
+      "displayName": "Flintshire",
+      "countryCode": "W"
+    },
+    {
+      "officialCode": "W06000006",
+      "displayName": "Wrexham",
+      "countryCode": "W"
+    },
+    {
+      "officialCode": "W06000008",
+      "displayName": "Ceredigion",
+      "countryCode": "W"
+    },
+    {
+      "officialCode": "W06000009",
+      "displayName": "Pembrokeshire",
+      "countryCode": "W"
+    },
+    {
+      "officialCode": "W06000010",
+      "displayName": "Carmarthenshire",
+      "countryCode": "W"
+    },
+    {
+      "officialCode": "W06000011",
+      "displayName": "Swansea",
+      "countryCode": "W"
+    },
+    {
+      "officialCode": "W06000012",
+      "displayName": "Neath Port Talbot",
+      "countryCode": "W"
+    },
+    {
+      "officialCode": "W06000013",
+      "displayName": "Bridgend",
+      "countryCode": "W"
+    },
+    {
+      "officialCode": "W06000014",
+      "displayName": "Vale of Glamorgan",
+      "countryCode": "W"
+    },
+    {
+      "officialCode": "W06000015",
+      "displayName": "Cardiff",
+      "countryCode": "W"
+    },
+    {
+      "officialCode": "W06000016",
+      "displayName": "Rhondda Cynon Taf",
+      "countryCode": "W"
+    },
+    {
+      "officialCode": "W06000018",
+      "displayName": "Caerphilly",
+      "countryCode": "W"
+    },
+    {
+      "officialCode": "W06000019",
+      "displayName": "Blaenau Gwent",
+      "countryCode": "W"
+    },
+    {
+      "officialCode": "W06000020",
+      "displayName": "Torfaen",
+      "countryCode": "W"
+    },
+    {
+      "officialCode": "W06000021",
+      "displayName": "Monmouthshire",
+      "countryCode": "W"
+    },
+    {
+      "officialCode": "W06000022",
+      "displayName": "Newport",
+      "countryCode": "W"
+    },
+    {
+      "officialCode": "W06000023",
+      "displayName": "Powys",
+      "countryCode": "W"
+    },
+    {
+      "officialCode": "W06000024",
+      "displayName": "Merthyr Tydfil",
+      "countryCode": "W"
+    }
+  ]
+}

@@ -1,0 +1,4107 @@
+{
+  "version": 1,
+  "partitionId": "geography.uk.primary-local-admin-2024-06-30-v1",
+  "fingerprint": "fnv1a64-v1:3d1a3446a16c58cb",
+  "countryId": "uk",
+  "effectiveDate": {
+    "year": 2024,
+    "month": 6,
+    "day": 30
+  },
+  "sources": [
+    {
+      "version": 1,
+      "id": "geography.source.ons.lad-may-2024-v1",
+      "producer": "Office for National Statistics",
+      "datasetId": "ons-open-geography.local-authority-districts-may-2024-uk-bgc",
+      "releaseId": "ons-open-geography-lad-may-2024",
+      "title": "Local Authority Districts (May 2024) Boundaries UK BGC",
+      "jurisdiction": "uk",
+      "referenceDate": {
+        "year": 2024,
+        "month": 5,
+        "day": 1
+      },
+      "classification": "statutory-institutional",
+      "methodology": "Official May 2024 Local Authority District code and name inventory. Only code/name attributes are compiled; boundary geometry and coordinates are excluded.",
+      "licence": "Open Government Licence v3.0. Source: Office for National Statistics licensed under the Open Government Licence v3.0. Contains OS data © Crown copyright and database right 2024.",
+      "bundledArtifact": {
+        "id": "artifact.ons.lad-may-2024-attributes-v1",
+        "sha256": "sha256:a0dc2a30f66a87e9c12156ca37cbba6e726d8fa3ff166066381717d50954414c"
+      },
+      "externalLocator": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/Local_Authority_Districts_May_2024_Boundaries_UK_BGC/FeatureServer/0/query?f=json&where=1%3D1&outFields=LAD24CD%2CLAD24NM%2CLAD24NMW&returnGeometry=false&orderByFields=LAD24CD+ASC"
+    },
+    {
+      "version": 1,
+      "id": "geography.source.ons.myeb-local-authorities-mid-2024-v1",
+      "producer": "Office for National Statistics",
+      "datasetId": "ons.population-estimates-uk-local-authorities-mid-2024",
+      "releaseId": "MYE24UK-detailed",
+      "title": "Annual mid-year population estimates for United Kingdom local authorities, 2011 to 2024",
+      "jurisdiction": "uk",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "classification": "estimated",
+      "methodology": "Used only to prove exact equality of the 361 official code/name/country identities with the frozen mid-2024 population evidence. Population counts do not enter Geography content.",
+      "licence": "Open Government Licence v3.0",
+      "bundledArtifact": {
+        "id": "artifact.ons.myeb-local-authorities-mid-2024-v1",
+        "sha256": "sha256:321f27261c9cf110ea44ca10d198580ec3969bc1171c780cba5596184df9b04d"
+      },
+      "externalLocator": "https://www.ons.gov.uk/file?uri=%2Fpeoplepopulationandcommunity%2Fpopulationandmigration%2Fpopulationestimates%2Fdatasets%2Fpopulationestimatesforukenglandandwalesscotlandandnorthernireland%2Fmid2011tomid2024%2Fmyebtablesuk20112024.xlsx"
+    },
+    {
+      "version": 1,
+      "id": "geography.source.ons.uk-administrative-geography-v1",
+      "producer": "Office for National Statistics",
+      "datasetId": "ons.uk-administrative-geography",
+      "releaseId": "administrative-geography-reviewed-2024",
+      "title": "Administrative geography of the United Kingdom",
+      "jurisdiction": "uk",
+      "referenceDate": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "classification": "statutory-institutional",
+      "methodology": "Official structural reference for the UK root, constituent countries and differing local-government forms. It is not a claim that the 361 allocation units share one legal type.",
+      "licence": "Open Government Licence v3.0",
+      "externalLocator": "https://www.ons.gov.uk/methodology/geography/ukgeographies/administrativegeography"
+    }
+  ],
+  "nodes": [
+    {
+      "placeId": "place.uk.constituent.england",
+      "displayName": "England",
+      "kindId": "geography.uk.constituent-country",
+      "parentPlaceId": "place.uk.country.united-kingdom",
+      "populationAllocationCell": false,
+      "sourceIds": [
+        "geography.source.ons.uk-administrative-geography-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.constituent.northern-ireland",
+      "displayName": "Northern Ireland",
+      "kindId": "geography.uk.constituent-country",
+      "parentPlaceId": "place.uk.country.united-kingdom",
+      "populationAllocationCell": false,
+      "sourceIds": [
+        "geography.source.ons.uk-administrative-geography-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.constituent.scotland",
+      "displayName": "Scotland",
+      "kindId": "geography.uk.constituent-country",
+      "parentPlaceId": "place.uk.country.united-kingdom",
+      "populationAllocationCell": false,
+      "sourceIds": [
+        "geography.source.ons.uk-administrative-geography-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.constituent.wales",
+      "displayName": "Wales",
+      "kindId": "geography.uk.constituent-country",
+      "parentPlaceId": "place.uk.country.united-kingdom",
+      "populationAllocationCell": false,
+      "sourceIds": [
+        "geography.source.ons.uk-administrative-geography-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.country.united-kingdom",
+      "displayName": "United Kingdom",
+      "kindId": "geography.uk.root",
+      "parentPlaceId": null,
+      "populationAllocationCell": false,
+      "sourceIds": [
+        "geography.source.ons.uk-administrative-geography-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000001",
+      "displayName": "Hartlepool",
+      "kindId": "geography.uk.england.unitary-authority",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000002",
+      "displayName": "Middlesbrough",
+      "kindId": "geography.uk.england.unitary-authority",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000003",
+      "displayName": "Redcar and Cleveland",
+      "kindId": "geography.uk.england.unitary-authority",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000004",
+      "displayName": "Stockton-on-Tees",
+      "kindId": "geography.uk.england.unitary-authority",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000005",
+      "displayName": "Darlington",
+      "kindId": "geography.uk.england.unitary-authority",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000006",
+      "displayName": "Halton",
+      "kindId": "geography.uk.england.unitary-authority",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000007",
+      "displayName": "Warrington",
+      "kindId": "geography.uk.england.unitary-authority",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000008",
+      "displayName": "Blackburn with Darwen",
+      "kindId": "geography.uk.england.unitary-authority",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000009",
+      "displayName": "Blackpool",
+      "kindId": "geography.uk.england.unitary-authority",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000010",
+      "displayName": "Kingston upon Hull, City of",
+      "kindId": "geography.uk.england.unitary-authority",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000011",
+      "displayName": "East Riding of Yorkshire",
+      "kindId": "geography.uk.england.unitary-authority",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000012",
+      "displayName": "North East Lincolnshire",
+      "kindId": "geography.uk.england.unitary-authority",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000013",
+      "displayName": "North Lincolnshire",
+      "kindId": "geography.uk.england.unitary-authority",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000014",
+      "displayName": "York",
+      "kindId": "geography.uk.england.unitary-authority",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000015",
+      "displayName": "Derby",
+      "kindId": "geography.uk.england.unitary-authority",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000016",
+      "displayName": "Leicester",
+      "kindId": "geography.uk.england.unitary-authority",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000017",
+      "displayName": "Rutland",
+      "kindId": "geography.uk.england.unitary-authority",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000018",
+      "displayName": "Nottingham",
+      "kindId": "geography.uk.england.unitary-authority",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000019",
+      "displayName": "Herefordshire, County of",
+      "kindId": "geography.uk.england.unitary-authority",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000020",
+      "displayName": "Telford and Wrekin",
+      "kindId": "geography.uk.england.unitary-authority",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000021",
+      "displayName": "Stoke-on-Trent",
+      "kindId": "geography.uk.england.unitary-authority",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000022",
+      "displayName": "Bath and North East Somerset",
+      "kindId": "geography.uk.england.unitary-authority",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000023",
+      "displayName": "Bristol, City of",
+      "kindId": "geography.uk.england.unitary-authority",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000024",
+      "displayName": "North Somerset",
+      "kindId": "geography.uk.england.unitary-authority",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000025",
+      "displayName": "South Gloucestershire",
+      "kindId": "geography.uk.england.unitary-authority",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000026",
+      "displayName": "Plymouth",
+      "kindId": "geography.uk.england.unitary-authority",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000027",
+      "displayName": "Torbay",
+      "kindId": "geography.uk.england.unitary-authority",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000030",
+      "displayName": "Swindon",
+      "kindId": "geography.uk.england.unitary-authority",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000031",
+      "displayName": "Peterborough",
+      "kindId": "geography.uk.england.unitary-authority",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000032",
+      "displayName": "Luton",
+      "kindId": "geography.uk.england.unitary-authority",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000033",
+      "displayName": "Southend-on-Sea",
+      "kindId": "geography.uk.england.unitary-authority",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000034",
+      "displayName": "Thurrock",
+      "kindId": "geography.uk.england.unitary-authority",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000035",
+      "displayName": "Medway",
+      "kindId": "geography.uk.england.unitary-authority",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000036",
+      "displayName": "Bracknell Forest",
+      "kindId": "geography.uk.england.unitary-authority",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000037",
+      "displayName": "West Berkshire",
+      "kindId": "geography.uk.england.unitary-authority",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000038",
+      "displayName": "Reading",
+      "kindId": "geography.uk.england.unitary-authority",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000039",
+      "displayName": "Slough",
+      "kindId": "geography.uk.england.unitary-authority",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000040",
+      "displayName": "Windsor and Maidenhead",
+      "kindId": "geography.uk.england.unitary-authority",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000041",
+      "displayName": "Wokingham",
+      "kindId": "geography.uk.england.unitary-authority",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000042",
+      "displayName": "Milton Keynes",
+      "kindId": "geography.uk.england.unitary-authority",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000043",
+      "displayName": "Brighton and Hove",
+      "kindId": "geography.uk.england.unitary-authority",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000044",
+      "displayName": "Portsmouth",
+      "kindId": "geography.uk.england.unitary-authority",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000045",
+      "displayName": "Southampton",
+      "kindId": "geography.uk.england.unitary-authority",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000046",
+      "displayName": "Isle of Wight",
+      "kindId": "geography.uk.england.unitary-authority",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000047",
+      "displayName": "County Durham",
+      "kindId": "geography.uk.england.unitary-authority",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000049",
+      "displayName": "Cheshire East",
+      "kindId": "geography.uk.england.unitary-authority",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000050",
+      "displayName": "Cheshire West and Chester",
+      "kindId": "geography.uk.england.unitary-authority",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000051",
+      "displayName": "Shropshire",
+      "kindId": "geography.uk.england.unitary-authority",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000052",
+      "displayName": "Cornwall",
+      "kindId": "geography.uk.england.unitary-authority",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000053",
+      "displayName": "Isles of Scilly",
+      "kindId": "geography.uk.england.isles-of-scilly",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000054",
+      "displayName": "Wiltshire",
+      "kindId": "geography.uk.england.unitary-authority",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000055",
+      "displayName": "Bedford",
+      "kindId": "geography.uk.england.unitary-authority",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000056",
+      "displayName": "Central Bedfordshire",
+      "kindId": "geography.uk.england.unitary-authority",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000057",
+      "displayName": "Northumberland",
+      "kindId": "geography.uk.england.unitary-authority",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000058",
+      "displayName": "Bournemouth, Christchurch and Poole",
+      "kindId": "geography.uk.england.unitary-authority",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000059",
+      "displayName": "Dorset",
+      "kindId": "geography.uk.england.unitary-authority",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000060",
+      "displayName": "Buckinghamshire",
+      "kindId": "geography.uk.england.unitary-authority",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000061",
+      "displayName": "North Northamptonshire",
+      "kindId": "geography.uk.england.unitary-authority",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000062",
+      "displayName": "West Northamptonshire",
+      "kindId": "geography.uk.england.unitary-authority",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000063",
+      "displayName": "Cumberland",
+      "kindId": "geography.uk.england.unitary-authority",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000064",
+      "displayName": "Westmorland and Furness",
+      "kindId": "geography.uk.england.unitary-authority",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000065",
+      "displayName": "North Yorkshire",
+      "kindId": "geography.uk.england.unitary-authority",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000066",
+      "displayName": "Somerset",
+      "kindId": "geography.uk.england.unitary-authority",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000008",
+      "displayName": "Cambridge",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000009",
+      "displayName": "East Cambridgeshire",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000010",
+      "displayName": "Fenland",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000011",
+      "displayName": "Huntingdonshire",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000012",
+      "displayName": "South Cambridgeshire",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000032",
+      "displayName": "Amber Valley",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000033",
+      "displayName": "Bolsover",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000034",
+      "displayName": "Chesterfield",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000035",
+      "displayName": "Derbyshire Dales",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000036",
+      "displayName": "Erewash",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000037",
+      "displayName": "High Peak",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000038",
+      "displayName": "North East Derbyshire",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000039",
+      "displayName": "South Derbyshire",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000040",
+      "displayName": "East Devon",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000041",
+      "displayName": "Exeter",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000042",
+      "displayName": "Mid Devon",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000043",
+      "displayName": "North Devon",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000044",
+      "displayName": "South Hams",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000045",
+      "displayName": "Teignbridge",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000046",
+      "displayName": "Torridge",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000047",
+      "displayName": "West Devon",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000061",
+      "displayName": "Eastbourne",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000062",
+      "displayName": "Hastings",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000063",
+      "displayName": "Lewes",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000064",
+      "displayName": "Rother",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000065",
+      "displayName": "Wealden",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000066",
+      "displayName": "Basildon",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000067",
+      "displayName": "Braintree",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000068",
+      "displayName": "Brentwood",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000069",
+      "displayName": "Castle Point",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000070",
+      "displayName": "Chelmsford",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000071",
+      "displayName": "Colchester",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000072",
+      "displayName": "Epping Forest",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000073",
+      "displayName": "Harlow",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000074",
+      "displayName": "Maldon",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000075",
+      "displayName": "Rochford",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000076",
+      "displayName": "Tendring",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000077",
+      "displayName": "Uttlesford",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000078",
+      "displayName": "Cheltenham",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000079",
+      "displayName": "Cotswold",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000080",
+      "displayName": "Forest of Dean",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000081",
+      "displayName": "Gloucester",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000082",
+      "displayName": "Stroud",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000083",
+      "displayName": "Tewkesbury",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000084",
+      "displayName": "Basingstoke and Deane",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000085",
+      "displayName": "East Hampshire",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000086",
+      "displayName": "Eastleigh",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000087",
+      "displayName": "Fareham",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000088",
+      "displayName": "Gosport",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000089",
+      "displayName": "Hart",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000090",
+      "displayName": "Havant",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000091",
+      "displayName": "New Forest",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000092",
+      "displayName": "Rushmoor",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000093",
+      "displayName": "Test Valley",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000094",
+      "displayName": "Winchester",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000095",
+      "displayName": "Broxbourne",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000096",
+      "displayName": "Dacorum",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000098",
+      "displayName": "Hertsmere",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000099",
+      "displayName": "North Hertfordshire",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000102",
+      "displayName": "Three Rivers",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000103",
+      "displayName": "Watford",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000105",
+      "displayName": "Ashford",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000106",
+      "displayName": "Canterbury",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000107",
+      "displayName": "Dartford",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000108",
+      "displayName": "Dover",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000109",
+      "displayName": "Gravesham",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000110",
+      "displayName": "Maidstone",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000111",
+      "displayName": "Sevenoaks",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000112",
+      "displayName": "Folkestone and Hythe",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000113",
+      "displayName": "Swale",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000114",
+      "displayName": "Thanet",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000115",
+      "displayName": "Tonbridge and Malling",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000116",
+      "displayName": "Tunbridge Wells",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000117",
+      "displayName": "Burnley",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000118",
+      "displayName": "Chorley",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000119",
+      "displayName": "Fylde",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000120",
+      "displayName": "Hyndburn",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000121",
+      "displayName": "Lancaster",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000122",
+      "displayName": "Pendle",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000123",
+      "displayName": "Preston",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000124",
+      "displayName": "Ribble Valley",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000125",
+      "displayName": "Rossendale",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000126",
+      "displayName": "South Ribble",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000127",
+      "displayName": "West Lancashire",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000128",
+      "displayName": "Wyre",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000129",
+      "displayName": "Blaby",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000130",
+      "displayName": "Charnwood",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000131",
+      "displayName": "Harborough",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000132",
+      "displayName": "Hinckley and Bosworth",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000133",
+      "displayName": "Melton",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000134",
+      "displayName": "North West Leicestershire",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000135",
+      "displayName": "Oadby and Wigston",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000136",
+      "displayName": "Boston",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000137",
+      "displayName": "East Lindsey",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000138",
+      "displayName": "Lincoln",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000139",
+      "displayName": "North Kesteven",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000140",
+      "displayName": "South Holland",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000141",
+      "displayName": "South Kesteven",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000142",
+      "displayName": "West Lindsey",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000143",
+      "displayName": "Breckland",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000144",
+      "displayName": "Broadland",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000145",
+      "displayName": "Great Yarmouth",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000146",
+      "displayName": "King's Lynn and West Norfolk",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000147",
+      "displayName": "North Norfolk",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000148",
+      "displayName": "Norwich",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000149",
+      "displayName": "South Norfolk",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000170",
+      "displayName": "Ashfield",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000171",
+      "displayName": "Bassetlaw",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000172",
+      "displayName": "Broxtowe",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000173",
+      "displayName": "Gedling",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000174",
+      "displayName": "Mansfield",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000175",
+      "displayName": "Newark and Sherwood",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000176",
+      "displayName": "Rushcliffe",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000177",
+      "displayName": "Cherwell",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000178",
+      "displayName": "Oxford",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000179",
+      "displayName": "South Oxfordshire",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000180",
+      "displayName": "Vale of White Horse",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000181",
+      "displayName": "West Oxfordshire",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000192",
+      "displayName": "Cannock Chase",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000193",
+      "displayName": "East Staffordshire",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000194",
+      "displayName": "Lichfield",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000195",
+      "displayName": "Newcastle-under-Lyme",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000196",
+      "displayName": "South Staffordshire",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000197",
+      "displayName": "Stafford",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000198",
+      "displayName": "Staffordshire Moorlands",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000199",
+      "displayName": "Tamworth",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000200",
+      "displayName": "Babergh",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000202",
+      "displayName": "Ipswich",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000203",
+      "displayName": "Mid Suffolk",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000207",
+      "displayName": "Elmbridge",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000208",
+      "displayName": "Epsom and Ewell",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000209",
+      "displayName": "Guildford",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000210",
+      "displayName": "Mole Valley",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000211",
+      "displayName": "Reigate and Banstead",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000212",
+      "displayName": "Runnymede",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000213",
+      "displayName": "Spelthorne",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000214",
+      "displayName": "Surrey Heath",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000215",
+      "displayName": "Tandridge",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000216",
+      "displayName": "Waverley",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000217",
+      "displayName": "Woking",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000218",
+      "displayName": "North Warwickshire",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000219",
+      "displayName": "Nuneaton and Bedworth",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000220",
+      "displayName": "Rugby",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000221",
+      "displayName": "Stratford-on-Avon",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000222",
+      "displayName": "Warwick",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000223",
+      "displayName": "Adur",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000224",
+      "displayName": "Arun",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000225",
+      "displayName": "Chichester",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000226",
+      "displayName": "Crawley",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000227",
+      "displayName": "Horsham",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000228",
+      "displayName": "Mid Sussex",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000229",
+      "displayName": "Worthing",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000234",
+      "displayName": "Bromsgrove",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000235",
+      "displayName": "Malvern Hills",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000236",
+      "displayName": "Redditch",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000237",
+      "displayName": "Worcester",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000238",
+      "displayName": "Wychavon",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000239",
+      "displayName": "Wyre Forest",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000240",
+      "displayName": "St Albans",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000241",
+      "displayName": "Welwyn Hatfield",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000242",
+      "displayName": "East Hertfordshire",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000243",
+      "displayName": "Stevenage",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000244",
+      "displayName": "East Suffolk",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000245",
+      "displayName": "West Suffolk",
+      "kindId": "geography.uk.england.non-metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000001",
+      "displayName": "Bolton",
+      "kindId": "geography.uk.england.metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000002",
+      "displayName": "Bury",
+      "kindId": "geography.uk.england.metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000003",
+      "displayName": "Manchester",
+      "kindId": "geography.uk.england.metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000004",
+      "displayName": "Oldham",
+      "kindId": "geography.uk.england.metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000005",
+      "displayName": "Rochdale",
+      "kindId": "geography.uk.england.metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000006",
+      "displayName": "Salford",
+      "kindId": "geography.uk.england.metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000007",
+      "displayName": "Stockport",
+      "kindId": "geography.uk.england.metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000008",
+      "displayName": "Tameside",
+      "kindId": "geography.uk.england.metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000009",
+      "displayName": "Trafford",
+      "kindId": "geography.uk.england.metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000010",
+      "displayName": "Wigan",
+      "kindId": "geography.uk.england.metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000011",
+      "displayName": "Knowsley",
+      "kindId": "geography.uk.england.metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000012",
+      "displayName": "Liverpool",
+      "kindId": "geography.uk.england.metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000013",
+      "displayName": "St. Helens",
+      "kindId": "geography.uk.england.metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000014",
+      "displayName": "Sefton",
+      "kindId": "geography.uk.england.metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000015",
+      "displayName": "Wirral",
+      "kindId": "geography.uk.england.metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000016",
+      "displayName": "Barnsley",
+      "kindId": "geography.uk.england.metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000017",
+      "displayName": "Doncaster",
+      "kindId": "geography.uk.england.metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000018",
+      "displayName": "Rotherham",
+      "kindId": "geography.uk.england.metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000019",
+      "displayName": "Sheffield",
+      "kindId": "geography.uk.england.metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000021",
+      "displayName": "Newcastle upon Tyne",
+      "kindId": "geography.uk.england.metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000022",
+      "displayName": "North Tyneside",
+      "kindId": "geography.uk.england.metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000023",
+      "displayName": "South Tyneside",
+      "kindId": "geography.uk.england.metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000024",
+      "displayName": "Sunderland",
+      "kindId": "geography.uk.england.metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000025",
+      "displayName": "Birmingham",
+      "kindId": "geography.uk.england.metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000026",
+      "displayName": "Coventry",
+      "kindId": "geography.uk.england.metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000027",
+      "displayName": "Dudley",
+      "kindId": "geography.uk.england.metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000028",
+      "displayName": "Sandwell",
+      "kindId": "geography.uk.england.metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000029",
+      "displayName": "Solihull",
+      "kindId": "geography.uk.england.metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000030",
+      "displayName": "Walsall",
+      "kindId": "geography.uk.england.metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000031",
+      "displayName": "Wolverhampton",
+      "kindId": "geography.uk.england.metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000032",
+      "displayName": "Bradford",
+      "kindId": "geography.uk.england.metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000033",
+      "displayName": "Calderdale",
+      "kindId": "geography.uk.england.metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000034",
+      "displayName": "Kirklees",
+      "kindId": "geography.uk.england.metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000035",
+      "displayName": "Leeds",
+      "kindId": "geography.uk.england.metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000036",
+      "displayName": "Wakefield",
+      "kindId": "geography.uk.england.metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000037",
+      "displayName": "Gateshead",
+      "kindId": "geography.uk.england.metropolitan-district",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000001",
+      "displayName": "City of London",
+      "kindId": "geography.uk.england.city-of-london",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000002",
+      "displayName": "Barking and Dagenham",
+      "kindId": "geography.uk.england.london-borough",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000003",
+      "displayName": "Barnet",
+      "kindId": "geography.uk.england.london-borough",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000004",
+      "displayName": "Bexley",
+      "kindId": "geography.uk.england.london-borough",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000005",
+      "displayName": "Brent",
+      "kindId": "geography.uk.england.london-borough",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000006",
+      "displayName": "Bromley",
+      "kindId": "geography.uk.england.london-borough",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000007",
+      "displayName": "Camden",
+      "kindId": "geography.uk.england.london-borough",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000008",
+      "displayName": "Croydon",
+      "kindId": "geography.uk.england.london-borough",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000009",
+      "displayName": "Ealing",
+      "kindId": "geography.uk.england.london-borough",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000010",
+      "displayName": "Enfield",
+      "kindId": "geography.uk.england.london-borough",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000011",
+      "displayName": "Greenwich",
+      "kindId": "geography.uk.england.london-borough",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000012",
+      "displayName": "Hackney",
+      "kindId": "geography.uk.england.london-borough",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000013",
+      "displayName": "Hammersmith and Fulham",
+      "kindId": "geography.uk.england.london-borough",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000014",
+      "displayName": "Haringey",
+      "kindId": "geography.uk.england.london-borough",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000015",
+      "displayName": "Harrow",
+      "kindId": "geography.uk.england.london-borough",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000016",
+      "displayName": "Havering",
+      "kindId": "geography.uk.england.london-borough",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000017",
+      "displayName": "Hillingdon",
+      "kindId": "geography.uk.england.london-borough",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000018",
+      "displayName": "Hounslow",
+      "kindId": "geography.uk.england.london-borough",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000019",
+      "displayName": "Islington",
+      "kindId": "geography.uk.england.london-borough",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000020",
+      "displayName": "Kensington and Chelsea",
+      "kindId": "geography.uk.england.london-borough",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000021",
+      "displayName": "Kingston upon Thames",
+      "kindId": "geography.uk.england.london-borough",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000022",
+      "displayName": "Lambeth",
+      "kindId": "geography.uk.england.london-borough",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000023",
+      "displayName": "Lewisham",
+      "kindId": "geography.uk.england.london-borough",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000024",
+      "displayName": "Merton",
+      "kindId": "geography.uk.england.london-borough",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000025",
+      "displayName": "Newham",
+      "kindId": "geography.uk.england.london-borough",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000026",
+      "displayName": "Redbridge",
+      "kindId": "geography.uk.england.london-borough",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000027",
+      "displayName": "Richmond upon Thames",
+      "kindId": "geography.uk.england.london-borough",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000028",
+      "displayName": "Southwark",
+      "kindId": "geography.uk.england.london-borough",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000029",
+      "displayName": "Sutton",
+      "kindId": "geography.uk.england.london-borough",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000030",
+      "displayName": "Tower Hamlets",
+      "kindId": "geography.uk.england.london-borough",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000031",
+      "displayName": "Waltham Forest",
+      "kindId": "geography.uk.england.london-borough",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000032",
+      "displayName": "Wandsworth",
+      "kindId": "geography.uk.england.london-borough",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000033",
+      "displayName": "Westminster",
+      "kindId": "geography.uk.england.london-borough",
+      "parentPlaceId": "place.uk.constituent.england",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.n09000001",
+      "displayName": "Antrim and Newtownabbey",
+      "kindId": "geography.uk.northern-ireland.local-government-district",
+      "parentPlaceId": "place.uk.constituent.northern-ireland",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.n09000002",
+      "displayName": "Armagh City, Banbridge and Craigavon",
+      "kindId": "geography.uk.northern-ireland.local-government-district",
+      "parentPlaceId": "place.uk.constituent.northern-ireland",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.n09000003",
+      "displayName": "Belfast",
+      "kindId": "geography.uk.northern-ireland.local-government-district",
+      "parentPlaceId": "place.uk.constituent.northern-ireland",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.n09000004",
+      "displayName": "Causeway Coast and Glens",
+      "kindId": "geography.uk.northern-ireland.local-government-district",
+      "parentPlaceId": "place.uk.constituent.northern-ireland",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.n09000005",
+      "displayName": "Derry City and Strabane",
+      "kindId": "geography.uk.northern-ireland.local-government-district",
+      "parentPlaceId": "place.uk.constituent.northern-ireland",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.n09000006",
+      "displayName": "Fermanagh and Omagh",
+      "kindId": "geography.uk.northern-ireland.local-government-district",
+      "parentPlaceId": "place.uk.constituent.northern-ireland",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.n09000007",
+      "displayName": "Lisburn and Castlereagh",
+      "kindId": "geography.uk.northern-ireland.local-government-district",
+      "parentPlaceId": "place.uk.constituent.northern-ireland",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.n09000008",
+      "displayName": "Mid and East Antrim",
+      "kindId": "geography.uk.northern-ireland.local-government-district",
+      "parentPlaceId": "place.uk.constituent.northern-ireland",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.n09000009",
+      "displayName": "Mid Ulster",
+      "kindId": "geography.uk.northern-ireland.local-government-district",
+      "parentPlaceId": "place.uk.constituent.northern-ireland",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.n09000010",
+      "displayName": "Newry, Mourne and Down",
+      "kindId": "geography.uk.northern-ireland.local-government-district",
+      "parentPlaceId": "place.uk.constituent.northern-ireland",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.n09000011",
+      "displayName": "Ards and North Down",
+      "kindId": "geography.uk.northern-ireland.local-government-district",
+      "parentPlaceId": "place.uk.constituent.northern-ireland",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000005",
+      "displayName": "Clackmannanshire",
+      "kindId": "geography.uk.scotland.council-area",
+      "parentPlaceId": "place.uk.constituent.scotland",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000006",
+      "displayName": "Dumfries and Galloway",
+      "kindId": "geography.uk.scotland.council-area",
+      "parentPlaceId": "place.uk.constituent.scotland",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000008",
+      "displayName": "East Ayrshire",
+      "kindId": "geography.uk.scotland.council-area",
+      "parentPlaceId": "place.uk.constituent.scotland",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000010",
+      "displayName": "East Lothian",
+      "kindId": "geography.uk.scotland.council-area",
+      "parentPlaceId": "place.uk.constituent.scotland",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000011",
+      "displayName": "East Renfrewshire",
+      "kindId": "geography.uk.scotland.council-area",
+      "parentPlaceId": "place.uk.constituent.scotland",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000013",
+      "displayName": "Na h-Eileanan Siar",
+      "kindId": "geography.uk.scotland.council-area",
+      "parentPlaceId": "place.uk.constituent.scotland",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000014",
+      "displayName": "Falkirk",
+      "kindId": "geography.uk.scotland.council-area",
+      "parentPlaceId": "place.uk.constituent.scotland",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000017",
+      "displayName": "Highland",
+      "kindId": "geography.uk.scotland.council-area",
+      "parentPlaceId": "place.uk.constituent.scotland",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000018",
+      "displayName": "Inverclyde",
+      "kindId": "geography.uk.scotland.council-area",
+      "parentPlaceId": "place.uk.constituent.scotland",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000019",
+      "displayName": "Midlothian",
+      "kindId": "geography.uk.scotland.council-area",
+      "parentPlaceId": "place.uk.constituent.scotland",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000020",
+      "displayName": "Moray",
+      "kindId": "geography.uk.scotland.council-area",
+      "parentPlaceId": "place.uk.constituent.scotland",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000021",
+      "displayName": "North Ayrshire",
+      "kindId": "geography.uk.scotland.council-area",
+      "parentPlaceId": "place.uk.constituent.scotland",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000023",
+      "displayName": "Orkney Islands",
+      "kindId": "geography.uk.scotland.council-area",
+      "parentPlaceId": "place.uk.constituent.scotland",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000026",
+      "displayName": "Scottish Borders",
+      "kindId": "geography.uk.scotland.council-area",
+      "parentPlaceId": "place.uk.constituent.scotland",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000027",
+      "displayName": "Shetland Islands",
+      "kindId": "geography.uk.scotland.council-area",
+      "parentPlaceId": "place.uk.constituent.scotland",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000028",
+      "displayName": "South Ayrshire",
+      "kindId": "geography.uk.scotland.council-area",
+      "parentPlaceId": "place.uk.constituent.scotland",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000029",
+      "displayName": "South Lanarkshire",
+      "kindId": "geography.uk.scotland.council-area",
+      "parentPlaceId": "place.uk.constituent.scotland",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000030",
+      "displayName": "Stirling",
+      "kindId": "geography.uk.scotland.council-area",
+      "parentPlaceId": "place.uk.constituent.scotland",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000033",
+      "displayName": "Aberdeen City",
+      "kindId": "geography.uk.scotland.council-area",
+      "parentPlaceId": "place.uk.constituent.scotland",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000034",
+      "displayName": "Aberdeenshire",
+      "kindId": "geography.uk.scotland.council-area",
+      "parentPlaceId": "place.uk.constituent.scotland",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000035",
+      "displayName": "Argyll and Bute",
+      "kindId": "geography.uk.scotland.council-area",
+      "parentPlaceId": "place.uk.constituent.scotland",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000036",
+      "displayName": "City of Edinburgh",
+      "kindId": "geography.uk.scotland.council-area",
+      "parentPlaceId": "place.uk.constituent.scotland",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000038",
+      "displayName": "Renfrewshire",
+      "kindId": "geography.uk.scotland.council-area",
+      "parentPlaceId": "place.uk.constituent.scotland",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000039",
+      "displayName": "West Dunbartonshire",
+      "kindId": "geography.uk.scotland.council-area",
+      "parentPlaceId": "place.uk.constituent.scotland",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000040",
+      "displayName": "West Lothian",
+      "kindId": "geography.uk.scotland.council-area",
+      "parentPlaceId": "place.uk.constituent.scotland",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000041",
+      "displayName": "Angus",
+      "kindId": "geography.uk.scotland.council-area",
+      "parentPlaceId": "place.uk.constituent.scotland",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000042",
+      "displayName": "Dundee City",
+      "kindId": "geography.uk.scotland.council-area",
+      "parentPlaceId": "place.uk.constituent.scotland",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000045",
+      "displayName": "East Dunbartonshire",
+      "kindId": "geography.uk.scotland.council-area",
+      "parentPlaceId": "place.uk.constituent.scotland",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000047",
+      "displayName": "Fife",
+      "kindId": "geography.uk.scotland.council-area",
+      "parentPlaceId": "place.uk.constituent.scotland",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000048",
+      "displayName": "Perth and Kinross",
+      "kindId": "geography.uk.scotland.council-area",
+      "parentPlaceId": "place.uk.constituent.scotland",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000049",
+      "displayName": "Glasgow City",
+      "kindId": "geography.uk.scotland.council-area",
+      "parentPlaceId": "place.uk.constituent.scotland",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000050",
+      "displayName": "North Lanarkshire",
+      "kindId": "geography.uk.scotland.council-area",
+      "parentPlaceId": "place.uk.constituent.scotland",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.w06000001",
+      "displayName": "Isle of Anglesey",
+      "kindId": "geography.uk.wales.principal-area",
+      "parentPlaceId": "place.uk.constituent.wales",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.w06000002",
+      "displayName": "Gwynedd",
+      "kindId": "geography.uk.wales.principal-area",
+      "parentPlaceId": "place.uk.constituent.wales",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.w06000003",
+      "displayName": "Conwy",
+      "kindId": "geography.uk.wales.principal-area",
+      "parentPlaceId": "place.uk.constituent.wales",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.w06000004",
+      "displayName": "Denbighshire",
+      "kindId": "geography.uk.wales.principal-area",
+      "parentPlaceId": "place.uk.constituent.wales",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.w06000005",
+      "displayName": "Flintshire",
+      "kindId": "geography.uk.wales.principal-area",
+      "parentPlaceId": "place.uk.constituent.wales",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.w06000006",
+      "displayName": "Wrexham",
+      "kindId": "geography.uk.wales.principal-area",
+      "parentPlaceId": "place.uk.constituent.wales",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.w06000008",
+      "displayName": "Ceredigion",
+      "kindId": "geography.uk.wales.principal-area",
+      "parentPlaceId": "place.uk.constituent.wales",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.w06000009",
+      "displayName": "Pembrokeshire",
+      "kindId": "geography.uk.wales.principal-area",
+      "parentPlaceId": "place.uk.constituent.wales",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.w06000010",
+      "displayName": "Carmarthenshire",
+      "kindId": "geography.uk.wales.principal-area",
+      "parentPlaceId": "place.uk.constituent.wales",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.w06000011",
+      "displayName": "Swansea",
+      "kindId": "geography.uk.wales.principal-area",
+      "parentPlaceId": "place.uk.constituent.wales",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.w06000012",
+      "displayName": "Neath Port Talbot",
+      "kindId": "geography.uk.wales.principal-area",
+      "parentPlaceId": "place.uk.constituent.wales",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.w06000013",
+      "displayName": "Bridgend",
+      "kindId": "geography.uk.wales.principal-area",
+      "parentPlaceId": "place.uk.constituent.wales",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.w06000014",
+      "displayName": "Vale of Glamorgan",
+      "kindId": "geography.uk.wales.principal-area",
+      "parentPlaceId": "place.uk.constituent.wales",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.w06000015",
+      "displayName": "Cardiff",
+      "kindId": "geography.uk.wales.principal-area",
+      "parentPlaceId": "place.uk.constituent.wales",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.w06000016",
+      "displayName": "Rhondda Cynon Taf",
+      "kindId": "geography.uk.wales.principal-area",
+      "parentPlaceId": "place.uk.constituent.wales",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.w06000018",
+      "displayName": "Caerphilly",
+      "kindId": "geography.uk.wales.principal-area",
+      "parentPlaceId": "place.uk.constituent.wales",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.w06000019",
+      "displayName": "Blaenau Gwent",
+      "kindId": "geography.uk.wales.principal-area",
+      "parentPlaceId": "place.uk.constituent.wales",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.w06000020",
+      "displayName": "Torfaen",
+      "kindId": "geography.uk.wales.principal-area",
+      "parentPlaceId": "place.uk.constituent.wales",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.w06000021",
+      "displayName": "Monmouthshire",
+      "kindId": "geography.uk.wales.principal-area",
+      "parentPlaceId": "place.uk.constituent.wales",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.w06000022",
+      "displayName": "Newport",
+      "kindId": "geography.uk.wales.principal-area",
+      "parentPlaceId": "place.uk.constituent.wales",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.w06000023",
+      "displayName": "Powys",
+      "kindId": "geography.uk.wales.principal-area",
+      "parentPlaceId": "place.uk.constituent.wales",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    },
+    {
+      "placeId": "place.uk.local-admin.w06000024",
+      "displayName": "Merthyr Tydfil",
+      "kindId": "geography.uk.wales.principal-area",
+      "parentPlaceId": "place.uk.constituent.wales",
+      "populationAllocationCell": true,
+      "sourceIds": [
+        "geography.source.ons.lad-may-2024-v1",
+        "geography.source.ons.myeb-local-authorities-mid-2024-v1"
+      ]
+    }
+  ],
+  "limitations": [
+    "Administrative allocation geography only; nodes do not assert settlement, address, residence or neighbourhood meaning.",
+    "Boundary geometry, coordinates, adjacency, distance, routes and travel semantics are absent.",
+    "English regions, upper-tier counties, settlements, wards, constituencies, postcodes and statistical small areas are excluded.",
+    "Jersey, Guernsey, the Isle of Man and UK Overseas Territories are outside this UK demographic universe.",
+    "Population remains geographically unallocated; this package contains no demographic counts and changes no Population state.",
+    "The 361 allocation units play one functional Population role but retain different official legal and administrative kinds.",
+    "The official area inventory is the May 2024 ONS Geography snapshot and is applied to the aligned 30 June 2024 population reference date."
+  ]
+}

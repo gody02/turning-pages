@@ -1,0 +1,66 @@
+{
+  "version": 1,
+  "bundleId": "evidence.uk-geography.primary-local-admin-2024-v1",
+  "retrievalDate": "2026-09-28",
+  "licence": "Open Government Licence v3.0",
+  "licenceLocator": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+  "attribution": "Source: Office for National Statistics licensed under the Open Government Licence v3.0. Contains OS data © Crown copyright and database right 2024.",
+  "artifacts": [
+    {
+      "id": "artifact.ons.lad-may-2024-attributes-v1",
+      "producer": "Office for National Statistics",
+      "product": "Local Authority Districts (May 2024) Boundaries UK BGC",
+      "releaseId": "ons-open-geography-lad-may-2024",
+      "referenceDate": "2024-05-01",
+      "filename": "ons-lad-may-2024-attributes.json",
+      "mediaType": "application/json",
+      "size": 29265,
+      "sha256": "a0dc2a30f66a87e9c12156ca37cbba6e726d8fa3ff166066381717d50954414c",
+      "sourceLocator": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/Local_Authority_Districts_May_2024_Boundaries_UK_BGC/FeatureServer/0/query?f=json&where=1%3D1&outFields=LAD24CD%2CLAD24NM%2CLAD24NMW&returnGeometry=false&orderByFields=LAD24CD+ASC",
+      "purpose": "Official code, primary-name and Welsh alternate-name attributes; geometry deliberately excluded.",
+      "expectedSchema": "ArcGIS query with LAD24CD, LAD24NM and LAD24NMW"
+    },
+    {
+      "id": "artifact.ons.lad-may-2024-item-v1",
+      "producer": "Office for National Statistics",
+      "product": "Local Authority Districts (May 2024) Boundaries UK BGC",
+      "releaseId": "ons-open-geography-lad-may-2024",
+      "referenceDate": "2024-05-01",
+      "filename": "ons-lad-may-2024-item.json",
+      "mediaType": "application/json",
+      "size": 4862,
+      "sha256": "8bc3a4e2ec1bc43f86e9afd3dfc8aae500b16db4e39130847e8a127310e52908",
+      "sourceLocator": "https://www.arcgis.com/sharing/rest/content/items/f3528c2d6d454edab74f2648cc6a45f6?f=json",
+      "purpose": "Official ArcGIS item metadata for the authoritative May 2024 feature service.",
+      "expectedSchema": "ArcGIS item metadata"
+    },
+    {
+      "id": "artifact.ons.lad-may-2024-layer-v1",
+      "producer": "Office for National Statistics",
+      "product": "Local Authority Districts (May 2024) Boundaries UK BGC",
+      "releaseId": "ons-open-geography-lad-may-2024",
+      "referenceDate": "2024-05-01",
+      "filename": "ons-lad-may-2024-layer.json",
+      "mediaType": "application/json",
+      "size": 13451,
+      "sha256": "e2ff820533c7bd4b168cf015a5c244b4c44ace5ee889d60c78a11161487238c9",
+      "sourceLocator": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/Local_Authority_Districts_May_2024_Boundaries_UK_BGC/FeatureServer/0?f=pjson",
+      "purpose": "Official layer schema and immutable source-vintage markers.",
+      "expectedSchema": "ArcGIS feature-layer metadata"
+    },
+    {
+      "id": "artifact.ons.myeb-local-authorities-mid-2024-v1",
+      "producer": "Office for National Statistics",
+      "product": "Population estimates for the UK, England, Wales, Scotland and Northern Ireland: mid-2024",
+      "releaseId": "MYE24UK-detailed",
+      "referenceDate": "2024-06-30",
+      "filename": "ons-myeb-local-authorities-mid-2024.xlsx",
+      "mediaType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "size": 47036552,
+      "sha256": "321f27261c9cf110ea44ca10d198580ec3969bc1171c780cba5596184df9b04d",
+      "sourceLocator": "https://www.ons.gov.uk/file?uri=%2Fpeoplepopulationandcommunity%2Fpopulationandmigration%2Fpopulationestimates%2Fdatasets%2Fpopulationestimatesforukenglandandwalesscotlandandnorthernireland%2Fmid2011tomid2024%2Fmyebtablesuk20112024.xlsx",
+      "purpose": "Integrity cross-check of the 361 area codes, names and country assignments; population counts do not enter Geography.",
+      "expectedSchema": "XLSX sheets Cover sheet, Contents, Notes, Related publications, MYEB1..MYEB5; MYEB1 local-authority identity columns"
+    }
+  ]
+}

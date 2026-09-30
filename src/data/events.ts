@@ -1,5 +1,7 @@
 import type { LifeEvent, Effects } from '../engine/core/model';
-const event = (id: string, title: string, text: string, min: number, max: number, options: [string, string, Effects][]): LifeEvent => ({ id, title, text, min, max, choices: options.map(([text, result, effects]) => ({text, result, effects})) });
+/** Choice IDs are stable test contracts; keep them independent of presentation order. */
+const choiceId=(eventId:string,text:string)=>`${eventId}.${text.toLowerCase().normalize('NFKD').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')}`;
+const event = (id: string, title: string, text: string, min: number, max: number, options: [string, string, Effects][]): LifeEvent => ({ id, title, text, min, max, choices: options.map(([text, result, effects]) => ({id:choiceId(id,text),text,result,effects})) });
 export const events: LifeEvent[] = [
   event('puddle','A very small ocean','Rain has left an enormous puddle outside. Your boots are waiting.',1,5,[['Jump right in','You discover the joy of making a spectacular splash.',{happiness:8,health:-1}],['Study your reflection','You spend a quiet afternoon noticing the world.',{smarts:5}]]),
   event('story','One more chapter','Someone at home offers to read you a story before bed.',1,5,[['Choose the longest book','Your imagination grows a little wider.',{smarts:6,bond:3}],['Make up your own ending','Your story involves a moon made of toast.',{happiness:6,smarts:2}]]),

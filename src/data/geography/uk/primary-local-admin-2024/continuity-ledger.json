@@ -1,0 +1,2534 @@
+{
+  "version": 1,
+  "id": "geography.uk.place-continuity-2024-v1",
+  "fingerprint": "fnv1a64-v1:c60b905114c649e2",
+  "entries": [
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E06000001",
+      "placeId": "place.uk.local-admin.e06000001",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E06000002",
+      "placeId": "place.uk.local-admin.e06000002",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E06000003",
+      "placeId": "place.uk.local-admin.e06000003",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E06000004",
+      "placeId": "place.uk.local-admin.e06000004",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E06000005",
+      "placeId": "place.uk.local-admin.e06000005",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E06000006",
+      "placeId": "place.uk.local-admin.e06000006",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E06000007",
+      "placeId": "place.uk.local-admin.e06000007",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E06000008",
+      "placeId": "place.uk.local-admin.e06000008",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E06000009",
+      "placeId": "place.uk.local-admin.e06000009",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E06000010",
+      "placeId": "place.uk.local-admin.e06000010",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E06000011",
+      "placeId": "place.uk.local-admin.e06000011",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E06000012",
+      "placeId": "place.uk.local-admin.e06000012",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E06000013",
+      "placeId": "place.uk.local-admin.e06000013",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E06000014",
+      "placeId": "place.uk.local-admin.e06000014",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E06000015",
+      "placeId": "place.uk.local-admin.e06000015",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E06000016",
+      "placeId": "place.uk.local-admin.e06000016",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E06000017",
+      "placeId": "place.uk.local-admin.e06000017",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E06000018",
+      "placeId": "place.uk.local-admin.e06000018",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E06000019",
+      "placeId": "place.uk.local-admin.e06000019",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E06000020",
+      "placeId": "place.uk.local-admin.e06000020",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E06000021",
+      "placeId": "place.uk.local-admin.e06000021",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E06000022",
+      "placeId": "place.uk.local-admin.e06000022",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E06000023",
+      "placeId": "place.uk.local-admin.e06000023",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E06000024",
+      "placeId": "place.uk.local-admin.e06000024",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E06000025",
+      "placeId": "place.uk.local-admin.e06000025",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E06000026",
+      "placeId": "place.uk.local-admin.e06000026",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E06000027",
+      "placeId": "place.uk.local-admin.e06000027",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E06000030",
+      "placeId": "place.uk.local-admin.e06000030",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E06000031",
+      "placeId": "place.uk.local-admin.e06000031",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E06000032",
+      "placeId": "place.uk.local-admin.e06000032",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E06000033",
+      "placeId": "place.uk.local-admin.e06000033",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E06000034",
+      "placeId": "place.uk.local-admin.e06000034",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E06000035",
+      "placeId": "place.uk.local-admin.e06000035",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E06000036",
+      "placeId": "place.uk.local-admin.e06000036",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E06000037",
+      "placeId": "place.uk.local-admin.e06000037",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E06000038",
+      "placeId": "place.uk.local-admin.e06000038",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E06000039",
+      "placeId": "place.uk.local-admin.e06000039",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E06000040",
+      "placeId": "place.uk.local-admin.e06000040",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E06000041",
+      "placeId": "place.uk.local-admin.e06000041",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E06000042",
+      "placeId": "place.uk.local-admin.e06000042",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E06000043",
+      "placeId": "place.uk.local-admin.e06000043",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E06000044",
+      "placeId": "place.uk.local-admin.e06000044",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E06000045",
+      "placeId": "place.uk.local-admin.e06000045",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E06000046",
+      "placeId": "place.uk.local-admin.e06000046",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E06000047",
+      "placeId": "place.uk.local-admin.e06000047",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E06000049",
+      "placeId": "place.uk.local-admin.e06000049",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E06000050",
+      "placeId": "place.uk.local-admin.e06000050",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E06000051",
+      "placeId": "place.uk.local-admin.e06000051",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E06000052",
+      "placeId": "place.uk.local-admin.e06000052",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E06000053",
+      "placeId": "place.uk.local-admin.e06000053",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E06000054",
+      "placeId": "place.uk.local-admin.e06000054",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E06000055",
+      "placeId": "place.uk.local-admin.e06000055",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E06000056",
+      "placeId": "place.uk.local-admin.e06000056",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E06000057",
+      "placeId": "place.uk.local-admin.e06000057",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E06000058",
+      "placeId": "place.uk.local-admin.e06000058",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E06000059",
+      "placeId": "place.uk.local-admin.e06000059",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E06000060",
+      "placeId": "place.uk.local-admin.e06000060",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E06000061",
+      "placeId": "place.uk.local-admin.e06000061",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E06000062",
+      "placeId": "place.uk.local-admin.e06000062",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E06000063",
+      "placeId": "place.uk.local-admin.e06000063",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E06000064",
+      "placeId": "place.uk.local-admin.e06000064",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E06000065",
+      "placeId": "place.uk.local-admin.e06000065",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E06000066",
+      "placeId": "place.uk.local-admin.e06000066",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000008",
+      "placeId": "place.uk.local-admin.e07000008",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000009",
+      "placeId": "place.uk.local-admin.e07000009",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000010",
+      "placeId": "place.uk.local-admin.e07000010",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000011",
+      "placeId": "place.uk.local-admin.e07000011",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000012",
+      "placeId": "place.uk.local-admin.e07000012",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000032",
+      "placeId": "place.uk.local-admin.e07000032",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000033",
+      "placeId": "place.uk.local-admin.e07000033",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000034",
+      "placeId": "place.uk.local-admin.e07000034",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000035",
+      "placeId": "place.uk.local-admin.e07000035",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000036",
+      "placeId": "place.uk.local-admin.e07000036",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000037",
+      "placeId": "place.uk.local-admin.e07000037",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000038",
+      "placeId": "place.uk.local-admin.e07000038",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000039",
+      "placeId": "place.uk.local-admin.e07000039",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000040",
+      "placeId": "place.uk.local-admin.e07000040",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000041",
+      "placeId": "place.uk.local-admin.e07000041",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000042",
+      "placeId": "place.uk.local-admin.e07000042",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000043",
+      "placeId": "place.uk.local-admin.e07000043",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000044",
+      "placeId": "place.uk.local-admin.e07000044",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000045",
+      "placeId": "place.uk.local-admin.e07000045",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000046",
+      "placeId": "place.uk.local-admin.e07000046",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000047",
+      "placeId": "place.uk.local-admin.e07000047",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000061",
+      "placeId": "place.uk.local-admin.e07000061",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000062",
+      "placeId": "place.uk.local-admin.e07000062",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000063",
+      "placeId": "place.uk.local-admin.e07000063",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000064",
+      "placeId": "place.uk.local-admin.e07000064",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000065",
+      "placeId": "place.uk.local-admin.e07000065",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000066",
+      "placeId": "place.uk.local-admin.e07000066",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000067",
+      "placeId": "place.uk.local-admin.e07000067",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000068",
+      "placeId": "place.uk.local-admin.e07000068",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000069",
+      "placeId": "place.uk.local-admin.e07000069",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000070",
+      "placeId": "place.uk.local-admin.e07000070",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000071",
+      "placeId": "place.uk.local-admin.e07000071",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000072",
+      "placeId": "place.uk.local-admin.e07000072",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000073",
+      "placeId": "place.uk.local-admin.e07000073",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000074",
+      "placeId": "place.uk.local-admin.e07000074",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000075",
+      "placeId": "place.uk.local-admin.e07000075",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000076",
+      "placeId": "place.uk.local-admin.e07000076",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000077",
+      "placeId": "place.uk.local-admin.e07000077",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000078",
+      "placeId": "place.uk.local-admin.e07000078",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000079",
+      "placeId": "place.uk.local-admin.e07000079",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000080",
+      "placeId": "place.uk.local-admin.e07000080",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000081",
+      "placeId": "place.uk.local-admin.e07000081",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000082",
+      "placeId": "place.uk.local-admin.e07000082",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000083",
+      "placeId": "place.uk.local-admin.e07000083",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000084",
+      "placeId": "place.uk.local-admin.e07000084",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000085",
+      "placeId": "place.uk.local-admin.e07000085",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000086",
+      "placeId": "place.uk.local-admin.e07000086",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000087",
+      "placeId": "place.uk.local-admin.e07000087",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000088",
+      "placeId": "place.uk.local-admin.e07000088",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000089",
+      "placeId": "place.uk.local-admin.e07000089",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000090",
+      "placeId": "place.uk.local-admin.e07000090",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000091",
+      "placeId": "place.uk.local-admin.e07000091",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000092",
+      "placeId": "place.uk.local-admin.e07000092",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000093",
+      "placeId": "place.uk.local-admin.e07000093",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000094",
+      "placeId": "place.uk.local-admin.e07000094",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000095",
+      "placeId": "place.uk.local-admin.e07000095",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000096",
+      "placeId": "place.uk.local-admin.e07000096",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000098",
+      "placeId": "place.uk.local-admin.e07000098",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000099",
+      "placeId": "place.uk.local-admin.e07000099",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000102",
+      "placeId": "place.uk.local-admin.e07000102",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000103",
+      "placeId": "place.uk.local-admin.e07000103",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000105",
+      "placeId": "place.uk.local-admin.e07000105",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000106",
+      "placeId": "place.uk.local-admin.e07000106",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000107",
+      "placeId": "place.uk.local-admin.e07000107",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000108",
+      "placeId": "place.uk.local-admin.e07000108",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000109",
+      "placeId": "place.uk.local-admin.e07000109",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000110",
+      "placeId": "place.uk.local-admin.e07000110",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000111",
+      "placeId": "place.uk.local-admin.e07000111",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000112",
+      "placeId": "place.uk.local-admin.e07000112",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000113",
+      "placeId": "place.uk.local-admin.e07000113",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000114",
+      "placeId": "place.uk.local-admin.e07000114",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000115",
+      "placeId": "place.uk.local-admin.e07000115",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000116",
+      "placeId": "place.uk.local-admin.e07000116",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000117",
+      "placeId": "place.uk.local-admin.e07000117",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000118",
+      "placeId": "place.uk.local-admin.e07000118",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000119",
+      "placeId": "place.uk.local-admin.e07000119",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000120",
+      "placeId": "place.uk.local-admin.e07000120",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000121",
+      "placeId": "place.uk.local-admin.e07000121",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000122",
+      "placeId": "place.uk.local-admin.e07000122",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000123",
+      "placeId": "place.uk.local-admin.e07000123",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000124",
+      "placeId": "place.uk.local-admin.e07000124",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000125",
+      "placeId": "place.uk.local-admin.e07000125",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000126",
+      "placeId": "place.uk.local-admin.e07000126",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000127",
+      "placeId": "place.uk.local-admin.e07000127",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000128",
+      "placeId": "place.uk.local-admin.e07000128",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000129",
+      "placeId": "place.uk.local-admin.e07000129",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000130",
+      "placeId": "place.uk.local-admin.e07000130",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000131",
+      "placeId": "place.uk.local-admin.e07000131",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000132",
+      "placeId": "place.uk.local-admin.e07000132",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000133",
+      "placeId": "place.uk.local-admin.e07000133",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000134",
+      "placeId": "place.uk.local-admin.e07000134",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000135",
+      "placeId": "place.uk.local-admin.e07000135",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000136",
+      "placeId": "place.uk.local-admin.e07000136",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000137",
+      "placeId": "place.uk.local-admin.e07000137",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000138",
+      "placeId": "place.uk.local-admin.e07000138",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000139",
+      "placeId": "place.uk.local-admin.e07000139",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000140",
+      "placeId": "place.uk.local-admin.e07000140",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000141",
+      "placeId": "place.uk.local-admin.e07000141",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000142",
+      "placeId": "place.uk.local-admin.e07000142",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000143",
+      "placeId": "place.uk.local-admin.e07000143",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000144",
+      "placeId": "place.uk.local-admin.e07000144",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000145",
+      "placeId": "place.uk.local-admin.e07000145",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000146",
+      "placeId": "place.uk.local-admin.e07000146",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000147",
+      "placeId": "place.uk.local-admin.e07000147",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000148",
+      "placeId": "place.uk.local-admin.e07000148",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000149",
+      "placeId": "place.uk.local-admin.e07000149",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000170",
+      "placeId": "place.uk.local-admin.e07000170",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000171",
+      "placeId": "place.uk.local-admin.e07000171",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000172",
+      "placeId": "place.uk.local-admin.e07000172",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000173",
+      "placeId": "place.uk.local-admin.e07000173",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000174",
+      "placeId": "place.uk.local-admin.e07000174",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000175",
+      "placeId": "place.uk.local-admin.e07000175",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000176",
+      "placeId": "place.uk.local-admin.e07000176",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000177",
+      "placeId": "place.uk.local-admin.e07000177",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000178",
+      "placeId": "place.uk.local-admin.e07000178",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000179",
+      "placeId": "place.uk.local-admin.e07000179",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000180",
+      "placeId": "place.uk.local-admin.e07000180",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000181",
+      "placeId": "place.uk.local-admin.e07000181",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000192",
+      "placeId": "place.uk.local-admin.e07000192",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000193",
+      "placeId": "place.uk.local-admin.e07000193",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000194",
+      "placeId": "place.uk.local-admin.e07000194",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000195",
+      "placeId": "place.uk.local-admin.e07000195",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000196",
+      "placeId": "place.uk.local-admin.e07000196",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000197",
+      "placeId": "place.uk.local-admin.e07000197",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000198",
+      "placeId": "place.uk.local-admin.e07000198",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000199",
+      "placeId": "place.uk.local-admin.e07000199",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000200",
+      "placeId": "place.uk.local-admin.e07000200",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000202",
+      "placeId": "place.uk.local-admin.e07000202",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000203",
+      "placeId": "place.uk.local-admin.e07000203",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000207",
+      "placeId": "place.uk.local-admin.e07000207",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000208",
+      "placeId": "place.uk.local-admin.e07000208",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000209",
+      "placeId": "place.uk.local-admin.e07000209",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000210",
+      "placeId": "place.uk.local-admin.e07000210",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000211",
+      "placeId": "place.uk.local-admin.e07000211",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000212",
+      "placeId": "place.uk.local-admin.e07000212",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000213",
+      "placeId": "place.uk.local-admin.e07000213",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000214",
+      "placeId": "place.uk.local-admin.e07000214",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000215",
+      "placeId": "place.uk.local-admin.e07000215",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000216",
+      "placeId": "place.uk.local-admin.e07000216",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000217",
+      "placeId": "place.uk.local-admin.e07000217",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000218",
+      "placeId": "place.uk.local-admin.e07000218",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000219",
+      "placeId": "place.uk.local-admin.e07000219",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000220",
+      "placeId": "place.uk.local-admin.e07000220",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000221",
+      "placeId": "place.uk.local-admin.e07000221",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000222",
+      "placeId": "place.uk.local-admin.e07000222",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000223",
+      "placeId": "place.uk.local-admin.e07000223",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000224",
+      "placeId": "place.uk.local-admin.e07000224",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000225",
+      "placeId": "place.uk.local-admin.e07000225",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000226",
+      "placeId": "place.uk.local-admin.e07000226",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000227",
+      "placeId": "place.uk.local-admin.e07000227",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000228",
+      "placeId": "place.uk.local-admin.e07000228",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000229",
+      "placeId": "place.uk.local-admin.e07000229",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000234",
+      "placeId": "place.uk.local-admin.e07000234",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000235",
+      "placeId": "place.uk.local-admin.e07000235",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000236",
+      "placeId": "place.uk.local-admin.e07000236",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000237",
+      "placeId": "place.uk.local-admin.e07000237",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000238",
+      "placeId": "place.uk.local-admin.e07000238",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000239",
+      "placeId": "place.uk.local-admin.e07000239",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000240",
+      "placeId": "place.uk.local-admin.e07000240",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000241",
+      "placeId": "place.uk.local-admin.e07000241",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000242",
+      "placeId": "place.uk.local-admin.e07000242",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000243",
+      "placeId": "place.uk.local-admin.e07000243",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000244",
+      "placeId": "place.uk.local-admin.e07000244",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E07000245",
+      "placeId": "place.uk.local-admin.e07000245",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E08000001",
+      "placeId": "place.uk.local-admin.e08000001",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E08000002",
+      "placeId": "place.uk.local-admin.e08000002",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E08000003",
+      "placeId": "place.uk.local-admin.e08000003",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E08000004",
+      "placeId": "place.uk.local-admin.e08000004",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E08000005",
+      "placeId": "place.uk.local-admin.e08000005",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E08000006",
+      "placeId": "place.uk.local-admin.e08000006",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E08000007",
+      "placeId": "place.uk.local-admin.e08000007",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E08000008",
+      "placeId": "place.uk.local-admin.e08000008",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E08000009",
+      "placeId": "place.uk.local-admin.e08000009",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E08000010",
+      "placeId": "place.uk.local-admin.e08000010",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E08000011",
+      "placeId": "place.uk.local-admin.e08000011",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E08000012",
+      "placeId": "place.uk.local-admin.e08000012",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E08000013",
+      "placeId": "place.uk.local-admin.e08000013",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E08000014",
+      "placeId": "place.uk.local-admin.e08000014",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E08000015",
+      "placeId": "place.uk.local-admin.e08000015",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E08000016",
+      "placeId": "place.uk.local-admin.e08000016",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E08000017",
+      "placeId": "place.uk.local-admin.e08000017",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E08000018",
+      "placeId": "place.uk.local-admin.e08000018",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E08000019",
+      "placeId": "place.uk.local-admin.e08000019",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E08000021",
+      "placeId": "place.uk.local-admin.e08000021",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E08000022",
+      "placeId": "place.uk.local-admin.e08000022",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E08000023",
+      "placeId": "place.uk.local-admin.e08000023",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E08000024",
+      "placeId": "place.uk.local-admin.e08000024",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E08000025",
+      "placeId": "place.uk.local-admin.e08000025",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E08000026",
+      "placeId": "place.uk.local-admin.e08000026",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E08000027",
+      "placeId": "place.uk.local-admin.e08000027",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E08000028",
+      "placeId": "place.uk.local-admin.e08000028",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E08000029",
+      "placeId": "place.uk.local-admin.e08000029",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E08000030",
+      "placeId": "place.uk.local-admin.e08000030",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E08000031",
+      "placeId": "place.uk.local-admin.e08000031",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E08000032",
+      "placeId": "place.uk.local-admin.e08000032",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E08000033",
+      "placeId": "place.uk.local-admin.e08000033",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E08000034",
+      "placeId": "place.uk.local-admin.e08000034",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E08000035",
+      "placeId": "place.uk.local-admin.e08000035",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E08000036",
+      "placeId": "place.uk.local-admin.e08000036",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E08000037",
+      "placeId": "place.uk.local-admin.e08000037",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E09000001",
+      "placeId": "place.uk.local-admin.e09000001",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E09000002",
+      "placeId": "place.uk.local-admin.e09000002",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E09000003",
+      "placeId": "place.uk.local-admin.e09000003",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E09000004",
+      "placeId": "place.uk.local-admin.e09000004",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E09000005",
+      "placeId": "place.uk.local-admin.e09000005",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E09000006",
+      "placeId": "place.uk.local-admin.e09000006",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E09000007",
+      "placeId": "place.uk.local-admin.e09000007",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E09000008",
+      "placeId": "place.uk.local-admin.e09000008",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E09000009",
+      "placeId": "place.uk.local-admin.e09000009",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E09000010",
+      "placeId": "place.uk.local-admin.e09000010",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E09000011",
+      "placeId": "place.uk.local-admin.e09000011",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E09000012",
+      "placeId": "place.uk.local-admin.e09000012",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E09000013",
+      "placeId": "place.uk.local-admin.e09000013",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E09000014",
+      "placeId": "place.uk.local-admin.e09000014",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E09000015",
+      "placeId": "place.uk.local-admin.e09000015",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E09000016",
+      "placeId": "place.uk.local-admin.e09000016",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E09000017",
+      "placeId": "place.uk.local-admin.e09000017",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E09000018",
+      "placeId": "place.uk.local-admin.e09000018",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E09000019",
+      "placeId": "place.uk.local-admin.e09000019",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E09000020",
+      "placeId": "place.uk.local-admin.e09000020",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E09000021",
+      "placeId": "place.uk.local-admin.e09000021",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E09000022",
+      "placeId": "place.uk.local-admin.e09000022",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E09000023",
+      "placeId": "place.uk.local-admin.e09000023",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E09000024",
+      "placeId": "place.uk.local-admin.e09000024",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E09000025",
+      "placeId": "place.uk.local-admin.e09000025",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E09000026",
+      "placeId": "place.uk.local-admin.e09000026",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E09000027",
+      "placeId": "place.uk.local-admin.e09000027",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E09000028",
+      "placeId": "place.uk.local-admin.e09000028",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E09000029",
+      "placeId": "place.uk.local-admin.e09000029",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E09000030",
+      "placeId": "place.uk.local-admin.e09000030",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E09000031",
+      "placeId": "place.uk.local-admin.e09000031",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E09000032",
+      "placeId": "place.uk.local-admin.e09000032",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "E09000033",
+      "placeId": "place.uk.local-admin.e09000033",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "N09000001",
+      "placeId": "place.uk.local-admin.n09000001",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "N09000002",
+      "placeId": "place.uk.local-admin.n09000002",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "N09000003",
+      "placeId": "place.uk.local-admin.n09000003",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "N09000004",
+      "placeId": "place.uk.local-admin.n09000004",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "N09000005",
+      "placeId": "place.uk.local-admin.n09000005",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "N09000006",
+      "placeId": "place.uk.local-admin.n09000006",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "N09000007",
+      "placeId": "place.uk.local-admin.n09000007",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "N09000008",
+      "placeId": "place.uk.local-admin.n09000008",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "N09000009",
+      "placeId": "place.uk.local-admin.n09000009",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "N09000010",
+      "placeId": "place.uk.local-admin.n09000010",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "N09000011",
+      "placeId": "place.uk.local-admin.n09000011",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "S12000005",
+      "placeId": "place.uk.local-admin.s12000005",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "S12000006",
+      "placeId": "place.uk.local-admin.s12000006",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "S12000008",
+      "placeId": "place.uk.local-admin.s12000008",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "S12000010",
+      "placeId": "place.uk.local-admin.s12000010",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "S12000011",
+      "placeId": "place.uk.local-admin.s12000011",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "S12000013",
+      "placeId": "place.uk.local-admin.s12000013",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "S12000014",
+      "placeId": "place.uk.local-admin.s12000014",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "S12000017",
+      "placeId": "place.uk.local-admin.s12000017",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "S12000018",
+      "placeId": "place.uk.local-admin.s12000018",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "S12000019",
+      "placeId": "place.uk.local-admin.s12000019",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "S12000020",
+      "placeId": "place.uk.local-admin.s12000020",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "S12000021",
+      "placeId": "place.uk.local-admin.s12000021",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "S12000023",
+      "placeId": "place.uk.local-admin.s12000023",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "S12000026",
+      "placeId": "place.uk.local-admin.s12000026",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "S12000027",
+      "placeId": "place.uk.local-admin.s12000027",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "S12000028",
+      "placeId": "place.uk.local-admin.s12000028",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "S12000029",
+      "placeId": "place.uk.local-admin.s12000029",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "S12000030",
+      "placeId": "place.uk.local-admin.s12000030",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "S12000033",
+      "placeId": "place.uk.local-admin.s12000033",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "S12000034",
+      "placeId": "place.uk.local-admin.s12000034",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "S12000035",
+      "placeId": "place.uk.local-admin.s12000035",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "S12000036",
+      "placeId": "place.uk.local-admin.s12000036",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "S12000038",
+      "placeId": "place.uk.local-admin.s12000038",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "S12000039",
+      "placeId": "place.uk.local-admin.s12000039",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "S12000040",
+      "placeId": "place.uk.local-admin.s12000040",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "S12000041",
+      "placeId": "place.uk.local-admin.s12000041",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "S12000042",
+      "placeId": "place.uk.local-admin.s12000042",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "S12000045",
+      "placeId": "place.uk.local-admin.s12000045",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "S12000047",
+      "placeId": "place.uk.local-admin.s12000047",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "S12000048",
+      "placeId": "place.uk.local-admin.s12000048",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "S12000049",
+      "placeId": "place.uk.local-admin.s12000049",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "S12000050",
+      "placeId": "place.uk.local-admin.s12000050",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "W06000001",
+      "placeId": "place.uk.local-admin.w06000001",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "W06000002",
+      "placeId": "place.uk.local-admin.w06000002",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "W06000003",
+      "placeId": "place.uk.local-admin.w06000003",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "W06000004",
+      "placeId": "place.uk.local-admin.w06000004",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "W06000005",
+      "placeId": "place.uk.local-admin.w06000005",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "W06000006",
+      "placeId": "place.uk.local-admin.w06000006",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "W06000008",
+      "placeId": "place.uk.local-admin.w06000008",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "W06000009",
+      "placeId": "place.uk.local-admin.w06000009",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "W06000010",
+      "placeId": "place.uk.local-admin.w06000010",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "W06000011",
+      "placeId": "place.uk.local-admin.w06000011",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "W06000012",
+      "placeId": "place.uk.local-admin.w06000012",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "W06000013",
+      "placeId": "place.uk.local-admin.w06000013",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "W06000014",
+      "placeId": "place.uk.local-admin.w06000014",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "W06000015",
+      "placeId": "place.uk.local-admin.w06000015",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "W06000016",
+      "placeId": "place.uk.local-admin.w06000016",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "W06000018",
+      "placeId": "place.uk.local-admin.w06000018",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "W06000019",
+      "placeId": "place.uk.local-admin.w06000019",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "W06000020",
+      "placeId": "place.uk.local-admin.w06000020",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "W06000021",
+      "placeId": "place.uk.local-admin.w06000021",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "W06000022",
+      "placeId": "place.uk.local-admin.w06000022",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "W06000023",
+      "placeId": "place.uk.local-admin.w06000023",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    },
+    {
+      "sourceArtifactId": "artifact.ons.lad-may-2024-attributes-v1",
+      "sourceCode": "W06000024",
+      "placeId": "place.uk.local-admin.w06000024",
+      "decision": "new-place",
+      "reviewBasis": "Initial accepted May 2024 official identity; future continuity requires a separate reviewed decision."
+    }
+  ]
+}
