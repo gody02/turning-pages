@@ -1,0 +1,486 @@
+{
+  "schemaVersion": 1,
+  "baseCommit": "e73e826a018cf2b576cfdb366bddd76c68b103b1",
+  "verificationCommit": "5389fa8edb2adf72dbdc6577d3e976b48f02eb68",
+  "tree": "53638e13ebc0467f89937ed7045991be6546ca00",
+  "proposedRemote": "origin",
+  "proposedBranch": "ci/residence-root-v4-freeze-review",
+  "published": false,
+  "workflow": ".github/workflows/residence-root-v4-review.yml",
+  "workflowPermissions": "contents: read",
+  "browserProjects": [
+    "chromium",
+    "firefox",
+    "webkit"
+  ],
+  "validation": [
+    "full Vitest",
+    "strict TypeScript",
+    "production build",
+    "UK content integrity"
+  ],
+  "files": [
+    {
+      "path": ".github/workflows/residence-root-v4-review.yml",
+      "byteLength": 1931,
+      "sha256": "313afc4b2e5e4748cead67b04e87f7f98f9439a55169694e94ead8dc4550baa4"
+    },
+    {
+      "path": "package.json",
+      "byteLength": 1944,
+      "sha256": "933b1c3feea2f5405985ed483375e98677c8af4df047385f558f99f772f46c57"
+    },
+    {
+      "path": "scripts/verify-uk-geographic-population.mjs",
+      "byteLength": 4685,
+      "sha256": "90673a69254c7ebfe1599b858f040aaab51f0feef6a62ea34ced3fd0924becf2"
+    },
+    {
+      "path": "scripts/verify-uk-hybrid-settlements.mjs",
+      "byteLength": 12148,
+      "sha256": "5452197295880d4e1e006dfd4d4ae87f1926421070dc67c87bcbced493579a41"
+    },
+    {
+      "path": "src/data/demography/uk/geographic-mid-2024/adapter.test.ts",
+      "byteLength": 7305,
+      "sha256": "3bbb14a83f4a66defb48ad6c6fb5430f5bca5d46e01d59a32fba8634a94d14c5"
+    },
+    {
+      "path": "src/data/demography/uk/geographic-mid-2024/allocation-report.json",
+      "byteLength": 2828,
+      "sha256": "aa9fc8e1be91911edb42d3a23e9b6d991829aa315edbb239254cfab3ac083ac9"
+    },
+    {
+      "path": "src/data/demography/uk/geographic-mid-2024/compiled-population-v3-candidate.json",
+      "byteLength": 12143711,
+      "sha256": "c4b13eb67a1b7e231da1250b27f8e596c6535e7f260013d8a8638bda2b81188a"
+    },
+    {
+      "path": "src/data/demography/uk/geographic-mid-2024/normalized-local-age-margins.json",
+      "byteLength": 571342,
+      "sha256": "850e674a13ce8991ce5be90480868c8a3c967a623385643dea39d200b75a9997"
+    },
+    {
+      "path": "src/data/demography/uk/ons-mid-2024/ukevo2024.csv",
+      "byteLength": 12504,
+      "sha256": "811512ee967b7d83edafe8cc7912a481949e1969eb9eedf74d043bde6168b509"
+    },
+    {
+      "path": "src/data/demography/uk/population-content-manifest.json",
+      "byteLength": 430,
+      "sha256": "acc6f774e8eff42c084600cfe0a248c91261eb286185e721c9f1949aecce63a5"
+    },
+    {
+      "path": "src/data/demography/uk/populationRegistry.test.ts",
+      "byteLength": 2077,
+      "sha256": "f6f7513696cbc8121c853d34a067fb8717a7f6ca5d92ad9078ec396d575f84bf"
+    },
+    {
+      "path": "src/data/demography/uk/populationRegistry.ts",
+      "byteLength": 4743,
+      "sha256": "5340901135eb164c5774c179d2185a5589640d32ad6e80a261d544c3dcfabf27"
+    },
+    {
+      "path": "src/data/geography/uk/primary-local-admin-2024/artifacts/ons-lad-may-2024-layer.json",
+      "byteLength": 13451,
+      "sha256": "e2ff820533c7bd4b168cf015a5c244b4c44ace5ee889d60c78a11161487238c9"
+    },
+    {
+      "path": "src/data/geography/uk/primary-local-admin-2024/build-report.json",
+      "byteLength": 1990,
+      "sha256": "3cd232227cdeafe0743563ed331f24a0d29a9b940f5efa7b5f378245ac53fe32"
+    },
+    {
+      "path": "src/data/geography/uk/primary-local-admin-2024/compiled-partition.json",
+      "byteLength": 154934,
+      "sha256": "c7c542f874e334cfcf3bd59a0fda21fdba107d5360d403a417e865bfe3d35740"
+    },
+    {
+      "path": "src/data/geography/uk/primary-local-admin-2024/continuity-ledger.json",
+      "byteLength": 118911,
+      "sha256": "dc981695a7efebd291b2211f410c3a1f970613585f2b681edf4e67b416c66023"
+    },
+    {
+      "path": "src/data/geography/uk/primary-local-admin-2024/normalized-local-authorities.json",
+      "byteLength": 118397,
+      "sha256": "c234fb73287901692987905c9ad24d6de5b91cfef110080b9600df878ac7925b"
+    },
+    {
+      "path": "src/data/geography/uk/primary-local-admin-2024/package-manifest.json",
+      "byteLength": 89,
+      "sha256": "ddb3ebafa1e0b5c00c891c75b133690e79b8dd80456456bc9cd04c5dfab1d90d"
+    },
+    {
+      "path": "src/data/geography/uk/primary-local-admin-2024/place-identities.json",
+      "byteLength": 33715,
+      "sha256": "fd5482ff7d4bda8020ccf093852fc34f7f3ecd71a9036d1fa4463017b9a95d38"
+    },
+    {
+      "path": "src/data/geography/uk/primary-local-admin-2024/place-manifest.json",
+      "byteLength": 43647,
+      "sha256": "6aeb6bcc4efa673b73ac4e31dc426ccd36c68720740a381f46c40e76be0ec9b0"
+    },
+    {
+      "path": "src/data/geography/uk/primary-local-admin-2024/population-area-index.json",
+      "byteLength": 41568,
+      "sha256": "ecc05c582d26e99aa4b3d555980a8a80156a39b4c612d31575148eb44187854c"
+    },
+    {
+      "path": "src/data/geography/uk/primary-local-admin-2024/source-manifest.json",
+      "byteLength": 4093,
+      "sha256": "4148fa0e9df412928a946f3dcdefb429296fba37d64b9256d42b09e3753cf502"
+    },
+    {
+      "path": "src/data/geography/uk/settlement-content-manifest.json",
+      "byteLength": 515,
+      "sha256": "4401556ced3457d1648c6598c876291d5a0e97359dd7f987c83f061e832a9af2"
+    },
+    {
+      "path": "src/data/geography/uk/settlementRegistry.test.ts",
+      "byteLength": 2514,
+      "sha256": "7aea520bd4eb47d7f1a0e22ab2e35f28d31912e3ec570b79902383a392685339"
+    },
+    {
+      "path": "src/data/geography/uk/settlementRegistry.ts",
+      "byteLength": 4106,
+      "sha256": "c189ab5a6143b4618e70719d474961380f224e6d21f1e05a1031eadc738ef900"
+    },
+    {
+      "path": "src/data/geography/uk/settlements-2024/artifacts/census_2022_index.zip",
+      "byteLength": 2922015,
+      "sha256": "0e4096a321cba2318dc5d2e35c197bf815ac333aebdf4cb0ddce82112b57a261"
+    },
+    {
+      "path": "src/data/geography/uk/settlements-2024/source-manifest.json",
+      "byteLength": 9762,
+      "sha256": "ac79897aff4b47f13db28d5cceeec4196f1ddd5c5d9b2e21bb404a56cdc4bf92"
+    },
+    {
+      "path": "src/data/geography/uk/settlements-hybrid-2024-v2/adapter.test.ts",
+      "byteLength": 13081,
+      "sha256": "8aec63f83939b6a8ce61ed9546e29ad4fda42595b4bced3faaf6ee187b0de1e3"
+    },
+    {
+      "path": "src/data/geography/uk/settlements-hybrid-2024-v2/adapter.ts",
+      "byteLength": 10642,
+      "sha256": "e9b404e9d7b0452d01bd6ed5c3c4b8a135020a862b3018ed2739b689bdcfcb88"
+    },
+    {
+      "path": "src/data/geography/uk/settlements-hybrid-2024-v2/build-report.json",
+      "byteLength": 98844,
+      "sha256": "7e584a4454c1336025446e0db27e03f2fde9fc08f64f70ea56b9c4571814474b"
+    },
+    {
+      "path": "src/data/geography/uk/settlements-hybrid-2024-v2/compiled-settlements-candidate.json",
+      "byteLength": 3269891,
+      "sha256": "34aa659dc4ed927b70f78834c6638e58ae787ead38a9e9e68fe28886b0c359db"
+    },
+    {
+      "path": "src/data/geography/uk/settlements-hybrid-2024-v2/continuity-ledger.json",
+      "byteLength": 494628,
+      "sha256": "c3b80c373b05cdd8b19af882b69c5a03acfd5bfd755dd449c4088c8e76e48f1a"
+    },
+    {
+      "path": "src/data/geography/uk/settlements-hybrid-2024-v2/index.ts",
+      "byteLength": 27,
+      "sha256": "342d8efa6056584a87cc9de5f3f8e2c6f50c1b56e32e9d0eb109820b4d327b4b"
+    },
+    {
+      "path": "src/data/geography/uk/settlements-hybrid-2024-v2/package-manifest.json",
+      "byteLength": 2347,
+      "sha256": "cb7ba64d6f643bc8359b287f70cd130555834affddb4b984def4317069820a8b"
+    },
+    {
+      "path": "src/data/geography/uk/settlements-hybrid-2024-v2/settlement-identities.json",
+      "byteLength": 272996,
+      "sha256": "d938bbe05e96c21580f4146efd95c3706682e5685bba2dd93f65f67fc55fa6e8"
+    },
+    {
+      "path": "src/data/geography/uk/settlements-hybrid-2024-v2/settlement-identity-manifest.json",
+      "byteLength": 346946,
+      "sha256": "eed90ab4b4de9ede00e55535af14f4362d25a9c893f0cf228fb3f5836a50d781"
+    },
+    {
+      "path": "src/data/geography/uk/settlements-hybrid-2024/adapter.test.ts",
+      "byteLength": 11484,
+      "sha256": "9c7820e6277ee0bb0f89bd65eb9149e2e24268c6f0c51cf8d0b0cf73a13f4356"
+    },
+    {
+      "path": "src/data/geography/uk/settlements-hybrid-2024/adapter.ts",
+      "byteLength": 6929,
+      "sha256": "93dcdeff99e1e1344d957952ccdad9d0d20065f98d10efbfe9403eb9ac066ac1"
+    },
+    {
+      "path": "src/data/geography/uk/settlements-hybrid-2024/build-report.json",
+      "byteLength": 10278,
+      "sha256": "ffc7ae2df82cf1a0aa92c8a6c2d69d362410abe34a1aeb4f9bab2221a9027c43"
+    },
+    {
+      "path": "src/data/geography/uk/settlements-hybrid-2024/compiled-settlements-candidate.json",
+      "byteLength": 3142028,
+      "sha256": "642fbaae0a02df66b29b718f1539eafade387f50fe39bc4d19ef3e22ec415db5"
+    },
+    {
+      "path": "src/data/geography/uk/settlements-hybrid-2024/index.ts",
+      "byteLength": 27,
+      "sha256": "342d8efa6056584a87cc9de5f3f8e2c6f50c1b56e32e9d0eb109820b4d327b4b"
+    },
+    {
+      "path": "src/data/geography/uk/settlements-hybrid-2024/package-manifest.json",
+      "byteLength": 524,
+      "sha256": "fb26d9d5ab78c7096c67c5a5bf7b9a90f7b130c19b45abafdf315f30e3c2e222"
+    },
+    {
+      "path": "src/data/geography/uk/settlements-hybrid-2024/settlement-identities.json",
+      "byteLength": 272996,
+      "sha256": "d938bbe05e96c21580f4146efd95c3706682e5685bba2dd93f65f67fc55fa6e8"
+    },
+    {
+      "path": "src/data/geography/uk/settlements-hybrid-2024/settlement-identity-manifest.json",
+      "byteLength": 346946,
+      "sha256": "eed90ab4b4de9ede00e55535af14f4362d25a9c893f0cf228fb3f5836a50d781"
+    },
+    {
+      "path": "src/data/human/uk/generation/compiled-given-names.json",
+      "byteLength": 604548,
+      "sha256": "6211c987c52441183ce99ba392b76fa292396c5314bdef1502dad660cbbafe25"
+    },
+    {
+      "path": "src/data/uk/countryStart.test.ts",
+      "byteLength": 10622,
+      "sha256": "84517e9b8b18a4aa57db57a435cdfb803ad576c458ad32a54cf82fcde3b43db0"
+    },
+    {
+      "path": "src/data/uk/countryStartGeographic.test.ts",
+      "byteLength": 13305,
+      "sha256": "67a0321e0e0da5d91877bbedfa7c1da8d4df9e7169f593f73b175fefefcbd25d"
+    },
+    {
+      "path": "src/data/uk/countryStartGeographic.ts",
+      "byteLength": 10375,
+      "sha256": "58e6036c58b6311062ef60508279ef2f0ed069220f4a915ee9420b343befbec7"
+    },
+    {
+      "path": "src/engine/core/life.ts",
+      "byteLength": 9634,
+      "sha256": "cea6ff7e98a609d417c7adfb18142b2d512619f757017879019c1de5fa51f67e"
+    },
+    {
+      "path": "src/engine/core/model.ts",
+      "byteLength": 3485,
+      "sha256": "e19aff7dc5429d9e203885212d9875f1d69211e6ddeebad17d4054bef7127e18"
+    },
+    {
+      "path": "src/engine/core/validation.ts",
+      "byteLength": 4579,
+      "sha256": "e612965aaea989ba8588348212733510ad4d6932a7219c9b0f783f34bbb793fc"
+    },
+    {
+      "path": "src/engine/game.test.ts",
+      "byteLength": 4987,
+      "sha256": "ab3f5a365c248aee03d1b1ed844e15bfd651db5ce490d8db9febd225ca3ebdaf"
+    },
+    {
+      "path": "src/engine/gameContent.ts",
+      "byteLength": 1536,
+      "sha256": "a64c481294f3aaa422905f5ec94239cad44c93ebe4ca206b778f1d4da332ba0a"
+    },
+    {
+      "path": "src/engine/geography/settlements/index.ts",
+      "byteLength": 79,
+      "sha256": "96427e2feea9481a1438e574222b59e0c71c51cfdae134c53e8fdeed3633947f"
+    },
+    {
+      "path": "src/engine/geography/settlements/package.ts",
+      "byteLength": 19147,
+      "sha256": "ef2465573754982f7589cfce818ca1481d6f546a6a75b63daf1b991d30d44197"
+    },
+    {
+      "path": "src/engine/geography/settlements/runtime.ts",
+      "byteLength": 4430,
+      "sha256": "a66b2dc551bf9e09810714050308ef6a2b463e8bf9d71cc1c0becf41568bda1b"
+    },
+    {
+      "path": "src/engine/geography/settlements/settlement.test.ts",
+      "byteLength": 21507,
+      "sha256": "29f58b12513960bf3c160dbade02c1b0a6d1dddb53ff9222b7ceccfcc3d82352"
+    },
+    {
+      "path": "src/engine/geography/settlements/types.ts",
+      "byteLength": 2412,
+      "sha256": "5403051f6b3928fb9078c6be995fd5a434bd66a8ba378779674995232e334754"
+    },
+    {
+      "path": "src/engine/human/initialPopulation.test.ts",
+      "byteLength": 3552,
+      "sha256": "aaf22d66ff1e3724fee7fda78f01e3347ec518dfcc2804c37e5c75698cc9f277"
+    },
+    {
+      "path": "src/engine/human/initialPopulation.ts",
+      "byteLength": 1629,
+      "sha256": "fc106128fae926f662a332c8007d5dc6bbf641196192e4958ab594023277821a"
+    },
+    {
+      "path": "src/engine/human/person.test.ts",
+      "byteLength": 12840,
+      "sha256": "e3c2fea659f01962f75dcab2dd8106e73e67d5d979ca0145c163b10d34140230"
+    },
+    {
+      "path": "src/engine/human/population.test.ts",
+      "byteLength": 20867,
+      "sha256": "dc4f0e3099c3f9acf0dde39866942785a9fb75c2597701f0e35813d8296656af"
+    },
+    {
+      "path": "src/engine/institutions.test.ts",
+      "byteLength": 14451,
+      "sha256": "2d3f8325a0103908a39152818afe3d20c5d719b54f124976ca8b8205c01a1a60"
+    },
+    {
+      "path": "src/engine/national.test.ts",
+      "byteLength": 9655,
+      "sha256": "de1d0ee804e4e13fc63a36afcfda865b4cece19f911c45c8ec6064140a404c03"
+    },
+    {
+      "path": "src/engine/politics.ts",
+      "byteLength": 1230,
+      "sha256": "64226668ceb44899556b0276bfdb7404f18129077597ff991e7499f94a79533d"
+    },
+    {
+      "path": "src/engine/residence/index.ts",
+      "byteLength": 566,
+      "sha256": "b6ba915e89e5e9edbb1e17664d76cdac4e106ec982f0a7891b01180508e32d1c"
+    },
+    {
+      "path": "src/engine/residence/residence.test.ts",
+      "byteLength": 27235,
+      "sha256": "27d37d6ce866908f137d3f1dcabea55b5bee3dfa4b077aaa01585131d5a25614"
+    },
+    {
+      "path": "src/engine/residence/runtime.ts",
+      "byteLength": 2227,
+      "sha256": "2665c357bcb2f5993a61c1d9b3f69ea91c4e66e1ab47db1dd8f491fffc045dc4"
+    },
+    {
+      "path": "src/engine/residence/state.ts",
+      "byteLength": 7581,
+      "sha256": "b709b114deb045fac72ac2e5b7227f608a8b16479f2a0e150da652297c28980d"
+    },
+    {
+      "path": "src/engine/residence/types.ts",
+      "byteLength": 988,
+      "sha256": "638576b608ab8221c0cbe8e8c0cd152898565d2a140f09e76571bd6a0ca6aa3b"
+    },
+    {
+      "path": "src/engine/residence/validation.ts",
+      "byteLength": 8295,
+      "sha256": "fdbd00d1c7396ef1a5b14a76dd913018c75af4fcbf5fca7809717f1355c624bf"
+    },
+    {
+      "path": "src/engine/residenceRoot.test.ts",
+      "byteLength": 7335,
+      "sha256": "f8d4c22fa2f1175b832662c95a6ad563c4140e36c3219b646f9a25fbc086a594"
+    },
+    {
+      "path": "src/engine/save.test.ts",
+      "byteLength": 10349,
+      "sha256": "2538fb9da0709a6684b880ca87b84b973b0231276d47435bead3d28f64fc9917"
+    },
+    {
+      "path": "src/engine/save.ts",
+      "byteLength": 18609,
+      "sha256": "a43aa25991c3dd3f9f20aa94657d6e1817d2fded4e6679fca4d3bf5c2b24b75e"
+    },
+    {
+      "path": "src/engine/shared/personDisplayName.test.ts",
+      "byteLength": 5464,
+      "sha256": "828084e1c3b3bbb4264702efd0be6a32f8bcd65869760c067037ecca520dddfc"
+    },
+    {
+      "path": "src/engine/simulation.ts",
+      "byteLength": 4759,
+      "sha256": "7f2bfa2e82fd95eb2f1cc6b57cfe250cb08bb97c2ea55be0c327b62dc6d5d9c7"
+    },
+    {
+      "path": "src/engine/testing/residenceFixture.ts",
+      "byteLength": 7304,
+      "sha256": "21605cdb3efcabf1bf7471a7c8930b277959c80dd61a6a215d570d9068e2d0d6"
+    },
+    {
+      "path": "src/engine/testing/ukGeographicCountryStart.sim.ts",
+      "byteLength": 1185,
+      "sha256": "d05d9ccf40fc0630421b13688e1a2db2139eb4a303179bff71c089964f68f951"
+    },
+    {
+      "path": "src/engine/testing/ukGeographicPopulation.sim.ts",
+      "byteLength": 3128,
+      "sha256": "3d7f290af165bd1716919108ba685245462ba2c49afaf86561ed8fc44e59cc7c"
+    },
+    {
+      "path": "src/engine/types.ts",
+      "byteLength": 713,
+      "sha256": "59d41a5ebd78e9cd192993553214e34b7d6a2e6fb7fd599ccc3d5005ad89291a"
+    },
+    {
+      "path": "src/engine/ukWorld.test.ts",
+      "byteLength": 6713,
+      "sha256": "e9078a25529627ba13cac9f3d7def21ace64cea4ee927b760c8dd41c810679c7"
+    },
+    {
+      "path": "src/persistence/payload.ts",
+      "byteLength": 4963,
+      "sha256": "783afb5ba7392411a5598f1cd11b89669b8601ecc0f48ead0451e2368dc9ba3b"
+    },
+    {
+      "path": "src/persistence/residenceIntegration.test.ts",
+      "byteLength": 6573,
+      "sha256": "d27055ad4d045854438234c8926fe4b32927d36dbf36b87ea10c0ed91c05ff2a"
+    },
+    {
+      "path": "src/persistence/service.test.ts",
+      "byteLength": 8085,
+      "sha256": "2ef10778dfae4ae408edc503812f7abd0efed541ab34f80570299cf77131accc"
+    },
+    {
+      "path": "src/persistence/v3Persistence.test.ts",
+      "byteLength": 4701,
+      "sha256": "d85ba679e4e43a632e1b34a9fb3e6bf52a761b9b0570a6d3701d09e569c76431"
+    },
+    {
+      "path": "src/ui/LifeApp.tsx",
+      "byteLength": 23671,
+      "sha256": "9e44aeb2bae36c9ae23b857e43b367bd2c6ae837d38522cdc46e8dd84a710e5a"
+    },
+    {
+      "path": "src/ui/PoliticalCareer.tsx",
+      "byteLength": 16569,
+      "sha256": "2f31992bd5dc7ac5b316e8fd42af01ed6dab27cd09e7d3c0ee239830acf410dd"
+    },
+    {
+      "path": "src/ui/gameContent.test.ts",
+      "byteLength": 1134,
+      "sha256": "b738714f2cada2ca8bf1143f517d9c9e8570f934097ee2d43cbb3be09d35b6be"
+    },
+    {
+      "path": "src/ui/gameContent.ts",
+      "byteLength": 1965,
+      "sha256": "0d3914eabf40a6cac811352c0313c9d66b3e35e6446fbaf5aa544dd28b62efcd"
+    },
+    {
+      "path": "src/ui/newGame.test.ts",
+      "byteLength": 10135,
+      "sha256": "cbabef880c99e11a241ae8fbbd6ee2968f759056f55687838cae401580b2af1f"
+    },
+    {
+      "path": "src/ui/newGame.ts",
+      "byteLength": 2685,
+      "sha256": "eaf22a2bd800a96595c972aba5f7e6b2a81ea35db81934bf42bf3bdad6da767b"
+    },
+    {
+      "path": "tests/browser/persistence.spec.ts",
+      "byteLength": 23219,
+      "sha256": "5e1e85d61912a9a94e4e0ba4cb20e0909103fb16e582f0115a8e0e8e2aae14db"
+    }
+  ],
+  "byteRetention": "Source JSON/CSV/TSV bytes are preserved without Git text filtering, so immutable artifact checksums match the reviewed working files.",
+  "exclusions": "Only the required pinned NRS census_2022_index.zip is newly added as a raw binary. No credentials, test traces, build output or unrelated documentation are added."
+}
