@@ -1,0 +1,80 @@
+{
+  "version": 1,
+  "status": "frozen-production",
+  "packageId": "settlements.uk.hybrid-2024-06-30-v2",
+  "fingerprint": "fnv1a64-v1:2ddc7643a1e7e4b8",
+  "artifact": {
+    "filename": "compiled-settlements-candidate.json",
+    "byteLength": 3269891,
+    "sha256": "34aa659dc4ed927b70f78834c6638e58ae787ead38a9e9e68fe28886b0c359db"
+  },
+  "settlementCount": 2698,
+  "realCount": 712,
+  "syntheticCount": 1986,
+  "relationCount": 2736,
+  "countryBreakdown": {
+    "england": {
+      "total": 1779,
+      "real": 35,
+      "synthetic": 1744
+    },
+    "northern-ireland": {
+      "total": 97,
+      "real": 11,
+      "synthetic": 86
+    },
+    "scotland": {
+      "total": 656,
+      "real": 656,
+      "synthetic": 0
+    },
+    "wales": {
+      "total": 166,
+      "real": 10,
+      "synthetic": 156
+    }
+  },
+  "provenanceBreakdown": {
+    "officialNrsLocalities": 656,
+    "reviewedRealAnchors": 56,
+    "authoredGameplayAbstractions": 1986
+  },
+  "relationBreakdown": {
+    "total": 2736,
+    "containedBy": 2691,
+    "intersects": 45,
+    "multiRelationSettlements": 7
+  },
+  "sourceDependencies": [
+    {
+      "sourceId": "geography.source.nisra.settlement-lookup-2015-v1",
+      "bundledArtifactId": "artifact.nisra.settlement-lookup-2015-v1",
+      "sha256": "sha256:1f9e4c3d2d1ccadbf80eb52f8dc6b8f8867ca0a1aec327925df03cb993ac0ff0"
+    },
+    {
+      "sourceId": "geography.source.nrs.census-localities-2022-v1",
+      "bundledArtifactId": "artifact.nrs.census-geography-index-2022-v1",
+      "sha256": "sha256:0e4096a321cba2318dc5d2e35c197bf815ac333aebdf4cb0ddce82112b57a261"
+    },
+    {
+      "sourceId": "geography.source.ons.reviewed-major-settlements-2021-v1"
+    },
+    {
+      "sourceId": "geography.source.turning-pages.synthetic-uk-settlements-2024-v2"
+    }
+  ],
+  "dependencies": {
+    "settlementFoundationVersion": 1,
+    "settlementPackageSchemaVersion": 1,
+    "geographyPartitionId": "geography.uk.primary-local-admin-2024-06-30-v1",
+    "previousPackageId": "settlements.uk.hybrid-2024-06-30-v1",
+    "previousPackageFingerprint": "fnv1a64-v1:4f25e4c5d0b241a1"
+  },
+  "continuity": {
+    "ledgerId": "settlement-continuity.uk.hybrid-2024-v1-to-v2",
+    "fingerprint": "fnv1a64-v1:6645f23c6de7bb1b",
+    "continued": 2698,
+    "historicalOnly": 41
+  },
+  "partitionId": "geography.uk.primary-local-admin-2024-06-30-v1"
+}

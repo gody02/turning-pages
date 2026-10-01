@@ -14,6 +14,10 @@ import {equalJson,isJsonValue} from './core/json';
 import {validPeople} from './human/person';
 import {createLegacyPlayerPeople,validPlayerPersonProjection} from './human/playerPerson';
 import {createLegacyPopulation,validPopulationWithPeople} from './human/population';
+import {createEmptyResidenceState} from './residence/state';
+import {validResidenceWithPeople} from './residence/validation';
+import type {ResidenceStateV1} from './residence/types';
+export const PRE_RESIDENCE_SAVE_KEY='turning-pages:before-residence';
 export const PRE_ARCHITECTURE_SAVE_KEY='turning-pages:before-life-architecture';
 export const PRE_SIMULATION_CLOCK_SAVE_KEY='turning-pages:before-simulation-clock';
 export const PRE_DAY_PRECISION_SAVE_KEY='turning-pages:before-day-precision';
@@ -33,6 +37,7 @@ export type LoadGameResult={game:Game|null;error:string|null;reason:PersistenceF
 export type RecoveryDescriptor={readonly key:string;readonly label:string};
 export type CanonicalSerializationResult={ok:true;game:Game;raw:string}|{ok:false;reason:Exclude<PersistenceFailureReason,'invalid-json'|'storage-unavailable'>;error:string};
 export const RECOVERY_SNAPSHOTS=[
+ {key:PRE_RESIDENCE_SAVE_KEY,label:'Recover before Residence migration'},
  {key:PRE_POPULATION_SAVE_KEY,label:'Recover before Population migration'},
  {key:PRE_PERSON_SAVE_KEY,label:'Recover before Person migration'},
  {key:PRE_SCHEDULER_SAVE_KEY,label:'Recover before Scheduler migration'},
@@ -50,9 +55,10 @@ type SavedClock={version?:number;date?:MonthPrecisionDate;monthOfYear?:number;to
 const ROOT_V1_FIELDS=new Set(['version','name','gender','country','age','stats','money','alive','cause','seed','actions','pending','seen','relationships','randomness','scheduler','history','education','studyYears','job','jobYears','level','retired','earned','lastIncome','lastExpenses','journal','dateOfBirth','clock','finances','development','facts','ukWorld','politics']);
 const ROOT_V2_FIELDS=new Set([...ROOT_V1_FIELDS,'people']);
 const ROOT_V3_FIELDS=new Set([...ROOT_V2_FIELDS,'population']);
-const exactRootFields=(value:Record<string,unknown>)=>Object.keys(value).every(key=>(value.version===1?ROOT_V1_FIELDS:value.version===2?ROOT_V2_FIELDS:ROOT_V3_FIELDS).has(key));
-function monthPrecisionClock(g:Game){const legacy=g as unknown as {clock?:SavedClock;dateOfBirth?:unknown},clock=legacy.clock;if(clock?.version!==1||!isMonthPrecisionDate(clock.date)||!isMonthPrecisionDate(legacy.dateOfBirth)||!clock.cadence)return null;return {date:clock.date,dateOfBirth:legacy.dateOfBirth,cadence:clock.cadence};}
-function savedClock(g:Game){
+const ROOT_V4_FIELDS=new Set([...ROOT_V3_FIELDS,'residence']);
+const exactRootFields=(value:Record<string,unknown>)=>Object.keys(value).every(key=>(value.version===1?ROOT_V1_FIELDS:value.version===2?ROOT_V2_FIELDS:value.version===3?ROOT_V3_FIELDS:ROOT_V4_FIELDS).has(key));
+function monthPrecisionClock(g:MigratingGame){const legacy=g as unknown as {clock?:SavedClock;dateOfBirth?:unknown},clock=legacy.clock;if(clock?.version!==1||!isMonthPrecisionDate(clock.date)||!isMonthPrecisionDate(legacy.dateOfBirth)||!clock.cadence)return null;return {date:clock.date,dateOfBirth:legacy.dateOfBirth,cadence:clock.cadence};}
+function savedClock(g:MigratingGame){
  if(hasCanonicalClock(g))return {month:monthOfYear(g),total:lifeMonth(g),cadence:g.clock!.cadence};
  const monthPrecision=monthPrecisionClock(g);if(monthPrecision){const total=monthsBetween({...monthPrecision.dateOfBirth,day:1},{...monthPrecision.date,day:1});return {month:total%12,total,cadence:monthPrecision.cadence};}
  const clock=g.clock as unknown as SavedClock|undefined,politicalMonth=g.politics?((g.politics.startMonth??0)+g.politics.months)%12:0;
@@ -65,6 +71,7 @@ export function isGame(x:unknown):x is Game{
  if(g.version===1){if(g.people!==undefined)return false;}
  else if(g.version===2){if(!validPeople(g.people)||g.population!==undefined||!validPlayerPersonProjection(g))return false;}
  else if(g.version===3){if(!validPeople(g.people)||!validPopulationWithPeople(g.population,g.people)||!validPlayerPersonProjection(g))return false;}
+ else if(g.version===4){if(!validPeople(g.people)||!validPopulationWithPeople(g.population,g.people)||!validPlayerPersonProjection(g)||!validResidenceWithPeople(g.residence,g.people))return false;}
  else return false;
  if(g.ukWorld!==undefined&&(g.country!=='uk'||!validUKWorld(g.ukWorld,validNational)))return false;
  if(g.ukWorld!==undefined&&g.politics?.national!==undefined)return false;
@@ -75,7 +82,9 @@ export function isGame(x:unknown):x is Game{
  }
  return true;
 }
-function migrateClock(g:Game){
+type MigratingGame=LifeStateForMigration & {residence?:ResidenceStateV1};
+type LifeStateForMigration=Omit<Game,'version'|'residence'> & {version:1|2|3|4};
+function migrateClock(g:MigratingGame){
  if(hasCanonicalClock(g)){g.dateOfBirth={...g.dateOfBirth!};g.clock={version:2,date:{...g.clock!.date},cadence:g.clock!.cadence};g.age=ageOn(g.dateOfBirth,g.clock.date);return;}
  const monthPrecision=monthPrecisionClock(g);if(monthPrecision){g.dateOfBirth={...monthPrecision.dateOfBirth,day:1};g.clock={version:2,date:{...monthPrecision.date,day:1},cadence:monthPrecision.cadence};g.age=ageOn(g.dateOfBirth,g.clock.date);return;}
  const saved=savedClock(g),worldMonth=g.ukWorld?.national.month;
@@ -85,20 +94,21 @@ function migrateClock(g:Game){
  g.age=ageOn(g.dateOfBirth,date);
 }
 /** One-time RNG migration: legacy fields remain projections of these compatibility streams. */
-function migrateRandomness(g:Game,preserveNationalProjection=false){
+function migrateRandomness(g:MigratingGame,preserveNationalProjection=false){
  if(!g.randomness)g.randomness=createRandomness(g.seed);
  g.seed=compatibilitySeed(g.randomness,COMPATIBILITY_LIFE_STREAM,g.seed);
  if(g.ukWorld)g.ukWorld.national.seed=preserveNationalProjection?synchronizeCompatibilitySeed(g.randomness,COMPATIBILITY_NATIONAL_STREAM,g.ukWorld.national.seed):compatibilitySeed(g.randomness,COMPATIBILITY_NATIONAL_STREAM,g.ukWorld.national.seed);
  if(g.politics)g.politics.economy.seed=compatibilitySeed(g.randomness,COMPATIBILITY_MEREFORD_STREAM,g.politics.economy.seed);
 }
-function migrateScheduler(g:Game){if(!g.scheduler)g.scheduler=createScheduler();}
-function migrateHistory(g:Game){if(!g.history)g.history=createHistory();}
-function migratePeople(g:Game){if(g.version>=2)return;g.people=createLegacyPlayerPeople(g);g.version=2;}
-function migratePopulation(g:Game){if(g.version===3)return;if(g.version!==2||!validPeople(g.people))throw Error('People migration must precede Population migration.');g.population=createLegacyPopulation(g.people,g.country);g.version=3;}
+function migrateScheduler(g:MigratingGame){if(!g.scheduler)g.scheduler=createScheduler();}
+function migrateHistory(g:MigratingGame){if(!g.history)g.history=createHistory();}
+function migratePeople(g:MigratingGame){if(g.version>=2)return;g.people=createLegacyPlayerPeople(g);g.version=2;}
+function migratePopulation(g:MigratingGame){if(g.version>=3)return;if(g.version!==2||!validPeople(g.people))throw Error('People migration must precede Population migration.');g.population=createLegacyPopulation(g.people,g.country);g.version=3;}
+function migrateResidence(g:MigratingGame){if(g.version===4)return;if(g.version!==3)throw Error('Population migration must precede Residence migration.');g.residence=createEmptyResidenceState();g.version=4;}
 type MigrationContext={movedLegacyNational:boolean};
-type MigrationStage={readonly id:'uk-world'|'clock'|'rng'|'scheduler'|'history'|'people'|'population';run:(game:Game,context:MigrationContext)=>void};
+type MigrationStage={readonly id:'uk-world'|'clock'|'rng'|'scheduler'|'history'|'people'|'population'|'residence';run:(game:MigratingGame,context:MigrationContext)=>void};
 type NormalizationResult={ok:true;game:Game}|{ok:false;reason:'unsupported-version'|'invalid-state'|'migration-failed'};
-function migrateUKWorld(g:Game,context:MigrationContext){
+function migrateUKWorld(g:MigratingGame,context:MigrationContext){
  if(g.country!=='uk'||g.ukWorld)return;
  const previous=g.politics?.national,month=previous?.month??savedClock(g).total;
  if(previous){g.ukWorld=createUKWorld(previous);context.movedLegacyNational=true;}else{const national=createNational(g.seed,month);ensureInstitutions(national);g.ukWorld=createUKWorld(national);}
@@ -113,25 +123,30 @@ const MIGRATION_PIPELINE:readonly MigrationStage[]=[
  {id:'history',run:g=>migrateHistory(g)},
  {id:'people',run:g=>migratePeople(g)},
  {id:'population',run:g=>migratePopulation(g)},
+ {id:'residence',run:g=>migrateResidence(g)},
 ];
-function normalizeGame(value:unknown):NormalizationResult{
+function normalizeGame(value:unknown,targetVersion:3|4=4):NormalizationResult{
  try{
   if(!isJsonValue(value))return {ok:false,reason:'invalid-state'};
   if(typeof value==='object'&&value!==null&&!Array.isArray(value)){
    const root=value as Record<string,unknown>,version=root.version,record=(candidate:unknown)=>candidate&&typeof candidate==='object'&&!Array.isArray(candidate)?candidate as Record<string,unknown>:undefined,future=(candidate:unknown,current:number)=>{const component=record(candidate),componentVersion=component?.version;return typeof componentVersion==='number'&&Number.isSafeInteger(componentVersion)&&componentVersion>current;};
    const ukWorld=record(root.ukWorld),politics=record(root.politics),national=record(ukWorld?.national)??record(politics?.national);
-   if(typeof version==='number'&&Number.isSafeInteger(version)&&version>3||(version===1||version===2||version===3)&&!exactRootFields(root)||future(root.clock,2)||future(root.randomness,1)||future(root.scheduler,1)||future(root.history,1)||future(root.people,1)||future(root.population,1)||future(ukWorld,1)||future(national,1)||future(national?.institutions,1)||future(politics,1)||future(politics?.economy,1))return {ok:false,reason:'unsupported-version'};
+   if(typeof version==='number'&&Number.isSafeInteger(version)&&version>4||(version===1||version===2||version===3||version===4)&&!exactRootFields(root)||future(root.clock,2)||future(root.randomness,1)||future(root.scheduler,1)||future(root.history,1)||future(root.people,1)||future(root.population,1)||future(root.residence,1)||future(ukWorld,1)||future(national,1)||future(national?.institutions,1)||future(politics,1)||future(politics?.economy,1))return {ok:false,reason:'unsupported-version'};
   }
   if(!isGame(value))return {ok:false,reason:'invalid-state'};
-  const game=structuredClone(value),context:MigrationContext={movedLegacyNational:false};
-  for(const stage of MIGRATION_PIPELINE)stage.run(game,context);
+  const game: MigratingGame=structuredClone(value),context:MigrationContext={movedLegacyNational:false};
+  if(game.version===4)return {ok:true,game:game as Game};
+  for(const stage of MIGRATION_PIPELINE)if(stage.id!=='residence'||targetVersion===4)stage.run(game,context);
   return isGame(game)?{ok:true,game}:{ok:false,reason:'invalid-state'};
  }catch{return {ok:false,reason:'migration-failed'};}
 }
 export function migrateGame(value:unknown):Game|null{const result=normalizeGame(value);return result.ok?result.game:null;}
+/** Validates canonical bytes in their stored schema before current-root migration. */
+function canonicalRoot(game:Game):Game{if(game.version!==4)return game;const {residence,...rest}=game;return {...rest,residence};}
+export function isCanonicalGamePayload(raw:string):boolean{try{const value:unknown=JSON.parse(raw),version=typeof value==='object'&&value!==null&&!Array.isArray(value)?(value as Record<string,unknown>).version:undefined,normalized=normalizeGame(value,version===3?3:4);return normalized.ok&&JSON.stringify(canonicalRoot(normalized.game))===raw;}catch{return false;}}
 export function serializeGame(value:unknown):CanonicalSerializationResult{
  const normalized=normalizeGame(value);if(!normalized.ok)return {ok:false,reason:normalized.reason,error:'The save failed its consistency check.'};
- try{const raw=JSON.stringify(normalized.game),parsed:unknown=JSON.parse(raw),roundTrip=normalizeGame(parsed);if(!roundTrip.ok||!isJsonValue(roundTrip.game)||!equalJson(normalized.game as unknown as JsonValue,roundTrip.game as unknown as JsonValue))return {ok:false,reason:roundTrip.ok?'invalid-state':roundTrip.reason,error:'The save failed its canonical round-trip check.'};return {ok:true,game:normalized.game,raw};}
+ try{const game=canonicalRoot(normalized.game),raw=JSON.stringify(game),parsed:unknown=JSON.parse(raw),roundTrip=normalizeGame(parsed);if(!roundTrip.ok||!isJsonValue(roundTrip.game)||!equalJson(game as unknown as JsonValue,roundTrip.game as unknown as JsonValue))return {ok:false,reason:roundTrip.ok?'invalid-state':roundTrip.reason,error:'The save failed its canonical round-trip check.'};return {ok:true,game,raw};}
  catch{return {ok:false,reason:'migration-failed',error:'The save failed its canonical round-trip check.'};}
 }
 const loadMessage=(reason:PersistenceFailureReason)=>reason==='unsupported-version'?'This save was created by a newer unsupported version of Turning Pages.':reason==='storage-unavailable'?'Browser storage is unavailable. You can still play and export backups.':'This save could not be loaded. It may be damaged or invalid.';
@@ -141,7 +156,8 @@ export function loadGame(storage:StorageLike):LoadGameResult{let raw:string|null
 export type RecoveryKey=(typeof RECOVERY_SNAPSHOTS)[number]['key'];
 type RecoveryRule=(previous:Game,normalized:Game)=>boolean;
 const RECOVERY_RULES:Record<RecoveryKey,RecoveryRule>={
- [PRE_POPULATION_SAVE_KEY]:(previous,normalized)=>previous.version<3&&normalized.version===3,
+ [PRE_RESIDENCE_SAVE_KEY]:(previous,normalized)=>previous.version<4&&normalized.version===4,
+ [PRE_POPULATION_SAVE_KEY]:(previous,normalized)=>previous.version<3&&normalized.version>=3,
  [PRE_PERSON_SAVE_KEY]:(previous,normalized)=>previous.version===1&&normalized.version>=2,
  [PRE_SCHEDULER_SAVE_KEY]:previous=>!previous.scheduler,[PRE_HISTORY_SAVE_KEY]:previous=>!previous.history,[PRE_DETERMINISTIC_RNG_SAVE_KEY]:previous=>!previous.randomness,
  [PRE_DAY_PRECISION_SAVE_KEY]:previous=>!hasCanonicalClock(previous),[PRE_SIMULATION_CLOCK_SAVE_KEY]:previous=>!hasCanonicalClock(previous),

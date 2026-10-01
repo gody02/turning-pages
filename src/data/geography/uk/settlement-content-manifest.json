@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "entries": [
+    {
+      "packageId": "settlements.uk.hybrid-2024-06-30-v2",
+      "fingerprint": "fnv1a64-v1:2ddc7643a1e7e4b8",
+      "releaseStatus": "production"
+    }
+  ],
+  "historicalIdentitySources": [
+    {
+      "packageId": "settlements.uk.hybrid-2024-06-30-v1",
+      "fingerprint": "fnv1a64-v1:4f25e4c5d0b241a1",
+      "releaseStatus": "unregistered-historical-freeze-failed",
+      "identityCount": 2739,
+      "currentRepresentations": 2698,
+      "historicalOnly": 41
+    }
+  ]
+}

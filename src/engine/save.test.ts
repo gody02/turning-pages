@@ -68,7 +68,7 @@ describe('save integrity regressions',()=>{
   });
 
   it('classifies future versions and invalid canonical state separately',()=>{
-    expect(parseGame(JSON.stringify({...createGame('Future','Woman','uk',9),version:4})).reason).toBe('unsupported-version');
+    expect(parseGame(JSON.stringify({...createGame('Future','Woman','uk',9),version:5})).reason).toBe('unsupported-version');
     for(const field of ['clock','randomness','scheduler','history','people','population','ukWorld','politics'] as const){let value:Game=createGame('Component','Woman','uk',34);if(field==='politics')value=joinPolitics(adultStart(value),'labour','socratic');const game=value as unknown as Record<string,unknown>,component=structuredClone(game[field]) as Record<string,unknown>;component.version=99;game[field]=component;expect(parseGame(JSON.stringify(game)).reason,field).toBe('unsupported-version');}
     expect(parseGame(JSON.stringify({...createGame('Invalid','Woman','uk',10),age:-1})).reason).toBe('invalid-state');
     const unavailable={getItem:()=>{throw Error('denied');},setItem:()=>{}};expect(loadGame(unavailable).reason).toBe('storage-unavailable');
@@ -97,7 +97,7 @@ describe('save integrity regressions',()=>{
 
 function resolve(g:Game){if(g.pending){const event=events.find(item=>item.id===g.pending),index=event?.choices.findIndex(choice=>(choice.effects.money??0)>=-Math.max(0,g.money))??0;g=choose(g,index<0?0:index);}if(g.politics?.pending)g=choosePoliticalEvent(g,0);return g;}
 function continueCombined(state:Game,political:boolean){
- let game=structuredClone(state);for(let month=0;month<4;month++){game=resolve(game);game=political?advancePoliticalMonth(game):advanceMonth(game);game=resolve(game);}
+ let game=migrateGame(state)!;for(let month=0;month<4;month++){game=resolve(game);game=political?advancePoliticalMonth(game):advanceMonth(game);game=resolve(game);}
  const due=takeDue(game.scheduler!,game.clock!.date);game.scheduler=due.state;
  const repeated=takeDue(game.scheduler!,game.clock!.date);if(repeated.occurrences.length)throw Error('duplicate scheduler occurrence');
  const nextScheduled=schedule(game.scheduler!,game.clock!.date,{owner:'test.persistence',kind:'next',dueDate:addMonths(game.clock!.date,1)});game.scheduler=nextScheduled.state;

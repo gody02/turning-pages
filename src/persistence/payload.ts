@@ -1,4 +1,4 @@
-import {parseGame,serializeGame,type LoadGameResult} from '../engine/save';
+import {isCanonicalGamePayload,parseGame,serializeGame,type LoadGameResult} from '../engine/save';
 import type {Game} from '../engine/types';
 import {isStoredSaveRecordV1,PERSISTENCE_ENCODING,PERSISTENCE_VERSION,type SavePayloadKind,type SaveRecordRole,type StoredSaveRecordV1} from './record';
 
@@ -45,7 +45,7 @@ export async function verifyRecord(record:unknown,expectedSlotId:string):Promise
   let raw:string;try{raw=decoder.decode(bytes);}catch{throw new PersistenceDataError('invalid-game','The saved payload is not valid UTF-8.');}
   const result=parseGame(raw);if(!result.game)throw new PersistenceDataError('invalid-game',result.error??'The saved Game is invalid.');
   if(record.payloadKind==='canonical-game'){
-    const canonical=serializeGame(result.game);if(!canonical.ok||canonical.raw!==raw)throw new PersistenceDataError('invalid-game','The saved canonical payload is not canonical.');
+    if(!isCanonicalGamePayload(raw))throw new PersistenceDataError('invalid-game','The saved canonical payload is not canonical.');
   }
   return {record,raw,result};
 }

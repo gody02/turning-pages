@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "status": "candidate-awaiting-final-freeze-review",
+  "packageId": "settlements.uk.hybrid-2024-06-30-v1",
+  "fingerprint": "fnv1a64-v1:4f25e4c5d0b241a1",
+  "artifact": {
+    "filename": "compiled-settlements-candidate.json",
+    "byteLength": 3142028,
+    "sha256": "642fbaae0a02df66b29b718f1539eafade387f50fe39bc4d19ef3e22ec415db5"
+  },
+  "settlementCount": 2739,
+  "realCount": 712,
+  "syntheticCount": 2027,
+  "relationCount": 2777,
+  "partitionId": "geography.uk.primary-local-admin-2024-06-30-v1"
+}

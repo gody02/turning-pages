@@ -2,6 +2,7 @@ import {monthOfLife} from '../engine/simulation';
 import { useState } from 'react';
 import type { Game } from '../engine/types';
 import { choosePoliticalEvent, electionIn, joinPolitics, joinPoliticsReason, politicalTask, politicalTaskReason, roleRank } from '../engine/politics';
+import {lifecycleContent} from './gameContent';
 import { bills, billStages, doctrines, parties, politicalEvents, politicalTasks, roleNames, rolePay, type DoctrineId, type PartyId } from '../data/politics';
 import { townPolicies } from '../data/town';
 import { townTotal, townVoice } from '../engine/town';
@@ -17,7 +18,7 @@ export function PoliticalCareer({game:g,update,onAdvance}:Props){
   const p=g.politics;
   const doTask=(id:string,label:string,detail?:string)=>{
     const reason=politicalTaskReason(g,id);
-    return <button className="political-task" disabled={!!reason} title={reason??detail} onClick={()=>update(x=>politicalTask(x,id))}><b>{label}</b><small>{reason??detail??'One monthly activity'}</small><span aria-hidden="true">↗</span></button>;
+    return <button className="political-task" disabled={!!reason} title={reason??detail} onClick={()=>update(x=>politicalTask(x,id,lifecycleContent(x)))}><b>{label}</b><small>{reason??detail??'One monthly activity'}</small><span aria-hidden="true">↗</span></button>;
   };
   if(!p)return <section className="career-entry">
     <div className="eyebrow">A CAREER THAT BECOMES A LIFE</div>
@@ -39,7 +40,7 @@ export function PoliticalCareer({game:g,update,onAdvance}:Props){
     <div className="political-heading"><div><div className="eyebrow">{parties.find(x=>x.id===p.party)!.name} · MEREFORD</div><h2>{roleNames[p.role]}</h2><p>Age {g.age}, {monthOfLife(g)} {monthOfLife(g)===1?'month':'months'} · {p.months} {p.months===1?'month':'months'} in political life</p></div><span className="political-seal" aria-hidden="true">♜</span></div>
     <div className="career-route">{['activist','councillor','mp','minister','premier'].map((role,i)=><span key={role} className={roleRank(p.role)>=i?'reached':''}>{['Organiser','Councillor','MP','Minister','PM'][i]}</span>)}</div>
     <div className="political-indicators">{([['Public support',p.support],['Reputation',p.reputation],['Integrity',p.integrity],['Organisation',p.organisation],['Policy knowledge',p.knowledge],['Party backing',p.caucus]] as [string,number][]).map(([name,value])=><div key={name}><span>{name}</span><b>{Math.round(value)}</b><meter min={0} max={100} value={value} aria-label={name}/></div>)}</div>
-    {event&&g.alive&&<section className="political-dilemma" aria-live="polite"><div className="eyebrow">THE CHOICE IN FRONT OF YOU</div><h3>{event.title}</h3><p>{event.text}</p><div className="choices">{event.choices.map((c,i)=><button key={i} disabled={!!g.pending} onClick={()=>update(x=>choosePoliticalEvent(x,i))}><span>{c.label}<small>{Object.entries(c.effects).map(([k,v])=>`${v>0?'+':''}${v} ${k}`).join(' · ')}</small></span><b>→</b></button>)}</div>{g.pending&&<p className="fine">Resolve your birthday life event above before this political choice.</p>}</section>}
+    {event&&g.alive&&<section className="political-dilemma" aria-live="polite"><div className="eyebrow">THE CHOICE IN FRONT OF YOU</div><h3>{event.title}</h3><p>{event.text}</p><div className="choices">{event.choices.map((c,i)=><button key={i} disabled={!!g.pending} onClick={()=>update(x=>choosePoliticalEvent(x,i,lifecycleContent(x)))}><span>{c.label}<small>{Object.entries(c.effects).map(([k,v])=>`${v>0?'+':''}${v} ${k}`).join(' · ')}</small></span><b>→</b></button>)}</div>{g.pending&&<p className="fine">Resolve your birthday life event above before this political choice.</p>}</section>}
     <nav className="political-tabs" aria-label="Political career areas">{['Your work','Constituency','United Kingdom','Elections','Parliament','Ideas','Record'].map(tab=><button key={tab} aria-current={view===tab?'page':undefined} onClick={()=>setView(tab)}>{tab}</button>)}</nav>
     <div className="political-content">
     {view==='Your work'&&<>

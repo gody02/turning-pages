@@ -49,7 +49,7 @@ describe('shared Person display-name safety bound',()=>{
  it('round trips a long canonical player name without a schema change or migration',()=>{
   const name=`${'A'.repeat(127)} ${'\u{1F642}'.repeat(128)}`,game=createGame(name,'Woman','ca',3),serialized=serializeGame(game);
   expect(personDisplayNameCodePointCount(name)).toBe(256);expect(game.version).toBe(3);expect(game.people?.version).toBe(1);expect(serialized.ok).toBe(true);if(!serialized.ok)return;
-  const parsed=parseGame(serialized.raw);expect(parsed.reason).toBeNull();expect(parsed.game?.name).toBe(name);expect(parsed.game?.people?.people[0].name).toBe(name);expect(parsed.game?.version).toBe(3);expect(parsed.game?.people?.version).toBe(1);
+  const parsed=parseGame(serialized.raw);expect(parsed.reason).toBeNull();expect(parsed.game?.name).toBe(name);expect(parsed.game?.people?.people[0].name).toBe(name);expect(parsed.game?.version).toBe(4);expect(parsed.game?.people?.version).toBe(1);
  });
 
  it('keeps the player UI non-destructive and dependent on domain validation',()=>{

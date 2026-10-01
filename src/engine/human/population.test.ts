@@ -126,7 +126,7 @@ describe('population-backed Person instantiation',()=>{
 describe('root-v3 Population persistence and recovery',()=>{
  it('migrates root v1 and root v2 without cohorts, RNG draws, time changes or invented NPC provenance',()=>{
   const current=createGame('Legacy','Any','ca',20),v1=rootV1(current),v2=rootV2(current),randomness=structuredClone(current.randomness),clock=structuredClone(current.clock);
-  for(const old of [v1,v2]){const migrated=migrateGame(old)!;expect(migrated.version).toBe(3);expect(migrated.population!.cohorts).toEqual([]);expect(migrated.population!.coverage).toEqual([{countryId:'ca',status:'partial',source:LEGACY_POPULATION_SOURCE,areaPartitionId:null}]);expect(migrated.population!.memberships).toEqual([{personId:'person:1',countryId:'ca',areaId:null,origin:{kind:'legacy'}}]);expect(migrated.randomness).toEqual(randomness);expect(migrated.clock).toEqual(clock);expect(migrateGame(migrated)).toEqual(migrated);}
+  for(const old of [v1,v2]){const migrated=migrateGame(old)!;expect(migrated.version).toBe(4);expect(migrated.population!.cohorts).toEqual([]);expect(migrated.population!.coverage).toEqual([{countryId:'ca',status:'partial',source:LEGACY_POPULATION_SOURCE,areaPartitionId:null}]);expect(migrated.population!.memberships).toEqual([{personId:'person:1',countryId:'ca',areaId:null,origin:{kind:'legacy'}}]);expect(migrated.randomness).toEqual(randomness);expect(migrated.clock).toEqual(clock);expect(migrateGame(migrated)).toEqual(migrated);}
  });
 
  it('migrates multiple pre-Population Persons with unknown non-player country',()=>{
@@ -134,11 +134,11 @@ describe('root-v3 Population persistence and recovery',()=>{
  });
 
  it('rejects root-v3 missing or invalid Population and unsupported future roots',()=>{
-  const game=createGame('Canonical','Any','ca',22),missing=structuredClone(game) as unknown as Record<string,unknown>;delete missing.population;expect(parseGame(JSON.stringify(missing)).reason).toBe('invalid-state');expect(parseGame(JSON.stringify({...game,population:{}})).reason).toBe('invalid-state');expect(parseGame(JSON.stringify({...game,version:4})).reason).toBe('unsupported-version');
+  const game=createGame('Canonical','Any','ca',22),missing=structuredClone(game) as unknown as Record<string,unknown>;delete missing.population;expect(parseGame(JSON.stringify(missing)).reason).toBe('invalid-state');expect(parseGame(JSON.stringify({...game,population:{}})).reason).toBe('invalid-state');expect(parseGame(JSON.stringify({...game,version:5})).reason).toBe('unsupported-version');
  });
 
  it('preserves exact root-v2 bytes once and blocks primary replacement if recovery fails',()=>{
-  const old=rootV2(createGame('Recovery','Any','ca',23)),raw=JSON.stringify(old),migrated=migrateGame(old)!,storage=memoryStorage({[SAVE_KEY]:raw});expect(saveGame(storage,migrated)).toBeNull();expect(storage.data.get(PRE_POPULATION_SAVE_KEY)).toBe(raw);const first=storage.data.get(PRE_POPULATION_SAVE_KEY);expect(saveGame(storage,migrated)).toBeNull();expect(storage.data.get(PRE_POPULATION_SAVE_KEY)).toBe(first);expect(RECOVERY_SNAPSHOTS.some(item=>item.key===PRE_POPULATION_SAVE_KEY)).toBe(true);const recovered=loadRecoverySnapshot(storage,PRE_POPULATION_SAVE_KEY);expect(recovered.game?.version).toBe(3);expect(recovered.game?.population?.cohorts).toEqual([]);
+  const old=rootV2(createGame('Recovery','Any','ca',23)),raw=JSON.stringify(old),migrated=migrateGame(old)!,storage=memoryStorage({[SAVE_KEY]:raw});expect(saveGame(storage,migrated)).toBeNull();expect(storage.data.get(PRE_POPULATION_SAVE_KEY)).toBe(raw);const first=storage.data.get(PRE_POPULATION_SAVE_KEY);expect(saveGame(storage,migrated)).toBeNull();expect(storage.data.get(PRE_POPULATION_SAVE_KEY)).toBe(first);expect(RECOVERY_SNAPSHOTS.some(item=>item.key===PRE_POPULATION_SAVE_KEY)).toBe(true);const recovered=loadRecoverySnapshot(storage,PRE_POPULATION_SAVE_KEY);expect(recovered.game?.version).toBe(4);expect(recovered.game?.population?.cohorts).toEqual([]);
   const blocked={getItem:(key:string)=>key===SAVE_KEY?raw:null,setItem:(key:string)=>{if(key===PRE_POPULATION_SAVE_KEY)throw Error('Quota');}};expect(saveGame(blocked,migrated)).toBeTruthy();expect(blocked.getItem(SAVE_KEY)).toBe(raw);
  });
 

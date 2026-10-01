@@ -1,10 +1,11 @@
-import {createUkMid2024Game,type UkCountryStartMode,type UkMid2024StartRequestV1} from '../data/uk/countryStart';
+import type {UkCountryStartMode,UkMid2024StartRequestV1} from '../data/uk/countryStart';
+import {createUkMid2024GeographicGame} from '../data/uk/countryStartGeographic';
 import {MAX_PERSON_NAME_CODE_POINTS,personDisplayNameCodePointCount,validPersonDisplayName} from '../engine/shared/personDisplayName';
 import type {Game} from '../engine/types';
 
 export type NewGameFormV1=Readonly<{mode:UkCountryStartMode;name:string;genderLabel:string}>;
 type NewGameDependencies=Readonly<{rootSeed:()=>number;bootstrap:(request:UkMid2024StartRequestV1)=>Game}>;
-const dependencies:NewGameDependencies={rootSeed:platformRootSeed,bootstrap:createUkMid2024Game};
+const dependencies:NewGameDependencies={rootSeed:platformRootSeed,bootstrap:createUkMid2024GeographicGame};
 
 export class NewGameInputError extends Error{}
 

@@ -1,8 +1,8 @@
 {
   "version": 1,
-  "candidatePackageId": "uk.population.mid-2024.v3",
-  "candidateFingerprint": "fnv1a64-v1:2894f4c1b1fdd274",
-  "status": "candidate-persistence-gate-failed",
+  "packageId": "uk.population.mid-2024.v3",
+  "packageFingerprint": "fnv1a64-v1:2894f4c1b1fdd274",
+  "status": "production-frozen",
   "sourcePopulationPackageId": "uk.population.mid-2024.v2",
   "sourcePopulationFingerprint": "fnv1a64-v1:a43f874fe1fab27f",
   "sourceArtifactSha256": "321f27261c9cf110ea44ca10d198580ec3969bc1171c780cba5596184df9b04d",
@@ -42,21 +42,29 @@
   "objective": "Minimum exact L1 deviation from rational quotas; floor residual min-cost flow; canonical area/category/year ordering resolves equal costs deterministically.",
   "residualAssignments": 35724,
   "oldAgeResidualAssignments": 3350,
-  "candidatePopulationSerializedBytesUtf8": 9586896,
-  "buildDurationMs": 20935.47,
+  "populationSerializedBytesUtf8": 9586896,
+  "buildDurationMs": 21726.924,
   "evidencePrecision": "Canonical exact integers are calibrated/derived simulation values. Local source estimates and frozen national calibration do not have matching empirical precision.",
+  "boundary1934": {
+    "completedAge89": 84303,
+    "age90Plus": 67916,
+    "finalBirthYear": 152219
+  },
   "quotaDeviation": {
     "totalExact": "12766381583666/696043977",
     "maximumExact": "156299/156309"
   },
   "persistenceGate": {
-    "result": "failed",
+    "result": "passed",
+    "backend": "indexeddb-arraybuffer-v1",
     "representativeGameSerializedBytesUtf8": 9595304,
-    "observedSaveMs": 555.697,
-    "observedLoadMs": 254.268,
-    "browserLocalStorageBudgetBytes": 5242880,
-    "browserStorageSupported": false,
+    "validatedLoadMs": {
+      "chromium": 665.5,
+      "firefox": 865,
+      "webkit": 1000
+    },
+    "browserStorageSupported": true,
     "saveLoadContinuationPersonId": "person:2",
-    "note": "Timing is an informational observation and is excluded from candidate semantics/fingerprint."
+    "note": "Browser timings are informational observations excluded from package semantics and fingerprint. Firefox was measured in the supported Linux CI environment."
   }
 }

@@ -9,6 +9,9 @@ import {deriveGeographicPopulation,validPopulationGeography} from '../../../../e
 import {createCohortMembership,validPopulation,validPopulationWithPeople} from '../../../../engine/human/population';
 import {parseGame,saveGame,serializeGame,SAVE_KEY} from '../../../../engine/save';
 import type {Game} from '../../../../engine/types';
+import {createUkPopulationContentRegistry,resolveUkPopulationContent} from '../populationRegistry';
+import {createUkHumanGenerationContentRegistry,UK_HUMAN_CONTENT_PROFILE_ID} from '../../../human/uk/generation/adapter';
+import {assessHumanGenerationReadiness} from '../../../../engine/human/content/resolver';
 
 const bySum=<T>(items:readonly T[],key:(item:T)=>string,value:(item:T)=>number)=>{const out=new Map<string,number>();for(const item of items)out.set(key(item),(out.get(key(item))??0)+value(item));return out;};
 function representativeGame():Game{
@@ -19,24 +22,29 @@ function representativeGame():Game{
  const game={...base,population};expect(validPopulationWithPeople(population,base.people)).toBe(true);expect(validPopulationGeography(population,base.people!,createGeographyRuntime(createUkGeographyRegistry()))).toBe(true);return game;
 }
 
-describe('UK geographic population candidate',()=>{
- it('is an unregistered immutable v3 candidate with frozen-v2 national margins',()=>{
+describe('UK geographic population v3',()=>{
+ it('is immutable registered production content with frozen-v2 national margins',()=>{
   const pkg=loadUkGeographicPopulationCandidate(),copy=structuredClone(pkg) as any;expect(validateUkGeographicPopulationCandidate(pkg)).toBe(true);expect(Object.isFrozen(pkg)).toBe(true);expect(pkg).toMatchObject({id:'uk.population.mid-2024.v3',status:'candidate',sourcePopulationPackageId:'uk.population.mid-2024.v2',geographyPartitionId:'geography.uk.primary-local-admin-2024-06-30-v1'});expect(pkg.cohorts).toHaveLength(38_731);
+  expect(resolveUkPopulationContent(createUkPopulationContentRegistry(),pkg.id)).toBe(pkg);
   copy.cohorts[0].count++;expect(validateUkGeographicPopulationCandidate(copy)).toBe(false);
   const actual=bySum(pkg.cohorts,item=>String(item.birthYear),item=>item.count),v2=loadUkMid2024ProductionPackage(),expected=new Map(v2.measures.filter(item=>item.dimensions.kind==='birth-year').map(item=>[String((item.dimensions as {birthYear:number}).birthYear),Number(item.value)]));expect(actual).toEqual(expected);expect([...actual.values()].reduce((a,b)=>a+b,0)).toBe(UK_GEOGRAPHIC_POPULATION_TOTAL);
  });
+ it('resolves the frozen production Human profile for all 38,731 cohorts',()=>{const pkg=loadUkGeographicPopulationCandidate();expect(pkg.cohorts.every(item=>item.generationProfileId===UK_HUMAN_CONTENT_PROFILE_ID)).toBe(true);const requirements=[...new Map(pkg.cohorts.map(item=>[item.birthYear,item])).values()];expect(requirements).toHaveLength(119);expect(assessHumanGenerationReadiness(requirements,createUkHumanGenerationContentRegistry())).toEqual({status:'ready',unresolvedProfileIds:[],blockingReasons:[]});},30_000);
  it('preserves all 361 local totals and constituent-country totals',()=>{
   const pkg=loadUkGeographicPopulationCandidate(),actual=bySum(pkg.cohorts,item=>item.areaId,item=>item.count),areas=(localJson as typeof localJson).areas;expect(actual.size).toBe(361);for(const area of areas)expect(actual.get(area.areaId),area.areaId).toBe(area.total);
   const codes=new Map(areas.map(area=>[area.areaId,area.countryCode])),countries=bySum(pkg.cohorts,item=>codes.get(item.areaId)!,item=>item.count);expect(Object.fromEntries(countries)).toEqual({E:58_620_101,N:1_927_855,S:5_546_900,W:3_186_581});
   expect(UK_GEOGRAPHIC_POPULATION_ALLOCATION_REPORT.checks).toMatchObject({localCompletedAgeExact:true,local90PlusExact:true,nationalBirthYearsExact:true,localAreasExact:true,nationalTotalExact:true,unsupportedEdges:0,negativeCells:0});
+  const boundary=UK_GEOGRAPHIC_POPULATION_ALLOCATION_REPORT.boundary1934,birthYears=bySum(pkg.cohorts,item=>String(item.birthYear),item=>item.count);expect(boundary.completedAge89).toBeGreaterThan(0);expect(boundary.age90Plus).toBeGreaterThan(0);expect(boundary.completedAge89+boundary.age90Plus).toBe(boundary.finalBirthYear);expect(boundary.finalBirthYear).toBe(birthYears.get('1934'));
  });
  it('forms canonical PopulationState v1 and generic geographic rollups',()=>{
   expect(validPopulation(createUkGeographicCandidatePopulationState())).toBe(true);const game=representativeGame(),runtime=createGeographyRuntime(createUkGeographyRegistry());
   expect(deriveGeographicPopulation(game.population!,game.people!,runtime,{countryId:'uk',partitionId:'geography.uk.primary-local-admin-2024-06-30-v1',placeId:'place.uk.country.united-kingdom'})).toEqual({knownLiving:69_281_437,complete:true});
   for(const [placeId,total] of [['place.uk.constituent.england',58_620_101],['place.uk.constituent.wales',3_186_581],['place.uk.constituent.scotland',5_546_900],['place.uk.constituent.northern-ireland',1_927_855]] as const)expect(deriveGeographicPopulation(game.population!,game.people!,runtime,{countryId:'uk',partitionId:'geography.uk.primary-local-admin-2024-06-30-v1',placeId}).knownLiving).toBe(total);
  });
- it('round-trips a representative Game but fails the conservative browser-storage gate',()=>{
+ it('round-trips a representative Game and records the passed vNext browser-storage gate',()=>{
   const game=representativeGame(),saved=serializeGame(game);expect(saved.ok).toBe(true);if(!saved.ok)return;expect(new TextEncoder().encode(saved.raw).byteLength).toBeGreaterThan(5*1024*1024);expect(parseGame(saved.raw).game).toEqual(saved.game);
+  expect(UK_GEOGRAPHIC_POPULATION_ALLOCATION_REPORT.persistenceGate).toMatchObject({result:'passed',backend:'indexeddb-arraybuffer-v1',representativeGameSerializedBytesUtf8:9_595_304,browserStorageSupported:true,saveLoadContinuationPersonId:'person:2'});
+  // The legacy localStorage adapter remains too small; it is no longer the authoritative vNext persistence gate.
   const storage={value:null as string|null,getItem:(key:string)=>key===SAVE_KEY?storage.value:null,setItem:(_key:string,value:string)=>{if(new TextEncoder().encode(value).byteLength>5*1024*1024)throw Error('QuotaExceededError');storage.value=value;}};expect(saveGame(storage,game)).toContain('Saving is unavailable');expect(storage.value).toBeNull();
  });
 });

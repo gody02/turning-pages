@@ -18,15 +18,15 @@ import {validLife} from './validation';
 import {validPersonDisplayName} from '../shared/personDisplayName';
 
 export function endLife(g:LifeState,cause:string){g.alive=false;g.cause=cause;g.pending=null;log(g,`Your story closes at age ${g.age}. ${cause}`,'milestone');}
-function createLifeBase(name:string,gender:string,country:string,seed:number,dateOfBirth:SimulationDate,date:SimulationDate):LifeState{
+function createLifeBase(name:string,gender:string,country:string,seed:number,dateOfBirth:SimulationDate,date:SimulationDate):LifeState & {version:1}{
  const displayName=name.trim()||'Alex Morgan';if(!validPersonDisplayName(displayName))throw Error('Invalid Person display name.');
  const g:LifeState={version:1,name:displayName,gender:gender.trim().slice(0,40)||'Non-binary',country:validCountry(country)?country:'uk',age:ageOn(dateOfBirth,date),stats:{health:90,happiness:80,smarts:50,looks:50},money:0,alive:true,seed:seed>>>0,randomness:createRandomness(seed),scheduler:createScheduler(),history:createHistory(),actions:3,pending:null,seen:[],relationships:[{id:'parent',name:'Robin',role:'Parent',bond:80},{id:'sibling',name:'Jamie',role:'Sibling',bond:65}],education:'preschool',studyYears:0,job:null,jobYears:0,level:0,retired:false,earned:0,lastIncome:0,lastExpenses:0,journal:[],dateOfBirth:{...dateOfBirth},clock:{version:2,date:{...date},cadence:'year'}};
- g.stats.smarts=35+Math.floor(random(g)*36);g.stats.looks=35+Math.floor(random(g)*36);return g;
+ g.stats.smarts=35+Math.floor(random(g)*36);g.stats.looks=35+Math.floor(random(g)*36);return g as LifeState & {version:1};
 }
-export function createLife(name:string,gender:string,country:string,seed=Date.now()>>>0):LifeState{
+export function createLife(name:string,gender:string,country:string,seed=Date.now()>>>0):LifeState & {version:1}{
  const g=createLifeBase(name,gender,country,seed,SIMULATION_START_DATE,SIMULATION_START_DATE);log(g,`Hello, ${g.name}. Your story begins in ${countryOf(g).name}, surrounded by a family ready to meet you.`,'milestone');return g;
 }
-export function createLifeAtDate(name:string,gender:string,country:string,seed:number,input:Readonly<{mode:'childhood'|'adult';dateOfBirth:SimulationDate;date:SimulationDate}>):LifeState{
+export function createLifeAtDate(name:string,gender:string,country:string,seed:number,input:Readonly<{mode:'childhood'|'adult';dateOfBirth:SimulationDate;date:SimulationDate}>):LifeState & {version:1}{
  if(!Number.isSafeInteger(seed)||seed<0||seed>0xffffffff||!isSimulationDate(input.dateOfBirth)||!isSimulationDate(input.date))throw Error('Invalid exact-date life start.');
  const g=createLifeBase(name,gender,country,seed,input.dateOfBirth,input.date),expectedAge=input.mode==='childhood'?0:18;if(g.age!==expectedAge)throw Error('Exact-date life start does not match its mode.');
  if(input.mode==='adult'){g.education='secondary';g.money=3000;g.journal=[{age:g.age,text:`Your adult story begins after secondary school, with 3,000 ${countryOf(g).currency} to find your feet. Your family and future are still part of this life.`,kind:'milestone'}];}

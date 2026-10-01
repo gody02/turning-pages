@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "entries": [
+    {
+      "packageId": "uk.population.mid-2024.v2",
+      "fingerprint": "fnv1a64-v1:a43f874fe1fab27f",
+      "contentKind": "national-calibration",
+      "releaseStatus": "compatibility"
+    },
+    {
+      "packageId": "uk.population.mid-2024.v3",
+      "fingerprint": "fnv1a64-v1:2894f4c1b1fdd274",
+      "contentKind": "geographic-allocation",
+      "releaseStatus": "production"
+    }
+  ]
+}

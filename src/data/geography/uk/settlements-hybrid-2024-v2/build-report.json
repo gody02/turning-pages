@@ -1,0 +1,3842 @@
+{
+  "version": 1,
+  "packageVersion": 2,
+  "packageId": "settlements.uk.hybrid-2024-06-30-v2",
+  "status": "frozen-production",
+  "effectiveDate": "2024-06-30",
+  "partitionId": "geography.uk.primary-local-admin-2024-06-30-v1",
+  "sourceArtifactChecks": [
+    {
+      "artifactId": "artifact.nrs.census-geography-index-2022-v1",
+      "byteLength": 2922015,
+      "sha256": "0e4096a321cba2318dc5d2e35c197bf815ac333aebdf4cb0ddce82112b57a261",
+      "valid": true
+    }
+  ],
+  "settlementCount": 2698,
+  "realCount": 712,
+  "syntheticCount": 1986,
+  "mixedDerivedCount": 0,
+  "relationCount": 2736,
+  "constituentCountryInventory": {
+    "england": {
+      "total": 1779,
+      "real": 35,
+      "synthetic": 1744
+    },
+    "northern-ireland": {
+      "total": 97,
+      "real": 11,
+      "synthetic": 86
+    },
+    "scotland": {
+      "total": 656,
+      "real": 656,
+      "synthetic": 0
+    },
+    "wales": {
+      "total": 166,
+      "real": 10,
+      "synthetic": 156
+    }
+  },
+  "countByConstituentCountry": {
+    "england": 1779,
+    "northern-ireland": 97,
+    "scotland": 656,
+    "wales": 166
+  },
+  "realByConstituentCountry": {
+    "england": 35,
+    "northern-ireland": 11,
+    "scotland": 656,
+    "wales": 10
+  },
+  "syntheticByConstituentCountry": {
+    "england": 1744,
+    "northern-ireland": 86,
+    "scotland": 0,
+    "wales": 156
+  },
+  "administrativeAreaCount": 361,
+  "zeroSettlementAdministrativeAreas": [],
+  "minimumNonzeroRelationsPerArea": 1,
+  "maximumRelationsPerArea": 65,
+  "smallestNonzeroAdministrativeAreas": [
+    {
+      "officialCode": "E06000010",
+      "displayName": "Kingston upon Hull, City of",
+      "total": 1,
+      "real": 1,
+      "synthetic": 0,
+      "policy": "preserved-compact-real-anchor-no-neighbourhood-completion"
+    },
+    {
+      "officialCode": "E06000015",
+      "displayName": "Derby",
+      "total": 1,
+      "real": 1,
+      "synthetic": 0,
+      "policy": "preserved-compact-real-anchor-no-neighbourhood-completion"
+    },
+    {
+      "officialCode": "E06000016",
+      "displayName": "Leicester",
+      "total": 1,
+      "real": 1,
+      "synthetic": 0,
+      "policy": "preserved-compact-real-anchor-no-neighbourhood-completion"
+    },
+    {
+      "officialCode": "E06000018",
+      "displayName": "Nottingham",
+      "total": 1,
+      "real": 1,
+      "synthetic": 0,
+      "policy": "preserved-compact-real-anchor-no-neighbourhood-completion"
+    },
+    {
+      "officialCode": "E06000021",
+      "displayName": "Stoke-on-Trent",
+      "total": 1,
+      "real": 1,
+      "synthetic": 0,
+      "policy": "preserved-compact-real-anchor-no-neighbourhood-completion"
+    },
+    {
+      "officialCode": "E06000023",
+      "displayName": "Bristol, City of",
+      "total": 1,
+      "real": 1,
+      "synthetic": 0,
+      "policy": "preserved-compact-real-anchor-no-neighbourhood-completion"
+    },
+    {
+      "officialCode": "E06000026",
+      "displayName": "Plymouth",
+      "total": 1,
+      "real": 1,
+      "synthetic": 0,
+      "policy": "preserved-compact-real-anchor-no-neighbourhood-completion"
+    },
+    {
+      "officialCode": "E06000038",
+      "displayName": "Reading",
+      "total": 1,
+      "real": 1,
+      "synthetic": 0,
+      "policy": "preserved-compact-real-anchor-no-neighbourhood-completion"
+    },
+    {
+      "officialCode": "E06000043",
+      "displayName": "Brighton and Hove",
+      "total": 1,
+      "real": 1,
+      "synthetic": 0,
+      "policy": "preserved-compact-real-anchor-no-neighbourhood-completion"
+    },
+    {
+      "officialCode": "E06000044",
+      "displayName": "Portsmouth",
+      "total": 1,
+      "real": 1,
+      "synthetic": 0,
+      "policy": "preserved-compact-real-anchor-no-neighbourhood-completion"
+    }
+  ],
+  "largestAdministrativeAreas": [
+    {
+      "officialCode": "S12000047",
+      "displayName": "Fife",
+      "total": 65,
+      "real": 65,
+      "synthetic": 0,
+      "policy": "official-nrs-locality-inventory"
+    },
+    {
+      "officialCode": "S12000034",
+      "displayName": "Aberdeenshire",
+      "total": 63,
+      "real": 63,
+      "synthetic": 0,
+      "policy": "official-nrs-locality-inventory"
+    },
+    {
+      "officialCode": "S12000017",
+      "displayName": "Highland",
+      "total": 55,
+      "real": 55,
+      "synthetic": 0,
+      "policy": "official-nrs-locality-inventory"
+    },
+    {
+      "officialCode": "S12000050",
+      "displayName": "North Lanarkshire",
+      "total": 38,
+      "real": 38,
+      "synthetic": 0,
+      "policy": "official-nrs-locality-inventory"
+    },
+    {
+      "officialCode": "S12000048",
+      "displayName": "Perth and Kinross",
+      "total": 36,
+      "real": 36,
+      "synthetic": 0,
+      "policy": "official-nrs-locality-inventory"
+    },
+    {
+      "officialCode": "E08000035",
+      "displayName": "Leeds",
+      "total": 33,
+      "real": 1,
+      "synthetic": 32,
+      "policy": "reviewed-polycentric-administrative-area"
+    },
+    {
+      "officialCode": "S12000029",
+      "displayName": "South Lanarkshire",
+      "total": 33,
+      "real": 33,
+      "synthetic": 0,
+      "policy": "official-nrs-locality-inventory"
+    },
+    {
+      "officialCode": "S12000014",
+      "displayName": "Falkirk",
+      "total": 32,
+      "real": 32,
+      "synthetic": 0,
+      "policy": "official-nrs-locality-inventory"
+    },
+    {
+      "officialCode": "S12000026",
+      "displayName": "Scottish Borders",
+      "total": 30,
+      "real": 30,
+      "synthetic": 0,
+      "policy": "official-nrs-locality-inventory"
+    },
+    {
+      "officialCode": "E06000065",
+      "displayName": "North Yorkshire",
+      "total": 25,
+      "real": 0,
+      "synthetic": 25,
+      "policy": "population-guided-authored-completion"
+    }
+  ],
+  "administrativeDistribution": [
+    {
+      "officialCode": "E06000001",
+      "displayName": "Hartlepool",
+      "total": 4,
+      "real": 0,
+      "synthetic": 4,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E06000002",
+      "displayName": "Middlesbrough",
+      "total": 7,
+      "real": 1,
+      "synthetic": 6,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E06000003",
+      "displayName": "Redcar and Cleveland",
+      "total": 6,
+      "real": 0,
+      "synthetic": 6,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E06000004",
+      "displayName": "Stockton-on-Tees",
+      "total": 8,
+      "real": 0,
+      "synthetic": 8,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E06000005",
+      "displayName": "Darlington",
+      "total": 5,
+      "real": 0,
+      "synthetic": 5,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E06000006",
+      "displayName": "Halton",
+      "total": 6,
+      "real": 0,
+      "synthetic": 6,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E06000007",
+      "displayName": "Warrington",
+      "total": 9,
+      "real": 0,
+      "synthetic": 9,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E06000008",
+      "displayName": "Blackburn with Darwen",
+      "total": 7,
+      "real": 0,
+      "synthetic": 7,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E06000009",
+      "displayName": "Blackpool",
+      "total": 6,
+      "real": 0,
+      "synthetic": 6,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E06000010",
+      "displayName": "Kingston upon Hull, City of",
+      "total": 1,
+      "real": 1,
+      "synthetic": 0,
+      "policy": "preserved-compact-real-anchor-no-neighbourhood-completion"
+    },
+    {
+      "officialCode": "E06000011",
+      "displayName": "East Riding of Yorkshire",
+      "total": 14,
+      "real": 0,
+      "synthetic": 14,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E06000012",
+      "displayName": "North East Lincolnshire",
+      "total": 7,
+      "real": 0,
+      "synthetic": 7,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E06000013",
+      "displayName": "North Lincolnshire",
+      "total": 7,
+      "real": 0,
+      "synthetic": 7,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E06000014",
+      "displayName": "York",
+      "total": 9,
+      "real": 1,
+      "synthetic": 8,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E06000015",
+      "displayName": "Derby",
+      "total": 1,
+      "real": 1,
+      "synthetic": 0,
+      "policy": "preserved-compact-real-anchor-no-neighbourhood-completion"
+    },
+    {
+      "officialCode": "E06000016",
+      "displayName": "Leicester",
+      "total": 1,
+      "real": 1,
+      "synthetic": 0,
+      "policy": "preserved-compact-real-anchor-no-neighbourhood-completion"
+    },
+    {
+      "officialCode": "E06000017",
+      "displayName": "Rutland",
+      "total": 2,
+      "real": 0,
+      "synthetic": 2,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E06000018",
+      "displayName": "Nottingham",
+      "total": 1,
+      "real": 1,
+      "synthetic": 0,
+      "policy": "preserved-compact-real-anchor-no-neighbourhood-completion"
+    },
+    {
+      "officialCode": "E06000019",
+      "displayName": "Herefordshire, County of",
+      "total": 8,
+      "real": 0,
+      "synthetic": 8,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E06000020",
+      "displayName": "Telford and Wrekin",
+      "total": 8,
+      "real": 0,
+      "synthetic": 8,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E06000021",
+      "displayName": "Stoke-on-Trent",
+      "total": 1,
+      "real": 1,
+      "synthetic": 0,
+      "policy": "preserved-compact-real-anchor-no-neighbourhood-completion"
+    },
+    {
+      "officialCode": "E06000022",
+      "displayName": "Bath and North East Somerset",
+      "total": 8,
+      "real": 1,
+      "synthetic": 7,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E06000023",
+      "displayName": "Bristol, City of",
+      "total": 1,
+      "real": 1,
+      "synthetic": 0,
+      "policy": "preserved-compact-real-anchor-no-neighbourhood-completion"
+    },
+    {
+      "officialCode": "E06000024",
+      "displayName": "North Somerset",
+      "total": 9,
+      "real": 0,
+      "synthetic": 9,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E06000025",
+      "displayName": "South Gloucestershire",
+      "total": 12,
+      "real": 0,
+      "synthetic": 12,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E06000026",
+      "displayName": "Plymouth",
+      "total": 1,
+      "real": 1,
+      "synthetic": 0,
+      "policy": "preserved-compact-real-anchor-no-neighbourhood-completion"
+    },
+    {
+      "officialCode": "E06000027",
+      "displayName": "Torbay",
+      "total": 6,
+      "real": 0,
+      "synthetic": 6,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E06000030",
+      "displayName": "Swindon",
+      "total": 10,
+      "real": 0,
+      "synthetic": 10,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E06000031",
+      "displayName": "Peterborough",
+      "total": 9,
+      "real": 0,
+      "synthetic": 9,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E06000032",
+      "displayName": "Luton",
+      "total": 10,
+      "real": 0,
+      "synthetic": 10,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E06000033",
+      "displayName": "Southend-on-Sea",
+      "total": 8,
+      "real": 0,
+      "synthetic": 8,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E06000034",
+      "displayName": "Thurrock",
+      "total": 7,
+      "real": 0,
+      "synthetic": 7,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E06000035",
+      "displayName": "Medway",
+      "total": 12,
+      "real": 0,
+      "synthetic": 12,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E06000036",
+      "displayName": "Bracknell Forest",
+      "total": 6,
+      "real": 0,
+      "synthetic": 6,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E06000037",
+      "displayName": "West Berkshire",
+      "total": 7,
+      "real": 0,
+      "synthetic": 7,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E06000038",
+      "displayName": "Reading",
+      "total": 1,
+      "real": 1,
+      "synthetic": 0,
+      "policy": "preserved-compact-real-anchor-no-neighbourhood-completion"
+    },
+    {
+      "officialCode": "E06000039",
+      "displayName": "Slough",
+      "total": 7,
+      "real": 0,
+      "synthetic": 7,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E06000040",
+      "displayName": "Windsor and Maidenhead",
+      "total": 7,
+      "real": 0,
+      "synthetic": 7,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E06000041",
+      "displayName": "Wokingham",
+      "total": 8,
+      "real": 0,
+      "synthetic": 8,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E06000042",
+      "displayName": "Milton Keynes",
+      "total": 12,
+      "real": 0,
+      "synthetic": 12,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E06000043",
+      "displayName": "Brighton and Hove",
+      "total": 1,
+      "real": 1,
+      "synthetic": 0,
+      "policy": "preserved-compact-real-anchor-no-neighbourhood-completion"
+    },
+    {
+      "officialCode": "E06000044",
+      "displayName": "Portsmouth",
+      "total": 1,
+      "real": 1,
+      "synthetic": 0,
+      "policy": "preserved-compact-real-anchor-no-neighbourhood-completion"
+    },
+    {
+      "officialCode": "E06000045",
+      "displayName": "Southampton",
+      "total": 1,
+      "real": 1,
+      "synthetic": 0,
+      "policy": "preserved-compact-real-anchor-no-neighbourhood-completion"
+    },
+    {
+      "officialCode": "E06000046",
+      "displayName": "Isle of Wight",
+      "total": 6,
+      "real": 0,
+      "synthetic": 6,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E06000047",
+      "displayName": "County Durham",
+      "total": 21,
+      "real": 0,
+      "synthetic": 21,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E06000049",
+      "displayName": "Cheshire East",
+      "total": 17,
+      "real": 0,
+      "synthetic": 17,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E06000050",
+      "displayName": "Cheshire West and Chester",
+      "total": 15,
+      "real": 1,
+      "synthetic": 14,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E06000051",
+      "displayName": "Shropshire",
+      "total": 13,
+      "real": 0,
+      "synthetic": 13,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E06000052",
+      "displayName": "Cornwall",
+      "total": 23,
+      "real": 0,
+      "synthetic": 23,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E06000053",
+      "displayName": "Isles of Scilly",
+      "total": 1,
+      "real": 1,
+      "synthetic": 0,
+      "policy": "preserved-small-area-real-anchor"
+    },
+    {
+      "officialCode": "E06000054",
+      "displayName": "Wiltshire",
+      "total": 21,
+      "real": 0,
+      "synthetic": 21,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E06000055",
+      "displayName": "Bedford",
+      "total": 8,
+      "real": 0,
+      "synthetic": 8,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E06000056",
+      "displayName": "Central Bedfordshire",
+      "total": 13,
+      "real": 0,
+      "synthetic": 13,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E06000057",
+      "displayName": "Northumberland",
+      "total": 13,
+      "real": 0,
+      "synthetic": 13,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E06000058",
+      "displayName": "Bournemouth, Christchurch and Poole",
+      "total": 16,
+      "real": 1,
+      "synthetic": 15,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E06000059",
+      "displayName": "Dorset",
+      "total": 15,
+      "real": 0,
+      "synthetic": 15,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E06000060",
+      "displayName": "Buckinghamshire",
+      "total": 23,
+      "real": 0,
+      "synthetic": 23,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E06000061",
+      "displayName": "North Northamptonshire",
+      "total": 15,
+      "real": 0,
+      "synthetic": 15,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E06000062",
+      "displayName": "West Northamptonshire",
+      "total": 17,
+      "real": 0,
+      "synthetic": 17,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E06000063",
+      "displayName": "Cumberland",
+      "total": 11,
+      "real": 1,
+      "synthetic": 10,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E06000064",
+      "displayName": "Westmorland and Furness",
+      "total": 9,
+      "real": 0,
+      "synthetic": 9,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E06000065",
+      "displayName": "North Yorkshire",
+      "total": 25,
+      "real": 0,
+      "synthetic": 25,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E06000066",
+      "displayName": "Somerset",
+      "total": 23,
+      "real": 0,
+      "synthetic": 23,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000008",
+      "displayName": "Cambridge",
+      "total": 6,
+      "real": 1,
+      "synthetic": 5,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000009",
+      "displayName": "East Cambridgeshire",
+      "total": 4,
+      "real": 0,
+      "synthetic": 4,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000010",
+      "displayName": "Fenland",
+      "total": 5,
+      "real": 0,
+      "synthetic": 5,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000011",
+      "displayName": "Huntingdonshire",
+      "total": 8,
+      "real": 0,
+      "synthetic": 8,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000012",
+      "displayName": "South Cambridgeshire",
+      "total": 7,
+      "real": 0,
+      "synthetic": 7,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000032",
+      "displayName": "Amber Valley",
+      "total": 6,
+      "real": 0,
+      "synthetic": 6,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000033",
+      "displayName": "Bolsover",
+      "total": 4,
+      "real": 0,
+      "synthetic": 4,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000034",
+      "displayName": "Chesterfield",
+      "total": 5,
+      "real": 0,
+      "synthetic": 5,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000035",
+      "displayName": "Derbyshire Dales",
+      "total": 3,
+      "real": 0,
+      "synthetic": 3,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000036",
+      "displayName": "Erewash",
+      "total": 5,
+      "real": 0,
+      "synthetic": 5,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000037",
+      "displayName": "High Peak",
+      "total": 4,
+      "real": 0,
+      "synthetic": 4,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000038",
+      "displayName": "North East Derbyshire",
+      "total": 5,
+      "real": 0,
+      "synthetic": 5,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000039",
+      "displayName": "South Derbyshire",
+      "total": 5,
+      "real": 0,
+      "synthetic": 5,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000040",
+      "displayName": "East Devon",
+      "total": 7,
+      "real": 0,
+      "synthetic": 7,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000041",
+      "displayName": "Exeter",
+      "total": 6,
+      "real": 1,
+      "synthetic": 5,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000042",
+      "displayName": "Mid Devon",
+      "total": 4,
+      "real": 0,
+      "synthetic": 4,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000043",
+      "displayName": "North Devon",
+      "total": 4,
+      "real": 0,
+      "synthetic": 4,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000044",
+      "displayName": "South Hams",
+      "total": 4,
+      "real": 0,
+      "synthetic": 4,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000045",
+      "displayName": "Teignbridge",
+      "total": 6,
+      "real": 0,
+      "synthetic": 6,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000046",
+      "displayName": "Torridge",
+      "total": 3,
+      "real": 0,
+      "synthetic": 3,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000047",
+      "displayName": "West Devon",
+      "total": 3,
+      "real": 0,
+      "synthetic": 3,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000061",
+      "displayName": "Eastbourne",
+      "total": 5,
+      "real": 0,
+      "synthetic": 5,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000062",
+      "displayName": "Hastings",
+      "total": 4,
+      "real": 0,
+      "synthetic": 4,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000063",
+      "displayName": "Lewes",
+      "total": 4,
+      "real": 0,
+      "synthetic": 4,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000064",
+      "displayName": "Rother",
+      "total": 4,
+      "real": 0,
+      "synthetic": 4,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000065",
+      "displayName": "Wealden",
+      "total": 7,
+      "real": 0,
+      "synthetic": 7,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000066",
+      "displayName": "Basildon",
+      "total": 8,
+      "real": 0,
+      "synthetic": 8,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000067",
+      "displayName": "Braintree",
+      "total": 7,
+      "real": 0,
+      "synthetic": 7,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000068",
+      "displayName": "Brentwood",
+      "total": 4,
+      "real": 0,
+      "synthetic": 4,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000069",
+      "displayName": "Castle Point",
+      "total": 4,
+      "real": 0,
+      "synthetic": 4,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000070",
+      "displayName": "Chelmsford",
+      "total": 8,
+      "real": 0,
+      "synthetic": 8,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000071",
+      "displayName": "Colchester",
+      "total": 8,
+      "real": 0,
+      "synthetic": 8,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000072",
+      "displayName": "Epping Forest",
+      "total": 6,
+      "real": 0,
+      "synthetic": 6,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000073",
+      "displayName": "Harlow",
+      "total": 4,
+      "real": 0,
+      "synthetic": 4,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000074",
+      "displayName": "Maldon",
+      "total": 3,
+      "real": 0,
+      "synthetic": 3,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000075",
+      "displayName": "Rochford",
+      "total": 4,
+      "real": 0,
+      "synthetic": 4,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000076",
+      "displayName": "Tendring",
+      "total": 7,
+      "real": 0,
+      "synthetic": 7,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000077",
+      "displayName": "Uttlesford",
+      "total": 4,
+      "real": 0,
+      "synthetic": 4,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000078",
+      "displayName": "Cheltenham",
+      "total": 5,
+      "real": 0,
+      "synthetic": 5,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000079",
+      "displayName": "Cotswold",
+      "total": 4,
+      "real": 0,
+      "synthetic": 4,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000080",
+      "displayName": "Forest of Dean",
+      "total": 4,
+      "real": 0,
+      "synthetic": 4,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000081",
+      "displayName": "Gloucester",
+      "total": 6,
+      "real": 0,
+      "synthetic": 6,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000082",
+      "displayName": "Stroud",
+      "total": 5,
+      "real": 0,
+      "synthetic": 5,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000083",
+      "displayName": "Tewkesbury",
+      "total": 4,
+      "real": 0,
+      "synthetic": 4,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000084",
+      "displayName": "Basingstoke and Deane",
+      "total": 8,
+      "real": 0,
+      "synthetic": 8,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000085",
+      "displayName": "East Hampshire",
+      "total": 5,
+      "real": 0,
+      "synthetic": 5,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000086",
+      "displayName": "Eastleigh",
+      "total": 6,
+      "real": 0,
+      "synthetic": 6,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000087",
+      "displayName": "Fareham",
+      "total": 5,
+      "real": 0,
+      "synthetic": 5,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000088",
+      "displayName": "Gosport",
+      "total": 4,
+      "real": 0,
+      "synthetic": 4,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000089",
+      "displayName": "Hart",
+      "total": 4,
+      "real": 0,
+      "synthetic": 4,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000090",
+      "displayName": "Havant",
+      "total": 5,
+      "real": 0,
+      "synthetic": 5,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000091",
+      "displayName": "New Forest",
+      "total": 7,
+      "real": 0,
+      "synthetic": 7,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000092",
+      "displayName": "Rushmoor",
+      "total": 5,
+      "real": 0,
+      "synthetic": 5,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000093",
+      "displayName": "Test Valley",
+      "total": 6,
+      "real": 0,
+      "synthetic": 6,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000094",
+      "displayName": "Winchester",
+      "total": 6,
+      "real": 0,
+      "synthetic": 6,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000095",
+      "displayName": "Broxbourne",
+      "total": 4,
+      "real": 0,
+      "synthetic": 4,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000096",
+      "displayName": "Dacorum",
+      "total": 7,
+      "real": 0,
+      "synthetic": 7,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000098",
+      "displayName": "Hertsmere",
+      "total": 5,
+      "real": 0,
+      "synthetic": 5,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000099",
+      "displayName": "North Hertfordshire",
+      "total": 6,
+      "real": 0,
+      "synthetic": 6,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000102",
+      "displayName": "Three Rivers",
+      "total": 4,
+      "real": 0,
+      "synthetic": 4,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000103",
+      "displayName": "Watford",
+      "total": 5,
+      "real": 0,
+      "synthetic": 5,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000105",
+      "displayName": "Ashford",
+      "total": 6,
+      "real": 0,
+      "synthetic": 6,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000106",
+      "displayName": "Canterbury",
+      "total": 7,
+      "real": 0,
+      "synthetic": 7,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000107",
+      "displayName": "Dartford",
+      "total": 5,
+      "real": 0,
+      "synthetic": 5,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000108",
+      "displayName": "Dover",
+      "total": 5,
+      "real": 0,
+      "synthetic": 5,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000109",
+      "displayName": "Gravesham",
+      "total": 5,
+      "real": 0,
+      "synthetic": 5,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000110",
+      "displayName": "Maidstone",
+      "total": 8,
+      "real": 0,
+      "synthetic": 8,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000111",
+      "displayName": "Sevenoaks",
+      "total": 5,
+      "real": 0,
+      "synthetic": 5,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000112",
+      "displayName": "Folkestone and Hythe",
+      "total": 5,
+      "real": 0,
+      "synthetic": 5,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000113",
+      "displayName": "Swale",
+      "total": 7,
+      "real": 0,
+      "synthetic": 7,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000114",
+      "displayName": "Thanet",
+      "total": 6,
+      "real": 0,
+      "synthetic": 6,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000115",
+      "displayName": "Tonbridge and Malling",
+      "total": 6,
+      "real": 0,
+      "synthetic": 6,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000116",
+      "displayName": "Tunbridge Wells",
+      "total": 5,
+      "real": 0,
+      "synthetic": 5,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000117",
+      "displayName": "Burnley",
+      "total": 4,
+      "real": 0,
+      "synthetic": 4,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000118",
+      "displayName": "Chorley",
+      "total": 5,
+      "real": 0,
+      "synthetic": 5,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000119",
+      "displayName": "Fylde",
+      "total": 4,
+      "real": 0,
+      "synthetic": 4,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000120",
+      "displayName": "Hyndburn",
+      "total": 4,
+      "real": 0,
+      "synthetic": 4,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000121",
+      "displayName": "Lancaster",
+      "total": 6,
+      "real": 0,
+      "synthetic": 6,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000122",
+      "displayName": "Pendle",
+      "total": 4,
+      "real": 0,
+      "synthetic": 4,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000123",
+      "displayName": "Preston",
+      "total": 7,
+      "real": 0,
+      "synthetic": 7,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000124",
+      "displayName": "Ribble Valley",
+      "total": 3,
+      "real": 0,
+      "synthetic": 3,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000125",
+      "displayName": "Rossendale",
+      "total": 3,
+      "real": 0,
+      "synthetic": 3,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000126",
+      "displayName": "South Ribble",
+      "total": 5,
+      "real": 0,
+      "synthetic": 5,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000127",
+      "displayName": "West Lancashire",
+      "total": 5,
+      "real": 0,
+      "synthetic": 5,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000128",
+      "displayName": "Wyre",
+      "total": 5,
+      "real": 0,
+      "synthetic": 5,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000129",
+      "displayName": "Blaby",
+      "total": 5,
+      "real": 0,
+      "synthetic": 5,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000130",
+      "displayName": "Charnwood",
+      "total": 8,
+      "real": 0,
+      "synthetic": 8,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000131",
+      "displayName": "Harborough",
+      "total": 5,
+      "real": 0,
+      "synthetic": 5,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000132",
+      "displayName": "Hinckley and Bosworth",
+      "total": 5,
+      "real": 0,
+      "synthetic": 5,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000133",
+      "displayName": "Melton",
+      "total": 3,
+      "real": 0,
+      "synthetic": 3,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000134",
+      "displayName": "North West Leicestershire",
+      "total": 5,
+      "real": 0,
+      "synthetic": 5,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000135",
+      "displayName": "Oadby and Wigston",
+      "total": 3,
+      "real": 0,
+      "synthetic": 3,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000136",
+      "displayName": "Boston",
+      "total": 3,
+      "real": 0,
+      "synthetic": 3,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000137",
+      "displayName": "East Lindsey",
+      "total": 6,
+      "real": 0,
+      "synthetic": 6,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000138",
+      "displayName": "Lincoln",
+      "total": 5,
+      "real": 0,
+      "synthetic": 5,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000139",
+      "displayName": "North Kesteven",
+      "total": 5,
+      "real": 0,
+      "synthetic": 5,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000140",
+      "displayName": "South Holland",
+      "total": 4,
+      "real": 0,
+      "synthetic": 4,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000141",
+      "displayName": "South Kesteven",
+      "total": 6,
+      "real": 0,
+      "synthetic": 6,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000142",
+      "displayName": "West Lindsey",
+      "total": 4,
+      "real": 0,
+      "synthetic": 4,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000143",
+      "displayName": "Breckland",
+      "total": 6,
+      "real": 0,
+      "synthetic": 6,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000144",
+      "displayName": "Broadland",
+      "total": 6,
+      "real": 0,
+      "synthetic": 6,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000145",
+      "displayName": "Great Yarmouth",
+      "total": 4,
+      "real": 0,
+      "synthetic": 4,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000146",
+      "displayName": "King's Lynn and West Norfolk",
+      "total": 7,
+      "real": 0,
+      "synthetic": 7,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000147",
+      "displayName": "North Norfolk",
+      "total": 4,
+      "real": 0,
+      "synthetic": 4,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000148",
+      "displayName": "Norwich",
+      "total": 6,
+      "real": 1,
+      "synthetic": 5,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000149",
+      "displayName": "South Norfolk",
+      "total": 6,
+      "real": 0,
+      "synthetic": 6,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000170",
+      "displayName": "Ashfield",
+      "total": 5,
+      "real": 0,
+      "synthetic": 5,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000171",
+      "displayName": "Bassetlaw",
+      "total": 5,
+      "real": 0,
+      "synthetic": 5,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000172",
+      "displayName": "Broxtowe",
+      "total": 5,
+      "real": 0,
+      "synthetic": 5,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000173",
+      "displayName": "Gedling",
+      "total": 5,
+      "real": 0,
+      "synthetic": 5,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000174",
+      "displayName": "Mansfield",
+      "total": 5,
+      "real": 0,
+      "synthetic": 5,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000175",
+      "displayName": "Newark and Sherwood",
+      "total": 5,
+      "real": 0,
+      "synthetic": 5,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000176",
+      "displayName": "Rushcliffe",
+      "total": 5,
+      "real": 0,
+      "synthetic": 5,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000177",
+      "displayName": "Cherwell",
+      "total": 7,
+      "real": 0,
+      "synthetic": 7,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000178",
+      "displayName": "Oxford",
+      "total": 7,
+      "real": 1,
+      "synthetic": 6,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000179",
+      "displayName": "South Oxfordshire",
+      "total": 7,
+      "real": 0,
+      "synthetic": 7,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000180",
+      "displayName": "Vale of White Horse",
+      "total": 6,
+      "real": 0,
+      "synthetic": 6,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000181",
+      "displayName": "West Oxfordshire",
+      "total": 5,
+      "real": 0,
+      "synthetic": 5,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000192",
+      "displayName": "Cannock Chase",
+      "total": 5,
+      "real": 0,
+      "synthetic": 5,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000193",
+      "displayName": "East Staffordshire",
+      "total": 5,
+      "real": 0,
+      "synthetic": 5,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000194",
+      "displayName": "Lichfield",
+      "total": 5,
+      "real": 0,
+      "synthetic": 5,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000195",
+      "displayName": "Newcastle-under-Lyme",
+      "total": 5,
+      "real": 0,
+      "synthetic": 5,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000196",
+      "displayName": "South Staffordshire",
+      "total": 5,
+      "real": 0,
+      "synthetic": 5,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000197",
+      "displayName": "Stafford",
+      "total": 6,
+      "real": 0,
+      "synthetic": 6,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000198",
+      "displayName": "Staffordshire Moorlands",
+      "total": 4,
+      "real": 0,
+      "synthetic": 4,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000199",
+      "displayName": "Tamworth",
+      "total": 4,
+      "real": 0,
+      "synthetic": 4,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000200",
+      "displayName": "Babergh",
+      "total": 4,
+      "real": 0,
+      "synthetic": 4,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000202",
+      "displayName": "Ipswich",
+      "total": 6,
+      "real": 0,
+      "synthetic": 6,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000203",
+      "displayName": "Mid Suffolk",
+      "total": 5,
+      "real": 0,
+      "synthetic": 5,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000207",
+      "displayName": "Elmbridge",
+      "total": 6,
+      "real": 0,
+      "synthetic": 6,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000208",
+      "displayName": "Epsom and Ewell",
+      "total": 4,
+      "real": 0,
+      "synthetic": 4,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000209",
+      "displayName": "Guildford",
+      "total": 6,
+      "real": 0,
+      "synthetic": 6,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000210",
+      "displayName": "Mole Valley",
+      "total": 4,
+      "real": 0,
+      "synthetic": 4,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000211",
+      "displayName": "Reigate and Banstead",
+      "total": 7,
+      "real": 0,
+      "synthetic": 7,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000212",
+      "displayName": "Runnymede",
+      "total": 4,
+      "real": 0,
+      "synthetic": 4,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000213",
+      "displayName": "Spelthorne",
+      "total": 5,
+      "real": 0,
+      "synthetic": 5,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000214",
+      "displayName": "Surrey Heath",
+      "total": 4,
+      "real": 0,
+      "synthetic": 4,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000215",
+      "displayName": "Tandridge",
+      "total": 4,
+      "real": 0,
+      "synthetic": 4,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000216",
+      "displayName": "Waverley",
+      "total": 6,
+      "real": 0,
+      "synthetic": 6,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000217",
+      "displayName": "Woking",
+      "total": 5,
+      "real": 0,
+      "synthetic": 5,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000218",
+      "displayName": "North Warwickshire",
+      "total": 3,
+      "real": 0,
+      "synthetic": 3,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000219",
+      "displayName": "Nuneaton and Bedworth",
+      "total": 6,
+      "real": 0,
+      "synthetic": 6,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000220",
+      "displayName": "Rugby",
+      "total": 5,
+      "real": 0,
+      "synthetic": 5,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000221",
+      "displayName": "Stratford-on-Avon",
+      "total": 6,
+      "real": 0,
+      "synthetic": 6,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000222",
+      "displayName": "Warwick",
+      "total": 6,
+      "real": 0,
+      "synthetic": 6,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000223",
+      "displayName": "Adur",
+      "total": 3,
+      "real": 0,
+      "synthetic": 3,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000224",
+      "displayName": "Arun",
+      "total": 7,
+      "real": 0,
+      "synthetic": 7,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000225",
+      "displayName": "Chichester",
+      "total": 5,
+      "real": 0,
+      "synthetic": 5,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000226",
+      "displayName": "Crawley",
+      "total": 5,
+      "real": 0,
+      "synthetic": 5,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000227",
+      "displayName": "Horsham",
+      "total": 6,
+      "real": 0,
+      "synthetic": 6,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000228",
+      "displayName": "Mid Sussex",
+      "total": 7,
+      "real": 0,
+      "synthetic": 7,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000229",
+      "displayName": "Worthing",
+      "total": 5,
+      "real": 0,
+      "synthetic": 5,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000234",
+      "displayName": "Bromsgrove",
+      "total": 4,
+      "real": 0,
+      "synthetic": 4,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000235",
+      "displayName": "Malvern Hills",
+      "total": 4,
+      "real": 0,
+      "synthetic": 4,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000236",
+      "displayName": "Redditch",
+      "total": 4,
+      "real": 0,
+      "synthetic": 4,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000237",
+      "displayName": "Worcester",
+      "total": 5,
+      "real": 0,
+      "synthetic": 5,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000238",
+      "displayName": "Wychavon",
+      "total": 6,
+      "real": 0,
+      "synthetic": 6,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000239",
+      "displayName": "Wyre Forest",
+      "total": 4,
+      "real": 0,
+      "synthetic": 4,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000240",
+      "displayName": "St Albans",
+      "total": 6,
+      "real": 0,
+      "synthetic": 6,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000241",
+      "displayName": "Welwyn Hatfield",
+      "total": 5,
+      "real": 0,
+      "synthetic": 5,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000242",
+      "displayName": "East Hertfordshire",
+      "total": 7,
+      "real": 0,
+      "synthetic": 7,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000243",
+      "displayName": "Stevenage",
+      "total": 4,
+      "real": 0,
+      "synthetic": 4,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000244",
+      "displayName": "East Suffolk",
+      "total": 10,
+      "real": 0,
+      "synthetic": 10,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E07000245",
+      "displayName": "West Suffolk",
+      "total": 8,
+      "real": 0,
+      "synthetic": 8,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E08000001",
+      "displayName": "Bolton",
+      "total": 12,
+      "real": 0,
+      "synthetic": 12,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E08000002",
+      "displayName": "Bury",
+      "total": 8,
+      "real": 0,
+      "synthetic": 8,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E08000003",
+      "displayName": "Manchester",
+      "total": 1,
+      "real": 1,
+      "synthetic": 0,
+      "policy": "preserved-compact-real-anchor-no-neighbourhood-completion"
+    },
+    {
+      "officialCode": "E08000004",
+      "displayName": "Oldham",
+      "total": 10,
+      "real": 0,
+      "synthetic": 10,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E08000005",
+      "displayName": "Rochdale",
+      "total": 10,
+      "real": 0,
+      "synthetic": 10,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E08000006",
+      "displayName": "Salford",
+      "total": 12,
+      "real": 0,
+      "synthetic": 12,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E08000007",
+      "displayName": "Stockport",
+      "total": 12,
+      "real": 0,
+      "synthetic": 12,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E08000008",
+      "displayName": "Tameside",
+      "total": 10,
+      "real": 0,
+      "synthetic": 10,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E08000009",
+      "displayName": "Trafford",
+      "total": 10,
+      "real": 0,
+      "synthetic": 10,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E08000010",
+      "displayName": "Wigan",
+      "total": 14,
+      "real": 0,
+      "synthetic": 14,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E08000011",
+      "displayName": "Knowsley",
+      "total": 7,
+      "real": 0,
+      "synthetic": 7,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E08000012",
+      "displayName": "Liverpool",
+      "total": 1,
+      "real": 1,
+      "synthetic": 0,
+      "policy": "preserved-compact-real-anchor-no-neighbourhood-completion"
+    },
+    {
+      "officialCode": "E08000013",
+      "displayName": "St. Helens",
+      "total": 8,
+      "real": 0,
+      "synthetic": 8,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E08000014",
+      "displayName": "Sefton",
+      "total": 12,
+      "real": 0,
+      "synthetic": 12,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E08000015",
+      "displayName": "Wirral",
+      "total": 13,
+      "real": 0,
+      "synthetic": 13,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E08000016",
+      "displayName": "Barnsley",
+      "total": 10,
+      "real": 0,
+      "synthetic": 10,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E08000017",
+      "displayName": "Doncaster",
+      "total": 13,
+      "real": 0,
+      "synthetic": 13,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E08000018",
+      "displayName": "Rotherham",
+      "total": 11,
+      "real": 0,
+      "synthetic": 11,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E08000019",
+      "displayName": "Sheffield",
+      "total": 1,
+      "real": 1,
+      "synthetic": 0,
+      "policy": "preserved-compact-real-anchor-no-neighbourhood-completion"
+    },
+    {
+      "officialCode": "E08000021",
+      "displayName": "Newcastle upon Tyne",
+      "total": 1,
+      "real": 1,
+      "synthetic": 0,
+      "policy": "preserved-compact-real-anchor-no-neighbourhood-completion"
+    },
+    {
+      "officialCode": "E08000022",
+      "displayName": "North Tyneside",
+      "total": 9,
+      "real": 0,
+      "synthetic": 9,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E08000023",
+      "displayName": "South Tyneside",
+      "total": 6,
+      "real": 0,
+      "synthetic": 6,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E08000024",
+      "displayName": "Sunderland",
+      "total": 1,
+      "real": 1,
+      "synthetic": 0,
+      "policy": "preserved-compact-real-anchor-no-neighbourhood-completion"
+    },
+    {
+      "officialCode": "E08000025",
+      "displayName": "Birmingham",
+      "total": 1,
+      "real": 1,
+      "synthetic": 0,
+      "policy": "preserved-compact-real-anchor-no-neighbourhood-completion"
+    },
+    {
+      "officialCode": "E08000026",
+      "displayName": "Coventry",
+      "total": 1,
+      "real": 1,
+      "synthetic": 0,
+      "policy": "preserved-compact-real-anchor-no-neighbourhood-completion"
+    },
+    {
+      "officialCode": "E08000027",
+      "displayName": "Dudley",
+      "total": 13,
+      "real": 0,
+      "synthetic": 13,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E08000028",
+      "displayName": "Sandwell",
+      "total": 14,
+      "real": 0,
+      "synthetic": 14,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E08000029",
+      "displayName": "Solihull",
+      "total": 9,
+      "real": 0,
+      "synthetic": 9,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E08000030",
+      "displayName": "Walsall",
+      "total": 12,
+      "real": 0,
+      "synthetic": 12,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E08000031",
+      "displayName": "Wolverhampton",
+      "total": 11,
+      "real": 0,
+      "synthetic": 11,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E08000032",
+      "displayName": "Bradford",
+      "total": 22,
+      "real": 4,
+      "synthetic": 18,
+      "policy": "reviewed-polycentric-administrative-area"
+    },
+    {
+      "officialCode": "E08000033",
+      "displayName": "Calderdale",
+      "total": 9,
+      "real": 0,
+      "synthetic": 9,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E08000034",
+      "displayName": "Kirklees",
+      "total": 18,
+      "real": 0,
+      "synthetic": 18,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E08000035",
+      "displayName": "Leeds",
+      "total": 33,
+      "real": 1,
+      "synthetic": 32,
+      "policy": "reviewed-polycentric-administrative-area"
+    },
+    {
+      "officialCode": "E08000036",
+      "displayName": "Wakefield",
+      "total": 15,
+      "real": 0,
+      "synthetic": 15,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E08000037",
+      "displayName": "Gateshead",
+      "total": 8,
+      "real": 0,
+      "synthetic": 8,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "E09000001",
+      "displayName": "City of London",
+      "total": 1,
+      "real": 1,
+      "synthetic": 0,
+      "policy": "cross-boundary-capital-no-neighbourhood-completion"
+    },
+    {
+      "officialCode": "E09000002",
+      "displayName": "Barking and Dagenham",
+      "total": 1,
+      "real": 1,
+      "synthetic": 0,
+      "policy": "cross-boundary-capital-no-neighbourhood-completion"
+    },
+    {
+      "officialCode": "E09000003",
+      "displayName": "Barnet",
+      "total": 1,
+      "real": 1,
+      "synthetic": 0,
+      "policy": "cross-boundary-capital-no-neighbourhood-completion"
+    },
+    {
+      "officialCode": "E09000004",
+      "displayName": "Bexley",
+      "total": 1,
+      "real": 1,
+      "synthetic": 0,
+      "policy": "cross-boundary-capital-no-neighbourhood-completion"
+    },
+    {
+      "officialCode": "E09000005",
+      "displayName": "Brent",
+      "total": 1,
+      "real": 1,
+      "synthetic": 0,
+      "policy": "cross-boundary-capital-no-neighbourhood-completion"
+    },
+    {
+      "officialCode": "E09000006",
+      "displayName": "Bromley",
+      "total": 1,
+      "real": 1,
+      "synthetic": 0,
+      "policy": "cross-boundary-capital-no-neighbourhood-completion"
+    },
+    {
+      "officialCode": "E09000007",
+      "displayName": "Camden",
+      "total": 1,
+      "real": 1,
+      "synthetic": 0,
+      "policy": "cross-boundary-capital-no-neighbourhood-completion"
+    },
+    {
+      "officialCode": "E09000008",
+      "displayName": "Croydon",
+      "total": 1,
+      "real": 1,
+      "synthetic": 0,
+      "policy": "cross-boundary-capital-no-neighbourhood-completion"
+    },
+    {
+      "officialCode": "E09000009",
+      "displayName": "Ealing",
+      "total": 1,
+      "real": 1,
+      "synthetic": 0,
+      "policy": "cross-boundary-capital-no-neighbourhood-completion"
+    },
+    {
+      "officialCode": "E09000010",
+      "displayName": "Enfield",
+      "total": 1,
+      "real": 1,
+      "synthetic": 0,
+      "policy": "cross-boundary-capital-no-neighbourhood-completion"
+    },
+    {
+      "officialCode": "E09000011",
+      "displayName": "Greenwich",
+      "total": 1,
+      "real": 1,
+      "synthetic": 0,
+      "policy": "cross-boundary-capital-no-neighbourhood-completion"
+    },
+    {
+      "officialCode": "E09000012",
+      "displayName": "Hackney",
+      "total": 1,
+      "real": 1,
+      "synthetic": 0,
+      "policy": "cross-boundary-capital-no-neighbourhood-completion"
+    },
+    {
+      "officialCode": "E09000013",
+      "displayName": "Hammersmith and Fulham",
+      "total": 1,
+      "real": 1,
+      "synthetic": 0,
+      "policy": "cross-boundary-capital-no-neighbourhood-completion"
+    },
+    {
+      "officialCode": "E09000014",
+      "displayName": "Haringey",
+      "total": 1,
+      "real": 1,
+      "synthetic": 0,
+      "policy": "cross-boundary-capital-no-neighbourhood-completion"
+    },
+    {
+      "officialCode": "E09000015",
+      "displayName": "Harrow",
+      "total": 1,
+      "real": 1,
+      "synthetic": 0,
+      "policy": "cross-boundary-capital-no-neighbourhood-completion"
+    },
+    {
+      "officialCode": "E09000016",
+      "displayName": "Havering",
+      "total": 1,
+      "real": 1,
+      "synthetic": 0,
+      "policy": "cross-boundary-capital-no-neighbourhood-completion"
+    },
+    {
+      "officialCode": "E09000017",
+      "displayName": "Hillingdon",
+      "total": 1,
+      "real": 1,
+      "synthetic": 0,
+      "policy": "cross-boundary-capital-no-neighbourhood-completion"
+    },
+    {
+      "officialCode": "E09000018",
+      "displayName": "Hounslow",
+      "total": 1,
+      "real": 1,
+      "synthetic": 0,
+      "policy": "cross-boundary-capital-no-neighbourhood-completion"
+    },
+    {
+      "officialCode": "E09000019",
+      "displayName": "Islington",
+      "total": 1,
+      "real": 1,
+      "synthetic": 0,
+      "policy": "cross-boundary-capital-no-neighbourhood-completion"
+    },
+    {
+      "officialCode": "E09000020",
+      "displayName": "Kensington and Chelsea",
+      "total": 1,
+      "real": 1,
+      "synthetic": 0,
+      "policy": "cross-boundary-capital-no-neighbourhood-completion"
+    },
+    {
+      "officialCode": "E09000021",
+      "displayName": "Kingston upon Thames",
+      "total": 1,
+      "real": 1,
+      "synthetic": 0,
+      "policy": "cross-boundary-capital-no-neighbourhood-completion"
+    },
+    {
+      "officialCode": "E09000022",
+      "displayName": "Lambeth",
+      "total": 1,
+      "real": 1,
+      "synthetic": 0,
+      "policy": "cross-boundary-capital-no-neighbourhood-completion"
+    },
+    {
+      "officialCode": "E09000023",
+      "displayName": "Lewisham",
+      "total": 1,
+      "real": 1,
+      "synthetic": 0,
+      "policy": "cross-boundary-capital-no-neighbourhood-completion"
+    },
+    {
+      "officialCode": "E09000024",
+      "displayName": "Merton",
+      "total": 1,
+      "real": 1,
+      "synthetic": 0,
+      "policy": "cross-boundary-capital-no-neighbourhood-completion"
+    },
+    {
+      "officialCode": "E09000025",
+      "displayName": "Newham",
+      "total": 1,
+      "real": 1,
+      "synthetic": 0,
+      "policy": "cross-boundary-capital-no-neighbourhood-completion"
+    },
+    {
+      "officialCode": "E09000026",
+      "displayName": "Redbridge",
+      "total": 1,
+      "real": 1,
+      "synthetic": 0,
+      "policy": "cross-boundary-capital-no-neighbourhood-completion"
+    },
+    {
+      "officialCode": "E09000027",
+      "displayName": "Richmond upon Thames",
+      "total": 1,
+      "real": 1,
+      "synthetic": 0,
+      "policy": "cross-boundary-capital-no-neighbourhood-completion"
+    },
+    {
+      "officialCode": "E09000028",
+      "displayName": "Southwark",
+      "total": 1,
+      "real": 1,
+      "synthetic": 0,
+      "policy": "cross-boundary-capital-no-neighbourhood-completion"
+    },
+    {
+      "officialCode": "E09000029",
+      "displayName": "Sutton",
+      "total": 1,
+      "real": 1,
+      "synthetic": 0,
+      "policy": "cross-boundary-capital-no-neighbourhood-completion"
+    },
+    {
+      "officialCode": "E09000030",
+      "displayName": "Tower Hamlets",
+      "total": 1,
+      "real": 1,
+      "synthetic": 0,
+      "policy": "cross-boundary-capital-no-neighbourhood-completion"
+    },
+    {
+      "officialCode": "E09000031",
+      "displayName": "Waltham Forest",
+      "total": 1,
+      "real": 1,
+      "synthetic": 0,
+      "policy": "cross-boundary-capital-no-neighbourhood-completion"
+    },
+    {
+      "officialCode": "E09000032",
+      "displayName": "Wandsworth",
+      "total": 1,
+      "real": 1,
+      "synthetic": 0,
+      "policy": "cross-boundary-capital-no-neighbourhood-completion"
+    },
+    {
+      "officialCode": "E09000033",
+      "displayName": "Westminster",
+      "total": 1,
+      "real": 1,
+      "synthetic": 0,
+      "policy": "cross-boundary-capital-no-neighbourhood-completion"
+    },
+    {
+      "officialCode": "N09000001",
+      "displayName": "Antrim and Newtownabbey",
+      "total": 9,
+      "real": 0,
+      "synthetic": 9,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "N09000002",
+      "displayName": "Armagh City, Banbridge and Craigavon",
+      "total": 14,
+      "real": 2,
+      "synthetic": 12,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "N09000003",
+      "displayName": "Belfast",
+      "total": 1,
+      "real": 1,
+      "synthetic": 0,
+      "policy": "preserved-compact-real-anchor-no-neighbourhood-completion"
+    },
+    {
+      "officialCode": "N09000004",
+      "displayName": "Causeway Coast and Glens",
+      "total": 9,
+      "real": 1,
+      "synthetic": 8,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "N09000005",
+      "displayName": "Derry City and Strabane",
+      "total": 9,
+      "real": 1,
+      "synthetic": 8,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "N09000006",
+      "displayName": "Fermanagh and Omagh",
+      "total": 7,
+      "real": 2,
+      "synthetic": 5,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "N09000007",
+      "displayName": "Lisburn and Castlereagh",
+      "total": 9,
+      "real": 1,
+      "synthetic": 8,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "N09000008",
+      "displayName": "Mid and East Antrim",
+      "total": 9,
+      "real": 1,
+      "synthetic": 8,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "N09000009",
+      "displayName": "Mid Ulster",
+      "total": 9,
+      "real": 0,
+      "synthetic": 9,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "N09000010",
+      "displayName": "Newry, Mourne and Down",
+      "total": 11,
+      "real": 1,
+      "synthetic": 10,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "N09000011",
+      "displayName": "Ards and North Down",
+      "total": 10,
+      "real": 1,
+      "synthetic": 9,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "S12000005",
+      "displayName": "Clackmannanshire",
+      "total": 10,
+      "real": 10,
+      "synthetic": 0,
+      "policy": "official-nrs-locality-inventory"
+    },
+    {
+      "officialCode": "S12000006",
+      "displayName": "Dumfries and Galloway",
+      "total": 25,
+      "real": 25,
+      "synthetic": 0,
+      "policy": "official-nrs-locality-inventory"
+    },
+    {
+      "officialCode": "S12000008",
+      "displayName": "East Ayrshire",
+      "total": 23,
+      "real": 23,
+      "synthetic": 0,
+      "policy": "official-nrs-locality-inventory"
+    },
+    {
+      "officialCode": "S12000010",
+      "displayName": "East Lothian",
+      "total": 19,
+      "real": 19,
+      "synthetic": 0,
+      "policy": "official-nrs-locality-inventory"
+    },
+    {
+      "officialCode": "S12000011",
+      "displayName": "East Renfrewshire",
+      "total": 13,
+      "real": 13,
+      "synthetic": 0,
+      "policy": "official-nrs-locality-inventory"
+    },
+    {
+      "officialCode": "S12000013",
+      "displayName": "Na h-Eileanan Siar",
+      "total": 4,
+      "real": 4,
+      "synthetic": 0,
+      "policy": "official-nrs-locality-inventory"
+    },
+    {
+      "officialCode": "S12000014",
+      "displayName": "Falkirk",
+      "total": 32,
+      "real": 32,
+      "synthetic": 0,
+      "policy": "official-nrs-locality-inventory"
+    },
+    {
+      "officialCode": "S12000017",
+      "displayName": "Highland",
+      "total": 55,
+      "real": 55,
+      "synthetic": 0,
+      "policy": "official-nrs-locality-inventory"
+    },
+    {
+      "officialCode": "S12000018",
+      "displayName": "Inverclyde",
+      "total": 7,
+      "real": 7,
+      "synthetic": 0,
+      "policy": "official-nrs-locality-inventory"
+    },
+    {
+      "officialCode": "S12000019",
+      "displayName": "Midlothian",
+      "total": 13,
+      "real": 13,
+      "synthetic": 0,
+      "policy": "official-nrs-locality-inventory"
+    },
+    {
+      "officialCode": "S12000020",
+      "displayName": "Moray",
+      "total": 21,
+      "real": 21,
+      "synthetic": 0,
+      "policy": "official-nrs-locality-inventory"
+    },
+    {
+      "officialCode": "S12000021",
+      "displayName": "North Ayrshire",
+      "total": 18,
+      "real": 18,
+      "synthetic": 0,
+      "policy": "official-nrs-locality-inventory"
+    },
+    {
+      "officialCode": "S12000023",
+      "displayName": "Orkney Islands",
+      "total": 3,
+      "real": 3,
+      "synthetic": 0,
+      "policy": "official-nrs-locality-inventory"
+    },
+    {
+      "officialCode": "S12000026",
+      "displayName": "Scottish Borders",
+      "total": 30,
+      "real": 30,
+      "synthetic": 0,
+      "policy": "official-nrs-locality-inventory"
+    },
+    {
+      "officialCode": "S12000027",
+      "displayName": "Shetland Islands",
+      "total": 3,
+      "real": 3,
+      "synthetic": 0,
+      "policy": "official-nrs-locality-inventory"
+    },
+    {
+      "officialCode": "S12000028",
+      "displayName": "South Ayrshire",
+      "total": 15,
+      "real": 15,
+      "synthetic": 0,
+      "policy": "official-nrs-locality-inventory"
+    },
+    {
+      "officialCode": "S12000029",
+      "displayName": "South Lanarkshire",
+      "total": 33,
+      "real": 33,
+      "synthetic": 0,
+      "policy": "official-nrs-locality-inventory"
+    },
+    {
+      "officialCode": "S12000030",
+      "displayName": "Stirling",
+      "total": 18,
+      "real": 18,
+      "synthetic": 0,
+      "policy": "official-nrs-locality-inventory"
+    },
+    {
+      "officialCode": "S12000033",
+      "displayName": "Aberdeen City",
+      "total": 7,
+      "real": 7,
+      "synthetic": 0,
+      "policy": "official-nrs-locality-inventory"
+    },
+    {
+      "officialCode": "S12000034",
+      "displayName": "Aberdeenshire",
+      "total": 63,
+      "real": 63,
+      "synthetic": 0,
+      "policy": "official-nrs-locality-inventory"
+    },
+    {
+      "officialCode": "S12000035",
+      "displayName": "Argyll and Bute",
+      "total": 24,
+      "real": 24,
+      "synthetic": 0,
+      "policy": "official-nrs-locality-inventory"
+    },
+    {
+      "officialCode": "S12000036",
+      "displayName": "City of Edinburgh",
+      "total": 5,
+      "real": 5,
+      "synthetic": 0,
+      "policy": "official-nrs-locality-inventory"
+    },
+    {
+      "officialCode": "S12000038",
+      "displayName": "Renfrewshire",
+      "total": 16,
+      "real": 16,
+      "synthetic": 0,
+      "policy": "official-nrs-locality-inventory"
+    },
+    {
+      "officialCode": "S12000039",
+      "displayName": "West Dunbartonshire",
+      "total": 10,
+      "real": 10,
+      "synthetic": 0,
+      "policy": "official-nrs-locality-inventory"
+    },
+    {
+      "officialCode": "S12000040",
+      "displayName": "West Lothian",
+      "total": 24,
+      "real": 24,
+      "synthetic": 0,
+      "policy": "official-nrs-locality-inventory"
+    },
+    {
+      "officialCode": "S12000041",
+      "displayName": "Angus",
+      "total": 17,
+      "real": 17,
+      "synthetic": 0,
+      "policy": "official-nrs-locality-inventory"
+    },
+    {
+      "officialCode": "S12000042",
+      "displayName": "Dundee City",
+      "total": 2,
+      "real": 2,
+      "synthetic": 0,
+      "policy": "official-nrs-locality-inventory"
+    },
+    {
+      "officialCode": "S12000045",
+      "displayName": "East Dunbartonshire",
+      "total": 9,
+      "real": 9,
+      "synthetic": 0,
+      "policy": "official-nrs-locality-inventory"
+    },
+    {
+      "officialCode": "S12000047",
+      "displayName": "Fife",
+      "total": 65,
+      "real": 65,
+      "synthetic": 0,
+      "policy": "official-nrs-locality-inventory"
+    },
+    {
+      "officialCode": "S12000048",
+      "displayName": "Perth and Kinross",
+      "total": 36,
+      "real": 36,
+      "synthetic": 0,
+      "policy": "official-nrs-locality-inventory"
+    },
+    {
+      "officialCode": "S12000049",
+      "displayName": "Glasgow City",
+      "total": 4,
+      "real": 4,
+      "synthetic": 0,
+      "policy": "official-nrs-locality-inventory"
+    },
+    {
+      "officialCode": "S12000050",
+      "displayName": "North Lanarkshire",
+      "total": 38,
+      "real": 38,
+      "synthetic": 0,
+      "policy": "official-nrs-locality-inventory"
+    },
+    {
+      "officialCode": "W06000001",
+      "displayName": "Isle of Anglesey",
+      "total": 4,
+      "real": 0,
+      "synthetic": 4,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "W06000002",
+      "displayName": "Gwynedd",
+      "total": 7,
+      "real": 1,
+      "synthetic": 6,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "W06000003",
+      "displayName": "Conwy",
+      "total": 7,
+      "real": 1,
+      "synthetic": 6,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "W06000004",
+      "displayName": "Denbighshire",
+      "total": 6,
+      "real": 0,
+      "synthetic": 6,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "W06000005",
+      "displayName": "Flintshire",
+      "total": 9,
+      "real": 0,
+      "synthetic": 9,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "W06000006",
+      "displayName": "Wrexham",
+      "total": 8,
+      "real": 1,
+      "synthetic": 7,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "W06000008",
+      "displayName": "Ceredigion",
+      "total": 5,
+      "real": 1,
+      "synthetic": 4,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "W06000009",
+      "displayName": "Pembrokeshire",
+      "total": 7,
+      "real": 0,
+      "synthetic": 7,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "W06000010",
+      "displayName": "Carmarthenshire",
+      "total": 11,
+      "real": 1,
+      "synthetic": 10,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "W06000011",
+      "displayName": "Swansea",
+      "total": 14,
+      "real": 1,
+      "synthetic": 13,
+      "policy": "reviewed-polycentric-administrative-area"
+    },
+    {
+      "officialCode": "W06000012",
+      "displayName": "Neath Port Talbot",
+      "total": 8,
+      "real": 0,
+      "synthetic": 8,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "W06000013",
+      "displayName": "Bridgend",
+      "total": 9,
+      "real": 1,
+      "synthetic": 8,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "W06000014",
+      "displayName": "Vale of Glamorgan",
+      "total": 8,
+      "real": 0,
+      "synthetic": 8,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "W06000015",
+      "displayName": "Cardiff",
+      "total": 1,
+      "real": 1,
+      "synthetic": 0,
+      "policy": "preserved-compact-real-anchor-no-neighbourhood-completion"
+    },
+    {
+      "officialCode": "W06000016",
+      "displayName": "Rhondda Cynon Taf",
+      "total": 14,
+      "real": 0,
+      "synthetic": 14,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "W06000018",
+      "displayName": "Caerphilly",
+      "total": 10,
+      "real": 0,
+      "synthetic": 10,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "W06000019",
+      "displayName": "Blaenau Gwent",
+      "total": 4,
+      "real": 0,
+      "synthetic": 4,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "W06000020",
+      "displayName": "Torfaen",
+      "total": 6,
+      "real": 0,
+      "synthetic": 6,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "W06000021",
+      "displayName": "Monmouthshire",
+      "total": 6,
+      "real": 0,
+      "synthetic": 6,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "W06000022",
+      "displayName": "Newport",
+      "total": 10,
+      "real": 1,
+      "synthetic": 9,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "W06000023",
+      "displayName": "Powys",
+      "total": 8,
+      "real": 0,
+      "synthetic": 8,
+      "policy": "population-guided-authored-completion"
+    },
+    {
+      "officialCode": "W06000024",
+      "displayName": "Merthyr Tydfil",
+      "total": 4,
+      "real": 1,
+      "synthetic": 3,
+      "policy": "population-guided-authored-completion"
+    }
+  ],
+  "policyDefinitions": {
+    "cross-boundary-capital-no-neighbourhood-completion": {
+      "classification": "reviewed-content-policy",
+      "reason": "The preserved London identity spans its reviewed administrative intersections; boroughs and neighbourhoods are not promoted to Settlements."
+    },
+    "preserved-compact-real-anchor-no-neighbourhood-completion": {
+      "classification": "reviewed-content-policy",
+      "reason": "The reviewed real anchor exhausts v2 Settlement-level content for this compact major-city authority; finer urban parts are deferred as neighbourhoods."
+    },
+    "reviewed-polycentric-administrative-area": {
+      "classification": "reviewed-content-policy",
+      "reason": "The wider administrative area contains or plausibly contains multiple distinct populated places; authored completion represents separate Settlement-level places, not subdivisions of the named city."
+    },
+    "official-nrs-locality-inventory": {
+      "classification": "official-estimated-statistical-evidence",
+      "reason": "The package uses the official NRS Locality inventory and adds no authored Scottish Settlements."
+    },
+    "preserved-small-area-real-anchor": {
+      "classification": "reviewed-content-policy",
+      "reason": "A reviewed real anchor supplies the package's Settlement-level content for this exceptionally small administrative area; no synthetic minimum is added."
+    },
+    "population-guided-authored-completion": {
+      "classification": "authored-gameplay-abstraction",
+      "reason": "Population magnitude controls only the reviewed authored content count; it is not evidence of Settlement count, urbanisation, or Settlement population."
+    }
+  },
+  "syntheticCountByAdministrativeArea": {
+    "E06000001": 4,
+    "E06000002": 6,
+    "E06000003": 6,
+    "E06000004": 8,
+    "E06000005": 5,
+    "E06000006": 6,
+    "E06000007": 9,
+    "E06000008": 7,
+    "E06000009": 6,
+    "E06000010": 0,
+    "E06000011": 14,
+    "E06000012": 7,
+    "E06000013": 7,
+    "E06000014": 8,
+    "E06000015": 0,
+    "E06000016": 0,
+    "E06000017": 2,
+    "E06000018": 0,
+    "E06000019": 8,
+    "E06000020": 8,
+    "E06000021": 0,
+    "E06000022": 7,
+    "E06000023": 0,
+    "E06000024": 9,
+    "E06000025": 12,
+    "E06000026": 0,
+    "E06000027": 6,
+    "E06000030": 10,
+    "E06000031": 9,
+    "E06000032": 10,
+    "E06000033": 8,
+    "E06000034": 7,
+    "E06000035": 12,
+    "E06000036": 6,
+    "E06000037": 7,
+    "E06000038": 0,
+    "E06000039": 7,
+    "E06000040": 7,
+    "E06000041": 8,
+    "E06000042": 12,
+    "E06000043": 0,
+    "E06000044": 0,
+    "E06000045": 0,
+    "E06000046": 6,
+    "E06000047": 21,
+    "E06000049": 17,
+    "E06000050": 14,
+    "E06000051": 13,
+    "E06000052": 23,
+    "E06000053": 0,
+    "E06000054": 21,
+    "E06000055": 8,
+    "E06000056": 13,
+    "E06000057": 13,
+    "E06000058": 15,
+    "E06000059": 15,
+    "E06000060": 23,
+    "E06000061": 15,
+    "E06000062": 17,
+    "E06000063": 10,
+    "E06000064": 9,
+    "E06000065": 25,
+    "E06000066": 23,
+    "E07000008": 5,
+    "E07000009": 4,
+    "E07000010": 5,
+    "E07000011": 8,
+    "E07000012": 7,
+    "E07000032": 6,
+    "E07000033": 4,
+    "E07000034": 5,
+    "E07000035": 3,
+    "E07000036": 5,
+    "E07000037": 4,
+    "E07000038": 5,
+    "E07000039": 5,
+    "E07000040": 7,
+    "E07000041": 5,
+    "E07000042": 4,
+    "E07000043": 4,
+    "E07000044": 4,
+    "E07000045": 6,
+    "E07000046": 3,
+    "E07000047": 3,
+    "E07000061": 5,
+    "E07000062": 4,
+    "E07000063": 4,
+    "E07000064": 4,
+    "E07000065": 7,
+    "E07000066": 8,
+    "E07000067": 7,
+    "E07000068": 4,
+    "E07000069": 4,
+    "E07000070": 8,
+    "E07000071": 8,
+    "E07000072": 6,
+    "E07000073": 4,
+    "E07000074": 3,
+    "E07000075": 4,
+    "E07000076": 7,
+    "E07000077": 4,
+    "E07000078": 5,
+    "E07000079": 4,
+    "E07000080": 4,
+    "E07000081": 6,
+    "E07000082": 5,
+    "E07000083": 4,
+    "E07000084": 8,
+    "E07000085": 5,
+    "E07000086": 6,
+    "E07000087": 5,
+    "E07000088": 4,
+    "E07000089": 4,
+    "E07000090": 5,
+    "E07000091": 7,
+    "E07000092": 5,
+    "E07000093": 6,
+    "E07000094": 6,
+    "E07000095": 4,
+    "E07000096": 7,
+    "E07000098": 5,
+    "E07000099": 6,
+    "E07000102": 4,
+    "E07000103": 5,
+    "E07000105": 6,
+    "E07000106": 7,
+    "E07000107": 5,
+    "E07000108": 5,
+    "E07000109": 5,
+    "E07000110": 8,
+    "E07000111": 5,
+    "E07000112": 5,
+    "E07000113": 7,
+    "E07000114": 6,
+    "E07000115": 6,
+    "E07000116": 5,
+    "E07000117": 4,
+    "E07000118": 5,
+    "E07000119": 4,
+    "E07000120": 4,
+    "E07000121": 6,
+    "E07000122": 4,
+    "E07000123": 7,
+    "E07000124": 3,
+    "E07000125": 3,
+    "E07000126": 5,
+    "E07000127": 5,
+    "E07000128": 5,
+    "E07000129": 5,
+    "E07000130": 8,
+    "E07000131": 5,
+    "E07000132": 5,
+    "E07000133": 3,
+    "E07000134": 5,
+    "E07000135": 3,
+    "E07000136": 3,
+    "E07000137": 6,
+    "E07000138": 5,
+    "E07000139": 5,
+    "E07000140": 4,
+    "E07000141": 6,
+    "E07000142": 4,
+    "E07000143": 6,
+    "E07000144": 6,
+    "E07000145": 4,
+    "E07000146": 7,
+    "E07000147": 4,
+    "E07000148": 5,
+    "E07000149": 6,
+    "E07000170": 5,
+    "E07000171": 5,
+    "E07000172": 5,
+    "E07000173": 5,
+    "E07000174": 5,
+    "E07000175": 5,
+    "E07000176": 5,
+    "E07000177": 7,
+    "E07000178": 6,
+    "E07000179": 7,
+    "E07000180": 6,
+    "E07000181": 5,
+    "E07000192": 5,
+    "E07000193": 5,
+    "E07000194": 5,
+    "E07000195": 5,
+    "E07000196": 5,
+    "E07000197": 6,
+    "E07000198": 4,
+    "E07000199": 4,
+    "E07000200": 4,
+    "E07000202": 6,
+    "E07000203": 5,
+    "E07000207": 6,
+    "E07000208": 4,
+    "E07000209": 6,
+    "E07000210": 4,
+    "E07000211": 7,
+    "E07000212": 4,
+    "E07000213": 5,
+    "E07000214": 4,
+    "E07000215": 4,
+    "E07000216": 6,
+    "E07000217": 5,
+    "E07000218": 3,
+    "E07000219": 6,
+    "E07000220": 5,
+    "E07000221": 6,
+    "E07000222": 6,
+    "E07000223": 3,
+    "E07000224": 7,
+    "E07000225": 5,
+    "E07000226": 5,
+    "E07000227": 6,
+    "E07000228": 7,
+    "E07000229": 5,
+    "E07000234": 4,
+    "E07000235": 4,
+    "E07000236": 4,
+    "E07000237": 5,
+    "E07000238": 6,
+    "E07000239": 4,
+    "E07000240": 6,
+    "E07000241": 5,
+    "E07000242": 7,
+    "E07000243": 4,
+    "E07000244": 10,
+    "E07000245": 8,
+    "E08000001": 12,
+    "E08000002": 8,
+    "E08000003": 0,
+    "E08000004": 10,
+    "E08000005": 10,
+    "E08000006": 12,
+    "E08000007": 12,
+    "E08000008": 10,
+    "E08000009": 10,
+    "E08000010": 14,
+    "E08000011": 7,
+    "E08000012": 0,
+    "E08000013": 8,
+    "E08000014": 12,
+    "E08000015": 13,
+    "E08000016": 10,
+    "E08000017": 13,
+    "E08000018": 11,
+    "E08000019": 0,
+    "E08000021": 0,
+    "E08000022": 9,
+    "E08000023": 6,
+    "E08000024": 0,
+    "E08000025": 0,
+    "E08000026": 0,
+    "E08000027": 13,
+    "E08000028": 14,
+    "E08000029": 9,
+    "E08000030": 12,
+    "E08000031": 11,
+    "E08000032": 18,
+    "E08000033": 9,
+    "E08000034": 18,
+    "E08000035": 32,
+    "E08000036": 15,
+    "E08000037": 8,
+    "E09000001": 0,
+    "E09000002": 0,
+    "E09000003": 0,
+    "E09000004": 0,
+    "E09000005": 0,
+    "E09000006": 0,
+    "E09000007": 0,
+    "E09000008": 0,
+    "E09000009": 0,
+    "E09000010": 0,
+    "E09000011": 0,
+    "E09000012": 0,
+    "E09000013": 0,
+    "E09000014": 0,
+    "E09000015": 0,
+    "E09000016": 0,
+    "E09000017": 0,
+    "E09000018": 0,
+    "E09000019": 0,
+    "E09000020": 0,
+    "E09000021": 0,
+    "E09000022": 0,
+    "E09000023": 0,
+    "E09000024": 0,
+    "E09000025": 0,
+    "E09000026": 0,
+    "E09000027": 0,
+    "E09000028": 0,
+    "E09000029": 0,
+    "E09000030": 0,
+    "E09000031": 0,
+    "E09000032": 0,
+    "E09000033": 0,
+    "N09000001": 9,
+    "N09000002": 12,
+    "N09000003": 0,
+    "N09000004": 8,
+    "N09000005": 8,
+    "N09000006": 5,
+    "N09000007": 8,
+    "N09000008": 8,
+    "N09000009": 9,
+    "N09000010": 10,
+    "N09000011": 9,
+    "S12000005": 0,
+    "S12000006": 0,
+    "S12000008": 0,
+    "S12000010": 0,
+    "S12000011": 0,
+    "S12000013": 0,
+    "S12000014": 0,
+    "S12000017": 0,
+    "S12000018": 0,
+    "S12000019": 0,
+    "S12000020": 0,
+    "S12000021": 0,
+    "S12000023": 0,
+    "S12000026": 0,
+    "S12000027": 0,
+    "S12000028": 0,
+    "S12000029": 0,
+    "S12000030": 0,
+    "S12000033": 0,
+    "S12000034": 0,
+    "S12000035": 0,
+    "S12000036": 0,
+    "S12000038": 0,
+    "S12000039": 0,
+    "S12000040": 0,
+    "S12000041": 0,
+    "S12000042": 0,
+    "S12000045": 0,
+    "S12000047": 0,
+    "S12000048": 0,
+    "S12000049": 0,
+    "S12000050": 0,
+    "W06000001": 4,
+    "W06000002": 6,
+    "W06000003": 6,
+    "W06000004": 6,
+    "W06000005": 9,
+    "W06000006": 7,
+    "W06000008": 4,
+    "W06000009": 7,
+    "W06000010": 10,
+    "W06000011": 13,
+    "W06000012": 8,
+    "W06000013": 8,
+    "W06000014": 8,
+    "W06000015": 0,
+    "W06000016": 14,
+    "W06000018": 10,
+    "W06000019": 4,
+    "W06000020": 6,
+    "W06000021": 6,
+    "W06000022": 9,
+    "W06000023": 8,
+    "W06000024": 3
+  },
+  "provenanceInventory": {
+    "officialNrsLocalities": 656,
+    "reviewedRealAnchors": 56,
+    "authoredGameplayAbstractions": 1986
+  },
+  "relationInventory": {
+    "total": 2736,
+    "containedBy": 2691,
+    "intersects": 45,
+    "multiRelationSettlements": 7
+  },
+  "stressCases": {
+    "majorCities": [
+      {
+        "displayName": "London",
+        "settlementId": "settlement.uk.reviewed.london",
+        "administrativeAreas": [
+          "E09000001",
+          "E09000002",
+          "E09000003",
+          "E09000004",
+          "E09000005",
+          "E09000006",
+          "E09000007",
+          "E09000008",
+          "E09000009",
+          "E09000010",
+          "E09000011",
+          "E09000012",
+          "E09000013",
+          "E09000014",
+          "E09000015",
+          "E09000016",
+          "E09000017",
+          "E09000018",
+          "E09000019",
+          "E09000020",
+          "E09000021",
+          "E09000022",
+          "E09000023",
+          "E09000024",
+          "E09000025",
+          "E09000026",
+          "E09000027",
+          "E09000028",
+          "E09000029",
+          "E09000030",
+          "E09000031",
+          "E09000032",
+          "E09000033"
+        ],
+        "realAnchorCount": 1,
+        "syntheticCount": 0,
+        "policy": "cross-boundary-capital-no-neighbourhood-completion",
+        "reason": "One durable London identity intersects 33 reviewed administrative cells; boroughs are administrative components, not separate Settlements in this package."
+      },
+      {
+        "displayName": "Birmingham",
+        "settlementId": "settlement.uk.reviewed.birmingham",
+        "administrativeAreas": [
+          "E08000025"
+        ],
+        "realAnchorCount": 1,
+        "syntheticCount": 0,
+        "policy": "preserved-compact-real-anchor-no-neighbourhood-completion",
+        "reason": "The reviewed real anchor exhausts v2 Settlement-level content for this compact major-city authority; finer urban parts are deferred as neighbourhoods."
+      },
+      {
+        "displayName": "Manchester",
+        "settlementId": "settlement.uk.reviewed.manchester",
+        "administrativeAreas": [
+          "E08000003"
+        ],
+        "realAnchorCount": 1,
+        "syntheticCount": 0,
+        "policy": "preserved-compact-real-anchor-no-neighbourhood-completion",
+        "reason": "The reviewed real anchor exhausts v2 Settlement-level content for this compact major-city authority; finer urban parts are deferred as neighbourhoods."
+      },
+      {
+        "displayName": "Leeds",
+        "settlementId": "settlement.uk.reviewed.leeds",
+        "administrativeAreas": [
+          "E08000035"
+        ],
+        "realAnchorCount": 1,
+        "syntheticCount": 32,
+        "policy": "reviewed-polycentric-administrative-area",
+        "reason": "The metropolitan district extends beyond the Leeds anchor and is reviewed as polycentric; authored records denote separate fictional populated places, not Leeds neighbourhoods."
+      },
+      {
+        "displayName": "Bradford",
+        "settlementId": "settlement.uk.reviewed.bradford",
+        "administrativeAreas": [
+          "E08000032"
+        ],
+        "realAnchorCount": 4,
+        "syntheticCount": 18,
+        "policy": "reviewed-polycentric-administrative-area",
+        "reason": "Bradford, Keighley, Shipley and Ilkley are preserved distinct real anchors; authored records complete the wider polycentric district without subdividing Bradford city."
+      },
+      {
+        "displayName": "Liverpool",
+        "settlementId": "settlement.uk.reviewed.liverpool",
+        "administrativeAreas": [
+          "E08000012"
+        ],
+        "realAnchorCount": 1,
+        "syntheticCount": 0,
+        "policy": "preserved-compact-real-anchor-no-neighbourhood-completion",
+        "reason": "The reviewed real anchor exhausts v2 Settlement-level content for this compact major-city authority; finer urban parts are deferred as neighbourhoods."
+      },
+      {
+        "displayName": "Sheffield",
+        "settlementId": "settlement.uk.reviewed.sheffield",
+        "administrativeAreas": [
+          "E08000019"
+        ],
+        "realAnchorCount": 1,
+        "syntheticCount": 0,
+        "policy": "preserved-compact-real-anchor-no-neighbourhood-completion",
+        "reason": "The reviewed real anchor exhausts v2 Settlement-level content for this compact major-city authority; finer urban parts are deferred as neighbourhoods."
+      },
+      {
+        "displayName": "Bristol",
+        "settlementId": "settlement.uk.reviewed.bristol",
+        "administrativeAreas": [
+          "E06000023"
+        ],
+        "realAnchorCount": 1,
+        "syntheticCount": 0,
+        "policy": "preserved-compact-real-anchor-no-neighbourhood-completion",
+        "reason": "The reviewed real anchor exhausts v2 Settlement-level content for this compact major-city authority; finer urban parts are deferred as neighbourhoods."
+      },
+      {
+        "displayName": "Newcastle upon Tyne",
+        "settlementId": "settlement.uk.reviewed.newcastle-upon-tyne",
+        "administrativeAreas": [
+          "E08000021"
+        ],
+        "realAnchorCount": 1,
+        "syntheticCount": 0,
+        "policy": "preserved-compact-real-anchor-no-neighbourhood-completion",
+        "reason": "The reviewed real anchor exhausts v2 Settlement-level content for this compact major-city authority; finer urban parts are deferred as neighbourhoods."
+      },
+      {
+        "displayName": "Cardiff",
+        "settlementId": "settlement.uk.reviewed.cardiff",
+        "administrativeAreas": [
+          "W06000015"
+        ],
+        "realAnchorCount": 1,
+        "syntheticCount": 0,
+        "policy": "preserved-compact-real-anchor-no-neighbourhood-completion",
+        "reason": "The reviewed real anchor exhausts v2 Settlement-level content for this compact major-city authority; finer urban parts are deferred as neighbourhoods."
+      },
+      {
+        "displayName": "Swansea",
+        "settlementId": "settlement.uk.reviewed.swansea",
+        "administrativeAreas": [
+          "W06000011"
+        ],
+        "realAnchorCount": 1,
+        "syntheticCount": 13,
+        "policy": "reviewed-polycentric-administrative-area",
+        "reason": "The City and County authority contains urban, coastal and rural territory beyond the Swansea anchor and is reviewed as polycentric; its authored records denote separate fictional populated places, not Swansea neighbourhoods."
+      },
+      {
+        "displayName": "Glasgow",
+        "settlementId": "settlement.uk.nrs-locality.s52000280",
+        "administrativeAreas": [
+          "S12000038",
+          "S12000049"
+        ],
+        "realAnchorCount": 19,
+        "syntheticCount": 0,
+        "policy": "official-nrs-locality-inventory",
+        "reason": "The package uses the official NRS Locality inventory and adds no authored Scottish Settlements."
+      },
+      {
+        "displayName": "Edinburgh",
+        "settlementId": "settlement.uk.nrs-locality.s52000233",
+        "administrativeAreas": [
+          "S12000036"
+        ],
+        "realAnchorCount": 5,
+        "syntheticCount": 0,
+        "policy": "official-nrs-locality-inventory",
+        "reason": "The package uses the official NRS Locality inventory and adds no authored Scottish Settlements."
+      },
+      {
+        "displayName": "Aberdeen",
+        "settlementId": "settlement.uk.nrs-locality.s52000002",
+        "administrativeAreas": [
+          "S12000033"
+        ],
+        "realAnchorCount": 7,
+        "syntheticCount": 0,
+        "policy": "official-nrs-locality-inventory",
+        "reason": "The package uses the official NRS Locality inventory and adds no authored Scottish Settlements."
+      },
+      {
+        "displayName": "Dundee",
+        "settlementId": "settlement.uk.nrs-locality.s52000210",
+        "administrativeAreas": [
+          "S12000041",
+          "S12000042"
+        ],
+        "realAnchorCount": 17,
+        "syntheticCount": 0,
+        "policy": "official-nrs-locality-inventory",
+        "reason": "The package uses the official NRS Locality inventory and adds no authored Scottish Settlements."
+      },
+      {
+        "displayName": "Belfast",
+        "settlementId": "settlement.uk.reviewed.belfast",
+        "administrativeAreas": [
+          "N09000003"
+        ],
+        "realAnchorCount": 1,
+        "syntheticCount": 0,
+        "policy": "preserved-compact-real-anchor-no-neighbourhood-completion",
+        "reason": "The reviewed real anchor exhausts v2 Settlement-level content for this compact major-city authority; finer urban parts are deferred as neighbourhoods."
+      }
+    ],
+    "administrativeAreas": [
+      {
+        "officialCode": "E09000001",
+        "displayName": "City of London",
+        "total": 1,
+        "real": 1,
+        "synthetic": 0,
+        "policy": "cross-boundary-capital-no-neighbourhood-completion"
+      },
+      {
+        "officialCode": "E06000053",
+        "displayName": "Isles of Scilly",
+        "total": 1,
+        "real": 1,
+        "synthetic": 0,
+        "policy": "preserved-small-area-real-anchor"
+      },
+      {
+        "officialCode": "S12000023",
+        "displayName": "Orkney Islands",
+        "total": 3,
+        "real": 3,
+        "synthetic": 0,
+        "policy": "official-nrs-locality-inventory"
+      },
+      {
+        "officialCode": "S12000027",
+        "displayName": "Shetland Islands",
+        "total": 3,
+        "real": 3,
+        "synthetic": 0,
+        "policy": "official-nrs-locality-inventory"
+      },
+      {
+        "officialCode": "E06000052",
+        "displayName": "Cornwall",
+        "total": 23,
+        "real": 0,
+        "synthetic": 23,
+        "policy": "population-guided-authored-completion"
+      },
+      {
+        "officialCode": "W06000023",
+        "displayName": "Powys",
+        "total": 8,
+        "real": 0,
+        "synthetic": 8,
+        "policy": "population-guided-authored-completion"
+      },
+      {
+        "officialCode": "N09000006",
+        "displayName": "Fermanagh and Omagh",
+        "total": 7,
+        "real": 2,
+        "synthetic": 5,
+        "policy": "population-guided-authored-completion"
+      }
+    ]
+  },
+  "sourceDependencies": [
+    {
+      "sourceId": "geography.source.nisra.settlement-lookup-2015-v1",
+      "bundledArtifactId": "artifact.nisra.settlement-lookup-2015-v1",
+      "sha256": "sha256:1f9e4c3d2d1ccadbf80eb52f8dc6b8f8867ca0a1aec327925df03cb993ac0ff0"
+    },
+    {
+      "sourceId": "geography.source.nrs.census-localities-2022-v1",
+      "bundledArtifactId": "artifact.nrs.census-geography-index-2022-v1",
+      "sha256": "sha256:0e4096a321cba2318dc5d2e35c197bf815ac333aebdf4cb0ddce82112b57a261"
+    },
+    {
+      "sourceId": "geography.source.ons.reviewed-major-settlements-2021-v1"
+    },
+    {
+      "sourceId": "geography.source.turning-pages.synthetic-uk-settlements-2024-v2"
+    }
+  ],
+  "continuityInventory": {
+    "continued": 2698,
+    "historicalOnly": 41,
+    "ledgerFingerprint": "fnv1a64-v1:6645f23c6de7bb1b"
+  },
+  "namingDiagnostics": {
+    "correctedWelshCefnCount": 8,
+    "malformedNameCount": 0,
+    "maximumDisplayNameCodePoints": 72,
+    "reviewedSampleCounts": {
+      "england": 50,
+      "wales": 100,
+      "northern-ireland": 50
+    },
+    "nfc": true,
+    "countryLevelSyntheticUniqueness": true
+  },
+  "quality": {
+    "duplicateSettlementIds": false,
+    "duplicateRelationKeys": false,
+    "accidentalSyntheticNameCollisionsWithinArea": false,
+    "accidentalSyntheticNameCollisionsWithinCountry": false,
+    "maximumDisplayNameCodePoints": 72,
+    "allRelationsResolve": true,
+    "allSyntheticRecordsUseOnlySyntheticSource": true,
+    "allRealRecordsUseOfficialSources": true
+  },
+  "packageFingerprint": "fnv1a64-v1:2ddc7643a1e7e4b8",
+  "canonicalArtifact": {
+    "filename": "compiled-settlements-candidate.json",
+    "byteLength": 3269891,
+    "sha256": "34aa659dc4ed927b70f78834c6638e58ae787ead38a9e9e68fe28886b0c359db"
+  }
+}

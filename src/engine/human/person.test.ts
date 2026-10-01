@@ -72,7 +72,7 @@ describe('country-neutral Person and PeopleState v1',()=>{
 describe('Person persistence and root-v3 population migration',()=>{
  it('migrates root v1 once to exactly one deterministic player without inventing state or consuming RNG',()=>{
   const current=adultStart(createGame('Legacy Person','Self-described','uk',6));current.money=1234;current.job='barista';current.education='secondary';addTrait(current,'patient');const old=legacy(current),beforeRandomness=structuredClone(old.randomness),relationships=structuredClone(old.relationships),migrated=migrateGame(old)!;
-  expect(migrated.version).toBe(3);expect(migrated.people).toEqual(expect.objectContaining({version:1,nextSequence:2,playerId:'person:1'}));expect(migrated.people!.people).toHaveLength(1);expect(playerPerson(migrated.people!).traits).toEqual(['patient']);expect(playerPerson(migrated.people!).aptitudes).toEqual({});expect(playerPerson(migrated.people!).temperament).toEqual({});expect(migrated.randomness).toEqual(beforeRandomness);expect(migrated.money).toBe(1234);expect(migrated.job).toBe('barista');expect(migrated.education).toBe('secondary');expect(migrated.relationships).toEqual(relationships);expect(migrateGame(migrated)).toEqual(migrated);
+  expect(migrated.version).toBe(4);expect(migrated.people).toEqual(expect.objectContaining({version:1,nextSequence:2,playerId:'person:1'}));expect(migrated.people!.people).toHaveLength(1);expect(playerPerson(migrated.people!).traits).toEqual(['patient']);expect(playerPerson(migrated.people!).aptitudes).toEqual({});expect(playerPerson(migrated.people!).temperament).toEqual({});expect(migrated.randomness).toEqual(beforeRandomness);expect(migrated.money).toBe(1234);expect(migrated.job).toBe('barista');expect(migrated.education).toBe('secondary');expect(migrated.relationships).toEqual(relationships);expect(migrateGame(migrated)).toEqual(migrated);
   expect(migrated.clock!.date).toEqual(current.clock!.date);expect(migrated.ukWorld).toEqual(current.ukWorld);
  });
  it('preserves the exact established gender-label compatibility value during migration',()=>{
@@ -89,10 +89,10 @@ describe('Person persistence and root-v3 population migration',()=>{
  it('round trips identities and allocates the next Person after save/load',()=>{
   const game=createGame('Persistent','Non-binary','nz',9);game.people=allocatePerson(game.people!,input({name:'NPC'})).state;game.version=2;delete game.population;const serialized=serializeGame(game);expect(serialized.ok).toBe(true);if(!serialized.ok)return;const loaded=parseGame(serialized.raw).game!,next=allocatePerson(loaded.people!,input({name:'Another NPC'}));expect(loaded.people).toEqual(game.people);expect(next.person.id).toBe('person:3');
  });
- it('round trips a pre-1900 Person through the unchanged root-v3 schema',()=>{
+ it('round trips a pre-1900 Person through current-root normalization without changing Person schema',()=>{
   const game=createGame('Historical identity','Person','ca',90),allocated=allocatePerson(game.people!,input({name:'Older Person',dateOfBirth:{year:1899,month:12,day:31}}));game.people=allocated.state;game.population=createLegacyPopulation(game.people,'ca');
   const serialized=serializeGame(game);expect(serialized.ok).toBe(true);if(!serialized.ok)return;const loaded=parseGame(serialized.raw).game!;
-  expect(loaded.version).toBe(3);expect(getPerson(loaded.people!,'person:2')?.dateOfBirth).toEqual({year:1899,month:12,day:31});expect(loaded.people?.nextSequence).toBe(3);expect(migrateGame(loaded)).toEqual(loaded);
+  expect(loaded.version).toBe(4);expect(getPerson(loaded.people!,'person:2')?.dateOfBirth).toEqual({year:1899,month:12,day:31});expect(loaded.people?.nextSequence).toBe(3);expect(migrateGame(loaded)).toEqual(loaded);
  });
  it('preserves exact root-v1 bytes once and blocks replacement if recovery creation fails',()=>{
   const old=legacy(createGame('Recovery','Woman','uk',10)),raw=JSON.stringify(old),migrated=migrateGame(old)!,storage=memoryStorage({[SAVE_KEY]:raw});expect(saveGame(storage,migrated)).toBeNull();expect(storage.data.get(PRE_PERSON_SAVE_KEY)).toBe(raw);const first=storage.data.get(PRE_PERSON_SAVE_KEY);expect(saveGame(storage,migrated)).toBeNull();expect(storage.data.get(PRE_PERSON_SAVE_KEY)).toBe(first);expect(RECOVERY_SNAPSHOTS.some(snapshot=>snapshot.key===PRE_PERSON_SAVE_KEY)).toBe(true);
@@ -102,6 +102,6 @@ describe('Person persistence and root-v3 population migration',()=>{
   const sources=import.meta.glob<string>('./*.ts',{eager:true,query:'?raw',import:'default'});for(const [path,source] of Object.entries(sources)){expect(source,path).not.toMatch(/from\s+['"][^'"]*(?:react|politics|ukWorld|national)/);expect(source,path).not.toMatch(/Math\.random|Date\.now/);}
  });
  it('keeps the old fixture migratable while canonical new lives use root v2',()=>{
-  expect(migrateGame(fixture)?.version).toBe(3);expect(createGame('New','Woman','uk',11).version).toBe(3);
+  expect(migrateGame(fixture)?.version).toBe(4);expect(createGame('New','Woman','uk',11).version).toBe(3);
  });
 });

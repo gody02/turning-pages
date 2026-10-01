@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { act, ageUp, choose, createGame, salary } from './game';
 import { events } from '../data/events';
-import { isGame, loadGame, saveGame } from './save';
+import { isGame, loadGame, saveGame,migrateGame } from './save';
 import type { Game } from './types';
 function resolve(g:Game){const e=events.find(e=>e.id===g.pending);return e?choose(g,e.choices.findIndex(c=>(c.effects.money??0)>=-Math.max(g.money,0))):g;}
 function toAge(g:Game,age:number){for(let turn=0;g.age<age&&g.alive&&turn<110;turn++)g=resolve(ageUp(g));if(g.alive&&g.age<age)throw Error(`Stalled at ${g.age}, event ${g.pending}`);return g;}
@@ -20,7 +20,7 @@ describe('life engine',()=>{
   it('retires at 65 and pays the pension',()=>{let g=createGame('A','Woman','uk',7);for(let turn=0;g.age<65&&turn<70;turn++){g=resolve(ageUp(g));g=act(g,'exercise');}g=act(g,'retire');expect(g.retired).toBe(true);g=resolve(ageUp(g));expect(g.lastIncome).toBe(12000);expect(act(g,'job:barista')).toBe(g);});
 });
 describe('save boundary',()=>{
-  it('round trips a pending event and preserves future outcomes',()=>{let raw:string|null=null;const storage={getItem:()=>raw,setItem:(_k:string,v:string)=>{raw=v;}};const g=ageUp(createGame('A','Man','uk',22));expect(saveGame(storage,g)).toBeNull();const loaded=loadGame(storage).game!;expect(loaded).toEqual(g);expect(ageUp(resolve(loaded))).toEqual(ageUp(resolve(g)));});
+  it('round trips a pending event and preserves future outcomes',()=>{let raw:string|null=null;const storage={getItem:()=>raw,setItem:(_k:string,v:string)=>{raw=v;}};const g=ageUp(createGame('A','Man','uk',22));expect(saveGame(storage,g)).toBeNull();const loaded=loadGame(storage).game!;expect(loaded).toEqual(migrateGame(g));expect(ageUp(resolve(loaded))).toEqual(migrateGame(ageUp(resolve(g))));});
   it('rejects corrupt, outdated and structurally invalid saves',()=>{for(const raw of ['{','null','{}',JSON.stringify({...createGame('A','Man','uk'),version:4}),JSON.stringify({...createGame('A','Man','uk'),relationships:[null]})]){expect(loadGame({getItem:()=>raw,setItem:()=>{}}).error).toBeTruthy();}});
   it('handles unavailable browser storage',()=>{const storage={getItem:()=>{throw Error();},setItem:()=>{throw Error();}};expect(loadGame(storage).error).toBeTruthy();expect(saveGame(storage,createGame('A','Man','uk'))).toBeTruthy();});
 });

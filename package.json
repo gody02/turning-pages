@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite --host 127.0.0.1",
     "verify:uk-geography": "node scripts/verify-uk-geography-content.mjs",
-    "verify:uk-content": "node scripts/verify-uk-human-content.mjs && node scripts/verify-uk-geography-content.mjs && node scripts/verify-uk-geographic-population.mjs",
+    "verify:uk-settlements": "node scripts/verify-uk-hybrid-settlements.mjs",
+    "verify:uk-content": "node scripts/verify-uk-human-content.mjs && node scripts/verify-uk-geography-content.mjs && node scripts/verify-uk-geographic-population.mjs && node scripts/verify-uk-hybrid-settlements.mjs",
     "build": "pnpm verify:uk-content && tsc --noEmit && vite build",
     "preview": "vite preview --host 127.0.0.1",
     "phone": "vite preview --host 0.0.0.0 --port 4173 --strictPort",
@@ -17,6 +18,7 @@
     "test:sim:people": "vitest run --config vitest.sim.config.ts src/engine/testing/personGeneration.sim.ts",
     "test:sim:population": "vitest run --config vitest.sim.config.ts src/engine/testing/population.sim.ts",
     "test:sim:uk-content": "vitest run --config vitest.sim.config.ts src/engine/testing/ukHumanContent.sim.ts",
+    "test:sim:uk-country-start-geographic": "vitest run --config vitest.sim.config.ts src/engine/testing/ukGeographicCountryStart.sim.ts",
     "test:persistence:browser": "playwright test --config playwright.persistence.config.ts"
   },
   "dependencies": {

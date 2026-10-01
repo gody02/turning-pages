@@ -26,6 +26,22 @@ declare global {
 const DIAGNOSTIC_PREFIX='[v3-diagnostic]';
 const IDB_PREFIX='[v3-idb]';
 
+test('persists nonempty root4 Residence with exact injected content and pre-Residence recovery',async({page},testInfo)=>{
+ await page.goto('/');
+ const result=await page.evaluate(async browser=>{
+  const [{syntheticResidenceGame,context},service,indexedDb,payload,save,content]=await Promise.all([import('/src/engine/testing/residenceFixture.ts'),import('/src/persistence/service.ts'),import('/src/persistence/indexedDb.ts'),import('/src/persistence/payload.ts'),import('/src/engine/save.ts'),import('/src/engine/gameContent.ts')]);
+  const name=`turning-pages-residence-root4-${browser}`,game=syntheticResidenceGame(),first=await service.GamePersistence.open(localStorage,indexedDB,name),started=performance.now();
+  await first.save(game,null);first.close();const second=await service.GamePersistence.open(localStorage,indexedDB,name),loaded=await second.initialize();
+  if(JSON.stringify(loaded.game)!==JSON.stringify(game)||!content.validGameWithContent(loaded.game,context(loaded.game.people)))throw Error('Nonempty root4 Residence did not round-trip.');
+  const stored=await second.repository.getRecord('primary');if(!(stored.payload instanceof ArrayBuffer)||stored.declaredRootVersion!==4)throw Error('Root4 did not retain ArrayBuffer storage.');second.close();await indexedDb.deletePersistenceDatabase(indexedDB,name);
+  const {residence,...rest}=game,oldRaw=JSON.stringify({...rest,version:3}),third=await service.GamePersistence.open(localStorage,indexedDB,name);
+  await third.repository.commitSave(await payload.recordFromRaw('primary','primary',1,'canonical-game',oldRaw),null);const migrated=await third.initialize();if(migrated.game.version!==4||migrated.game.residence.residences.length)throw Error('Root3 migration must be empty.');
+  await third.save(migrated.game,1);const recoverySlot=`recovery:${save.PRE_RESIDENCE_SAVE_KEY}`,recovery=await payload.verifyRecord(await third.repository.getRecord(recoverySlot),recoverySlot);if(recovery.raw!==oldRaw)throw Error('Pre-Residence recovery bytes changed.');third.close();await indexedDb.deletePersistenceDatabase(indexedDB,name);
+  return {browser,rootVersion:loaded.game.version,residences:loaded.game.residence.residences.length,byteLength:stored.byteLength,elapsedMs:performance.now()-started};
+ },testInfo.project.name);
+ expect(result.rootVersion).toBe(4);expect(result.residences).toBe(3);console.log(JSON.stringify({gate:'residence-root4',...result}));
+});
+
 async function runStage<T>(page:Page,testInfo:TestInfo,name:string,operation:()=>Promise<StageResult<T>>):Promise<T>{
   console.log(`${DIAGNOSTIC_PREFIX} START ${name}`);
   const result=await operation();
@@ -48,9 +64,7 @@ test('round-trips a one-byte ArrayBuffer after IndexedDB close and reopen',async
   expect(result).toBe(173);
 });
 
-test('diagnoses the exact v3 candidate through observable real IndexedDB stages',async({page},testInfo)=>{
-  // Diagnostic headroom only. The production acceptance limits remain unchanged.
-  test.setTimeout(600_000);
+test('round-trips the root4 Game with frozen geographic v3 content through real IndexedDB stages',async({page},testInfo)=>{
   page.on('console',message=>{const value=message.text();if(value.startsWith(IDB_PREFIX))console.log(value);});
 
   const navigationStarted=performance.now();
@@ -76,7 +90,7 @@ test('diagnoses the exact v3 candidate through observable real IndexedDB stages'
     return {durationMs:performance.now()-started,cumulativeMs:performance.now()-state.startedAt,value:null};
   }));
 
-  const construction=await runStage(page,testInfo,'C v3 candidate constructed',()=>page.evaluate(()=>{
+  const construction=await runStage(page,testInfo,'C v3 package constructed',()=>page.evaluate(()=>{
     const state=globalThis.__turningPagesV3Diagnostic!,started=performance.now();
     state.game=state.modules.v3Gate.createV3PersistenceProbeGame();
     const representedPopulation=state.modules.v3Gate.V3_PERSISTENCE_IDENTITY.total;
@@ -102,16 +116,17 @@ test('diagnoses the exact v3 candidate through observable real IndexedDB stages'
     const state=globalThis.__turningPagesV3Diagnostic!,started=performance.now(),raw=JSON.stringify(state.game);
     if(raw!==state.canonicalRaw)throw Error('Direct JSON serialization differs from canonical Game JSON.');
     const byteLength=new TextEncoder().encode(raw).byteLength;
+    const {residence,...preResidence}=state.game;if(state.game.version!==4||residence.residences.length||residence.occupants.length||residence.noFixedAbodePersonIds.length)throw Error('Root v4 must contain empty Residence.');if(new TextEncoder().encode(JSON.stringify({...preResidence,version:3})).byteLength!==9_595_304)throw Error('Frozen v3 byte contract changed.');
     return {durationMs:performance.now()-started,cumulativeMs:performance.now()-state.startedAt,value:{byteLength}};
   }));
-  expect(stringify.byteLength).toBe(9_595_304);
+  expect(stringify.byteLength).toBe(9_595_405);
 
   const encoded=await runStage(page,testInfo,'G UTF-8 ArrayBuffer preparation complete',()=>page.evaluate(()=>{
     const state=globalThis.__turningPagesV3Diagnostic!,started=performance.now(),bytes=new TextEncoder().encode(state.canonicalRaw);
     state.canonicalBytes=bytes;
     return {durationMs:performance.now()-started,cumulativeMs:performance.now()-state.startedAt,value:{byteLength:bytes.byteLength}};
   }));
-  expect(encoded.byteLength).toBe(9_595_304);
+  expect(encoded.byteLength).toBe(9_595_405);
 
   await runStage(page,testInfo,'H SHA-256 calculation complete',()=>page.evaluate(async()=>{
     const state=globalThis.__turningPagesV3Diagnostic!,started=performance.now();
@@ -139,12 +154,15 @@ test('diagnoses the exact v3 candidate through observable real IndexedDB stages'
     return {durationMs:performance.now()-started,cumulativeMs:performance.now()-state.startedAt,value:null};
   }));
 
-  await runStage(page,testInfo,'K first primary save preparation complete',()=>page.evaluate(async()=>{
+  const preparation=await runStage(page,testInfo,'K first primary save preparation complete',()=>page.evaluate(async()=>{
     const state=globalThis.__turningPagesV3Diagnostic!,started=performance.now();
     const prepared=await state.modules.payload.prepareCanonicalRecord(state.game,state.modules.record.PRIMARY_SLOT,'primary',1);
-    if(prepared.record.byteLength!==9_595_304)throw Error('Prepared primary has the wrong byte length.');
-    return {durationMs:performance.now()-started,cumulativeMs:performance.now()-state.startedAt,value:{byteLength:prepared.record.byteLength}};
+    if(prepared.record.byteLength!==9_595_405)throw Error('Prepared primary has the wrong byte length.');
+    const durationMs=performance.now()-started;
+    return {durationMs,cumulativeMs:performance.now()-state.startedAt,value:{byteLength:prepared.record.byteLength,durationMs}};
   }));
+  expect(preparation.byteLength).toBe(9_595_405);
+  expect(preparation.durationMs).toBeLessThanOrEqual(1_000);
 
   await runStage(page,testInfo,'L first IndexedDB write transaction committed',()=>page.evaluate(async prefix=>{
     const state=globalThis.__turningPagesV3Diagnostic!,started=performance.now(),dbPrototype=IDBDatabase.prototype as any,storePrototype=IDBObjectStore.prototype as any,originalTransaction=dbPrototype.transaction,originalPut=storePrototype.put;
@@ -176,7 +194,7 @@ test('diagnoses the exact v3 candidate through observable real IndexedDB stages'
 
   await runStage(page,testInfo,'P byteLength verification complete',()=>page.evaluate(()=>{
     const state=globalThis.__turningPagesV3Diagnostic!,started=performance.now(),payload=state.stored?.payload;
-    if(!(payload instanceof ArrayBuffer)||payload.byteLength!==9_595_304||state.stored.byteLength!==9_595_304)throw Error('Stored primary is not the exact expected ArrayBuffer.');
+    if(!(payload instanceof ArrayBuffer)||payload.byteLength!==9_595_405||state.stored.byteLength!==9_595_405)throw Error('Stored primary is not the exact expected ArrayBuffer.');
     return {durationMs:performance.now()-started,cumulativeMs:performance.now()-state.startedAt,value:{byteLength:payload.byteLength}};
   }));
 
@@ -215,12 +233,14 @@ test('diagnoses the exact v3 candidate through observable real IndexedDB stages'
     return {durationMs:performance.now()-started,cumulativeMs:performance.now()-state.startedAt,value:null};
   }));
 
-  await runStage(page,testInfo,'T2 production canonical load complete',()=>page.evaluate(async()=>{
+  const productionLoad=await runStage(page,testInfo,'T2 production canonical load complete',()=>page.evaluate(async()=>{
     const state=globalThis.__turningPagesV3Diagnostic!,started=performance.now();
     state.loaded=await Promise.race([state.second.initialize(),new Promise((_,reject)=>setTimeout(()=>reject(Error('Firefox stalled during production canonical load.')),90_000))]);
     if(!state.loaded.game)throw Error(state.loaded.error??'Production load returned no Game.');
-    return {durationMs:performance.now()-started,cumulativeMs:performance.now()-state.startedAt,value:{revision:state.loaded.revision}};
+    const durationMs=performance.now()-started;
+    return {durationMs,cumulativeMs:performance.now()-state.startedAt,value:{revision:state.loaded.revision,durationMs}};
   }));
+  expect(productionLoad.durationMs).toBeLessThanOrEqual(3_000);
 
   await runStage(page,testInfo,'U second save and primary-previous rotation complete',()=>page.evaluate(async prefix=>{
     const state=globalThis.__turningPagesV3Diagnostic!,started=performance.now(),dbPrototype=IDBDatabase.prototype as any,storePrototype=IDBObjectStore.prototype as any,originalTransaction=dbPrototype.transaction,originalPut=storePrototype.put;
@@ -245,7 +265,7 @@ test('diagnoses the exact v3 candidate through observable real IndexedDB stages'
     const previous=await state.modules.payload.verifyRecord(await state.third.repository.getRecord(previousSlot),previousSlot);
     return {durationMs:performance.now()-started,cumulativeMs:performance.now()-state.startedAt,value:{primaryBytes:primary.record.byteLength,previousBytes:previous.record.byteLength,primaryRevision:primary.record.revision,previousRevision:previous.record.revision}};
   }));
-  expect(records).toEqual({primaryBytes:9_595_304,previousBytes:9_595_304,primaryRevision:2,previousRevision:1});
+  expect(records).toEqual({primaryBytes:9_595_405,previousBytes:9_595_405,primaryRevision:2,previousRevision:1});
 
   const continuation=await runStage(page,testInfo,'X deterministic continuation complete',()=>page.evaluate(()=>{
     const state=globalThis.__turningPagesV3Diagnostic!,started=performance.now(),next=state.modules.v3Gate.continueV3PersistenceProbe(state.loaded.game);
@@ -255,7 +275,7 @@ test('diagnoses the exact v3 candidate through observable real IndexedDB stages'
 
   await runStage(page,testInfo,'Y final assertions and cleanup complete',()=>page.evaluate(async()=>{
     const state=globalThis.__turningPagesV3Diagnostic!,started=performance.now(),identity=state.modules.v3Gate.V3_PERSISTENCE_IDENTITY;
-    if(identity.id!=='uk.population.mid-2024.v3'||identity.fingerprint!=='fnv1a64-v1:2894f4c1b1fdd274'||identity.artifactSha256!=='c4b13eb67a1b7e231da1250b27f8e596c6535e7f260013d8a8638bda2b81188a')throw Error('V3 candidate identity changed.');
+    if(identity.id!=='uk.population.mid-2024.v3'||identity.fingerprint!=='fnv1a64-v1:2894f4c1b1fdd274'||identity.artifactSha256!=='c4b13eb67a1b7e231da1250b27f8e596c6535e7f260013d8a8638bda2b81188a')throw Error('V3 package identity changed.');
     state.third.close();state.third=undefined;
     await state.modules.indexedDb.deletePersistenceDatabase(indexedDB,state.databaseName);
     return {durationMs:performance.now()-started,cumulativeMs:performance.now()-state.startedAt,value:null};
