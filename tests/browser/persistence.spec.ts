@@ -27,17 +27,36 @@ const DIAGNOSTIC_PREFIX='[v3-diagnostic]';
 const IDB_PREFIX='[v3-idb]';
 
 test('persists nonempty root4 Residence with exact injected content and pre-Residence recovery',async({page},testInfo)=>{
+ page.on('console',message=>{if(message.text().includes('residence-database-cleanup'))console.log(message.text());});
  await page.goto('/');
  const result=await page.evaluate(async browser=>{
   const [{syntheticResidenceGame,context},service,indexedDb,payload,save,content]=await Promise.all([import('/src/engine/testing/residenceFixture.ts'),import('/src/persistence/service.ts'),import('/src/persistence/indexedDb.ts'),import('/src/persistence/payload.ts'),import('/src/engine/save.ts'),import('/src/engine/gameContent.ts')]);
-  const name=`turning-pages-residence-root4-${browser}`,game=syntheticResidenceGame(),first=await service.GamePersistence.open(localStorage,indexedDB,name),started=performance.now();
+  const name=`turning-pages-residence-root4-${browser}`,game=syntheticResidenceGame(),started=performance.now();
+  // Repository reads resolve at request success, which precedes transaction completion.
+  // Drain this fixture's transactions before close/delete; close() alone is not a completion barrier.
+  const pending=new Set<Promise<void>>(),originalTransaction=IDBDatabase.prototype.transaction;
+  IDBDatabase.prototype.transaction=function(...args:Parameters<IDBDatabase['transaction']>){
+   const transaction=originalTransaction.apply(this,args);
+   if(this.name===name){
+    const settled=new Promise<void>((resolve,reject)=>{transaction.addEventListener('complete',()=>resolve(),{once:true});transaction.addEventListener('abort',()=>reject(transaction.error??Error('Residence fixture transaction aborted.')),{once:true});});
+    pending.add(settled);void settled.then(()=>pending.delete(settled),()=>pending.delete(settled));
+   }
+   return transaction;
+  };
+  const closeAndDelete=async(persistence:InstanceType<typeof service.GamePersistence>,owner:string)=>{
+   console.log(JSON.stringify({gate:'residence-database-cleanup',database:name,owner,pendingTransactions:pending.size}));
+   await Promise.all([...pending]);persistence.close();await indexedDb.deletePersistenceDatabase(indexedDB,name);
+  };
+  try{
+  const first=await service.GamePersistence.open(localStorage,indexedDB,name);
   await first.save(game,null);first.close();const second=await service.GamePersistence.open(localStorage,indexedDB,name),loaded=await second.initialize();
   if(JSON.stringify(loaded.game)!==JSON.stringify(game)||!content.validGameWithContent(loaded.game,context(loaded.game.people)))throw Error('Nonempty root4 Residence did not round-trip.');
-  const stored=await second.repository.getRecord('primary');if(!(stored.payload instanceof ArrayBuffer)||stored.declaredRootVersion!==4)throw Error('Root4 did not retain ArrayBuffer storage.');second.close();await indexedDb.deletePersistenceDatabase(indexedDB,name);
+  const stored=await second.repository.getRecord('primary');if(!(stored.payload instanceof ArrayBuffer)||stored.declaredRootVersion!==4)throw Error('Root4 did not retain ArrayBuffer storage.');await closeAndDelete(second,'second: primary read');
   const {residence,...rest}=game,oldRaw=JSON.stringify({...rest,version:3}),third=await service.GamePersistence.open(localStorage,indexedDB,name);
   await third.repository.commitSave(await payload.recordFromRaw('primary','primary',1,'canonical-game',oldRaw),null);const migrated=await third.initialize();if(migrated.game.version!==4||migrated.game.residence.residences.length)throw Error('Root3 migration must be empty.');
-  await third.save(migrated.game,1);const recoverySlot=`recovery:${save.PRE_RESIDENCE_SAVE_KEY}`,recovery=await payload.verifyRecord(await third.repository.getRecord(recoverySlot),recoverySlot);if(recovery.raw!==oldRaw)throw Error('Pre-Residence recovery bytes changed.');third.close();await indexedDb.deletePersistenceDatabase(indexedDB,name);
+  await third.save(migrated.game,1);const recoverySlot=`recovery:${save.PRE_RESIDENCE_SAVE_KEY}`,recovery=await payload.verifyRecord(await third.repository.getRecord(recoverySlot),recoverySlot);if(recovery.raw!==oldRaw)throw Error('Pre-Residence recovery bytes changed.');await closeAndDelete(third,'third: recovery read');
   return {browser,rootVersion:loaded.game.version,residences:loaded.game.residence.residences.length,byteLength:stored.byteLength,elapsedMs:performance.now()-started};
+  }finally{IDBDatabase.prototype.transaction=originalTransaction;}
  },testInfo.project.name);
  expect(result.rootVersion).toBe(4);expect(result.residences).toBe(3);console.log(JSON.stringify({gate:'residence-root4',...result}));
 });
