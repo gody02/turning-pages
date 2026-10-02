@@ -1,0 +1,185 @@
+{
+  "samples": [
+    {
+      "mode": "childhood",
+      "seed": 73,
+      "sha256": "a3adfd1e0c26212d6fe55767e0c7926715741da91e6a59021592ee15eaccfe99",
+      "bytes": 9595358,
+      "areaId": "place.uk.local-admin.e07000131"
+    },
+    {
+      "mode": "adult",
+      "seed": 73,
+      "sha256": "a5185f9492c69d14961641369568845de7f151dc01ca0153aecef548e7fc1970",
+      "bytes": 9595391,
+      "areaId": "place.uk.local-admin.e06000061"
+    }
+  ],
+  "fixtures": {
+    "england": {
+      "seed": 0,
+      "area": "place.uk.local-admin.e07000087",
+      "location": {
+        "kind": "settlement-area",
+        "administrativeArea": {
+          "version": 1,
+          "partitionId": "geography.uk.primary-local-admin-2024-06-30-v1",
+          "placeId": "place.uk.local-admin.e07000087"
+        },
+        "settlement": {
+          "version": 1,
+          "packageId": "settlements.uk.hybrid-2024-06-30-v2",
+          "settlementId": "settlement.uk.synthetic.e07000087.003"
+        }
+      }
+    },
+    "scottish-locality": {
+      "seed": 2,
+      "area": "place.uk.local-admin.s12000036",
+      "location": {
+        "kind": "settlement-area",
+        "administrativeArea": {
+          "version": 1,
+          "partitionId": "geography.uk.primary-local-admin-2024-06-30-v1",
+          "placeId": "place.uk.local-admin.s12000036"
+        },
+        "settlement": {
+          "version": 1,
+          "packageId": "settlements.uk.hybrid-2024-06-30-v2",
+          "settlementId": "settlement.uk.nrs-locality.s52000233"
+        }
+      }
+    },
+    "ni": {
+      "seed": 3,
+      "area": "place.uk.local-admin.n09000004",
+      "location": {
+        "kind": "settlement-area",
+        "administrativeArea": {
+          "version": 1,
+          "partitionId": "geography.uk.primary-local-admin-2024-06-30-v1",
+          "placeId": "place.uk.local-admin.n09000004"
+        },
+        "settlement": {
+          "version": 1,
+          "packageId": "settlements.uk.hybrid-2024-06-30-v2",
+          "settlementId": "settlement.uk.synthetic.n09000004.001"
+        }
+      }
+    },
+    "bradford": {
+      "seed": 5,
+      "area": "place.uk.local-admin.e08000032",
+      "location": {
+        "kind": "settlement-area",
+        "administrativeArea": {
+          "version": 1,
+          "partitionId": "geography.uk.primary-local-admin-2024-06-30-v1",
+          "placeId": "place.uk.local-admin.e08000032"
+        },
+        "settlement": {
+          "version": 1,
+          "packageId": "settlements.uk.hybrid-2024-06-30-v2",
+          "settlementId": "settlement.uk.synthetic.e08000032.006"
+        }
+      }
+    },
+    "london": {
+      "seed": 6,
+      "area": "place.uk.local-admin.e09000006",
+      "location": {
+        "kind": "settlement-area",
+        "administrativeArea": {
+          "version": 1,
+          "partitionId": "geography.uk.primary-local-admin-2024-06-30-v1",
+          "placeId": "place.uk.local-admin.e09000006"
+        },
+        "settlement": {
+          "version": 1,
+          "packageId": "settlements.uk.hybrid-2024-06-30-v2",
+          "settlementId": "settlement.uk.reviewed.london"
+        }
+      }
+    },
+    "leeds": {
+      "seed": 18,
+      "area": "place.uk.local-admin.e08000035",
+      "location": {
+        "kind": "settlement-area",
+        "administrativeArea": {
+          "version": 1,
+          "partitionId": "geography.uk.primary-local-admin-2024-06-30-v1",
+          "placeId": "place.uk.local-admin.e08000035"
+        },
+        "settlement": {
+          "version": 1,
+          "packageId": "settlements.uk.hybrid-2024-06-30-v2",
+          "settlementId": "settlement.uk.synthetic.e08000035.015"
+        }
+      }
+    },
+    "shared-mode-area": {
+      "seed": 31,
+      "area": "place.uk.local-admin.e06000065",
+      "location": {
+        "kind": "settlement-area",
+        "administrativeArea": {
+          "version": 1,
+          "partitionId": "geography.uk.primary-local-admin-2024-06-30-v1",
+          "placeId": "place.uk.local-admin.e06000065"
+        },
+        "settlement": {
+          "version": 1,
+          "packageId": "settlements.uk.hybrid-2024-06-30-v2",
+          "settlementId": "settlement.uk.synthetic.e06000065.016"
+        }
+      }
+    },
+    "wales": {
+      "seed": 32,
+      "area": "place.uk.local-admin.w06000011",
+      "location": {
+        "kind": "settlement-area",
+        "administrativeArea": {
+          "version": 1,
+          "partitionId": "geography.uk.primary-local-admin-2024-06-30-v1",
+          "placeId": "place.uk.local-admin.w06000011"
+        },
+        "settlement": {
+          "version": 1,
+          "packageId": "settlements.uk.hybrid-2024-06-30-v2",
+          "settlementId": "settlement.uk.reviewed.swansea"
+        }
+      }
+    },
+    "swansea": {
+      "seed": 32,
+      "area": "place.uk.local-admin.w06000011",
+      "location": {
+        "kind": "settlement-area",
+        "administrativeArea": {
+          "version": 1,
+          "partitionId": "geography.uk.primary-local-admin-2024-06-30-v1",
+          "placeId": "place.uk.local-admin.w06000011"
+        },
+        "settlement": {
+          "version": 1,
+          "packageId": "settlements.uk.hybrid-2024-06-30-v2",
+          "settlementId": "settlement.uk.reviewed.swansea"
+        }
+      }
+    },
+    "scottish-admin": {
+      "seed": 492,
+      "area": "place.uk.local-admin.s12000034",
+      "location": {
+        "kind": "administrative-area",
+        "administrativeArea": {
+          "version": 1,
+          "partitionId": "geography.uk.primary-local-admin-2024-06-30-v1",
+          "placeId": "place.uk.local-admin.s12000034"
+        }
+      }
+    }
+  }
+}

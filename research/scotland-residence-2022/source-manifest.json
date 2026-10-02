@@ -1,0 +1,110 @@
+{
+  "version": 1,
+  "status": "research-only-not-production-not-registered",
+  "source": {
+    "sourceId": "research.source.nrs.oa2022-usual-resident-population-may-2024-v1",
+    "artifactId": "research.artifact.nrs.oa2022-usual-resident-population-may-2024-v1",
+    "producer": "National Records of Scotland",
+    "title": "Output Area 2022 Total Population",
+    "releasePeriod": "2024-05",
+    "releaseDay": null,
+    "publicationPageDate": "2024-11-04",
+    "referenceDate": {
+      "year": 2022,
+      "month": 3,
+      "day": 20
+    },
+    "referenceDateBasis": "2022 Census reference day, established by the pinned Settlement source descriptor and official census metadata.",
+    "accessDate": "2026-10-02",
+    "filename": "outputarea2022_usualresidentpopulation.csv",
+    "path": "research/scotland-residence-2022/artifacts/outputarea2022_usualresidentpopulation.csv",
+    "byteLength": 678338,
+    "sha256": "sha256:f7af756710c56f335d9332c08f95a68a5775aec4f25f17b21ab979257ed40148",
+    "officialLocator": "https://www.nrscotland.gov.uk/media/owpknvgk/outputarea2022_usualresidentpopulation.csv",
+    "publicationLocator": "https://www.nrscotland.gov.uk/publications/2022-census-geography-products/",
+    "licence": "Open Government Licence v3.0 per publication page; preserve NRS/Crown attribution. Index retains its existing NRS/applicable PAF notices.",
+    "unit": "published usual-resident persons per 2022 Output Area",
+    "classification": "official-census-statistical-evidence",
+    "precisionLimitations": [
+      "Published source integer cells; not individual residence truth or a 2024 locality estimate.",
+      "Totals below mean exact sums of this table; no separately published Scotland/council headline total was acquired or forced into reconciliation.",
+      "General census disclosure-control documentation does not by itself establish the treatment of each cell in this particular CSV."
+    ]
+  },
+  "index": {
+    "path": "src/data/geography/uk/settlements-2024/artifacts/census_2022_index.zip",
+    "byteLength": 2922015,
+    "sha256": "sha256:0e4096a321cba2318dc5d2e35c197bf815ac333aebdf4cb0ddce82112b57a261",
+    "sourceId": "geography.source.nrs.census-localities-2022-v1",
+    "artifactId": "artifact.nrs.census-geography-index-2022-v1",
+    "referenceDate": {
+      "year": 2022,
+      "month": 3,
+      "day": 20
+    },
+    "localityVintage": "Census Locality 2022",
+    "councilCodeVintage": "Council Area 2019 (CA2019), exactly matched to current frozen 2024 council Places through existing code continuity entries.",
+    "members": [
+      {
+        "path": "Census_2022_Index/OA_TO_HIGHER_AREAS.csv",
+        "byteLength": 9473169,
+        "sha256": "sha256:fbec099f2af309d924e35058938ccd4d15ca2c9fedaa243c6be48da46e7f08cc"
+      },
+      {
+        "path": "Census_2022_Index/Higher_Geographies_LookUps/Census Locality 2022 Lookup.csv",
+        "byteLength": 14389,
+        "sha256": "sha256:6fd80e42fd7ee63e6147581507396057494265d25f640133e54613cab10b243b"
+      },
+      {
+        "path": "Census_2022_Index/Higher_Geographies_LookUps/Council Area 2019 Lookup.csv",
+        "byteLength": 850,
+        "sha256": "sha256:5bf557e8396afcb0eb0d91caddfc51e0ca2e531c0a0b34cd91b666ce2039996d"
+      }
+    ],
+    "columns": [
+      "OA2022",
+      "CA2019",
+      "EW2022",
+      "DZ2011",
+      "CP1930",
+      "SPC2021",
+      "HBA2019",
+      "CSETT2022",
+      "CLOC2022",
+      "UKPC2005",
+      "ISLG2022",
+      "SPR2021",
+      "IA2019",
+      "NP2010",
+      "IZ2011",
+      "ITL2_21",
+      "ITL3_21",
+      "SIMD2020",
+      "MasterPC",
+      "Easting",
+      "Northing",
+      "Hect",
+      "SqKM"
+    ],
+    "localityNameEncoding": "Windows-1252 as in frozen builder; names never join keys.",
+    "missingLocalityRepresentation": "Empty string in CLOC2022; a genuine outside-locality category, not zero population."
+  },
+  "productionDependencyPins": {
+    "settlementPackageId": "settlements.uk.hybrid-2024-06-30-v2",
+    "settlementFingerprint": "fnv1a64-v1:2ddc7643a1e7e4b8",
+    "settlementArtifactSha256": "sha256:34aa659dc4ed927b70f78834c6638e58ae787ead38a9e9e68fe28886b0c359db",
+    "geographyPartitionId": "geography.uk.primary-local-admin-2024-06-30-v1",
+    "geographyFingerprint": "fnv1a64-v1:3d1a3446a16c58cb",
+    "compatibleWorldDate": {
+      "year": 2024,
+      "month": 6,
+      "day": 30
+    }
+  },
+  "researchResult": {
+    "filename": "UK-SCOTLAND-RESIDENCE-PLACEMENT-EVIDENCE-CHECK.json",
+    "byteLength": 754648,
+    "sha256": "sha256:cae49227e96e9b9909759e63a5fbb7c620a8e8605b535422c135ed9fb510eddc"
+  },
+  "attribution": "Contains National Records of Scotland information licensed under the Open Government Licence v3.0. Crown copyright. The existing geographic index retains its separately recorded attribution/PAF notices."
+}

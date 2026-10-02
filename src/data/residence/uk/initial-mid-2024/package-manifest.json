@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "policyId": "residence-placement.uk.mid-2024-v1",
+  "fingerprint": "fnv1a64-v1:c0d2080b63263587",
+  "status": "frozen-production",
+  "effectiveCompatibilityDate": {
+    "year": 2024,
+    "month": 6,
+    "day": 30
+  },
+  "purpose": "base-world-initial-residence-placement",
+  "algorithmId": "residence-placement.weighted-integer-v1",
+  "dependencies": {
+    "geographyPartitions": [
+      {
+        "id": "geography.uk.primary-local-admin-2024-06-30-v1",
+        "fingerprint": "fnv1a64-v1:3d1a3446a16c58cb"
+      }
+    ],
+    "settlementPackages": [
+      {
+        "id": "settlements.uk.hybrid-2024-06-30-v2",
+        "fingerprint": "fnv1a64-v1:2ddc7643a1e7e4b8"
+      }
+    ]
+  },
+  "artifact": {
+    "filename": "compiled-policy.json",
+    "byteLength": 1570378,
+    "sha256": "f73e76df9caa4bbf3d8fb31b5b98cd2b8fb3e80c18781107c2c375f291c13281"
+  },
+  "approvalSpecification": {
+    "id": "approval.uk.initial-residence-placement.numerical-v1",
+    "filename": "UK-INITIAL-RESIDENCE-PLACEMENT-NUMERICAL-APPROVAL.json",
+    "byteLength": 7879242,
+    "sha256": "8e651fd6d7b8b7184604edf516e8097139d375de3f471d12920717e7c58dc734"
+  },
+  "sourceManifestSha256": "ff2618fb08edbf4a56ff1be584e0b5161738973f0dfa6019890ed08ac4d7696d",
+  "provenanceSha256": "e1a6e23839acfc73edf167f291df98bdb2c1cac7c967863fce9b7dd6cf428331"
+}

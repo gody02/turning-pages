@@ -52,6 +52,9 @@ jobs:
           mkdir -p browser-evidence
           set -o pipefail
           pnpm exec playwright test --config playwright.persistence.config.ts --project=${{ matrix.browser }} --reporter=line,json 2>&1 | tee browser-evidence/profile.log
+      - name: Publish explicit v3 measurement diagnostics
+        if: always()
+        run: node scripts/report-country-start-v3-browser-evidence.mjs browser-evidence/results.json
       - name: Retain evidence and failure traces
         if: always()
         uses: actions/upload-artifact@v4
