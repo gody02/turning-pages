@@ -52,6 +52,28 @@ describe('startup-only host protocol and atomic publication',()=>{
   const h=harness();await expect(h.service.create(request,{signal:{} as AbortSignal})).rejects.toBeInstanceOf(Error);
   await expect(h.service.create(request,{onProgress:1 as never})).rejects.toThrow('progress');expect(h.service.status().active).toBe(false);expect(h.factory).not.toHaveBeenCalled();
  });
+ it.each(['getter','listeners'] as const)('uses genuine signal state and listeners despite shadowed %s',async shadowKind=>{
+  const h=harness(),controller=new AbortController(),shadow=vi.fn(()=>{throw Error('shadowed host method');});
+  Object.defineProperties(controller.signal,shadowKind==='getter'?{aborted:{get:shadow}}:{addEventListener:{value:shadow},removeEventListener:{value:shadow}});
+  const first=h.service.create(request,{signal:controller.signal});
+  const rejected=expect(first).rejects.toMatchObject({code:'aborted'});
+  await flush();controller.abort();await rejected;
+  h.send(envelope('ready','0'));await flush();expect(h.service.status().active).toBe(false);
+  const next=h.service.create(request);await flush();h.send(envelope('failed','2',{code:'construction',message:'Expected rejection.'}));
+  await expect(next).rejects.toThrow('Expected rejection.');expect(shadow).not.toHaveBeenCalled();h.service.dispose();
+ });
+ it('ignores queued callbacks from a disposed worker lifetime after replacement',async()=>{
+  const callbacks:Array<{message:(value:unknown)=>void;failure:()=>void}>=[];
+  const service=createStartupService(async()=>({post:vi.fn(),terminate:vi.fn(),listen:(message,failure)=>{callbacks.push({message,failure});return ()=>{};}}));
+  const first=service.create(request),rejected=expect(first).rejects.toMatchObject({code:'disposed'});
+  await flush();service.dispose();await rejected;
+  const next=service.create(request),nextRejected=expect(next).rejects.toThrow('Expected replacement rejection.');await flush();
+  callbacks[0].message(envelope('ready','0'));callbacks[0].failure();
+  expect(service.status()).toMatchObject({active:true,worker:true,ready:false});
+  callbacks[1].message(envelope('ready','0'));await flush();
+  callbacks[1].message(envelope('failed','2',{code:'construction',message:'Expected replacement rejection.'}));
+  await nextRejected;expect(service.status()).toMatchObject({active:false,ready:true});service.dispose();
+ });
  it('does not release a replacement request created by a delivery progress callback',async()=>{
   const h=harness();let replacement:ReturnType<typeof h.service.create>|undefined;
   const first=h.service.create(request,{onProgress:phase=>{if(phase==='validating-delivery'){h.service.dispose();replacement=h.service.create(request);}}});

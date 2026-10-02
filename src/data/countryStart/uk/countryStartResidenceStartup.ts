@@ -16,6 +16,9 @@ export class StartupError extends Error{
 }
 export type StartupDiagnostics=Readonly<WorkerMetrics&{deliveryMs:number;receiverValidationMs:number}>;
 type Pending={id:string;request:UkMid2024StartRequestV1;options:StartupOptions;resolve:(game:CurrentGame)=>void;reject:(error:Error)=>void;cancelled:boolean;dispatched:boolean;unlisten:()=>void};
+// Native host controls: caller-owned shadow properties cannot strand an acquired slot.
+const signalAborted=Object.getOwnPropertyDescriptor(AbortSignal.prototype,'aborted')!.get!;
+const addSignalListener=EventTarget.prototype.addEventListener,removeSignalListener=EventTarget.prototype.removeEventListener;
 
 /** One private worker lifetime, shared preparation, one active candidate, no queue/Game cache. */
 export function createStartupService(factory:()=>Promise<StartupPort>){
@@ -58,7 +61,9 @@ export function createStartupService(factory:()=>Promise<StartupPort>){
   // Register the promise before a host factory can resolve/fail. No rejected cache survives failure.
   void Promise.resolve().then(factory).then(created=>{
    if(activeGeneration!==generation){void Promise.resolve(created.terminate()).catch(()=>{});return;}
-   port=created;unlisten=created.listen(receive,()=>fail(new StartupError('unavailable','Startup worker stopped unexpectedly.')));
+   port=created;unlisten=created.listen(value=>{if(activeGeneration===generation)receive(value);},()=>{
+    if(activeGeneration===generation)fail(new StartupError('unavailable','Startup worker stopped unexpectedly.'));
+   });
    created.reference?.(true);created.post({version:1,contract:STARTUP_CONTRACT,requestId:'0',kind:'prepare'});
   }).catch(()=>{if(activeGeneration===generation)fail(new StartupError('unavailable','Startup worker could not be initialized.'));});
   return ready;
@@ -70,17 +75,18 @@ export function createStartupService(factory:()=>Promise<StartupPort>){
    if(options.onProgress!==undefined&&typeof options.onProgress!=='function')throw Error('Invalid startup progress callback.');
    if(options.signal!==undefined){
     // Brand check before acquiring the slot. Invalid host controls cannot strand a request.
-    Object.getOwnPropertyDescriptor(AbortSignal.prototype,'aborted')!.get!.call(options.signal);
+    signalAborted.call(options.signal);
    }
   }catch(error){return Promise.reject(error);}
-  if(options.signal?.aborted)return Promise.reject(new StartupError('aborted','UK startup was cancelled.'));
+  if(options.signal!==undefined&&signalAborted.call(options.signal))return Promise.reject(new StartupError('aborted','UK startup was cancelled.'));
   if(pending)return Promise.reject(new StartupError('busy','A UK startup is already in progress.'));
   lastDiagnostics=undefined;
   return new Promise<CurrentGame>((resolve,reject)=>{
    const current:Pending={id:String(++sequence),request,options,resolve,reject,cancelled:false,dispatched:false,unlisten:()=>{}};
    pending=current;
    const abort=()=>{current.cancelled=true;current.reject(new StartupError('aborted','UK startup was cancelled.'));};
-   options.signal?.addEventListener('abort',abort,{once:true});current.unlisten=()=>options.signal?.removeEventListener('abort',abort);
+   if(options.signal!==undefined)addSignalListener.call(options.signal,'abort',abort,{once:true});
+   current.unlisten=()=>{if(options.signal!==undefined)removeSignalListener.call(options.signal,'abort',abort);};
    progress('preparing-world');if(pending!==current)return;port?.reference?.(true);
    void prepare().then(()=>{
     if(pending!==current)return;
