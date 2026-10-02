@@ -9,8 +9,8 @@ test('startup-only built Worker preserves v3 bytes with responsive cold/warm del
   try{
    for(let cycle=0;cycle<2;cycle++){
     for(const temperature of ['cold','warm']){
-     let last=performance.now(),maxGap=0,beats=0,frames=0,interaction=false;
-     const pulse=()=>{const now=performance.now();maxGap=Math.max(maxGap,now-last);last=now;beats++;};
+     let last=performance.now(),maxGap=0,beats=0,frames=0,interaction=false;const phases:any[]=[],gaps:any[]=[];
+     const pulse=()=>{const now=performance.now();if(now-last>100)gaps.push({elapsedMs:now-started,gapMs:now-last});maxGap=Math.max(maxGap,now-last);last=now;beats++;};
      const timer=setInterval(pulse,16);let frame=0,running=true;
      const paint=()=>{frames++;if(running)frame=requestAnimationFrame(paint);};frame=requestAnimationFrame(paint);
      const started=performance.now();
@@ -18,12 +18,12 @@ test('startup-only built Worker preserves v3 bytes with responsive cold/warm del
       api??=await import('/research/country-start-v3/worker-browser-dist/startup-profile.js');
       if(temperature==='cold')api.disposeUkCountryStartStartup();
       const mode=cycle===0?'adult':'childhood';
-      const construction=api.createUkMid2024GeographicResidenceGame({version:1,rootSeed:73,mode});
+      const construction=api.createUkMid2024GeographicResidenceGame({version:1,rootSeed:73,mode},{onProgress:(phase:string)=>phases.push({phase,elapsedMs:performance.now()-started})});
       const channel=new MessageChannel();channel.port1.onmessage=()=>{interaction=true;channel.port1.close();channel.port2.close();};channel.port2.postMessage('host-input');
       game=await construction;pulse();
       if(!interaction||beats<2||frames<2)throw Error('Worker monopolized the main-thread interaction opportunity.');
       const elapsed=performance.now()-started,metrics=api.ukCountryStartStartupDiagnostics();
-      samples.push({browser,mode,cycle,temperature,totalMs:elapsed,heartbeatCount:beats,frames,maxHeartbeatGapMs:maxGap,interaction,...metrics,status:api.ukCountryStartStartupStatus()});
+      samples.push({browser,mode,cycle,temperature,totalMs:elapsed,heartbeatCount:beats,frames,maxHeartbeatGapMs:maxGap,interaction,phases,gaps,...metrics,status:api.ukCountryStartStartupStatus()});
      }finally{running=false;clearInterval(timer);cancelAnimationFrame(frame);}
     }
    }
@@ -54,9 +54,9 @@ test('startup-only built Worker preserves v3 bytes with responsive cold/warm del
    }
   }finally{api?.disposeUkCountryStartStartup();observer?.disconnect();}
  },testInfo.project.name);
+ await testInfo.attach('country-start-v3-worker-measurements',{body:JSON.stringify(result,null,2),contentType:'application/json'});
  expect(result).toMatchObject({bytes:9_595_753,population:69_281_437,nextPerson:'person:2',nextResidence:'residence:2',semanticEquality:true});
  for(const sample of result.samples){expect(sample.maxHeartbeatGapMs).toBeLessThanOrEqual(1_000);expect(sample.heartbeatCount).toBeGreaterThan(1);expect(sample.status).toMatchObject({active:false,ready:true,worker:true});}
  expect(result.loadMs).toBeLessThanOrEqual(3_000);
  console.log(JSON.stringify({gate:'country-start-v3-worker-startup',...result}));
- await testInfo.attach('country-start-v3-worker-measurements',{body:JSON.stringify(result,null,2),contentType:'application/json'});
 });

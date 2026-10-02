@@ -22,7 +22,7 @@ export function createStartupService(factory:()=>Promise<StartupPort>){
  let port:StartupPort|undefined,unlisten=()=>{},ready:Promise<void>|undefined,resolveReady:(()=>void)|undefined,rejectReady:((error:Error)=>void)|undefined;
  let generation=0,sequence=0n,pending:Pending|undefined,lastDiagnostics:StartupDiagnostics|undefined;
  const progress=(phase:StartupPhase)=>{try{pending?.options.onProgress?.(phase);}catch{/* Presentation callbacks cannot affect construction. */}};
- const release=()=>{pending?.unlisten();pending=undefined;port?.reference?.(false);};
+ const release=()=>{const ending=pending;pending=undefined;ending?.unlisten();if(!pending)port?.reference?.(false);};
  const fail=(error:StartupError)=>{
   generation++;unlisten();unlisten=()=>{};
   const stopped=port;port=undefined;ready=undefined;
@@ -43,11 +43,12 @@ export function createStartupService(factory:()=>Promise<StartupPort>){
   if(value.kind==='failed'){if(value.code==='protocol'){fail(new StartupError('protocol',value.message));return;}current.reject(new StartupError('construction',value.message));release();return;}
   if(current.cancelled){release();return;}
   try{
-   progress('validating-delivery');const received=performance.timeOrigin+performance.now(),validationStarted=performance.now(),game=value.game;
+   progress('validating-delivery');if(pending!==current)return;if(current.cancelled){release();return;}
+   const received=performance.timeOrigin+performance.now(),validationStarted=performance.now(),game=value.game;
    if(!isGame(game)||game.version!==4||!game.people||game.people.playerId!=='person:1'||game.people.people.length!==1||game.people.nextSequence!==2
     ||game.residence.residences.length!==1||game.residence.occupants.length!==1||game.residence.occupants[0].personId!=='person:1')throw Error('Invalid complete UK startup Game.');
    lastDiagnostics=Object.freeze({...value.metrics,deliveryMs:Math.max(0,received-value.metrics.emittedAt),receiverValidationMs:performance.now()-validationStarted});
-   progress('complete');current.resolve(game as CurrentGame);release();
+   progress('complete');if(pending!==current)return;if(current.cancelled){release();return;}current.resolve(game as CurrentGame);release();
   }catch{fail(new StartupError('protocol','Startup Game failed receiver validation.'));}
  };
  const prepare=():Promise<void>=>{
@@ -80,7 +81,7 @@ export function createStartupService(factory:()=>Promise<StartupPort>){
    pending=current;
    const abort=()=>{current.cancelled=true;current.reject(new StartupError('aborted','UK startup was cancelled.'));};
    options.signal?.addEventListener('abort',abort,{once:true});current.unlisten=()=>options.signal?.removeEventListener('abort',abort);
-   progress('preparing-world');port?.reference?.(true);
+   progress('preparing-world');if(pending!==current)return;port?.reference?.(true);
    void prepare().then(()=>{
     if(pending!==current)return;
     if(current.cancelled){release();return;}

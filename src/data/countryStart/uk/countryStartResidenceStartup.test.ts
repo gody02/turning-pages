@@ -52,4 +52,18 @@ describe('startup-only host protocol and atomic publication',()=>{
   const h=harness();await expect(h.service.create(request,{signal:{} as AbortSignal})).rejects.toBeInstanceOf(Error);
   await expect(h.service.create(request,{onProgress:1 as never})).rejects.toThrow('progress');expect(h.service.status().active).toBe(false);expect(h.factory).not.toHaveBeenCalled();
  });
+ it('does not release a replacement request created by a delivery progress callback',async()=>{
+  const h=harness();let replacement:ReturnType<typeof h.service.create>|undefined;
+  const first=h.service.create(request,{onProgress:phase=>{if(phase==='validating-delivery'){h.service.dispose();replacement=h.service.create(request);}}});
+  const rejected=expect(first).rejects.toMatchObject({code:'disposed'});
+  await flush();h.send(envelope('ready','0'));await flush();
+  h.send(envelope('complete','1',{game:{},metrics:{preparationMs:0,constructionMs:0,emittedAt:0,workerHeapUsed:null}}));await rejected;
+  await flush();h.send(envelope('ready','0'));await flush();expect(h.service.status().active).toBe(true);
+  h.send(envelope('failed','2',{code:'construction',message:'Replacement rejected.'}));await expect(replacement).rejects.toThrow('Replacement rejected.');
+  expect(h.service.status()).toMatchObject({active:false,ready:true});h.service.dispose();
+ });
+ it('does not initialize an unused worker after a preparing callback disposes the service',async()=>{
+  const h=harness(),first=h.service.create(request,{onProgress:phase=>{if(phase==='preparing-world')h.service.dispose();}});
+  await expect(first).rejects.toMatchObject({code:'disposed'});await flush();expect(h.factory).not.toHaveBeenCalled();expect(h.service.status().active).toBe(false);
+ });
 });
