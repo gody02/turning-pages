@@ -67,3 +67,14 @@ test('failed real content Worker preserves the saved Game and retries without re
  expect(await inspect()).toEqual({...baseline,seeds:0});await page.unroute('**/assets/worker-*.js');await page.getByRole('button',{name:'Retry loading'}).click();await expect(page.locator('.dashboard')).toBeVisible();
  expect(await inspect()).toEqual({...baseline,seeds:0});expect(await page.evaluate(()=>{const host=(globalThis as any).__applicationContent;return host.applicationContentDiagnostics();})).toMatchObject({preparations:2,activeWorkers:0,pendingSets:0,cachedSets:1});
 });
+
+test('valid backup with unavailable reference content is not mislabeled corrupt and never replaces the current life',async({page})=>{
+ await page.goto('testing/blank.html');
+ const backup=await page.evaluate(async()=>{const api=await import('/application-content-evidence/testing/testing.js');try{const game=await api.createUkMid2024GeographicResidenceGame({version:1,rootSeed:73,mode:'adult'}),encoded=api.serializeGame(game);if(!encoded.ok)throw Error('Invalid fixture');return encoded.raw;}finally{api.disposeUkCountryStartStartup();}});
+ await page.goto('./');await page.getByLabel('Your name · optional').fill('Current Life');await page.getByRole('button',{name:'Begin my story'}).click();await expect(page.locator('.dashboard h1')).toHaveText('Current Life');
+ const saved=()=>page.evaluate(async()=>{const api=await import('/application-content-evidence/testing/testing.js'),p=await api.GamePersistence.open(localStorage);try{const loaded=await p.initialize(),encoded=api.serializeGame(loaded.game!);if(!encoded.ok)throw Error('Invalid current life');return {raw:encoded.raw,revision:loaded.revision};}finally{p.close();}}),baseline=await saved();
+ const file={name:'valid-life.json',mimeType:'application/json',buffer:Buffer.from(backup,'utf8')};
+ await page.route('**/assets/worker-*.js',route=>route.abort());await page.locator('input[type=file]').setInputFiles(file);
+ await expect(page.locator('.notice')).toContainText('Geographic reference content for this backup could not be loaded');await expect(page.locator('.town-confirm')).toHaveCount(0);await expect(page.locator('.dashboard h1')).toHaveText('Current Life');expect(await saved()).toEqual(baseline);
+ await page.unroute('**/assets/worker-*.js');await page.locator('input[type=file]').setInputFiles(file);await expect(page.getByRole('button',{name:'Restore this life'})).toBeVisible();expect(await saved()).toEqual(baseline);
+});

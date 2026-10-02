@@ -69,8 +69,9 @@ export function LifeApp(){
   };
   async function restore(file:File|undefined){
     if(!file)return;
-    try{if(file.size>MAX_IMPORT_BYTES)throw Error();const signal=referenceLifetime.current?.signal,next=await acceptApplicationGame(importCanonicalGame(await file.text()),undefined,{signal});if(!signal?.aborted)setPendingRestore(next);}
-    catch{setNotice('This is not a valid Turning Pages life backup. Your saved life has not changed. Town-only archives cannot be imported as a character.');}
+    const signal=referenceLifetime.current?.signal;let canonical=false;
+    try{if(file.size>MAX_IMPORT_BYTES)throw Error();const candidate=importCanonicalGame(await file.text());canonical=true;const next=await acceptApplicationGame(candidate,undefined,{signal});if(!signal?.aborted)setPendingRestore(next);}
+    catch{if(!signal?.aborted)setNotice(canonical?'Geographic reference content for this backup could not be loaded. Your current life has not changed. Try importing it again.':'This is not a valid Turning Pages life backup. Your saved life has not changed. Town-only archives cannot be imported as a character.');}
     finally{if(restoreInput.current)restoreInput.current.value='';}
   }
   function exportBackup(value:Game){try{download('turning-pages-life-backup.json',exportCanonicalGame(value));}catch{setNotice('This life could not be exported because it failed the save consistency check.');}}
