@@ -23,7 +23,8 @@ import {createUkHumanGenerationContentRegistry} from '../../human/uk/generation/
 import {createUkInitialResidencePlacementRuntime} from '../../residence/uk/initial-mid-2024/adapter';
 import * as policyApi from '../../residence/uk/placementRegistry';
 import * as baseApi from '../../uk/countryStartGeographic';
-import {createUkMid2024GeographicResidenceGame} from './countryStartResidence';
+// Internal synchronous oracle/failure injection; actual worker API tests live separately.
+import {buildUkMid2024GeographicResidenceGame as createUkMid2024GeographicResidenceGame} from './countryStartResidenceConstruction';
 import * as preparationApi from './countryStartResidencePreparation';
 import {UK_RESIDENCE_COUNTRY_START_SCENARIO as scenario} from './countryStartResidenceScenario';
 import {createUkCountryStartRegistry,resolveUkCountryStartScenario,validateUkCountryStartRegistry,ukCountryStartScenarioFingerprint} from './countryStartRegistry';

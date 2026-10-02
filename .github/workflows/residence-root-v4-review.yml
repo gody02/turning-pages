@@ -45,6 +45,8 @@ jobs:
           cache: pnpm
       - run: pnpm install --frozen-lockfile
       - run: pnpm exec playwright install --with-deps ${{ matrix.browser }}
+      - name: Build explicit startup-only Worker acceptance bundle
+        run: node scripts/build-country-start-v3-worker-browser.mjs
       - name: Run unchanged full root-v4 persistence assertions
         env:
           PLAYWRIGHT_JSON_OUTPUT_NAME: browser-evidence/results.json

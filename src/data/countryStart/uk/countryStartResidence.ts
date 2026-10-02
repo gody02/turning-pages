@@ -1,62 +1,24 @@
-import {validGameWithContent} from '../../../engine/gameContent';
-import {establishResidence} from '../../../engine/residence/state';
-import {serializeGame} from '../../../engine/save';
 import type {CurrentGame} from '../../../engine/types';
 import type {UkMid2024StartRequestV1} from '../../uk/countryStart';
-import {createUkMid2024GeographicGame} from '../../uk/countryStartGeographic';
-import {createUkCountryStartRegistry,resolveUkCountryStartScenario} from './countryStartRegistry';
-import {UK_RESIDENCE_COUNTRY_START_SCENARIO as scenario} from './countryStartResidenceScenario';
-import {prepareUkCountryStartResidenceContent} from './countryStartResidencePreparation';
+import {createStartupService,type StartupPort} from './countryStartResidenceStartup';
+import type {StartupOptions} from './countryStartResidenceProtocol';
 
-/** Own input before composition; v2 retains authority for the request schema/identity rules. */
-function ownRequest(input:UkMid2024StartRequestV1):UkMid2024StartRequestV1{
- try{
-  const preflight=(value:unknown,depth=0):void=>{
-   if(!value||typeof value!=='object')return;
-   if(depth>2||Array.isArray(value)||(Object.getPrototypeOf(value)!==Object.prototype&&Object.getPrototypeOf(value)!==null))throw Error();
-   for(const key of Reflect.ownKeys(value)){
-    const descriptor=Object.getOwnPropertyDescriptor(value,key);
-    if(typeof key!=='string'||!descriptor?.enumerable||!('value' in descriptor))throw Error();
-    preflight(descriptor.value,depth+1);
-   }
-  };
-  preflight(input);return structuredClone(input);
- }catch{throw Error('Invalid Residence UK country-start request.');}
+export type {StartupOptions as UkCountryStartStartupOptions,StartupPhase as UkCountryStartStartupPhase} from './countryStartResidenceProtocol';
+async function createPort():Promise<StartupPort>{
+ if(import.meta.env.SSR){const node=await import('./countryStartResidenceStartup.node');return node.createNodeStartupPort();}
+ const worker=new Worker(new URL('./countryStartResidence.worker.ts',import.meta.url),{type:'module'});
+ return Object.freeze({post:(message:unknown)=>worker.postMessage(message),terminate:()=>worker.terminate(),
+  listen:(message:(value:unknown)=>void,failure:()=>void)=>{
+   const receive=(event:MessageEvent)=>message(event.data),failed=()=>failure();
+   worker.addEventListener('message',receive);worker.addEventListener('error',failed);worker.addEventListener('messageerror',failed);
+   return ()=>{worker.removeEventListener('message',receive);worker.removeEventListener('error',failed);worker.removeEventListener('messageerror',failed);};
+  }});
 }
-
-/** Base-world construction only. No storage, runtime materialization, or UI routing. */
-export function createUkMid2024GeographicResidenceGame(input:UkMid2024StartRequestV1):CurrentGame{
- const request=ownRequest(input),registry=createUkCountryStartRegistry();
- resolveUkCountryStartScenario(registry,scenario.id);
- resolveUkCountryStartScenario(registry,scenario.baseScenarioId);
- // Calling v2 unchanged preserves its exact generation, cohort, compatibility and RNG keys.
- const base=createUkMid2024GeographicGame(request);
- if(base.version!==4||!base.people||!base.population||base.people.playerId!=='person:1'
-  ||base.people.people.length!==1||base.people.nextSequence!==2||base.people.people[0].lifeStatus!=='living'
-  ||base.residence.nextSequence!==1||base.residence.residences.length!==0
-  ||base.residence.occupants.length!==0||base.residence.noFixedAbodePersonIds.length!==0)throw Error('Invalid v2 base world for initial Residence.');
- const memberships=base.population.memberships.filter(item=>item.personId===base.people!.playerId);
- const member=memberships[0],coverage=base.population.coverage.find(item=>item.countryId===scenario.countryId);
- if(memberships.length!==1||base.population.memberships.length!==1||!member
-  ||member.countryId!==scenario.countryId||member.areaId===null||member.origin.kind!=='cohort'
-  ||coverage?.status!=='complete'||coverage.source!==scenario.populationPackageId
-  ||coverage.areaPartitionId!==scenario.geographyPartitionId)throw Error('Invalid UK player Population placement scope.');
- const {geography,settlements,placement:runtime}=prepareUkCountryStartResidenceContent();
- if(!geography.isPopulationAllocationCell(scenario.geographyPartitionId,member.areaId))throw Error('UK Country Start Residence content mismatch.');
- const context={people:base.people,geography,settlements};
- if(!validGameWithContent(base,context))throw Error('Invalid content-bound UK base world.');
- const decision=runtime.evaluate({version:1,policyId:scenario.placementPolicyId,personId:base.people.playerId,
-  rootSeed:request.rootSeed,scope:{version:1,partitionId:scenario.geographyPartitionId,placeId:member.areaId}});
- if(decision.version!==1||decision.policyId!==scenario.placementPolicyId||decision.policyFingerprint!==scenario.placementFingerprint
-  ||decision.location.administrativeArea.partitionId!==scenario.geographyPartitionId
-  ||decision.location.administrativeArea.placeId!==member.areaId)throw Error('UK initial Residence decision changed administrative scope.');
- const established=establishResidence(base.residence,[base.people.playerId],decision.location,context);
- const candidate:CurrentGame={...base,residence:established.state};
- if(candidate.residence.residences.length!==1||candidate.residence.occupants.length!==1
-  ||candidate.residence.occupants[0].personId!==base.people.playerId
-  ||candidate.residence.noFixedAbodePersonIds.length!==0||!validGameWithContent(candidate,context))throw Error('UK initial Residence failed root/content validation.');
- // The frozen codec validates, canonicalizes, parses and compares its candidate before return.
- const serialized=serializeGame(candidate);
- if(!serialized.ok||serialized.game.version!==4||!validGameWithContent(serialized.game,context))throw Error('UK initial Residence failed canonical roundtrip.');
- return serialized.game;
-}
+// One startup worker, never normal simulation ownership.
+const startup=createStartupService(createPort);
+export function createUkMid2024GeographicResidenceGame(input:UkMid2024StartRequestV1,options?:StartupOptions):Promise<CurrentGame>{return startup.create(input,options);}
+/** Explicit optional seedless preparation. No app/idle/UI prewarming is installed. */
+export function prepareUkMid2024GeographicResidenceStartup():Promise<void>{return startup.prepare();}
+export const disposeUkCountryStartStartup=()=>startup.dispose();
+export const ukCountryStartStartupDiagnostics=()=>startup.diagnostics();
+export const ukCountryStartStartupStatus=()=>startup.status();

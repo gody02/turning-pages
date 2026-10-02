@@ -24,12 +24,12 @@ test('reviews cold/warm Country Start v3, responsiveness and nonempty Residence 
   try{
    for(const [version,temperature] of [[2,'first-call'],[3,'first-call'],[2,'warm'],[3,'warm']] as const){
     await new Promise<void>(resolve=>requestAnimationFrame(()=>resolve()));pulse();worstGap=0;
-    const start=performance.now(),game=(version===2?v2.createUkMid2024GeographicGame:v3.createUkMid2024GeographicResidenceGame)(request),durationMs=performance.now()-start;
+    const start=performance.now(),game=await (version===2?v2.createUkMid2024GeographicGame:v3.createUkMid2024GeographicResidenceGame)(request),durationMs=performance.now()-start;
     // Explicitly record the synchronous gap even if the frame callback precedes a due timer.
     pulse();await new Promise<void>(resolve=>requestAnimationFrame(()=>resolve()));
     samples.push({version,temperature,durationMs,blockedHeartbeatMs:worstGap,stages:stageSummary()});games.push(game);
    }
-  }finally{clearInterval(heartbeat);}
+  }finally{clearInterval(heartbeat);v3.disposeUkCountryStartStartup();}
   const [old,game,oldRepeat,repeat]=games,raw=save.serializeGame(game),oldRaw=save.serializeGame(old),repeatRaw=save.serializeGame(repeat);
   if(!raw.ok||!oldRaw.ok||!repeatRaw.ok||raw.raw!==repeatRaw.raw)throw Error('Country Start canonical determinism failed.');
   if(JSON.stringify({...game,residence:old.residence})!==JSON.stringify(old)||JSON.stringify(oldRepeat)!==JSON.stringify(old))throw Error('Country Start changed non-Residence state.');
@@ -64,7 +64,8 @@ test('reviews cold/warm Country Start v3, responsiveness and nonempty Residence 
  },testInfo.project.name);
  expect(result).toMatchObject({rootVersion:4,residenceCount:1,occupants:1,population:69_281_437,nextPerson:'person:2',nextResidence:'residence:2',bytes:9_595_786,oldBytes:9_595_391,delta:395});
  expect(result.sha256).toBe('e926ef8d1528356d3bc92abf23934974e9de2a14fc19ed08fb29410f51839a28');
- // Existing validated-load acceptance; startup timing is reported for explicit freeze classification.
+ for(const sample of result.samples.filter(item=>item.version===3))expect(sample.blockedHeartbeatMs).toBeLessThanOrEqual(1_000);
+ // Existing validated-load acceptance remains unchanged.
  expect(result.loadMs).toBeLessThanOrEqual(3_000);
  console.log(JSON.stringify({gate:'country-start-v3-browser-freeze',...result}));
  await testInfo.attach('country-start-v3-measurements',{body:JSON.stringify(result,null,2),contentType:'application/json'});
