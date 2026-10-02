@@ -65,6 +65,9 @@ jobs:
         run: |
           set -o pipefail
           pnpm exec playwright test --config playwright.application-content.config.ts --project=${{ matrix.browser }} --reporter=line,json 2>&1 | tee browser-evidence/application-content.log
+      - name: Publish actual application-content diagnostics
+        if: always()
+        run: node scripts/report-application-content-evidence.mjs browser-evidence/application-content.json
       - name: Retain evidence and failure traces
         if: always()
         uses: actions/upload-artifact@v4
