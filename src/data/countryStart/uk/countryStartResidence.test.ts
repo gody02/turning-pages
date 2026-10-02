@@ -44,6 +44,7 @@ describe('Country Start UK mid-2024 v3 initial Residence orchestration',()=>{
  it('registers exact immutable v1/v2/v3 contracts without latest substitution',()=>{
   const registry=createUkCountryStartRegistry();
   expect(validateUkCountryStartRegistry(registry)).toBe(true);
+  expect(registry.manifest.map(entry=>entry.status)).toEqual(['frozen-compatibility','frozen-production','frozen-explicit']);
   expect(resolveUkCountryStartScenario(registry,scenario.id)).toBe(scenario);
   expect(resolveUkCountryStartScenario(registry,'country-start.uk.mid-2024-v2')).toBe(baseApi.UK_GEOGRAPHIC_COUNTRY_START_SCENARIO);
   expect(resolveUkCountryStartScenario(registry,'country-start.uk.mid-2024-v1').populationPackageId).toBe('uk.population.mid-2024.v2');

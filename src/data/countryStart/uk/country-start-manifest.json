@@ -14,7 +14,7 @@
     {
       "scenarioId": "country-start.uk.mid-2024-v3",
       "fingerprint": "fnv1a64-v1:321cc64911e88c5a",
-      "status": "implemented-awaiting-final-freeze-review"
+      "status": "frozen-explicit"
     }
   ]
 }

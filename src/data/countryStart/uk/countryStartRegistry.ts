@@ -6,10 +6,11 @@ import {UK_RESIDENCE_COUNTRY_START_SCENARIO} from './countryStartResidenceScenar
 import manifestJson from './country-start-manifest.json';
 
 export type UkCountryStartScenario=typeof UK_COUNTRY_START_SCENARIO|typeof UK_GEOGRAPHIC_COUNTRY_START_SCENARIO|typeof UK_RESIDENCE_COUNTRY_START_SCENARIO;
-type ManifestEntry=Readonly<{scenarioId:string;fingerprint:string;status:'frozen-compatibility'|'frozen-production'|'implemented-awaiting-final-freeze-review'}>;
+type ManifestEntry=Readonly<{scenarioId:string;fingerprint:string;status:'frozen-compatibility'|'frozen-production'|'frozen-explicit'}>;
 export type UkCountryStartRegistryV1=Readonly<{version:1;scenarios:readonly UkCountryStartScenario[];manifest:readonly ManifestEntry[]}>;
 const scenarios=Object.freeze([UK_COUNTRY_START_SCENARIO,UK_GEOGRAPHIC_COUNTRY_START_SCENARIO,UK_RESIDENCE_COUNTRY_START_SCENARIO]);
-const statuses=Object.freeze(['frozen-compatibility','frozen-production','implemented-awaiting-final-freeze-review'] as const);
+// Frozen explicit availability does not change the current production UI default.
+const statuses=Object.freeze(['frozen-compatibility','frozen-production','frozen-explicit'] as const);
 /** Semantic integrity only, not cryptographic authentication. Object key order is irrelevant. */
 export const ukCountryStartScenarioFingerprint=(scenario:UkCountryStartScenario)=>fnv1a64(canonicalStringify(scenario));
 const expectedManifest=()=>scenarios.map((scenario,index)=>({scenarioId:scenario.id,fingerprint:ukCountryStartScenarioFingerprint(scenario),status:statuses[index]}));
