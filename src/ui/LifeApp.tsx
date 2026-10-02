@@ -45,15 +45,17 @@ export function LifeApp(){
   const coordinatorRef=useRef<SaveCoordinator|null>(null);
   const skipAutosave=useRef<Game|null>(null);
   const referenceLifetime=useRef<AbortController|null>(null);
+  const startupNotice=useRef('');
   useEffect(()=>{let cancelled=false,opened:GamePersistence|null=null;const contentRequest=new AbortController();
     referenceLifetime.current=contentRequest;
     void (async()=>{try{
       opened=await GamePersistence.open(localStorage);const initial=await opened.initialize();if(cancelled){opened.close();return;}persistenceRef.current=opened;
+      setRecoveries(initial.recoveries);setStaleLegacy(initial.staleLegacy);startupNotice.current=initial.error??initial.markerWarning??'';
       const updateSaveState=(state:SaveCoordinatorSnapshot)=>{setSaved(state.state==='saved'&&!state.dirty);if(state.state==='failed')setNotice('Saving failed. Your current progress is still open; retry or export a backup before closing.');};
       coordinatorRef.current=new SaveCoordinator((value,revision)=>opened!.save(value,revision),initial.revision,updateSaveState);
       let accepted=initial.game;try{if(accepted)await acceptApplicationGame(accepted,undefined,{signal:contentRequest.signal});}catch{if(cancelled)return;setUnresolvedGame(initial.game);setStartup('content-failed');setNotice('Geographic reference content could not be loaded. Your saved life has not changed. Retry or export a backup.');return;}
       if(cancelled)return;
-      setRecoveries(initial.recoveries);setStaleLegacy(initial.staleLegacy);setGame(accepted);skipAutosave.current=accepted;setCreating(!accepted);setSaved(!!accepted);setStartup(initial.status==='backend-unavailable'?'unavailable':'ready');
+      setGame(accepted);skipAutosave.current=accepted;setCreating(!accepted);setSaved(!!accepted);setStartup(initial.status==='backend-unavailable'?'unavailable':'ready');
       if(initial.error)setNotice(initial.error);else if(initial.markerWarning)setNotice(initial.markerWarning);setStoragePersistence(await storagePersistenceState());
     }catch(error){if(cancelled)return;setStartup('unavailable');setCreating(true);setNotice(error instanceof Error?error.message:'Browser persistence is unavailable.');}})();
     return()=>{cancelled=true;contentRequest.abort();opened?.close();};
@@ -85,7 +87,7 @@ export function LifeApp(){
   const normalizedName=name.trim(),nameCodePoints=personDisplayNameCodePointCount(normalizedName),nameError=normalizedName&&!validPersonDisplayName(normalizedName)?nameCodePoints>MAX_PERSON_NAME_CODE_POINTS?`Name must be ${MAX_PERSON_NAME_CODE_POINTS} Unicode code points or fewer.`:'Enter a valid name, or leave it blank to generate one.':null,genderError=newGameGenderError(gender);
   async function persistReplacement(next:Game,message:string){const signal=referenceLifetime.current?.signal;await acceptApplicationGame(next,undefined,{signal});if(signal?.aborted)throw Error('Application reference-content preparation was cancelled.');const coordinator=coordinatorRef.current,persistence=persistenceRef.current;if(!coordinator||!persistence)throw Error('Browser persistence is unavailable.');await coordinator.persist(next);if(signal?.aborted)return;skipAutosave.current=next;setGame(next);setRecoveries(await persistence.recoveries());setPendingRestore(null);setCreating(false);setNotice(message);setStoragePersistence(await requestPersistentStorage());}
   async function beginNewGame(){try{const next=createProductionUkNewGame({mode:start,name,genderLabel:gender});await persistReplacement(next,'');setTab(start==='adult'?'Career':'Journal');}catch(error){if(!(error instanceof NewGameInputError))console.error('UK country-start failed.',error);setNotice(error instanceof NewGameInputError?error.message:'Your new UK life could not be saved. Your current life is unchanged.');}}
-  async function retryReferenceContent(){if(!unresolvedGame)return;const signal=referenceLifetime.current?.signal;setStartup('loading');try{await acceptApplicationGame(unresolvedGame,undefined,{signal});if(signal?.aborted)return;skipAutosave.current=unresolvedGame;setGame(unresolvedGame);setUnresolvedGame(null);setCreating(false);setStartup('ready');setNotice('');setSaved(true);}catch{if(signal?.aborted)return;setStartup('content-failed');setNotice('Geographic reference content is still unavailable. Your saved life has not changed.');}}
+  async function retryReferenceContent(){if(!unresolvedGame)return;const signal=referenceLifetime.current?.signal;setStartup('loading');try{await acceptApplicationGame(unresolvedGame,undefined,{signal});if(signal?.aborted)return;skipAutosave.current=unresolvedGame;setGame(unresolvedGame);setUnresolvedGame(null);setCreating(false);setStartup('ready');setNotice(startupNotice.current);setSaved(true);}catch{if(signal?.aborted)return;setStartup('content-failed');setNotice('Geographic reference content is still unavailable. Your saved life has not changed.');}}
 
   if(startup==='loading')return <div className="app-shell"><header className="topbar"><a className="brand" href="#life"><span className="brand-mark">t<span>p</span></span><span>turning pages<small>A LIFE IN THE MAKING</small></span></a></header><main className="creation"><section className="creation-card" aria-live="polite"><div className="eyebrow">OPENING YOUR STORY</div><h2>Loading your saved life…</h2></section></main></div>;
 

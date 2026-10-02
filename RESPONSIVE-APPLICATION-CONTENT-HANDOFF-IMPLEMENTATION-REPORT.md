@@ -37,7 +37,7 @@ Full canonical reference-plus-index payload: **3,442,402 UTF-8 JSON bytes**. JSO
 13. **Relations:** Worker builds deterministic group offsets, main privately references canonical records. London multiple-borough and other cross-boundary relations retained.
 14. **Wrappers:** private frozen runtime objects with lexical private Maps; canonical data contains no cache/lazy state.
 15. **Imports:** lightweight main identity/service modules contain no national reference graph; only Worker loader imports original country adapters/factories.
-16. **Assets:** frozen JSON Worker plugin emits separate assets fetched in Worker; no national Settlement records in main JS. Production routing's pre-existing demographic/Human graph is unchanged.
+16. **Assets:** frozen JSON Worker plugin emits separate assets fetched in Worker; no national Settlement records newly enter main JS through the application service. Frozen production v2 still imports its own Geography/demographic/Human bootstrap graph on main. This phase does not rewrite that domain dependency or claim all Geography data is absent from main; the bundle diagnostics distinguish those facts explicitly.
 17. **Cache key:** canonical JSON `{version:1,geography:[{partitionId,fingerprint}],settlements:[{packageId,fingerprint}]}` sorted by code-point ID; full tuple is identity, never country/latest.
 18. **Dedup:** exact pending subscribers share one job/Worker. A subscriber cancellation does not cancel others.
 19. **Retry:** failed jobs removed, no successful partial cache; subsequent same-set retry starts anew.
@@ -69,7 +69,7 @@ Full canonical reference-plus-index payload: **3,442,402 UTF-8 JSON bytes**. JSO
 45. **Scotland administrative-only:** valid administrative-area Residence still valid, empty settlement query stays empty.
 46. **Cross-boundary:** partition-qualified queries and multi-area settlement relations; no global-parent or administrative inference.
 47. **Failures:** bad tuple/protocol/offset/cycles/accessors/Worker startup/error/cancel/dispose reject predictably; real failed module load keeps persisted Game then retries successfully.
-48. **Publication:** no ready cache until full owned freeze/index build completes; cancellations/stale jobs cannot publish.
+48. **Publication:** no ready cache until full owned freeze/offset checks complete; cancellations/stale jobs cannot publish. Receiver guards also reject omitted child/relation/area groups and incorrect target ordering, so malformed derivative material cannot silently truncate or reorder public lookups. These linear cooperative checks do not repeat national domain validation or fingerprinting.
 49. **Repeated activation:** five plus three warm acceptances reuse one preparation; no Game-specific cache. Repeat revision/bytes unchanged.
 50. **Worker lifecycle:** one active preparation realm; terminate and detach after delivery/error/final-subscriber cancellation; service dispose clears jobs/cache/listeners.
 51. **Payload:** 3,442,402 diagnostic UTF-8 bytes including offsets.
@@ -81,7 +81,7 @@ Full canonical reference-plus-index payload: **3,442,402 UTF-8 JSON bytes**. JSO
 68. **Validated load:** strict full persistence+reference validated saved-load <3,000 ms assertion, not content-only timing. First-frame/navigation remains a separate reported metric.
 69. **Combined memory:** bounded transient Worker and main/cached context overlap; actual CDP samples where supported, raw diagnostic bytes/heap/lifetime counters, no fabricated RSS/mobile result.
 70. **Retained memory:** one cached canonical graph, derivative maps, no retained Worker or completed job; post-GC repeated activation observations above.
-71. **Duplication:** temporary structured-clone overlap permitted; no permanent second canonical package copy. Runtime results are references/frozen small arrays, not factory canonical copies.
+71. **Duplication:** temporary structured-clone overlap permitted; the service retains one canonical registry graph with private derivative indexes per cached exact set. Runtime results are references/frozen small arrays, not factory canonical copies. The existing frozen v2 bootstrap's separately imported Geography graph remains; no claim of globally eliminating all domain bootstrap copies is made. Removing that frozen dependency belongs to the later routing phase.
 72. **Mobile:** unmeasured; existing Country Start transient-memory debt not reopened. No mobile-memory acceptance claimed.
 73. **Base path:** actual built UI under `/application-content-evidence/`; Worker/JSON paths resolve.
 74. **Dev:** real Chromium Vite dev Worker under same non-root base passes exact counts, cached reuse and Worker release.
@@ -110,3 +110,9 @@ Supported-host run `37066776561`, source `18302689d2f79b274cbdb62337e22773426319
 Chromium's CI overlap samples observe one Worker created and detached, 22 Worker /39 main samples: observed separate main/Worker heap peaks **156,365,348 /61,425,340 bytes**; their **217,790,688-byte sum is not an exact simultaneous/RSS peak**. Post-GC main heap **40,384,852 →40,486,484 bytes**, unchanged 12,123,917-byte backing storage. Firefox/WebKit counters unavailable; their zero sample-derived placeholders are not zero memory. Mobile remains unmeasured.
 
 Final error-path audit found that a valid imported backup could be mislabeled invalid when only reference loading failed. The two approved host-file exceptions cover the minimal LifeApp correction: distinguish canonical parse failure from recoverable reference failure, keep current Game/save unchanged and permit re-import. New real-browser import/failed-content/retry tests pass locally in Chromium/WebKit. Final exact-source CI run follows this small host correction; no domain/persistence/routing changes or assertion/timeout weakening.
+
+Run `37068106656` /source `69cb17fb1e12c26bb3d787d75995ecbaeaf193df` subsequently completed SUCCESS, including the backup-import correction in all three browsers, full regression/types/build/integrity. Its application gaps /validated loads: Chromium **416.7 /2,084.4 ms**, Firefox **574 /2,556 ms**, WebKit **393 /1,816 ms**. Separate pre-application bundle gaps remain **1,604.4 /1,997 /1,683 ms**, not phase passes; first pending screens **1,773.7 /2,918 /1,801 ms** from navigation.
+
+A final retry-state audit also found initial recovery choices/startup warnings were not retained after content failure. The minimal host correction preserves those existing metadata values before waiting and restores the startup warning on retry. The real failure/retry test now saves an actual previous record and asserts its existing recovery button remains available after retry; Chromium/WebKit pass locally. This is host-state preservation, not new recovery semantics. Complete cold-load timing with a large backup inventory remains separate acceptance coverage; the measured formal cold-load fixture has one primary Game. Final exact-source CI follows this correction.
+
+Final receiver-material checks add two focused cases for omitted groups and changed lookup order. The complete focused host/service/parity/New Game run passes **31/31** tests. The final bounded suite and exact-source browser CI are being rerun after these checks; previous successful runs above remain historical evidence, rather than a claim that the latest source has already passed.

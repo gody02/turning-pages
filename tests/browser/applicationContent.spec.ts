@@ -58,7 +58,7 @@ test('failed real content Worker preserves the saved Game and retries without re
  const baseline=await page.evaluate(async()=>{
   const api=await import('/application-content-evidence/testing/testing.js'),game=await api.createUkMid2024GeographicResidenceGame({version:1,rootSeed:73,mode:'adult'}),encoded=api.serializeGame(game);
   if(!encoded.ok)throw Error('Invalid acceptance fixture');const persistence=await api.GamePersistence.open(localStorage);
-  try{const revision=await persistence.save(game,null);return {raw:encoded.raw,revision};}finally{persistence.close();api.disposeUkCountryStartStartup();}
+  try{const first=await persistence.save(game,null),revision=await persistence.save(game,first);return {raw:encoded.raw,revision};}finally{persistence.close();api.disposeUkCountryStartStartup();}
  });
  await page.addInitScript(()=>{const native=crypto.getRandomValues.bind(crypto);Object.assign(globalThis,{__seedDraws:0});crypto.getRandomValues=(array:any)=>{(globalThis as any).__seedDraws++;return native(array);};});
  await page.route('**/assets/worker-*.js',route=>route.abort());await page.goto('./');
@@ -66,6 +66,7 @@ test('failed real content Worker preserves the saved Game and retries without re
  const inspect=()=>page.evaluate(async()=>{const api=await import('/application-content-evidence/testing/testing.js'),p=await api.GamePersistence.open(localStorage);try{const loaded=await p.initialize(),encoded=api.serializeGame(loaded.game!);if(!encoded.ok)throw Error('Invalid persisted fixture');return {raw:encoded.raw,revision:loaded.revision,seeds:(globalThis as any).__seedDraws};}finally{p.close();}});
  expect(await inspect()).toEqual({...baseline,seeds:0});await page.unroute('**/assets/worker-*.js');await page.getByRole('button',{name:'Retry loading'}).click();await expect(page.locator('.dashboard')).toBeVisible();
  expect(await inspect()).toEqual({...baseline,seeds:0});expect(await page.evaluate(()=>{const host=(globalThis as any).__applicationContent;return host.applicationContentDiagnostics();})).toMatchObject({preparations:2,activeWorkers:0,pendingSets:0,cachedSets:1});
+ await page.getByRole('button',{name:/Finances/}).click();await expect(page.getByRole('button',{name:'Restore previous successful save'})).toBeVisible();
 });
 
 test('valid backup with unavailable reference content is not mislabeled corrupt and never replaces the current life',async({page})=>{

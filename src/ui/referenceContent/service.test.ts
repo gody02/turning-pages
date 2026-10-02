@@ -38,6 +38,15 @@ describe('responsive application content host',()=>{
   const hidden=structuredClone(data),getter=vi.fn(()=>0);Object.defineProperty(hidden.indexes,'hidden',{get:getter});
   await expect(receiveOwnedReferenceContent(hidden,set,()=>true)).rejects.toThrow('property');expect(getter).not.toHaveBeenCalled();
  });
+ it('rejects omitted child/relation/area groups instead of publishing incomplete lookups',async()=>{
+  const {data,set}=fixture();for(const kind of ['children','relations','areas'] as const){const broken=structuredClone(data);if(kind==='children')(broken.indexes.geography[0].children as any).splice(0,1);else(broken.indexes.settlements[0][kind] as any).splice(0,1);await expect(receiveOwnedReferenceContent(broken,set,()=>true)).rejects.toThrow('Incomplete');}
+ });
+ it('rejects shuffled grouped targets whose lookup ordering would differ',async()=>{
+  const {data,set}=fixture(),broken=structuredClone(data),geo=broken.geography.partitions[0],root=geo.nodes.find(node=>node.parentPlaceId===null)!;
+  const child=geo.nodes.find(node=>node.parentPlaceId!==null)!,second={...child,placeId:child.placeId+'.zzz'};(geo.nodes as any).push(second);(broken.indexes.geography[0].nodes as any).push([second.placeId,geo.nodes.length-1]);
+  const children=broken.indexes.geography[0].children.find(entry=>entry[0]===root.placeId)!;(children[1] as any).unshift(geo.nodes.length-1);
+  await expect(receiveOwnedReferenceContent(broken,set,()=>true)).rejects.toThrow('ordering');
+ });
  it('one subscriber abort does not cancel another; final subscriber abort terminates unpublished work',async()=>{
   const {data,set}=fixture(),{service,workers}=host(),controller=new AbortController();const a=service.prepare(set,{signal:controller.signal}),b=service.prepare(set);controller.abort();await expect(a).rejects.toThrow('cancelled');expect(workers[0].terminate).not.toHaveBeenCalled();workers[0].ready(data);await b;service.dispose();
   const next=host(),last=new AbortController(),pending=next.service.prepare(set,{signal:last.signal});last.abort();await expect(pending).rejects.toThrow('cancelled');expect(next.workers[0].terminate).toHaveBeenCalledOnce();expect(next.service.peek(set)).toBeUndefined();next.service.dispose();
