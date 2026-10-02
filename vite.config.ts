@@ -1,4 +1,4 @@
 import { defineConfig } from 'vite';
 import { configDefaults } from 'vitest/config';
 import react from '@vitejs/plugin-react';
-export default defineConfig({ plugins: [react()], test: { exclude: [...configDefaults.exclude, 'tests/browser/**'] } });
+export default defineConfig({ plugins: [react()], worker: {format:'es'}, test: { exclude: [...configDefaults.exclude, 'tests/browser/**'] } });
