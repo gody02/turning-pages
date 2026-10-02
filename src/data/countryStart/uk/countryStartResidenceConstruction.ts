@@ -9,7 +9,7 @@ import {UK_RESIDENCE_COUNTRY_START_SCENARIO as scenario} from './countryStartRes
 import {prepareUkCountryStartResidenceContent} from './countryStartResidencePreparation';
 import {ownStartupRequest as ownRequest} from './countryStartResidenceRequest';
 
-/** Base-world construction only. No storage, runtime materialization, or UI routing. */
+/** @internal Exact synchronous builder for the startup Worker and differential test oracle only. */
 export function buildUkMid2024GeographicResidenceGame(input:UkMid2024StartRequestV1):CurrentGame{
  const request=ownRequest(input),registry=createUkCountryStartRegistry();
  resolveUkCountryStartScenario(registry,scenario.id);

@@ -64,10 +64,16 @@ export function createStartupService(factory:()=>Promise<StartupPort>){
  };
  const create=(input:UkMid2024StartRequestV1,options:StartupOptions={}):Promise<CurrentGame>=>{
   let request:UkMid2024StartRequestV1;
-  try{request=ownStartupRequest(input);}catch(error){return Promise.reject(error);}
+  try{
+   request=ownStartupRequest(input);options={signal:options.signal,onProgress:options.onProgress};
+   if(options.onProgress!==undefined&&typeof options.onProgress!=='function')throw Error('Invalid startup progress callback.');
+   if(options.signal!==undefined){
+    // Brand check before acquiring the slot. Invalid host controls cannot strand a request.
+    Object.getOwnPropertyDescriptor(AbortSignal.prototype,'aborted')!.get!.call(options.signal);
+   }
+  }catch(error){return Promise.reject(error);}
   if(options.signal?.aborted)return Promise.reject(new StartupError('aborted','UK startup was cancelled.'));
   if(pending)return Promise.reject(new StartupError('busy','A UK startup is already in progress.'));
-  options={signal:options.signal,onProgress:options.onProgress};
   lastDiagnostics=undefined;
   return new Promise<CurrentGame>((resolve,reject)=>{
    const current:Pending={id:String(++sequence),request,options,resolve,reject,cancelled:false,dispatched:false,unlisten:()=>{}};

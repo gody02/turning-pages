@@ -48,4 +48,8 @@ describe('startup-only host protocol and atomic publication',()=>{
   const h=harness(),controller=new AbortController();controller.abort();await expect(h.service.create(request,{signal:controller.signal})).rejects.toMatchObject({code:'aborted'});
   const getter=vi.fn(),bad=Object.defineProperty({...request},'rootSeed',{get:getter,enumerable:true});await expect(h.service.create(bad)).rejects.toThrow('Invalid');await expect(h.service.create(new Proxy(request,{}))).rejects.toThrow('Invalid');expect(getter).not.toHaveBeenCalled();expect(h.factory).not.toHaveBeenCalled();
  });
+ it('rejects malformed host controls without acquiring or stranding the active slot',async()=>{
+  const h=harness();await expect(h.service.create(request,{signal:{} as AbortSignal})).rejects.toBeInstanceOf(Error);
+  await expect(h.service.create(request,{onProgress:1 as never})).rejects.toThrow('progress');expect(h.service.status().active).toBe(false);expect(h.factory).not.toHaveBeenCalled();
+ });
 });
