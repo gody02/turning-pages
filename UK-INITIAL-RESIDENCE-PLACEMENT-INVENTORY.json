@@ -1,0 +1,4802 @@
+{
+  "version": 1,
+  "status": "planning-inventory-only-no-policy-weights-or-placement",
+  "partitionId": "geography.uk.primary-local-admin-2024-06-30-v1",
+  "geographyFingerprint": "fnv1a64-v1:3d1a3446a16c58cb",
+  "settlementPackageId": "settlements.uk.hybrid-2024-06-30-v2",
+  "settlementFingerprint": "fnv1a64-v1:2ddc7643a1e7e4b8",
+  "settlementArtifactSha256": "34aa659dc4ed927b70f78834c6638e58ae787ead38a9e9e68fe28886b0c359db",
+  "summary": {
+    "areaCount": 361,
+    "uniqueSettlements": 2698,
+    "areaQualifiedCandidates": 2736,
+    "minimumCandidates": 1,
+    "maximumCandidates": 65,
+    "emptyAreas": [],
+    "singleCandidateAreas": 54,
+    "areasWithIntersectingCandidates": 41,
+    "unreferencedSettlements": 0
+  },
+  "areas": [
+    {
+      "placeId": "place.uk.local-admin.e06000001",
+      "displayName": "Hartlepool",
+      "candidateCount": 4,
+      "realCount": 0,
+      "authoredCount": 4,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 4
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000002",
+      "displayName": "Middlesbrough",
+      "candidateCount": 7,
+      "realCount": 1,
+      "authoredCount": 6,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.reviewed.town": 1,
+        "settlement.uk.authored.village": 4,
+        "settlement.uk.authored.hamlet": 1,
+        "settlement.uk.authored.town": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000003",
+      "displayName": "Redcar and Cleveland",
+      "candidateCount": 6,
+      "realCount": 0,
+      "authoredCount": 6,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 3,
+        "settlement.uk.authored.hamlet": 1,
+        "settlement.uk.authored.town": 2
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000004",
+      "displayName": "Stockton-on-Tees",
+      "candidateCount": 8,
+      "realCount": 0,
+      "authoredCount": 8,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 5,
+        "settlement.uk.authored.town": 1,
+        "settlement.uk.authored.hamlet": 2
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000005",
+      "displayName": "Darlington",
+      "candidateCount": 5,
+      "realCount": 0,
+      "authoredCount": 5,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 4,
+        "settlement.uk.authored.town": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000006",
+      "displayName": "Halton",
+      "candidateCount": 6,
+      "realCount": 0,
+      "authoredCount": 6,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 4,
+        "settlement.uk.authored.hamlet": 2
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000007",
+      "displayName": "Warrington",
+      "candidateCount": 9,
+      "realCount": 0,
+      "authoredCount": 9,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 5,
+        "settlement.uk.authored.hamlet": 2,
+        "settlement.uk.authored.town": 2
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000008",
+      "displayName": "Blackburn with Darwen",
+      "candidateCount": 7,
+      "realCount": 0,
+      "authoredCount": 7,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 4,
+        "settlement.uk.authored.town": 2,
+        "settlement.uk.authored.hamlet": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000009",
+      "displayName": "Blackpool",
+      "candidateCount": 6,
+      "realCount": 0,
+      "authoredCount": 6,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.town": 2,
+        "settlement.uk.authored.hamlet": 2,
+        "settlement.uk.authored.village": 2
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000010",
+      "displayName": "Kingston upon Hull, City of",
+      "candidateCount": 1,
+      "realCount": 1,
+      "authoredCount": 0,
+      "contentPolicy": "preserved-compact-real-anchor-no-neighbourhood-completion",
+      "kinds": {
+        "settlement.uk.reviewed.city": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000011",
+      "displayName": "East Riding of Yorkshire",
+      "candidateCount": 14,
+      "realCount": 0,
+      "authoredCount": 14,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.town": 6,
+        "settlement.uk.authored.village": 5,
+        "settlement.uk.authored.hamlet": 3
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000012",
+      "displayName": "North East Lincolnshire",
+      "candidateCount": 7,
+      "realCount": 0,
+      "authoredCount": 7,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.hamlet": 2,
+        "settlement.uk.authored.village": 4,
+        "settlement.uk.authored.town": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000013",
+      "displayName": "North Lincolnshire",
+      "candidateCount": 7,
+      "realCount": 0,
+      "authoredCount": 7,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.town": 3,
+        "settlement.uk.authored.village": 4
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000014",
+      "displayName": "York",
+      "candidateCount": 9,
+      "realCount": 1,
+      "authoredCount": 8,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.reviewed.city": 1,
+        "settlement.uk.authored.hamlet": 2,
+        "settlement.uk.authored.town": 2,
+        "settlement.uk.authored.village": 4
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000015",
+      "displayName": "Derby",
+      "candidateCount": 1,
+      "realCount": 1,
+      "authoredCount": 0,
+      "contentPolicy": "preserved-compact-real-anchor-no-neighbourhood-completion",
+      "kinds": {
+        "settlement.uk.reviewed.city": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000016",
+      "displayName": "Leicester",
+      "candidateCount": 1,
+      "realCount": 1,
+      "authoredCount": 0,
+      "contentPolicy": "preserved-compact-real-anchor-no-neighbourhood-completion",
+      "kinds": {
+        "settlement.uk.reviewed.city": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000017",
+      "displayName": "Rutland",
+      "candidateCount": 2,
+      "realCount": 0,
+      "authoredCount": 2,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.town": 1,
+        "settlement.uk.authored.village": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000018",
+      "displayName": "Nottingham",
+      "candidateCount": 1,
+      "realCount": 1,
+      "authoredCount": 0,
+      "contentPolicy": "preserved-compact-real-anchor-no-neighbourhood-completion",
+      "kinds": {
+        "settlement.uk.reviewed.city": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000019",
+      "displayName": "Herefordshire, County of",
+      "candidateCount": 8,
+      "realCount": 0,
+      "authoredCount": 8,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 6,
+        "settlement.uk.authored.hamlet": 1,
+        "settlement.uk.authored.town": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000020",
+      "displayName": "Telford and Wrekin",
+      "candidateCount": 8,
+      "realCount": 0,
+      "authoredCount": 8,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 5,
+        "settlement.uk.authored.hamlet": 2,
+        "settlement.uk.authored.town": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000021",
+      "displayName": "Stoke-on-Trent",
+      "candidateCount": 1,
+      "realCount": 1,
+      "authoredCount": 0,
+      "contentPolicy": "preserved-compact-real-anchor-no-neighbourhood-completion",
+      "kinds": {
+        "settlement.uk.reviewed.city": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000022",
+      "displayName": "Bath and North East Somerset",
+      "candidateCount": 8,
+      "realCount": 1,
+      "authoredCount": 7,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.reviewed.city": 1,
+        "settlement.uk.authored.village": 4,
+        "settlement.uk.authored.town": 2,
+        "settlement.uk.authored.hamlet": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000023",
+      "displayName": "Bristol, City of",
+      "candidateCount": 1,
+      "realCount": 1,
+      "authoredCount": 0,
+      "contentPolicy": "preserved-compact-real-anchor-no-neighbourhood-completion",
+      "kinds": {
+        "settlement.uk.reviewed.city": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000024",
+      "displayName": "North Somerset",
+      "candidateCount": 9,
+      "realCount": 0,
+      "authoredCount": 9,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 6,
+        "settlement.uk.authored.hamlet": 1,
+        "settlement.uk.authored.town": 2
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000025",
+      "displayName": "South Gloucestershire",
+      "candidateCount": 12,
+      "realCount": 0,
+      "authoredCount": 12,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.town": 5,
+        "settlement.uk.authored.village": 7
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000026",
+      "displayName": "Plymouth",
+      "candidateCount": 1,
+      "realCount": 1,
+      "authoredCount": 0,
+      "contentPolicy": "preserved-compact-real-anchor-no-neighbourhood-completion",
+      "kinds": {
+        "settlement.uk.reviewed.city": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000027",
+      "displayName": "Torbay",
+      "candidateCount": 6,
+      "realCount": 0,
+      "authoredCount": 6,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 4,
+        "settlement.uk.authored.town": 2
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000030",
+      "displayName": "Swindon",
+      "candidateCount": 10,
+      "realCount": 0,
+      "authoredCount": 10,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.hamlet": 2,
+        "settlement.uk.authored.village": 6,
+        "settlement.uk.authored.town": 2
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000031",
+      "displayName": "Peterborough",
+      "candidateCount": 9,
+      "realCount": 0,
+      "authoredCount": 9,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 5,
+        "settlement.uk.authored.town": 2,
+        "settlement.uk.authored.hamlet": 2
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000032",
+      "displayName": "Luton",
+      "candidateCount": 10,
+      "realCount": 0,
+      "authoredCount": 10,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.hamlet": 2,
+        "settlement.uk.authored.village": 6,
+        "settlement.uk.authored.town": 2
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000033",
+      "displayName": "Southend-on-Sea",
+      "candidateCount": 8,
+      "realCount": 0,
+      "authoredCount": 8,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 4,
+        "settlement.uk.authored.hamlet": 2,
+        "settlement.uk.authored.town": 2
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000034",
+      "displayName": "Thurrock",
+      "candidateCount": 7,
+      "realCount": 0,
+      "authoredCount": 7,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 5,
+        "settlement.uk.authored.town": 2
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000035",
+      "displayName": "Medway",
+      "candidateCount": 12,
+      "realCount": 0,
+      "authoredCount": 12,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.town": 4,
+        "settlement.uk.authored.village": 6,
+        "settlement.uk.authored.hamlet": 2
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000036",
+      "displayName": "Bracknell Forest",
+      "candidateCount": 6,
+      "realCount": 0,
+      "authoredCount": 6,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 3,
+        "settlement.uk.authored.hamlet": 2,
+        "settlement.uk.authored.town": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000037",
+      "displayName": "West Berkshire",
+      "candidateCount": 7,
+      "realCount": 0,
+      "authoredCount": 7,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 4,
+        "settlement.uk.authored.hamlet": 1,
+        "settlement.uk.authored.town": 2
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000038",
+      "displayName": "Reading",
+      "candidateCount": 1,
+      "realCount": 1,
+      "authoredCount": 0,
+      "contentPolicy": "preserved-compact-real-anchor-no-neighbourhood-completion",
+      "kinds": {
+        "settlement.uk.reviewed.town": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000039",
+      "displayName": "Slough",
+      "candidateCount": 7,
+      "realCount": 0,
+      "authoredCount": 7,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 4,
+        "settlement.uk.authored.town": 2,
+        "settlement.uk.authored.hamlet": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000040",
+      "displayName": "Windsor and Maidenhead",
+      "candidateCount": 7,
+      "realCount": 0,
+      "authoredCount": 7,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.hamlet": 2,
+        "settlement.uk.authored.village": 4,
+        "settlement.uk.authored.town": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000041",
+      "displayName": "Wokingham",
+      "candidateCount": 8,
+      "realCount": 0,
+      "authoredCount": 8,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.town": 3,
+        "settlement.uk.authored.hamlet": 1,
+        "settlement.uk.authored.village": 4
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000042",
+      "displayName": "Milton Keynes",
+      "candidateCount": 12,
+      "realCount": 0,
+      "authoredCount": 12,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.town": 4,
+        "settlement.uk.authored.hamlet": 3,
+        "settlement.uk.authored.village": 5
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000043",
+      "displayName": "Brighton and Hove",
+      "candidateCount": 1,
+      "realCount": 1,
+      "authoredCount": 0,
+      "contentPolicy": "preserved-compact-real-anchor-no-neighbourhood-completion",
+      "kinds": {
+        "settlement.uk.reviewed.city": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000044",
+      "displayName": "Portsmouth",
+      "candidateCount": 1,
+      "realCount": 1,
+      "authoredCount": 0,
+      "contentPolicy": "preserved-compact-real-anchor-no-neighbourhood-completion",
+      "kinds": {
+        "settlement.uk.reviewed.city": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000045",
+      "displayName": "Southampton",
+      "candidateCount": 1,
+      "realCount": 1,
+      "authoredCount": 0,
+      "contentPolicy": "preserved-compact-real-anchor-no-neighbourhood-completion",
+      "kinds": {
+        "settlement.uk.reviewed.city": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000046",
+      "displayName": "Isle of Wight",
+      "candidateCount": 6,
+      "realCount": 0,
+      "authoredCount": 6,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.hamlet": 2,
+        "settlement.uk.authored.town": 2,
+        "settlement.uk.authored.village": 2
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000047",
+      "displayName": "County Durham",
+      "candidateCount": 21,
+      "realCount": 0,
+      "authoredCount": 21,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.town": 7,
+        "settlement.uk.authored.village": 9,
+        "settlement.uk.authored.hamlet": 5
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000049",
+      "displayName": "Cheshire East",
+      "candidateCount": 17,
+      "realCount": 0,
+      "authoredCount": 17,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.town": 6,
+        "settlement.uk.authored.village": 8,
+        "settlement.uk.authored.hamlet": 3
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000050",
+      "displayName": "Cheshire West and Chester",
+      "candidateCount": 15,
+      "realCount": 1,
+      "authoredCount": 14,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.reviewed.city": 1,
+        "settlement.uk.authored.town": 4,
+        "settlement.uk.authored.village": 8,
+        "settlement.uk.authored.hamlet": 2
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000051",
+      "displayName": "Shropshire",
+      "candidateCount": 13,
+      "realCount": 0,
+      "authoredCount": 13,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.town": 4,
+        "settlement.uk.authored.hamlet": 5,
+        "settlement.uk.authored.village": 4
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000052",
+      "displayName": "Cornwall",
+      "candidateCount": 23,
+      "realCount": 0,
+      "authoredCount": 23,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.town": 4,
+        "settlement.uk.authored.village": 14,
+        "settlement.uk.authored.hamlet": 5
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000053",
+      "displayName": "Isles of Scilly",
+      "candidateCount": 1,
+      "realCount": 1,
+      "authoredCount": 0,
+      "contentPolicy": "preserved-small-area-real-anchor",
+      "kinds": {
+        "settlement.uk.reviewed.town": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000054",
+      "displayName": "Wiltshire",
+      "candidateCount": 21,
+      "realCount": 0,
+      "authoredCount": 21,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.town": 6,
+        "settlement.uk.authored.village": 12,
+        "settlement.uk.authored.hamlet": 3
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000055",
+      "displayName": "Bedford",
+      "candidateCount": 8,
+      "realCount": 0,
+      "authoredCount": 8,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 4,
+        "settlement.uk.authored.hamlet": 2,
+        "settlement.uk.authored.town": 2
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000056",
+      "displayName": "Central Bedfordshire",
+      "candidateCount": 13,
+      "realCount": 0,
+      "authoredCount": 13,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.town": 5,
+        "settlement.uk.authored.village": 6,
+        "settlement.uk.authored.hamlet": 2
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000057",
+      "displayName": "Northumberland",
+      "candidateCount": 13,
+      "realCount": 0,
+      "authoredCount": 13,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.town": 4,
+        "settlement.uk.authored.village": 5,
+        "settlement.uk.authored.hamlet": 4
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000058",
+      "displayName": "Bournemouth, Christchurch and Poole",
+      "candidateCount": 16,
+      "realCount": 1,
+      "authoredCount": 15,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.reviewed.town": 1,
+        "settlement.uk.authored.town": 5,
+        "settlement.uk.authored.village": 8,
+        "settlement.uk.authored.hamlet": 2
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000059",
+      "displayName": "Dorset",
+      "candidateCount": 15,
+      "realCount": 0,
+      "authoredCount": 15,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.town": 5,
+        "settlement.uk.authored.hamlet": 3,
+        "settlement.uk.authored.village": 7
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000060",
+      "displayName": "Buckinghamshire",
+      "candidateCount": 23,
+      "realCount": 0,
+      "authoredCount": 23,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.town": 7,
+        "settlement.uk.authored.village": 12,
+        "settlement.uk.authored.hamlet": 4
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000061",
+      "displayName": "North Northamptonshire",
+      "candidateCount": 15,
+      "realCount": 0,
+      "authoredCount": 15,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.town": 4,
+        "settlement.uk.authored.village": 9,
+        "settlement.uk.authored.hamlet": 2
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000062",
+      "displayName": "West Northamptonshire",
+      "candidateCount": 17,
+      "realCount": 0,
+      "authoredCount": 17,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.town": 6,
+        "settlement.uk.authored.village": 7,
+        "settlement.uk.authored.hamlet": 4
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000063",
+      "displayName": "Cumberland",
+      "candidateCount": 11,
+      "realCount": 1,
+      "authoredCount": 10,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.reviewed.city": 1,
+        "settlement.uk.authored.town": 3,
+        "settlement.uk.authored.hamlet": 2,
+        "settlement.uk.authored.village": 5
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000064",
+      "displayName": "Westmorland and Furness",
+      "candidateCount": 9,
+      "realCount": 0,
+      "authoredCount": 9,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 5,
+        "settlement.uk.authored.hamlet": 2,
+        "settlement.uk.authored.town": 2
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000065",
+      "displayName": "North Yorkshire",
+      "candidateCount": 25,
+      "realCount": 0,
+      "authoredCount": 25,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.town": 4,
+        "settlement.uk.authored.village": 17,
+        "settlement.uk.authored.hamlet": 4
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e06000066",
+      "displayName": "Somerset",
+      "candidateCount": 23,
+      "realCount": 0,
+      "authoredCount": 23,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.town": 4,
+        "settlement.uk.authored.village": 16,
+        "settlement.uk.authored.hamlet": 3
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000008",
+      "displayName": "Cambridge",
+      "candidateCount": 6,
+      "realCount": 1,
+      "authoredCount": 5,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.reviewed.city": 1,
+        "settlement.uk.authored.village": 1,
+        "settlement.uk.authored.town": 3,
+        "settlement.uk.authored.hamlet": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000009",
+      "displayName": "East Cambridgeshire",
+      "candidateCount": 4,
+      "realCount": 0,
+      "authoredCount": 4,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.town": 2,
+        "settlement.uk.authored.hamlet": 2
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000010",
+      "displayName": "Fenland",
+      "candidateCount": 5,
+      "realCount": 0,
+      "authoredCount": 5,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 4,
+        "settlement.uk.authored.hamlet": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000011",
+      "displayName": "Huntingdonshire",
+      "candidateCount": 8,
+      "realCount": 0,
+      "authoredCount": 8,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.town": 2,
+        "settlement.uk.authored.hamlet": 2,
+        "settlement.uk.authored.village": 4
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000012",
+      "displayName": "South Cambridgeshire",
+      "candidateCount": 7,
+      "realCount": 0,
+      "authoredCount": 7,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 3,
+        "settlement.uk.authored.town": 2,
+        "settlement.uk.authored.hamlet": 2
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000032",
+      "displayName": "Amber Valley",
+      "candidateCount": 6,
+      "realCount": 0,
+      "authoredCount": 6,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 4,
+        "settlement.uk.authored.hamlet": 2
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000033",
+      "displayName": "Bolsover",
+      "candidateCount": 4,
+      "realCount": 0,
+      "authoredCount": 4,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 3,
+        "settlement.uk.authored.hamlet": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000034",
+      "displayName": "Chesterfield",
+      "candidateCount": 5,
+      "realCount": 0,
+      "authoredCount": 5,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 2,
+        "settlement.uk.authored.town": 2,
+        "settlement.uk.authored.hamlet": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000035",
+      "displayName": "Derbyshire Dales",
+      "candidateCount": 3,
+      "realCount": 0,
+      "authoredCount": 3,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 2,
+        "settlement.uk.authored.town": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000036",
+      "displayName": "Erewash",
+      "candidateCount": 5,
+      "realCount": 0,
+      "authoredCount": 5,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.town": 1,
+        "settlement.uk.authored.village": 4
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000037",
+      "displayName": "High Peak",
+      "candidateCount": 4,
+      "realCount": 0,
+      "authoredCount": 4,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 4
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000038",
+      "displayName": "North East Derbyshire",
+      "candidateCount": 5,
+      "realCount": 0,
+      "authoredCount": 5,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 3,
+        "settlement.uk.authored.town": 1,
+        "settlement.uk.authored.hamlet": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000039",
+      "displayName": "South Derbyshire",
+      "candidateCount": 5,
+      "realCount": 0,
+      "authoredCount": 5,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.town": 2,
+        "settlement.uk.authored.hamlet": 2,
+        "settlement.uk.authored.village": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000040",
+      "displayName": "East Devon",
+      "candidateCount": 7,
+      "realCount": 0,
+      "authoredCount": 7,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 4,
+        "settlement.uk.authored.town": 3
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000041",
+      "displayName": "Exeter",
+      "candidateCount": 6,
+      "realCount": 1,
+      "authoredCount": 5,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.reviewed.city": 1,
+        "settlement.uk.authored.town": 2,
+        "settlement.uk.authored.hamlet": 2,
+        "settlement.uk.authored.village": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000042",
+      "displayName": "Mid Devon",
+      "candidateCount": 4,
+      "realCount": 0,
+      "authoredCount": 4,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 4
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000043",
+      "displayName": "North Devon",
+      "candidateCount": 4,
+      "realCount": 0,
+      "authoredCount": 4,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.town": 2,
+        "settlement.uk.authored.village": 2
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000044",
+      "displayName": "South Hams",
+      "candidateCount": 4,
+      "realCount": 0,
+      "authoredCount": 4,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.town": 2,
+        "settlement.uk.authored.hamlet": 2
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000045",
+      "displayName": "Teignbridge",
+      "candidateCount": 6,
+      "realCount": 0,
+      "authoredCount": 6,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.town": 2,
+        "settlement.uk.authored.hamlet": 2,
+        "settlement.uk.authored.village": 2
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000046",
+      "displayName": "Torridge",
+      "candidateCount": 3,
+      "realCount": 0,
+      "authoredCount": 3,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 2,
+        "settlement.uk.authored.town": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000047",
+      "displayName": "West Devon",
+      "candidateCount": 3,
+      "realCount": 0,
+      "authoredCount": 3,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.town": 2,
+        "settlement.uk.authored.village": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000061",
+      "displayName": "Eastbourne",
+      "candidateCount": 5,
+      "realCount": 0,
+      "authoredCount": 5,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.town": 3,
+        "settlement.uk.authored.village": 2
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000062",
+      "displayName": "Hastings",
+      "candidateCount": 4,
+      "realCount": 0,
+      "authoredCount": 4,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 4
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000063",
+      "displayName": "Lewes",
+      "candidateCount": 4,
+      "realCount": 0,
+      "authoredCount": 4,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.hamlet": 2,
+        "settlement.uk.authored.town": 1,
+        "settlement.uk.authored.village": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000064",
+      "displayName": "Rother",
+      "candidateCount": 4,
+      "realCount": 0,
+      "authoredCount": 4,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 2,
+        "settlement.uk.authored.hamlet": 2
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000065",
+      "displayName": "Wealden",
+      "candidateCount": 7,
+      "realCount": 0,
+      "authoredCount": 7,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.town": 2,
+        "settlement.uk.authored.village": 4,
+        "settlement.uk.authored.hamlet": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000066",
+      "displayName": "Basildon",
+      "candidateCount": 8,
+      "realCount": 0,
+      "authoredCount": 8,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 5,
+        "settlement.uk.authored.town": 2,
+        "settlement.uk.authored.hamlet": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000067",
+      "displayName": "Braintree",
+      "candidateCount": 7,
+      "realCount": 0,
+      "authoredCount": 7,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.town": 2,
+        "settlement.uk.authored.hamlet": 2,
+        "settlement.uk.authored.village": 3
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000068",
+      "displayName": "Brentwood",
+      "candidateCount": 4,
+      "realCount": 0,
+      "authoredCount": 4,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 3,
+        "settlement.uk.authored.town": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000069",
+      "displayName": "Castle Point",
+      "candidateCount": 4,
+      "realCount": 0,
+      "authoredCount": 4,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.town": 3,
+        "settlement.uk.authored.village": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000070",
+      "displayName": "Chelmsford",
+      "candidateCount": 8,
+      "realCount": 0,
+      "authoredCount": 8,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.town": 3,
+        "settlement.uk.authored.village": 4,
+        "settlement.uk.authored.hamlet": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000071",
+      "displayName": "Colchester",
+      "candidateCount": 8,
+      "realCount": 0,
+      "authoredCount": 8,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 4,
+        "settlement.uk.authored.town": 2,
+        "settlement.uk.authored.hamlet": 2
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000072",
+      "displayName": "Epping Forest",
+      "candidateCount": 6,
+      "realCount": 0,
+      "authoredCount": 6,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 4,
+        "settlement.uk.authored.hamlet": 2
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000073",
+      "displayName": "Harlow",
+      "candidateCount": 4,
+      "realCount": 0,
+      "authoredCount": 4,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 4
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000074",
+      "displayName": "Maldon",
+      "candidateCount": 3,
+      "realCount": 0,
+      "authoredCount": 3,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.town": 1,
+        "settlement.uk.authored.village": 1,
+        "settlement.uk.authored.hamlet": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000075",
+      "displayName": "Rochford",
+      "candidateCount": 4,
+      "realCount": 0,
+      "authoredCount": 4,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 2,
+        "settlement.uk.authored.town": 2
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000076",
+      "displayName": "Tendring",
+      "candidateCount": 7,
+      "realCount": 0,
+      "authoredCount": 7,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.town": 1,
+        "settlement.uk.authored.village": 5,
+        "settlement.uk.authored.hamlet": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000077",
+      "displayName": "Uttlesford",
+      "candidateCount": 4,
+      "realCount": 0,
+      "authoredCount": 4,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 4
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000078",
+      "displayName": "Cheltenham",
+      "candidateCount": 5,
+      "realCount": 0,
+      "authoredCount": 5,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.town": 3,
+        "settlement.uk.authored.village": 2
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000079",
+      "displayName": "Cotswold",
+      "candidateCount": 4,
+      "realCount": 0,
+      "authoredCount": 4,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.hamlet": 2,
+        "settlement.uk.authored.village": 2
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000080",
+      "displayName": "Forest of Dean",
+      "candidateCount": 4,
+      "realCount": 0,
+      "authoredCount": 4,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.town": 2,
+        "settlement.uk.authored.hamlet": 2
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000081",
+      "displayName": "Gloucester",
+      "candidateCount": 6,
+      "realCount": 0,
+      "authoredCount": 6,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.hamlet": 1,
+        "settlement.uk.authored.town": 1,
+        "settlement.uk.authored.village": 4
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000082",
+      "displayName": "Stroud",
+      "candidateCount": 5,
+      "realCount": 0,
+      "authoredCount": 5,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.town": 3,
+        "settlement.uk.authored.village": 2
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000083",
+      "displayName": "Tewkesbury",
+      "candidateCount": 4,
+      "realCount": 0,
+      "authoredCount": 4,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.hamlet": 1,
+        "settlement.uk.authored.town": 2,
+        "settlement.uk.authored.village": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000084",
+      "displayName": "Basingstoke and Deane",
+      "candidateCount": 8,
+      "realCount": 0,
+      "authoredCount": 8,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.town": 2,
+        "settlement.uk.authored.hamlet": 2,
+        "settlement.uk.authored.village": 4
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000085",
+      "displayName": "East Hampshire",
+      "candidateCount": 5,
+      "realCount": 0,
+      "authoredCount": 5,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.hamlet": 2,
+        "settlement.uk.authored.village": 3
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000086",
+      "displayName": "Eastleigh",
+      "candidateCount": 6,
+      "realCount": 0,
+      "authoredCount": 6,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.town": 2,
+        "settlement.uk.authored.village": 4
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000087",
+      "displayName": "Fareham",
+      "candidateCount": 5,
+      "realCount": 0,
+      "authoredCount": 5,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.hamlet": 2,
+        "settlement.uk.authored.town": 2,
+        "settlement.uk.authored.village": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000088",
+      "displayName": "Gosport",
+      "candidateCount": 4,
+      "realCount": 0,
+      "authoredCount": 4,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 4
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000089",
+      "displayName": "Hart",
+      "candidateCount": 4,
+      "realCount": 0,
+      "authoredCount": 4,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.hamlet": 1,
+        "settlement.uk.authored.town": 1,
+        "settlement.uk.authored.village": 2
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000090",
+      "displayName": "Havant",
+      "candidateCount": 5,
+      "realCount": 0,
+      "authoredCount": 5,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 2,
+        "settlement.uk.authored.hamlet": 2,
+        "settlement.uk.authored.town": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000091",
+      "displayName": "New Forest",
+      "candidateCount": 7,
+      "realCount": 0,
+      "authoredCount": 7,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.hamlet": 2,
+        "settlement.uk.authored.town": 2,
+        "settlement.uk.authored.village": 3
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000092",
+      "displayName": "Rushmoor",
+      "candidateCount": 5,
+      "realCount": 0,
+      "authoredCount": 5,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 4,
+        "settlement.uk.authored.hamlet": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000093",
+      "displayName": "Test Valley",
+      "candidateCount": 6,
+      "realCount": 0,
+      "authoredCount": 6,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.hamlet": 2,
+        "settlement.uk.authored.village": 4
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000094",
+      "displayName": "Winchester",
+      "candidateCount": 6,
+      "realCount": 0,
+      "authoredCount": 6,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 2,
+        "settlement.uk.authored.hamlet": 2,
+        "settlement.uk.authored.town": 2
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000095",
+      "displayName": "Broxbourne",
+      "candidateCount": 4,
+      "realCount": 0,
+      "authoredCount": 4,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.town": 2,
+        "settlement.uk.authored.hamlet": 1,
+        "settlement.uk.authored.village": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000096",
+      "displayName": "Dacorum",
+      "candidateCount": 7,
+      "realCount": 0,
+      "authoredCount": 7,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 4,
+        "settlement.uk.authored.hamlet": 2,
+        "settlement.uk.authored.town": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000098",
+      "displayName": "Hertsmere",
+      "candidateCount": 5,
+      "realCount": 0,
+      "authoredCount": 5,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 2,
+        "settlement.uk.authored.hamlet": 2,
+        "settlement.uk.authored.town": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000099",
+      "displayName": "North Hertfordshire",
+      "candidateCount": 6,
+      "realCount": 0,
+      "authoredCount": 6,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 4,
+        "settlement.uk.authored.town": 1,
+        "settlement.uk.authored.hamlet": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000102",
+      "displayName": "Three Rivers",
+      "candidateCount": 4,
+      "realCount": 0,
+      "authoredCount": 4,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 4
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000103",
+      "displayName": "Watford",
+      "candidateCount": 5,
+      "realCount": 0,
+      "authoredCount": 5,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 4,
+        "settlement.uk.authored.town": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000105",
+      "displayName": "Ashford",
+      "candidateCount": 6,
+      "realCount": 0,
+      "authoredCount": 6,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 3,
+        "settlement.uk.authored.town": 1,
+        "settlement.uk.authored.hamlet": 2
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000106",
+      "displayName": "Canterbury",
+      "candidateCount": 7,
+      "realCount": 0,
+      "authoredCount": 7,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 5,
+        "settlement.uk.authored.hamlet": 2
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000107",
+      "displayName": "Dartford",
+      "candidateCount": 5,
+      "realCount": 0,
+      "authoredCount": 5,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 4,
+        "settlement.uk.authored.hamlet": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000108",
+      "displayName": "Dover",
+      "candidateCount": 5,
+      "realCount": 0,
+      "authoredCount": 5,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 2,
+        "settlement.uk.authored.town": 2,
+        "settlement.uk.authored.hamlet": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000109",
+      "displayName": "Gravesham",
+      "candidateCount": 5,
+      "realCount": 0,
+      "authoredCount": 5,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.town": 1,
+        "settlement.uk.authored.hamlet": 1,
+        "settlement.uk.authored.village": 3
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000110",
+      "displayName": "Maidstone",
+      "candidateCount": 8,
+      "realCount": 0,
+      "authoredCount": 8,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.hamlet": 2,
+        "settlement.uk.authored.town": 2,
+        "settlement.uk.authored.village": 4
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000111",
+      "displayName": "Sevenoaks",
+      "candidateCount": 5,
+      "realCount": 0,
+      "authoredCount": 5,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 5
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000112",
+      "displayName": "Folkestone and Hythe",
+      "candidateCount": 5,
+      "realCount": 0,
+      "authoredCount": 5,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.hamlet": 1,
+        "settlement.uk.authored.village": 4
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000113",
+      "displayName": "Swale",
+      "candidateCount": 7,
+      "realCount": 0,
+      "authoredCount": 7,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.town": 3,
+        "settlement.uk.authored.village": 4
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000114",
+      "displayName": "Thanet",
+      "candidateCount": 6,
+      "realCount": 0,
+      "authoredCount": 6,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.hamlet": 2,
+        "settlement.uk.authored.village": 3,
+        "settlement.uk.authored.town": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000115",
+      "displayName": "Tonbridge and Malling",
+      "candidateCount": 6,
+      "realCount": 0,
+      "authoredCount": 6,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.town": 2,
+        "settlement.uk.authored.village": 4
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000116",
+      "displayName": "Tunbridge Wells",
+      "candidateCount": 5,
+      "realCount": 0,
+      "authoredCount": 5,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.hamlet": 1,
+        "settlement.uk.authored.village": 4
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000117",
+      "displayName": "Burnley",
+      "candidateCount": 4,
+      "realCount": 0,
+      "authoredCount": 4,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.town": 2,
+        "settlement.uk.authored.hamlet": 2
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000118",
+      "displayName": "Chorley",
+      "candidateCount": 5,
+      "realCount": 0,
+      "authoredCount": 5,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 5
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000119",
+      "displayName": "Fylde",
+      "candidateCount": 4,
+      "realCount": 0,
+      "authoredCount": 4,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.town": 2,
+        "settlement.uk.authored.village": 2
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000120",
+      "displayName": "Hyndburn",
+      "candidateCount": 4,
+      "realCount": 0,
+      "authoredCount": 4,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.town": 1,
+        "settlement.uk.authored.village": 3
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000121",
+      "displayName": "Lancaster",
+      "candidateCount": 6,
+      "realCount": 0,
+      "authoredCount": 6,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 5,
+        "settlement.uk.authored.hamlet": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000122",
+      "displayName": "Pendle",
+      "candidateCount": 4,
+      "realCount": 0,
+      "authoredCount": 4,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.town": 3,
+        "settlement.uk.authored.village": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000123",
+      "displayName": "Preston",
+      "candidateCount": 7,
+      "realCount": 0,
+      "authoredCount": 7,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 4,
+        "settlement.uk.authored.town": 2,
+        "settlement.uk.authored.hamlet": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000124",
+      "displayName": "Ribble Valley",
+      "candidateCount": 3,
+      "realCount": 0,
+      "authoredCount": 3,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.town": 1,
+        "settlement.uk.authored.village": 2
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000125",
+      "displayName": "Rossendale",
+      "candidateCount": 3,
+      "realCount": 0,
+      "authoredCount": 3,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 3
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000126",
+      "displayName": "South Ribble",
+      "candidateCount": 5,
+      "realCount": 0,
+      "authoredCount": 5,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.town": 2,
+        "settlement.uk.authored.village": 2,
+        "settlement.uk.authored.hamlet": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000127",
+      "displayName": "West Lancashire",
+      "candidateCount": 5,
+      "realCount": 0,
+      "authoredCount": 5,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 2,
+        "settlement.uk.authored.town": 3
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000128",
+      "displayName": "Wyre",
+      "candidateCount": 5,
+      "realCount": 0,
+      "authoredCount": 5,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 5
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000129",
+      "displayName": "Blaby",
+      "candidateCount": 5,
+      "realCount": 0,
+      "authoredCount": 5,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.hamlet": 2,
+        "settlement.uk.authored.town": 2,
+        "settlement.uk.authored.village": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000130",
+      "displayName": "Charnwood",
+      "candidateCount": 8,
+      "realCount": 0,
+      "authoredCount": 8,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 5,
+        "settlement.uk.authored.town": 2,
+        "settlement.uk.authored.hamlet": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000131",
+      "displayName": "Harborough",
+      "candidateCount": 5,
+      "realCount": 0,
+      "authoredCount": 5,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.town": 2,
+        "settlement.uk.authored.village": 2,
+        "settlement.uk.authored.hamlet": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000132",
+      "displayName": "Hinckley and Bosworth",
+      "candidateCount": 5,
+      "realCount": 0,
+      "authoredCount": 5,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 5
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000133",
+      "displayName": "Melton",
+      "candidateCount": 3,
+      "realCount": 0,
+      "authoredCount": 3,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.town": 1,
+        "settlement.uk.authored.village": 2
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000134",
+      "displayName": "North West Leicestershire",
+      "candidateCount": 5,
+      "realCount": 0,
+      "authoredCount": 5,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 2,
+        "settlement.uk.authored.town": 2,
+        "settlement.uk.authored.hamlet": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000135",
+      "displayName": "Oadby and Wigston",
+      "candidateCount": 3,
+      "realCount": 0,
+      "authoredCount": 3,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.town": 2,
+        "settlement.uk.authored.hamlet": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000136",
+      "displayName": "Boston",
+      "candidateCount": 3,
+      "realCount": 0,
+      "authoredCount": 3,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 3
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000137",
+      "displayName": "East Lindsey",
+      "candidateCount": 6,
+      "realCount": 0,
+      "authoredCount": 6,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.town": 2,
+        "settlement.uk.authored.village": 4
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000138",
+      "displayName": "Lincoln",
+      "candidateCount": 5,
+      "realCount": 0,
+      "authoredCount": 5,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.hamlet": 1,
+        "settlement.uk.authored.village": 4
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000139",
+      "displayName": "North Kesteven",
+      "candidateCount": 5,
+      "realCount": 0,
+      "authoredCount": 5,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.town": 2,
+        "settlement.uk.authored.village": 2,
+        "settlement.uk.authored.hamlet": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000140",
+      "displayName": "South Holland",
+      "candidateCount": 4,
+      "realCount": 0,
+      "authoredCount": 4,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 4
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000141",
+      "displayName": "South Kesteven",
+      "candidateCount": 6,
+      "realCount": 0,
+      "authoredCount": 6,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 4,
+        "settlement.uk.authored.town": 2
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000142",
+      "displayName": "West Lindsey",
+      "candidateCount": 4,
+      "realCount": 0,
+      "authoredCount": 4,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 3,
+        "settlement.uk.authored.hamlet": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000143",
+      "displayName": "Breckland",
+      "candidateCount": 6,
+      "realCount": 0,
+      "authoredCount": 6,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 3,
+        "settlement.uk.authored.hamlet": 1,
+        "settlement.uk.authored.town": 2
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000144",
+      "displayName": "Broadland",
+      "candidateCount": 6,
+      "realCount": 0,
+      "authoredCount": 6,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 3,
+        "settlement.uk.authored.town": 2,
+        "settlement.uk.authored.hamlet": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000145",
+      "displayName": "Great Yarmouth",
+      "candidateCount": 4,
+      "realCount": 0,
+      "authoredCount": 4,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 4
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000146",
+      "displayName": "King's Lynn and West Norfolk",
+      "candidateCount": 7,
+      "realCount": 0,
+      "authoredCount": 7,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 4,
+        "settlement.uk.authored.town": 3
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000147",
+      "displayName": "North Norfolk",
+      "candidateCount": 4,
+      "realCount": 0,
+      "authoredCount": 4,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 2,
+        "settlement.uk.authored.hamlet": 2
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000148",
+      "displayName": "Norwich",
+      "candidateCount": 6,
+      "realCount": 1,
+      "authoredCount": 5,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.reviewed.city": 1,
+        "settlement.uk.authored.village": 4,
+        "settlement.uk.authored.hamlet": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000149",
+      "displayName": "South Norfolk",
+      "candidateCount": 6,
+      "realCount": 0,
+      "authoredCount": 6,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.town": 2,
+        "settlement.uk.authored.hamlet": 2,
+        "settlement.uk.authored.village": 2
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000170",
+      "displayName": "Ashfield",
+      "candidateCount": 5,
+      "realCount": 0,
+      "authoredCount": 5,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 1,
+        "settlement.uk.authored.town": 2,
+        "settlement.uk.authored.hamlet": 2
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000171",
+      "displayName": "Bassetlaw",
+      "candidateCount": 5,
+      "realCount": 0,
+      "authoredCount": 5,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 4,
+        "settlement.uk.authored.town": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000172",
+      "displayName": "Broxtowe",
+      "candidateCount": 5,
+      "realCount": 0,
+      "authoredCount": 5,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.town": 2,
+        "settlement.uk.authored.village": 3
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000173",
+      "displayName": "Gedling",
+      "candidateCount": 5,
+      "realCount": 0,
+      "authoredCount": 5,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 3,
+        "settlement.uk.authored.hamlet": 1,
+        "settlement.uk.authored.town": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000174",
+      "displayName": "Mansfield",
+      "candidateCount": 5,
+      "realCount": 0,
+      "authoredCount": 5,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 2,
+        "settlement.uk.authored.town": 2,
+        "settlement.uk.authored.hamlet": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000175",
+      "displayName": "Newark and Sherwood",
+      "candidateCount": 5,
+      "realCount": 0,
+      "authoredCount": 5,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 4,
+        "settlement.uk.authored.hamlet": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000176",
+      "displayName": "Rushcliffe",
+      "candidateCount": 5,
+      "realCount": 0,
+      "authoredCount": 5,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 4,
+        "settlement.uk.authored.town": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000177",
+      "displayName": "Cherwell",
+      "candidateCount": 7,
+      "realCount": 0,
+      "authoredCount": 7,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 3,
+        "settlement.uk.authored.hamlet": 2,
+        "settlement.uk.authored.town": 2
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000178",
+      "displayName": "Oxford",
+      "candidateCount": 7,
+      "realCount": 1,
+      "authoredCount": 6,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.reviewed.city": 1,
+        "settlement.uk.authored.village": 5,
+        "settlement.uk.authored.town": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000179",
+      "displayName": "South Oxfordshire",
+      "candidateCount": 7,
+      "realCount": 0,
+      "authoredCount": 7,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 4,
+        "settlement.uk.authored.town": 2,
+        "settlement.uk.authored.hamlet": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000180",
+      "displayName": "Vale of White Horse",
+      "candidateCount": 6,
+      "realCount": 0,
+      "authoredCount": 6,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 5,
+        "settlement.uk.authored.hamlet": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000181",
+      "displayName": "West Oxfordshire",
+      "candidateCount": 5,
+      "realCount": 0,
+      "authoredCount": 5,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 2,
+        "settlement.uk.authored.town": 3
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000192",
+      "displayName": "Cannock Chase",
+      "candidateCount": 5,
+      "realCount": 0,
+      "authoredCount": 5,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.town": 1,
+        "settlement.uk.authored.hamlet": 2,
+        "settlement.uk.authored.village": 2
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000193",
+      "displayName": "East Staffordshire",
+      "candidateCount": 5,
+      "realCount": 0,
+      "authoredCount": 5,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.hamlet": 1,
+        "settlement.uk.authored.town": 1,
+        "settlement.uk.authored.village": 3
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000194",
+      "displayName": "Lichfield",
+      "candidateCount": 5,
+      "realCount": 0,
+      "authoredCount": 5,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.town": 2,
+        "settlement.uk.authored.village": 3
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000195",
+      "displayName": "Newcastle-under-Lyme",
+      "candidateCount": 5,
+      "realCount": 0,
+      "authoredCount": 5,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.hamlet": 2,
+        "settlement.uk.authored.town": 2,
+        "settlement.uk.authored.village": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000196",
+      "displayName": "South Staffordshire",
+      "candidateCount": 5,
+      "realCount": 0,
+      "authoredCount": 5,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.town": 2,
+        "settlement.uk.authored.hamlet": 2,
+        "settlement.uk.authored.village": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000197",
+      "displayName": "Stafford",
+      "candidateCount": 6,
+      "realCount": 0,
+      "authoredCount": 6,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.hamlet": 2,
+        "settlement.uk.authored.village": 4
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000198",
+      "displayName": "Staffordshire Moorlands",
+      "candidateCount": 4,
+      "realCount": 0,
+      "authoredCount": 4,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 2,
+        "settlement.uk.authored.town": 1,
+        "settlement.uk.authored.hamlet": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000199",
+      "displayName": "Tamworth",
+      "candidateCount": 4,
+      "realCount": 0,
+      "authoredCount": 4,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.town": 3,
+        "settlement.uk.authored.village": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000200",
+      "displayName": "Babergh",
+      "candidateCount": 4,
+      "realCount": 0,
+      "authoredCount": 4,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.hamlet": 2,
+        "settlement.uk.authored.village": 1,
+        "settlement.uk.authored.town": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000202",
+      "displayName": "Ipswich",
+      "candidateCount": 6,
+      "realCount": 0,
+      "authoredCount": 6,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.hamlet": 1,
+        "settlement.uk.authored.village": 5
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000203",
+      "displayName": "Mid Suffolk",
+      "candidateCount": 5,
+      "realCount": 0,
+      "authoredCount": 5,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.town": 2,
+        "settlement.uk.authored.village": 2,
+        "settlement.uk.authored.hamlet": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000207",
+      "displayName": "Elmbridge",
+      "candidateCount": 6,
+      "realCount": 0,
+      "authoredCount": 6,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.town": 2,
+        "settlement.uk.authored.hamlet": 2,
+        "settlement.uk.authored.village": 2
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000208",
+      "displayName": "Epsom and Ewell",
+      "candidateCount": 4,
+      "realCount": 0,
+      "authoredCount": 4,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 4
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000209",
+      "displayName": "Guildford",
+      "candidateCount": 6,
+      "realCount": 0,
+      "authoredCount": 6,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.town": 2,
+        "settlement.uk.authored.village": 4
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000210",
+      "displayName": "Mole Valley",
+      "candidateCount": 4,
+      "realCount": 0,
+      "authoredCount": 4,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.hamlet": 2,
+        "settlement.uk.authored.town": 1,
+        "settlement.uk.authored.village": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000211",
+      "displayName": "Reigate and Banstead",
+      "candidateCount": 7,
+      "realCount": 0,
+      "authoredCount": 7,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 4,
+        "settlement.uk.authored.town": 2,
+        "settlement.uk.authored.hamlet": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000212",
+      "displayName": "Runnymede",
+      "candidateCount": 4,
+      "realCount": 0,
+      "authoredCount": 4,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.town": 3,
+        "settlement.uk.authored.village": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000213",
+      "displayName": "Spelthorne",
+      "candidateCount": 5,
+      "realCount": 0,
+      "authoredCount": 5,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 2,
+        "settlement.uk.authored.hamlet": 2,
+        "settlement.uk.authored.town": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000214",
+      "displayName": "Surrey Heath",
+      "candidateCount": 4,
+      "realCount": 0,
+      "authoredCount": 4,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.hamlet": 2,
+        "settlement.uk.authored.town": 1,
+        "settlement.uk.authored.village": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000215",
+      "displayName": "Tandridge",
+      "candidateCount": 4,
+      "realCount": 0,
+      "authoredCount": 4,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 4
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000216",
+      "displayName": "Waverley",
+      "candidateCount": 6,
+      "realCount": 0,
+      "authoredCount": 6,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.hamlet": 1,
+        "settlement.uk.authored.town": 2,
+        "settlement.uk.authored.village": 3
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000217",
+      "displayName": "Woking",
+      "candidateCount": 5,
+      "realCount": 0,
+      "authoredCount": 5,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 3,
+        "settlement.uk.authored.hamlet": 2
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000218",
+      "displayName": "North Warwickshire",
+      "candidateCount": 3,
+      "realCount": 0,
+      "authoredCount": 3,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.hamlet": 1,
+        "settlement.uk.authored.town": 1,
+        "settlement.uk.authored.village": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000219",
+      "displayName": "Nuneaton and Bedworth",
+      "candidateCount": 6,
+      "realCount": 0,
+      "authoredCount": 6,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 3,
+        "settlement.uk.authored.town": 2,
+        "settlement.uk.authored.hamlet": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000220",
+      "displayName": "Rugby",
+      "candidateCount": 5,
+      "realCount": 0,
+      "authoredCount": 5,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 2,
+        "settlement.uk.authored.town": 2,
+        "settlement.uk.authored.hamlet": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000221",
+      "displayName": "Stratford-on-Avon",
+      "candidateCount": 6,
+      "realCount": 0,
+      "authoredCount": 6,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.town": 2,
+        "settlement.uk.authored.village": 2,
+        "settlement.uk.authored.hamlet": 2
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000222",
+      "displayName": "Warwick",
+      "candidateCount": 6,
+      "realCount": 0,
+      "authoredCount": 6,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 4,
+        "settlement.uk.authored.hamlet": 2
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000223",
+      "displayName": "Adur",
+      "candidateCount": 3,
+      "realCount": 0,
+      "authoredCount": 3,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.town": 1,
+        "settlement.uk.authored.village": 2
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000224",
+      "displayName": "Arun",
+      "candidateCount": 7,
+      "realCount": 0,
+      "authoredCount": 7,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 4,
+        "settlement.uk.authored.town": 2,
+        "settlement.uk.authored.hamlet": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000225",
+      "displayName": "Chichester",
+      "candidateCount": 5,
+      "realCount": 0,
+      "authoredCount": 5,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.town": 2,
+        "settlement.uk.authored.village": 2,
+        "settlement.uk.authored.hamlet": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000226",
+      "displayName": "Crawley",
+      "candidateCount": 5,
+      "realCount": 0,
+      "authoredCount": 5,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 4,
+        "settlement.uk.authored.hamlet": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000227",
+      "displayName": "Horsham",
+      "candidateCount": 6,
+      "realCount": 0,
+      "authoredCount": 6,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.town": 1,
+        "settlement.uk.authored.village": 5
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000228",
+      "displayName": "Mid Sussex",
+      "candidateCount": 7,
+      "realCount": 0,
+      "authoredCount": 7,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.hamlet": 2,
+        "settlement.uk.authored.village": 5
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000229",
+      "displayName": "Worthing",
+      "candidateCount": 5,
+      "realCount": 0,
+      "authoredCount": 5,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.town": 2,
+        "settlement.uk.authored.village": 2,
+        "settlement.uk.authored.hamlet": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000234",
+      "displayName": "Bromsgrove",
+      "candidateCount": 4,
+      "realCount": 0,
+      "authoredCount": 4,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.town": 1,
+        "settlement.uk.authored.village": 3
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000235",
+      "displayName": "Malvern Hills",
+      "candidateCount": 4,
+      "realCount": 0,
+      "authoredCount": 4,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 4
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000236",
+      "displayName": "Redditch",
+      "candidateCount": 4,
+      "realCount": 0,
+      "authoredCount": 4,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 2,
+        "settlement.uk.authored.town": 2
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000237",
+      "displayName": "Worcester",
+      "candidateCount": 5,
+      "realCount": 0,
+      "authoredCount": 5,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 2,
+        "settlement.uk.authored.town": 2,
+        "settlement.uk.authored.hamlet": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000238",
+      "displayName": "Wychavon",
+      "candidateCount": 6,
+      "realCount": 0,
+      "authoredCount": 6,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 4,
+        "settlement.uk.authored.hamlet": 2
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000239",
+      "displayName": "Wyre Forest",
+      "candidateCount": 4,
+      "realCount": 0,
+      "authoredCount": 4,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.hamlet": 2,
+        "settlement.uk.authored.town": 2
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000240",
+      "displayName": "St Albans",
+      "candidateCount": 6,
+      "realCount": 0,
+      "authoredCount": 6,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 6
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000241",
+      "displayName": "Welwyn Hatfield",
+      "candidateCount": 5,
+      "realCount": 0,
+      "authoredCount": 5,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.town": 2,
+        "settlement.uk.authored.village": 3
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000242",
+      "displayName": "East Hertfordshire",
+      "candidateCount": 7,
+      "realCount": 0,
+      "authoredCount": 7,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 4,
+        "settlement.uk.authored.town": 3
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000243",
+      "displayName": "Stevenage",
+      "candidateCount": 4,
+      "realCount": 0,
+      "authoredCount": 4,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.town": 2,
+        "settlement.uk.authored.hamlet": 2
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000244",
+      "displayName": "East Suffolk",
+      "candidateCount": 10,
+      "realCount": 0,
+      "authoredCount": 10,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.town": 3,
+        "settlement.uk.authored.village": 4,
+        "settlement.uk.authored.hamlet": 3
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e07000245",
+      "displayName": "West Suffolk",
+      "candidateCount": 8,
+      "realCount": 0,
+      "authoredCount": 8,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.town": 3,
+        "settlement.uk.authored.village": 4,
+        "settlement.uk.authored.hamlet": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000001",
+      "displayName": "Bolton",
+      "candidateCount": 12,
+      "realCount": 0,
+      "authoredCount": 12,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.town": 6,
+        "settlement.uk.authored.village": 4,
+        "settlement.uk.authored.hamlet": 2
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000002",
+      "displayName": "Bury",
+      "candidateCount": 8,
+      "realCount": 0,
+      "authoredCount": 8,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 5,
+        "settlement.uk.authored.town": 2,
+        "settlement.uk.authored.hamlet": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000003",
+      "displayName": "Manchester",
+      "candidateCount": 1,
+      "realCount": 1,
+      "authoredCount": 0,
+      "contentPolicy": "preserved-compact-real-anchor-no-neighbourhood-completion",
+      "kinds": {
+        "settlement.uk.reviewed.city": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000004",
+      "displayName": "Oldham",
+      "candidateCount": 10,
+      "realCount": 0,
+      "authoredCount": 10,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.town": 6,
+        "settlement.uk.authored.village": 2,
+        "settlement.uk.authored.hamlet": 2
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000005",
+      "displayName": "Rochdale",
+      "candidateCount": 10,
+      "realCount": 0,
+      "authoredCount": 10,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.town": 4,
+        "settlement.uk.authored.hamlet": 2,
+        "settlement.uk.authored.village": 4
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000006",
+      "displayName": "Salford",
+      "candidateCount": 12,
+      "realCount": 0,
+      "authoredCount": 12,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.town": 5,
+        "settlement.uk.authored.hamlet": 2,
+        "settlement.uk.authored.village": 5
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000007",
+      "displayName": "Stockport",
+      "candidateCount": 12,
+      "realCount": 0,
+      "authoredCount": 12,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.town": 6,
+        "settlement.uk.authored.village": 6
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000008",
+      "displayName": "Tameside",
+      "candidateCount": 10,
+      "realCount": 0,
+      "authoredCount": 10,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 7,
+        "settlement.uk.authored.hamlet": 2,
+        "settlement.uk.authored.town": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000009",
+      "displayName": "Trafford",
+      "candidateCount": 10,
+      "realCount": 0,
+      "authoredCount": 10,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 6,
+        "settlement.uk.authored.hamlet": 2,
+        "settlement.uk.authored.town": 2
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000010",
+      "displayName": "Wigan",
+      "candidateCount": 14,
+      "realCount": 0,
+      "authoredCount": 14,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.town": 3,
+        "settlement.uk.authored.hamlet": 2,
+        "settlement.uk.authored.village": 9
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000011",
+      "displayName": "Knowsley",
+      "candidateCount": 7,
+      "realCount": 0,
+      "authoredCount": 7,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 5,
+        "settlement.uk.authored.hamlet": 1,
+        "settlement.uk.authored.town": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000012",
+      "displayName": "Liverpool",
+      "candidateCount": 1,
+      "realCount": 1,
+      "authoredCount": 0,
+      "contentPolicy": "preserved-compact-real-anchor-no-neighbourhood-completion",
+      "kinds": {
+        "settlement.uk.reviewed.city": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000013",
+      "displayName": "St. Helens",
+      "candidateCount": 8,
+      "realCount": 0,
+      "authoredCount": 8,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 4,
+        "settlement.uk.authored.hamlet": 1,
+        "settlement.uk.authored.town": 3
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000014",
+      "displayName": "Sefton",
+      "candidateCount": 12,
+      "realCount": 0,
+      "authoredCount": 12,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.town": 3,
+        "settlement.uk.authored.hamlet": 2,
+        "settlement.uk.authored.village": 7
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000015",
+      "displayName": "Wirral",
+      "candidateCount": 13,
+      "realCount": 0,
+      "authoredCount": 13,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.town": 5,
+        "settlement.uk.authored.village": 6,
+        "settlement.uk.authored.hamlet": 2
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000016",
+      "displayName": "Barnsley",
+      "candidateCount": 10,
+      "realCount": 0,
+      "authoredCount": 10,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.town": 3,
+        "settlement.uk.authored.village": 5,
+        "settlement.uk.authored.hamlet": 2
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000017",
+      "displayName": "Doncaster",
+      "candidateCount": 13,
+      "realCount": 0,
+      "authoredCount": 13,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.town": 6,
+        "settlement.uk.authored.village": 7
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000018",
+      "displayName": "Rotherham",
+      "candidateCount": 11,
+      "realCount": 0,
+      "authoredCount": 11,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.town": 4,
+        "settlement.uk.authored.village": 5,
+        "settlement.uk.authored.hamlet": 2
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000019",
+      "displayName": "Sheffield",
+      "candidateCount": 1,
+      "realCount": 1,
+      "authoredCount": 0,
+      "contentPolicy": "preserved-compact-real-anchor-no-neighbourhood-completion",
+      "kinds": {
+        "settlement.uk.reviewed.city": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000021",
+      "displayName": "Newcastle upon Tyne",
+      "candidateCount": 1,
+      "realCount": 1,
+      "authoredCount": 0,
+      "contentPolicy": "preserved-compact-real-anchor-no-neighbourhood-completion",
+      "kinds": {
+        "settlement.uk.reviewed.city": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000022",
+      "displayName": "North Tyneside",
+      "candidateCount": 9,
+      "realCount": 0,
+      "authoredCount": 9,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 6,
+        "settlement.uk.authored.hamlet": 2,
+        "settlement.uk.authored.town": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000023",
+      "displayName": "South Tyneside",
+      "candidateCount": 6,
+      "realCount": 0,
+      "authoredCount": 6,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 4,
+        "settlement.uk.authored.hamlet": 2
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000024",
+      "displayName": "Sunderland",
+      "candidateCount": 1,
+      "realCount": 1,
+      "authoredCount": 0,
+      "contentPolicy": "preserved-compact-real-anchor-no-neighbourhood-completion",
+      "kinds": {
+        "settlement.uk.reviewed.city": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000025",
+      "displayName": "Birmingham",
+      "candidateCount": 1,
+      "realCount": 1,
+      "authoredCount": 0,
+      "contentPolicy": "preserved-compact-real-anchor-no-neighbourhood-completion",
+      "kinds": {
+        "settlement.uk.reviewed.city": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000026",
+      "displayName": "Coventry",
+      "candidateCount": 1,
+      "realCount": 1,
+      "authoredCount": 0,
+      "contentPolicy": "preserved-compact-real-anchor-no-neighbourhood-completion",
+      "kinds": {
+        "settlement.uk.reviewed.city": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000027",
+      "displayName": "Dudley",
+      "candidateCount": 13,
+      "realCount": 0,
+      "authoredCount": 13,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.town": 5,
+        "settlement.uk.authored.village": 4,
+        "settlement.uk.authored.hamlet": 4
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000028",
+      "displayName": "Sandwell",
+      "candidateCount": 14,
+      "realCount": 0,
+      "authoredCount": 14,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.town": 5,
+        "settlement.uk.authored.village": 7,
+        "settlement.uk.authored.hamlet": 2
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000029",
+      "displayName": "Solihull",
+      "candidateCount": 9,
+      "realCount": 0,
+      "authoredCount": 9,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.hamlet": 1,
+        "settlement.uk.authored.village": 6,
+        "settlement.uk.authored.town": 2
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000030",
+      "displayName": "Walsall",
+      "candidateCount": 12,
+      "realCount": 0,
+      "authoredCount": 12,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.town": 6,
+        "settlement.uk.authored.hamlet": 2,
+        "settlement.uk.authored.village": 4
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000031",
+      "displayName": "Wolverhampton",
+      "candidateCount": 11,
+      "realCount": 0,
+      "authoredCount": 11,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.town": 4,
+        "settlement.uk.authored.village": 5,
+        "settlement.uk.authored.hamlet": 2
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000032",
+      "displayName": "Bradford",
+      "candidateCount": 22,
+      "realCount": 4,
+      "authoredCount": 18,
+      "contentPolicy": "reviewed-polycentric-administrative-area",
+      "kinds": {
+        "settlement.uk.reviewed.city": 1,
+        "settlement.uk.reviewed.town": 3,
+        "settlement.uk.authored.town": 5,
+        "settlement.uk.authored.village": 10,
+        "settlement.uk.authored.hamlet": 3
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000033",
+      "displayName": "Calderdale",
+      "candidateCount": 9,
+      "realCount": 0,
+      "authoredCount": 9,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 6,
+        "settlement.uk.authored.hamlet": 2,
+        "settlement.uk.authored.town": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000034",
+      "displayName": "Kirklees",
+      "candidateCount": 18,
+      "realCount": 0,
+      "authoredCount": 18,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.town": 6,
+        "settlement.uk.authored.hamlet": 3,
+        "settlement.uk.authored.village": 9
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000035",
+      "displayName": "Leeds",
+      "candidateCount": 33,
+      "realCount": 1,
+      "authoredCount": 32,
+      "contentPolicy": "reviewed-polycentric-administrative-area",
+      "kinds": {
+        "settlement.uk.reviewed.city": 1,
+        "settlement.uk.authored.town": 7,
+        "settlement.uk.authored.village": 20,
+        "settlement.uk.authored.hamlet": 5
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000036",
+      "displayName": "Wakefield",
+      "candidateCount": 15,
+      "realCount": 0,
+      "authoredCount": 15,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.town": 5,
+        "settlement.uk.authored.village": 7,
+        "settlement.uk.authored.hamlet": 3
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e08000037",
+      "displayName": "Gateshead",
+      "candidateCount": 8,
+      "realCount": 0,
+      "authoredCount": 8,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 4,
+        "settlement.uk.authored.town": 2,
+        "settlement.uk.authored.hamlet": 2
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000001",
+      "displayName": "City of London",
+      "candidateCount": 1,
+      "realCount": 1,
+      "authoredCount": 0,
+      "contentPolicy": "cross-boundary-capital-no-neighbourhood-completion",
+      "kinds": {
+        "settlement.uk.reviewed.city": 1
+      },
+      "intersectingCandidates": 1
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000002",
+      "displayName": "Barking and Dagenham",
+      "candidateCount": 1,
+      "realCount": 1,
+      "authoredCount": 0,
+      "contentPolicy": "cross-boundary-capital-no-neighbourhood-completion",
+      "kinds": {
+        "settlement.uk.reviewed.city": 1
+      },
+      "intersectingCandidates": 1
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000003",
+      "displayName": "Barnet",
+      "candidateCount": 1,
+      "realCount": 1,
+      "authoredCount": 0,
+      "contentPolicy": "cross-boundary-capital-no-neighbourhood-completion",
+      "kinds": {
+        "settlement.uk.reviewed.city": 1
+      },
+      "intersectingCandidates": 1
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000004",
+      "displayName": "Bexley",
+      "candidateCount": 1,
+      "realCount": 1,
+      "authoredCount": 0,
+      "contentPolicy": "cross-boundary-capital-no-neighbourhood-completion",
+      "kinds": {
+        "settlement.uk.reviewed.city": 1
+      },
+      "intersectingCandidates": 1
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000005",
+      "displayName": "Brent",
+      "candidateCount": 1,
+      "realCount": 1,
+      "authoredCount": 0,
+      "contentPolicy": "cross-boundary-capital-no-neighbourhood-completion",
+      "kinds": {
+        "settlement.uk.reviewed.city": 1
+      },
+      "intersectingCandidates": 1
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000006",
+      "displayName": "Bromley",
+      "candidateCount": 1,
+      "realCount": 1,
+      "authoredCount": 0,
+      "contentPolicy": "cross-boundary-capital-no-neighbourhood-completion",
+      "kinds": {
+        "settlement.uk.reviewed.city": 1
+      },
+      "intersectingCandidates": 1
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000007",
+      "displayName": "Camden",
+      "candidateCount": 1,
+      "realCount": 1,
+      "authoredCount": 0,
+      "contentPolicy": "cross-boundary-capital-no-neighbourhood-completion",
+      "kinds": {
+        "settlement.uk.reviewed.city": 1
+      },
+      "intersectingCandidates": 1
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000008",
+      "displayName": "Croydon",
+      "candidateCount": 1,
+      "realCount": 1,
+      "authoredCount": 0,
+      "contentPolicy": "cross-boundary-capital-no-neighbourhood-completion",
+      "kinds": {
+        "settlement.uk.reviewed.city": 1
+      },
+      "intersectingCandidates": 1
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000009",
+      "displayName": "Ealing",
+      "candidateCount": 1,
+      "realCount": 1,
+      "authoredCount": 0,
+      "contentPolicy": "cross-boundary-capital-no-neighbourhood-completion",
+      "kinds": {
+        "settlement.uk.reviewed.city": 1
+      },
+      "intersectingCandidates": 1
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000010",
+      "displayName": "Enfield",
+      "candidateCount": 1,
+      "realCount": 1,
+      "authoredCount": 0,
+      "contentPolicy": "cross-boundary-capital-no-neighbourhood-completion",
+      "kinds": {
+        "settlement.uk.reviewed.city": 1
+      },
+      "intersectingCandidates": 1
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000011",
+      "displayName": "Greenwich",
+      "candidateCount": 1,
+      "realCount": 1,
+      "authoredCount": 0,
+      "contentPolicy": "cross-boundary-capital-no-neighbourhood-completion",
+      "kinds": {
+        "settlement.uk.reviewed.city": 1
+      },
+      "intersectingCandidates": 1
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000012",
+      "displayName": "Hackney",
+      "candidateCount": 1,
+      "realCount": 1,
+      "authoredCount": 0,
+      "contentPolicy": "cross-boundary-capital-no-neighbourhood-completion",
+      "kinds": {
+        "settlement.uk.reviewed.city": 1
+      },
+      "intersectingCandidates": 1
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000013",
+      "displayName": "Hammersmith and Fulham",
+      "candidateCount": 1,
+      "realCount": 1,
+      "authoredCount": 0,
+      "contentPolicy": "cross-boundary-capital-no-neighbourhood-completion",
+      "kinds": {
+        "settlement.uk.reviewed.city": 1
+      },
+      "intersectingCandidates": 1
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000014",
+      "displayName": "Haringey",
+      "candidateCount": 1,
+      "realCount": 1,
+      "authoredCount": 0,
+      "contentPolicy": "cross-boundary-capital-no-neighbourhood-completion",
+      "kinds": {
+        "settlement.uk.reviewed.city": 1
+      },
+      "intersectingCandidates": 1
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000015",
+      "displayName": "Harrow",
+      "candidateCount": 1,
+      "realCount": 1,
+      "authoredCount": 0,
+      "contentPolicy": "cross-boundary-capital-no-neighbourhood-completion",
+      "kinds": {
+        "settlement.uk.reviewed.city": 1
+      },
+      "intersectingCandidates": 1
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000016",
+      "displayName": "Havering",
+      "candidateCount": 1,
+      "realCount": 1,
+      "authoredCount": 0,
+      "contentPolicy": "cross-boundary-capital-no-neighbourhood-completion",
+      "kinds": {
+        "settlement.uk.reviewed.city": 1
+      },
+      "intersectingCandidates": 1
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000017",
+      "displayName": "Hillingdon",
+      "candidateCount": 1,
+      "realCount": 1,
+      "authoredCount": 0,
+      "contentPolicy": "cross-boundary-capital-no-neighbourhood-completion",
+      "kinds": {
+        "settlement.uk.reviewed.city": 1
+      },
+      "intersectingCandidates": 1
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000018",
+      "displayName": "Hounslow",
+      "candidateCount": 1,
+      "realCount": 1,
+      "authoredCount": 0,
+      "contentPolicy": "cross-boundary-capital-no-neighbourhood-completion",
+      "kinds": {
+        "settlement.uk.reviewed.city": 1
+      },
+      "intersectingCandidates": 1
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000019",
+      "displayName": "Islington",
+      "candidateCount": 1,
+      "realCount": 1,
+      "authoredCount": 0,
+      "contentPolicy": "cross-boundary-capital-no-neighbourhood-completion",
+      "kinds": {
+        "settlement.uk.reviewed.city": 1
+      },
+      "intersectingCandidates": 1
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000020",
+      "displayName": "Kensington and Chelsea",
+      "candidateCount": 1,
+      "realCount": 1,
+      "authoredCount": 0,
+      "contentPolicy": "cross-boundary-capital-no-neighbourhood-completion",
+      "kinds": {
+        "settlement.uk.reviewed.city": 1
+      },
+      "intersectingCandidates": 1
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000021",
+      "displayName": "Kingston upon Thames",
+      "candidateCount": 1,
+      "realCount": 1,
+      "authoredCount": 0,
+      "contentPolicy": "cross-boundary-capital-no-neighbourhood-completion",
+      "kinds": {
+        "settlement.uk.reviewed.city": 1
+      },
+      "intersectingCandidates": 1
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000022",
+      "displayName": "Lambeth",
+      "candidateCount": 1,
+      "realCount": 1,
+      "authoredCount": 0,
+      "contentPolicy": "cross-boundary-capital-no-neighbourhood-completion",
+      "kinds": {
+        "settlement.uk.reviewed.city": 1
+      },
+      "intersectingCandidates": 1
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000023",
+      "displayName": "Lewisham",
+      "candidateCount": 1,
+      "realCount": 1,
+      "authoredCount": 0,
+      "contentPolicy": "cross-boundary-capital-no-neighbourhood-completion",
+      "kinds": {
+        "settlement.uk.reviewed.city": 1
+      },
+      "intersectingCandidates": 1
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000024",
+      "displayName": "Merton",
+      "candidateCount": 1,
+      "realCount": 1,
+      "authoredCount": 0,
+      "contentPolicy": "cross-boundary-capital-no-neighbourhood-completion",
+      "kinds": {
+        "settlement.uk.reviewed.city": 1
+      },
+      "intersectingCandidates": 1
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000025",
+      "displayName": "Newham",
+      "candidateCount": 1,
+      "realCount": 1,
+      "authoredCount": 0,
+      "contentPolicy": "cross-boundary-capital-no-neighbourhood-completion",
+      "kinds": {
+        "settlement.uk.reviewed.city": 1
+      },
+      "intersectingCandidates": 1
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000026",
+      "displayName": "Redbridge",
+      "candidateCount": 1,
+      "realCount": 1,
+      "authoredCount": 0,
+      "contentPolicy": "cross-boundary-capital-no-neighbourhood-completion",
+      "kinds": {
+        "settlement.uk.reviewed.city": 1
+      },
+      "intersectingCandidates": 1
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000027",
+      "displayName": "Richmond upon Thames",
+      "candidateCount": 1,
+      "realCount": 1,
+      "authoredCount": 0,
+      "contentPolicy": "cross-boundary-capital-no-neighbourhood-completion",
+      "kinds": {
+        "settlement.uk.reviewed.city": 1
+      },
+      "intersectingCandidates": 1
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000028",
+      "displayName": "Southwark",
+      "candidateCount": 1,
+      "realCount": 1,
+      "authoredCount": 0,
+      "contentPolicy": "cross-boundary-capital-no-neighbourhood-completion",
+      "kinds": {
+        "settlement.uk.reviewed.city": 1
+      },
+      "intersectingCandidates": 1
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000029",
+      "displayName": "Sutton",
+      "candidateCount": 1,
+      "realCount": 1,
+      "authoredCount": 0,
+      "contentPolicy": "cross-boundary-capital-no-neighbourhood-completion",
+      "kinds": {
+        "settlement.uk.reviewed.city": 1
+      },
+      "intersectingCandidates": 1
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000030",
+      "displayName": "Tower Hamlets",
+      "candidateCount": 1,
+      "realCount": 1,
+      "authoredCount": 0,
+      "contentPolicy": "cross-boundary-capital-no-neighbourhood-completion",
+      "kinds": {
+        "settlement.uk.reviewed.city": 1
+      },
+      "intersectingCandidates": 1
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000031",
+      "displayName": "Waltham Forest",
+      "candidateCount": 1,
+      "realCount": 1,
+      "authoredCount": 0,
+      "contentPolicy": "cross-boundary-capital-no-neighbourhood-completion",
+      "kinds": {
+        "settlement.uk.reviewed.city": 1
+      },
+      "intersectingCandidates": 1
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000032",
+      "displayName": "Wandsworth",
+      "candidateCount": 1,
+      "realCount": 1,
+      "authoredCount": 0,
+      "contentPolicy": "cross-boundary-capital-no-neighbourhood-completion",
+      "kinds": {
+        "settlement.uk.reviewed.city": 1
+      },
+      "intersectingCandidates": 1
+    },
+    {
+      "placeId": "place.uk.local-admin.e09000033",
+      "displayName": "Westminster",
+      "candidateCount": 1,
+      "realCount": 1,
+      "authoredCount": 0,
+      "contentPolicy": "cross-boundary-capital-no-neighbourhood-completion",
+      "kinds": {
+        "settlement.uk.reviewed.city": 1
+      },
+      "intersectingCandidates": 1
+    },
+    {
+      "placeId": "place.uk.local-admin.n09000001",
+      "displayName": "Antrim and Newtownabbey",
+      "candidateCount": 9,
+      "realCount": 0,
+      "authoredCount": 9,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 6,
+        "settlement.uk.authored.town": 1,
+        "settlement.uk.authored.hamlet": 2
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.n09000002",
+      "displayName": "Armagh City, Banbridge and Craigavon",
+      "candidateCount": 14,
+      "realCount": 2,
+      "authoredCount": 12,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.reviewed.city": 1,
+        "settlement.uk.reviewed.town": 1,
+        "settlement.uk.authored.village": 7,
+        "settlement.uk.authored.hamlet": 3,
+        "settlement.uk.authored.town": 2
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.n09000003",
+      "displayName": "Belfast",
+      "candidateCount": 1,
+      "realCount": 1,
+      "authoredCount": 0,
+      "contentPolicy": "preserved-compact-real-anchor-no-neighbourhood-completion",
+      "kinds": {
+        "settlement.uk.reviewed.city": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.n09000004",
+      "displayName": "Causeway Coast and Glens",
+      "candidateCount": 9,
+      "realCount": 1,
+      "authoredCount": 8,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.reviewed.town": 1,
+        "settlement.uk.authored.village": 5,
+        "settlement.uk.authored.hamlet": 1,
+        "settlement.uk.authored.town": 2
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.n09000005",
+      "displayName": "Derry City and Strabane",
+      "candidateCount": 9,
+      "realCount": 1,
+      "authoredCount": 8,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.reviewed.city": 1,
+        "settlement.uk.authored.village": 4,
+        "settlement.uk.authored.town": 2,
+        "settlement.uk.authored.hamlet": 2
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.n09000006",
+      "displayName": "Fermanagh and Omagh",
+      "candidateCount": 7,
+      "realCount": 2,
+      "authoredCount": 5,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.reviewed.town": 2,
+        "settlement.uk.authored.hamlet": 2,
+        "settlement.uk.authored.town": 2,
+        "settlement.uk.authored.village": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.n09000007",
+      "displayName": "Lisburn and Castlereagh",
+      "candidateCount": 9,
+      "realCount": 1,
+      "authoredCount": 8,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.reviewed.city": 1,
+        "settlement.uk.authored.village": 5,
+        "settlement.uk.authored.town": 2,
+        "settlement.uk.authored.hamlet": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.n09000008",
+      "displayName": "Mid and East Antrim",
+      "candidateCount": 9,
+      "realCount": 1,
+      "authoredCount": 8,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.reviewed.town": 1,
+        "settlement.uk.authored.hamlet": 2,
+        "settlement.uk.authored.village": 4,
+        "settlement.uk.authored.town": 2
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.n09000009",
+      "displayName": "Mid Ulster",
+      "candidateCount": 9,
+      "realCount": 0,
+      "authoredCount": 9,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.town": 3,
+        "settlement.uk.authored.hamlet": 2,
+        "settlement.uk.authored.village": 4
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.n09000010",
+      "displayName": "Newry, Mourne and Down",
+      "candidateCount": 11,
+      "realCount": 1,
+      "authoredCount": 10,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.reviewed.city": 1,
+        "settlement.uk.authored.village": 7,
+        "settlement.uk.authored.town": 2,
+        "settlement.uk.authored.hamlet": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.n09000011",
+      "displayName": "Ards and North Down",
+      "candidateCount": 10,
+      "realCount": 1,
+      "authoredCount": 9,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.reviewed.city": 1,
+        "settlement.uk.authored.village": 6,
+        "settlement.uk.authored.hamlet": 2,
+        "settlement.uk.authored.town": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000005",
+      "displayName": "Clackmannanshire",
+      "candidateCount": 10,
+      "realCount": 10,
+      "authoredCount": 0,
+      "contentPolicy": "official-nrs-locality-inventory",
+      "kinds": {
+        "settlement.uk.nrs.census-locality": 10
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000006",
+      "displayName": "Dumfries and Galloway",
+      "candidateCount": 25,
+      "realCount": 25,
+      "authoredCount": 0,
+      "contentPolicy": "official-nrs-locality-inventory",
+      "kinds": {
+        "settlement.uk.nrs.census-locality": 25
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000008",
+      "displayName": "East Ayrshire",
+      "candidateCount": 23,
+      "realCount": 23,
+      "authoredCount": 0,
+      "contentPolicy": "official-nrs-locality-inventory",
+      "kinds": {
+        "settlement.uk.nrs.census-locality": 23
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000010",
+      "displayName": "East Lothian",
+      "candidateCount": 19,
+      "realCount": 19,
+      "authoredCount": 0,
+      "contentPolicy": "official-nrs-locality-inventory",
+      "kinds": {
+        "settlement.uk.nrs.census-locality": 19
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000011",
+      "displayName": "East Renfrewshire",
+      "candidateCount": 13,
+      "realCount": 13,
+      "authoredCount": 0,
+      "contentPolicy": "official-nrs-locality-inventory",
+      "kinds": {
+        "settlement.uk.nrs.census-locality": 13
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000013",
+      "displayName": "Na h-Eileanan Siar",
+      "candidateCount": 4,
+      "realCount": 4,
+      "authoredCount": 0,
+      "contentPolicy": "official-nrs-locality-inventory",
+      "kinds": {
+        "settlement.uk.nrs.census-locality": 4
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000014",
+      "displayName": "Falkirk",
+      "candidateCount": 32,
+      "realCount": 32,
+      "authoredCount": 0,
+      "contentPolicy": "official-nrs-locality-inventory",
+      "kinds": {
+        "settlement.uk.nrs.census-locality": 32
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000017",
+      "displayName": "Highland",
+      "candidateCount": 55,
+      "realCount": 55,
+      "authoredCount": 0,
+      "contentPolicy": "official-nrs-locality-inventory",
+      "kinds": {
+        "settlement.uk.nrs.census-locality": 55
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000018",
+      "displayName": "Inverclyde",
+      "candidateCount": 7,
+      "realCount": 7,
+      "authoredCount": 0,
+      "contentPolicy": "official-nrs-locality-inventory",
+      "kinds": {
+        "settlement.uk.nrs.census-locality": 7
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000019",
+      "displayName": "Midlothian",
+      "candidateCount": 13,
+      "realCount": 13,
+      "authoredCount": 0,
+      "contentPolicy": "official-nrs-locality-inventory",
+      "kinds": {
+        "settlement.uk.nrs.census-locality": 13
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000020",
+      "displayName": "Moray",
+      "candidateCount": 21,
+      "realCount": 21,
+      "authoredCount": 0,
+      "contentPolicy": "official-nrs-locality-inventory",
+      "kinds": {
+        "settlement.uk.nrs.census-locality": 21
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000021",
+      "displayName": "North Ayrshire",
+      "candidateCount": 18,
+      "realCount": 18,
+      "authoredCount": 0,
+      "contentPolicy": "official-nrs-locality-inventory",
+      "kinds": {
+        "settlement.uk.nrs.census-locality": 18
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000023",
+      "displayName": "Orkney Islands",
+      "candidateCount": 3,
+      "realCount": 3,
+      "authoredCount": 0,
+      "contentPolicy": "official-nrs-locality-inventory",
+      "kinds": {
+        "settlement.uk.nrs.census-locality": 3
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000026",
+      "displayName": "Scottish Borders",
+      "candidateCount": 30,
+      "realCount": 30,
+      "authoredCount": 0,
+      "contentPolicy": "official-nrs-locality-inventory",
+      "kinds": {
+        "settlement.uk.nrs.census-locality": 30
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000027",
+      "displayName": "Shetland Islands",
+      "candidateCount": 3,
+      "realCount": 3,
+      "authoredCount": 0,
+      "contentPolicy": "official-nrs-locality-inventory",
+      "kinds": {
+        "settlement.uk.nrs.census-locality": 3
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000028",
+      "displayName": "South Ayrshire",
+      "candidateCount": 15,
+      "realCount": 15,
+      "authoredCount": 0,
+      "contentPolicy": "official-nrs-locality-inventory",
+      "kinds": {
+        "settlement.uk.nrs.census-locality": 15
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000029",
+      "displayName": "South Lanarkshire",
+      "candidateCount": 33,
+      "realCount": 33,
+      "authoredCount": 0,
+      "contentPolicy": "official-nrs-locality-inventory",
+      "kinds": {
+        "settlement.uk.nrs.census-locality": 33
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000030",
+      "displayName": "Stirling",
+      "candidateCount": 18,
+      "realCount": 18,
+      "authoredCount": 0,
+      "contentPolicy": "official-nrs-locality-inventory",
+      "kinds": {
+        "settlement.uk.nrs.census-locality": 18
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000033",
+      "displayName": "Aberdeen City",
+      "candidateCount": 7,
+      "realCount": 7,
+      "authoredCount": 0,
+      "contentPolicy": "official-nrs-locality-inventory",
+      "kinds": {
+        "settlement.uk.nrs.census-locality": 7
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000034",
+      "displayName": "Aberdeenshire",
+      "candidateCount": 63,
+      "realCount": 63,
+      "authoredCount": 0,
+      "contentPolicy": "official-nrs-locality-inventory",
+      "kinds": {
+        "settlement.uk.nrs.census-locality": 63
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000035",
+      "displayName": "Argyll and Bute",
+      "candidateCount": 24,
+      "realCount": 24,
+      "authoredCount": 0,
+      "contentPolicy": "official-nrs-locality-inventory",
+      "kinds": {
+        "settlement.uk.nrs.census-locality": 24
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000036",
+      "displayName": "City of Edinburgh",
+      "candidateCount": 5,
+      "realCount": 5,
+      "authoredCount": 0,
+      "contentPolicy": "official-nrs-locality-inventory",
+      "kinds": {
+        "settlement.uk.nrs.census-locality": 5
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000038",
+      "displayName": "Renfrewshire",
+      "candidateCount": 16,
+      "realCount": 16,
+      "authoredCount": 0,
+      "contentPolicy": "official-nrs-locality-inventory",
+      "kinds": {
+        "settlement.uk.nrs.census-locality": 16
+      },
+      "intersectingCandidates": 1
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000039",
+      "displayName": "West Dunbartonshire",
+      "candidateCount": 10,
+      "realCount": 10,
+      "authoredCount": 0,
+      "contentPolicy": "official-nrs-locality-inventory",
+      "kinds": {
+        "settlement.uk.nrs.census-locality": 10
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000040",
+      "displayName": "West Lothian",
+      "candidateCount": 24,
+      "realCount": 24,
+      "authoredCount": 0,
+      "contentPolicy": "official-nrs-locality-inventory",
+      "kinds": {
+        "settlement.uk.nrs.census-locality": 24
+      },
+      "intersectingCandidates": 1
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000041",
+      "displayName": "Angus",
+      "candidateCount": 17,
+      "realCount": 17,
+      "authoredCount": 0,
+      "contentPolicy": "official-nrs-locality-inventory",
+      "kinds": {
+        "settlement.uk.nrs.census-locality": 17
+      },
+      "intersectingCandidates": 2
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000042",
+      "displayName": "Dundee City",
+      "candidateCount": 2,
+      "realCount": 2,
+      "authoredCount": 0,
+      "contentPolicy": "official-nrs-locality-inventory",
+      "kinds": {
+        "settlement.uk.nrs.census-locality": 2
+      },
+      "intersectingCandidates": 2
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000045",
+      "displayName": "East Dunbartonshire",
+      "candidateCount": 9,
+      "realCount": 9,
+      "authoredCount": 0,
+      "contentPolicy": "official-nrs-locality-inventory",
+      "kinds": {
+        "settlement.uk.nrs.census-locality": 9
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000047",
+      "displayName": "Fife",
+      "candidateCount": 65,
+      "realCount": 65,
+      "authoredCount": 0,
+      "contentPolicy": "official-nrs-locality-inventory",
+      "kinds": {
+        "settlement.uk.nrs.census-locality": 65
+      },
+      "intersectingCandidates": 1
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000048",
+      "displayName": "Perth and Kinross",
+      "candidateCount": 36,
+      "realCount": 36,
+      "authoredCount": 0,
+      "contentPolicy": "official-nrs-locality-inventory",
+      "kinds": {
+        "settlement.uk.nrs.census-locality": 36
+      },
+      "intersectingCandidates": 1
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000049",
+      "displayName": "Glasgow City",
+      "candidateCount": 4,
+      "realCount": 4,
+      "authoredCount": 0,
+      "contentPolicy": "official-nrs-locality-inventory",
+      "kinds": {
+        "settlement.uk.nrs.census-locality": 4
+      },
+      "intersectingCandidates": 2
+    },
+    {
+      "placeId": "place.uk.local-admin.s12000050",
+      "displayName": "North Lanarkshire",
+      "candidateCount": 38,
+      "realCount": 38,
+      "authoredCount": 0,
+      "contentPolicy": "official-nrs-locality-inventory",
+      "kinds": {
+        "settlement.uk.nrs.census-locality": 38
+      },
+      "intersectingCandidates": 2
+    },
+    {
+      "placeId": "place.uk.local-admin.w06000001",
+      "displayName": "Isle of Anglesey",
+      "candidateCount": 4,
+      "realCount": 0,
+      "authoredCount": 4,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 2,
+        "settlement.uk.authored.hamlet": 2
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.w06000002",
+      "displayName": "Gwynedd",
+      "candidateCount": 7,
+      "realCount": 1,
+      "authoredCount": 6,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.reviewed.city": 1,
+        "settlement.uk.authored.village": 4,
+        "settlement.uk.authored.town": 2
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.w06000003",
+      "displayName": "Conwy",
+      "candidateCount": 7,
+      "realCount": 1,
+      "authoredCount": 6,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.reviewed.town": 1,
+        "settlement.uk.authored.village": 5,
+        "settlement.uk.authored.town": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.w06000004",
+      "displayName": "Denbighshire",
+      "candidateCount": 6,
+      "realCount": 0,
+      "authoredCount": 6,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 3,
+        "settlement.uk.authored.hamlet": 2,
+        "settlement.uk.authored.town": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.w06000005",
+      "displayName": "Flintshire",
+      "candidateCount": 9,
+      "realCount": 0,
+      "authoredCount": 9,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 5,
+        "settlement.uk.authored.town": 3,
+        "settlement.uk.authored.hamlet": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.w06000006",
+      "displayName": "Wrexham",
+      "candidateCount": 8,
+      "realCount": 1,
+      "authoredCount": 7,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.reviewed.city": 1,
+        "settlement.uk.authored.village": 5,
+        "settlement.uk.authored.hamlet": 1,
+        "settlement.uk.authored.town": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.w06000008",
+      "displayName": "Ceredigion",
+      "candidateCount": 5,
+      "realCount": 1,
+      "authoredCount": 4,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.reviewed.town": 1,
+        "settlement.uk.authored.village": 3,
+        "settlement.uk.authored.hamlet": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.w06000009",
+      "displayName": "Pembrokeshire",
+      "candidateCount": 7,
+      "realCount": 0,
+      "authoredCount": 7,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 4,
+        "settlement.uk.authored.town": 2,
+        "settlement.uk.authored.hamlet": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.w06000010",
+      "displayName": "Carmarthenshire",
+      "candidateCount": 11,
+      "realCount": 1,
+      "authoredCount": 10,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.reviewed.town": 1,
+        "settlement.uk.authored.hamlet": 3,
+        "settlement.uk.authored.village": 6,
+        "settlement.uk.authored.town": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.w06000011",
+      "displayName": "Swansea",
+      "candidateCount": 14,
+      "realCount": 1,
+      "authoredCount": 13,
+      "contentPolicy": "reviewed-polycentric-administrative-area",
+      "kinds": {
+        "settlement.uk.reviewed.city": 1,
+        "settlement.uk.authored.town": 6,
+        "settlement.uk.authored.village": 4,
+        "settlement.uk.authored.hamlet": 3
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.w06000012",
+      "displayName": "Neath Port Talbot",
+      "candidateCount": 8,
+      "realCount": 0,
+      "authoredCount": 8,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.hamlet": 2,
+        "settlement.uk.authored.village": 5,
+        "settlement.uk.authored.town": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.w06000013",
+      "displayName": "Bridgend",
+      "candidateCount": 9,
+      "realCount": 1,
+      "authoredCount": 8,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.reviewed.town": 1,
+        "settlement.uk.authored.village": 6,
+        "settlement.uk.authored.hamlet": 1,
+        "settlement.uk.authored.town": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.w06000014",
+      "displayName": "Vale of Glamorgan",
+      "candidateCount": 8,
+      "realCount": 0,
+      "authoredCount": 8,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.hamlet": 1,
+        "settlement.uk.authored.village": 4,
+        "settlement.uk.authored.town": 3
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.w06000015",
+      "displayName": "Cardiff",
+      "candidateCount": 1,
+      "realCount": 1,
+      "authoredCount": 0,
+      "contentPolicy": "preserved-compact-real-anchor-no-neighbourhood-completion",
+      "kinds": {
+        "settlement.uk.reviewed.city": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.w06000016",
+      "displayName": "Rhondda Cynon Taf",
+      "candidateCount": 14,
+      "realCount": 0,
+      "authoredCount": 14,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.hamlet": 2,
+        "settlement.uk.authored.town": 5,
+        "settlement.uk.authored.village": 7
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.w06000018",
+      "displayName": "Caerphilly",
+      "candidateCount": 10,
+      "realCount": 0,
+      "authoredCount": 10,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 6,
+        "settlement.uk.authored.town": 2,
+        "settlement.uk.authored.hamlet": 2
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.w06000019",
+      "displayName": "Blaenau Gwent",
+      "candidateCount": 4,
+      "realCount": 0,
+      "authoredCount": 4,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 4
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.w06000020",
+      "displayName": "Torfaen",
+      "candidateCount": 6,
+      "realCount": 0,
+      "authoredCount": 6,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 4,
+        "settlement.uk.authored.town": 2
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.w06000021",
+      "displayName": "Monmouthshire",
+      "candidateCount": 6,
+      "realCount": 0,
+      "authoredCount": 6,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 3,
+        "settlement.uk.authored.town": 2,
+        "settlement.uk.authored.hamlet": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.w06000022",
+      "displayName": "Newport",
+      "candidateCount": 10,
+      "realCount": 1,
+      "authoredCount": 9,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.reviewed.city": 1,
+        "settlement.uk.authored.village": 5,
+        "settlement.uk.authored.hamlet": 2,
+        "settlement.uk.authored.town": 2
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.w06000023",
+      "displayName": "Powys",
+      "candidateCount": 8,
+      "realCount": 0,
+      "authoredCount": 8,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.authored.village": 5,
+        "settlement.uk.authored.hamlet": 2,
+        "settlement.uk.authored.town": 1
+      },
+      "intersectingCandidates": 0
+    },
+    {
+      "placeId": "place.uk.local-admin.w06000024",
+      "displayName": "Merthyr Tydfil",
+      "candidateCount": 4,
+      "realCount": 1,
+      "authoredCount": 3,
+      "contentPolicy": "population-guided-authored-completion",
+      "kinds": {
+        "settlement.uk.reviewed.town": 1,
+        "settlement.uk.authored.village": 3
+      },
+      "intersectingCandidates": 0
+    }
+  ]
+}
