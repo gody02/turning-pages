@@ -57,6 +57,14 @@ jobs:
       - name: Publish explicit v3 measurement diagnostics
         if: always()
         run: node scripts/report-country-start-v3-browser-evidence.mjs browser-evidence/results.json
+      - name: Build actual application content-handoff acceptance bundle
+        run: node scripts/build-application-content-browser.mjs
+      - name: Run actual built LifeApp content-handoff and failure-retry assertions
+        env:
+          PLAYWRIGHT_JSON_OUTPUT_NAME: browser-evidence/application-content.json
+        run: |
+          set -o pipefail
+          pnpm exec playwright test --config playwright.application-content.config.ts --project=${{ matrix.browser }} --reporter=line,json 2>&1 | tee browser-evidence/application-content.log
       - name: Retain evidence and failure traces
         if: always()
         uses: actions/upload-artifact@v4
