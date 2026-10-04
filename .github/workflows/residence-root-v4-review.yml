@@ -23,7 +23,7 @@ jobs:
           node-version: 24
           cache: pnpm
       - run: pnpm install --frozen-lockfile
-      - run: pnpm exec vitest run --maxWorkers=1
+      - run: pnpm exec vitest run --maxWorkers=1 --no-file-parallelism
       - run: pnpm exec tsc --noEmit
       - run: pnpm build
   persistence:
@@ -45,11 +45,20 @@ jobs:
           cache: pnpm
       - run: pnpm install --frozen-lockfile
       - run: pnpm exec playwright install --with-deps ${{ matrix.browser }}
+      # Preserve the historical build-only Class C probe on its exact source.
+      # The actual installed route is tested separately below, with no substitution.
+      - name: Check out immutable Class C baseline for retained diagnostic coverage
+        uses: actions/checkout@v4
+        with:
+          ref: f30b71b9014b3feb26d19fc763107521ee694584
+          path: historical-class-c
       - name: Review actual built fresh New World Class C evidence
+        working-directory: historical-class-c
         env:
           FRESH_GENERATION_BROWSER: ${{ matrix.browser }}
         run: |
           mkdir -p browser-evidence
+          export GITHUB_SHA=f30b71b9014b3feb26d19fc763107521ee694584
           node research/fresh-new-game-latency/prepare-profile.mjs
           set -o pipefail
           node research/fresh-new-game-latency/review-profile.mjs 2>&1 | tee browser-evidence/fresh-generation.log
@@ -76,6 +85,9 @@ jobs:
       - name: Publish actual application-content diagnostics
         if: always()
         run: node scripts/report-application-content-evidence.mjs browser-evidence/application-content.json
+      - name: Publish actual production New Game Class C and lifecycle evidence
+        if: always()
+        run: node research/production-new-game-v3/report-browser.mjs browser-evidence/application-content.json
       - name: Retain evidence and failure traces
         if: always()
         uses: actions/upload-artifact@v4
@@ -84,6 +96,8 @@ jobs:
           path: |
             browser-evidence/
             research/fresh-new-game-latency/evidence-*.json
+            historical-class-c/browser-evidence/
+            historical-class-c/research/fresh-new-game-latency/evidence-*.json
             test-results/
           if-no-files-found: warn
           retention-days: 14

@@ -1,6 +1,6 @@
 import {expect,test} from '@playwright/test';
 
-test('built LifeApp loads exact Residence content responsively and retains production v2 routing',async({page,context},testInfo)=>{
+test('built LifeApp loads exact Residence content responsively and uses production v3 routing',async({page,context},testInfo)=>{
  await page.goto('testing/blank.html');
  const baseline=await page.evaluate(async()=>{
   const api=await import('/application-content-evidence/testing/testing.js'),game=await api.createUkMid2024GeographicResidenceGame({version:1,rootSeed:73,mode:'adult'});
@@ -45,11 +45,11 @@ test('built LifeApp loads exact Residence content responsively and retains produ
   for(let i=0;i<3;i++){await page.evaluate(async()=>{const global=globalThis as any;await global.__applicationContent.acceptApplicationGame(global.__acceptedApplicationGame);});}
   await cdp.send('HeapProfiler.collectGarbage');const repeated=await cdp.send('Runtime.getHeapUsage');memory={retained,repeated,mobileNotMeasured:true};await cdp.detach();
  }
- // Actual production form is still v2: this test never substitutes its initializer.
- await page.getByRole('button',{name:'New life ↗'}).click();await page.getByLabel('Your name · optional').fill('Content Routing Check');await page.getByRole('button',{name:'Begin my story'}).click();await expect(page.locator('.dashboard h1')).toHaveText('Content Routing Check');
+ // Actual production source is v3; no initializer substitution.
+ await page.getByRole('button',{name:'New life ↗'}).click();await page.getByLabel('Your name · optional').fill('Content Routing Check');await page.getByRole('button',{name:'Begin my story'}).click();await page.locator('.dashboard').waitFor({timeout:120_000});await expect(page.locator('.dashboard h1')).toHaveText('Content Routing Check');
  const routing=await page.evaluate(async()=>{const api=await import('/application-content-evidence/testing/testing.js'),persistence=await api.GamePersistence.open(localStorage);try{const loaded=await persistence.initialize();return {source:loaded.game!.population!.coverage[0].source,residences:loaded.game!.version===4?loaded.game!.residence.residences.length:-1,player:loaded.game!.people!.playerId};}finally{persistence.close();}});
- expect(routing).toMatchObject({source:'uk.population.mid-2024.v3',residences:0,player:'person:1'});
- const evidence={browser:testInfo.project.name,...result,raw:undefined,canonicalEquality:true,memory:{...memory,combined},routing,productionCountryStart:'country-start.uk.mid-2024-v2'};
+ expect(routing).toMatchObject({source:'uk.population.mid-2024.v3',residences:1,player:'person:1'});
+ const evidence={browser:testInfo.project.name,...result,raw:undefined,canonicalEquality:true,memory:{...memory,combined},routing,productionCountryStart:'country-start.uk.mid-2024-v3'};
  await testInfo.attach('application-content-handoff',{body:JSON.stringify(evidence,null,2),contentType:'application/json'});console.log(JSON.stringify({gate:'application-content-handoff',...evidence}));
 });
 
@@ -72,7 +72,10 @@ test('failed real content Worker preserves the saved Game and retries without re
 test('valid backup with unavailable reference content is not mislabeled corrupt and never replaces the current life',async({page})=>{
  await page.goto('testing/blank.html');
  const backup=await page.evaluate(async()=>{const api=await import('/application-content-evidence/testing/testing.js');try{const game=await api.createUkMid2024GeographicResidenceGame({version:1,rootSeed:73,mode:'adult'}),encoded=api.serializeGame(game);if(!encoded.ok)throw Error('Invalid fixture');return encoded.raw;}finally{api.disposeUkCountryStartStartup();}});
- await page.goto('./');await page.getByLabel('Your name · optional').fill('Current Life');await page.getByRole('button',{name:'Begin my story'}).click();await expect(page.locator('.dashboard h1')).toHaveText('Current Life');
+ // A genuine frozen historical save has no Residence content requirement. This
+ // keeps the existing unavailable-backup test cold without clearing a live cache.
+ await page.evaluate(async()=>{const api=await import('/application-content-evidence/testing/testing.js'),game=await api.createHistoricalGame(),p=await api.GamePersistence.open(localStorage);try{await p.save(game,null);}finally{p.close();}});
+ await page.goto('./');await expect(page.locator('.dashboard h1')).toHaveText('Current Life');
  const saved=()=>page.evaluate(async()=>{const api=await import('/application-content-evidence/testing/testing.js'),p=await api.GamePersistence.open(localStorage);try{const loaded=await p.initialize(),encoded=api.serializeGame(loaded.game!);if(!encoded.ok)throw Error('Invalid current life');return {raw:encoded.raw,revision:loaded.revision};}finally{p.close();}}),baseline=await saved();
  const file={name:'valid-life.json',mimeType:'application/json',buffer:Buffer.from(backup,'utf8')};
  await page.route('**/assets/worker-*.js',route=>route.abort());await page.locator('input[type=file]').setInputFiles(file);

@@ -15,6 +15,8 @@ import {GamePersistence,MAX_IMPORT_BYTES,exportCanonicalGame,importCanonicalGame
 import {SaveCoordinator,type SaveCoordinatorSnapshot} from '../persistence/saveCoordinator';
 import {requestPersistentStorage,storagePersistenceState,type StoragePersistenceState} from '../persistence/capabilities';
 import {acceptApplicationGame,lifecycleContent,applicationResolversReady} from './gameContent';
+import {createNewGameSubmission,type NewGamePhase} from './newGameSubmission';
+import {disposeUkCountryStartStartup} from '../data/countryStart/uk/countryStartResidence';
 
 const icons={health:'♡',happiness:'☀',smarts:'✧',looks:'◇'};
 const labels={health:'Health',happiness:'Happiness',smarts:'Smarts',looks:'Looks'};
@@ -29,6 +31,10 @@ export function LifeApp(){
   const [unresolvedGame,setUnresolvedGame]=useState<Game|null>(null);
   const [game,setGame]=useState<Game|null>(null);
   const [creating,setCreating]=useState(false);
+  const [newGamePhase,setNewGamePhase]=useState<NewGamePhase>('idle');
+  const submission=useRef<ReturnType<typeof createNewGameSubmission<Game>>|null>(null);
+  if(!submission.current)submission.current=createNewGameSubmission<Game>({phase:setNewGamePhase,cancelConstruction:disposeUkCountryStartStartup});
+  const starting=newGamePhase!=='idle';
   const [tab,setTab]=useState<Tab>(()=>location.hash==='#town'||location.hash==='#career'?'Career':'Journal');
   const [notice,setNotice]=useState('');
   const [saved,setSaved]=useState(false);
@@ -39,6 +45,8 @@ export function LifeApp(){
   const [gender,setGender]=useState('');
   const [start,setStart]=useState<'childhood'|'adult'>('childhood');
   const [pendingRestore,setPendingRestore]=useState<Game|null>(null);
+  const replacementGeneration=useRef(0);
+  const replacementCommit=useRef(false);
   const restoreInput=useRef<HTMLInputElement>(null);
   const storyRef=useRef<HTMLElement>(null);
   const persistenceRef=useRef<GamePersistence|null>(null);
@@ -58,8 +66,9 @@ export function LifeApp(){
       setGame(accepted);skipAutosave.current=accepted;setCreating(!accepted);setSaved(!!accepted);setStartup(initial.status==='backend-unavailable'?'unavailable':'ready');
       if(initial.error)setNotice(initial.error);else if(initial.markerWarning)setNotice(initial.markerWarning);setStoragePersistence(await storagePersistenceState());
     }catch(error){if(cancelled)return;setStartup('unavailable');setCreating(true);setNotice(error instanceof Error?error.message:'Browser persistence is unavailable.');}})();
-    return()=>{cancelled=true;contentRequest.abort();opened?.close();};
+    return()=>{cancelled=true;submission.current?.abandon();contentRequest.abort();opened?.close();};
   },[]);
+  useEffect(()=>{const leave=()=>submission.current?.cancel(),close=()=>submission.current?.abandon();addEventListener('hashchange',leave);addEventListener('pagehide',close);return()=>{removeEventListener('hashchange',leave);removeEventListener('pagehide',close);};},[]);
   useEffect(()=>{if(startup!=='ready'||!game)return;if(skipAutosave.current===game){skipAutosave.current=null;return;}coordinatorRef.current?.request(game);},[game,startup]);
   useEffect(()=>{const warn=(event:BeforeUnloadEvent)=>{if(coordinatorRef.current?.hasUnsavedChanges){event.preventDefault();event.returnValue='';}};addEventListener('beforeunload',warn);return()=>removeEventListener('beforeunload',warn);},[]);
   const update=(fn:(g:Game)=>Game)=>{if(game&&!applicationResolversReady(game)){setNotice('Geographic reference content is not ready. Your life has not changed.');return;}setGame(g=>g?fn(g):g);};
@@ -70,23 +79,25 @@ export function LifeApp(){
     return <button className="activity" disabled={!!reason} title={reason??detail} onClick={()=>update(g=>act(g,action,lifecycleContent(g)))}><span>{title}</span><small>{reason??detail}</small><b aria-hidden="true">↗</b></button>;
   };
   async function restore(file:File|undefined){
-    if(!file)return;
-    const signal=referenceLifetime.current?.signal;let canonical=false;
-    try{if(file.size>MAX_IMPORT_BYTES)throw Error();const candidate=importCanonicalGame(await file.text());canonical=true;const next=await acceptApplicationGame(candidate,undefined,{signal});if(!signal?.aborted)setPendingRestore(next);}
+    if(!file||submission.current?.busy())return;
+    const signal=referenceLifetime.current?.signal,generation=replacementGeneration.current;let canonical=false;
+    try{if(file.size>MAX_IMPORT_BYTES)throw Error();const candidate=importCanonicalGame(await file.text());canonical=true;const next=await acceptApplicationGame(candidate,undefined,{signal});if(!signal?.aborted&&generation===replacementGeneration.current)setPendingRestore(next);}
     catch{if(!signal?.aborted)setNotice(canonical?'Geographic reference content for this backup could not be loaded. Your current life has not changed. Try importing it again.':'This is not a valid Turning Pages life backup. Your saved life has not changed. Town-only archives cannot be imported as a character.');}
     finally{if(restoreInput.current)restoreInput.current.value='';}
   }
   function exportBackup(value:Game){try{download('turning-pages-life-backup.json',exportCanonicalGame(value));}catch{setNotice('This life could not be exported because it failed the save consistency check.');}}
   function exportLegacy(){try{const raw=localStorage.getItem(TOWN_SAVE_KEY);if(raw){download('turning-pages-legacy-town-archive.json',raw);setNotice('The earlier town experiment was exported. It remains stored separately and has not been assigned to your character.');}else setNotice('No earlier town experiment is saved in this browser.');}catch{setNotice('The archive could not be read.');}}
-  async function recoverSnapshot(snapshot:RecoveryChoice){const signal=referenceLifetime.current?.signal;try{await acceptApplicationGame(snapshot.game,undefined,{signal});if(!signal?.aborted)setPendingRestore(snapshot.game);}catch{if(!signal?.aborted)setNotice('This recovery references unavailable or incompatible geographic content. Your saved life has not changed.');}}
+  async function recoverSnapshot(snapshot:RecoveryChoice){if(submission.current?.busy())return;const signal=referenceLifetime.current?.signal;try{await acceptApplicationGame(snapshot.game,undefined,{signal});if(!signal?.aborted&&!submission.current?.busy())setPendingRestore(snapshot.game);}catch{if(!signal?.aborted)setNotice('This recovery references unavailable or incompatible geographic content. Your saved life has not changed.');}}
   const recoveryControls=(recoveries.length>0||staleLegacy?.game)&&<div className="life-backup-controls">{recoveries.map(snapshot=><button className="quiet outlined" key={snapshot.slotId} onClick={()=>recoverSnapshot(snapshot)}>{snapshot.label}</button>)}{staleLegacy?.game&&<button className="quiet outlined" onClick={()=>setPendingRestore(staleLegacy.game)}>Review earlier browser save · may be stale</button>}</div>;
   const current=game?events.find(e=>e.id===game.pending):undefined;
   const political=game?.politics;
   const monthly=!!game&&isMonthly(game);
   const timeBlocked=!game||!!advanceReason(game);
   const normalizedName=name.trim(),nameCodePoints=personDisplayNameCodePointCount(normalizedName),nameError=normalizedName&&!validPersonDisplayName(normalizedName)?nameCodePoints>MAX_PERSON_NAME_CODE_POINTS?`Name must be ${MAX_PERSON_NAME_CODE_POINTS} Unicode code points or fewer.`:'Enter a valid name, or leave it blank to generate one.':null,genderError=newGameGenderError(gender);
-  async function persistReplacement(next:Game,message:string){const signal=referenceLifetime.current?.signal;await acceptApplicationGame(next,undefined,{signal});if(signal?.aborted)throw Error('Application reference-content preparation was cancelled.');const coordinator=coordinatorRef.current,persistence=persistenceRef.current;if(!coordinator||!persistence)throw Error('Browser persistence is unavailable.');await coordinator.persist(next);if(signal?.aborted)return;skipAutosave.current=next;setGame(next);setRecoveries(await persistence.recoveries());setPendingRestore(null);setCreating(false);setNotice(message);setStoragePersistence(await requestPersistentStorage());}
-  async function beginNewGame(){try{const next=createProductionUkNewGame({mode:start,name,genderLabel:gender});await persistReplacement(next,'');setTab(start==='adult'?'Career':'Journal');}catch(error){if(!(error instanceof NewGameInputError))console.error('UK country-start failed.',error);setNotice(error instanceof NewGameInputError?error.message:'Your new UK life could not be saved. Your current life is unchanged.');}}
+  async function commitReplacement(next:Game){const coordinator=coordinatorRef.current,persistence=persistenceRef.current;if(!coordinator||!persistence)throw Error('Browser persistence is unavailable.');if(coordinator.snapshot.state==='failed'){coordinator.request(next);await coordinator.retry();}else await coordinator.persist(next);return persistence.recoveries().catch(error=>{console.error('Recovery inventory refresh failed after successful save.',error);return recoveries;});}
+  function activateReplacement(next:Game,message:string,snapshots:readonly RecoveryChoice[]){skipAutosave.current=next;setGame(next);setRecoveries(snapshots);setPendingRestore(null);setCreating(false);setNotice(message);const lifetime=referenceLifetime.current;void requestPersistentStorage().then(value=>{if(lifetime&&!lifetime.signal.aborted&&referenceLifetime.current===lifetime)setStoragePersistence(value);});}
+  async function persistReplacement(next:Game,message:string){if(submission.current?.busy()||replacementCommit.current)return;const signal=referenceLifetime.current?.signal,generation=replacementGeneration.current;await acceptApplicationGame(next,undefined,{signal});if(signal?.aborted||submission.current?.busy()||replacementCommit.current||generation!==replacementGeneration.current)return;replacementCommit.current=true;try{const snapshots=await commitReplacement(next);if(!signal?.aborted)activateReplacement(next,message,snapshots);}finally{replacementCommit.current=false;}}
+  async function beginNewGame(){if(submission.current?.busy()||replacementCommit.current||startup!=='ready')return;replacementGeneration.current++;const mode=start;let snapshots:readonly RecoveryChoice[]=[];try{await submission.current!.run(signal=>createProductionUkNewGame({mode,name,genderLabel:gender},undefined,{signal}),(next,signal)=>acceptApplicationGame(next,undefined,{signal}),async next=>{snapshots=await commitReplacement(next);},next=>{activateReplacement(next,'',snapshots);setTab(mode==='adult'?'Career':'Journal');});}catch(error){if(!(error instanceof NewGameInputError))console.error('UK country-start failed.',error);setNotice(error instanceof NewGameInputError?error.message:'Your new UK life could not be created or saved. Your current life is unchanged. Please try again.');}}
   async function retryReferenceContent(){if(!unresolvedGame)return;const signal=referenceLifetime.current?.signal;setStartup('loading');try{await acceptApplicationGame(unresolvedGame,undefined,{signal});if(signal?.aborted)return;skipAutosave.current=unresolvedGame;setGame(unresolvedGame);setUnresolvedGame(null);setCreating(false);setStartup('ready');setNotice(startupNotice.current);setSaved(true);}catch{if(signal?.aborted)return;setStartup('content-failed');setNotice('Geographic reference content is still unavailable. Your saved life has not changed.');}}
 
   if(startup==='loading')return <div className="app-shell"><header className="topbar"><a className="brand" href="#life"><span className="brand-mark">t<span>p</span></span><span>turning pages<small>A LIFE IN THE MAKING</small></span></a></header><main className="creation"><section className="creation-card" aria-live="polite"><div className="eyebrow">OPENING YOUR STORY</div><h2>Loading your saved life…</h2></section></main></div>;
@@ -94,22 +105,23 @@ export function LifeApp(){
   if(startup==='content-failed'&&unresolvedGame)return <div className="app-shell"><main className="creation"><section className="creation-card" role="status"><h2>Your saved life is safe.</h2><p>{notice}</p><button onClick={()=>void retryReferenceContent()}>Retry loading</button><button onClick={()=>exportBackup(unresolvedGame)}>Export saved life</button></section></main></div>;
 
   return <div className="app-shell">
-    <header className="topbar"><a className="brand" href="#life"><span className="brand-mark">t<span>p</span></span><span>turning pages<small>A LIFE IN THE MAKING</small></span></a><div className="header-actions"><span className="save-state">{saved?`● Saved on this device${storagePersistence==='persistent'?' · protected':''}`:startup==='unavailable'?'○ Persistence unavailable':'○ Saving…'}</span>{game&&<button className="quiet" onClick={()=>setCreating(true)}>New life ↗</button>}</div></header>
+    <header className="topbar"><a className="brand" href="#life"><span className="brand-mark">t<span>p</span></span><span>turning pages<small>A LIFE IN THE MAKING</small></span></a><div className="header-actions"><span className="save-state">{saved?`● Saved on this device${storagePersistence==='persistent'?' · protected':''}`:startup==='unavailable'?'○ Persistence unavailable':'○ Saving…'}</span>{game&&<button className="quiet" disabled={starting} onClick={()=>setCreating(true)}>New life ↗</button>}</div></header>
     {notice&&<div className="notice" role="status">{notice}<button className="quiet" onClick={()=>setNotice('')}>Dismiss</button></div>}
     <input ref={restoreInput} type="file" accept="application/json,.json" hidden onChange={e=>void restore(e.target.files?.[0])}/>
     {pendingRestore&&<section className="town-confirm" role="alert"><p>Restore {pendingRestore.name}, age {pendingRestore.age}? This replaces your current life. Export a backup first if you want to keep it.</p>{game&&<button onClick={()=>exportBackup(game)}>Export current life</button>}<button onClick={()=>void persistReplacement(pendingRestore,'Life restored, including any political career.').then(()=>setTab('Career')).catch(()=>setNotice('The restored life could not be saved. Your current life and recovery records were kept.'))}>Restore this life</button><button onClick={()=>setPendingRestore(null)}>Cancel</button></section>}
     {creating?<main className="creation">
       <section className="intro"><div className="eyebrow">YOUR NEXT CHAPTER STARTS HERE</div><h1>A little chance.<br/>A lot of choices.<br/><em>A life of your own.</em></h1><p>From the people at your kitchen table to the decisions that shape a country. Your ambitions belong to the same life.</p><div className="book-art" aria-hidden="true"><div className="book-line"/><span>Every life<br/>has a story.</span><i>✧</i></div><p className="intro-note">One life. Every choice leaves a trace.</p></section>
-      <form className="creation-card" onSubmit={e=>{e.preventDefault();void beginNewGame();}}>
+      <form className="creation-card" aria-busy={starting} onSubmit={e=>{e.preventDefault();void beginNewGame();}}>
         <div className="eyebrow">THE FIRST PAGE</div><h2>Meet your new self.</h2><p>Choose a beginning. Discover the rest.</p>
         <label>Your name · optional<input value={name} aria-invalid={!!nameError} aria-describedby="person-name-help" placeholder="Leave blank to generate a name" onChange={e=>setName(e.target.value)}/><small id="person-name-help">{nameError||(name.trim()?`${nameCodePoints} of ${MAX_PERSON_NAME_CODE_POINTS} Unicode code points`:'A UK name will be generated for this life.')}</small></label>
         <label>Gender label · optional<input value={gender} aria-invalid={!!genderError} aria-describedby="person-gender-help" placeholder="Generated default: Unspecified" onChange={e=>setGender(e.target.value)}/><small id="person-gender-help">{genderError||'Identity-facing description only; it does not affect demographics or gameplay.'}</small></label>
         <label>Country<select value="uk" disabled><option value="uk">United Kingdom</option><option value="ca">Canada · not yet available</option><option value="nz">New Zealand · not yet available</option></select><small>Production new-game starts are currently available for the United Kingdom.</small></label>
         <label>Where your story begins<select value={start} onChange={e=>setStart(e.target.value as 'childhood'|'adult')}><option value="childhood">Childhood</option><option value="adult">Adult</option></select></label>
         <div className="starting"><span>YOUR STARTING POINT</span><p>{start==='adult'?'Age 18 · Secondary education · 3,000 starting money':'Age 0 · Health 90 · Happiness 80'}<br/>Smarts & looks vary · A family by your side</p></div>
-        <button className="primary" type="submit">Begin my story <span>→</span></button>
-        {game&&<><p className="fine">Beginning a new story replaces this device’s current life, including its career.</p><button type="button" className="quiet" onClick={()=>exportBackup(game)}>Export current life first</button><button type="button" className="quiet" onClick={()=>setCreating(false)}>Return to current life</button></>}
-        <button type="button" className="quiet" onClick={()=>restoreInput.current?.click()}>Restore a life backup</button>
+        <button className="primary" type="submit" disabled={starting||startup!=='ready'}>{starting?'Creating your world…':'Begin my story'} <span>→</span></button>
+        {starting&&<><p role="status">{newGamePhase==='committing'?'Saving your complete world…':'Creating your world… You can keep using this page while it prepares.'}</p><button type="button" className="quiet" disabled={newGamePhase==='committing'} onClick={()=>submission.current?.cancel()}>Cancel creation</button></>}
+        {game&&<><p className="fine">Beginning a new story replaces this device’s current life, including its career.</p><button type="button" className="quiet" onClick={()=>exportBackup(game)}>Export current life first</button><button type="button" className="quiet" disabled={newGamePhase==='committing'} onClick={()=>{submission.current?.cancel();setCreating(false);}}>Return to current life</button></>}
+        <button type="button" className="quiet" disabled={starting} onClick={()=>restoreInput.current?.click()}>Restore a life backup</button>
         {recoveryControls}
         <p className="fine">To begin politics immediately, choose United Kingdom and adult life, then enter the career. Fictional economic and salary values.</p>
       </form>

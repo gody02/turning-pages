@@ -235,10 +235,10 @@ describe('Country Start UK mid-2024 v3 initial Residence orchestration',()=>{
   }finally{first.close();second?.close();await deletePersistenceDatabase(factory,name);}
  },30_000);
 
- it('keeps New Game default on v2 and frozen lower domains free of reverse imports or policy rules',()=>{
+ it('pins New Game to the public async v3 host and keeps frozen lower domains free of reverse imports or policy rules',()=>{
   const sources=import.meta.glob<string>(['./countryStartResidence.ts','../../../ui/newGame.ts','../../../engine/residence/*.ts','../../../engine/residencePlacement/*.ts'],{eager:true,query:'?raw',import:'default'});
   const constructor=sources['./countryStartResidence.ts'],ui=sources['../../../ui/newGame.ts'];
-  expect(ui).toContain('bootstrap:createUkMid2024GeographicGame');expect(ui).not.toContain('countryStartResidence');
+  expect(ui).toContain('bootstrap:createUkMid2024GeographicResidenceGame');expect(ui).toContain("from '../data/countryStart/uk/countryStartResidence'");expect(ui).toContain("PRODUCTION_UK_NEW_GAME_SCENARIO='country-start.uk.mid-2024-v3'");
   expect(constructor).not.toMatch(/Math\.random|Date\.now|getRandomValues|\bnew Date\b|Bradford|London|Scottish|England|kindMass|candidateIndexForTicket/);
   for(const [path,source] of Object.entries(sources))if(path.startsWith('../../../engine/')&&!path.endsWith('.test.ts'))expect(source).not.toContain('countryStartResidence');
  });
