@@ -1,8 +1,11 @@
 import {expect,test} from '@playwright/test';
 
-/** Explicit v3 review only: application routing stays v2. No production dependency is replaced. */
+/** Direct frozen-constructor review, separate from actual production UI routing. */
 test('reviews cold/warm Country Start v3, responsiveness and nonempty Residence persistence',async({page},testInfo)=>{
- await page.goto('/');
+ // A source-only domain probe must not mount LifeApp's Vite HMR client. Its
+ // additional cold v2 source imports can trigger dependency optimization/reload;
+ // the established static probe page has no application/HMR lifetime to replace.
+ await page.goto('/research/country-start-v3/worker-browser-blank.html');
  const result=await page.evaluate(async browser=>{
   const stageEvents:Array<{name:string;ms:number}>=[];
   (globalThis as any).__countryStartReviewMeasure=(name:string,operation:()=>unknown)=>{const start=performance.now();try{return operation();}finally{stageEvents.push({name,ms:performance.now()-start});}};

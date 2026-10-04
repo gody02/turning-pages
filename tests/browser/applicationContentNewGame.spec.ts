@@ -45,3 +45,20 @@ test('invalid input, real Worker failure, cancellation, navigation, retry and se
  expect(final).toMatchObject({draws:5,calls:{constructions:5,saves:2,activations:2},age:18,gender:'Self-described',residences:1,personSequence:2,residenceSequence:2,content:{activeWorkers:0,pendingSets:0,cachedSets:1,preparations:1}});await page.reload();await expect(page.locator('.dashboard h1')).toHaveText('Second World');expect(await page.evaluate(()=>(globalThis as any).__newGameCalls.constructions)).toBe(0);
  console.log(JSON.stringify({gate:'production-new-game-v3-lifecycle',passed:true,final}));
 });
+
+test('migrated root3 saved world bypasses Country Start without retrospective Residence',async({page})=>{
+ await page.goto('testing/blank.html');const original=await page.evaluate(async()=>{const api=await import('/application-content-evidence/testing/testing.js'),raw=await api.historicalRoot3Raw();localStorage.setItem('turning-pages:v1',raw);return JSON.parse(raw).people.people[0];});
+ await observe(page);await page.goto('./');await expect(page.locator('.dashboard h1')).toHaveText('Historical Life');
+ const result=await page.evaluate(async()=>{const global=globalThis as any,api=await import('/application-content-evidence/testing/testing.js'),p=await api.GamePersistence.open(localStorage);try{const initial=await p.initialize();return {calls:global.__newGameCalls,draws:global.__seedDraws(),version:initial.game!.version,player:initial.game!.people!.people[0],residences:initial.game!.version===4?initial.game!.residence.residences.length:-1,content:global.__applicationContent.applicationContentDiagnostics()};}finally{p.close();}});
+ expect(result).toMatchObject({calls:{constructions:0,saves:0,activations:0},draws:0,version:4,player:original,residences:0,content:{preparations:0,activeWorkers:0,pendingSets:0}});console.log(JSON.stringify({gate:'production-new-game-v3-old-save',passed:true}));
+});
+
+test('atomic first-save failure preserves storage and a fresh legitimate retry uses the standard coordinator',async({page},testInfo)=>{
+ await observe(page);await page.setViewportSize({width:390,height:844});await page.goto('./');
+ await page.evaluate(()=>{const native=IDBObjectStore.prototype.put;Object.assign(globalThis,{__restorePut:()=>{IDBObjectStore.prototype.put=native;}});IDBObjectStore.prototype.put=function(value:any,...args:any[]){if(value?.slotId==='primary')throw new DOMException('Injected first-save quota failure','QuotaExceededError');return (native as any).call(this,value,...args);};});
+ await page.getByRole('button',{name:'Begin my story'}).click();await expect(page.getByRole('button',{name:'Creating your world…'})).toBeDisabled();await testInfo.attach('mobile-creating-world',{body:await page.screenshot(),contentType:'image/png'});
+ await expect(page.locator('.notice')).toContainText('could not be created or saved',{timeout:120_000});await expect(page.locator('.dashboard')).toHaveCount(0);
+ const failed=await page.evaluate(async()=>{const api=await import('/application-content-evidence/testing/testing.js'),p=await api.GamePersistence.open(localStorage);try{const initial=await p.initialize();return {hasGame:!!initial.game,revision:initial.revision,calls:(globalThis as any).__newGameCalls};}finally{p.close();}});expect(failed).toEqual({hasGame:false,revision:null,calls:{constructions:1,saves:1,activations:0}});
+ await page.evaluate(()=>(globalThis as any).__restorePut());await page.getByRole('button',{name:'Begin my story'}).click();await page.locator('.dashboard').waitFor({timeout:120_000});
+ expect(await page.evaluate(()=>(globalThis as any).__newGameCalls)).toEqual({constructions:2,saves:2,activations:1});await testInfo.attach('mobile-complete-world',{body:await page.screenshot(),contentType:'image/png'});console.log(JSON.stringify({gate:'production-new-game-v3-save-failure',passed:true}));
+});
