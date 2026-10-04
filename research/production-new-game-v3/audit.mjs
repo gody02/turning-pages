@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import {createHash} from 'node:crypto';
 const digest=file=>createHash('sha256').update(fs.readFileSync(file)).digest('hex');
-const approved=new Set(['src/ui/LifeApp.tsx','src/ui/newGame.ts','src/ui/newGame.test.ts','tests/browser/applicationContent.spec.ts','tests/browser/applicationContentDev.spec.ts','tests/browser/countryStartResidence.spec.ts','scripts/build-application-content-browser.mjs','playwright.application-content.config.ts','src/data/countryStart/uk/countryStartResidence.test.ts','src/data/uk/countryStartGeographic.test.ts']);
+const approved=new Set(['src/ui/LifeApp.tsx','src/ui/newGame.ts','src/ui/newGame.test.ts','tests/browser/applicationContent.spec.ts','tests/browser/applicationContentDev.spec.ts','tests/browser/countryStartResidence.spec.ts','scripts/build-application-content-browser.mjs','playwright.application-content.config.ts','playwright.persistence.config.ts','src/data/countryStart/uk/countryStartResidence.test.ts','src/data/uk/countryStartGeographic.test.ts']);
 const inventory=JSON.parse(fs.readFileSync('research/application-content-handoff/implementation-ci-snapshot.json')).files.filter(entry=>entry.path.startsWith('src/')||entry.path.startsWith('tests/')||entry.path.startsWith('playwright.')||['vite.config.ts','scripts/build-application-content-browser.mjs','scripts/report-application-content-evidence.mjs'].includes(entry.path));
 const files=inventory.map(entry=>({...entry,currentSha256:digest(entry.path),approvedHostException:approved.has(entry.path)}));
 const changed=files.filter(entry=>entry.currentSha256!==entry.sha256);
