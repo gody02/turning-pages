@@ -68,7 +68,7 @@ export function LifeApp(){
     }catch(error){if(cancelled)return;setStartup('unavailable');setCreating(true);setNotice(error instanceof Error?error.message:'Browser persistence is unavailable.');}})();
     return()=>{cancelled=true;submission.current?.abandon();contentRequest.abort();opened?.close();};
   },[]);
-  useEffect(()=>{const leave=()=>submission.current?.cancel(),close=()=>submission.current?.abandon();addEventListener('hashchange',leave);addEventListener('pagehide',close);return()=>{removeEventListener('hashchange',leave);removeEventListener('pagehide',close);};},[]);
+  useEffect(()=>{const leave=()=>submission.current?.cancel(),close=()=>{submission.current?.abandon();setNewGamePhase('idle');};addEventListener('hashchange',leave);addEventListener('pagehide',close);return()=>{removeEventListener('hashchange',leave);removeEventListener('pagehide',close);};},[]);
   useEffect(()=>{if(startup!=='ready'||!game)return;if(skipAutosave.current===game){skipAutosave.current=null;return;}coordinatorRef.current?.request(game);},[game,startup]);
   useEffect(()=>{const warn=(event:BeforeUnloadEvent)=>{if(coordinatorRef.current?.hasUnsavedChanges){event.preventDefault();event.returnValue='';}};addEventListener('beforeunload',warn);return()=>removeEventListener('beforeunload',warn);},[]);
   const update=(fn:(g:Game)=>Game)=>{if(game&&!applicationResolversReady(game)){setNotice('Geographic reference content is not ready. Your life has not changed.');return;}setGame(g=>g?fn(g):g);};
