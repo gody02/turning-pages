@@ -45,6 +45,14 @@ jobs:
           cache: pnpm
       - run: pnpm install --frozen-lockfile
       - run: pnpm exec playwright install --with-deps ${{ matrix.browser }}
+      - name: Review actual built fresh New World Class C evidence
+        env:
+          FRESH_GENERATION_BROWSER: ${{ matrix.browser }}
+        run: |
+          mkdir -p browser-evidence
+          node research/fresh-new-game-latency/prepare-profile.mjs
+          set -o pipefail
+          node research/fresh-new-game-latency/review-profile.mjs 2>&1 | tee browser-evidence/fresh-generation.log
       - name: Build explicit startup-only Worker acceptance bundle
         run: node scripts/build-country-start-v3-worker-browser.mjs
       - name: Run unchanged full root-v4 persistence assertions
@@ -75,6 +83,7 @@ jobs:
           name: residence-root-v4-${{ matrix.browser }}
           path: |
             browser-evidence/
+            research/fresh-new-game-latency/evidence-*.json
             test-results/
           if-no-files-found: warn
           retention-days: 14

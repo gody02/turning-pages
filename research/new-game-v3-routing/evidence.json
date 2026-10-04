@@ -1,0 +1,169 @@
+{
+  "version": 1,
+  "diagnosticBuildOnly": true,
+  "productionRouteUnchanged": "country-start.uk.mid-2024-v2",
+  "candidateRoute": "country-start.uk.mid-2024-v3",
+  "fingerprint": "fnv1a64-v1:321cc64911e88c5a",
+  "timer": "capture-phase form submit through first actual ready dashboard, including full cold Country Start, content, save and activation",
+  "bundle": {
+    "mainFile": "index-6RaqojQD.js",
+    "mainBytes": 507463,
+    "heavySettlementInMain": false,
+    "heavyGeographicPopulationInMain": false,
+    "countryStartWorkers": [
+      "countryStartResidence.worker-Bd29pTWs.js"
+    ],
+    "applicationWorkers": [
+      "worker-CsfDUWqN.js"
+    ]
+  },
+  "originalHashes": {
+    "src/ui/newGame.ts": "eaf22a2bd800a96595c972aba5f7e6b2a81ea35db81934bf42bf3bdad6da767b",
+    "src/ui/LifeApp.tsx": "5199346c1fb4c96c98d68e393ba24a132a4280eb5c36ce30bb71918a339ff498",
+    "src/ui/gameContent.ts": "4697e850bf7cbe5f768a7ace67aba0900241975acf9e54d3e75fe8a1d6587f6d"
+  },
+  "results": [
+    {
+      "browser": "chromium",
+      "totalMs": 6069.0999999996275,
+      "maxInteractionGapMs": 383.3999999985099,
+      "beats": 347,
+      "draws": 1,
+      "phases": [
+        {
+          "name": "routing-construction",
+          "startMs": 0.2000000011175871,
+          "durationMs": 4782.199999999255
+        },
+        {
+          "name": "routing-content",
+          "startMs": 4782.5,
+          "durationMs": 911.7000000011176
+        },
+        {
+          "name": "routing-save",
+          "startMs": 5694.200000001118,
+          "durationMs": 346.09999999962747
+        }
+      ],
+      "rootVersion": 4,
+      "age": 18,
+      "date": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "dob": {
+        "year": 2006,
+        "month": 6,
+        "day": 30
+      },
+      "player": "person:1",
+      "nextSequence": 2,
+      "residences": 1,
+      "occupants": 1,
+      "noFixed": 0,
+      "population": 69281437,
+      "areaId": "place.uk.local-admin.e06000061",
+      "source": "uk.population.mid-2024.v3",
+      "canonicalDirectV3Equality": true,
+      "saveEquality": true,
+      "revision": 1,
+      "bytes": 9595786,
+      "content": {
+        "activeWorkers": 0,
+        "cachedSets": 1,
+        "pendingSets": 0,
+        "preparations": 1,
+        "last": {
+          "importMs": 84.70000000111759,
+          "prepareMs": 626.6999999992549,
+          "payloadBytes": 3442402,
+          "emittedAt": 1791064017195.1,
+          "handoffMs": 15.89990234375,
+          "resolverPublicationMs": 36.30000000074506,
+          "referenceContentReadyMs": 784.9000000003725
+        }
+      },
+      "continuation": {
+        "nextPerson": "person:2",
+        "nextResidence": "residence:2"
+      },
+      "normalInteractionPass": true,
+      "normalCompleteReadyPass": false
+    },
+    {
+      "browser": "webkit",
+      "totalMs": 11040,
+      "maxInteractionGapMs": 544,
+      "beats": 337,
+      "draws": 1,
+      "phases": [
+        {
+          "name": "routing-construction",
+          "startMs": 0,
+          "durationMs": 8624
+        },
+        {
+          "name": "routing-content",
+          "startMs": 8625,
+          "durationMs": 1807
+        },
+        {
+          "name": "routing-save",
+          "startMs": 10432,
+          "durationMs": 538
+        }
+      ],
+      "rootVersion": 4,
+      "age": 18,
+      "date": {
+        "year": 2024,
+        "month": 6,
+        "day": 30
+      },
+      "dob": {
+        "year": 2006,
+        "month": 6,
+        "day": 30
+      },
+      "player": "person:1",
+      "nextSequence": 2,
+      "residences": 1,
+      "occupants": 1,
+      "noFixed": 0,
+      "population": 69281437,
+      "areaId": "place.uk.local-admin.e06000061",
+      "source": "uk.population.mid-2024.v3",
+      "canonicalDirectV3Equality": true,
+      "saveEquality": true,
+      "revision": 1,
+      "bytes": 9595786,
+      "content": {
+        "activeWorkers": 0,
+        "cachedSets": 1,
+        "pendingSets": 0,
+        "preparations": 1,
+        "last": {
+          "importMs": 167,
+          "prepareMs": 1160,
+          "payloadBytes": 3442402,
+          "emittedAt": 1791064035570,
+          "handoffMs": 19,
+          "resolverPublicationMs": 227,
+          "referenceContentReadyMs": 1602
+        }
+      },
+      "continuation": {
+        "nextPerson": "person:2",
+        "nextResidence": "residence:2"
+      },
+      "normalInteractionPass": true,
+      "normalCompleteReadyPass": false
+    },
+    {
+      "browser": "firefox",
+      "error": "Error: browserType.launch: spawn UNKNOWN\nCall log:\n\u001b[2m  - <launching> C:\\Users\\User\\AppData\\Local\\ms-playwright\\firefox-1543\\firefox\\firefox.exe -no-remote -headless -profile C:\\Users\\User\\AppData\\Local\\Temp\\playwright_firefoxdev_profile-DcgGdm -juggler-pipe -silent\u001b[22m\n"
+    }
+  ]
+}
