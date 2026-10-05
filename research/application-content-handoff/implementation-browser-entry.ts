@@ -1,7 +1,7 @@
 // Browser acceptance tooling only; no production app imports this module.
 export {createUkMid2024GeographicResidenceGame,disposeUkCountryStartStartup} from '../../src/data/countryStart/uk/countryStartResidence';
 export {GamePersistence} from '../../src/persistence/service';
-export {serializeGame} from '../../src/engine/save';
+export {serializeGame,serializeCurrentGame,upgradeGameToCurrent} from '../../src/engine/save';
 export {deriveCountryPopulation} from '../../src/engine/human/population';
 export {validGameWithContent} from '../../src/engine/gameContent';
 export async function createHistoricalGame(){const {createUkMid2024GeographicGame}=await import('../../src/data/uk/countryStartGeographic');return createUkMid2024GeographicGame({version:1,rootSeed:73,mode:'adult',identity:{name:'Current Life'}});}

@@ -18,6 +18,7 @@ describe('Household standalone ownership',()=>{
   });
   it('permits Household imports only in the approved Game root composition files, never generic domains or persistence',()=>{
     const frozen=import.meta.glob<string>(['../core/**/*.ts','../human/**/*.ts','../residence/**/*.ts','../geography/**/*.ts','../residencePlacement/**/*.ts','../types.ts','../save.ts','../../persistence/**/*.ts','../../data/countryStart/**/*.ts','../../ui/**/*.ts','../../ui/**/*.tsx'],{eager:true,query:'?raw',import:'default'});
-    for(const [path,source] of Object.entries(frozen))if(path!=='../types.ts'&&path!=='../save.ts')expect(source,path).not.toMatch(/(?:from\s+|import\s*\(?\s*)['"][^'"]*\/household(?:\/|['"])/i);
+    const composition=new Set(['../types.ts','../save.ts','../../persistence/householdIntegration.test.ts','../../ui/newGameRootIntegration.test.ts']);
+    for(const [path,source] of Object.entries(frozen))if(!composition.has(path))expect(source,path).not.toMatch(/(?:from\s+|import\s*\(?\s*)['"][^'"]*\/household(?:\/|['"])/i);
   });
 });
