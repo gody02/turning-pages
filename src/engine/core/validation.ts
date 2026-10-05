@@ -12,7 +12,7 @@ const int=(x:unknown,min:number,max:number)=>num(x,min,max)&&Number.isInteger(x)
 const str=(x:unknown,max=3000):x is string=>typeof x==='string'&&x.length<=max;
 const scores=(x:unknown)=>record(x)&&Object.entries(x).every(([key,value])=>key.length>0&&key.length<=100&&num(value,0,100));
 export function validLife(x:unknown):x is LifeState{
- if(!record(x)||(x.version!==1&&x.version!==2&&x.version!==3&&x.version!==4&&x.version!==5)||!validPersonDisplayName(x.name)||!str(x.gender,40)||!countries.some(c=>c.id===x.country))return false;
+ if(!record(x)||(x.version!==1&&x.version!==2&&x.version!==3&&x.version!==4&&x.version!==5&&x.version!==6)||!validPersonDisplayName(x.name)||!str(x.gender,40)||!countries.some(c=>c.id===x.country))return false;
  if(!int(x.age,0,100)||typeof x.alive!=='boolean'||typeof x.retired!=='boolean'||!int(x.seed,0,4294967295)||!int(x.actions,0,3))return false;
  if(x.randomness!==undefined&&!validRandomness(x.randomness))return false;
  if(x.scheduler!==undefined&&!validScheduler(x.scheduler))return false;

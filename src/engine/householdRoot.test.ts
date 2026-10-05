@@ -16,8 +16,8 @@ describe('Household current Game root v5',()=>{
   const v4=migrateGame(v3)!;
   for(const source of [legacyV1,v2,v3,v4]){
    const before=structuredClone(source),historical=migrateGame(source),current=upgradeGameToCurrent(source)!;
-   expect(current.version).toBe(5);expect(isGame(current)).toBe(true);expect(current.household).toEqual(createEmptyHouseholdState());
-   const {household,...rest}=current;expect({...rest,version:4}).toEqual(historical);expect(source).toEqual(before);
+   expect(current.version).toBe(6);expect(isGame(current)).toBe(true);expect(current.household).toEqual(createEmptyHouseholdState());
+   const {household,kinship,...rest}=current;expect(kinship).toEqual({version:1,parentages:[]});expect({...rest,version:4}).toEqual(historical);expect(source).toEqual(before);
    expect(createHousehold(household,['person:1'],{people:current.people}).household.id).toBe('household:1');
   }
  });
@@ -32,7 +32,7 @@ describe('Household current Game root v5',()=>{
  });
  it('is deterministic/idempotent and preserves populated current state and allocator ownership',()=>{
   const source=syntheticResidenceGame();expect(upgradeGameToCurrent(source)).toEqual(upgradeGameToCurrent(source));
-  const populated=syntheticHouseholdGame(),copy=upgradeGameToCurrent(populated)!;expect(copy).toEqual(populated);
+  const populated=syntheticHouseholdGame(),copy=upgradeGameToCurrent(populated)!;expect(copy).toEqual({...populated,version:6,kinship:{version:1,parentages:[]}});
   const context={people:copy.people},first=createHousehold(copy.household,['person:4'],context);expect(first.household.id).toBe('household:3');expect(copy.household.nextSequence).toBe(3);
   let retired=removeHouseholdMember(copy.household,'person:1','household:1',context);retired=removeHouseholdMember(retired,'person:2','household:1',context);
   const round=upgradeGameToCurrent({...copy,household:retired})!;expect(round.household).toEqual(retired);expect(createHousehold(round.household,['person:2'],context).household.id).toBe('household:3');
@@ -57,12 +57,12 @@ describe('Household current Game root v5',()=>{
   const result=upgradeGameToCurrent(source)!;
   expect(random).not.toHaveBeenCalled();expect(time).not.toHaveBeenCalled();expect(entropy).not.toHaveBeenCalled();expect(parse).not.toHaveBeenCalled();
   expect(result.randomness).toEqual(before.randomness);expect(result.clock).toEqual(before.clock);expect(result.scheduler).toEqual(before.scheduler);expect(result.history).toEqual(before.history);
-  const {household,...rest}=result;expect(household.households).toHaveLength(0);expect({...rest,version:4}).toEqual(before);
+  const {household,kinship,...rest}=result;expect(kinship).toEqual({version:1,parentages:[]});expect(household.households).toHaveLength(0);expect({...rest,version:4}).toEqual(before);
  });
  it('keeps Residence content and existing death cleanup active for current5 with empty Household',()=>{
   const game=upgradeGameToCurrent(syntheticResidenceGame())!,content=context(game.people);
   expect(validGameWithContent(game,content)).toBe(true);const invalid={...game,residence:{...game.residence,residences:game.residence.residences.map((item,index)=>index===0?{...item,location:{kind:'administrative-area',administrativeArea:{version:1,partitionId:'geography.missing-v1',placeId:'place.missing.cell'}}}:item)}};
   expect(validGameWithContent(invalid,content)).toBe(false);
-  game.stats.health=0;const next=ageUp(game,content);expect(next.version).toBe(5);expect(isGame(next)).toBe(true);expect(next.residence!.occupants.some(item=>item.personId==='person:1')).toBe(false);expect(next.household).toEqual(createEmptyHouseholdState());
+  game.stats.health=0;const next=ageUp(game,content);expect(next.version).toBe(6);expect(isGame(next)).toBe(true);expect(next.residence!.occupants.some(item=>item.personId==='person:1')).toBe(false);expect(next.household).toEqual(createEmptyHouseholdState());
  });
 });

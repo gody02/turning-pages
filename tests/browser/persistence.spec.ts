@@ -53,7 +53,7 @@ test('persists nonempty root4 Residence with exact injected content and pre-Resi
   if(JSON.stringify(loaded.game)!==JSON.stringify(save.upgradeGameToCurrent(game))||!content.validGameWithContent(loaded.game,context(loaded.game.people)))throw Error('Nonempty root4 Residence did not round-trip.');
   const stored=await second.repository.getRecord('primary');if(!(stored.payload instanceof ArrayBuffer)||stored.declaredRootVersion!==5)throw Error('Root4 did not retain ArrayBuffer storage.');await closeAndDelete(second,'second: primary read');
   const {residence,...rest}=game,oldRaw=JSON.stringify({...rest,version:3}),third=await service.GamePersistence.open(localStorage,indexedDB,name);
-  await third.repository.commitSave(await payload.recordFromRaw('primary','primary',1,'canonical-game',oldRaw),null);const migrated=await third.initialize();if(migrated.game.version!==5||migrated.game.residence.residences.length)throw Error('Root3 migration must be empty.');
+  await third.repository.commitSave(await payload.recordFromRaw('primary','primary',1,'canonical-game',oldRaw),null);const migrated=await third.initialize();if(migrated.game.version!==6||migrated.game.residence.residences.length)throw Error('Root3 migration must be empty.');
   await third.save(migrated.game,1);const recoverySlot=`recovery:${save.PRE_RESIDENCE_SAVE_KEY}`,recovery=await payload.verifyRecord(await third.repository.getRecord(recoverySlot),recoverySlot);if(recovery.raw!==oldRaw)throw Error('Pre-Residence recovery bytes changed.');const householdSlot=`recovery:${save.PRE_HOUSEHOLD_SAVE_KEY}`,householdRecovery=await payload.verifyRecord(await third.repository.getRecord(householdSlot),householdSlot);if(householdRecovery.raw!==oldRaw)throw Error('Pre-Household recovery bytes changed.');await closeAndDelete(third,'third: recovery read');
   return {browser,rootVersion:loaded.game.version,residences:loaded.game.residence.residences.length,byteLength:stored.byteLength,elapsedMs:performance.now()-started};
   }finally{IDBDatabase.prototype.transaction=originalTransaction;}
@@ -135,10 +135,10 @@ test('round-trips the root4 Game with frozen geographic v3 content through real 
     const state=globalThis.__turningPagesV3Diagnostic!,started=performance.now(),raw=JSON.stringify(state.game);
     if(raw!==state.canonicalRaw)throw Error('Direct JSON serialization differs from canonical Game JSON.');
     const byteLength=new TextEncoder().encode(raw).byteLength;
-    const {household,residence,...preResidence}=state.game;if(state.game.version!==5||household.nextSequence!==1||household.households.length||household.memberships.length||residence.residences.length||residence.occupants.length||residence.noFixedAbodePersonIds.length)throw Error('Root v4 must contain empty Residence.');if(new TextEncoder().encode(JSON.stringify({...preResidence,version:3})).byteLength!==9_595_304)throw Error('Frozen v3 byte contract changed.');
+    const {kinship,household,residence,...preResidence}=state.game;if(state.game.version!==6||household.nextSequence!==1||household.households.length||household.memberships.length||residence.residences.length||residence.occupants.length||residence.noFixedAbodePersonIds.length)throw Error('Root v4 must contain empty Residence.');if(new TextEncoder().encode(JSON.stringify({...preResidence,version:3})).byteLength!==9_595_304)throw Error('Frozen v3 byte contract changed.');
     return {durationMs:performance.now()-started,cumulativeMs:performance.now()-state.startedAt,value:{byteLength}};
   }));
-  expect(stringify.byteLength).toBe(9_595_481);
+  expect(stringify.byteLength).toBe(9_595_521);
 
   const encoded=await runStage(page,testInfo,'G UTF-8 ArrayBuffer preparation complete',()=>page.evaluate(()=>{
     const state=globalThis.__turningPagesV3Diagnostic!,started=performance.now(),bytes=new TextEncoder().encode(state.canonicalRaw);

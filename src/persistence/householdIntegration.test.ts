@@ -25,13 +25,13 @@ describe('current root5 persistence with frozen authority',()=>{
   const recovery=await verifyRecord(await service.repository.getRecord(slot),slot),previous=await verifyRecord(await service.repository.getRecord(PREVIOUS_SLOT),PREVIOUS_SLOT);
   expect(recovery.raw).toBe(old.raw);expect(recovery.record.sha256).toBe(await sha256Text(old.raw));expect(previous.raw).toBe(old.raw);expect(previous.record.declaredRootVersion).toBe(4);
   await service.save({...loaded.game!,money:123},2);expect((await verifyRecord(await service.repository.getRecord(slot),slot)).raw).toBe(old.raw);
-  expect((await verifyRecord(await service.repository.getRecord(PRIMARY_SLOT),PRIMARY_SLOT)).record.declaredRootVersion).toBe(5);
+  expect((await verifyRecord(await service.repository.getRecord(PRIMARY_SLOT),PRIMARY_SLOT)).record.declaredRootVersion).toBe(6);
   expect(PERSISTENCE_DATABASE_VERSION).toBe(1);
  });
  it('preserves both pre-Residence and pre-Household checkpoints from the same actual root3 bytes',async()=>{
   const old=createGame('Before both','Unspecified','ca',63),raw=JSON.stringify(old),service=await open();
   await service.repository.commitSave(await recordFromRaw(PRIMARY_SLOT,'primary',1,'canonical-game',raw),null);
-  const current=(await service.initialize()).game!;expect(current.version).toBe(5);await service.save(current,1);
+  const current=(await service.initialize()).game!;expect(current.version).toBe(6);await service.save(current,1);
   for(const key of [PRE_RESIDENCE_SAVE_KEY,PRE_HOUSEHOLD_SAVE_KEY]){const slot=`recovery:${key}`,record=await verifyRecord(await service.repository.getRecord(slot),slot);expect(record.raw).toBe(raw);expect(record.record.declaredRootVersion).toBe(3);expect(record.result.game).toEqual(current);}
   expect((await verifyRecord(await service.repository.getRecord(PREVIOUS_SLOT),PREVIOUS_SLOT)).raw).toBe(raw);
  });
@@ -51,7 +51,7 @@ describe('current root5 persistence with frozen authority',()=>{
   for(const game of [upgradeGameToCurrent(syntheticResidenceGame())!,syntheticHouseholdGame()]){
    const database=name(),service=await open(database),canonical=serializeCurrentGame(game);if(!canonical.ok)throw Error(canonical.error);
    await service.save(game,null);service.close();const reopened=await open(database),loaded=(await reopened.initialize()).game;
-   if(!loaded||loaded.version!==5)throw Error('Wrong current schema');
+   if(!loaded||loaded.version!==6)throw Error('Wrong current schema');
    expect(loaded).toEqual(canonical.game);expect(loaded.household).toEqual(game.household);expect(exportCanonicalGame(loaded)).toBe(canonical.raw);expect(importCanonicalGame(canonical.raw)).toEqual(loaded);
    const next=createHousehold(loaded.household,['person:4'],{people:loaded.people});expect(next.household.id).toBe(`household:${game.household.nextSequence}`);expect(loaded.household).toEqual(game.household);
    const verified=await verifyRecord(await reopened.repository.getRecord(PRIMARY_SLOT),PRIMARY_SLOT);expect(verified.raw).toBe(canonical.raw);expect(verified.record.sha256).toBe(await sha256Text(canonical.raw));
@@ -62,12 +62,12 @@ describe('current root5 persistence with frozen authority',()=>{
   await service.repository.commitSave(await recordFromRaw(PRIMARY_SLOT,'primary',1,'canonical-game',old.raw),null);
   const raw=JSON.stringify({...game,household:{...game.household,memberships:[{personId:'person:999',householdId:'household:1'}]}});
   await service.repository.commitSave(await recordFromRaw(PRIMARY_SLOT,'primary',2,'canonical-game',raw),1);
-  expect(parseCurrentGame(raw).game).toBeNull();const result=await service.initialize();expect(result.status).toBe('recovery-required');expect(result.game).toBeNull();expect(result.recoveries.some(item=>item.slotId===PREVIOUS_SLOT&&item.game.version===5)).toBe(true);
+  expect(parseCurrentGame(raw).game).toBeNull();const result=await service.initialize();expect(result.status).toBe('recovery-required');expect(result.game).toBeNull();expect(result.recoveries.some(item=>item.slotId===PREVIOUS_SLOT&&item.game.version===6)).toBe(true);
   const retained=await service.repository.getRecord(PRIMARY_SLOT) as {payload:ArrayBuffer;revision:number};expect(new TextDecoder().decode(retained.payload)).toBe(raw);expect(retained.revision).toBe(2);
  });
  it('keeps exact-byte legacy migration recovery and adds no inferred membership',async()=>{
   const old=createGame('Legacy source','Unspecified','ca',64),raw=`  ${JSON.stringify(old,null,2)}\n`,data=new Map([[SAVE_KEY,raw]]),legacy:LegacyStorage={getItem:key=>data.get(key)??null,setItem:(key,value)=>{data.set(key,value);}},service=await open(name(),legacy);
-  const loaded=await service.initialize();expect(loaded.game?.version).toBe(5);expect(loaded.game?.household?.memberships).toHaveLength(0);expect(data.get(SAVE_KEY)).toBe(raw);
+  const loaded=await service.initialize();expect(loaded.game?.version).toBe(6);expect(loaded.game?.household?.memberships).toHaveLength(0);expect(data.get(SAVE_KEY)).toBe(raw);
   for(const key of [PRE_RESIDENCE_SAVE_KEY,PRE_HOUSEHOLD_SAVE_KEY]){const slot=`recovery:${key}`;expect((await verifyRecord(await service.repository.getRecord(slot),slot)).raw).toBe(raw);}
  });
 });

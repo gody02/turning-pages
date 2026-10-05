@@ -1,0 +1,10 @@
+import type {Person,PeopleState} from '../human/person';
+export type KinshipPersonId=Person['id'];
+export type ParentageBasis='genetic'|'gestational'|'legal';
+export type ParentageIdentityV1=Readonly<{parentId:KinshipPersonId;childId:KinshipPersonId}>;
+export type ParentageRecordV1=ParentageIdentityV1 & Readonly<{bases:readonly ParentageBasis[]}>;
+export type KinshipStateV1=Readonly<{version:1;parentages:readonly ParentageRecordV1[]}>;
+export type KinshipValidationContext=Readonly<{people:PeopleState}>;
+export type SiblingParentageOverlapV1=Readonly<{basis:ParentageBasis;leftKnownParentIds:readonly KinshipPersonId[];rightKnownParentIds:readonly KinshipPersonId[];sharedParentIds:readonly KinshipPersonId[];sameNonemptyParentSet:boolean}>;
+export type KinshipReachablePersonV1=Readonly<{personId:KinshipPersonId;minimumDistance:number}>;
+export type KinshipTraversalResultV1=Readonly<{basis:ParentageBasis;maxDepth:number;relatives:readonly KinshipReachablePersonV1[];truncated:boolean}>;

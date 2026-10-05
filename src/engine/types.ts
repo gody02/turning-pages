@@ -6,6 +6,7 @@ import type {PeopleState} from './human/person';
 import type {PopulationState} from './human/population';
 import type {ResidenceStateV1} from './residence/types';
 import type {HouseholdStateV1} from './household/types';
+import type {KinshipStateV1} from './kinship/types';
 export type * from './core/model';
 export type * from './human/person';
 export type HistoricalGame=Omit<LifeState,'version'> & {people?:PeopleState;population?:PopulationState;ukWorld?:UKWorldState;politics?:PoliticalCareer} & (
@@ -16,7 +17,8 @@ export type GameV4=Extract<HistoricalGame,{version:4}>;
 export type GameV5=Omit<GameV4,'version'|'people'|'population'|'household'> & {
  version:5;people:PeopleState;population:PopulationState;household:HouseholdStateV1;
 };
-export type Game=HistoricalGame|GameV5;
+export type GameV6=Omit<GameV5,'version'> & {version:6;kinship:KinshipStateV1};
+export type Game=HistoricalGame|GameV5|GameV6;
 /** Frozen Country Start compatibility alias. Current application roots use CurrentAuthoritativeGame. */
 export type CurrentGame=GameV4;
-export type CurrentAuthoritativeGame=GameV5;
+export type CurrentAuthoritativeGame=GameV6;
