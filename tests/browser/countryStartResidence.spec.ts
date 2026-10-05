@@ -53,19 +53,19 @@ test('reviews cold/warm Country Start v3, responsiveness and nonempty Residence 
    await Promise.all([...pending]);first.close();
    second=await service.GamePersistence.open(emptyLegacy,indexedDB,name);
    start=performance.now();const loaded=await second.initialize();loadMs=performance.now()-start;
-   if(!loaded.game||JSON.stringify(loaded.game)!==JSON.stringify(game)||!content.validGameWithContent(loaded.game,context))throw Error('Country Start real IndexedDB roundtrip failed.');
+   if(!loaded.game||JSON.stringify(loaded.game)!==JSON.stringify(save.upgradeGameToCurrent(game))||!content.validGameWithContent(loaded.game,context))throw Error('Country Start real IndexedDB roundtrip failed.');
    const cohort=loaded.game.population!.cohorts.find(item=>item.birthYear===2000)!;
    const next=extraction.instantiateFromCohortWithContent({people:loaded.game.people!,population:loaded.game.population!,rootSeed:73,cohortId:cohort.id,requestKey:'country-start.uk.mid-2024-v3.browser-review',count:1,referenceDate:{year:2024,month:6,day:30},contentRegistry:human.createUkHumanGenerationContentRegistry()});
    const nextHome=residence.establishResidence(loaded.game.residence!,['person:2'],loaded.game.residence!.residences[0].location,{...context,people:next.people});
    const sha256=[...new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(raw.raw)))].map(b=>b.toString(16).padStart(2,'0')).join('');
-   return {browser,moduleImportMs,moduleStages,samples,bytes,oldBytes,delta:bytes-oldBytes,sha256,saveMs,loadMs,rootVersion:loaded.game.version,residenceCount:loaded.game.residence!.residences.length,occupants:loaded.game.residence!.occupants.length,population:population.deriveCountryPopulation(next.population,next.people,'uk').knownLiving,nextPerson:next.persons[0].id,nextResidence:nextHome.residence.id};
+   return {browser,moduleImportMs,moduleStages,samples,bytes,oldBytes,delta:bytes-oldBytes,sha256,saveMs,loadMs,constructorVersion:game.version,rootVersion:loaded.game.version,household:loaded.game.household,residenceCount:loaded.game.residence!.residences.length,occupants:loaded.game.residence!.occupants.length,population:population.deriveCountryPopulation(next.population,next.people,'uk').knownLiving,nextPerson:next.persons[0].id,nextResidence:nextHome.residence.id};
   }finally{
    await Promise.all([...pending]);first?.close();second?.close();
    IDBDatabase.prototype.transaction=originalTransaction;
    await new Promise<void>((resolve,reject)=>{const deletion=indexedDB.deleteDatabase(name);deletion.onsuccess=()=>resolve();deletion.onerror=()=>reject(deletion.error);deletion.onblocked=()=>reject(Error('Country Start review cleanup blocked.'));});
   }
  },testInfo.project.name);
- expect(result).toMatchObject({rootVersion:4,residenceCount:1,occupants:1,population:69_281_437,nextPerson:'person:2',nextResidence:'residence:2',bytes:9_595_786,oldBytes:9_595_391,delta:395});
+ expect(result).toMatchObject({constructorVersion:4,rootVersion:5,household:{version:1,nextSequence:1,households:[],memberships:[]},residenceCount:1,occupants:1,population:69_281_437,nextPerson:'person:2',nextResidence:'residence:2',bytes:9_595_786,oldBytes:9_595_391,delta:395});
  expect(result.sha256).toBe('e926ef8d1528356d3bc92abf23934974e9de2a14fc19ed08fb29410f51839a28');
  for(const sample of result.samples.filter(item=>item.version===3))expect(sample.blockedHeartbeatMs).toBeLessThanOrEqual(1_000);
  // Existing validated-load acceptance remains unchanged.

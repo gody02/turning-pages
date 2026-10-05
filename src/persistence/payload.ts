@@ -1,4 +1,4 @@
-import {isCanonicalGamePayload,parseGame,serializeGame,type LoadGameResult} from '../engine/save';
+import {isCanonicalGamePayload,parseCurrentGame as parseGame,serializeCurrentGame as serializeGame,type CurrentGameLoadResult as LoadGameResult} from '../engine/save';
 import type {Game} from '../engine/types';
 import {isStoredSaveRecordV1,PERSISTENCE_ENCODING,PERSISTENCE_VERSION,type SavePayloadKind,type SaveRecordRole,type StoredSaveRecordV1} from './record';
 

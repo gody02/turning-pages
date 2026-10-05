@@ -6,7 +6,7 @@ test('built LifeApp loads exact Residence content responsively and uses producti
   const api=await import('/application-content-evidence/testing/testing.js'),game=await api.createUkMid2024GeographicResidenceGame({version:1,rootSeed:73,mode:'adult'});
   const raw=api.serializeGame(game);if(!raw.ok)throw Error('Fixture failed canonical save.');
   const persistence=await api.GamePersistence.open(localStorage);try{await persistence.save(game,null);}finally{persistence.close();api.disposeUkCountryStartStartup();}
-  return {raw:raw.raw,name:game.name};
+  const current=api.serializeCurrentGame(api.upgradeGameToCurrent(game));if(!current.ok)throw Error('Current fixture failed');return {raw:current.raw,name:game.name};
  });
  // Sample the active Worker and main heap via Chromium's actual isolate diagnostics.
  // Samples are near-simultaneous observations, not an invented mobile/RSS limit.
@@ -28,7 +28,7 @@ test('built LifeApp loads exact Residence content responsively and uses producti
  await page.goto('./');await expect(page.locator('.dashboard')).toBeVisible();await page.evaluate(()=>new Promise<void>(resolve=>requestAnimationFrame(()=>requestAnimationFrame(()=>resolve()))));
  const result=await page.evaluate(async()=>{
   const global=globalThis as any,observation=global.__handoffObservation.finish(),host=global.__applicationContent,game=global.__acceptedApplicationGame,api=await import('/application-content-evidence/testing/testing.js');
-  const context=host.lifecycleContent(game),raw=api.serializeGame(game);if(!raw.ok||!api.validGameWithContent(game,context))throw Error('Application content acceptance changed Game.');
+  const context=host.lifecycleContent(game),raw=api.serializeCurrentGame(game);if(!raw.ok||!api.validGameWithContent(game,context))throw Error('Application content acceptance changed Game.');
   const metrics=host.applicationContentDiagnostics(),load=performance.getEntriesByName('application-validated-load').at(-1)!.duration;
   const identities=context.geography.registry.places.length,settlements=context.settlements.registry.packages[0].settlements.length,relations=context.settlements.registry.packages[0].administrativeRelations.length;
   for(let i=0;i<5;i++)await host.acceptApplicationGame(game);const repeated=host.applicationContentDiagnostics();
@@ -47,7 +47,7 @@ test('built LifeApp loads exact Residence content responsively and uses producti
  }
  // Actual production source is v3; no initializer substitution.
  await page.getByRole('button',{name:'New life ↗'}).click();await page.getByLabel('Your name · optional').fill('Content Routing Check');await page.getByRole('button',{name:'Begin my story'}).click();await page.locator('.dashboard').waitFor({timeout:120_000});await expect(page.locator('.dashboard h1')).toHaveText('Content Routing Check');
- const routing=await page.evaluate(async()=>{const api=await import('/application-content-evidence/testing/testing.js'),persistence=await api.GamePersistence.open(localStorage);try{const loaded=await persistence.initialize();return {source:loaded.game!.population!.coverage[0].source,residences:loaded.game!.version===4?loaded.game!.residence.residences.length:-1,player:loaded.game!.people!.playerId};}finally{persistence.close();}});
+ const routing=await page.evaluate(async()=>{const api=await import('/application-content-evidence/testing/testing.js'),persistence=await api.GamePersistence.open(localStorage);try{const loaded=await persistence.initialize();return {source:loaded.game!.population!.coverage[0].source,residences:loaded.game!.version===5?loaded.game!.residence.residences.length:-1,player:loaded.game!.people!.playerId};}finally{persistence.close();}});
  expect(routing).toMatchObject({source:'uk.population.mid-2024.v3',residences:1,player:'person:1'});
  const evidence={browser:testInfo.project.name,...result,raw:undefined,canonicalEquality:true,memory:{...memory,combined},routing,productionCountryStart:'country-start.uk.mid-2024-v3'};
  await testInfo.attach('application-content-handoff',{body:JSON.stringify(evidence,null,2),contentType:'application/json'});console.log(JSON.stringify({gate:'application-content-handoff',...evidence}));
@@ -58,12 +58,12 @@ test('failed real content Worker preserves the saved Game and retries without re
  const baseline=await page.evaluate(async()=>{
   const api=await import('/application-content-evidence/testing/testing.js'),game=await api.createUkMid2024GeographicResidenceGame({version:1,rootSeed:73,mode:'adult'}),encoded=api.serializeGame(game);
   if(!encoded.ok)throw Error('Invalid acceptance fixture');const persistence=await api.GamePersistence.open(localStorage);
-  try{const first=await persistence.save(game,null),revision=await persistence.save(game,first);return {raw:encoded.raw,revision};}finally{persistence.close();api.disposeUkCountryStartStartup();}
+  try{const first=await persistence.save(game,null),revision=await persistence.save(game,first);const current=api.serializeCurrentGame(api.upgradeGameToCurrent(game));if(!current.ok)throw Error('Invalid current fixture');return {raw:current.raw,revision};}finally{persistence.close();api.disposeUkCountryStartStartup();}
  });
  await page.addInitScript(()=>{const native=crypto.getRandomValues.bind(crypto);Object.assign(globalThis,{__seedDraws:0});crypto.getRandomValues=(array:any)=>{(globalThis as any).__seedDraws++;return native(array);};});
  await page.route('**/assets/worker-*.js',route=>route.abort());await page.goto('./');
  await expect(page.getByRole('heading',{name:'Your saved life is safe.'})).toBeVisible();await expect(page.getByRole('button',{name:'Export saved life'})).toBeVisible();await expect(page.locator('.dashboard')).toHaveCount(0);
- const inspect=()=>page.evaluate(async()=>{const api=await import('/application-content-evidence/testing/testing.js'),p=await api.GamePersistence.open(localStorage);try{const loaded=await p.initialize(),encoded=api.serializeGame(loaded.game!);if(!encoded.ok)throw Error('Invalid persisted fixture');return {raw:encoded.raw,revision:loaded.revision,seeds:(globalThis as any).__seedDraws};}finally{p.close();}});
+ const inspect=()=>page.evaluate(async()=>{const api=await import('/application-content-evidence/testing/testing.js'),p=await api.GamePersistence.open(localStorage);try{const loaded=await p.initialize(),encoded=api.serializeCurrentGame(loaded.game!);if(!encoded.ok)throw Error('Invalid persisted fixture');return {raw:encoded.raw,revision:loaded.revision,seeds:(globalThis as any).__seedDraws};}finally{p.close();}});
  expect(await inspect()).toEqual({...baseline,seeds:0});await page.unroute('**/assets/worker-*.js');await page.getByRole('button',{name:'Retry loading'}).click();await expect(page.locator('.dashboard')).toBeVisible();
  expect(await inspect()).toEqual({...baseline,seeds:0});expect(await page.evaluate(()=>{const host=(globalThis as any).__applicationContent;return host.applicationContentDiagnostics();})).toMatchObject({preparations:2,activeWorkers:0,pendingSets:0,cachedSets:1});
  await page.getByRole('button',{name:/Finances/}).click();await expect(page.getByRole('button',{name:'Restore previous successful save'})).toBeVisible();
@@ -76,7 +76,7 @@ test('valid backup with unavailable reference content is not mislabeled corrupt 
  // keeps the existing unavailable-backup test cold without clearing a live cache.
  await page.evaluate(async()=>{const api=await import('/application-content-evidence/testing/testing.js'),game=await api.createHistoricalGame(),p=await api.GamePersistence.open(localStorage);try{await p.save(game,null);}finally{p.close();}});
  await page.goto('./');await expect(page.locator('.dashboard h1')).toHaveText('Current Life');
- const saved=()=>page.evaluate(async()=>{const api=await import('/application-content-evidence/testing/testing.js'),p=await api.GamePersistence.open(localStorage);try{const loaded=await p.initialize(),encoded=api.serializeGame(loaded.game!);if(!encoded.ok)throw Error('Invalid current life');return {raw:encoded.raw,revision:loaded.revision};}finally{p.close();}}),baseline=await saved();
+ const saved=()=>page.evaluate(async()=>{const api=await import('/application-content-evidence/testing/testing.js'),p=await api.GamePersistence.open(localStorage);try{const loaded=await p.initialize(),encoded=api.serializeCurrentGame(loaded.game!);if(!encoded.ok)throw Error('Invalid current life');return {raw:encoded.raw,revision:loaded.revision};}finally{p.close();}}),baseline=await saved();
  const file={name:'valid-life.json',mimeType:'application/json',buffer:Buffer.from(backup,'utf8')};
  await page.route('**/assets/worker-*.js',route=>route.abort());await page.locator('input[type=file]').setInputFiles(file);
  await expect(page.locator('.notice')).toContainText('Geographic reference content for this backup could not be loaded');await expect(page.locator('.town-confirm')).toHaveCount(0);await expect(page.locator('.dashboard h1')).toHaveText('Current Life');expect(await saved()).toEqual(baseline);

@@ -12,7 +12,7 @@ import {deriveCountryPopulation} from '../../../engine/human/population';
 import * as residenceApi from '../../../engine/residence/state';
 import * as placementApi from '../../../engine/residencePlacement/runtime';
 import * as saveApi from '../../../engine/save';
-import {isGame,parseGame,serializeGame} from '../../../engine/save';
+import {isGame,parseGame,serializeGame,upgradeGameToCurrent} from '../../../engine/save';
 import type {CurrentGame} from '../../../engine/types';
 import {deletePersistenceDatabase} from '../../../persistence/indexedDb';
 import {GamePersistence} from '../../../persistence/service';
@@ -225,7 +225,7 @@ describe('Country Start UK mid-2024 v3 initial Residence orchestration',()=>{
   let second:GamePersistence|undefined;
   try{
    expect(await first.save(game,null)).toBe(1);first.close();second=await GamePersistence.open(legacy,factory,name);
-   const loaded=(await second.initialize()).game as CurrentGame;expect(loaded).toEqual(game);expect(validGameWithContent(loaded,context)).toBe(true);
+   const loaded=(await second.initialize()).game;if(!loaded||loaded.version!==5)throw Error('Persistence did not return the current root.');expect(loaded).toEqual(upgradeGameToCurrent(game));const {household,...preHousehold}=loaded;expect({...preHousehold,version:4}).toEqual(game);expect(household.memberships).toHaveLength(0);expect(validGameWithContent(loaded,context)).toBe(true);
    const cohort=loaded.population!.cohorts.find(item=>item.birthYear===2000)!;
    const next=instantiateFromCohortWithContent({people:loaded.people!,population:loaded.population!,rootSeed:2024,cohortId:cohort.id,requestKey:'country-start.uk.mid-2024-v3.test-continuation',count:1,referenceDate:scenario.simulationStartDate,contentRegistry:createUkHumanGenerationContentRegistry()});
    expect(next.persons[0].id).toBe('person:2');expect(deriveCountryPopulation(next.population,next.people,'uk').knownLiving).toBe(69_281_437);

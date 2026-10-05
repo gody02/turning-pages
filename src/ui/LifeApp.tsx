@@ -4,7 +4,8 @@ import {averageStats,statKeys} from '../engine/systems/character';
 import {countryOf} from '../engine/systems/geography';
 import {jobOf,salary} from '../engine/systems/careers';
 import { TOWN_SAVE_KEY } from '../engine/townSave';
-import type { Action,Effects,Game } from '../engine/types';
+import type {Action,CurrentAuthoritativeGame,Effects,Game} from '../engine/types';
+import {upgradeGameToCurrent} from '../engine/save';
 import { jobs } from '../data/world';
 import { events } from '../data/events';
 import { roleNames } from '../data/politics';
@@ -32,8 +33,8 @@ export function LifeApp(){
   const [game,setGame]=useState<Game|null>(null);
   const [creating,setCreating]=useState(false);
   const [newGamePhase,setNewGamePhase]=useState<NewGamePhase>('idle');
-  const submission=useRef<ReturnType<typeof createNewGameSubmission<Game>>|null>(null);
-  if(!submission.current)submission.current=createNewGameSubmission<Game>({phase:setNewGamePhase,cancelConstruction:disposeUkCountryStartStartup});
+  const submission=useRef<ReturnType<typeof createNewGameSubmission<CurrentAuthoritativeGame>>|null>(null);
+  if(!submission.current)submission.current=createNewGameSubmission<CurrentAuthoritativeGame>({phase:setNewGamePhase,cancelConstruction:disposeUkCountryStartStartup});
   const starting=newGamePhase!=='idle';
   const [tab,setTab]=useState<Tab>(()=>location.hash==='#town'||location.hash==='#career'?'Career':'Journal');
   const [notice,setNotice]=useState('');
@@ -97,7 +98,7 @@ export function LifeApp(){
   async function commitReplacement(next:Game){const coordinator=coordinatorRef.current,persistence=persistenceRef.current;if(!coordinator||!persistence)throw Error('Browser persistence is unavailable.');if(coordinator.snapshot.state==='failed'){coordinator.request(next);await coordinator.retry();}else await coordinator.persist(next);return persistence.recoveries().catch(error=>{console.error('Recovery inventory refresh failed after successful save.',error);return recoveries;});}
   function activateReplacement(next:Game,message:string,snapshots:readonly RecoveryChoice[]){skipAutosave.current=next;setGame(next);setRecoveries(snapshots);setPendingRestore(null);setCreating(false);setNotice(message);const lifetime=referenceLifetime.current;void requestPersistentStorage().then(value=>{if(lifetime&&!lifetime.signal.aborted&&referenceLifetime.current===lifetime)setStoragePersistence(value);});}
   async function persistReplacement(next:Game,message:string){if(submission.current?.busy()||replacementCommit.current)return;const signal=referenceLifetime.current?.signal,generation=replacementGeneration.current;await acceptApplicationGame(next,undefined,{signal});if(signal?.aborted||submission.current?.busy()||replacementCommit.current||generation!==replacementGeneration.current)return;replacementCommit.current=true;try{const snapshots=await commitReplacement(next);if(!signal?.aborted)activateReplacement(next,message,snapshots);}finally{replacementCommit.current=false;}}
-  async function beginNewGame(){if(submission.current?.busy()||replacementCommit.current||startup!=='ready')return;replacementGeneration.current++;const mode=start;let snapshots:readonly RecoveryChoice[]=[];try{await submission.current!.run(signal=>createProductionUkNewGame({mode,name,genderLabel:gender},undefined,{signal}),(next,signal)=>acceptApplicationGame(next,undefined,{signal}),async next=>{snapshots=await commitReplacement(next);},next=>{activateReplacement(next,'',snapshots);setTab(mode==='adult'?'Career':'Journal');});}catch(error){if(!(error instanceof NewGameInputError))console.error('UK country-start failed.',error);setNotice(error instanceof NewGameInputError?error.message:'Your new UK life could not be created or saved. Your current life is unchanged. Please try again.');}}
+  async function beginNewGame(){if(submission.current?.busy()||replacementCommit.current||startup!=='ready')return;replacementGeneration.current++;const mode=start;let snapshots:readonly RecoveryChoice[]=[];try{await submission.current!.run(async signal=>{const candidate=await createProductionUkNewGame({mode,name,genderLabel:gender},undefined,{signal});const current=upgradeGameToCurrent(candidate);if(!current)throw Error('The new life failed its current-root upgrade.');return current;},(next,signal)=>acceptApplicationGame(next,undefined,{signal}),async next=>{snapshots=await commitReplacement(next);},next=>{activateReplacement(next,'',snapshots);setTab(mode==='adult'?'Career':'Journal');});}catch(error){if(!(error instanceof NewGameInputError))console.error('UK country-start failed.',error);setNotice(error instanceof NewGameInputError?error.message:'Your new UK life could not be created or saved. Your current life is unchanged. Please try again.');}}
   async function retryReferenceContent(){if(!unresolvedGame)return;const signal=referenceLifetime.current?.signal;setStartup('loading');try{await acceptApplicationGame(unresolvedGame,undefined,{signal});if(signal?.aborted)return;skipAutosave.current=unresolvedGame;setGame(unresolvedGame);setUnresolvedGame(null);setCreating(false);setStartup('ready');setNotice(startupNotice.current);setSaved(true);}catch{if(signal?.aborted)return;setStartup('content-failed');setNotice('Geographic reference content is still unavailable. Your saved life has not changed.');}}
 
   if(startup==='loading')return <div className="app-shell"><header className="topbar"><a className="brand" href="#life"><span className="brand-mark">t<span>p</span></span><span>turning pages<small>A LIFE IN THE MAKING</small></span></a></header><main className="creation"><section className="creation-card" aria-live="polite"><div className="eyebrow">OPENING YOUR STORY</div><h2>Loading your saved life…</h2></section></main></div>;

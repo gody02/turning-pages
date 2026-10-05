@@ -1,7 +1,7 @@
 import {afterEach,describe,expect,it} from 'vitest';
 import {IDBFactory} from 'fake-indexeddb';
 import {createGame} from '../engine/simulation';
-import {isCanonicalGamePayload,migrateGame,PRE_RESIDENCE_SAVE_KEY,serializeGame} from '../engine/save';
+import {isCanonicalGamePayload,migrateGame,PRE_RESIDENCE_SAVE_KEY,serializeGame,upgradeGameToCurrent} from '../engine/save';
 import {context,syntheticResidenceGame} from '../engine/testing/residenceFixture';
 import {validGameWithContent} from '../engine/gameContent';
 import {recordNoFixedAbode,removePersonFromResidences} from '../engine/residence/state';
@@ -20,7 +20,7 @@ describe('Residence persistence integration',()=>{
  it('loads released canonical root3 bytes in memory, snapshots exactly once on upgrade, and preserves revision semantics',async()=>{
   const old=createGame('Old root','Unspecified','ca',44),raw=JSON.stringify(old),{service,name}=await open();expect(isCanonicalGamePayload(raw)).toBe(true);
   await service.repository.commitSave(await recordFromRaw(PRIMARY_SLOT,'primary',1,'canonical-game',raw),null);
-  const loaded=await service.initialize();expect(loaded.revision).toBe(1);expect(loaded.game?.version).toBe(4);expect((await service.repository.getRecord(PRIMARY_SLOT) as {declaredRootVersion:number}).declaredRootVersion).toBe(3);
+  const loaded=await service.initialize();expect(loaded.revision).toBe(1);expect(loaded.game?.version).toBe(5);expect((await service.repository.getRecord(PRIMARY_SLOT) as {declaredRootVersion:number}).declaredRootVersion).toBe(3);
   const slot=`recovery:${PRE_RESIDENCE_SAVE_KEY}`;expect(await service.repository.getRecord(slot)).toBeUndefined();await service.save(loaded.game!,1);
   const recovery=await verifyRecord(await service.repository.getRecord(slot),slot),previous=await verifyRecord(await service.repository.getRecord(PREVIOUS_SLOT),PREVIOUS_SLOT);expect(recovery.raw).toBe(raw);expect(previous.raw).toBe(raw);expect(recovery.result.game).toEqual(loaded.game);expect(recovery.record.declaredRootVersion).toBe(3);
   await service.save({...loaded.game!,money:123},2);expect((await verifyRecord(await service.repository.getRecord(slot),slot)).raw).toBe(raw);expect((await service.recoveries()).some(item=>item.slotId===slot)).toBe(true);service.close();
@@ -36,7 +36,7 @@ describe('Residence persistence integration',()=>{
  });
  it('round-trips nonempty Residence with ArrayBuffer checksum, exact content qualification and export/import',async()=>{
   const game=syntheticResidenceGame(),{service,name}=await open();await service.save(game,null);const stored=await service.repository.getRecord(PRIMARY_SLOT) as {payload:ArrayBuffer};expect(stored.payload).toBeInstanceOf(ArrayBuffer);service.close();
-  const second=await GamePersistence.open(legacy,factory,name);services.push(second);const loaded=(await second.initialize()).game as CurrentGame;expect(loaded).toEqual(game);expect(validGameWithContent(loaded,context(loaded.people!))).toBe(true);expect(importCanonicalGame(exportCanonicalGame(game))).toEqual(game);
+  const second=await GamePersistence.open(legacy,factory,name);services.push(second);const loaded=(await second.initialize()).game!;expect(loaded).toEqual(upgradeGameToCurrent(game));expect(loaded.residence).toEqual(game.residence);expect(validGameWithContent(loaded,context(loaded.people!))).toBe(true);expect(importCanonicalGame(exportCanonicalGame(game))).toEqual(upgradeGameToCurrent(game));
   const corrupted={...stored,payload:stored.payload.slice(0)},originalBytes=new Uint8Array(stored.payload),raw=new TextDecoder().decode(originalBytes),residenceStart=raw.indexOf('"residence":'),sequenceStart=raw.indexOf('"nextSequence":4',residenceStart)+'"nextSequence":'.length;
   expect(residenceStart).toBeGreaterThan(0);expect(raw[sequenceStart]).toBe('4');const byteOffset=new TextEncoder().encode(raw.slice(0,sequenceStart)).byteLength;new Uint8Array(corrupted.payload)[byteOffset]='5'.charCodeAt(0);expect(new Uint8Array(stored.payload)).toEqual(originalBytes);await expect(verifyRecord(corrupted,PRIMARY_SLOT)).rejects.toMatchObject({reason:'checksum-mismatch'});
   const bad={...game,residence:null};expect(()=>importCanonicalGame(JSON.stringify(bad))).toThrow();

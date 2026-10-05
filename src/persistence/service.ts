@@ -1,4 +1,4 @@
-import {isGame,parseGame,RECOVERY_SNAPSHOTS,requiredRecoverySnapshotKeys,SAVE_KEY,serializeGame,type RecoveryDescriptor} from '../engine/save';
+import {isGame,parseCurrentGame as parseGame,RECOVERY_SNAPSHOTS,requiredRecoverySnapshotKeys,SAVE_KEY,serializeCurrentGame as serializeGame,type RecoveryDescriptor} from '../engine/save';
 import type {Game} from '../engine/types';
 import {IndexedDbSaveRepository,LOCAL_STORAGE_MIGRATION_META_KEY,type MigrationReceiptV1} from './indexedDb';
 import {prepareCanonicalRecord,recordFromRaw,sha256Text,verifyRecord} from './payload';
