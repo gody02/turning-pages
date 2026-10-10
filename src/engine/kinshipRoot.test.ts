@@ -1,7 +1,7 @@
 import {afterEach,describe,expect,it,vi} from 'vitest';
 import legacyV1 from './fixtures/life-v1.json';
 import {createGame,ageUp} from './simulation';
-import {isGame,isCanonicalGamePayload,migrateGame,parseCurrentGame,parseGame,parseGameV5,serializeGame,serializeGameV5,serializeCurrentGame,upgradeGameToCurrent} from './save';
+import {isGame,isCanonicalGamePayload,migrateGame,parseGameV6 as parseCurrentGame,parseGame,parseGameV5,serializeGame,serializeGameV5,serializeGameV6 as serializeCurrentGame,upgradeGameToV6 as upgradeGameToCurrent} from './save';
 import {addParentageBasis,createEmptyKinshipState} from './kinship/state';
 import {context,syntheticResidenceGame} from './testing/residenceFixture';
 import {syntheticHouseholdGame} from './testing/householdRootFixture';

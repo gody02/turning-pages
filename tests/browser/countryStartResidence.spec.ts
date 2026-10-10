@@ -65,7 +65,7 @@ test('reviews cold/warm Country Start v3, responsiveness and nonempty Residence 
    await new Promise<void>((resolve,reject)=>{const deletion=indexedDB.deleteDatabase(name);deletion.onsuccess=()=>resolve();deletion.onerror=()=>reject(deletion.error);deletion.onblocked=()=>reject(Error('Country Start review cleanup blocked.'));});
   }
  },testInfo.project.name);
- expect(result).toMatchObject({constructorVersion:4,rootVersion:6,household:{version:1,nextSequence:1,households:[],memberships:[]},residenceCount:1,occupants:1,population:69_281_437,nextPerson:'person:2',nextResidence:'residence:2',bytes:9_595_786,oldBytes:9_595_391,delta:395});
+ expect(result).toMatchObject({constructorVersion:4,rootVersion:7,household:{version:1,nextSequence:1,households:[],memberships:[]},residenceCount:1,occupants:1,population:69_281_437,nextPerson:'person:2',nextResidence:'residence:2',bytes:9_595_786,oldBytes:9_595_391,delta:395});
  expect(result.sha256).toBe('e926ef8d1528356d3bc92abf23934974e9de2a14fc19ed08fb29410f51839a28');
  for(const sample of result.samples.filter(item=>item.version===3))expect(sample.blockedHeartbeatMs).toBeLessThanOrEqual(1_000);
  // Existing validated-load acceptance remains unchanged.

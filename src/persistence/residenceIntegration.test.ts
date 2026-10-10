@@ -20,7 +20,7 @@ describe('Residence persistence integration',()=>{
  it('loads released canonical root3 bytes in memory, snapshots exactly once on upgrade, and preserves revision semantics',async()=>{
   const old=createGame('Old root','Unspecified','ca',44),raw=JSON.stringify(old),{service,name}=await open();expect(isCanonicalGamePayload(raw)).toBe(true);
   await service.repository.commitSave(await recordFromRaw(PRIMARY_SLOT,'primary',1,'canonical-game',raw),null);
-  const loaded=await service.initialize();expect(loaded.revision).toBe(1);expect(loaded.game?.version).toBe(6);expect((await service.repository.getRecord(PRIMARY_SLOT) as {declaredRootVersion:number}).declaredRootVersion).toBe(3);
+  const loaded=await service.initialize();expect(loaded.revision).toBe(1);expect(loaded.game?.version).toBe(7);expect((await service.repository.getRecord(PRIMARY_SLOT) as {declaredRootVersion:number}).declaredRootVersion).toBe(3);
   const slot=`recovery:${PRE_RESIDENCE_SAVE_KEY}`;expect(await service.repository.getRecord(slot)).toBeUndefined();await service.save(loaded.game!,1);
   const recovery=await verifyRecord(await service.repository.getRecord(slot),slot),previous=await verifyRecord(await service.repository.getRecord(PREVIOUS_SLOT),PREVIOUS_SLOT);expect(recovery.raw).toBe(raw);expect(previous.raw).toBe(raw);expect(recovery.result.game).toEqual(loaded.game);expect(recovery.record.declaredRootVersion).toBe(3);
   await service.save({...loaded.game!,money:123},2);expect((await verifyRecord(await service.repository.getRecord(slot),slot)).raw).toBe(raw);expect((await service.recoveries()).some(item=>item.slotId===slot)).toBe(true);service.close();

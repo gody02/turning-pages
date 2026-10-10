@@ -18,7 +18,10 @@ describe('Standalone Kinship ownership',()=>{
   });
   it('permits reverse imports only in explicitly approved Game-root composition and integration tests',()=>{
     const frozen=import.meta.glob<string>(['../**/*.ts','../../data/**/*.ts','../../ui/**/*.ts','../../ui/**/*.tsx','../../persistence/**/*.ts','!./*.ts'],{eager:true,query:'?raw',import:'default'});
-    const composition=new Set(['../types.ts','../save.ts','../kinshipRoot.test.ts','../testing/kinshipRootFixture.ts','../../persistence/kinshipIntegration.test.ts']);
+    const composition=new Set(['../types.ts','../save.ts','../kinshipRoot.test.ts','../testing/kinshipRootFixture.ts','../../persistence/kinshipIntegration.test.ts',
+      // Approved read-only Family Composition dependencies and synthetic test setup only.
+      '../familyComposition/types.ts','../familyComposition/validation.ts','../familyComposition/compatibility.ts',
+      '../familyComposition/fixtures.ts','../familyComposition/compatibility.test.ts']);
     for(const [path,source] of Object.entries(frozen))if(!path.includes('/kinship/')&&!composition.has(path))expect(source,path).not.toMatch(/(?:from\s+|import\s*\(?\s*)['"][^'"]*\/kinship(?:\/|['"])/i);
   });
 });

@@ -26,7 +26,7 @@ export type HistoryState={readonly version:1;readonly nextSequence:number;readon
 export type LifeClock={version:2;date:SimulationDate;cadence:'year'|'month'};
 export type FinancePeriod={lastIncome:number;lastExpenses:number;yearIncome:number;yearExpenses:number};
 export type LifeState={
- version:1|2|3|4|5|6;name:string;gender:string;country:string;age:number;stats:Stats;money:number;alive:boolean;cause?:string;
+ version:1|2|3|4|5|6|7;name:string;gender:string;country:string;age:number;stats:Stats;money:number;alive:boolean;cause?:string;
  seed:number;actions:number;pending:string|null;seen:string[];relationships:Relationship[];
  randomness?:RandomnessState;scheduler?:SchedulerState;history?:HistoryState;
  education:'preschool'|'school'|'secondary'|'university'|'degree';studyYears:number;job:string|null;jobYears:number;level:number;retired:boolean;

@@ -53,12 +53,12 @@ test('persists nonempty root4 Residence with exact injected content and pre-Resi
   if(JSON.stringify(loaded.game)!==JSON.stringify(save.upgradeGameToCurrent(game))||!content.validGameWithContent(loaded.game,context(loaded.game.people)))throw Error('Nonempty root4 Residence did not round-trip.');
   const stored=await second.repository.getRecord('primary');if(!(stored.payload instanceof ArrayBuffer)||stored.declaredRootVersion!==6)throw Error('Root4 did not retain ArrayBuffer storage.');await closeAndDelete(second,'second: primary read');
   const {residence,...rest}=game,oldRaw=JSON.stringify({...rest,version:3}),third=await service.GamePersistence.open(localStorage,indexedDB,name);
-  await third.repository.commitSave(await payload.recordFromRaw('primary','primary',1,'canonical-game',oldRaw),null);const migrated=await third.initialize();if(migrated.game.version!==6||migrated.game.residence.residences.length)throw Error('Root3 migration must be empty.');
+  await third.repository.commitSave(await payload.recordFromRaw('primary','primary',1,'canonical-game',oldRaw),null);const migrated=await third.initialize();if(migrated.game.version!==7||migrated.game.residence.residences.length)throw Error('Root3 migration must be empty.');
   await third.save(migrated.game,1);const recoverySlot=`recovery:${save.PRE_RESIDENCE_SAVE_KEY}`,recovery=await payload.verifyRecord(await third.repository.getRecord(recoverySlot),recoverySlot);if(recovery.raw!==oldRaw)throw Error('Pre-Residence recovery bytes changed.');const householdSlot=`recovery:${save.PRE_HOUSEHOLD_SAVE_KEY}`,householdRecovery=await payload.verifyRecord(await third.repository.getRecord(householdSlot),householdSlot);if(householdRecovery.raw!==oldRaw)throw Error('Pre-Household recovery bytes changed.');await closeAndDelete(third,'third: recovery read');
   return {browser,rootVersion:loaded.game.version,residences:loaded.game.residence.residences.length,byteLength:stored.byteLength,elapsedMs:performance.now()-started};
   }finally{IDBDatabase.prototype.transaction=originalTransaction;}
  },testInfo.project.name);
- expect(result.rootVersion).toBe(6);expect(result.residences).toBe(3);console.log(JSON.stringify({gate:'residence-root4',...result}));
+ expect(result.rootVersion).toBe(7);expect(result.residences).toBe(3);console.log(JSON.stringify({gate:'residence-root4',...result}));
 });
 
 async function runStage<T>(page:Page,testInfo:TestInfo,name:string,operation:()=>Promise<StageResult<T>>):Promise<T>{
@@ -135,17 +135,17 @@ test('round-trips the root4 Game with frozen geographic v3 content through real 
     const state=globalThis.__turningPagesV3Diagnostic!,started=performance.now(),raw=JSON.stringify(state.game);
     if(raw!==state.canonicalRaw)throw Error('Direct JSON serialization differs from canonical Game JSON.');
     const byteLength=new TextEncoder().encode(raw).byteLength;
-    const {kinship,household,residence,...preResidence}=state.game;if(state.game.version!==6||household.nextSequence!==1||household.households.length||household.memberships.length||residence.residences.length||residence.occupants.length||residence.noFixedAbodePersonIds.length)throw Error('Root v4 must contain empty Residence.');if(new TextEncoder().encode(JSON.stringify({...preResidence,version:3})).byteLength!==9_595_304)throw Error('Frozen v3 byte contract changed.');
+    const {partnership,formalUnion,kinship,household,residence,...preResidence}=state.game;if(state.game.version!==7||household.nextSequence!==1||household.households.length||household.memberships.length||residence.residences.length||residence.occupants.length||residence.noFixedAbodePersonIds.length)throw Error('Root v4 must contain empty Residence.');if(new TextEncoder().encode(JSON.stringify({...preResidence,version:3})).byteLength!==9_595_304)throw Error('Frozen v3 byte contract changed.');
     return {durationMs:performance.now()-started,cumulativeMs:performance.now()-state.startedAt,value:{byteLength}};
   }));
-  expect(stringify.byteLength).toBe(9_595_521);
+  expect(stringify.byteLength).toBe(9_595_624);
 
   const encoded=await runStage(page,testInfo,'G UTF-8 ArrayBuffer preparation complete',()=>page.evaluate(()=>{
     const state=globalThis.__turningPagesV3Diagnostic!,started=performance.now(),bytes=new TextEncoder().encode(state.canonicalRaw);
     state.canonicalBytes=bytes;
     return {durationMs:performance.now()-started,cumulativeMs:performance.now()-state.startedAt,value:{byteLength:bytes.byteLength}};
   }));
-  expect(encoded.byteLength).toBe(9_595_521);
+  expect(encoded.byteLength).toBe(9_595_624);
 
   await runStage(page,testInfo,'H SHA-256 calculation complete',()=>page.evaluate(async()=>{
     const state=globalThis.__turningPagesV3Diagnostic!,started=performance.now();
@@ -176,11 +176,11 @@ test('round-trips the root4 Game with frozen geographic v3 content through real 
   const preparation=await runStage(page,testInfo,'K first primary save preparation complete',()=>page.evaluate(async()=>{
     const state=globalThis.__turningPagesV3Diagnostic!,started=performance.now();
     const prepared=await state.modules.payload.prepareCanonicalRecord(state.game,state.modules.record.PRIMARY_SLOT,'primary',1);
-    if(prepared.record.byteLength!==9_595_521)throw Error('Prepared primary has the wrong byte length.');
+    if(prepared.record.byteLength!==9_595_624)throw Error('Prepared primary has the wrong byte length.');
     const durationMs=performance.now()-started;
     return {durationMs,cumulativeMs:performance.now()-state.startedAt,value:{byteLength:prepared.record.byteLength,durationMs}};
   }));
-  expect(preparation.byteLength).toBe(9_595_521);
+  expect(preparation.byteLength).toBe(9_595_624);
   expect(preparation.durationMs).toBeLessThanOrEqual(1_000);
 
   await runStage(page,testInfo,'L first IndexedDB write transaction committed',()=>page.evaluate(async prefix=>{
@@ -213,7 +213,7 @@ test('round-trips the root4 Game with frozen geographic v3 content through real 
 
   await runStage(page,testInfo,'P byteLength verification complete',()=>page.evaluate(()=>{
     const state=globalThis.__turningPagesV3Diagnostic!,started=performance.now(),payload=state.stored?.payload;
-    if(!(payload instanceof ArrayBuffer)||payload.byteLength!==9_595_521||state.stored.byteLength!==9_595_521)throw Error('Stored primary is not the exact expected ArrayBuffer.');
+    if(!(payload instanceof ArrayBuffer)||payload.byteLength!==9_595_624||state.stored.byteLength!==9_595_624)throw Error('Stored primary is not the exact expected ArrayBuffer.');
     return {durationMs:performance.now()-started,cumulativeMs:performance.now()-state.startedAt,value:{byteLength:payload.byteLength}};
   }));
 
@@ -284,7 +284,7 @@ test('round-trips the root4 Game with frozen geographic v3 content through real 
     const previous=await state.modules.payload.verifyRecord(await state.third.repository.getRecord(previousSlot),previousSlot);
     return {durationMs:performance.now()-started,cumulativeMs:performance.now()-state.startedAt,value:{primaryBytes:primary.record.byteLength,previousBytes:previous.record.byteLength,primaryRevision:primary.record.revision,previousRevision:previous.record.revision}};
   }));
-  expect(records).toEqual({primaryBytes:9_595_521,previousBytes:9_595_521,primaryRevision:2,previousRevision:1});
+  expect(records).toEqual({primaryBytes:9_595_624,previousBytes:9_595_624,primaryRevision:2,previousRevision:1});
 
   const continuation=await runStage(page,testInfo,'X deterministic continuation complete',()=>page.evaluate(()=>{
     const state=globalThis.__turningPagesV3Diagnostic!,started=performance.now(),next=state.modules.v3Gate.continueV3PersistenceProbe(state.loaded.game);

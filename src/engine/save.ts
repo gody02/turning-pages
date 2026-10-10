@@ -1,4 +1,4 @@
-import type {CurrentAuthoritativeGame,Game,GameV5} from './types';
+import type {CurrentAuthoritativeGame,Game,GameV5,GameV6} from './types';
 import { validLife } from './core/validation';
 import { validPolitics } from './politicsSave';
 import {createUKWorld,validUKWorld} from './ukWorld';
@@ -23,6 +23,13 @@ import type {HouseholdStateV1} from './household/types';
 import {createEmptyKinshipState} from './kinship/state';
 import {validKinshipWithPeople} from './kinship/validation';
 import type {KinshipStateV1} from './kinship/types';
+import {createEmptyPartnershipState} from './partnership/state';
+import {validPartnershipWithPeople} from './partnership/validation';
+import type {PartnershipStateV1} from './partnership/types';
+import {createEmptyFormalUnionState} from './formalUnion/state';
+import {validFormalUnionWithPeople} from './formalUnion/validation';
+import type {FormalUnionStateV1} from './formalUnion/types';
+export const PRE_RELATIONSHIP_UNION_SAVE_KEY='turning-pages:before-relationship-union';
 export const PRE_KINSHIP_SAVE_KEY='turning-pages:before-kinship';
 export const PRE_HOUSEHOLD_SAVE_KEY='turning-pages:before-household';
 export const PRE_RESIDENCE_SAVE_KEY='turning-pages:before-residence';
@@ -48,7 +55,10 @@ export type CurrentGameLoadResult=Omit<LoadGameResult,'game'> & {game:CurrentAut
 export type CurrentGameSerializationResult={ok:true;game:CurrentAuthoritativeGame;raw:string}|Extract<CanonicalSerializationResult,{ok:false}>;
 export type GameV5LoadResult=Omit<LoadGameResult,'game'> & {game:GameV5|null};
 export type GameV5SerializationResult={ok:true;game:GameV5;raw:string}|Extract<CanonicalSerializationResult,{ok:false}>;
+export type GameV6LoadResult=Omit<LoadGameResult,'game'> & {game:GameV6|null};
+export type GameV6SerializationResult={ok:true;game:GameV6;raw:string}|Extract<CanonicalSerializationResult,{ok:false}>;
 export const RECOVERY_SNAPSHOTS=[
+ {key:PRE_RELATIONSHIP_UNION_SAVE_KEY,label:'Recover before Relationship / Union migration'},
  {key:PRE_KINSHIP_SAVE_KEY,label:'Recover before Kinship migration'},
  {key:PRE_HOUSEHOLD_SAVE_KEY,label:'Recover before Household migration'},
  {key:PRE_RESIDENCE_SAVE_KEY,label:'Recover before Residence migration'},
@@ -72,7 +82,8 @@ const ROOT_V3_FIELDS=new Set([...ROOT_V2_FIELDS,'population']);
 const ROOT_V4_FIELDS=new Set([...ROOT_V3_FIELDS,'residence']);
 const ROOT_V5_FIELDS=new Set([...ROOT_V4_FIELDS,'household']);
 const ROOT_V6_FIELDS=new Set([...ROOT_V5_FIELDS,'kinship']);
-const exactRootFields=(value:Record<string,unknown>)=>Object.keys(value).every(key=>(value.version===1?ROOT_V1_FIELDS:value.version===2?ROOT_V2_FIELDS:value.version===3?ROOT_V3_FIELDS:value.version===4?ROOT_V4_FIELDS:value.version===5?ROOT_V5_FIELDS:ROOT_V6_FIELDS).has(key));
+const ROOT_V7_FIELDS=new Set([...ROOT_V6_FIELDS,'partnership','formalUnion']);
+const exactRootFields=(value:Record<string,unknown>)=>Object.keys(value).every(key=>(value.version===1?ROOT_V1_FIELDS:value.version===2?ROOT_V2_FIELDS:value.version===3?ROOT_V3_FIELDS:value.version===4?ROOT_V4_FIELDS:value.version===5?ROOT_V5_FIELDS:value.version===6?ROOT_V6_FIELDS:ROOT_V7_FIELDS).has(key));
 function monthPrecisionClock(g:MigratingGame){const legacy=g as unknown as {clock?:SavedClock;dateOfBirth?:unknown},clock=legacy.clock;if(clock?.version!==1||!isMonthPrecisionDate(clock.date)||!isMonthPrecisionDate(legacy.dateOfBirth)||!clock.cadence)return null;return {date:clock.date,dateOfBirth:legacy.dateOfBirth,cadence:clock.cadence};}
 function savedClock(g:MigratingGame){
  if(hasCanonicalClock(g))return {month:monthOfYear(g),total:lifeMonth(g),cadence:g.clock!.cadence};
@@ -87,7 +98,7 @@ export function isGame(x:unknown):x is Game{
  if(g.version===1){if(g.people!==undefined)return false;}
  else if(g.version===2){if(!validPeople(g.people)||g.population!==undefined||!validPlayerPersonProjection(g))return false;}
  else if(g.version===3){if(!validPeople(g.people)||!validPopulationWithPeople(g.population,g.people)||!validPlayerPersonProjection(g))return false;}
- else if(g.version===4||g.version===5||g.version===6){if(!validPeople(g.people)||!validPopulationWithPeople(g.population,g.people)||!validPlayerPersonProjection(g)||!validResidenceWithPeople(g.residence,g.people))return false;if((g.version===5||g.version===6)&&!validHouseholdWithPeople(g.household,g.people))return false;if(g.version===6&&!validKinshipWithPeople(g.kinship,g.people))return false;}
+ else if(g.version===4||g.version===5||g.version===6||g.version===7){if(!validPeople(g.people)||!validPopulationWithPeople(g.population,g.people)||!validPlayerPersonProjection(g)||!validResidenceWithPeople(g.residence,g.people))return false;if((g.version===5||g.version===6||g.version===7)&&!validHouseholdWithPeople(g.household,g.people))return false;if((g.version===6||g.version===7)&&!validKinshipWithPeople(g.kinship,g.people))return false;if(g.version===7&&(!hasCanonicalClock(g)||!validPartnershipWithPeople(g.partnership,g.people,g.clock!.date)||!validFormalUnionWithPeople(g.formalUnion,g.people,g.clock!.date)))return false;}
  else return false;
  if(g.ukWorld!==undefined&&(g.country!=='uk'||!validUKWorld(g.ukWorld,validNational)))return false;
  if(g.ukWorld!==undefined&&g.politics?.national!==undefined)return false;
@@ -98,8 +109,8 @@ export function isGame(x:unknown):x is Game{
  }
  return true;
 }
-type MigratingGame=LifeStateForMigration & {residence?:ResidenceStateV1;household?:HouseholdStateV1;kinship?:KinshipStateV1};
-type LifeStateForMigration=Omit<Game,'version'|'residence'|'household'|'kinship'> & {version:1|2|3|4|5|6};
+type MigratingGame=LifeStateForMigration & {residence?:ResidenceStateV1;household?:HouseholdStateV1;kinship?:KinshipStateV1;partnership?:PartnershipStateV1;formalUnion?:FormalUnionStateV1};
+type LifeStateForMigration=Omit<Game,'version'|'residence'|'household'|'kinship'|'partnership'|'formalUnion'> & {version:1|2|3|4|5|6|7};
 function migrateClock(g:MigratingGame){
  if(hasCanonicalClock(g)){g.dateOfBirth={...g.dateOfBirth!};g.clock={version:2,date:{...g.clock!.date},cadence:g.clock!.cadence};g.age=ageOn(g.dateOfBirth,g.clock.date);return;}
  const monthPrecision=monthPrecisionClock(g);if(monthPrecision){g.dateOfBirth={...monthPrecision.dateOfBirth,day:1};g.clock={version:2,date:{...monthPrecision.date,day:1},cadence:monthPrecision.cadence};g.age=ageOn(g.dateOfBirth,g.clock.date);return;}
@@ -124,8 +135,10 @@ function migrateResidence(g:MigratingGame){if(g.version===4)return;if(g.version!
 function migrateHousehold(g:MigratingGame){if(g.version===5)return;if(g.version!==4)throw Error('Residence migration must precede Household migration.');g.household=createEmptyHouseholdState();g.version=5;}
 /** Private stage operates only on the normalization core's owned v5 candidate. */
 function migrateKinship(g:MigratingGame){if(g.version===6)return;if(g.version!==5)throw Error('Household migration must precede Kinship migration.');g.kinship=createEmptyKinshipState();g.version=6;}
+/** Adds only exact empty facts on the normalization core's owned v6 candidate. */
+function migrateRelationshipUnion(g:MigratingGame){if(g.version===7)return;if(g.version!==6)throw Error('Kinship migration must precede Relationship / Union migration.');g.partnership=createEmptyPartnershipState();g.formalUnion=createEmptyFormalUnionState();g.version=7;}
 type MigrationContext={movedLegacyNational:boolean};
-type MigrationStage={readonly id:'uk-world'|'clock'|'rng'|'scheduler'|'history'|'people'|'population'|'residence'|'household'|'kinship';run:(game:MigratingGame,context:MigrationContext)=>void};
+type MigrationStage={readonly id:'uk-world'|'clock'|'rng'|'scheduler'|'history'|'people'|'population'|'residence'|'household'|'kinship'|'relationship-union';run:(game:MigratingGame,context:MigrationContext)=>void};
 type NormalizationResult={ok:true;game:Game}|{ok:false;reason:'unsupported-version'|'invalid-state'|'migration-failed'};
 function migrateUKWorld(g:MigratingGame,context:MigrationContext){
  if(g.country!=='uk'||g.ukWorld)return;
@@ -145,35 +158,41 @@ const MIGRATION_PIPELINE:readonly MigrationStage[]=[
  {id:'residence',run:g=>migrateResidence(g)},
  {id:'household',run:g=>migrateHousehold(g)},
  {id:'kinship',run:g=>migrateKinship(g)},
+ {id:'relationship-union',run:g=>migrateRelationshipUnion(g)},
 ];
-function normalizeGame(value:unknown,targetVersion:3|4|5|6=4):NormalizationResult{
+function normalizeGame(value:unknown,targetVersion:3|4|5|6|7=4):NormalizationResult{
  try{
   if(!isJsonValue(value))return {ok:false,reason:'invalid-state'};
   if(typeof value==='object'&&value!==null&&!Array.isArray(value)){
    const root=value as Record<string,unknown>,version=root.version,record=(candidate:unknown)=>candidate&&typeof candidate==='object'&&!Array.isArray(candidate)?candidate as Record<string,unknown>:undefined,future=(candidate:unknown,current:number)=>{const component=record(candidate),componentVersion=component?.version;return typeof componentVersion==='number'&&Number.isSafeInteger(componentVersion)&&componentVersion>current;};
    const ukWorld=record(root.ukWorld),politics=record(root.politics),national=record(ukWorld?.national)??record(politics?.national);
-   if(typeof version==='number'&&Number.isSafeInteger(version)&&version>targetVersion||(version===1||version===2||version===3||version===4||version===5||version===6)&&!exactRootFields(root)||future(root.clock,2)||future(root.randomness,1)||future(root.scheduler,1)||future(root.history,1)||future(root.people,1)||future(root.population,1)||future(root.residence,1)||future(root.household,1)||future(root.kinship,1)||future(ukWorld,1)||future(national,1)||future(national?.institutions,1)||future(politics,1)||future(politics?.economy,1))return {ok:false,reason:'unsupported-version'};
+   if(typeof version==='number'&&Number.isSafeInteger(version)&&version>targetVersion||(version===1||version===2||version===3||version===4||version===5||version===6||version===7)&&!exactRootFields(root)||future(root.clock,2)||future(root.randomness,1)||future(root.scheduler,1)||future(root.history,1)||future(root.people,1)||future(root.population,1)||future(root.residence,1)||future(root.household,1)||future(root.kinship,1)||future(root.partnership,1)||future(root.formalUnion,1)||future(ukWorld,1)||future(national,1)||future(national?.institutions,1)||future(politics,1)||future(politics?.economy,1))return {ok:false,reason:'unsupported-version'};
   }
   if(!isGame(value))return {ok:false,reason:'invalid-state'};
   const owned=structuredClone(value);
   if(owned.version>=4&&owned.version===targetVersion)return {ok:true,game:owned};
   const game:MigratingGame=owned,context:MigrationContext={movedLegacyNational:false};
-  if(game.version>=4){if(game.version===4&&targetVersion>=5)migrateHousehold(game);if(game.version===5&&targetVersion===6)migrateKinship(game);}
-  else for(const stage of MIGRATION_PIPELINE)if((stage.id!=='residence'||targetVersion>=4)&&(stage.id!=='household'||targetVersion>=5)&&(stage.id!=='kinship'||targetVersion===6))stage.run(game,context);
+  if(game.version>=4){if(game.version===4&&targetVersion>=5)migrateHousehold(game);if(game.version===5&&targetVersion>=6)migrateKinship(game);if(game.version===6&&targetVersion>=7)migrateRelationshipUnion(game);}
+  else for(const stage of MIGRATION_PIPELINE)if((stage.id!=='residence'||targetVersion>=4)&&(stage.id!=='household'||targetVersion>=5)&&(stage.id!=='kinship'||targetVersion>=6)&&(stage.id!=='relationship-union'||targetVersion>=7))stage.run(game,context);
   return isGame(game)?{ok:true,game}:{ok:false,reason:'invalid-state'};
  }catch{return {ok:false,reason:'migration-failed'};}
 }
 export function migrateGame(value:unknown):Game|null{const result=normalizeGame(value);return result.ok?result.game:null;}
 /** Current-root object migration, shared with decoding; no serialization or external side effects. */
-export function upgradeGameToCurrent(value:unknown):CurrentAuthoritativeGame|null{const result=normalizeGame(value,6);return result.ok&&result.game.version===6?result.game:null;}
+export function upgradeGameToCurrent(value:unknown):CurrentAuthoritativeGame|null{const result=normalizeGame(value,7);return result.ok&&result.game.version===7?result.game:null;}
+/** Version-pinned historical v6 object migration; never downgrades v7. */
+export function upgradeGameToV6(value:unknown):GameV6|null{const result=normalizeGame(value,6);return result.ok&&result.game.version===6?result.game:null;}
 /** Validates canonical bytes in their stored schema before current-root migration. */
+function canonicalDate(date:Readonly<{year:number;month:number;day:number}>|null){return date===null?null:{year:date.year,month:date.month,day:date.day};}
 function canonicalRoot(game:Game):Game{
+ if(game.version===7){const {residence,household,kinship,partnership,formalUnion,...rest}=game;return {...rest,residence,household:{version:household.version,nextSequence:household.nextSequence,households:household.households.map(item=>({id:item.id,sequence:item.sequence})),memberships:household.memberships.map(item=>({personId:item.personId,householdId:item.householdId}))},kinship:{version:kinship.version,parentages:kinship.parentages.map(item=>({parentId:item.parentId,childId:item.childId,bases:[...item.bases]}))},partnership:{version:partnership.version,partnerships:partnership.partnerships.map(item=>({personIds:[...item.personIds] as [string,string]}))},formalUnion:{version:formalUnion.version,nextSequence:formalUnion.nextSequence,unions:formalUnion.unions.map(item=>({id:item.id,sequence:item.sequence,personIds:[...item.personIds] as [string,string],kindId:item.kindId,formedOn:canonicalDate(item.formedOn),standing:item.standing.kind==='in-force'?{kind:item.standing.kind,separation:item.standing.separation}:{kind:item.standing.kind,end:item.standing.end.reason==='death'?{reason:item.standing.end.reason,endedOn:canonicalDate(item.standing.end.endedOn),deceasedPersonId:item.standing.end.deceasedPersonId}:{reason:item.standing.end.reason,endedOn:canonicalDate(item.standing.end.endedOn)}}}))}};}
+
  if(game.version===6){const {residence,household,kinship,...rest}=game;return {...rest,residence,household:{version:household.version,nextSequence:household.nextSequence,households:household.households.map(item=>({id:item.id,sequence:item.sequence})),memberships:household.memberships.map(item=>({personId:item.personId,householdId:item.householdId}))},kinship:{version:kinship.version,parentages:kinship.parentages.map(item=>({parentId:item.parentId,childId:item.childId,bases:[...item.bases]}))}};}
  if(game.version===5){const {residence,household,...rest}=game;return {...rest,residence,household:{version:household.version,nextSequence:household.nextSequence,households:household.households.map(item=>({id:item.id,sequence:item.sequence})),memberships:household.memberships.map(item=>({personId:item.personId,householdId:item.householdId}))}};}
  if(game.version!==4)return game;const {residence,...rest}=game;return {...rest,residence};
 }
-export function isCanonicalGamePayload(raw:string):boolean{try{const value:unknown=JSON.parse(raw),version=typeof value==='object'&&value!==null&&!Array.isArray(value)?(value as Record<string,unknown>).version:undefined,normalized=normalizeGame(value,version===3?3:version===5?5:version===6?6:4);return normalized.ok&&JSON.stringify(canonicalRoot(normalized.game))===raw;}catch{return false;}}
-function serializeForTarget(value:unknown,targetVersion:4|5|6):CanonicalSerializationResult{
+export function isCanonicalGamePayload(raw:string):boolean{try{const value:unknown=JSON.parse(raw),version=typeof value==='object'&&value!==null&&!Array.isArray(value)?(value as Record<string,unknown>).version:undefined,normalized=normalizeGame(value,version===3?3:version===5?5:version===6?6:version===7?7:4);return normalized.ok&&JSON.stringify(canonicalRoot(normalized.game))===raw;}catch{return false;}}
+function serializeForTarget(value:unknown,targetVersion:4|5|6|7):CanonicalSerializationResult{
  const normalized=normalizeGame(value,targetVersion);if(!normalized.ok)return {ok:false,reason:normalized.reason,error:'The save failed its consistency check.'};
  try{const game=canonicalRoot(normalized.game),raw=JSON.stringify(game),parsed:unknown=JSON.parse(raw),roundTrip=normalizeGame(parsed,targetVersion);if(!roundTrip.ok||!isJsonValue(roundTrip.game)||!equalJson(game as unknown as JsonValue,roundTrip.game as unknown as JsonValue))return {ok:false,reason:roundTrip.ok?'invalid-state':roundTrip.reason,error:'The save failed its canonical round-trip check.'};return {ok:true,game,raw};}
  catch{return {ok:false,reason:'migration-failed',error:'The save failed its canonical round-trip check.'};}
@@ -182,18 +201,21 @@ function serializeForTarget(value:unknown,targetVersion:4|5|6):CanonicalSerializ
 export function serializeGame(value:unknown):CanonicalSerializationResult{return serializeForTarget(value,4);}
 /** Version-pinned historical v5 codec; it never downgrades a v6 payload. */
 export function serializeGameV5(value:unknown):GameV5SerializationResult{const result=serializeForTarget(value,5);if(!result.ok)return result;return result.game.version===5?{...result,game:result.game}:{ok:false,reason:'migration-failed',error:'The save failed its root-v5 check.'};}
-export function serializeCurrentGame(value:unknown):CurrentGameSerializationResult{const result=serializeForTarget(value,6);if(!result.ok)return result;return result.game.version===6?{...result,game:result.game}:{ok:false,reason:'migration-failed',error:'The save failed its current-root check.'};}
+export function serializeGameV6(value:unknown):GameV6SerializationResult{const result=serializeForTarget(value,6);if(!result.ok)return result;return result.game.version===6?{...result,game:result.game}:{ok:false,reason:'migration-failed',error:'The save failed its root-v6 check.'};}
+export function serializeCurrentGame(value:unknown):CurrentGameSerializationResult{const result=serializeForTarget(value,7);if(!result.ok)return result;return result.game.version===7?{...result,game:result.game}:{ok:false,reason:'migration-failed',error:'The save failed its current-root check.'};}
 const loadMessage=(reason:PersistenceFailureReason)=>reason==='unsupported-version'?'This save was created by a newer unsupported version of Turning Pages.':reason==='storage-unavailable'?'Browser storage is unavailable. You can still play and export backups.':'This save could not be loaded. It may be damaged or invalid.';
-function parseForTarget(raw:string,targetVersion:4|5|6):LoadGameResult{let value:unknown;try{value=JSON.parse(raw);}catch{return {game:null,error:loadMessage('invalid-json'),reason:'invalid-json'};}const result=normalizeGame(value,targetVersion);return result.ok?{game:result.game,error:null,reason:null}:{game:null,error:loadMessage(result.reason),reason:result.reason};}
+function parseForTarget(raw:string,targetVersion:4|5|6|7):LoadGameResult{let value:unknown;try{value=JSON.parse(raw);}catch{return {game:null,error:loadMessage('invalid-json'),reason:'invalid-json'};}const result=normalizeGame(value,targetVersion);return result.ok?{game:result.game,error:null,reason:null}:{game:null,error:loadMessage(result.reason),reason:result.reason};}
 /** Frozen root-v4 compatibility decoder. Current application persistence uses parseCurrentGame. */
 export function parseGame(raw:string):LoadGameResult{return parseForTarget(raw,4);}
 export function parseGameV5(raw:string):GameV5LoadResult{const result=parseForTarget(raw,5);if(!result.game)return {...result,game:null};return result.game.version===5?{...result,game:result.game}:{game:null,error:loadMessage('migration-failed'),reason:'migration-failed'};}
-export function parseCurrentGame(raw:string):CurrentGameLoadResult{const result=parseForTarget(raw,6);if(!result.game)return {...result,game:null};return result.game.version===6?{...result,game:result.game}:{game:null,error:loadMessage('migration-failed'),reason:'migration-failed'};}
+export function parseGameV6(raw:string):GameV6LoadResult{const result=parseForTarget(raw,6);if(!result.game)return {...result,game:null};return result.game.version===6?{...result,game:result.game}:{game:null,error:loadMessage('migration-failed'),reason:'migration-failed'};}
+export function parseCurrentGame(raw:string):CurrentGameLoadResult{const result=parseForTarget(raw,7);if(!result.game)return {...result,game:null};return result.game.version===7?{...result,game:result.game}:{game:null,error:loadMessage('migration-failed'),reason:'migration-failed'};}
 export function loadGame(storage:StorageLike):LoadGameResult{let raw:string|null;try{raw=storage.getItem(SAVE_KEY);}catch{return {game:null,error:loadMessage('storage-unavailable'),reason:'storage-unavailable'};}return raw?parseGame(raw):{game:null,error:null,reason:null};}
 
 export type RecoveryKey=(typeof RECOVERY_SNAPSHOTS)[number]['key'];
 type RecoveryRule=(previous:Game,normalized:Game)=>boolean;
 const RECOVERY_RULES:Record<RecoveryKey,RecoveryRule>={
+ [PRE_RELATIONSHIP_UNION_SAVE_KEY]:(previous,normalized)=>previous.version<7&&normalized.version>=7,
  [PRE_KINSHIP_SAVE_KEY]:(previous,normalized)=>previous.version<6&&normalized.version>=6,
  [PRE_HOUSEHOLD_SAVE_KEY]:(previous,normalized)=>previous.version<5&&normalized.version>=5,
  [PRE_RESIDENCE_SAVE_KEY]:(previous,normalized)=>previous.version<4&&normalized.version>=4,
