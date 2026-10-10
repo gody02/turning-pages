@@ -1,5 +1,6 @@
 import {describe,expect,it} from 'vitest';
-import {acceptApplicationGame} from './gameContent';
+import {acceptApplicationGame,applicationResolversReady} from './gameContent';
+import type {GameContentContext} from '../engine/gameContent';
 import {context,syntheticResidenceGame,settlementPackage} from '../engine/testing/residenceFixture';
 import {migrateGame,upgradeGameToCurrent} from '../engine/save';
 import {createGame} from '../engine/simulation';
@@ -14,6 +15,9 @@ describe('application Residence acceptance',()=>{
   await expect(acceptApplicationGame(game)).rejects.toThrow('unavailable');expect(game).toEqual(before);
   expect(await acceptApplicationGame(game,relationshipUnionContext(game))).toBe(game);
   const empty={...game,formalUnion:createEmptyFormalUnionState()};expect(await acceptApplicationGame(empty)).toBe(empty);
+  expect(applicationResolversReady(empty)).toBe(true);expect(applicationResolversReady(game)).toBe(false);
+  // Deliberately malformed runtime inputs, not production type coercions.
+  for(const formalUnionKinds of [null,false,NaN,[]])await expect(acceptApplicationGame(empty,{...relationshipUnionContext(empty),formalUnionKinds} as unknown as GameContentContext)).rejects.toThrow('unavailable');
   await expect(acceptApplicationGame(empty,{...relationshipUnionContext(empty),formalUnionKinds:{version:1,kinds:[],manifest:[{kindId:'broken',fingerprint:'fnv1a64-v1:0000000000000000'}]}})).rejects.toThrow('unavailable');
  });
  it('accepts empty migrated/new state without requiring content placement',async()=>{const game=migrateGame(createGame('Empty','Unspecified','ca',5))!;expect(await acceptApplicationGame(game)).toBe(game);await expect(acceptApplicationGame({...game,residence:null} as unknown as Game)).rejects.toThrow('consistency');});
