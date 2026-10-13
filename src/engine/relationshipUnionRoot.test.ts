@@ -1,6 +1,6 @@
 import {afterEach,describe,expect,it,vi} from 'vitest';
 import legacy from './fixtures/life-v1.json';
-import {isGame,isCanonicalGamePayload,upgradeGameToCurrent,upgradeGameToV6,serializeCurrentGame,serializeGameV6,parseCurrentGame,parseGameV6,requiredRecoverySnapshotKeys,PRE_RELATIONSHIP_UNION_SAVE_KEY} from './save';
+import {isGame,isCanonicalGamePayload,upgradeGameToV7 as upgradeGameToCurrent,upgradeGameToV6,serializeGameV7 as serializeCurrentGame,serializeGameV6,parseGameV7 as parseCurrentGame,parseGameV6,requiredRecoverySnapshotKeys,PRE_RELATIONSHIP_UNION_SAVE_KEY} from './save';
 import {syntheticKinshipGame} from './testing/kinshipRootFixture';
 import {syntheticRelationshipUnionGame,relationshipUnionContext} from './testing/relationshipUnionRootFixture';
 import {syntheticResidenceGame} from './testing/residenceFixture';
@@ -96,3 +96,4 @@ describe('current root7 and pinned historical6',()=>{
   const stale=syntheticRelationshipUnionGame();stale.stats.health=0;const snapshot=structuredClone(stale);expect(()=>ageUp(stale,relationshipUnionContext(stale))).toThrow('validation');expect(stale).toEqual(snapshot);
  });
 });
+

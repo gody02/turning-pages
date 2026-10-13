@@ -15,7 +15,7 @@ describe('formalUnion standalone public and inward dependency contract',()=>{
   });
   it('introduces no reverse application or frozen domain dependency',()=>{
     const others=import.meta.glob<string>(['../**/*.ts','../../data/**/*.ts','../../ui/**/*.ts','../../ui/**/*.tsx','../../persistence/**/*.ts','!../formalUnion/**'],{eager:true,query:'?raw',import:'default'});
-    const approved=new Set(['../types.ts','../save.ts','../gameContent.ts','../relationshipUnionRoot.test.ts','../testing/relationshipUnionRootFixture.ts','../../persistence/relationshipUnionIntegration.test.ts','../../ui/gameContent.test.ts']);
+    const approved=new Set(['../guardianship/crossDomain.test.ts','../types.ts','../save.ts','../gameContent.ts','../relationshipUnionRoot.test.ts','../testing/relationshipUnionRootFixture.ts','../../persistence/relationshipUnionIntegration.test.ts','../../ui/gameContent.test.ts','../relationshipUnionComposition/types.ts','../relationshipUnionComposition/compatibility.ts','../relationshipUnionComposition/compatibility.test.ts','../relationshipUnionComposition/kinds.ts','../relationshipUnionComposition/fixtures.ts','../relationshipUnionComposition/kinds.test.ts']);
     for(const [path,source] of Object.entries(others))if(!approved.has(path))expect(source,path).not.toMatch(/(?:from\s+|import\s*\(?\s*)['"][^'"]*\/formalUnion(?:\/|['"])/);
   });
 });

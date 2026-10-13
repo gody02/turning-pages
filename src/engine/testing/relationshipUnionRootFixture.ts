@@ -1,4 +1,4 @@
-import {upgradeGameToCurrent} from '../save';
+import {upgradeGameToV7} from '../save';
 import {syntheticKinshipGame} from './kinshipRootFixture';
 import {context} from './residenceFixture';
 import {fixtureKinds,fixtureInput} from '../formalUnion/fixtures';
@@ -7,9 +7,9 @@ import {establishPartnership} from '../partnership/state';
 import type {GameV7} from '../types';
 
 /** Synthetic retained contracts only; no production domestic inference or law. */
-export function relationshipUnionContext(game:GameV7){return {...context(game.people),formalUnionKinds:fixtureKinds()};}
+export function relationshipUnionContext(game:Pick<GameV7,'people'>){return {...context(game.people),formalUnionKinds:fixtureKinds()};}
 export function syntheticRelationshipUnionGame():GameV7{
- const game=upgradeGameToCurrent(syntheticKinshipGame());
+ const game=upgradeGameToV7(syntheticKinshipGame());
  if(!game)throw Error('Synthetic root-v7 fixture failed validation.');
  const ctx={people:game.people,referenceDate:game.clock!.date,kinds:fixtureKinds()};
  let formalUnion=createFormalUnion(game.formalUnion,{...fixtureInput(1,2),formedOn:ctx.referenceDate},ctx).state;

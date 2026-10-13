@@ -1,0 +1,65 @@
+name: Game root v8 implementation evidence
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ci/game-root-v8-implementation]
+
+permissions:
+  contents: read
+
+jobs:
+  validation:
+    name: Root-v8 bounded regression, types and content integrity
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 11.19.0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm exec vitest run --maxWorkers=2 --no-file-parallelism
+      - run: pnpm exec tsc --noEmit
+      - run: pnpm build
+
+  persistence:
+    name: Root-v8 ${{ matrix.browser }} persistence
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        browser: [chromium, firefox, webkit]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 11.19.0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm exec playwright install --with-deps ${{ matrix.browser }}
+      - name: Run current and historical root persistence assertions
+        env:
+          PLAYWRIGHT_JSON_OUTPUT_NAME: browser-evidence/results.json
+        run: |
+          mkdir -p browser-evidence
+          set -o pipefail
+          pnpm exec playwright test tests/browser/guardianshipCareRoot.spec.ts tests/browser/householdRoot.spec.ts tests/browser/kinshipRoot.spec.ts tests/browser/relationshipUnionRoot.spec.ts tests/browser/persistence.spec.ts --config playwright.persistence.config.ts --project=${{ matrix.browser }} --reporter=line,json 2>&1 | tee browser-evidence/profile.log
+      - name: Retain browser evidence and failure traces
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: game-root-v8-${{ matrix.browser }}
+          path: |
+            browser-evidence/
+            test-results/
+          if-no-files-found: warn
+          retention-days: 14

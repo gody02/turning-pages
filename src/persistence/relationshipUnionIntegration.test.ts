@@ -29,12 +29,12 @@ describe('root7 through unchanged Persistence authority',()=>{
  });
  it('round-trips nonempty state and continues durable allocator without content hidden in saves',async()=>{
   const game=syntheticRelationshipUnionGame(),encoded=serializeCurrentGame(game);if(!encoded.ok)throw Error(encoded.error);const service=await open(),name=names.at(-1)!;await service.save(game,null);service.close();const reopened=await open(name),loaded=(await reopened.initialize()).game!;
-  if(loaded.version!==7)throw Error('Expected current root7');
-  expect(loaded).toEqual(game);expect(exportCanonicalGame(loaded)).toBe(encoded.raw);expect(importCanonicalGame(encoded.raw)).toEqual(game);
+  if(loaded.version!==8)throw Error('Expected current root8');
+  expect(loaded).toEqual(encoded.game);expect(exportCanonicalGame(loaded)).toBe(encoded.raw);expect(importCanonicalGame(encoded.raw)).toEqual(encoded.game);
   await expect(acceptApplicationGame(loaded)).rejects.toThrow('unavailable');expect((await verifyRecord(await reopened.repository.getRecord('primary'),'primary')).raw).toBe(encoded.raw);
   expect(await acceptApplicationGame(loaded,relationshipUnionContext(game))).toBe(loaded);
   const result=createFormalUnion(loaded.formalUnion,{...fixtureInput(2,3),formedOn:loaded.clock!.date},{people:loaded.people,referenceDate:loaded.clock!.date,kinds:fixtureKinds()});expect(result.union.id).toBe('formal-union:5');
-  await reopened.save({...loaded,formalUnion:result.state},1);const final=(await reopened.initialize()).game;if(final?.version!==7)throw Error('Expected continued root7');expect(final.formalUnion).toEqual(result.state);
+  await reopened.save({...loaded,formalUnion:result.state},1);const final=(await reopened.initialize()).game;if(final?.version!==8)throw Error('Expected continued root8');expect(final.formalUnion).toEqual(result.state);
   expect(encoded.raw).not.toContain('Synthetic pair contract');expect(game.formalUnion.nextSequence).toBe(5);
  });
  it('does not substitute newer previous for older primary or silently erase corrupt7',async()=>{
