@@ -32,11 +32,15 @@ export function snapshotRoot<T>(value:T):T{
         descriptors[i]=descriptor;
       }
       if(array&&(length===undefined||keys.length!==length+1))throw Error();
-      const copy:Record<string,unknown>|unknown[]=array?new Array(length!):{};
+      // The destination is private and has no inherited setters while filling.
+      // This makes direct data assignment safe even for __proto__/constructor,
+      // without allocating a defineProperty descriptor for every copied value.
+      const copy:Record<string,unknown>|unknown[]=array?new Array(length!):Object.create(null);
+      if(array)Object.setPrototypeOf(copy,null);
       for(let i=0;i<keys.length;i++){
         const key=keys[i] as string;if(array&&key==='length')continue;
         if(array&&(!/^(?:0|[1-9]\d*)$/.test(key)||Number(key)>=length!||String(Number(key))!==key))throw Error();
-        Object.defineProperty(copy,key,{value:visit(descriptors[i].value,depth+1),enumerable:true,writable:true,configurable:true});
+        (copy as Record<string,unknown>)[key]=visit(descriptors[i].value,depth+1);
       }
       // Detect observable shape/descriptor changes without retrieving values.
       // A malicious Proxy cannot be authenticated; its captured data is validated.
@@ -46,6 +50,7 @@ export function snapshotRoot<T>(value:T):T{
         const before=descriptors[i],after=Object.getOwnPropertyDescriptor(item,keys[i]);
         if(!after||!('value' in after)||after.enumerable!==before.enumerable||after.configurable!==before.configurable||after.writable!==before.writable||!Object.is(after.value,before.value))throw Error();
       }
+      Object.setPrototypeOf(copy,array?Array.prototype:Object.prototype);
       ancestors.delete(item);return copy;
     };
     return visit(value,0) as T;

@@ -1,6 +1,5 @@
 import type {Game} from '../engine/types';
-import {isGame} from '../engine/save';
-import {snapshotRoot} from '../engine/rootSnapshot';
+import {captureValidatedGame} from '../engine/save';
 import {validGameWithContent,type GameContentContext} from '../engine/gameContent';
 import {createApplicationReferenceContentService} from './referenceContent/service';
 import {UK_REFERENCE_CONTENT_SET} from './referenceContent/identities';
@@ -24,8 +23,8 @@ function requiredReferenceSet(game:Game):ExactReferenceContentSetV1{
 }
 export function applicationGameContent(set:ExactReferenceContentSetV1,options?:Readonly<{signal?:AbortSignal}>):Promise<GameContentContext>{return service.prepare(set,options);}
 export async function acceptApplicationGame<T extends Game>(game:T,injected?:GameContentContext,options?:Readonly<{signal?:AbortSignal}>):Promise<T>{
- try{game=snapshotRoot(game);}catch{throw Error('This life failed its component consistency check. Your saved life was kept.');}
- if(!isGame(game))throw Error('This life failed its component consistency check. Your saved life was kept.');
+ const owned=captureValidatedGame(game);if(!owned)throw Error('This life failed its component consistency check. Your saved life was kept.');
+ game=owned as T;
  let context=injected;
  // Empty state has no content references. No package substitution or inferred placement.
  if((game.version===4||game.version===5||game.version===6||game.version===7||game.version===8)&&(game.residence.residences.length||game.residence.noFixedAbodePersonIds.length)){

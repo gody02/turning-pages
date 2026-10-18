@@ -12,6 +12,9 @@ import {createScheduler} from './core/scheduler';
 import {createHistory} from './core/history';
 import {equalJson,isJsonValue} from './core/json';
 import {snapshotRoot} from './rootSnapshot';
+// This private parser creates operation-local plain data. A later caller change
+// to JSON.parse cannot supply a mutable/proxy graph to the owned normalization path.
+const parseOwnedJson=JSON.parse;
 import {validPeople} from './human/person';
 import {createLegacyPlayerPeople,validPlayerPersonProjection} from './human/playerPerson';
 import {createLegacyPopulation,validPopulationWithPeople} from './human/population';
@@ -105,11 +108,16 @@ function savedClock(g:MigratingGame){
  return {month,total,cadence:clock?.cadence??(g.politics?'month':'year')};
 }
 export function isGame(x:unknown):x is Game{
- try{return isOwnedGame(snapshotRoot(x));}catch{return false;}
+ return captureValidatedGame(x)!==null;
 }
-/** Private semantic validator: its argument is already independently owned. */
+/** @internal Safe composition adapter, never a trusted-input bypass. Every call
+ * captures anew; the returned mutable value carries no reusable trust status. */
+export function captureValidatedGame(x:unknown):Game|null{
+ try{const owned=snapshotRoot(x);return isOwnedGame(owned)?owned:null;}catch{return null;}
+}
+/** Private semantic validator: callers have proved owned finite plain JSON. */
 function isOwnedGame(x:unknown):x is Game{
- if(!isJsonValue(x)||typeof x!=='object'||x===null||Array.isArray(x)||!exactRootFields(x as Record<string,unknown>)||!validLife(x))return false;
+ if(typeof x!=='object'||x===null||Array.isArray(x)||!exactRootFields(x as Record<string,unknown>)||!validLife(x))return false;
  const g=x as Game;
  if(g.version===1){if(g.people!==undefined)return false;}
  else if(g.version===2){if(!validPeople(g.people)||g.population!==undefined||!validPlayerPersonProjection(g))return false;}
@@ -180,9 +188,28 @@ const MIGRATION_PIPELINE:readonly MigrationStage[]=[
  {id:'guardianship-care',run:g=>migrateGuardianshipCare(g)},
 ];
 function normalizeGame(value:unknown,targetVersion:3|4|5|6|7|8=4):NormalizationResult{
+ try{return normalizeOwnedGame(snapshotRoot(value),targetVersion);}catch{return {ok:false,reason:'invalid-state'};}
+}
+/** Same technical ceilings as descriptor capture, without copying. Only owned
+ * JSON that already passed isJsonValue reaches these ordinary data reads. */
+function withinRootSnapshotBudget(value:JsonValue):boolean{
+ let values=0,text=0;
+ const visit=(item:JsonValue):boolean=>{
+  if(++values>16_000_000)return false;
+  if(typeof item==='string'){text+=item.length;return text<=256*1024*1024;}
+  if(item===null||typeof item!=='object')return true;
+  for(const key of Object.keys(item)){
+   text+=key.length;if(text>256*1024*1024||!visit((item as Record<string,JsonValue>)[key]))return false;
+  }
+  return true;
+ };
+ return visit(value);
+}
+/** Unexported, operation-local path. Only captured data or freshly parsed native
+ * JSON enters here; neither has escaped to caller code. No ownership is cached. */
+function normalizeOwnedGame(value:unknown,targetVersion:3|4|5|6|7|8):NormalizationResult{
  try{
-  try{value=snapshotRoot(value);}catch{return {ok:false,reason:'invalid-state'};}
-  if(!isJsonValue(value))return {ok:false,reason:'invalid-state'};
+  if(!isJsonValue(value)||!withinRootSnapshotBudget(value))return {ok:false,reason:'invalid-state'};
   if(typeof value==='object'&&value!==null&&!Array.isArray(value)){
    const root=value as Record<string,unknown>,version=root.version,record=(candidate:unknown)=>candidate&&typeof candidate==='object'&&!Array.isArray(candidate)?candidate as Record<string,unknown>:undefined,future=(candidate:unknown,current:number)=>{const component=record(candidate),componentVersion=component?.version;return typeof componentVersion==='number'&&Number.isSafeInteger(componentVersion)&&componentVersion>current;};
    const ukWorld=record(root.ukWorld),politics=record(root.politics),national=record(ukWorld?.national)??record(politics?.national);
@@ -194,7 +221,7 @@ function normalizeGame(value:unknown,targetVersion:3|4|5|6|7|8=4):NormalizationR
   const game:MigratingGame=owned,context:MigrationContext={movedLegacyNational:false};
   if(game.version>=4){if(game.version===4&&targetVersion>=5)migrateHousehold(game);if(game.version===5&&targetVersion>=6)migrateKinship(game);if(game.version===6&&targetVersion>=7)migrateRelationshipUnion(game);if(game.version===7&&targetVersion>=8)migrateGuardianshipCare(game);}
   else for(const stage of MIGRATION_PIPELINE)if((stage.id!=='residence'||targetVersion>=4)&&(stage.id!=='household'||targetVersion>=5)&&(stage.id!=='kinship'||targetVersion>=6)&&(stage.id!=='relationship-union'||targetVersion>=7)&&(stage.id!=='guardianship-care'||targetVersion>=8))stage.run(game,context);
-  return isOwnedGame(game)?{ok:true,game}:{ok:false,reason:'invalid-state'};
+  return isJsonValue(game)&&withinRootSnapshotBudget(game)&&isOwnedGame(game)?{ok:true,game}:{ok:false,reason:'invalid-state'};
  }catch{return {ok:false,reason:'migration-failed'};}
 }
 export function migrateGame(value:unknown):Game|null{const result=normalizeGame(value);return result.ok?result.game:null;}
@@ -214,10 +241,10 @@ function canonicalRoot(game:Game):Game{
  if(game.version===5){const {residence,household,...rest}=game;return {...rest,residence,household:{version:household.version,nextSequence:household.nextSequence,households:household.households.map(item=>({id:item.id,sequence:item.sequence})),memberships:household.memberships.map(item=>({personId:item.personId,householdId:item.householdId}))}};}
  if(game.version!==4)return game;const {residence,...rest}=game;return {...rest,residence};
 }
-export function isCanonicalGamePayload(raw:string):boolean{try{const value:unknown=JSON.parse(raw),version=typeof value==='object'&&value!==null&&!Array.isArray(value)?(value as Record<string,unknown>).version:undefined,normalized=normalizeGame(value,version===3?3:version===5?5:version===6?6:version===7?7:version===8?8:4);return normalized.ok&&JSON.stringify(canonicalRoot(normalized.game))===raw;}catch{return false;}}
+export function isCanonicalGamePayload(raw:string):boolean{try{const value:unknown=parseOwnedJson(raw),version=typeof value==='object'&&value!==null&&!Array.isArray(value)?(value as Record<string,unknown>).version:undefined,normalized=normalizeOwnedGame(value,version===3?3:version===5?5:version===6?6:version===7?7:version===8?8:4);return normalized.ok&&JSON.stringify(canonicalRoot(normalized.game))===raw;}catch{return false;}}
 function serializeForTarget(value:unknown,targetVersion:4|5|6|7|8):CanonicalSerializationResult{
  const normalized=normalizeGame(value,targetVersion);if(!normalized.ok)return {ok:false,reason:normalized.reason,error:'The save failed its consistency check.'};
- try{const game=canonicalRoot(normalized.game),raw=JSON.stringify(game),parsed:unknown=JSON.parse(raw),roundTrip=normalizeGame(parsed,targetVersion);if(!roundTrip.ok||!isJsonValue(roundTrip.game)||!equalJson(game as unknown as JsonValue,roundTrip.game as unknown as JsonValue))return {ok:false,reason:roundTrip.ok?'invalid-state':roundTrip.reason,error:'The save failed its canonical round-trip check.'};return {ok:true,game,raw};}
+ try{const game=canonicalRoot(normalized.game),raw=JSON.stringify(game),parsed:unknown=parseOwnedJson(raw),roundTrip=normalizeOwnedGame(parsed,targetVersion);if(!roundTrip.ok||!isJsonValue(roundTrip.game)||!equalJson(game as unknown as JsonValue,roundTrip.game as unknown as JsonValue))return {ok:false,reason:roundTrip.ok?'invalid-state':roundTrip.reason,error:'The save failed its canonical round-trip check.'};return {ok:true,game,raw};}
  catch{return {ok:false,reason:'migration-failed',error:'The save failed its canonical round-trip check.'};}
 }
 /** Frozen root-v4 compatibility serializer, including direct Country Start construction. */
@@ -228,7 +255,7 @@ export function serializeGameV6(value:unknown):GameV6SerializationResult{const r
 export function serializeGameV7(value:unknown):GameV7SerializationResult{const result=serializeForTarget(value,7);if(!result.ok)return result;return result.game.version===7?{...result,game:result.game}:{ok:false,reason:'migration-failed',error:'The save failed its root-v7 check.'};}
 export function serializeCurrentGame(value:unknown):CurrentGameSerializationResult{const result=serializeForTarget(value,8);if(!result.ok)return result;return result.game.version===8?{...result,game:result.game}:{ok:false,reason:'migration-failed',error:'The save failed its current-root check.'};}
 const loadMessage=(reason:PersistenceFailureReason)=>reason==='unsupported-version'?'This save was created by a newer unsupported version of Turning Pages.':reason==='storage-unavailable'?'Browser storage is unavailable. You can still play and export backups.':'This save could not be loaded. It may be damaged or invalid.';
-function parseForTarget(raw:string,targetVersion:4|5|6|7|8):LoadGameResult{let value:unknown;try{value=JSON.parse(raw);}catch{return {game:null,error:loadMessage('invalid-json'),reason:'invalid-json'};}const result=normalizeGame(value,targetVersion);return result.ok?{game:result.game,error:null,reason:null}:{game:null,error:loadMessage(result.reason),reason:result.reason};}
+function parseForTarget(raw:string,targetVersion:4|5|6|7|8):LoadGameResult{let value:unknown;try{value=parseOwnedJson(raw);}catch{return {game:null,error:loadMessage('invalid-json'),reason:'invalid-json'};}const result=normalizeOwnedGame(value,targetVersion);return result.ok?{game:result.game,error:null,reason:null}:{game:null,error:loadMessage(result.reason),reason:result.reason};}
 /** Frozen root-v4 compatibility decoder. Current application persistence uses parseCurrentGame. */
 export function parseGame(raw:string):LoadGameResult{return parseForTarget(raw,4);}
 export function parseGameV5(raw:string):GameV5LoadResult{const result=parseForTarget(raw,5);if(!result.game)return {...result,game:null};return result.game.version===5?{...result,game:result.game}:{game:null,error:loadMessage('migration-failed'),reason:'migration-failed'};}

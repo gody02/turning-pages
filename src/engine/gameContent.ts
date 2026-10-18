@@ -1,5 +1,5 @@
 import type {Game} from './types';
-import {isGame} from './save';
+import {captureValidatedGame} from './save';
 import {validResidenceContent,type ResidenceValidationContext} from './residence/validation';
 import {removePersonFromResidences} from './residence/state';
 import {synchronizeNewPlayerDeath} from './human/playerPerson';
@@ -29,15 +29,14 @@ function contentSlots(content:GameContentContext|undefined):GameContentContext|u
 }
 export function validGameWithContent(game:unknown,content?:GameContentContext):game is Game{
  try{
-  game=snapshotRoot(game);
+  const owned=captureValidatedGame(game);if(!owned)return false;
   content=contentSlots(content);
-  if(!isGame(game))return false;
-  if((game.version===7||game.version===8)&&content!==undefined&&(content===null||typeof content!=='object'||Array.isArray(content)))return false;
-  if((game.version===7||game.version===8)&&!validFormalUnionWithContext(game.formalUnion,{people:game.people,referenceDate:game.clock!.date,kinds:content?.formalUnionKinds===undefined?createFormalUnionKindRegistry([],[]):content.formalUnionKinds}))return false;
-  if(game.version===8&&!validGuardianshipWithContext(game.guardianship,{people:game.people,referenceDate:game.clock!.date,kinds:content?.guardianshipKinds===undefined?createGuardianshipKindRegistry([],[]):content.guardianshipKinds}))return false;
-  if(game.version!==4&&game.version!==5&&game.version!==6&&game.version!==7&&game.version!==8)return true;
-  if(!content)return (game.version===7||game.version===8)&&!game.residence.residences.length&&!game.residence.noFixedAbodePersonIds.length;
-  return validResidenceContent(game.residence,content.geography,content.settlements);
+  if((owned.version===7||owned.version===8)&&content!==undefined&&(content===null||typeof content!=='object'||Array.isArray(content)))return false;
+  if((owned.version===7||owned.version===8)&&!validFormalUnionWithContext(owned.formalUnion,{people:owned.people,referenceDate:owned.clock!.date,kinds:content?.formalUnionKinds===undefined?createFormalUnionKindRegistry([],[]):content.formalUnionKinds}))return false;
+  if(owned.version===8&&!validGuardianshipWithContext(owned.guardianship,{people:owned.people,referenceDate:owned.clock!.date,kinds:content?.guardianshipKinds===undefined?createGuardianshipKindRegistry([],[]):content.guardianshipKinds}))return false;
+  if(owned.version!==4&&owned.version!==5&&owned.version!==6&&owned.version!==7&&owned.version!==8)return true;
+  if(!content)return (owned.version===7||owned.version===8)&&!owned.residence.residences.length&&!owned.residence.noFixedAbodePersonIds.length;
+  return validResidenceContent(owned.residence,content.geography,content.settlements);
  }catch{return false;}
 }
 /** Narrow current-player lifecycle composition using frozen domain primitives. */
