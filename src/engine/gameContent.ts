@@ -11,11 +11,26 @@ import {validGuardianshipWithContext} from './guardianship/validation';
 import {createGuardianshipKindRegistry} from './guardianship/kinds';
 import type {GuardianshipKindRegistryV1} from './guardianship/types';
 import {removePersonFromCare} from './care/state';
+import {snapshotRoot} from './rootSnapshot';
 
 /** Runtime content is injected by composition; it never enters Game JSON. */
 export type GameContentContext=Pick<ResidenceValidationContext,'geography'|'settlements'> & {readonly formalUnionKinds?:FormalUnionKindRegistryV1;readonly guardianshipKinds?:GuardianshipKindRegistryV1};
+/** Runtime resolvers are not JSON. Capture their context slots as data, leaving
+ * immutable registry validation to each frozen owning domain. */
+function contentSlots(content:GameContentContext|undefined):GameContentContext|undefined{
+ if(content===undefined)return undefined;
+ if(!content||typeof content!=='object'||Array.isArray(content))throw Error('Invalid Game content.');
+ const copy={} as GameContentContext;
+ for(const key of ['geography','settlements','formalUnionKinds','guardianshipKinds'] as const){
+  const descriptor=Object.getOwnPropertyDescriptor(content,key);
+  if(descriptor){if(!('value' in descriptor))throw Error('Invalid Game content.');Object.defineProperty(copy,key,{value:descriptor.value,enumerable:true});}
+ }
+ return copy;
+}
 export function validGameWithContent(game:unknown,content?:GameContentContext):game is Game{
  try{
+  game=snapshotRoot(game);
+  content=contentSlots(content);
   if(!isGame(game))return false;
   if((game.version===7||game.version===8)&&content!==undefined&&(content===null||typeof content!=='object'||Array.isArray(content)))return false;
   if((game.version===7||game.version===8)&&!validFormalUnionWithContext(game.formalUnion,{people:game.people,referenceDate:game.clock!.date,kinds:content?.formalUnionKinds===undefined?createFormalUnionKindRegistry([],[]):content.formalUnionKinds}))return false;
@@ -27,6 +42,13 @@ export function validGameWithContent(game:unknown,content?:GameContentContext):g
 }
 /** Narrow current-player lifecycle composition using frozen domain primitives. */
 export function synchronizeGamePlayerDeath(previous:Game,candidate:Game,content?:GameContentContext):Game{
+ // The internal no-death path intentionally preserves identity and does no root
+ // traversal. Inspect only captured data descriptors to identify a transition.
+ const before=Object.getOwnPropertyDescriptor(previous,'alive'),after=Object.getOwnPropertyDescriptor(candidate,'alive');
+ if(!before||!after||!('value' in before)||!('value' in after)||typeof before.value!=='boolean'||typeof after.value!=='boolean')throw Error('Invalid lifecycle input.');
+ if(!before.value||after.value)return candidate;
+ previous=snapshotRoot(previous);candidate=snapshotRoot(candidate);
+ content=contentSlots(content);
  let next=synchronizeNewPlayerDeath(previous,candidate);
  if((next.version!==4&&next.version!==5&&next.version!==6&&next.version!==7&&next.version!==8)||!previous.alive||next.alive||!next.people)return next;
  const id=next.people.playerId;

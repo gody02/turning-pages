@@ -11,6 +11,7 @@ import {COMPATIBILITY_LIFE_STREAM,COMPATIBILITY_MEREFORD_STREAM,COMPATIBILITY_NA
 import {createScheduler} from './core/scheduler';
 import {createHistory} from './core/history';
 import {equalJson,isJsonValue} from './core/json';
+import {snapshotRoot} from './rootSnapshot';
 import {validPeople} from './human/person';
 import {createLegacyPlayerPeople,validPlayerPersonProjection} from './human/playerPerson';
 import {createLegacyPopulation,validPopulationWithPeople} from './human/population';
@@ -104,6 +105,10 @@ function savedClock(g:MigratingGame){
  return {month,total,cadence:clock?.cadence??(g.politics?'month':'year')};
 }
 export function isGame(x:unknown):x is Game{
+ try{return isOwnedGame(snapshotRoot(x));}catch{return false;}
+}
+/** Private semantic validator: its argument is already independently owned. */
+function isOwnedGame(x:unknown):x is Game{
  if(!isJsonValue(x)||typeof x!=='object'||x===null||Array.isArray(x)||!exactRootFields(x as Record<string,unknown>)||!validLife(x))return false;
  const g=x as Game;
  if(g.version===1){if(g.people!==undefined)return false;}
@@ -176,19 +181,20 @@ const MIGRATION_PIPELINE:readonly MigrationStage[]=[
 ];
 function normalizeGame(value:unknown,targetVersion:3|4|5|6|7|8=4):NormalizationResult{
  try{
+  try{value=snapshotRoot(value);}catch{return {ok:false,reason:'invalid-state'};}
   if(!isJsonValue(value))return {ok:false,reason:'invalid-state'};
   if(typeof value==='object'&&value!==null&&!Array.isArray(value)){
    const root=value as Record<string,unknown>,version=root.version,record=(candidate:unknown)=>candidate&&typeof candidate==='object'&&!Array.isArray(candidate)?candidate as Record<string,unknown>:undefined,future=(candidate:unknown,current:number)=>{const component=record(candidate),componentVersion=component?.version;return typeof componentVersion==='number'&&Number.isSafeInteger(componentVersion)&&componentVersion>current;};
    const ukWorld=record(root.ukWorld),politics=record(root.politics),national=record(ukWorld?.national)??record(politics?.national);
    if(typeof version==='number'&&Number.isSafeInteger(version)&&version>targetVersion||(version===1||version===2||version===3||version===4||version===5||version===6||version===7||version===8)&&!exactRootFields(root)||future(root.clock,2)||future(root.randomness,1)||future(root.scheduler,1)||future(root.history,1)||future(root.people,1)||future(root.population,1)||future(root.residence,1)||future(root.household,1)||future(root.kinship,1)||future(root.partnership,1)||future(root.formalUnion,1)||future(root.guardianship,1)||future(root.care,1)||future(ukWorld,1)||future(national,1)||future(national?.institutions,1)||future(politics,1)||future(politics?.economy,1))return {ok:false,reason:'unsupported-version'};
   }
-  if(!isGame(value))return {ok:false,reason:'invalid-state'};
-  const owned=structuredClone(value);
+  if(!isOwnedGame(value))return {ok:false,reason:'invalid-state'};
+  const owned=value;
   if(owned.version>=4&&owned.version===targetVersion)return {ok:true,game:owned};
   const game:MigratingGame=owned,context:MigrationContext={movedLegacyNational:false};
   if(game.version>=4){if(game.version===4&&targetVersion>=5)migrateHousehold(game);if(game.version===5&&targetVersion>=6)migrateKinship(game);if(game.version===6&&targetVersion>=7)migrateRelationshipUnion(game);if(game.version===7&&targetVersion>=8)migrateGuardianshipCare(game);}
   else for(const stage of MIGRATION_PIPELINE)if((stage.id!=='residence'||targetVersion>=4)&&(stage.id!=='household'||targetVersion>=5)&&(stage.id!=='kinship'||targetVersion>=6)&&(stage.id!=='relationship-union'||targetVersion>=7)&&(stage.id!=='guardianship-care'||targetVersion>=8))stage.run(game,context);
-  return isGame(game)?{ok:true,game}:{ok:false,reason:'invalid-state'};
+  return isOwnedGame(game)?{ok:true,game}:{ok:false,reason:'invalid-state'};
  }catch{return {ok:false,reason:'migration-failed'};}
 }
 export function migrateGame(value:unknown):Game|null{const result=normalizeGame(value);return result.ok?result.game:null;}
@@ -248,7 +254,7 @@ const RECOVERY_RULES:Record<RecoveryKey,RecoveryRule>={
  [PRE_INSTITUTIONS_SAVE_KEY]:(previous,normalized)=>!!normalized.ukWorld?.national.institutions&&((!!previous.ukWorld&&!previous.ukWorld.national.institutions)||!!previous.politics?.national&&!previous.politics.national.institutions),
  [PRE_ARCHITECTURE_SAVE_KEY]:(previous,normalized)=>!!normalized.clock&&!previous.clock,
 };
-export function requiredRecoverySnapshotKeys(previous:Game,normalized:Game):readonly RecoveryKey[]{return RECOVERY_SNAPSHOTS.filter(snapshot=>RECOVERY_RULES[snapshot.key](previous,normalized)).map(snapshot=>snapshot.key);}
+export function requiredRecoverySnapshotKeys(previous:Game,normalized:Game):readonly RecoveryKey[]{previous=snapshotRoot(previous);normalized=snapshotRoot(normalized);return RECOVERY_SNAPSHOTS.filter(snapshot=>RECOVERY_RULES[snapshot.key](previous,normalized)).map(snapshot=>snapshot.key);}
 export function listRecoverySnapshots(storage:Pick<StorageLike,'getItem'>):readonly RecoveryDescriptor[]{return RECOVERY_SNAPSHOTS.filter(snapshot=>storage.getItem(snapshot.key)!==null);}
 export function loadRecoverySnapshot(storage:Pick<StorageLike,'getItem'>,key:string):LoadGameResult{
  if(!RECOVERY_SNAPSHOTS.some(snapshot=>snapshot.key===key))return {game:null,error:'This recovery snapshot is not recognised.',reason:'invalid-state'};

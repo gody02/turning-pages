@@ -1,5 +1,6 @@
 import type {Game} from '../engine/types';
 import {isGame} from '../engine/save';
+import {snapshotRoot} from '../engine/rootSnapshot';
 import {validGameWithContent,type GameContentContext} from '../engine/gameContent';
 import {createApplicationReferenceContentService} from './referenceContent/service';
 import {UK_REFERENCE_CONTENT_SET} from './referenceContent/identities';
@@ -22,7 +23,8 @@ function requiredReferenceSet(game:Game):ExactReferenceContentSetV1{
  return UK_REFERENCE_CONTENT_SET;
 }
 export function applicationGameContent(set:ExactReferenceContentSetV1,options?:Readonly<{signal?:AbortSignal}>):Promise<GameContentContext>{return service.prepare(set,options);}
-export async function acceptApplicationGame(game:Game,injected?:GameContentContext,options?:Readonly<{signal?:AbortSignal}>):Promise<Game>{
+export async function acceptApplicationGame<T extends Game>(game:T,injected?:GameContentContext,options?:Readonly<{signal?:AbortSignal}>):Promise<T>{
+ try{game=snapshotRoot(game);}catch{throw Error('This life failed its component consistency check. Your saved life was kept.');}
  if(!isGame(game))throw Error('This life failed its component consistency check. Your saved life was kept.');
  let context=injected;
  // Empty state has no content references. No package substitution or inferred placement.

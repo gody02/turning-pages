@@ -29,7 +29,7 @@ describe('production post-Country-Start root upgrade boundary',()=>{
    const success=await controller.run(async signal=>{
     const game=await createProductionUkNewGame({mode,name:'',genderLabel:''},{rootSeed,bootstrap},{signal});
     expect(game.version).toBe(4);expect(active).toBeUndefined();const current=upgradeGameToCurrent(game);if(!current)throw Error('Current-root upgrade failed');return current;
-   },async current=>{order.push(`prepared:${current.version}`);expect(active).toBeUndefined();await acceptApplicationGame(current,content);},async current=>{
+   },async current=>{order.push(`prepared:${current.version}`);expect(active).toBeUndefined();const accepted=await acceptApplicationGame(current,content);expect(accepted).toEqual(current);expect(accepted).not.toBe(current);return accepted as CurrentAuthoritativeGame;},async current=>{
     order.push(`saved:${current.version}`);expect(active).toBeUndefined();expect(await service.repository.getRecord('primary')).toBeUndefined();await service.save(current,null);
     const stored=await verifyRecord(await service.repository.getRecord('primary'),'primary');expect(stored.record.declaredRootVersion).toBe(8);expect(JSON.parse(stored.raw).version).toBe(8);expect(stored.result.game).toEqual(current);expect(active).toBeUndefined();
    },current=>{order.push(`activated:${current.version}`);active=current;});

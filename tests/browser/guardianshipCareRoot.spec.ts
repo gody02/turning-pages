@@ -1,5 +1,21 @@
 import {expect,test} from '@playwright/test';
 
+test('root8 descriptor snapshot rejects mutation without accessor execution in the browser',async({page})=>{
+ await page.goto('/research/country-start-v3/worker-browser-blank.html');
+ const result=await page.evaluate(async()=>{
+  const [fixture,save,host]=await Promise.all([import('/src/engine/testing/guardianshipCareRootFixture.ts'),import('/src/engine/save.ts'),import('/src/ui/gameContent.ts')]);
+  let getters=0,traps=0;const raw=structuredClone(fixture.syntheticGuardianshipCareGame());
+  const race=()=>new Proxy(structuredClone(raw),{getOwnPropertyDescriptor(target,key){traps++;const descriptor=Reflect.getOwnPropertyDescriptor(target,key);if(key==='name')Object.defineProperty(target,'version',{enumerable:true,configurable:true,get(){getters++;return 8;}});return descriptor;}});
+  const accepted=save.isGame(race()),upgraded=save.upgradeGameToCurrent(race()),serialized=save.serializeCurrentGame(race());let applicationRejected=false;
+  try{await host.acceptApplicationGame(race());}catch{applicationRejected=true;}
+  const owned=await host.acceptApplicationGame(raw,fixture.guardianshipCareContext(raw));
+  const independent=owned!==raw&&owned.people!==raw.people&&owned.care!==raw.care,contentEqual=JSON.stringify(owned)===JSON.stringify(raw);
+  raw.name='Caller changed';
+  return {accepted,upgradeRejected:upgraded===null,serializeRejected:!serialized.ok,applicationRejected,getters,traps,independent,contentEqual,aliasSafe:owned.name!=='Caller changed'};
+ });
+ expect(result).toMatchObject({accepted:false,upgradeRejected:true,serializeRejected:true,applicationRejected:true,getters:0,independent:true,contentEqual:true,aliasSafe:true});expect(result.traps).toBeGreaterThan(0);
+});
+
 test('root8 preserves populated Guardianship and Care with exact root7 recovery and continuation',async({page},testInfo)=>{
  await page.goto('/research/country-start-v3/worker-browser-blank.html');
  const result=await page.evaluate(async browser=>{

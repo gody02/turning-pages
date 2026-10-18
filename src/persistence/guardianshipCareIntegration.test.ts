@@ -32,7 +32,7 @@ describe('root8 through unchanged Persistence authority',()=>{
 
  it('round-trips populated legal and Care state, enforces kinds, and continues without serializing content',async()=>{
   const game=syntheticGuardianshipCareGame(),canonical=serializeCurrentGame(game);if(!canonical.ok)throw Error(canonical.error);const service=await open(),name=names.at(-1)!;await service.save(game,null);service.close();const reopened=await open(name),loaded=(await reopened.initialize()).game;
-  if(loaded?.version!==8)throw Error('Expected current root8');expect(loaded).toEqual(game);expect(exportCanonicalGame(loaded)).toBe(canonical.raw);expect(importCanonicalGame(canonical.raw)).toEqual(game);await expect(acceptApplicationGame(loaded)).rejects.toThrow('unavailable');expect(await acceptApplicationGame(loaded,guardianshipCareContext(game))).toBe(loaded);
+  if(loaded?.version!==8)throw Error('Expected current root8');expect(loaded).toEqual(game);expect(exportCanonicalGame(loaded)).toBe(canonical.raw);expect(importCanonicalGame(canonical.raw)).toEqual(game);await expect(acceptApplicationGame(loaded)).rejects.toThrow('unavailable');expect(await acceptApplicationGame(loaded,guardianshipCareContext(game))).toEqual(loaded);
   const continued=establishCare(loaded.care,'person:3','person:4','unspecified',{people:loaded.people,referenceDate:loaded.clock!.date});await reopened.save({...loaded,care:continued},1);expect((await reopened.initialize()).game).toEqual({...loaded,care:continued});expect(canonical.raw).not.toContain('Synthetic guardianship');
  });
 

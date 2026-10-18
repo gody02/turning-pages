@@ -13,14 +13,14 @@ describe('application Residence acceptance',()=>{
  it('checks root7 Union kinds without Residence and rejects malformed empty registries without mutation',async()=>{
   const game={...syntheticRelationshipUnionGame(),residence:createEmptyResidenceState()},before=structuredClone(game);
   await expect(acceptApplicationGame(game)).rejects.toThrow('unavailable');expect(game).toEqual(before);
-  expect(await acceptApplicationGame(game,relationshipUnionContext(game))).toBe(game);
-  const empty={...game,formalUnion:createEmptyFormalUnionState()};expect(await acceptApplicationGame(empty)).toBe(empty);
+  expect(await acceptApplicationGame(game,relationshipUnionContext(game))).toEqual(game);
+  const empty={...game,formalUnion:createEmptyFormalUnionState()};expect(await acceptApplicationGame(empty)).toEqual(empty);
   expect(applicationResolversReady(empty)).toBe(true);expect(applicationResolversReady(game)).toBe(false);
   // Deliberately malformed runtime inputs, not production type coercions.
   for(const formalUnionKinds of [null,false,NaN,[]])await expect(acceptApplicationGame(empty,{...relationshipUnionContext(empty),formalUnionKinds} as unknown as GameContentContext)).rejects.toThrow('unavailable');
   await expect(acceptApplicationGame(empty,{...relationshipUnionContext(empty),formalUnionKinds:{version:1,kinds:[],manifest:[{kindId:'broken',fingerprint:'fnv1a64-v1:0000000000000000'}]}})).rejects.toThrow('unavailable');
  });
- it('accepts empty migrated/new state without requiring content placement',async()=>{const game=migrateGame(createGame('Empty','Unspecified','ca',5))!;expect(await acceptApplicationGame(game)).toBe(game);await expect(acceptApplicationGame({...game,residence:null} as unknown as Game)).rejects.toThrow('consistency');});
- it('accepts only exact injected packages and preserves the caller state on rejection',async()=>{const game=syntheticResidenceGame(),before=structuredClone(game);expect(await acceptApplicationGame(game,context(game.people!))).toBe(game);await expect(acceptApplicationGame(game,context(game.people!,settlementPackage('settlements.synthetic-residence-2025-v1')))).rejects.toThrow('unavailable');expect(game).toEqual(before);});
- it('applies the same exact Residence qualification to current5 without changing Household',async()=>{const game=upgradeGameToCurrent(syntheticResidenceGame())!,before=structuredClone(game);expect(await acceptApplicationGame(game,context(game.people))).toBe(game);await expect(acceptApplicationGame(game,context(game.people,settlementPackage('settlements.synthetic-residence-2025-v1')))).rejects.toThrow('unavailable');expect(game).toEqual(before);expect(game.household.memberships).toHaveLength(0);});
+ it('accepts empty migrated/new state without requiring content placement',async()=>{const game=migrateGame(createGame('Empty','Unspecified','ca',5))!;expect(await acceptApplicationGame(game)).toEqual(game);await expect(acceptApplicationGame({...game,residence:null} as unknown as Game)).rejects.toThrow('consistency');});
+ it('accepts only exact injected packages and preserves the caller state on rejection',async()=>{const game=syntheticResidenceGame(),before=structuredClone(game);expect(await acceptApplicationGame(game,context(game.people!))).toEqual(game);await expect(acceptApplicationGame(game,context(game.people!,settlementPackage('settlements.synthetic-residence-2025-v1')))).rejects.toThrow('unavailable');expect(game).toEqual(before);});
+ it('applies the same exact Residence qualification to current5 without changing Household',async()=>{const game=upgradeGameToCurrent(syntheticResidenceGame())!,before=structuredClone(game);expect(await acceptApplicationGame(game,context(game.people))).toEqual(game);await expect(acceptApplicationGame(game,context(game.people,settlementPackage('settlements.synthetic-residence-2025-v1')))).rejects.toThrow('unavailable');expect(game).toEqual(before);expect(game.household.memberships).toHaveLength(0);});
 });
