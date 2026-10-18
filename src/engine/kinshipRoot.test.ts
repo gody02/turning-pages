@@ -76,9 +76,19 @@ describe('current Game root6 and frozen historical codecs',()=>{
  it('rejects hostile Kinship without getter execution or low-level exception leakage',()=>{
   const game=syntheticKinshipGame();let reads=0;const accessor={version:1};Object.defineProperty(accessor,'parentages',{enumerable:true,get:()=>{reads++;throw Error('Getter');}});
   const hidden={version:1,parentages:[]};Object.defineProperty(hidden,'extra',{value:1});const revocable=Proxy.revocable(game.kinship,{});revocable.revoke();
-  for(const kinship of [accessor,hidden,{...game.kinship,[Symbol('extra')]:true},{version:1,parentages:new Array(1)},new Proxy(game.kinship,{}),revocable.proxy,Object.setPrototypeOf({version:1,parentages:[]},{custom:true})]){
+  for(const kinship of [accessor,hidden,{...game.kinship,[Symbol('extra')]:true},{version:1,parentages:new Array(1)},revocable.proxy,Object.setPrototypeOf({version:1,parentages:[]},{custom:true})]){
    expect(()=>serializeCurrentGame({...game,kinship})).not.toThrow();expect(serializeCurrentGame({...game,kinship}).ok).toBe(false);expect(upgradeGameToCurrent({...game,kinship})).toBeNull();
-  }expect(reads).toBe(0);
+  }
+  // These local aliases target pinned v6, explicitly covered by the owner's
+  // compatible historical outer-input amendment; Foundation rules stay exact.
+  const target=structuredClone(game),before=structuredClone(target),input={...target,kinship:new Proxy(target.kinship,{})},ordinary=serializeCurrentGame(before),captured=serializeCurrentGame(input);
+  expect(captured).toEqual(ordinary);if(!captured.ok)throw Error(captured.error);expect(captured.game.version).toBe(6);expect(isGame(captured.game)).toBe(true);
+  expect(captured.game.kinship).not.toBe(target.kinship);expect(captured.game.kinship.parentages).not.toBe(target.kinship.parentages);
+  const upgraded=upgradeGameToCurrent(input)!;expect(upgraded).toEqual(before);expect(upgraded.kinship).not.toBe(target.kinship);
+  Object.assign(target.kinship.parentages[0],{parentId:'person:999'});expect(captured.game).toEqual(before);expect(upgraded).toEqual(before);
+  expect(serializeCurrentGame({...before,kinship:new Proxy(target.kinship,{})}).ok).toBe(false);
+  expect(serializeCurrentGame({...before,kinship:new Proxy(before.kinship,{get(){reads++;throw Error('Unsafe original read');}})})).toEqual(ordinary);
+  expect(reads).toBe(0);
  });
  it('keeps deceased parentage while frozen Residence content and death cleanup stay active on6',()=>{
   const game=syntheticKinshipGame(),person=game.people.people[4],dead=createPerson(person.sequence,{...person,lifeStatus:'deceased',diedAt:game.clock!.date});

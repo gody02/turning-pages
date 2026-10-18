@@ -77,9 +77,19 @@ describe('current root7 and pinned historical6',()=>{
  it('rejects hostile components predictably without executing getters',()=>{
   const game=syntheticRelationshipUnionGame();let reads=0;const accessor={version:1};Object.defineProperty(accessor,'partnerships',{enumerable:true,get:()=>{reads++;throw Error('Getter');}});
   const hidden={version:1,partnerships:[]};Object.defineProperty(hidden,'hidden',{value:1});const revoked=Proxy.revocable(game.partnership,{});revoked.revoke();
-  for(const partnership of [accessor,hidden,{...game.partnership,[Symbol('hidden')]:1},{version:1,partnerships:new Array(1)},new Proxy(game.partnership,{}),revoked.proxy,Object.setPrototypeOf({version:1,partnerships:[]},{custom:true})]){
+  for(const partnership of [accessor,hidden,{...game.partnership,[Symbol('hidden')]:1},{version:1,partnerships:new Array(1)},revoked.proxy,Object.setPrototypeOf({version:1,partnerships:[]},{custom:true})]){
    expect(()=>serializeCurrentGame({...game,partnership})).not.toThrow();expect(serializeCurrentGame({...game,partnership}).ok).toBe(false);
-  }expect(reads).toBe(0);
+  }
+  // Pinned-v7 outer input acceptance is explicitly amended; its stored data
+  // and Foundation contracts are unchanged.
+  const target=structuredClone(game),before=structuredClone(target),input={...target,partnership:new Proxy(target.partnership,{})},ordinary=serializeCurrentGame(before),captured=serializeCurrentGame(input);
+  expect(captured).toEqual(ordinary);if(!captured.ok)throw Error(captured.error);expect(captured.game.version).toBe(7);expect(isGame(captured.game)).toBe(true);
+  expect(captured.game.partnership).not.toBe(target.partnership);expect(captured.game.partnership.partnerships).not.toBe(target.partnership.partnerships);
+  const upgraded=upgradeGameToCurrent(input)!;expect(upgraded).toEqual(before);expect(upgraded.partnership).not.toBe(target.partnership);
+  Object.assign(target.partnership.partnerships[0],{personIds:['person:1','person:1']});expect(captured.game).toEqual(before);expect(upgraded).toEqual(before);
+  expect(serializeCurrentGame({...before,partnership:new Proxy(target.partnership,{})}).ok).toBe(false);
+  expect(serializeCurrentGame({...before,partnership:new Proxy(before.partnership,{get(){reads++;throw Error('Unsafe original read');}})})).toEqual(ordinary);
+  expect(reads).toBe(0);
  });
  it('requires kind content independently of Residence, including terminal records and malformed empty registries',()=>{
   const game={...syntheticRelationshipUnionGame(),residence:createEmptyResidenceState()};expect(isGame(game)).toBe(true);expect(validGameWithContent(game)).toBe(false);expect(validGameWithContent(game,relationshipUnionContext(game))).toBe(true);

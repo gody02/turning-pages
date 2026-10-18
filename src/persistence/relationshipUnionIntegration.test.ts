@@ -32,7 +32,7 @@ describe('root7 through unchanged Persistence authority',()=>{
   if(loaded.version!==8)throw Error('Expected current root8');
   expect(loaded).toEqual(encoded.game);expect(exportCanonicalGame(loaded)).toBe(encoded.raw);expect(importCanonicalGame(encoded.raw)).toEqual(encoded.game);
   await expect(acceptApplicationGame(loaded)).rejects.toThrow('unavailable');expect((await verifyRecord(await reopened.repository.getRecord('primary'),'primary')).raw).toBe(encoded.raw);
-  expect(await acceptApplicationGame(loaded,relationshipUnionContext(game))).toBe(loaded);
+  const accepted=await acceptApplicationGame(loaded,relationshipUnionContext(game));expect(accepted).toEqual(loaded);expect(accepted).not.toBe(loaded);expect(accepted.people).not.toBe(loaded.people);expect(accepted.formalUnion).not.toBe(loaded.formalUnion);
   const result=createFormalUnion(loaded.formalUnion,{...fixtureInput(2,3),formedOn:loaded.clock!.date},{people:loaded.people,referenceDate:loaded.clock!.date,kinds:fixtureKinds()});expect(result.union.id).toBe('formal-union:5');
   await reopened.save({...loaded,formalUnion:result.state},1);const final=(await reopened.initialize()).game;if(final?.version!==8)throw Error('Expected continued root8');expect(final.formalUnion).toEqual(result.state);
   expect(encoded.raw).not.toContain('Synthetic pair contract');expect(game.formalUnion.nextSequence).toBe(5);

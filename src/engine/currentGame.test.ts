@@ -34,7 +34,16 @@ describe('version-qualified canonical Game codecs',()=>{
   const game=syntheticHouseholdGame();let reads=0;const accessor={...game};Object.defineProperty(accessor,'household',{enumerable:true,get:()=>{reads++;throw Error('getter');}});
   const hidden={...game};Object.defineProperty(hidden,'hidden',{value:true});const symbol={...game,[Symbol('bad')]:1};
   const revoked=Proxy.revocable(game,{});revoked.revoke();
-  for(const source of [accessor,hidden,symbol,new Proxy(game,{}),revoked.proxy,{...game,household:{...game.household,nextSequence:NaN}},Object.setPrototypeOf({...game},{bad:true})]){expect(()=>serializeGameV5(source)).not.toThrow();expect(serializeGameV5(source).ok).toBe(false);expect(upgradeGameToCurrent(source)).toBeNull();}
+  for(const source of [accessor,hidden,symbol,revoked.proxy,{...game,household:{...game.household,nextSequence:NaN}},Object.setPrototypeOf({...game},{bad:true})]){expect(()=>serializeGameV5(source)).not.toThrow();expect(serializeGameV5(source).ok).toBe(false);expect(upgradeGameToCurrent(source)).toBeNull();}
+  // Owner-approved compatible input-boundary amendment: captured valid Proxy
+  // data is accepted; historical v5 encoding and current upgrade remain exact.
+  const target=structuredClone(game),before=structuredClone(target),proxy=new Proxy(target,{}),ordinary=serializeGameV5(target),captured=serializeGameV5(proxy);
+  expect(captured).toEqual(ordinary);if(!captured.ok)throw Error(captured.error);expect(captured.game.version).toBe(5);expect(isCanonicalGamePayload(captured.raw)).toBe(true);
+  expect(captured.game).not.toBe(target);expect(captured.game.household).not.toBe(target.household);expect(captured.game.people.people).not.toBe(target.people.people);
+  const upgraded=upgradeGameToCurrent(proxy)!;expect(upgraded).toEqual(upgradeGameToCurrent(before));expect(upgraded).not.toBe(target);
+  target.name='Caller changed';expect(captured.game).toEqual(before);expect(upgraded.name).toBe(before.name);
+  expect(serializeGameV5(new Proxy({...before,household:{...before.household,nextSequence:NaN}},{})).ok).toBe(false);
+  const guarded=new Proxy(before,{get(){reads++;throw Error('Unsafe original read');}});expect(serializeGameV5(guarded)).toEqual(ordinary);
   expect(reads).toBe(0);
  });
  it('continues validating stored canonical root3 in its own schema',()=>{const game=createGame('Historic3','Unspecified','ca',23),raw=JSON.stringify(game);expect(game.version).toBe(3);expect(isCanonicalGamePayload(raw)).toBe(true);expect(parseGameV5(raw).game?.version).toBe(5);expect(JSON.parse(raw).version).toBe(3);});
