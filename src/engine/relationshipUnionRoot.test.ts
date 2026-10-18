@@ -77,7 +77,7 @@ describe('current root7 and pinned historical6',()=>{
  it('rejects hostile components predictably without executing getters',()=>{
   const game=syntheticRelationshipUnionGame();let reads=0;const accessor={version:1};Object.defineProperty(accessor,'partnerships',{enumerable:true,get:()=>{reads++;throw Error('Getter');}});
   const hidden={version:1,partnerships:[]};Object.defineProperty(hidden,'hidden',{value:1});const revoked=Proxy.revocable(game.partnership,{});revoked.revoke();
-  for(const partnership of [accessor,hidden,{...game.partnership,[Symbol('hidden')]:1},{version:1,partnerships:new Array(1)},revoked.proxy,Object.setPrototypeOf({version:1,partnerships:[]},{custom:true})]){
+  for(const partnership of [accessor,hidden,{...game.partnership,[Symbol('hidden')]:1},{version:1,partnerships:new Array(1)},revoked.proxy,new Proxy(game.partnership,{ownKeys(){throw Error('Inspection failed');}}),Object.setPrototypeOf({version:1,partnerships:[]},{custom:true})]){
    expect(()=>serializeCurrentGame({...game,partnership})).not.toThrow();expect(serializeCurrentGame({...game,partnership}).ok).toBe(false);
   }
   // Pinned-v7 outer input acceptance is explicitly amended; its stored data

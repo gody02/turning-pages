@@ -76,7 +76,7 @@ describe('current Game root6 and frozen historical codecs',()=>{
  it('rejects hostile Kinship without getter execution or low-level exception leakage',()=>{
   const game=syntheticKinshipGame();let reads=0;const accessor={version:1};Object.defineProperty(accessor,'parentages',{enumerable:true,get:()=>{reads++;throw Error('Getter');}});
   const hidden={version:1,parentages:[]};Object.defineProperty(hidden,'extra',{value:1});const revocable=Proxy.revocable(game.kinship,{});revocable.revoke();
-  for(const kinship of [accessor,hidden,{...game.kinship,[Symbol('extra')]:true},{version:1,parentages:new Array(1)},revocable.proxy,Object.setPrototypeOf({version:1,parentages:[]},{custom:true})]){
+  for(const kinship of [accessor,hidden,{...game.kinship,[Symbol('extra')]:true},{version:1,parentages:new Array(1)},revocable.proxy,new Proxy(game.kinship,{ownKeys(){throw Error('Inspection failed');}}),Object.setPrototypeOf({version:1,parentages:[]},{custom:true})]){
    expect(()=>serializeCurrentGame({...game,kinship})).not.toThrow();expect(serializeCurrentGame({...game,kinship}).ok).toBe(false);expect(upgradeGameToCurrent({...game,kinship})).toBeNull();
   }
   // These local aliases target pinned v6, explicitly covered by the owner's

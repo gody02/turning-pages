@@ -34,7 +34,7 @@ describe('version-qualified canonical Game codecs',()=>{
   const game=syntheticHouseholdGame();let reads=0;const accessor={...game};Object.defineProperty(accessor,'household',{enumerable:true,get:()=>{reads++;throw Error('getter');}});
   const hidden={...game};Object.defineProperty(hidden,'hidden',{value:true});const symbol={...game,[Symbol('bad')]:1};
   const revoked=Proxy.revocable(game,{});revoked.revoke();
-  for(const source of [accessor,hidden,symbol,revoked.proxy,{...game,household:{...game.household,nextSequence:NaN}},Object.setPrototypeOf({...game},{bad:true})]){expect(()=>serializeGameV5(source)).not.toThrow();expect(serializeGameV5(source).ok).toBe(false);expect(upgradeGameToCurrent(source)).toBeNull();}
+  for(const source of [accessor,hidden,symbol,revoked.proxy,new Proxy(game,{ownKeys(){throw Error('Inspection failed');}}),{...game,household:{...game.household,nextSequence:NaN}},Object.setPrototypeOf({...game},{bad:true})]){expect(()=>serializeGameV5(source)).not.toThrow();expect(serializeGameV5(source).ok).toBe(false);expect(upgradeGameToCurrent(source)).toBeNull();}
   // Owner-approved compatible input-boundary amendment: captured valid Proxy
   // data is accepted; historical v5 encoding and current upgrade remain exact.
   const target=structuredClone(game),before=structuredClone(target),proxy=new Proxy(target,{}),ordinary=serializeGameV5(target),captured=serializeGameV5(proxy);
